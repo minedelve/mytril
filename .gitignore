@@ -1,4 +1,11 @@
+# Global
 .DS_Store
 node_modules
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+# PackageManager
 package-lock.json
 yarn.lock
