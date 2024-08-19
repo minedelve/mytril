@@ -1,7 +1,7 @@
 {
-  "name": "mytril",
-  "version": "0.0.0",
-  "main": "index.js",
+  "name": "mytril-monorepo",
+  "version": "0.0.1",
+  "private": true,
   "author": "Nycolaide",
   "license": "MIT"
 }
