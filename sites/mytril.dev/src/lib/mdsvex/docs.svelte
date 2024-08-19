@@ -5,16 +5,7 @@
 
 <script lang="ts">
 	import Seo from '$lib/components/seo.svelte';
-	
 	import { onMount } from 'svelte';
-
-	import AppBar from '$lib/components/app-bar.svelte';
-	import AsideSummary from '$lib/components/aside-summary.svelte';
-	import Sidebar from '$lib/components/sidebar-navigation.svelte';
-	import Toolbar from '$lib/components/toolbar.svelte';
-
-	$: open = false;
-
 	export let title;
 	// export let desc;
 
@@ -40,21 +31,9 @@
 
 <Seo {title} />
 
-<AppBar /> 
-
-
-<div class="main">
-	<Sidebar bind:open />
-	<div class="content">
-		<Toolbar bind:open />
-		<article id="page" class="doc">
-			<slot />
-		</article>
-	</div>
-	<AsideSummary />
-</div>
-
-
+<article id="page" class="doc">
+	<slot />
+</article>
 
 <style lang="postcss">
 	article {
@@ -70,37 +49,5 @@
 		@media (min-width: 1280px) {
 			min-width: 620px;
 		}
-	}
-
-	.main {
-		display: grid;
-		grid-template-columns: 1fr;
-		/* */
-
-		& > div {
-			/* border-right: var(--border); */
-			min-height: calc(100vh - var(--nav-height));
-		}
-
-		@media (min-width: 960px) {
-			&.content {
-				padding-left: var(--sidebar-width-small);
-				/* padding-left: calc((100vw - var(--container-max-width)) / 2 + var(--sidebar-width-small)); */
-			}
-		}
-
-		@media (min-width: 1320px) {
-			grid-template-columns: 1fr 290px;
-
-			/* .content {
-				max-width: var(--container-max-width);
-				margin: 0 auto;
-				padding-left: calc((100vw - var(--container-max-width)) / 2 + var(--sidebar-width-small));
-			} */
-		}
-
-		/* @media (min-width: 1320px) {
-			grid-template-columns: 1fr 290px;
-		} */
 	}
 </style>

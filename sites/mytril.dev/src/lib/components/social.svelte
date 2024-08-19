@@ -27,7 +27,7 @@
 		width: 36px;
 		height: 36px;
 
-		:global(svg) {
+		& :global(svg) {
 			fill: currentColor;
 			height: 24px;
 			width: 24px;

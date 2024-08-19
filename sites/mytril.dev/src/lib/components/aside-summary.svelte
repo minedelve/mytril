@@ -144,11 +144,11 @@
 	aside {
 		display: none;
 
-		.summary {
+		& .summary {
 			position: fixed;
 			padding-top: 48px;
 
-			p {
+			& p {
 				font-weight: 700;
 				margin-bottom: 4px;
 				text-transform: uppercase;
@@ -156,19 +156,19 @@
 				letter-spacing: 0.4px;
 			}
 
-			nav {
-				ul {
+			& nav {
+				& ul {
 					list-style: none;
 					margin: 0;
 					padding: 0;
 					font-size: 13px;
 					font-weight: 500;
 
-					.h3 {
+					& .h3 {
 						margin-left: 0.75rem;
 					}
 
-					a {
+					& a {
 						text-decoration: inherit;
 						color: var(--c-text-2);
 						transition: color 0.5s;

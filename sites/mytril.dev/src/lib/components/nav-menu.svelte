@@ -60,84 +60,85 @@
 		transition: background-color 0.5s;
 		overflow-y: auto;
 		z-index: 20;
+	}
 
-		.container {
-			margin: 0 auto;
-			padding: 24px 0 96px;
-			max-width: 288px;
+	.container {
+		margin: 0 auto;
+		padding: 24px 0 96px;
+		max-width: 288px;
+	}
 
-			nav {
-				a {
-					display: block;
-					border-bottom: var(--border);
-					padding: 12px 0 11px;
-					line-height: 24px;
-					font-size: 14px;
-					font-weight: 500;
-					color: var(--c-text-1);
-					text-decoration: none;
-					transition:
-						border-color 0.5s,
-						color 0.25s;
+	nav a {
+		display: block;
+		border-bottom: var(--border);
+		padding: 12px 0 11px;
+		line-height: 24px;
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--c-text-1);
+		text-decoration: none;
+		transition:
+			border-color 0.5s,
+			color 0.25s;
 
-					&:hover,
-					&.active {
-						color: var(--c-brand);
-					}
-				}
-			}
-
-			.package {
-				flex-direction: column;
-				padding: 4px 12px;
-			}
-
-			.theme,
-			.package {
-				align-items: center;
-				background-color: var(--c-bg-soft);
-				display: flex;
-				justify-content: space-between;
-				padding: 5px 14px;
-				margin-top: 10px;
-				margin-bottom: 10px;
-				border-radius: 10px;
-
-				:global(button) {
-					&::before,
-					&::after {
-						width: 0 !important;
-					}
-				}
-
-				a {
-					display: block;
-					border-radius: 6px;
-					padding: 4px 12px;
-					font-size: 13px;
-					width: 95%;
-					font-weight: 500;
-					color: var(--c-text-1);
-					white-space: nowrap;
-					text-decoration: none;
-					display: grid;
-					align-items: center;
-					justify-content: left;
-					grid-template-columns: 1fr auto;
-					transition:
-						background-color 0.25s,
-						color 0.25s;
-
-					&:hover {
-						color: var(--c-brand);
-						background-color: var(--c-bg-mute);
-					}
-
-					:global(svg) {
-						margin-left: 1rem;
-					}
-				}
-			}
+		&:hover,
+		&.active {
+			color: var(--c-brand);
 		}
+	}
+
+	.package {
+		flex-direction: column;
+		padding: 4px 12px;
+	}
+
+	.theme,
+	.package {
+		align-items: center;
+		background-color: var(--c-bg-soft);
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 14px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border-radius: 10px;
+	}
+
+	.theme :global(button),
+	.package :global(button) {
+		&::before,
+		&::after {
+			width: 0 !important;
+		}
+	}
+
+	.theme a,
+	.package a {
+		display: block;
+		border-radius: 6px;
+		padding: 4px 12px;
+		font-size: 13px;
+		width: 95%;
+		font-weight: 500;
+		color: var(--c-text-1);
+		white-space: nowrap;
+		text-decoration: none;
+		display: grid;
+		align-items: center;
+		justify-content: left;
+		grid-template-columns: 1fr auto;
+		transition:
+			background-color 0.25s,
+			color 0.25s;
+
+		&:hover {
+			color: var(--c-brand);
+			background-color: var(--c-bg-mute);
+		}
+	}
+
+	.theme :global(svg),
+	.package :global(svg) {
+		margin-left: 1rem;
 	}
 </style>

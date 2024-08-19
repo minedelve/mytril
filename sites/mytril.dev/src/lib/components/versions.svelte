@@ -91,7 +91,7 @@
 			color: var(--c-text-2);
 		}
 
-		:global(svg) {
+		& :global(svg) {
 			font-size: 1.25rem;
 		}
 	}
@@ -122,7 +122,7 @@
 			right: 0px;
 		}
 
-		.divider {
+		& .divider {
 			width: 100%;
 			border-bottom: 1px solid lightgray;
 		}
@@ -150,7 +150,7 @@
 			background-color: var(--c-bg-soft);
 		}
 
-		:global(svg) {
+		& :global(svg) {
 			margin-left: 1rem;
 		}
 	}
@@ -176,7 +176,7 @@
 			background-color: var(--c-bg-soft);
 		}
 
-		:global(svg) {
+		& :global(svg) {
 			margin-left: 1rem;
 		}
 	}

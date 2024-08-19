@@ -68,7 +68,7 @@
 			background-color 0.5s;
 		z-index: 1;
 
-		.summary-width-mobile {
+		& .summary-width-mobile {
 			position: absolute;
 			left: 20px;
 			right: 20px;
@@ -84,7 +84,7 @@
 				0 12px 32px rgba(0, 0, 0, 0.1),
 				0 2px 6px rgba(0, 0, 0, 0.08);
 
-			> a {
+			& > a {
 				font-size: 13px;
 				font-weight: 500;
 				text-decoration: inherit;
@@ -100,12 +100,12 @@
 				border-bottom: var(--border);
 			}
 
-			ul {
+			& ul {
 				list-style: none;
 				margin: 0;
 				padding: 0;
 
-				a {
+				& a {
 					font-size: 14px;
 					font-weight: 500;
 					padding: 2px 0;

@@ -31,15 +31,15 @@
 		border: 0;
 		background-color: transparent;
 
-		:global(svg) {
-			fill: currentColor;
-			height: 24px;
-			width: 24px;
-		}
-
 		&:hover {
 			color: var(--c-text-1);
 			transition: color 0.25s;
 		}
+	}
+
+	button :global(svg) {
+		fill: currentColor;
+		height: 24px;
+		width: 24px;
 	}
 </style>

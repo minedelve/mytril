@@ -8,7 +8,6 @@
 	let online = typeof navigator !== 'undefined' ? navigator.onLine : true;
 </script>
 
-
 <Seo title={String($page.status)} />
 
 <AppBar app />
@@ -24,8 +23,7 @@
 		<p>Please try reloading the page.</p>
 
 		<p>
-			If the error persists, please drop by Discord chatroom
-			and let us know, or raise an issue on
+			If the error persists, please drop by Discord chatroom and let us know, or raise an issue on
 			<a href="https://github.com/minedelve/mytril" target="_blank">GitHub</a>. Thanks!
 		</p>
 	{:else}
@@ -41,9 +39,6 @@
 		min-height: calc(100vh - (var(--nav-bar-height) * 3));
 		text-align: center;
 	}
-
-
-
 
 	p {
 		margin: 1em auto;

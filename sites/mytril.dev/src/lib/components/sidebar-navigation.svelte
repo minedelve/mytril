@@ -72,16 +72,16 @@
 				transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 		}
 
-		nav {
+		& nav {
 			padding-top: 24px;
 			outline: 0;
 			width: 200px;
 			margin: 0 auto;
 		}
 
-		section {
+		& section {
 			color: var(--c-text-2);
-			h2 {
+			& h2 {
 				padding: 4px 0;
 				line-height: 20px;
 				font-size: 13px;
@@ -90,7 +90,7 @@
 				transition: color 0.5s;
 			}
 
-			a {
+			& a {
 				line-height: 20px;
 				font-size: 13px;
 				font-weight: 500;

@@ -97,7 +97,7 @@
 			border-bottom: var(--border);
 		}
 
-		.btn-nav-menu {
+		& .btn-nav-menu {
 			text-decoration: inherit;
 			display: flex;
 			justify-content: center;
@@ -109,7 +109,7 @@
 			border: 0;
 			background-color: transparent;
 
-			:global(svg),
+			& :global(svg),
 			img {
 				fill: currentColor;
 				height: 26px;
@@ -123,7 +123,7 @@
 			}
 		}
 
-		.webapp-name {
+		& .webapp-name {
 			display: flex;
 			align-items: center;
 			height: var(--nav-height);
@@ -131,19 +131,19 @@
 			text-decoration: inherit;
 			color: var(--c-text-1);
 
-			img {
+			& img {
 				position: relative;
 				height: calc(var(--nav-height) - 1.15rem);
 				/* filter: var(--c-logo); */
 				transition: filter 0.25s;
 			}
 
-			span {
+			& span {
 				font-size: 16px;
 				font-weight: 500;
 			}
 
-			img + span {
+			& img + span {
 				padding-left: 8px;
 			}
 
@@ -152,7 +152,7 @@
 			}
 		}
 
-		.content {
+		& .content {
 			display: flex;
 			justify-content: flex-end;
 			/* align-items: center;
@@ -175,7 +175,7 @@
 			}
 		}
 
-		.container {
+		& .container {
 			display: flex;
 			justify-content: space-between;
 			margin: 0 auto;
@@ -191,8 +191,8 @@
 			}
 		}
 
-		nav {
-			a {
+		& nav {
+			& a {
 				display: block;
 				padding: 0 12px;
 				line-height: calc(var(--nav-height) - 1px);

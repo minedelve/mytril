@@ -33,7 +33,10 @@ const config = {
 			out: 'build',
 			precompress: true,
 			envPrefix: ''
-		})
+		}),
+		paths: {
+			relative: true
+		}
 	},
 
 	extensions: ['.svelte', '.svx', '.md']

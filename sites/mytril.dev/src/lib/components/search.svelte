@@ -145,7 +145,7 @@
 		max-width: fit-content;
 		margin-left: auto;
 
-		:global(svg) {
+		& :global(svg) {
 			fill: currentColor;
 			height: 24px;
 			width: 24px;
@@ -168,13 +168,13 @@
 			margin-right: auto;
 			margin-left: initial;
 
-			:global(svg) {
+			& :global(svg) {
 				fill: currentColor;
 				height: 18px;
 				width: 18px;
 			}
 
-			span {
+			& span {
 				display: flex !important;
 			}
 		}
@@ -184,7 +184,7 @@
 		flex-grow: 1;
 		justify-content: flex-end;
 
-		span {
+		& span {
 			display: none;
 		}
 	}
@@ -200,7 +200,7 @@
 		display: grid;
 		border: 0;
 
-		> div {
+		& > div {
 			background: var(--c-bg);
 			border-radius: 6px;
 			flex-direction: column;
@@ -209,11 +209,11 @@
 			width: 100%;
 			position: relative;
 
-			header {
+			& header {
 				display: flex;
 				padding: 12px 12px 0;
 
-				form {
+				& form {
 					background-color: var(--c-bg-mute);
 					border: 1px solid var(--c-brand);
 					align-items: center;
@@ -227,7 +227,7 @@
 					width: 100%;
 					gap: 0.5rem;
 
-					:global(svg) {
+					& :global(svg) {
 						align-items: center;
 						color: var(--c-brand);
 						display: flex;
@@ -236,7 +236,7 @@
 						width: 24px;
 					}
 
-					input {
+					& input {
 						appearance: none;
 						background: transparent;
 						border: 0;
@@ -257,7 +257,7 @@
 				}
 			}
 
-			.content {
+			& .content {
 				max-height: calc(var(--search-modal-height) - 56px - 12px - 44px);
 				min-height: 12px;
 				overflow-y: auto;
@@ -265,34 +265,34 @@
 				padding: 0 12px;
 				scrollbar-width: thin;
 
-				.start-screen {
+				& .start-screen {
 					font-size: 0.9em;
 					margin: 0 auto;
 					padding: 36px 0;
 					text-align: center;
 					width: 80%;
 
-					p {
+					& p {
 						font-size: 0.9em;
 						margin: 0;
 						user-select: none;
 					}
 				}
 
-				ul {
+				& ul {
 					list-style: none;
 					margin: 0;
 					padding: 0;
 					margin-top: 12px;
 					margin-bottom: 12px;
 
-					li {
+					& li {
 						border-radius: 4px;
 						display: flex;
 						padding-bottom: 4px;
 						position: relative;
 
-						a {
+						& a {
 							text-decoration: none;
 							background: var(--c-bg-mute);
 							border-radius: 4px;
@@ -306,7 +306,7 @@
 								color: var(--c-text-1);
 							}
 
-							> div {
+							& > div {
 								align-items: center;
 								/* color: var(--docsearch-hit-color); */
 								display: flex;
@@ -314,12 +314,12 @@
 								height: 56px;
 								padding: 0 12px 0 0;
 
-								:global(svg) {
+								& :global(svg) {
 									height: 20px;
 									width: 20px;
 								}
 
-								.result-content {
+								& .result-content {
 									display: flex;
 									flex: 1 1 auto;
 									font-weight: 500;
@@ -332,7 +332,7 @@
 									width: 80%;
 								}
 
-								.result-action {
+								& .result-action {
 									align-items: center;
 									display: flex;
 									height: 22px;
@@ -344,7 +344,7 @@
 				}
 			}
 
-			footer {
+			& footer {
 				background: var(--c-bg-mute);
 				border-top: var(--border);
 				align-items: center;
@@ -356,7 +356,7 @@
 				justify-content: space-between;
 				padding: 0 12px;
 
-				> div {
+				& > div {
 					font-size: 0.8rem;
 					display: flex;
 					align-items: center;
