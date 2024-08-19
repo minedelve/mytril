@@ -1,5 +1,6 @@
 {
   "name": "mytril-monorepo",
+  "description": "monorepo for mytril project",
   "version": "0.0.1",
   "private": true,
   "author": "Nycolaide",
