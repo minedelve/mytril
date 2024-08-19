@@ -1,11 +1,25 @@
 # Global
-.DS_Store
 node_modules
+
+# OS
+.DS_Store
+Thumbs.db
 
 # Docker
 Dockerfile
 docker-compose.yml
 
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
 # PackageManager
-package-lock.json
+bun.lockb
 yarn.lock
+package-lock.json
