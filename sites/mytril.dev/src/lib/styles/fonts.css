@@ -1,0 +1,189 @@
+/**
+ *  @name Geist
+ *  @link https://vercel.com/font
+**/
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-Thin.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-Thin.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-Thin.otf') format('opentype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-UltraLight.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-UltraLight.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-UltraLight.otf') format('opentype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-Light.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-Light.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-Light.otf') format('opentype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-Regular.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-Regular.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-Regular.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-Medium.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-Medium.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-Medium.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-SemiBold.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-SemiBold.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-SemiBold.otf') format('opentype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-Bold.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-Bold.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-Bold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-Black.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-Black.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-Black.otf') format('opentype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Geist';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-UltraBlack.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-UltraBlack.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-UltraBlack.otf') format('opentype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+/**
+ *  @name Geist Mono
+ *  @link https://vercel.com/font
+**/
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-Thin.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-Thin.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-Thin.otf') format('opentype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-UltraLight.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-UltraLight.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-UltraLight.otf') format('opentype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-Light.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-Light.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-Light.otf') format('opentype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist/statics-woff/Geist-Regular.woff') format('woff'),
+		url('$lib/assets/fonts/geist/statics-ttf/Geist-Regular.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist/statics-otf/Geist-Regular.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-Medium.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-Medium.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-Medium.otf') format('opentype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-SemiBold.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-SemiBold.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-SemiBold.otf') format('opentype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-Bold.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-Bold.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-Bold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-Black.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-Black.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-Black.otf') format('opentype');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GeistMono';
+	src:
+		url('$lib/assets/fonts/geist-mono/statics-woff/GeistMono-UltraBlack.woff') format('woff'),
+		url('$lib/assets/fonts/geist-mono/statics-ttf/GeistMono-UltraBlack.ttf') format('truetype'),
+		url('$lib/assets/fonts/geist-mono/statics-otf/GeistMono-UltraBlack.otf') format('opentype');
+	font-weight: 900;
+	font-style: normal;
+}

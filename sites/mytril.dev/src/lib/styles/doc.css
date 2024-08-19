@@ -1,0 +1,107 @@
+.doc h1,
+.doc h2,
+.doc h3,
+.doc h4,
+.doc h5,
+.doc h6 {
+	position: relative;
+	font-weight: 600;
+	line-height: 1.5;
+	outline: none;
+}
+
+.doc blockquote,
+.doc dl,
+.doc dd,
+.doc h1,
+.doc h2,
+.doc h3,
+.doc h4,
+.doc h5,
+.doc h6,
+.doc hr,
+.doc figure,
+.doc p,
+.doc pre {
+	margin: 0;
+}
+
+.doc h1 {
+	margin: 0 0 3rem;
+	font-size: 38px;
+	line-height: 1.4;
+	letter-spacing: -0.02em;
+}
+
+.doc h2 {
+	margin: 4rem 0 1.8rem;
+	border-top: 1px solid var(--c-divider);
+	padding-top: 1.8rem;
+	font-size: 24px;
+	letter-spacing: -0.02em;
+}
+
+.doc h3 {
+	font-size: 19px;
+	letter-spacing: -0.01em;
+	margin: 3rem 0 1.25rem;
+}
+
+.doc h4 {
+	font-size: 17px;
+	margin: 1.8rem 0 1rem;
+}
+
+.doc p,
+.doc ul,
+.doc ol,
+.doc summary {
+	margin-bottom: 1.2em;
+}
+
+.doc strong {
+	font-weight: 600;
+}
+
+.doc ul {
+	padding-left: 1.25rem;
+}
+
+.doc li {
+	position: relative;
+	margin: 1px 0;
+}
+
+.doc ul > li:before {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: var(--c-text-3);
+	transition: background-color 0.5s;
+	left: -1.25rem;
+	top: 0.75rem;
+}
+
+.doc :not(pre) > code {
+	background-color: var(--c-bg-mute);
+	padding: 0.15em 0.5em;
+	border-radius: 4px;
+	color: var(--c-text-code);
+	transition:
+		color 0.5s,
+		background-color 0.5s;
+}
+
+@media (min-width: 768px) {
+	.doc :not(pre) > code {
+		white-space: nowrap;
+	}
+}
+
+.doc,
+.doc p {
+	font-size: 16px;
+	line-height: 1.7;
+}
