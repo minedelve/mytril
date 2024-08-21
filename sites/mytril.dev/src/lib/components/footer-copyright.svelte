@@ -18,9 +18,7 @@
 	</p>
 	<p class="copyright">
 		Copyright ©{year}
-		<a href="https://github.com/minedelve" target="_blank" rel="noopener noreferrer">
-			Minedelve Team
-		</a>
+		<a href="https://minedelve.com" target="_blank" rel="noopener noreferrer"> Minedelve </a>
 	</p>
 </footer>
 

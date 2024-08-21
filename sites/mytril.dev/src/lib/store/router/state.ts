@@ -15,23 +15,12 @@ export const social = writable([
 		icon: 'mdi:github',
 		path: 'https://github.com/minedelve/mytril',
 		color: ''
-	}
-]);
-
-export const byMinedelveLink = writable([
-	{
-		name: 'Go to Mytril Homepage',
-		path: '/'
 	},
 	{
-		name: 'Go to Github',
-		path: 'https://github.com/minedelve/mytril',
-		external: true
-	},
-	{
-		name: 'Join Discord',
-		path: 'https://github.com/minedelve/mytril',
-		external: true
+		name: 'discord',
+		icon: 'ic:baseline-discord',
+		path: 'https://discord.gg/fwyaGUhbav',
+		color: ''
 	}
 ]);
 
