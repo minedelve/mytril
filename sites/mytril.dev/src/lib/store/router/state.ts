@@ -33,5 +33,14 @@ export const docs = writable([
 				path: '/docs/introduction'
 			}
 		]
+	},
+	{
+		section: 'tools',
+		routes: [
+			{
+				name: 'capitalize',
+				path: '/docs/tools/capitalize'
+			}
+		]
 	}
 ]);
