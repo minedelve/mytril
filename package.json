@@ -4,5 +4,11 @@
   "version": "0.0.1",
   "private": true,
   "author": "Nycolaide",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^9.1.5"
+  },
+  "scripts": {
+    "prepare": "husky"
+  }
 }
