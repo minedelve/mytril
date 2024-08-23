@@ -1,3 +1,1 @@
-export function HelloWorld(name: string) {
-  alert(`Hello ${name} !`);
-}
+export * from './utils/capitalize';
