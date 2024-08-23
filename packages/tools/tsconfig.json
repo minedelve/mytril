@@ -3,11 +3,12 @@
     "target": "es5",
     "module": "es6",
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "dist/",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src", "test/capitalize.test.ts"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
