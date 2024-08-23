@@ -1,12 +1,11 @@
 {
   "name": "mytril-tools",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "Nycolaide",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "files": [
     "dist"
   ],
