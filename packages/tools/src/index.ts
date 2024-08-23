@@ -1,1 +1,3 @@
-export * from './utils/capitalize';
+import { capitalize } from './utils/capitalize';
+
+export { capitalize };
