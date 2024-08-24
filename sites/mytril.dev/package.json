@@ -13,7 +13,9 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"get:docs": "cd $(git rev-parse --show-toplevel) && cp -r docs/* sites/mytril.dev/src/routes/docs/"
+		"get:docs": "cd $(git rev-parse --show-toplevel) && cp -r docs/* sites/mytril.dev/src/routes/docs/",
+		"robots:dev": "cp static/robots.default.txt static/robots.txt",
+		"robots:prod": "cp static/robots.prod.txt static/robots.txt"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
