@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import BtnText from './btn-text.svelte';
 
@@ -9,18 +10,20 @@
 
 	$: {
 		if (open) openSummary = false;
-	}
 
-	onMount(() => {
-		const pageElement = document.getElementById('page');
-		if (pageElement) {
-			headings = Array.from(pageElement.querySelectorAll('h2, h3')).map((heading) => ({
-				id: heading.id,
-				text: heading.textContent,
-				level: heading.tagName.toLowerCase()
-			}));
+		if (open) {
+			if (browser && $page.url.pathname) {
+				const pageElement = document.getElementById('page');
+				if (pageElement) {
+					headings = Array.from(pageElement.querySelectorAll('h2, h3')).map((heading) => ({
+						id: heading.id,
+						text: heading.textContent,
+						level: heading.tagName.toLowerCase()
+					}));
+				}
+			}
 		}
-	});
+	}
 </script>
 
 <div class="toolbar">
