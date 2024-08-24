@@ -62,6 +62,8 @@
 	}
 </script> -->
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 
@@ -75,21 +77,26 @@
 	let activeId = writable<string | null>(null);
 	const offset = 86; // Hauteur de la barre de navigation
 
-	onMount(() => {
-		const pageElement = document.getElementById('page');
-		if (pageElement) {
-			headings = Array.from(pageElement.querySelectorAll<HTMLHeadingElement>('h2, h3')).map(
-				(heading) => ({
-					id: heading.id,
-					text: heading.textContent || '',
-					level: heading.tagName.toLowerCase()
-				})
-			);
+	$: {
+		if (browser && $page.url.pathname) {
+			const pageElement = document.getElementById('page');
 
-			window.addEventListener('scroll', onScroll);
-			onScroll();
+			if (pageElement) {
+				headings = Array.from(pageElement.querySelectorAll<HTMLHeadingElement>('h2, h3')).map(
+					(heading) => ({
+						id: heading.id,
+						text: heading.textContent || '',
+						level: heading.tagName.toLowerCase()
+					})
+				);
+
+				window.addEventListener('scroll', onScroll);
+				onScroll();
+			}
 		}
+	}
 
+	onMount(() => {
 		return () => {
 			window.removeEventListener('scroll', onScroll);
 		};
