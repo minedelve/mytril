@@ -10,17 +10,17 @@
 
 	$: {
 		if (open) openSummary = false;
+	}
 
-		if (open) {
-			if (browser && $page.url.pathname) {
-				const pageElement = document.getElementById('page');
-				if (pageElement) {
-					headings = Array.from(pageElement.querySelectorAll('h2, h3')).map((heading) => ({
-						id: heading.id,
-						text: heading.textContent,
-						level: heading.tagName.toLowerCase()
-					}));
-				}
+	$: {
+		if (browser && $page.url.pathname) {
+			const pageElement = document.getElementById('page');
+			if (pageElement) {
+				headings = Array.from(pageElement.querySelectorAll('h2, h3')).map((heading) => ({
+					id: heading.id,
+					text: heading.textContent,
+					level: heading.tagName.toLowerCase()
+				}));
 			}
 		}
 	}
