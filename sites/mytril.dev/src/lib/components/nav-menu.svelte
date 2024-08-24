@@ -112,7 +112,7 @@
 		}
 	}
 
-	.theme a,
+	/* .theme a, */
 	.package a {
 		display: block;
 		border-radius: 6px;
