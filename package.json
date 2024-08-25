@@ -1,7 +1,14 @@
 {
-  "name": "mytril",
-  "version": "0.0.0",
-  "main": "index.js",
+  "name": "mytril-monorepo",
+  "description": "monorepo for mytril project",
+  "version": "0.0.1",
+  "private": true,
   "author": "Nycolaide",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^9.1.5"
+  },
+  "scripts": {
+    "prepare": "husky"
+  }
 }
