@@ -97,6 +97,20 @@
 	}
 
 	onMount(() => {
+		const pageElement = document.getElementById('page');
+
+		if (pageElement) {
+			headings = Array.from(pageElement.querySelectorAll<HTMLHeadingElement>('h2, h3')).map(
+				(heading) => ({
+					id: heading.id,
+					text: heading.textContent || '',
+					level: heading.tagName.toLowerCase()
+				})
+			);
+
+			window.addEventListener('scroll', onScroll);
+			onScroll();
+		}
 		return () => {
 			window.removeEventListener('scroll', onScroll);
 		};

@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import BtnText from './btn-text.svelte';
+	import { onMount } from 'svelte';
 
 	export let open: boolean;
 	let headings: any[] = [];
@@ -24,6 +25,17 @@
 			}
 		}
 	}
+
+	onMount(() => {
+		const pageElement = document.getElementById('page');
+		if (pageElement) {
+			headings = Array.from(pageElement.querySelectorAll('h2, h3')).map((heading) => ({
+				id: heading.id,
+				text: heading.textContent,
+				level: heading.tagName.toLowerCase()
+			}));
+		}
+	});
 </script>
 
 <div class="toolbar">
