@@ -7,7 +7,12 @@ export const navigation = writable([
 	}
 ]);
 
-export const packageLink = writable([]);
+export const packageLink = writable([
+	{
+		name: 'README',
+		path: 'https://github.com/minedelve/mytril/blob/main/README.md'
+	}
+]);
 
 export const social = writable([
 	{
