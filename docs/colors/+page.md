@@ -19,7 +19,9 @@ In Mytril, a color chart is directly integrated in order to offer `:root variabl
     {#each colorKeys as colorKey}
         {#each colors[colorKey] as color}
             {#if color.default === true}
-                <ColorSummary name={colorKey} color={color}/>
+                <li>
+                    <ColorSummary name={colorKey} color={color}/>
+                </li>
             {/if}
         {/each}
     {/each}
