@@ -5,9 +5,10 @@ title: Color toolkit
 <script lang="ts">
     import Color from "./modules/color.svelte";
     import ColorSummary from "./modules/color-summary.svelte";
-    import {colors} from "./color";
+    import { colors } from "./color";
 
     let formatColor = "variable"
+    const colorKeys = Object.keys(colors);
 </script>
 
 # Color Scheme {#color-scheme}
@@ -15,11 +16,13 @@ title: Color toolkit
 In Mytril, a color chart is directly integrated in order to offer `:root variables` directly in your project. It is based on [OpenColor](https://yeun.github.io/open-color/) in order to ensure a good match between the different color charts. These values ​​can be used within your style sheets, your component files and on actual components via the color prop.
 
 <ul>
-{#each colors as color}
-    <li>
-        <ColorSummary color={color}/>
-    </li>
-{/each}
+    {#each colorKeys as colorKey}
+        {#each colors[colorKey] as color}
+            {#if color.default === true}
+                <ColorSummary name={colorKey} color={color}/>
+            {/if}
+        {/each}
+    {/each}
 </ul>
 
 <div class="select-format">
@@ -27,16 +30,14 @@ In Mytril, a color chart is directly integrated in order to offer `:root variabl
     <button on:click={() => formatColor = "hex"} class={formatColor === "hex" && 'active'}>Hex</button>
 </div>
 
-
-{#each colors as color}
-    <h3 id={color.name}>{color.name}</h3>
+{#each colorKeys as colorKey}
+    <h3 id={colorKey}>{colorKey}</h3>
     <section class="wrapper-colors">
-        {#each color.variants as variant}
-            <Color color={variant} format={formatColor}/>
+        {#each colors[colorKey] as color}
+            <Color color={color} format={formatColor}/>
         {/each}
     </section>
 {/each}
-
 
 <style lang="postcss">
 

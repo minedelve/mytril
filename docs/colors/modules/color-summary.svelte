@@ -1,10 +1,11 @@
 <script lang="ts">
+	export let name: string = '';
 	export let color: any = [];
 </script>
 
-<a href={`#${color.name}`} style={`--v-hover: ${color.color}`}>
-	<span style={`background-color: ${color.color}`} />
-	{color.name}
+<a href={`#${name}`} style={`--v-hover: ${color.hex}`}>
+	<span style={`background-color: ${color.hex}`} />
+	{name}
 </a>
 
 <style lang="postcss">

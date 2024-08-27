@@ -3,6 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite dev",
+		"demo": "node scripts/hook.cjs build",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
@@ -43,6 +44,7 @@
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"publint": "^0.1.9",
+		"shelljs": "^0.8.5",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"typescript": "^5.0.0",
