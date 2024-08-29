@@ -5,7 +5,7 @@ title: Color toolkit
 <script lang="ts">
     import Color from "./modules/color.svelte";
     import ColorSummary from "./modules/color-summary.svelte";
-    import { colors } from "./color";
+    import { colors } from "mytril/api";
 
     let formatColor = "variable"
     const colorKeys = Object.keys(colors);
