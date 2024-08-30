@@ -3,10 +3,10 @@
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
-		"demo": "node scripts/hook.cjs build",
-		"build": "vite build && npm run package",
+		"build": "npm run build:styles && vite build && npm run package",
+		"build:styles": "node scripts/preprocess-styles.js",
 		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
+		"package": "svelte-kit sync && svelte-package && publint && node scripts/prepare-package.js",
 		"prepublishOnly": "npm run package",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -24,7 +24,8 @@
 		"./api": {
 			"types": "./dist/api/index.d.ts",
 			"default": "./dist/api/index.js"
-		}
+		},
+		"./styles": "./dist/styles/index.css"
 	},
 	"files": [
 		"dist",
@@ -43,6 +44,7 @@
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/eslint": "^9.6.0",
+		"@types/node": "^22.5.1",
 		"eslint": "^9.0.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0",
