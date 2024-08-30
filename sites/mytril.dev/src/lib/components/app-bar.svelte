@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { capitalize } from 'mytril-tools';
 	import { page } from '$app/stores';
 	import { navigation } from '$lib/store/router';
 	import Icon from '@iconify/svelte';
@@ -8,7 +9,7 @@
 	import SchemeMode from './scheme-mode.svelte';
 	import NavMenu from './nav-menu.svelte';
 	import Social from './social.svelte';
-	import { capitalizeFirstLetter, eventNoScroll } from '$lib/utils';
+	import { eventNoScroll } from '$lib/utils';
 	import Search from './search.svelte';
 	import Versions from './versions.svelte';
 	import VersionsMobile from './versions-mobile.svelte';
@@ -42,7 +43,7 @@
 			<nav>
 				{#each $navigation as navigation}
 					<a href={navigation.path} class:active={$page.url.pathname.includes(navigation.path)}>
-						{capitalizeFirstLetter(navigation.name)}
+						{capitalize(navigation.name)}
 					</a>
 				{/each}
 			</nav>
