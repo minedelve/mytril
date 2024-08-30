@@ -8,7 +8,6 @@ title: Themes toolkit
 
     const colorKeys = Object.keys(themes);
     let mode: string = 'light'
-    console.log('colorKeys', colorKeys);
 </script>
 
 # Themes
