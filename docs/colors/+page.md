@@ -13,7 +13,7 @@ title: Color toolkit
 
 # Color Scheme {#color-scheme}
 
-In Mytril, a color chart is directly integrated in order to offer `:root variables` directly in your project. It is based on [OpenColor](https://yeun.github.io/open-color/) in order to ensure a good match between the different color charts. These values ​​can be used within your style sheets, your component files and on actual components via the color prop.
+In Mytril, a color chart is integrated in order to offer `:root variables` directly in your project. These values ​​can be used within your style sheets, your component files and on actual components via the color prop.
 
 <ul>
     {#each colorKeys as colorKey}
@@ -33,19 +33,20 @@ In Mytril, a color chart is directly integrated in order to offer `:root variabl
 </div>
 
 {#each colorKeys as colorKey}
-    <h3 id={colorKey}>{colorKey}</h3>
-    <section class="wrapper-colors">
-        {#each colors[colorKey] as color}
-            <Color color={color} format={formatColor}/>
-        {/each}
-    </section>
+
+<h3 id={colorKey}>{colorKey}</h3>
+<section class="wrapper-colors">
+{#each colors[colorKey] as color}
+<Color color={color} format={formatColor}/>
+{/each}
+</section>
 {/each}
 
 <style lang="postcss">
 
 ul {
-    height: 280px;
-    column-count: 2;
+    height: 300px;
+    column-count: 3;
     column-gap: 4px;
     column-fill: auto;
 
@@ -118,11 +119,11 @@ ul {
         gap: 0.5rem;
 
        @media (min-width: 544px) {
-            grid-template-columns: repeat(4, calc(100% / 4 - 0.5rem));
+            grid-template-columns: repeat(5, calc(100% / 5 - 0.5rem));
        }
 
         @media (min-width: 748px) {
-            grid-template-columns: repeat(5, calc((100% / 5 - 0.5rem)));
+            grid-template-columns: repeat(6, calc((100% / 6 - 0.5rem)));
        }
     }
 </style>

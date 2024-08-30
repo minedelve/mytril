@@ -2,6 +2,15 @@
 	import { copyToClipboard } from '$lib/utils';
 	export let color: any = [];
 	export let format: string = '';
+	let display: boolean = false;
+
+	const handleClick = () => {
+		display = true;
+		copyToClipboard(color[format === 'variable' ? 'css' : 'hex']);
+		setTimeout(() => {
+			display = false;
+		}, 1000);
+	};
 </script>
 
 <div class="card-color">
@@ -11,8 +20,12 @@
 		role="button"
 		tabindex="0"
 		style={`background-color:${color?.hex}`}
-		on:click={() => copyToClipboard(color[format === 'variable' ? 'css' : 'hex'])}
-	/>
+		on:click={() => handleClick()}
+	>
+		{#if display}
+			<p>Copied !</p>
+		{/if}
+	</div>
 	<div class="color-info">
 		<div class="color-name">{color?.name}</div>
 		<input
@@ -38,6 +51,9 @@
 		}
 
 		& > .color-bg {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			width: 50px;
 			height: 50px;
 			float: left;
@@ -53,6 +69,16 @@
 				&:hover {
 					transform: scale(0.95);
 				}
+			}
+
+			& p {
+				background-color: var(--c-brand);
+				color: var(--c-text-1);
+				padding: 4px 5px;
+				width: max-content;
+				border-radius: 9999px;
+				font-size: 0.7rem;
+				margin: 0;
 			}
 		}
 
@@ -82,6 +108,7 @@
 				font-family: 'Roboto Mono', monospace;
 				background-color: transparent;
 				opacity: 0.6;
+				font-size: 0.75rem;
 
 				&:focus,
 				&:focus-visible {
