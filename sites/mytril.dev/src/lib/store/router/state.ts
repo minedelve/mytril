@@ -48,6 +48,10 @@ export const docs = writable([
 			{
 				name: 'colors',
 				path: '/docs/colors'
+			},
+			{
+				name: 'themes',
+				path: '/docs/themes'
 			}
 		]
 	},
