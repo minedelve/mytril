@@ -4,7 +4,7 @@ title: Themes toolkit
 
 <script lang="ts">
     import ColorRow from "./modules/color-row.svelte";
-    import { themes, colorScheme } from "./themes.js"
+    import { themes, colorScheme } from "mytril/api";
 
     const colorKeys = Object.keys(themes);
     let mode: string = 'light'

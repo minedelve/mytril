@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - mytril
 
+- nothing
+
+## [0.0.2] - mytril - 2024-08-30
+
 ### Added
 
 - Add api `themes` on `mytril/api` for access all thèmes on mytril.
@@ -15,7 +19,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Change palette `colors` list.
-
 
 ## [0.0.1] - mytril - 2024-08-29
 
