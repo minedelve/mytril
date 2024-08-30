@@ -11,6 +11,10 @@ export const packageLink = writable([
 	{
 		name: 'README',
 		path: 'https://github.com/minedelve/mytril/blob/main/README.md'
+	},
+	{
+		name: 'CHANGELOG',
+		path: 'https://github.com/minedelve/mytril/blob/main/CHANGELOG.md'
 	}
 ]);
 
@@ -36,6 +40,10 @@ export const docs = writable([
 			{
 				name: 'introduction',
 				path: '/docs/introduction'
+			},
+			{
+				name: 'installation',
+				path: '/docs/installation'
 			},
 			{
 				name: 'colors',

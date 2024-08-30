@@ -88,7 +88,7 @@
 			left: 20px;
 			right: 20px;
 			top: 60px;
-			max-height: calc(100vh - 86px);
+			max-height: calc(100vh - 200px);
 			overflow: hidden;
 			overflow-y: auto;
 			background-color: var(--c-bg);
