@@ -19,78 +19,78 @@ export const themes = {
 		{
 			name: 'text head',
 			css: '--c-text-head',
-			light: '--c-gray-10',
-			dark: '--c-gray-0'
+			light: 'var(--c-gray-10)',
+			dark: 'var(--c-gray-0)'
 		},
 		{
 			name: 'text',
 			css: '--c-text',
-			light: '--c-gray-7',
-			dark: '--c-gray-3'
+			light: 'var(--c-gray-7)',
+			dark: 'var(--c-gray-3)'
 		},
 		{
 			name: 'text soft',
 			css: '--c-text-soft',
-			light: '--c-gray-5',
-			dark: '--c-gray-4'
+			light: 'var(--c-gray-5)',
+			dark: 'var(--c-gray-4)'
 		},
 		{
 			name: 'text mute',
 			css: '--c-text-mute',
-			light: '--c-gray-4',
-			dark: '--c-gray-5'
+			light: 'var(--c-gray-4)',
+			dark: 'var(--c-gray-5)'
 		},
 		{
 			name: 'text code',
 			css: '--c-text-code',
-			light: '--c-gray-8',
-			dark: '--c-gray-3'
+			light: 'var(--c-gray-8)',
+			dark: 'var(--c-gray-3)'
 		}
 	],
 	background: [
 		{
 			name: 'bg',
 			css: '--c-bg',
-			light: '--c-neutral-0',
-			dark: '--c-neutral-10'
+			light: 'var(--c-neutral-0)',
+			dark: 'var(--c-neutral-10)'
 		},
 		{
 			name: 'bg soft',
 			css: '--c-bg-soft',
-			light: '--c-neutral-1',
-			dark: '--c-neutral-9'
+			light: 'var(--c-neutral-1)',
+			dark: 'var(--c-neutral-9)'
 		},
 		{
 			name: 'bg mute',
 			css: '--c-bg-mute',
-			light: '--c-neutral-2',
-			dark: '--c-neutral-8'
+			light: 'var(--c-neutral-2)',
+			dark: 'var(--c-neutral-8)'
 		}
 	],
 	state: [
 		{
 			name: 'info',
 			css: '--c-info',
-			light: '--c-blue-5',
-			dark: '--c-blue-4'
+			light: 'var(--c-blue-5)',
+			dark: 'var(--c-blue-4)'
 		},
 		{
 			name: 'success',
 			css: '--c-success',
-			light: '--c-green-5',
-			dark: '--c-green-4'
+			light: 'var(--c-green-5)',
+			dark: 'var(--c-green-4)'
 		},
 		{
 			name: 'error',
 			css: '--c-error',
-			light: '--c-red-5',
-			dark: '--c-red-4'
+			light: 'var(--c-red-5)',
+			dark: 'var(--c-red-4)'
 		},
 		{
 			name: 'warning',
 			css: '--c-warning',
-			light: '--c-yellow-5',
-			dark: '--c-yellow-4'
+			light: 'var(--c-yellow-5)',
+			dark: 'var(--c-yellow-4)'
 		}
 	]
 };

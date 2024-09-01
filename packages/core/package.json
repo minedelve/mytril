@@ -25,12 +25,14 @@
 			"types": "./dist/api/index.d.ts",
 			"default": "./dist/api/index.js"
 		},
+		"./vite": {
+			"types": "./dist/entry-vite.d.ts",
+			"default": "./dist/entry-vite.js"
+		},
 		"./styles": "./dist/styles/index.css"
 	},
 	"files": [
 		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*",
 		"README.md",
 		"LICENSE"
 	],

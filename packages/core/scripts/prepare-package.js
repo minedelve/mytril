@@ -17,7 +17,7 @@ fs.copyFile('./@colors.css', './dist/styles/@colors.css', (err) => {
 	if (err) throw err;
 	console.log('File @colors.css was copied on dist !');
 });
-fs.copyFile('./@themes.css', './dist/styles/@themes.css', (err) => {
-	if (err) throw err;
-	console.log('File @themes.css was copied on dist !');
-});
+// fs.copyFile('./@local.css', './dist/styles/@local.css', (err) => {
+// 	if (err) throw err;
+// 	console.log('File @local.css was copied on dist !');
+// });
