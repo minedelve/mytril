@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - mytril
 
-- nothing
+- nothing 1
 
 ## [0.0.2] - mytril - 2024-08-30
 
