@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - mytril
 
-- nothing
+### Added
+
+- Add generator `mytril.config.js` for edit config in local project.
+- Add compile themes for generate css.
+- Add plugin `mytril/plugin-vite` for vite.config.js on local project.
+
+### Changed
+
+- Update api themes, for var() color has load correctly.
+- Update preprocess for prepare package.
+- Change logique for generate theme.
 
 ## [0.0.2] - mytril - 2024-08-30
 

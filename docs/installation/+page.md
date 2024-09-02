@@ -1,5 +1,6 @@
 ---
-title: Installation
+title: Install the Svelte Component Library
+description: Discover Mytril, a Svelte Component library, and follow our  guide to install it. Perfect for developers looking to streamline their Svelte projects with efficient components.
 ---
 
 <script lang="ts">
@@ -38,7 +39,7 @@ Create a `./src/app.css` file and add the **mytril/styles**.
 
 ```css
 /** app.css */
-@import 'mytril/styles';
+@import "mytril/styles";
 ```
 
 ## Import the CSS file
