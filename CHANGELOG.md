@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- text
+
+
+## [0.0.3] - mytril - 2024-09-02
+
+### Added
+
 - Add generator `mytril.config.js` for edit config in local project.
 - Add compile themes for generate css.
 - Add plugin `mytril/plugin-vite` for vite.config.js on local project.
