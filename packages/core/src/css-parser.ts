@@ -1,6 +1,7 @@
 import path from 'path';
 import fsPromises from 'fs/promises';
 
+import { colors as palettes } from '../src/api/colors.js';
 import { themes } from './api/themes.js';
 import { merge } from './utils/merge.js';
 import { formatPresetConfig } from './utils/format-preset.js';
@@ -45,5 +46,14 @@ export function convertJStoCSS(externalConfig: Configuration) {
 		css += `}\n`;
 	}
 
-	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/styles/`, '@local.css'), css);
+	// colors palettes
+	css += ':root {\n';
+	for (const style in palettes) {
+		for (const [, values] of Object.entries(palettes[style] as ObjectKeyValueString[])) {
+			css += `${values.css}: ${values.hex};\n`;
+		}
+	}
+	css += '}\n';
+
+	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'index.style.css'), css);
 }
