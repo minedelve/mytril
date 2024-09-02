@@ -4,7 +4,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "npm run build:styles && vite build && npm run package",
-		"build:styles": "node scripts/preprocess-styles.js",
+		"build:styles": "node scripts/pre-build.js",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint && node scripts/prepare-package.js",
 		"prepublishOnly": "npm run package",
@@ -24,6 +24,10 @@
 		"./api": {
 			"types": "./dist/api/index.d.ts",
 			"default": "./dist/api/index.js"
+		},
+		"./vite": {
+			"types": "./dist/compile.d.ts",
+			"default": "./dist/compile.js"
 		},
 		"./styles": "./dist/styles/index.css"
 	},
