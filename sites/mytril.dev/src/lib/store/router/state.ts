@@ -44,7 +44,12 @@ export const docs = writable([
 			{
 				name: 'installation',
 				path: '/docs/installation'
-			},
+			}
+		]
+	},
+	{
+		section: 'Theme and styles',
+		routes: [
 			{
 				name: 'colors',
 				path: '/docs/colors'
