@@ -5,12 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - mytril
+## [0.0.5] - mytril - 2024-09-02
 
-### Added
+### Changed
 
-- text
+- Add eslintignore in mytril project
+- Optimise size package
+- Reduce size 359kB to 33.5kB (147 files to 27 files)
 
+## [0.0.4] - mytril - 2024-09-02
+
+### Changed
+
+- Change preprocess for generate style mytril
+- Delete legacy code
+- Update plugin `mytril/plugin-vite` for create `mytril.config.js`.
 
 ## [0.0.3] - mytril - 2024-09-02
 
