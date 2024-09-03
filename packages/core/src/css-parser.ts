@@ -1,13 +1,15 @@
 import path from 'path';
 import fsPromises from 'fs/promises';
 
-import { colors as palettes } from '../src/api/colors.js';
+import { colors as colorsApi } from '../src/api/colors.js';
 import { themes } from './api/themes.js';
 import { merge } from './utils/merge.js';
 import { formatPresetConfig } from './utils/format-preset.js';
 import type { Configuration, ObjectKeyValueString } from './types/index.js';
 
 export function convertJStoCSS(externalConfig: Configuration) {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const palettes: any = colorsApi;
 	const defaultTheme = externalConfig?.theme?.defaultTheme || 'light';
 	let colors = formatPresetConfig(themes);
 
@@ -49,8 +51,10 @@ export function convertJStoCSS(externalConfig: Configuration) {
 	// colors palettes
 	css += ':root {\n';
 	for (const style in palettes) {
-		for (const [, values] of Object.entries(palettes[style] as ObjectKeyValueString[])) {
-			css += `${values.css}: ${values.hex};\n`;
+		if (Object.hasOwnProperty.call(palettes, style)) {
+			for (const values of palettes[style] as ObjectKeyValueString[]) {
+				css += `${values.css}: ${values.hex};\n`;
+			}
 		}
 	}
 	css += '}\n';

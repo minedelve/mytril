@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { defineConfig } from 'vite';
 import path from 'path';
 import fsPromises from 'fs/promises';
 import { loadConfig } from './utils/load-files.js';
@@ -7,6 +9,11 @@ import { convertJStoCSS } from './css-parser.js';
 export function mytril() {
 	return {
 		name: 'mytril/plugin-vite',
+		config: () => ({
+			define: {
+				__MY_PLUGIN_PARAM__: JSON.stringify('value-define')
+			}
+		}),
 		async configResolved() {
 			const config = await loadConfig();
 			await convertJStoCSS(config);
@@ -37,6 +44,11 @@ export function mytril() {
 					String(filePath).includes('mytril/dist/styles/index.css')
 				) {
 					const config = await loadConfig();
+
+					server.config.define['__MY_PLUGIN_CONFIG__'] = JSON.stringify(
+						config?.theme?.defaultTheme || 'light'
+					);
+
 					await convertJStoCSS(config);
 				}
 			});

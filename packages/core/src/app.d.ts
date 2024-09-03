@@ -10,4 +10,6 @@ declare global {
 	}
 }
 
+declare const __MY_PLUGIN_PARAM__: string;
+
 export {};
