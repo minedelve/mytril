@@ -48,15 +48,23 @@ export const docs = writable([
 		]
 	},
 	{
-		section: 'Theme and styles',
+		section: 'Customization',
 		routes: [
+			{
+				name: 'themes',
+				path: '/docs/themes'
+			},
+			{
+				name: 'theme switcher',
+				path: '/docs/theme-switcher'
+			},
 			{
 				name: 'colors',
 				path: '/docs/colors'
 			},
 			{
-				name: 'themes',
-				path: '/docs/themes'
+				name: 'breakpoints',
+				path: '/docs/breakpoints'
 			}
 		]
 	},

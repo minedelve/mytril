@@ -105,3 +105,13 @@
 	font-size: 16px;
 	line-height: 1.7;
 }
+
+.doc table {
+	width: 100%;
+	border: 1px solid var(--c-divider);
+	border-radius: 0.5rem;
+}
+
+.doc thead th {
+	border-bottom: 1px solid var(--c-divider);
+}
