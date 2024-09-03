@@ -11,7 +11,7 @@ export function mytril() {
 		name: 'mytril/plugin-vite',
 		config: () => ({
 			define: {
-				__MY_PLUGIN_PARAM__: JSON.stringify('value-define')
+				__MYTRIL_PLUGIN_PARAM__: JSON.stringify('value-define')
 			}
 		}),
 		async configResolved() {
@@ -45,7 +45,7 @@ export function mytril() {
 				) {
 					const config = await loadConfig();
 
-					server.config.define['__MY_PLUGIN_CONFIG__'] = JSON.stringify(
+					server.config.define['__MYTRIL_PLUGIN_PARAM__'] = JSON.stringify(
 						config?.theme?.defaultTheme || 'light'
 					);
 
