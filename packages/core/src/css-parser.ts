@@ -59,7 +59,7 @@ export function convertJStoCSS(externalConfig: Configuration) {
 	}
 	css += '}\n';
 
-	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'index.style.css'), css);
+	console.log('CSS', css);
 
-	return;
+	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'index.style.css'), css);
 }

@@ -1,21 +1,22 @@
 <script lang="ts">
     import {useTheme} from "../store/index.js"
+    
 
-    $: {
-        console.log('useTheme test', $useTheme, __MYTRIL_PLUGIN_PARAM__)
-        if (typeof __MYTRIL_PLUGIN_PARAM__ !== 'undefined') {
-            useTheme.set(__MYTRIL_PLUGIN_PARAM__);
-        }
+    // $: {
+    //     console.log('useTheme test', $useTheme, __MYTRIL_PLUGIN_PARAM__)
+    //     if (typeof __MYTRIL_PLUGIN_PARAM__ !== 'undefined') {
+    //         useTheme.set(__MYTRIL_PLUGIN_PARAM__);
+    //     }
 
-        if (import.meta.hot) {
-	import.meta.hot.accept((newModule) => {
-		console.log('esdks', newModule);
-		if (newModule) {
-			// newModule is undefined when SyntaxError happened
-			console.log('updated: count is now ', newModule.__MYTRIL_PLUGIN_PARAM__);
-		}
-	});
-}
+    //     if (import.meta.hot) {
+	// import.meta.hot.accept((newModule) => {
+	// 	console.log('esdks', newModule);
+	// 	if (newModule) {
+	// 		// newModule is undefined when SyntaxError happened
+	// 		console.log('updated: count is now ', newModule.__MYTRIL_PLUGIN_PARAM__);
+	// 	}
+	// });
+// }
 
         // if (import.meta.hot) {
         //     import.meta.hot.accept(({ module }) => {
@@ -35,10 +36,11 @@
         //     }))
         // }
     
-    }
+    // }
 </script>
 
 
 <div class="test-mytril">
+    
     <slot/>
 </div>
