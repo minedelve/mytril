@@ -45,11 +45,18 @@ export function mytril() {
 				) {
 					const config = await loadConfig();
 
+					await convertJStoCSS(config);
+
 					server.config.define['__MYTRIL_PLUGIN_PARAM__'] = JSON.stringify(
 						config?.theme?.defaultTheme || 'light'
 					);
 
-					await convertJStoCSS(config);
+					if (server.ws) {
+						server.ws.send({
+							type: 'full-reload',
+							path: '*'
+						});
+					}
 				}
 			});
 		}
