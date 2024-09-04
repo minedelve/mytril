@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { BROWSER } from 'esm-env';
 
-const value = 'light';
+const value = 'default';
 
 export const useTheme = writable(value);
 let oldTheme = value;
