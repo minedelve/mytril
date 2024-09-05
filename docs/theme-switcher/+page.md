@@ -1,97 +1,85 @@
 ---
-title: Theme changer
+title: Theme swicther
 ---
+<script lang="ts">
+    import Note from "$lib/components/note.svelte";
+</script>
+
 
 # Change theme on your application {#change-theme}
 
-Here is a complete example of an integration to manage the display of themes in your application. Thanks to the theme manager integrated into Mytril you can create an action button which will select the right theme following your user's selection.
+With Mytril you can dynamically change the theme of your application. The theme manager integrated into Mytril, you can create an action button which will select the right theme following your user's selection.
 
-This example is based on the following principles:
+<Note>
 
-- Store SvelteKit
-- prefers-color-scheme
-- localStorage
+Mytril bases this on its **store** in order to keep it in memory for the entire duration of the user's navigation. It is recommended to save this data in a `cookie` or in `localstorage` to be able to display the correct theme as soon as the user returns to your application.
 
-You are free to adapt it to your application.
+</Note>
 
-## Set up {#set-up}
+### useTheme
 
-In the `app.html` file, add the following code:
+- Return: `string`
+- Default: `'default'
 
-```html
-<script>
-	const colorScheme = localStorage.getItem('nameKey');
-	if (colorScheme) document.documentElement.classList.add(colorScheme);
+Returns the name of the theme to use in your application. This value is available in all svelte components. By default, the theme used corresponds to that indicated in `mytril.config.js` on the `defaultTheme` property.
+
+```svelte
+<script lang="ts">
+	import { useTheme } from 'mytril';
 </script>
+<p>{$useTheme}</p>
+<!-- output: 'default' -->
 ```
 
-You must add it to this location, it ensures that it retrieves the name of the theme selected by your user.
+### setTheme
+
+- Params: `string`
+- Required
+
+Changes the overall theme of the application. This adds a class having the name of the selected theme to the `<html>` element of the DOM.
+
+```svelte
+<script lang="ts">
+	import { setTheme } from 'mytril';
+</script>
+<button on:click={() => setTheme('light')}> Light </button>
+```
+
+## Example with backup
+
+Here is an example that takes into account saving in localstorage and defining the theme with the `prefers-color-scheme`.
 
 ```html
 <!-- app.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<!--add at this line -->
+		<script>
+			const colorScheme = localStorage.getItem("theme-storage");
+			if (colorScheme) document.documentElement.classList.add(colorScheme);
+		</script>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
 ```
 
-In your store, create a `changeTheme.(js|ts)` file, and copy the following code:
-
-```javascript
-// changeTheme.(js|ts)
-import { browser } from '$app/environment';
-import { writable } from 'svelte/store';
-
-const storage = browser ? localStorage : null;
-const value = storage == null ? void 0 : storage.getItem('nameKey');
-
-export const colorScheme = writable(
-	value
-		? value
-		: browser
-			? window.matchMedia('(prefers-color-scheme: dark)').matches
-				? 'dark'
-				: 'light'
-			: 'light'
-);
-
-colorScheme.subscribe(($theme: string) => {
-	if (!browser) return;
-	document.documentElement.classList.remove('light', 'dark');
-	document.documentElement.classList.add($theme);
-});
-```
-
-In the store, you manage the case of displaying the light and dark theme, depending on the value selected by the user or if no value is selected, the state of **prefers-color-scheme**.
-
-Then create a component in your application and add the code below which will display a toggle button to change between light and dark.
-
 ```svelte
+<!--+(layout | page | component).svelte  -->
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { colorScheme, setColorScheme } from '$lib/store/app';
+	import { useTheme, setTheme } from 'mytril';
 
-	function handleScheme(scheme: string) {
-		setColorScheme(scheme);
-		localStorage.setItem('nameKey', scheme);
+	function toggleTheme(type: string) {
+		const scheme = type === 'dark' ? 'light' : 'dark'
+		localStorage.setItem('theme-storage', scheme);
+		setTheme(scheme);
 	}
 </script>
 
-<button on:click={() => handleScheme($colorScheme === 'dark' ? 'light' : 'dark')}>
-	{#if browser}
-		{#if $colorScheme === 'dark'}
-			dark
-		{:else}
-			light
-		{/if}
-	{/if}
-</button>
+<button on:click={() = toggleTheme($useTheme)}>Toggle Theme</button>
 ```
-
-It is important to take into account that this example only takes into account the **dark** and **light** themes, you are free to add them in the code in order to manage other themes. **Happy customization!**
