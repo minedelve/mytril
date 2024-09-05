@@ -22,7 +22,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color: var(--c-text-2);
+		color: var(--c-text-soft);
 		transition: color 0.5s;
 		width: 36px;
 		height: 36px;
@@ -33,7 +33,7 @@
 			width: 24px;
 		}
 		&:hover {
-			color: var(--c-text-1);
+			color: var(--c-text);
 			transition: color 0.25s;
 		}
 	}

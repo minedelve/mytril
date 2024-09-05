@@ -77,8 +77,8 @@ ul {
         margin-top: 0.5rem;
 
         button {
-            border: 1px solid var(--c-text-1);
-            color: var(--c-text-1);
+            border: 1px solid var(--c-text);
+            color: var(--c-text);
             border-radius: 1rem;
             padding: 0.25rem 1rem;
             background-color: transparent;

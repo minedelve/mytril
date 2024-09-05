@@ -57,7 +57,7 @@
 		}
 	}
 	.welcome .container span {
-		color: var(--c-brand);
+		color: var(--c-primary);
 	}
 
 	.welcome .container p {
@@ -65,7 +65,7 @@
 		margin: 18px 0 30px;
 		max-width: 960px;
 		line-height: 1.5;
-		color: var(--c-text-2);
+		color: var(--c-text-soft);
 		transition: color 0.5s;
 
 		@media (min-width: 576px) {
@@ -96,7 +96,7 @@
 			background-color 0.5s,
 			color 0.5s;
 		background-color: var(--c-bg-soft);
-		color: var(--c-text-2);
+		color: var(--c-text-soft);
 		justify-content: center;
 		text-decoration: none;
 
@@ -105,7 +105,7 @@
 		}
 
 		&.get-started {
-			background-color: var(--c-brand);
+			background-color: var(--c-primary);
 			color: white;
 		}
 	}

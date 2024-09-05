@@ -39,7 +39,7 @@
 
 		&:hover {
 			a {
-				color: var(--c-brand);
+				color: var(--c-primary);
 			}
 		}
 	}

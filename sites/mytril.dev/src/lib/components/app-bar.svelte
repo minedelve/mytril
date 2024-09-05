@@ -103,7 +103,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			color: var(--c-text-2);
+			color: var(--c-text-soft);
 			transition: color 0.5s;
 			width: 36px;
 			height: 36px;
@@ -119,7 +119,7 @@
 			}
 
 			&:hover {
-				color: var(--c-text-1);
+				color: var(--c-text);
 				transition: color 0.25s;
 			}
 		}
@@ -130,7 +130,7 @@
 			height: var(--nav-height);
 			transition: opacity 0.25s;
 			text-decoration: inherit;
-			color: var(--c-text-1);
+			color: var(--c-text);
 
 			& img {
 				position: relative;
@@ -199,14 +199,14 @@
 				line-height: calc(var(--nav-height) - 1px);
 				font-size: 13px;
 				font-weight: 500;
-				color: var(--c-text-1);
+				color: var(--c-text);
 				transition: color 0.25s;
 				white-space: nowrap;
 				text-decoration: inherit;
 
 				&:hover,
 				&.active {
-					color: var(--c-brand);
+					color: var(--c-primary);
 				}
 			}
 		}

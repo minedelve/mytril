@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { docs } from '$lib/store/router';
 	import Icon from '@iconify/svelte';
+	import { capitalize } from 'mytril-tools';
 	import { onMount } from 'svelte';
 
 	let open: boolean = false;
@@ -100,7 +101,7 @@
 								>
 									<div>
 										<Icon icon="mdi:file-outline" />
-										<div class="result-content">{section.name}</div>
+										<div class="result-content">{capitalize(section.name)}</div>
 										<div class="result-action">
 											<Icon icon="tdesign:enter" />
 										</div>
@@ -133,7 +134,7 @@
 		align-items: center;
 		background-color: transparent;
 		border: 0;
-		color: var(--c-text-2);
+		color: var(--c-text-soft);
 		display: flex;
 		height: 36px;
 		justify-content: center;
@@ -153,7 +154,7 @@
 
 		&:hover,
 		&.active {
-			color: var(--c-brand);
+			color: var(--c-primary);
 		}
 
 		@media (min-width: 768px) {
@@ -215,7 +216,7 @@
 
 				& form {
 					background-color: var(--c-bg-mute);
-					border: 1px solid var(--c-brand);
+					border: 1px solid var(--c-primary);
 					align-items: center;
 					background: transparent;
 					border-radius: 4px;
@@ -229,7 +230,7 @@
 
 					& :global(svg) {
 						align-items: center;
-						color: var(--c-brand);
+						color: var(--c-primary);
 						display: flex;
 						justify-content: center;
 						height: 24px;
@@ -240,7 +241,7 @@
 						appearance: none;
 						background: transparent;
 						border: 0;
-						color: var(--c-text-1);
+						color: var(--c-text);
 						flex: 1;
 						font: inherit;
 						font-size: 1.2em;
@@ -252,7 +253,7 @@
 						border: 0;
 						padding: 0;
 						line-height: inherit;
-						color: inherit;
+						//color: inherit;
 					}
 				}
 			}
@@ -276,6 +277,7 @@
 						font-size: 0.9em;
 						margin: 0;
 						user-select: none;
+						color: var(--c-text-soft);
 					}
 				}
 
@@ -302,8 +304,8 @@
 
 							&:hover,
 							&.focused {
-								background: var(--c-brand);
-								color: var(--c-text-1);
+								background: var(--c-primary);
+								color: var(--c-text);
 							}
 
 							& > div {
@@ -347,6 +349,7 @@
 			& footer {
 				background: var(--c-bg-mute);
 				border-top: var(--border);
+				color: var(--c-text-soft);
 				align-items: center;
 				font-size: 0.8rem;
 				border-radius: 0 0 8px 8px;

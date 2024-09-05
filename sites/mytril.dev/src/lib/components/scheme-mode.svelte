@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { colorScheme, setColorScheme } from '$lib/store/app';
+	import { useTheme, setTheme } from 'mytril';
 	import Icon from '@iconify/svelte';
 
 	function handleScheme(scheme: string) {
-		setColorScheme(scheme);
+		setTheme(scheme);
 		localStorage.setItem('color-scheme', scheme);
 	}
 </script>
 
-<button on:click={() => handleScheme($colorScheme === 'dark' ? 'light' : 'dark')}>
+<button on:click={() => handleScheme($useTheme !== 'dark' ? 'dark' : 'light')}>
 	{#if browser}
-		{#if $colorScheme === 'dark'}
+		{#if $useTheme === 'dark'}
 			<Icon icon="ph:sun-bold" class="darkmode-icon" />
 		{:else}
 			<Icon icon="material-symbols:dark-mode" class="darkmode-icon" />
@@ -25,7 +25,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		color: var(--c-text-2);
+		color: var(--c-text-soft);
 		transition: color 0.5s;
 		height: 36px;
 		border: 0;
@@ -33,7 +33,7 @@
 		cursor: pointer;
 
 		&:hover {
-			color: var(--c-text-1);
+			color: var(--c-text);
 			transition: color 0.25s;
 		}
 	}

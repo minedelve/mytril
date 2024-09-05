@@ -78,7 +78,7 @@
 	width: 5px;
 	height: 5px;
 	border-radius: 50%;
-	background-color: var(--c-text-3);
+	background-color: var(--c-text-mute);
 	transition: background-color 0.5s;
 	left: -1.25rem;
 	top: 0.75rem;

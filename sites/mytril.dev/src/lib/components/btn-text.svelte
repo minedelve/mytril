@@ -15,7 +15,7 @@
 		font-size: 12px;
 		font-weight: 500;
 		line-height: 24px;
-		color: var(--c-text-2);
+		color: var(--c-text-soft);
 		transition: color 0.5s;
 		position: relative;
 		display: flex;
@@ -28,7 +28,7 @@
 		background-image: none;
 
 		&:hover {
-			color: var(--c-text-1);
+			color: var(--c-text);
 			transition: color 0.25s;
 		}
 	}
