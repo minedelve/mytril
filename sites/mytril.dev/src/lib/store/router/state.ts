@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export const navigation = writable([
 	{
 		name: 'docs',
-		path: '/docs'
+		path: '/docs/introduction'
 	}
 ]);
 

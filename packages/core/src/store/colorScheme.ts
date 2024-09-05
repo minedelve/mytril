@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { BROWSER } from 'esm-env';
 
-const value = 'default';
+const value = '';
 
 export const useTheme = writable(value);
 let oldTheme = value;
@@ -16,6 +16,7 @@ export function setTheme(theme: string) {
 
 useTheme.subscribe(($theme: string) => {
 	if (!BROWSER) return;
-	document.documentElement.classList.remove(oldTheme);
-	document.documentElement.classList.add($theme);
+	console.log('$theme', $theme);
+	if (oldTheme !== '') document.documentElement.classList.remove(oldTheme);
+	if ($theme !== '') document.documentElement.classList.add($theme);
 });

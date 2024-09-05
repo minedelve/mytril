@@ -31,11 +31,7 @@ export function mytril() {
 		async configureServer(server: any) {
 			server.watcher.add('./');
 			server.watcher.on('change', async (filePath: string) => {
-				if (
-					String(filePath).includes('mytril.config.js') ||
-					String(filePath).includes('mytril/packages/core/dist/styles/index.css') ||
-					String(filePath).includes('mytril/dist/styles/index.css')
-				) {
+				if (String(filePath).includes('mytril.config.js')) {
 					const config = await loadConfig();
 					await convertJStoCSS(config);
 				}
