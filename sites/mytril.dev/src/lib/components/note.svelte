@@ -1,4 +1,3 @@
-@@ -0,0 +1,28 @@
 <blockquote>
 	<p><slot /></p>
 </blockquote>
