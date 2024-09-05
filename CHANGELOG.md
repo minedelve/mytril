@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- css-compile crash because call bad path colors api.
+- css-parser crash because call bad path colors api.
 
 
 ## [0.0.6] - mytril - 2024-09-05
