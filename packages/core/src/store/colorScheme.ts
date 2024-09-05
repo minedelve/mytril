@@ -16,7 +16,6 @@ export function setTheme(theme: string) {
 
 useTheme.subscribe(($theme: string) => {
 	if (!BROWSER) return;
-	console.log('$theme', $theme);
 	if (oldTheme !== '') document.documentElement.classList.remove(oldTheme);
 	if ($theme !== '') document.documentElement.classList.add($theme);
 });
