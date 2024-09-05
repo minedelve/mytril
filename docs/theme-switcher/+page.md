@@ -45,6 +45,25 @@ Changes the overall theme of the application. This adds a class having the name 
 <button on:click={() => setTheme('light')}> Light </button>
 ```
 
+### getLocalTheme
+
+- Params: `key: string;` `colorScheme: boolean`
+- Required `key`
+
+This function allows you to retrieve the value saved in the application's localstorage and stored in the `mytril` store. There is an additional option based on  `prefers-color-scheme` to set a **light** or **dark** theme by default
+
+```svelte
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { getLocalTheme } from 'mytril';
+
+	onMount(() => {
+		getLocalTheme('key-local', true)
+		// set on local storage (dark | light)
+	})
+</script>
+```
+
 ## Example with backup
 
 Here is an example that takes into account saving in localstorage and defining the theme with the `prefers-color-scheme`.
@@ -82,4 +101,16 @@ Here is an example that takes into account saving in localstorage and defining t
 </script>
 
 <button on:click={() = toggleTheme($useTheme)}>Toggle Theme</button>
+```
+
+```svelte
+<!--+(layout | page).svelte  -->
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import { getLocalTheme } from 'mytril';
+
+	onMount(() => {
+		getLocalTheme('key-local', true)
+	})
+</script>
 ```
