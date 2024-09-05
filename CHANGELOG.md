@@ -58,6 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Change palette `colors` list.
 
+
 ## [0.0.1] - mytril - 2024-08-29
 
 ### Added
