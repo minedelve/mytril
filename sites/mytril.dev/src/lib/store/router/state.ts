@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 export const navigation = writable([
 	{
 		name: 'docs',
-		path: '/docs'
+		path: '/docs/introduction'
 	}
 ]);
 
@@ -61,11 +61,11 @@ export const docs = writable([
 			{
 				name: 'colors',
 				path: '/docs/colors'
-			},
-			{
-				name: 'breakpoints',
-				path: '/docs/breakpoints'
 			}
+			// {
+			// 	name: 'breakpoints',
+			// 	path: '/docs/breakpoints'
+			// }
 		]
 	},
 	{
