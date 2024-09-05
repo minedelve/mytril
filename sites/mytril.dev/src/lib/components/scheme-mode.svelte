@@ -30,6 +30,7 @@
 		height: 36px;
 		border: 0;
 		background-color: transparent;
+		cursor: pointer;
 
 		&:hover {
 			color: var(--c-text-1);

@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { docs } from '$lib/store/router';
-	import { capitalizeFirstLetter, eventNoScroll } from '$lib/utils';
+	import { capitalize } from 'mytril-tools';
+	import { eventNoScroll } from '$lib/utils';
 
 	export let open: boolean = false;
 	$: innerWidth = 0;
@@ -27,14 +28,14 @@
 		{#each $docs as docs}
 			<div class="grip">
 				<section>
-					<h2>{capitalizeFirstLetter(docs.section)}</h2>
+					<h2>{capitalize(docs.section)}</h2>
 					{#each docs.routes as link}
 						<a
 							href={link.path}
 							on:click={() => (open = false)}
 							class:active={$page.url.pathname.includes(link.path)}
 						>
-							{capitalizeFirstLetter(link.name)}
+							{capitalize(link.name)}
 						</a>
 					{/each}
 				</section>

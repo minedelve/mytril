@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { navigation, packageLink } from '$lib/store/router';
-	import { capitalizeFirstLetter } from '$lib/utils';
+	import { capitalize } from 'mytril-tools';
 	import Icon from '@iconify/svelte';
 	import SchemeMode from './scheme-mode.svelte';
 	import Social from './social.svelte';
@@ -18,7 +18,7 @@
 	<div class="container">
 		<nav>
 			<a href={'/'} on:click={() => (open = false)} class:active={$page.url.pathname === '/'}>
-				{capitalizeFirstLetter('homepage')}
+				{capitalize('homepage')}
 			</a>
 			{#each $navigation as navigation}
 				<a
@@ -26,7 +26,7 @@
 					on:click={() => (open = false)}
 					class:active={$page.url.pathname.includes(navigation.path)}
 				>
-					{capitalizeFirstLetter(navigation.name)}
+					{capitalize(navigation.name)}
 				</a>
 			{/each}
 		</nav>
@@ -34,7 +34,7 @@
 			<div class="package">
 				{#each $packageLink as { path, name }}
 					<a href={path} target="_blank" on:click={() => (open = false)}>
-						{capitalizeFirstLetter(name)}
+						{capitalize(name)}
 						<Icon icon="mdi:external-link" />
 					</a>
 				{/each}

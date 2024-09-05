@@ -7,7 +7,7 @@
 	import Seo from '$lib/components/seo.svelte';
 	import { onMount } from 'svelte';
 	export let title;
-	// export let desc;
+	export let description;
 
 	function wrapPreTags() {
 		const preTags = document.querySelectorAll<HTMLPreElement>('pre');
@@ -29,7 +29,7 @@
 	});
 </script>
 
-<Seo {title} />
+<Seo {title} {description}/>
 
 <article id="page" class="doc">
 	<slot />

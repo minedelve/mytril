@@ -1,8 +1,5 @@
 <script lang="ts">
 	import { versions } from '$lib/store/packages';
-	import { packageLink } from '$lib/store/router';
-	import { capitalizeFirstLetter, clickOutside } from '$lib/utils';
-	import Icon from '@iconify/svelte';
 
 	let version: string | undefined = '0.0.0';
 
