@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { formatPresetConfig } from './format-preset.js';
-import { themes } from '../api/index.js';
+import { formatPresetConfig } from '../format-preset.js';
+import { themes } from '../../api/index.js';
 
 type PresetColors = Record<string, { light: string; dark: string }>;
 
