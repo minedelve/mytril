@@ -12,7 +12,8 @@
 		"clear": "rm -f dist/app.d.ts dist/app.html ",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
-		"test": "vitest"
+		"test": "vitest",
+		"test:staged": "vitest --run"
 	},
 	"exports": {
 		".": {
