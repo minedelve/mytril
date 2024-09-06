@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - mytril
 
+## [0.0.9] - mytril - 2024-09-06
+
 ### Fixed
 
 - Fix error console for first install mytril on svelte project #6
