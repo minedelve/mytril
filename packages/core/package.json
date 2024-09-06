@@ -1,6 +1,8 @@
 {
 	"name": "mytril",
 	"version": "0.0.8",
+	"license": "MIT",
+	"homepage": "https://mytril.dev",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
