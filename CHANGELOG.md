@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - mytril
 
+### Changed
+
+- Change colors bg variables on dark default theme.
+
 ## [0.0.9] - mytril - 2024-09-06
 
 ### Fixed

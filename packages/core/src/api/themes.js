@@ -52,19 +52,19 @@ export const themes = {
 			name: 'bg',
 			css: '--c-bg',
 			light: 'var(--c-neutral-0)',
-			dark: 'var(--c-neutral-10)'
+			dark: 'var(--c-neutral-9)'
 		},
 		{
 			name: 'bg soft',
 			css: '--c-bg-soft',
 			light: 'var(--c-neutral-1)',
-			dark: 'var(--c-neutral-9)'
+			dark: 'var(--c-neutral-8)'
 		},
 		{
 			name: 'bg mute',
 			css: '--c-bg-mute',
 			light: 'var(--c-neutral-2)',
-			dark: 'var(--c-neutral-8)'
+			dark: 'var(--c-neutral-7)'
 		}
 	],
 	state: [
