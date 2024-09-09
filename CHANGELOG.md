@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - mytril
 
+## [0.1.0] - mytril - 2024-09-09
+
+### Changed
+
+- Add official links for Readme
+- Add License
+
 ## [0.1.0] - mytril-tools - 2024-09-09
 
 ### Changed
