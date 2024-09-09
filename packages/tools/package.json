@@ -1,13 +1,40 @@
 {
   "name": "mytril-tools",
-  "version": "0.0.4",
+  "version": "0.1.0",
+  "description": "A Svelte module to improve your possibilities for creating user interfaces with the Mytril library",
   "license": "MIT",
-  "author": "Nycolaide",
+  "author": "Nycolaide (laurent.grimaldi@minedelve.com)",
+  "homepage": "https://mytril.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minedelve/mytril.git"
+  },
+  "funding": {
+    "type": "buymeacoffee",
+    "url": "https://buymeacoffee.com/nycolaide"
+  },
+  "bugs": {
+    "url": "https://github.com/minedelve/mytril/issues"
+  },
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "mytril",
+    "mytril-addons",
+    "capitalize",
+    "minedelve",
+    "librairy",
+    "tools",
+    "javascript",
+    "typescript"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "rollup --bundleConfigAsCjs -c",

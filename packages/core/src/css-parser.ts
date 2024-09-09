@@ -1,7 +1,7 @@
 import path from 'path';
 import fsPromises from 'fs/promises';
 
-import { colors as colorsApi } from '../src/api/colors.js';
+import { colors as colorsApi } from './api/colors.js';
 import { themes } from './api/themes.js';
 import { merge } from './utils/merge.js';
 import { formatPresetConfig } from './utils/format-preset.js';

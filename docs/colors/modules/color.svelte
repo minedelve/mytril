@@ -73,7 +73,7 @@
 
 			& p {
 				background-color: var(--c-brand);
-				color: var(--c-text-1);
+				color: var(--c-text);
 				padding: 4px 5px;
 				width: max-content;
 				border-radius: 9999px;
@@ -103,13 +103,17 @@
 				}
 			}
 
+			& > .color-hex {
+				color: var(--c-text);
+			}
+
 			& > input[type='text'] {
 				border: none;
 				font-family: 'Roboto Mono', monospace;
 				background-color: transparent;
 				opacity: 0.6;
 				font-size: 0.75rem;
-
+				
 				&:focus,
 				&:focus-visible {
 					outline: none;

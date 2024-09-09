@@ -105,7 +105,7 @@
 		margin: 0 auto;
 
 		background-color: var(--c-bg-soft);
-		color: var(--c-text-1);
+		color: var(--c-text);
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -171,7 +171,7 @@
 					padding-right: 1rem;
 					font-size: 1.15rem;
 					border-radius: 9999px;
-					background-color: var(--c-text-1);
+					background-color: var(--c-text);
 					color: var(--c-bg);
 				}
 			}

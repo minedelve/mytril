@@ -14,9 +14,27 @@ export function setTheme(theme: string) {
 	useTheme.set(theme);
 }
 
+export function getLocalTheme(key: string, colorScheme: boolean) {
+	const storage = BROWSER ? localStorage : null;
+	const value = storage == null ? void 0 : storage.getItem(key);
+
+	if (colorScheme) {
+		useTheme.set(
+			value
+				? value
+				: BROWSER
+					? window.matchMedia('(prefers-color-scheme: dark)').matches
+						? 'dark'
+						: 'light'
+					: 'light'
+		);
+	} else if (value) {
+		useTheme.set(value);
+	}
+}
+
 useTheme.subscribe(($theme: string) => {
 	if (!BROWSER) return;
-	console.log('$theme', $theme);
 	if (oldTheme !== '') document.documentElement.classList.remove(oldTheme);
 	if ($theme !== '') document.documentElement.classList.add($theme);
 });

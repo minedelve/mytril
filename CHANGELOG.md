@@ -5,6 +5,52 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] - mytril
+
+## [0.1.0] - mytril - 2024-09-09
+
+### Changed
+
+- Add official links for Readme
+- Add License
+
+## [0.1.0] - mytril-tools - 2024-09-09
+
+### Changed
+
+- Add official links for Readme
+- Add License
+
+## [0.0.10] - mytril - 2024-09-09
+
+### Changed
+
+- Change colors bg variables on dark default theme.
+
+## [0.0.9] - mytril - 2024-09-06
+
+### Fixed
+
+- Fix error console for first install mytril on svelte project #6
+
+## [0.0.8] - mytril - 2024-09-06
+
+### Added
+
+- Add **getLocalTheme** for get localstorage theme selected
+
+### Fixed
+
+- Clear `console.log`
+
+
+## [0.0.7] - mytril - 2024-09-05
+
+### Fixed
+
+- css-parser crash because call bad path colors api.
+
+
 ## [0.0.6] - mytril - 2024-09-05
 
 ### Added

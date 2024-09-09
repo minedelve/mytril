@@ -38,18 +38,18 @@
 		line-height: 20px;
 		font-size: 12px;
 		font-weight: 500;
-		color: var(--c-text-2);
+		color: var(--c-text-soft);
 		transition: color 0.25s;
 	}
 
 	a {
 		text-decoration: none;
-		color: var(--c-text-3);
+		color: var(--c-text-mute);
 		opacity: 0.6;
 
 		&:hover {
 			opacity: 1;
-			color: var(--c-brand);
+			color: var(--c-primary);
 		}
 	}
 </style>

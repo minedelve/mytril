@@ -191,7 +191,7 @@
 
 					& a {
 						text-decoration: inherit;
-						color: var(--c-text-2);
+						color: var(--c-text-soft);
 						transition: color 0.5s;
 						line-height: 28px;
 						display: block;
@@ -200,12 +200,12 @@
 						white-space: nowrap;
 
 						&:hover {
-							color: var(--c-text-1);
+							color: var(--c-text);
 							transition: color 0.25s;
 						}
 
 						&.active {
-							color: var(--c-brand);
+							color: var(--c-primary);
 							transition: color 0.25s;
 						}
 					}

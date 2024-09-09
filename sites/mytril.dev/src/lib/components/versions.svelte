@@ -61,7 +61,7 @@
 		padding: 0 12px;
 		font-size: 13px;
 		font-weight: 500;
-		color: var(--c-text-1);
+		color: var(--c-text);
 		transition: color 0.25s;
 		white-space: nowrap;
 		cursor: pointer;
@@ -89,7 +89,7 @@
 		&:hover,
 		&:focus,
 		&.is-active {
-			color: var(--c-text-2);
+			color: var(--c-text-soft);
 		}
 
 		& :global(svg) {
@@ -135,7 +135,7 @@
 		padding: 2px 12px;
 		font-size: 11px;
 		font-weight: 500;
-		color: var(--c-text-3);
+		color: var(--c-text-mute);
 		white-space: nowrap;
 		text-decoration: none;
 		display: grid;
@@ -147,7 +147,7 @@
 			color 0.25s;
 
 		&:hover {
-			color: var(--c-brand);
+			color: var(--c-primary);
 			background-color: var(--c-bg-soft);
 		}
 
@@ -161,7 +161,7 @@
 		padding: 4px 12px;
 		font-size: 13px;
 		font-weight: 500;
-		color: var(--c-text-1);
+		color: var(--c-text);
 		white-space: nowrap;
 		text-decoration: none;
 		display: grid;
@@ -173,7 +173,7 @@
 			color 0.25s;
 
 		&:hover {
-			color: var(--c-brand);
+			color: var(--c-primary);
 			background-color: var(--c-bg-soft);
 		}
 

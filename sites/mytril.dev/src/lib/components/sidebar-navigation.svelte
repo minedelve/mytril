@@ -81,13 +81,13 @@
 		}
 
 		& section {
-			color: var(--c-text-2);
+			color: var(--c-text-mute);
 			& h2 {
 				padding: 4px 0;
 				line-height: 20px;
 				font-size: 13px;
 				font-weight: 600;
-				color: var(--c-text-1);
+				color: var(--c-text);
 				transition: color 0.5s;
 			}
 
@@ -103,12 +103,12 @@
 
 				&.active {
 					font-weight: 600;
-					color: var(--c-brand);
+					color: var(--c-primary);
 					transition: color 0.25s;
 				}
 
 				&:hover {
-					color: var(--c-text-1);
+					color: var(--c-text-soft);
 					transition: color 0.25s;
 				}
 			}

@@ -1,6 +1,41 @@
 {
 	"name": "mytril",
-	"version": "0.0.6",
+	"version": "0.1.0",
+	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
+	"license": "MIT",
+	"author": "Nycolaide (laurent.grimaldi@minedelve.com)",
+	"homepage": "https://mytril.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/minedelve/mytril.git"
+	},
+	"funding": {
+		"type": "buymeacoffee",
+		"url": "https://buymeacoffee.com/nycolaide"
+	},
+	"bugs": {
+		"url": "https://github.com/minedelve/mytril/issues"
+	},
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"components",
+		"ui-library",
+		"component-library",
+		"component",
+		"mytril",
+		"minedelve",
+		"design",
+		"css",
+		"ui",
+		"svelte-component",
+		"interface",
+		"design-system",
+		"theming",
+		"framework",
+		"typescript",
+		"library"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -11,7 +46,9 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"clear": "rm -f dist/app.d.ts dist/app.html ",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test": "vitest",
+		"test:staged": "vitest --run"
 	},
 	"exports": {
 		".": {

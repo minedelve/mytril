@@ -23,6 +23,12 @@ npm install
 npm run dev
 ```
 
+### Requirement
+
+- Svelte v4
+- Node v18 or more
+- Vite.js v4.5 or more
+
 ## Install Mytril
 
 Install **mytril** and **mytril-tools** (not required) within your project. Mytril has no external dependencies in order to facilitate its integration and limit potential version conflicts
@@ -33,13 +39,26 @@ npm install -D mytril
 npm install -D mytril-tools
 ```
 
+## Add Mytril on your vite configuration.
+
+Add mytril plugin vite on your `vite.config.(js|ts)` file.
+
+```javascript
+// vite.config.(js|ts)
+import { mytril } from 'mytril/vite';
+
+export default defineConfig({
+	plugins: [sveltekit(), mytril()]
+});
+```
+
 ## Add the Mytril to your CSS
 
 Create a `./src/app.css` file and add the **mytril/styles**.
 
 ```css
 /** app.css */
-@import "mytril/styles";
+@import 'mytril/styles';
 ```
 
 ## Import the CSS file

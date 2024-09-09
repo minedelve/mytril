@@ -75,7 +75,7 @@
 		line-height: 24px;
 		font-size: 14px;
 		font-weight: 500;
-		color: var(--c-text-1);
+		color: var(--c-text);
 		text-decoration: none;
 		transition:
 			border-color 0.5s,
@@ -83,7 +83,7 @@
 
 		&:hover,
 		&.active {
-			color: var(--c-brand);
+			color: var(--c-primary);
 		}
 	}
 
@@ -120,7 +120,7 @@
 		font-size: 13px;
 		width: 95%;
 		font-weight: 500;
-		color: var(--c-text-1);
+		color: var(--c-text);
 		white-space: nowrap;
 		text-decoration: none;
 		display: grid;
@@ -132,7 +132,7 @@
 			color 0.25s;
 
 		&:hover {
-			color: var(--c-brand);
+			color: var(--c-primary);
 			background-color: var(--c-bg-mute);
 		}
 	}
