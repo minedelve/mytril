@@ -11,11 +11,10 @@ A Svelte module to improve your possibilities for creating user interfaces with 
 [![][version]](https://github.com/minedelve/mytril/releases?q=mytril-tools&expanded=true)
 [![][installs]](https://www.npmjs.com/package/mytril-tools)
 [![][installs-this-month]](https://www.npmjs.com/package/mytril-tools)
-[![][license]](https://github.com/minedelve/mytril/blob/main/packages/tools/LICENSE.md)
+[![][license]](https://github.com/minedelve/mytril/blob/main/packages/tools/LICENSE)
 [![][discord]](https://discord.gg/fwyaGUhbav)
 
 </div>
-
 
 ## Documentation
 
