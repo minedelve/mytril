@@ -6,8 +6,8 @@
 	let colorDark: string = '';
 	$: {
 		if (color) {
-			colorLight = color?.light.includes('#') ? color?.light : `var(${color?.light})`;
-			colorDark = color?.dark.includes('#') ? color?.dark : `var(${color?.dark})`;
+			colorLight = color?.light.includes('#') ? color?.light : `${color?.light}`;
+			colorDark = color?.dark.includes('#') ? color?.dark : `${color?.dark}`;
 		}
 	}
 </script>
