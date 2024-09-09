@@ -1,8 +1,41 @@
 {
 	"name": "mytril",
 	"version": "0.0.10",
+	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
 	"license": "MIT",
+	"author": "Nycolaide (laurent.grimaldi@minedelve.com)",
 	"homepage": "https://mytril.dev",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/minedelve/mytril.git"
+	},
+	"funding": {
+		"type": "buymeacoffee",
+		"url": "https://buymeacoffee.com/nycolaide"
+	},
+	"bugs": {
+		"url": "https://github.com/minedelve/mytril/issues"
+	},
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"components",
+		"ui-library",
+		"component-library",
+		"component",
+		"mytril",
+		"minedelve",
+		"design",
+		"css",
+		"ui",
+		"svelte-component",
+		"interface",
+		"design-system",
+		"theming",
+		"framework",
+		"typescript",
+		"library"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
