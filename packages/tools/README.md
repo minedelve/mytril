@@ -12,7 +12,7 @@ A Svelte module to improve your possibilities for creating user interfaces with 
 [![][installs]](https://www.npmjs.com/package/mytril-tools)
 [![][installs-this-month]](https://www.npmjs.com/package/mytril-tools)
 [![][license]](https://github.com/minedelve/mytril/blob/main/packages/tools/LICENSE.md)
-[![][discord]](https://discord.gg/CmtVqtSzHP)
+[![][discord]](https://discord.gg/fwyaGUhbav)
 
 </div>
 
@@ -25,7 +25,7 @@ For full documentation, visit [mytril.dev](https://mytril.dev).
 
 For chatting with others using the framework:
 
-[Join the Mytril Discord Server](https://discord.gg/CmtVqtSzHP)
+[Join the Mytril Discord Server](https://discord.gg/fwyaGUhbav)
 
 Copyright © 2022-2024 [Minedelve](https://minedelve.com), [Nycolaide](https://github.com/Nycolaide)
 
