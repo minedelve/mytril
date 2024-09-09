@@ -1,13 +1,17 @@
 ---
 title: Capitalize Text with JavaScript
 description: Master text capitalization in JavaScript using Mytril's Capitalize function. Simplify and enhance your content formatting with ease.
-module:
-  - tools
 ---
+
+<script lang="ts">
+    import PackageRequired from "$lib/components/package-required.svelte";
+</script>
 
 # Capitalize Function in Mytril: Enhance Text with Proper Capitalization {#capitalize}
 
 The Capitalize function is a powerful JavaScript tool available in the Mytril tools. It allows you to easily manage capitalization in words, sentences, or even large blocks of text, ensuring your content looks polished and professional.
+
+<PackageRequired/>
 
 ## Why Use the Capitalize Function?
 
@@ -18,7 +22,7 @@ Proper capitalization is key to creating professional and easy-to-read content. 
 To get started, simply import the `capitalize` function from the **mytril-tools** package:
 
 ```js
-import { capitalize } from "mytril-tools";
+import { capitalize } from 'mytril-tools';
 
 const sentence = "hello, i'm Gimli ! are you ready to use Mytril packages ?";
 

@@ -103,13 +103,17 @@
 				}
 			}
 
+			& > .color-hex {
+				color: var(--c-text);
+			}
+
 			& > input[type='text'] {
 				border: none;
 				font-family: 'Roboto Mono', monospace;
 				background-color: transparent;
 				opacity: 0.6;
 				font-size: 0.75rem;
-
+				
 				&:focus,
 				&:focus-visible {
 					outline: none;
