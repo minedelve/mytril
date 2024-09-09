@@ -1,6 +1,6 @@
 {
   "name": "mytril-tools",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A Svelte module to improve your possibilities for creating user interfaces with the Mytril library",
   "license": "MIT",
   "author": "Nycolaide (laurent.grimaldi@minedelve.com)",
