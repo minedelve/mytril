@@ -2,7 +2,7 @@
 
 <a href="https://mytril.dev" target="_blank">
   <picture>
-    <img alt="Mytril Library" src="https://github.com/minedelve/mytril/blob/develop/assets/mytril_logo.png" width="230" height="70" style="max-width: 100%;">
+    <img alt="Mytril Library" src="https://github.com/minedelve/mytril/blob/main/assets/mytril_logo.png" width="230" height="70" style="max-width: 100%;">
   </picture>
 </a>
 
