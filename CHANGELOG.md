@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - mytril
 
+### Added
+
+- Add **thresholds** api for call all breakpoint preset list
+
 ## [0.1.0] - mytril - 2024-09-09
 
 ### Changed
@@ -43,13 +47,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Clear `console.log`
 
-
 ## [0.0.7] - mytril - 2024-09-05
 
 ### Fixed
 
 - css-parser crash because call bad path colors api.
-
 
 ## [0.0.6] - mytril - 2024-09-05
 
@@ -61,7 +63,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Docs
 
 - Add new documentation for customize theme and theme switcher
-
 
 ## [0.0.5] - mytril - 2024-09-02
 
@@ -103,7 +104,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Change palette `colors` list.
-
 
 ## [0.0.1] - mytril - 2024-08-29
 
