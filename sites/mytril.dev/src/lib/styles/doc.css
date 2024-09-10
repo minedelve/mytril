@@ -110,6 +110,7 @@
 	width: 100%;
 	border: 1px solid var(--c-divider);
 	border-radius: 0.5rem;
+	margin-bottom: 2rem;
 }
 
 .doc thead th {

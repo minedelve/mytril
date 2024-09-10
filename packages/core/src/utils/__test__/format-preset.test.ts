@@ -1,12 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { formatPresetConfig } from '../format-preset.js';
+import { formatPresetColors } from '../format-preset.js';
 import { themes } from '../../api/index.js';
 
 type PresetColors = Record<string, { light: string; dark: string }>;
 
-describe('formatPresetConfig', () => {
+describe('formatPresetColors', () => {
 	it('should format colors correctly from themes configuration', () => {
-		const result = formatPresetConfig(themes);
+		const result = formatPresetColors(themes);
 		const expectedOutput: PresetColors = {
 			primary: { light: '#3b8eed', dark: '#3b8eed' },
 			secondary: { light: '#ff3e00', dark: '#ff3e00' },
@@ -27,7 +27,7 @@ describe('formatPresetConfig', () => {
 	});
 
 	it('should handle an empty configuration', () => {
-		const result = formatPresetConfig({ palette: [], typography: [], background: [], state: [] });
+		const result = formatPresetColors({ palette: [], typography: [], background: [], state: [] });
 		expect(result).toEqual({});
 	});
 });

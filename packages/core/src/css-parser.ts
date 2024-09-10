@@ -3,18 +3,29 @@ import fsPromises from 'fs/promises';
 
 import { colors as colorsApi } from './api/colors.js';
 import { themes } from './api/themes.js';
+import { thresholds } from './api/thresholds.js';
 import { merge } from './utils/merge.js';
-import { formatPresetConfig } from './utils/format-preset.js';
+import { formatPresetColors, formatPresetThresholds } from './utils/format-preset.js';
 import type { Configuration, ObjectKeyValueString } from './types/index.js';
 
 export function convertJStoCSS(externalConfig: Configuration) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const palettes: any = colorsApi;
 	const defaultTheme = externalConfig?.theme?.defaultTheme || 'light';
-	let colors = formatPresetConfig(themes);
+	let colors = formatPresetColors(themes);
+	let breakpoints = formatPresetThresholds(thresholds);
 
-	if (externalConfig && externalConfig?.theme && externalConfig?.theme?.colors)
-		colors = merge(colors, externalConfig?.theme?.colors);
+	if (externalConfig) {
+		if (externalConfig?.theme && externalConfig?.theme?.colors) {
+			colors = merge(colors, externalConfig?.theme?.colors);
+		}
+
+		if (externalConfig?.display && externalConfig?.display?.thresholds) {
+			breakpoints = merge(breakpoints, externalConfig?.display?.thresholds);
+		}
+	}
+
+	console.warn('BREAKPOINT', breakpoints);
 
 	let css = '';
 	let cssRoot = '';

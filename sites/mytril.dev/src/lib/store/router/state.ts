@@ -61,11 +61,11 @@ export const docs = writable([
 			{
 				name: 'colors',
 				path: '/docs/colors'
+			},
+			{
+				name: 'breakpoints',
+				path: '/docs/breakpoints'
 			}
-			// {
-			// 	name: 'breakpoints',
-			// 	path: '/docs/breakpoints'
-			// }
 		]
 	},
 	{
