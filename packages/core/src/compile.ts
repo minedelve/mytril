@@ -2,7 +2,7 @@
 import path from 'path';
 import fsPromises from 'fs/promises';
 import { loadConfig } from './utils/load-files.js';
-import { convertJStoCSS } from './css-parser.js';
+import { cssParser } from './css-parser.js';
 
 export async function mytril() {
 	const directory = process.cwd();
@@ -25,7 +25,7 @@ export async function mytril() {
 		name: 'mytril/plugin-vite',
 		async configResolved() {
 			const config = await loadConfig();
-			await convertJStoCSS(config);
+			await cssParser(config);
 		},
 		async configureServer(server: any) {
 			server.watcher.add('./');
@@ -36,7 +36,7 @@ export async function mytril() {
 					String(filePath).includes('mytril/dist/styles/index.css')
 				) {
 					const config = await loadConfig();
-					await convertJStoCSS(config);
+					await cssParser(config);
 				}
 			});
 		}
