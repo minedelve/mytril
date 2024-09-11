@@ -1,3 +1,21 @@
+export const spacingList = [
+	{
+		property: 'margin',
+		name: 'm',
+		negative: true
+	},
+	{
+		property: 'padding',
+		name: 'p',
+		negative: false
+	},
+	{
+		property: 'gap',
+		name: 'g',
+		negative: false
+	}
+];
+
 export const spacing = {
 	px: '1px',
 	0: '0px',

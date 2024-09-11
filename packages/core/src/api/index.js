@@ -2,3 +2,8 @@ export * from './colors.js';
 export * from './themes.js';
 export * from './thresholds.js';
 export * from './spacing.js';
+export * from './sizing.js';
+export * from './position.js';
+export * from './display.js';
+export * from './rounded.js';
+export * from './elevation.js';
