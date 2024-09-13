@@ -5,7 +5,7 @@
 
 <div>
 	{#each $social as social}
-		<a href={social.path} target="_blank" rel="noopener noreferrer">
+		<a href={social.path} target="_blank">
 			<Icon icon={social.icon} />
 		</a>
 	{/each}
