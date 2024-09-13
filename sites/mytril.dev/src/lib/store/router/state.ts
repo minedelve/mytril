@@ -69,6 +69,27 @@ export const docs = writable([
 		]
 	},
 	{
+		section: 'styles',
+		routes: [
+			{
+				name: 'position',
+				path: '/docs/styles/position'
+			},
+			{
+				name: 'elevation',
+				path: '/docs/styles/elevation'
+			},
+			{
+				name: 'border radius',
+				path: '/docs/styles/border-radius'
+			},
+			{
+				name: 'spacing',
+				path: '/docs/styles/spacing'
+			}
+		]
+	},
+	{
 		section: 'tools',
 		routes: [
 			{

@@ -3,7 +3,7 @@ import fsPromises from 'fs/promises';
 
 import { colors as colorsApi } from './api/colors.js';
 import { themes } from './api/themes.js';
-import { thresholds } from './api/thresholds.js';
+import { presets } from './presets/index.js';
 import { merge } from './utils/merge.js';
 import { formatPresetColors, formatPresetThresholds } from './utils/format-preset.js';
 import type { Configuration, ObjectKeyValueString } from './types/index.js';
@@ -14,7 +14,7 @@ export function cssParser(externalConfig: Configuration) {
 	const palettes: any = colorsApi;
 	const defaultTheme = externalConfig?.theme?.defaultTheme || 'light';
 	let colors = formatPresetColors(themes);
-	let breakpoints = formatPresetThresholds(thresholds);
+	let breakpoints = formatPresetThresholds(presets.thresholds);
 
 	if (externalConfig) {
 		if (externalConfig?.theme && externalConfig?.theme?.colors) {
@@ -69,7 +69,7 @@ export function cssParser(externalConfig: Configuration) {
 	}
 	css += '}\n';
 
-	css += convertJStoCSS();
+	css += convertJStoCSS(breakpoints);
 
 	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'index.style.css'), css);
 }

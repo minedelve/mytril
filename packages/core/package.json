@@ -60,6 +60,10 @@
 			"types": "./dist/api/index.d.ts",
 			"default": "./dist/api/index.js"
 		},
+		"./presets": {
+			"types": "./dist/presets/index.d.ts",
+			"default": "./dist/presets/index.js"
+		},
 		"./vite": {
 			"types": "./dist/compile.d.ts",
 			"default": "./dist/compile.js"

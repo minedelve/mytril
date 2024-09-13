@@ -106,7 +106,7 @@
 	line-height: 1.7;
 }
 
-.doc table {
+.doc :not(.table) table {
 	width: 100%;
 	border: 1px solid var(--c-divider);
 	border-radius: 0.5rem;
@@ -115,4 +115,30 @@
 
 .doc thead th {
 	border-bottom: 1px solid var(--c-divider);
+}
+
+.doc .table {
+	overflow: auto;
+	max-height: 450px;
+	border: 1px solid var(--c-divider);
+	border-radius: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+.doc .table thead th {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-color: var(--c-bg);
+}
+
+.doc .table tbody th {
+	position: sticky;
+	left: 0;
+}
+
+.doc .table tbody td {
+	border-bottom: 1px solid var(--c-divider);
+	min-width: 200px;
+	width: 100%;
 }
