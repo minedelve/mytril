@@ -92,5 +92,13 @@ export const themes = {
 			light: 'var(--c-yellow-5)',
 			dark: 'var(--c-yellow-4)'
 		}
+	],
+	global: [
+		{
+			name: 'shadow',
+			css: '--c-shadow',
+			light: 'var(--c-stone-10)',
+			dark: 'var(--c-stone-10)'
+		}
 	]
 };
