@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add **thresholds** api for call all breakpoint preset list
 
+## [0.1.1] - mytril - 2024-09-14
+
+### Changed
+
+- Add new color shadow in themes api and css
+
 ## [0.1.0] - mytril - 2024-09-09
 
 ### Changed

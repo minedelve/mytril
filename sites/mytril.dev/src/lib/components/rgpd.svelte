@@ -159,6 +159,7 @@
 				border-radius: 0.25rem;
 				border: 0;
 				background-color: var(--c-bg-soft);
+				color: var(--c-text);
 
 				&:hover {
 					background-color: var(--c-bg-mute);
