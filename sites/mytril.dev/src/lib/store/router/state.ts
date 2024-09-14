@@ -86,6 +86,14 @@ export const docs = writable([
 			{
 				name: 'spacing',
 				path: '/docs/styles/spacing'
+			},
+			{
+				name: 'sizing',
+				path: '/docs/styles/sizing'
+			},
+			{
+				name: 'typography',
+				path: '/docs/styles/typography'
 			}
 		]
 	},
