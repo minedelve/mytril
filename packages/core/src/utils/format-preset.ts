@@ -1,6 +1,11 @@
-import type { PresetColors, SectionColors } from '$lib/types/index.js';
+import type {
+	PresetColors,
+	PresetThresholds,
+	SectionColors,
+	Thresholds
+} from '$lib/types/index.js';
 
-export const formatPresetConfig = (config: SectionColors) => {
+export const formatPresetColors = (config: SectionColors) => {
 	const formatDefaultColors: PresetColors = {};
 
 	for (const section of Object.keys(config) as (keyof SectionColors)[]) {
@@ -13,4 +18,13 @@ export const formatPresetConfig = (config: SectionColors) => {
 	}
 
 	return formatDefaultColors;
+};
+
+export const formatPresetThresholds = (config: Thresholds) => {
+	const formatDefaultThresholds: PresetThresholds = {};
+
+	for (const thresholds of Object.keys(config)) {
+		formatDefaultThresholds[thresholds] = config[thresholds]?.value;
+	}
+	return formatDefaultThresholds;
 };

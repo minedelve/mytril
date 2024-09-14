@@ -61,11 +61,40 @@ export const docs = writable([
 			{
 				name: 'colors',
 				path: '/docs/colors'
+			},
+			{
+				name: 'breakpoints',
+				path: '/docs/breakpoints'
 			}
-			// {
-			// 	name: 'breakpoints',
-			// 	path: '/docs/breakpoints'
-			// }
+		]
+	},
+	{
+		section: 'styles',
+		routes: [
+			{
+				name: 'position',
+				path: '/docs/styles/position'
+			},
+			{
+				name: 'elevation',
+				path: '/docs/styles/elevation'
+			},
+			{
+				name: 'border radius',
+				path: '/docs/styles/border-radius'
+			},
+			{
+				name: 'spacing',
+				path: '/docs/styles/spacing'
+			},
+			{
+				name: 'sizing',
+				path: '/docs/styles/sizing'
+			},
+			{
+				name: 'typography',
+				path: '/docs/styles/typography'
+			}
 		]
 	},
 	{
