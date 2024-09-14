@@ -21,7 +21,8 @@ describe('formatPresetConfig', () => {
 			info: { light: 'var(--c-blue-5)', dark: 'var(--c-blue-4)' },
 			success: { light: 'var(--c-green-5)', dark: 'var(--c-green-4)' },
 			error: { light: 'var(--c-red-5)', dark: 'var(--c-red-4)' },
-			warning: { light: 'var(--c-yellow-5)', dark: 'var(--c-yellow-4)' }
+			warning: { light: 'var(--c-yellow-5)', dark: 'var(--c-yellow-4)' },
+			shadow: { light: 'var(--c-stone-10)', dark: 'var(--c-stone-10)' }
 		};
 		expect(result).toEqual(expectedOutput);
 	});
