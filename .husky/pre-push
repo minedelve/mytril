@@ -1,2 +1,0 @@
-cd ./packages/tools && yarn test
-cd ../../packages/core && yarn test:staged
