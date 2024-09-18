@@ -1,58 +1,52 @@
-# create-svelte
+<div align="center">
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+<a href="https://minedelve.com" target="_blank">
+  <picture>
+    <img alt="Mytril Library" src="https://github.com/minedelve/mytril/blob/main/static/mytril.png" width="230" height="70" style="max-width: 100%;">
+  </picture>
+</a>
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
 
-## Creating a project
+[![][version]](https://github.com/minedelve/mytril/releases?q=mytril&expanded=true)
+[![][installs]](https://www.npmjs.com/package/mytril)
+[![][installs-this-month]](https://www.npmjs.com/package/mytril)
+[![][license]](https://github.com/minedelve/mytril/blob/main/LICENSE)
+[![][discord]](https://discord.gg/fwyaGUhbav)
 
-If you're seeing this, you've probably already done this step. Congrats!
+</div>
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+| :warning: | **Mytril is currently in development.** <br> We will post a link here when we have an alpha and beta release ready for testing. Until then, we welcome contributors to help bring this project to life. | &nbsp;&nbsp;&nbsp;&nbsp;[CONTRIBUTE](https://github.com/minedelve/mytril)&nbsp;&nbsp;&nbsp;&nbsp; |
+| --------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Install
+
+```cmd
+npm install --save-dev mytril
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```cmd
+yarn add -D mytril
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
+```cmd
+bun add -D mytril
 ```
 
-To create a production version of your showcase app:
+## Documentation
 
-```bash
-npm run build
-```
+For full documentation, visit [minedelve.com](https://minedelve.com).
 
-You can preview the production build with `npm run preview`.
+## Community
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+For chatting with others using the framework:
 
-## Publishing
+[Join the Mytril Discord Server](https://discord.gg/fwyaGUhbav)
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+Copyright © 2022-2024 [Minedelve](https://minedelve.com), [Nycolaide](https://github.com/Nycolaide)
 
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+[version]: https://img.shields.io/npm/v/mytril.svg?label=Version&color=f58142
+[license]: https://badgen.net/github/license/minedelve/mytril?label=License&color=cc5640
+[installs]: https://badgen.net/npm/dt/mytril?label=NPM%20installs&color=40ba12
+[installs-this-month]: https://badgen.net/npm/dm/mytril?label=NPM%20installs&color=40ba12
+[discord]: https://img.shields.io/discord/1093887038991896717?color=5865F2&label=Discord&logo=discord&logoColor=white

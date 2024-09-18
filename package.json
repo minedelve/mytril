@@ -51,6 +51,18 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"default": "./dist/index.js"
+		},
+		"./vite": {
+			"types": "./dist/plugins/vite/vite.d.ts",
+			"default": "./dist/plugins/vite/vite.js"
+		},
+		"./api": {
+			"types": "./dist/assets/api/index.d.ts",
+			"default": "./dist/assets/api/index.js"
+		},
+		"./store": {
+			"types": "./dist/store/index.d.ts",
+			"default": "./dist/store/index.js"
 		}
 	},
 	"files": [
@@ -67,6 +79,7 @@
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/eslint": "^9.6.0",
+		"@types/node": "^22.5.5",
 		"eslint": "^9.0.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0",
