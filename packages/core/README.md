@@ -17,22 +17,21 @@ Mytril Svelte library component for rapidly building modern websites based on Sv
 </div>
 
 | :warning: | **Mytril is currently in development.** <br> We will post a link here when we have an alpha and beta release ready for testing. Until then, we welcome contributors to help bring this project to life. | &nbsp;&nbsp;&nbsp;&nbsp;[CONTRIBUTE](https://github.com/minedelve/mytril)&nbsp;&nbsp;&nbsp;&nbsp; |
-| --------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| --------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
 
 ## Install
 
 ```cmd
-npm install --save-dev manakit
+npm install --save-dev mytril
 ```
 
 ```cmd
-yarn add -D manakit
+yarn add -D mytril
 ```
 
 ## Documentation
 
 For full documentation, visit [mytril.dev](https://mytril.dev).
-
 
 ## Community
 
