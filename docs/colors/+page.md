@@ -85,8 +85,8 @@ ul {
             cursor: pointer;
 
             &.active {
-                border: 1px solid var(--c-brand);
-                background-color: var(--c-brand);
+                border: 1px solid var(--c-primary);
+                background-color: var(--c-primary);
             }
 
             &:first-child {

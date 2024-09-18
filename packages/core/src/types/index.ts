@@ -2,6 +2,10 @@ export interface PresetColors {
 	[key: string]: ThemeColors;
 }
 
+export interface PresetThresholds {
+	[key: string]: string;
+}
+
 export interface SectionColors {
 	palette: ThemeItem[];
 	typography: ThemeItem[];
@@ -34,11 +38,29 @@ interface Colors {
 		  };
 }
 
+interface Threshold {
+	[key: string]: string;
+}
+interface ThresholdsItems {
+	device: string;
+	description: string;
+	value: string;
+}
+
+export interface Thresholds {
+	[key: string]: ThresholdsItems;
+}
+
 interface Theme {
 	defaultTheme: string;
 	colors: Colors;
 }
 
+interface Display {
+	thresholds: Threshold;
+}
+
 export interface Configuration {
 	theme: Theme;
+	display: Display;
 }

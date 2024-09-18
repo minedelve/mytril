@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - mytril
+## [0.1.2] - mytril
+
+### Added
+
+- Add **thresholds** api for call all breakpoint preset list
+
+### Changed
+
+- Update Readme.md for command line
 
 ## [0.1.1] - mytril - 2024-09-14
 
@@ -49,13 +57,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Clear `console.log`
 
-
 ## [0.0.7] - mytril - 2024-09-05
 
 ### Fixed
 
 - css-parser crash because call bad path colors api.
-
 
 ## [0.0.6] - mytril - 2024-09-05
 
@@ -67,7 +73,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Docs
 
 - Add new documentation for customize theme and theme switcher
-
 
 ## [0.0.5] - mytril - 2024-09-02
 
@@ -109,7 +114,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Change palette `colors` list.
-
 
 ## [0.0.1] - mytril - 2024-08-29
 

@@ -135,8 +135,8 @@ We provide a sensible default theme with a very generous set of values to get yo
             cursor: pointer;
 
             &.active {
-                border: 1px solid var(--c-brand);
-                background-color: var(--c-brand);
+                border: 1px solid var(--c-primary);
+                background-color: var(--c-primary);
             }
 
             &:first-child {
