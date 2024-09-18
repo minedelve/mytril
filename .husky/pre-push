@@ -1,2 +1,2 @@
-cd ./packages/tools && yarn test
-cd ../../packages/core && yarn test:staged
+cd ./packages/tools && bun run test
+cd ../../packages/core && bun run test:staged
