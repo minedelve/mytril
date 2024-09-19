@@ -48,7 +48,7 @@
 	border-radius: var(--a-rounded-sm);
 	font-family: var(--f-code);
 	font-size: var(--a-text-sm);
-	background-color: var(--b-mute);
+	background-color: var(--bg-mute);
 }
 
 .markdown pre {
