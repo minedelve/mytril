@@ -59,7 +59,7 @@
 }
 
 .markdown a {
-	color: var(--text-primary);
+	color: var(--c-primary);
 	cursor: pointer;
 	transition: color 0.1s;
 	text-decoration: none;
