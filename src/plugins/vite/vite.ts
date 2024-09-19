@@ -2,7 +2,7 @@ import path from 'path';
 import fsPromises from 'fs/promises';
 import type { ViteDevServer } from 'vite';
 import { mytrilImporter } from '$lib/importer.js';
-import { mytrilParser } from '$lib/css-parser.js';
+import { mytrilParser } from '$lib/parser.js';
 
 export async function mytril() {
 	const directory = process.cwd();
