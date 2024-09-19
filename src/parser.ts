@@ -12,20 +12,30 @@ export interface Configuration {
 	display: {
 		thresholds: { [key: string]: string };
 	};
+	typography: {
+		family: { [key: string]: string };
+	};
 }
 
 export async function mytrilParser(config: Configuration) {
 	const defaultTheme: string = config?.theme?.defaultTheme || 'light';
 
-	let colors, breakpoints;
+	let colors, breakpoints, family;
 	colors = formatPresetColors(presets.colors);
 	breakpoints = formatPresetThresholds(presets.assets.thresholds);
+	family = presets.assets.typography.family;
 	if (config) {
 		if (config?.theme?.colors)
 			colors = merge(formatPresetColors(presets.colors), config?.theme.colors);
 
 		if (config?.display?.thresholds)
-			breakpoints = merge(presets.assets.thresholds, config?.display?.thresholds);
+			breakpoints = merge(
+				formatPresetThresholds(presets.assets.thresholds),
+				config?.display?.thresholds
+			);
+
+		if (config?.typography?.family)
+			family = merge(presets.assets.typography.family, config?.typography?.family);
 	}
 
 	const palette = presets.palette;
@@ -40,7 +50,6 @@ export async function mytrilParser(config: Configuration) {
 	const transform = presets.assets.typography.transform;
 	const style = presets.assets.typography.style;
 	const align = presets.assets.typography.align;
-	const family = presets.assets.typography.family;
 
 	const css = cssParser();
 	const cssJstoCSS = convertJStoCSS({
