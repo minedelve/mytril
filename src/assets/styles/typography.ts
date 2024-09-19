@@ -1,5 +1,17 @@
 import { formatBreakpoint } from '$lib/utils/format-class.js';
 
+export function typographyRoot(style: {
+	[key: string]: { size: string; height: string; spacing: string };
+}) {
+	let css = '';
+	css += ':root {\n';
+	for (const [key, value] of Object.entries(style)) {
+		css += `--a-text-${key}: ${value?.size};\n`;
+	}
+	css += '};\n';
+	return css;
+}
+
 export function typographyClassName(weight: { [key: string]: string }, transform: Array<string>) {
 	let css = '';
 	css += `.text-truncate {\n`;

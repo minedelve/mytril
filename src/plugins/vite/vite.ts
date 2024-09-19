@@ -2,7 +2,7 @@ import path from 'path';
 import fsPromises from 'fs/promises';
 import type { ViteDevServer } from 'vite';
 import { mytrilImporter } from '$lib/importer.js';
-import { mytrilCssParser } from '$lib/css-parser.js';
+import { mytrilParser } from '$lib/css-parser.js';
 
 export async function mytril() {
 	const directory = process.cwd();
@@ -27,7 +27,7 @@ export async function mytril() {
 			const config = await mytrilImporter();
 			fsPromises.writeFile(
 				path.resolve(`node_modules/mytril/dist/`, 'index.style.css'),
-				await mytrilCssParser(config)
+				await mytrilParser(config)
 			);
 		},
 		async configureServer(server: ViteDevServer) {
@@ -37,7 +37,7 @@ export async function mytril() {
 					const config = await mytrilImporter();
 					fsPromises.writeFile(
 						path.resolve(`node_modules/mytril/dist/`, 'index.style.css'),
-						await mytrilCssParser(config)
+						await mytrilParser(config)
 					);
 				}
 			});

@@ -1,4 +1,5 @@
 import { convertJStoCSS } from './plugins/css/convert-js-to-css.js';
+import { cssParser } from './plugins/css/css-parser.js';
 import { presets } from './presets/default.js';
 import { formatPresetColors, formatPresetThresholds } from './utils/format-preset.js';
 import { merge } from './utils/merge.js';
@@ -13,7 +14,7 @@ export interface Configuration {
 	};
 }
 
-export async function mytrilCssParser(config: Configuration) {
+export async function mytrilParser(config: Configuration) {
 	const defaultTheme: string = config?.theme?.defaultTheme || 'light';
 
 	let colors, breakpoints;
@@ -40,7 +41,8 @@ export async function mytrilCssParser(config: Configuration) {
 	const style = presets.assets.typography.style;
 	const align = presets.assets.typography.align;
 
-	return convertJStoCSS({
+	const css = cssParser();
+	const cssJstoCSS = convertJStoCSS({
 		defaultTheme,
 		colors,
 		breakpoints,
@@ -55,4 +57,6 @@ export async function mytrilCssParser(config: Configuration) {
 		style,
 		align
 	});
+
+	return css + `\n` + cssJstoCSS;
 }

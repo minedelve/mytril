@@ -7,7 +7,8 @@ import { sizingClassName } from '$lib/assets/styles/sizing.js';
 import { spacingClassName } from '$lib/assets/styles/spacing.js';
 import {
 	typographyClassName,
-	typographyClassNameBreakpoint
+	typographyClassNameBreakpoint,
+	typographyRoot
 } from '$lib/assets/styles/typography.js';
 
 export function convertJStoCSS(props: any) {
@@ -34,6 +35,7 @@ export function convertJStoCSS(props: any) {
 			css += colorsThemes(defaultTheme, colors);
 			css += roundedRoot(rounded);
 			css += elevationRoot(elevation);
+			css += typographyRoot(style);
 			// class
 			css += elevationClassName(elevation);
 			css += typographyClassName(weight, transform);
