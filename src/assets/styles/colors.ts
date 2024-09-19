@@ -18,11 +18,13 @@ export function colorsThemes(
 ) {
 	let css: string = '';
 	let rootCss: string = '';
-	const classCss: { [key: string]: string } = {};
+	let classCss: string = ``;
+	const schemeCss: { [key: string]: string } = {};
 
 	for (const property in colors) {
 		if (typeof colors[property] === 'string') {
 			rootCss += `--c-${property}: ${colors[property]};\n`;
+			classCss += colorsClassThemes(property);
 		}
 
 		if (typeof colors[property] === 'object') {
@@ -30,9 +32,10 @@ export function colorsThemes(
 				if (scheme === defaultTheme) {
 					rootCss += `--c-${property}: ${colors[property][scheme]};\n`;
 				} else {
-					if (!Object.prototype.hasOwnProperty.call(classCss, `${scheme}`)) classCss[scheme] = '';
-					classCss[scheme] += `--c-${property}: ${colors[property][scheme]};\n`;
+					if (!Object.prototype.hasOwnProperty.call(schemeCss, `${scheme}`)) schemeCss[scheme] = '';
+					schemeCss[scheme] += `--c-${property}: ${colors[property][scheme]};\n`;
 				}
+				classCss += colorsClassThemes(property);
 			}
 		}
 	}
@@ -41,11 +44,26 @@ export function colorsThemes(
 	css += `${rootCss}\n`;
 	css += `}\n`;
 
-	for (const scheme in classCss) {
+	for (const scheme in schemeCss) {
 		css += `.${scheme} {\n`;
-		css += `${classCss[scheme]}\n`;
+		css += `${schemeCss[scheme]}\n`;
 		css += `}\n`;
 	}
 
+	css += `${classCss}\n`;
+	return css;
+}
+
+function colorsClassThemes(property: string) {
+	let css: string = ``;
+	css += `.bg\\:${property} {\n`;
+	css += `background-color: var(--c-${property}) !important;\n`;
+	css += `}\n`;
+	css += `.txt\\:${property} {\n`;
+	css += `color: var(--c-${property}) !important;\n`;
+	css += `}\n`;
+	css += `.r\\:${property} {\n`;
+	css += `border-color: var(--c-${property}) !important;\n`;
+	css += `}\n`;
 	return css;
 }
