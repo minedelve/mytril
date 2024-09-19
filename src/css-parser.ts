@@ -28,7 +28,7 @@ export async function mytrilCssParser(config: Configuration) {
 	}
 
 	const palette = presets.palette;
-	const rounded = presets.assets.thresholds;
+	const rounded = presets.assets.rounded;
 	const elevation = presets.assets.elevation;
 	const position = presets.assets.position;
 	const sizing = presets.assets.sizing;
