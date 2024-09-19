@@ -13,13 +13,13 @@ export function sizingClassName(
 					else css += `${formatBreakpoint(screen)}h-${formatClassName(element)} {\n`;
 
 					css += `height: ${element};\n`;
-					css += `};\n`;
+					css += `}\n`;
 				}
 
 				if (property === 'width') {
 					css += `${formatBreakpoint(screen)}w-${formatClassName(element)} {\n`;
 					css += `width: ${element};\n`;
-					css += `};\n`;
+					css += `}\n`;
 				}
 			}
 		}

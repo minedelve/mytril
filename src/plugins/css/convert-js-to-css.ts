@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { roundedClassName, roundedRoot } from '$lib/assets/styles/border-radius.js';
 import { colorsPalette, colorsThemes } from '$lib/assets/styles/colors.js';
-import { elevationClassName, elevationRoot } from '$lib/assets/styles/elevation.js';
+import { elevationClassName } from '$lib/assets/styles/elevation.js';
 import { positionClassName } from '$lib/assets/styles/position.js';
 import { sizingClassName } from '$lib/assets/styles/sizing.js';
 import { spacingClassName } from '$lib/assets/styles/spacing.js';
@@ -25,7 +25,8 @@ export function convertJStoCSS(props: any) {
 		weight,
 		transform,
 		style,
-		align
+		align,
+		family
 	} = props;
 	let css: string = '';
 	for (const [breakpoint, screen] of Object.entries(breakpoints)) {
@@ -34,11 +35,11 @@ export function convertJStoCSS(props: any) {
 			css += colorsPalette(palette);
 			css += colorsThemes(defaultTheme, colors);
 			css += roundedRoot(rounded);
-			css += elevationRoot(elevation);
-			css += typographyRoot(style);
+			// css += elevationRoot(elevation);
+			css += typographyRoot(style, family);
 			// class
 			css += elevationClassName(elevation);
-			css += typographyClassName(weight, transform);
+			css += typographyClassName(weight, transform, family);
 		}
 
 		if (breakpoint !== 'default') css += `@media screen and (min-width: ${screen}) {\n`;

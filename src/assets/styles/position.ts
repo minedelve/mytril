@@ -5,7 +5,7 @@ export function positionClassName(screen: string, values: Array<string>) {
 	for (const element of values) {
 		css += `${formatBreakpoint(screen)}d-${element} {\n`;
 		css += `display: ${element};\n`;
-		css += `};\n`;
+		css += `}\n`;
 	}
 	return css;
 }

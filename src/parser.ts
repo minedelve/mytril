@@ -40,6 +40,7 @@ export async function mytrilParser(config: Configuration) {
 	const transform = presets.assets.typography.transform;
 	const style = presets.assets.typography.style;
 	const align = presets.assets.typography.align;
+	const family = presets.assets.typography.family;
 
 	const css = cssParser();
 	const cssJstoCSS = convertJStoCSS({
@@ -55,7 +56,8 @@ export async function mytrilParser(config: Configuration) {
 		weight,
 		transform,
 		style,
-		align
+		align,
+		family
 	});
 
 	return css + `\n` + cssJstoCSS;

@@ -284,7 +284,12 @@ const presets = {
 				}
 			},
 			align: ['start', 'end', 'center', 'justify', 'left', 'right'],
-			transform: ['uppercase', 'lowercase', 'capitalize']
+			transform: ['uppercase', 'lowercase', 'capitalize'],
+			family: {
+				heading: 'Roboto, sans-serif',
+				body: 'Roboto, sans-serif',
+				code: 'Roboto Mono, monospace'
+			}
 		}
 	}
 };

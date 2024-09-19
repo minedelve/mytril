@@ -1,0 +1,112 @@
+.markdown.code {
+	--c-code--operator: #89ddff;
+	--c-code--punctuation: #89ddff;
+	--c-code--comment: #616161;
+	--c-code--property: #80cbc4;
+	--c-code--function: #c792ea;
+	--c-code--boolean: #c792ea;
+	--c-code--atrule: #c792ea;
+	--c-code--tag: #f66;
+	--c-code--keyword: #f66;
+	--c-code--selector: #f66;
+	--c-code--attr-name: #ffcb6b;
+	--c-code--attr-value: #a5e844;
+	--c-code--attribute: #a5e844;
+}
+
+.markdown.code .preview-code {
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid var(--c-divider);
+	position: relative;
+	border-radius: 8px;
+}
+
+.markdown.code .code-wrapper {
+	width: 100%;
+	display: grid;
+}
+
+.markdown.code pre {
+	overflow: auto;
+	position: relative;
+	margin: 0;
+}
+
+.markdown.code pre code {
+	border-radius: 0;
+	padding: 0;
+}
+
+.markdown.code code[class*='language-'],
+.markdown.code pre[class*='language-'] {
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	color: var(--c-text);
+	background-color: var(--c-bg-mute);
+	font-family: var(--f-code);
+	line-height: var(--code-line-height);
+	font-size: var(--a-text-sm);
+	line-height: 1.5em;
+	tab-size: 4;
+	hyphens: none;
+	transition: background-color 0.5s;
+}
+
+.markdown.code pre[class*='language-'] {
+	overflow: auto;
+	position: relative;
+	margin: 0.5em 0;
+	padding: 1.25em 1em;
+}
+
+.markdown.code code[class*='language-'],
+.markdown.code .code-wrapper code[class*='language-'],
+.markdown.code code[class*='language-'],
+.markdown.code pre[class*='language-'] {
+	background: unset;
+	direction: ltr;
+}
+
+.markdown.code .token.punctuation {
+	color: var(--c-code--punctuation);
+}
+.markdown.code .token.operator {
+	color: var(--c-code--operator);
+}
+.markdown.code .token.comment {
+	color: var(--c-code--comment);
+}
+.markdown.code .token.property {
+	color: var(--c-code--property);
+}
+.markdown.code .token.function {
+	color: var(--c-code--function);
+}
+.markdown.code .token.boolean {
+	color: var(--c-code--boolean);
+}
+.markdown.code .token.atrule {
+	color: var(--c-code--atrule);
+}
+.markdown.code .token.tag {
+	color: var(--c-code--tag);
+}
+.markdown.code .token.keyword {
+	color: var(--c-code--keyword);
+}
+.markdown.code .token.selector {
+	color: var(--c-code--keyword);
+}
+.markdown.code .token.attr-name {
+	color: var(--c-code--attr-name);
+}
+.markdown.code .token.attr-value {
+	color: var(--c-code--attr-value);
+}
+.markdown.code .token.attribute {
+	color: var(--c-code--attribute);
+}

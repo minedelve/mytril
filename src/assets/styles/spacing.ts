@@ -53,15 +53,15 @@ const classNameMP = (
 	// top
 	css += `${formatBreakpoint(breakpoint)}${element?.name}t-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}-top: ${negative ? '-' : ''}${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	// bottom
 	css += `${formatBreakpoint(breakpoint)}${element?.name}b-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}-bottom: ${negative ? '-' : ''}${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	// left
 	css += `${formatBreakpoint(breakpoint)}${element?.name}l-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}-left: ${negative ? '-' : ''}${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	// right
 	css += `${formatBreakpoint(breakpoint)}${element?.name}r-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}-right: ${negative ? '-' : ''}${value};\n`;
@@ -70,15 +70,15 @@ const classNameMP = (
 	css += `${formatBreakpoint(breakpoint)}${element?.name}x-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}-left: ${negative ? '-' : ''}${value};\n`;
 	css += `${element?.property}-right: ${negative ? '-' : ''}${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	css += `${formatBreakpoint(breakpoint)}${element?.name}y-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}-top: ${negative ? '-' : ''}${value};\n`;
 	css += `${element?.property}-bottom: ${negative ? '-' : ''}${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	// all
 	css += `${formatBreakpoint(breakpoint)}${element?.name}a-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}: ${negative ? '-' : ''}${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	return css;
 };
 
@@ -92,14 +92,14 @@ const classNameG = (
 	// x
 	css += `${formatBreakpoint(breakpoint)}${element?.name}x-${formatClassName(key)} {\n`;
 	css += `column-${element?.property}: ${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	// y
 	css += `${formatBreakpoint(breakpoint)}${element?.name}y-${formatClassName(key)} {\n`;
 	css += `row-${element?.property}: ${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	// gap
 	css += `${formatBreakpoint(breakpoint)}${element?.name}a-${formatClassName(key)} {\n`;
 	css += `${element?.property}: ${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	return css;
 };

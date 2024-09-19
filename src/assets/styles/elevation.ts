@@ -6,7 +6,7 @@ export function elevationRoot(values: Array<string>) {
 		${value[1]} color-mix(in oklab, var(--c-shadow) 14%, transparent),
 		${value[2]} color-mix(in oklab, var(--c-shadow) 12%, transparent);\n`;
 	}
-	css += '};\n';
+	css += '}\n';
 	return css;
 }
 
@@ -17,7 +17,7 @@ export function elevationClassName(values: Array<string>) {
 		css += `box-shadow: ${value[0]} color-mix(in oklab, var(--c-shadow) 20%, transparent),
 		${value[1]} color-mix(in oklab, var(--c-shadow) 14%, transparent),
 		${value[2]} color-mix(in oklab, var(--c-shadow) 12%, transparent);\n`;
-		css += `};\n`;
+		css += `}\n`;
 	}
 	return css;
 }
