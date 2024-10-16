@@ -13,6 +13,12 @@ export const themes = {
 			css: '--c-secondary',
 			light: '#ff3e00',
 			dark: '#ff3e00'
+		},
+		{
+			name: 'tertiary',
+			css: '--c-tertiary',
+			light: 'var(--c-fuchsia-4)',
+			dark: 'var(--c-fuchsia-3)'
 		}
 	],
 	typography: [

@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - New key `style` for custom style font.
   - New key `rounded` for custom border radius.
   - New key `spacing` for custom margin, padding and gap style.
+- Add new key color in theme.
 
 ### Changed
 
