@@ -15,31 +15,31 @@ export function convertJStoCSS(props: any) {
 	const {
 		defaultTheme,
 		colors,
-		breakpoints,
+		thresholds,
 		palette,
 		rounded,
 		elevation,
 		position,
 		sizing,
 		spacing,
-		weight,
-		transform,
-		style,
-		align,
-		family
+		fontWeight,
+		fontTransform,
+		fontStyle,
+		fontAlign,
+		fontFamily
 	} = props;
 	let css: string = '';
-	for (const [breakpoint, screen] of Object.entries(breakpoints)) {
+	for (const [breakpoint, screen] of Object.entries(thresholds)) {
 		if (breakpoint === 'default') {
 			// root
 			css += colorsPalette(palette);
 			css += colorsThemes(defaultTheme, colors);
 			css += roundedRoot(rounded);
 			// css += elevationRoot(elevation);
-			css += typographyRoot(style, family);
+			css += typographyRoot(fontStyle, fontFamily);
 			// class
 			css += elevationClassName(elevation);
-			css += typographyClassName(weight, transform, family);
+			css += typographyClassName(fontWeight, fontTransform, fontFamily);
 		}
 
 		if (breakpoint !== 'default') css += `@media screen and (min-width: ${screen}) {\n`;
@@ -47,7 +47,7 @@ export function convertJStoCSS(props: any) {
 		css += positionClassName(breakpoint, position);
 		css += sizingClassName(breakpoint, sizing);
 		css += spacingClassName(breakpoint, spacing);
-		css += typographyClassNameBreakpoint(breakpoint, style, align);
+		css += typographyClassNameBreakpoint(breakpoint, fontStyle, fontAlign);
 		if (breakpoint !== 'default') css += `}\n`;
 	}
 	return css;
