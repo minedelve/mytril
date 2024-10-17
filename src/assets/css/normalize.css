@@ -1,10 +1,10 @@
 html {
 	line-height: 1.5;
 	tab-size: 4;
-	background-color: var(--c-bg);
-	color: var(--c-text);
-	font-family: var(--f-body);
-	font-size: var(--a-text-md);
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: var(--text-md);
 }
 
 html {
@@ -16,7 +16,7 @@ html {
 }
 
 *:not(body):focus-visible {
-	box-shadow: 0px 0px 0px 3px var(--c-shadow);
+	box-shadow: 0px 0px 0px 3px var(--shadow);
 }
 
 * {

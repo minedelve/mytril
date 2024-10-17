@@ -1,23 +1,23 @@
 .markdown.code {
-	--c-code--operator: #89ddff;
-	--c-code--punctuation: #89ddff;
-	--c-code--comment: #616161;
-	--c-code--property: #80cbc4;
-	--c-code--function: #c792ea;
-	--c-code--boolean: #c792ea;
-	--c-code--atrule: #c792ea;
-	--c-code--tag: #f66;
-	--c-code--keyword: #f66;
-	--c-code--selector: #f66;
-	--c-code--attr-name: #ffcb6b;
-	--c-code--attr-value: #a5e844;
-	--c-code--attribute: #a5e844;
+	--code--operator: #89ddff;
+	--code--punctuation: #89ddff;
+	--code--comment: #616161;
+	--code--property: #80cbc4;
+	--code--function: #c792ea;
+	--code--boolean: #c792ea;
+	--code--atrule: #c792ea;
+	--code--tag: #f66;
+	--code--keyword: #f66;
+	--code--selector: #f66;
+	--code--attr-name: #ffcb6b;
+	--code--attr-value: #a5e844;
+	--code--attribute: #a5e844;
 }
 
 .markdown.code .preview-code {
 	margin: 0 auto;
 	overflow: hidden;
-	border: 1px solid var(--c-divider);
+	border: 1px solid var(--divider);
 	position: relative;
 	border-radius: 8px;
 }
@@ -45,11 +45,11 @@
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
-	color: var(--c-text);
-	background-color: var(--c-bg-mute);
-	font-family: var(--f-code);
+	color: var(--text);
+	background-color: var(--bg-mute);
+	font-family: var(--code);
 	line-height: var(--code-line-height);
-	font-size: var(--a-text-sm);
+	font-size: var(--text-sm);
 	line-height: 1.5em;
 	tab-size: 4;
 	hyphens: none;
@@ -72,41 +72,41 @@
 }
 
 .markdown.code .token.punctuation {
-	color: var(--c-code--punctuation);
+	color: var(--code--punctuation);
 }
 .markdown.code .token.operator {
-	color: var(--c-code--operator);
+	color: var(--code--operator);
 }
 .markdown.code .token.comment {
-	color: var(--c-code--comment);
+	color: var(--code--comment);
 }
 .markdown.code .token.property {
-	color: var(--c-code--property);
+	color: var(--code--property);
 }
 .markdown.code .token.function {
-	color: var(--c-code--function);
+	color: var(--code--function);
 }
 .markdown.code .token.boolean {
-	color: var(--c-code--boolean);
+	color: var(--code--boolean);
 }
 .markdown.code .token.atrule {
-	color: var(--c-code--atrule);
+	color: var(--code--atrule);
 }
 .markdown.code .token.tag {
-	color: var(--c-code--tag);
+	color: var(--code--tag);
 }
 .markdown.code .token.keyword {
-	color: var(--c-code--keyword);
+	color: var(--code--keyword);
 }
 .markdown.code .token.selector {
-	color: var(--c-code--keyword);
+	color: var(--code--keyword);
 }
 .markdown.code .token.attr-name {
-	color: var(--c-code--attr-name);
+	color: var(--code--attr-name);
 }
 .markdown.code .token.attr-value {
-	color: var(--c-code--attr-value);
+	color: var(--code--attr-value);
 }
 .markdown.code .token.attribute {
-	color: var(--c-code--attribute);
+	color: var(--code--attribute);
 }

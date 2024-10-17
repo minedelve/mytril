@@ -23,17 +23,17 @@ export function colorsThemes(
 
 	for (const property in colors) {
 		if (typeof colors[property] === 'string') {
-			rootCss += `--c-${property}: ${colors[property]};\n`;
+			rootCss += `--${property}: ${colors[property]};\n`;
 			classCss += colorsClassThemes(property);
 		}
 
 		if (typeof colors[property] === 'object') {
 			for (const scheme in colors[property]) {
 				if (scheme === defaultTheme) {
-					rootCss += `--c-${property}: ${colors[property][scheme]};\n`;
+					rootCss += `--${property}: ${colors[property][scheme]};\n`;
 				} else {
 					if (!Object.prototype.hasOwnProperty.call(schemeCss, `${scheme}`)) schemeCss[scheme] = '';
-					schemeCss[scheme] += `--c-${property}: ${colors[property][scheme]};\n`;
+					schemeCss[scheme] += `--${property}: ${colors[property][scheme]};\n`;
 				}
 				classCss += colorsClassThemes(property);
 			}
@@ -57,13 +57,13 @@ export function colorsThemes(
 function colorsClassThemes(property: string) {
 	let css: string = ``;
 	css += `.bg\\:${property} {\n`;
-	css += `background-color: var(--c-${property}) !important;\n`;
+	css += `background-color: var(--${property}) !important;\n`;
 	css += `}\n`;
 	css += `.txt\\:${property} {\n`;
-	css += `color: var(--c-${property}) !important;\n`;
+	css += `color: var(--${property}) !important;\n`;
 	css += `}\n`;
 	css += `.r\\:${property} {\n`;
-	css += `border-color: var(--c-${property}) !important;\n`;
+	css += `border-color: var(--${property}) !important;\n`;
 	css += `}\n`;
 	return css;
 }

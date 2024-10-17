@@ -9,13 +9,13 @@ export function typographyRoot(
 	let css = '';
 	css += ':root {\n';
 	for (const [key, value] of Object.entries(style)) {
-		css += `--a-text-${key}: ${value?.size};\n`;
+		css += `--text-${key}: ${value?.size};\n`;
 	}
 	css += '}\n';
 
 	css += ':root {\n';
 	for (const [key, value] of Object.entries(family)) {
-		css += `--f-${key}: ${value};\n`;
+		css += `--${key}: ${value};\n`;
 	}
 	css += '}\n';
 	return css;
@@ -53,7 +53,7 @@ export function typographyClassName(
 	}
 	for (const [key] of Object.entries(family)) {
 		css += `.font-${key} {\n`;
-		css += `font-family: var(--f-${key});\n`;
+		css += `font-family: var(--${key});\n`;
 		css += `}\n`;
 	}
 	return css;

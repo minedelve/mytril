@@ -3,7 +3,7 @@ import { formatBreakpoint } from '$lib/utils/format-class.js';
 export function roundedRoot(values: { [key: string]: string }) {
 	let css = ':root {\n';
 	for (const [key, value] of Object.entries(values)) {
-		css += `--a-rounded-${key}: ${value};\n`;
+		css += `--rounded-${key}: ${value};\n`;
 	}
 	return (css += '}\n');
 }

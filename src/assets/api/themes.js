@@ -4,107 +4,107 @@ export const themes = {
 	palette: [
 		{
 			name: 'primary',
-			css: '--c-primary',
+			css: '--primary',
 			light: '#3b8eed',
 			dark: '#3b8eed'
 		},
 		{
 			name: 'secondary',
-			css: '--c-secondary',
+			css: '--secondary',
 			light: '#ff3e00',
 			dark: '#ff3e00'
 		},
 		{
 			name: 'tertiary',
-			css: '--c-tertiary',
-			light: 'var(--c-fuchsia-4)',
-			dark: 'var(--c-fuchsia-3)'
+			css: '--tertiary',
+			light: 'var(--fuchsia-4)',
+			dark: 'var(--fuchsia-3)'
 		}
 	],
 	typography: [
 		{
 			name: 'text head',
-			css: '--c-text-head',
-			light: 'var(--c-gray-10)',
-			dark: 'var(--c-gray-0)'
+			css: '--text-head',
+			light: 'var(--gray-10)',
+			dark: 'var(--gray-0)'
 		},
 		{
 			name: 'text',
-			css: '--c-text',
-			light: 'var(--c-gray-7)',
-			dark: 'var(--c-gray-3)'
+			css: '--text',
+			light: 'var(--gray-7)',
+			dark: 'var(--gray-3)'
 		},
 		{
 			name: 'text soft',
-			css: '--c-text-soft',
-			light: 'var(--c-gray-5)',
-			dark: 'var(--c-gray-4)'
+			css: '--text-soft',
+			light: 'var(--gray-5)',
+			dark: 'var(--gray-4)'
 		},
 		{
 			name: 'text mute',
-			css: '--c-text-mute',
-			light: 'var(--c-gray-4)',
-			dark: 'var(--c-gray-5)'
+			css: '--text-mute',
+			light: 'var(--gray-4)',
+			dark: 'var(--gray-5)'
 		},
 		{
 			name: 'text code',
-			css: '--c-text-code',
-			light: 'var(--c-gray-8)',
-			dark: 'var(--c-gray-3)'
+			css: '--text-code',
+			light: 'var(--gray-8)',
+			dark: 'var(--gray-3)'
 		}
 	],
 	background: [
 		{
 			name: 'bg',
-			css: '--c-bg',
-			light: 'var(--c-neutral-0)',
-			dark: 'var(--c-neutral-9)'
+			css: '--bg',
+			light: 'var(--neutral-0)',
+			dark: 'var(--neutral-9)'
 		},
 		{
 			name: 'bg soft',
-			css: '--c-bg-soft',
-			light: 'var(--c-neutral-1)',
-			dark: 'var(--c-neutral-8)'
+			css: '--bg-soft',
+			light: 'var(--neutral-1)',
+			dark: 'var(--neutral-8)'
 		},
 		{
 			name: 'bg mute',
-			css: '--c-bg-mute',
-			light: 'var(--c-neutral-2)',
-			dark: 'var(--c-neutral-7)'
+			css: '--bg-mute',
+			light: 'var(--neutral-2)',
+			dark: 'var(--neutral-7)'
 		}
 	],
 	state: [
 		{
 			name: 'info',
-			css: '--c-info',
-			light: 'var(--c-blue-5)',
-			dark: 'var(--c-blue-4)'
+			css: '--info',
+			light: 'var(--blue-5)',
+			dark: 'var(--blue-4)'
 		},
 		{
 			name: 'success',
-			css: '--c-success',
-			light: 'var(--c-green-5)',
-			dark: 'var(--c-green-4)'
+			css: '--success',
+			light: 'var(--green-5)',
+			dark: 'var(--green-4)'
 		},
 		{
 			name: 'error',
-			css: '--c-error',
-			light: 'var(--c-red-5)',
-			dark: 'var(--c-red-4)'
+			css: '--error',
+			light: 'var(--red-5)',
+			dark: 'var(--red-4)'
 		},
 		{
 			name: 'warning',
-			css: '--c-warning',
-			light: 'var(--c-yellow-5)',
-			dark: 'var(--c-yellow-4)'
+			css: '--warning',
+			light: 'var(--yellow-5)',
+			dark: 'var(--yellow-4)'
 		}
 	],
 	global: [
 		{
 			name: 'shadow',
-			css: '--c-shadow',
-			light: 'var(--c-stone-10)',
-			dark: 'var(--c-stone-10)'
+			css: '--shadow',
+			light: 'var(--stone-10)',
+			dark: 'var(--stone-10)'
 		}
 	]
 };
