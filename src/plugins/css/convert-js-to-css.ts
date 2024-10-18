@@ -49,6 +49,14 @@ export function convertJStoCSS(props: any) {
 		css += spacingClassName(breakpoint, spacing);
 		css += typographyClassNameBreakpoint(breakpoint, fontStyle, fontAlign);
 		if (breakpoint !== 'default') css += `}\n`;
+
+		if (breakpoint !== 'default') css += `@media screen and (max-width: ${screen}) {\n`;
+		css += roundedClassName(`max-${breakpoint}`, rounded);
+		css += positionClassName(`max-${breakpoint}`, position);
+		css += sizingClassName(`max-${breakpoint}`, sizing);
+		css += spacingClassName(`max-${breakpoint}`, spacing);
+		css += typographyClassNameBreakpoint(`max-${breakpoint}`, fontStyle, fontAlign);
+		if (breakpoint !== 'default') css += `}\n`;
 	}
 	return css;
 }
