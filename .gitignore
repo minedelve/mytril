@@ -1,13 +1,15 @@
-# Global
 node_modules
+
+# Output
+.output
+.vercel
+/.svelte-kit
+/build
+/dist
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Docker
-Dockerfile
-docker-compose.yml
 
 # Env
 .env
@@ -18,8 +20,3 @@ docker-compose.yml
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# PackageManager
-bun.lockb
-yarn.lock
-package-lock.json

@@ -5,7 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.2] - mytril
+## [0.2.0] - 2024-10-18
+
+### Added
+
+- Add **custom config** with `mytril.config.js`.
+  - New key `defaultTheme` for define default theme CSS.
+  - New key `noPalette` for disabled color palette.
+  - New key `colors` for custom theme for mytril.
+  - New key `thresholds` for custom breakpoint or you interface.
+  - New key `family` for custom font family.
+  - New key `transform` for custom font transform.
+  - New key `align` for custom font align.
+  - New key `weight` for custom font weight.
+  - New key `style` for custom style font.
+  - New key `rounded` for custom border radius.
+  - New key `spacing` for custom margin, padding and gap style.
+- Add new key color in theme.
+
+### Changed
+
+- Refacto Mytril for a new core
+- Change structure package
+- Update preprocessor with Vite.js
+- Clear legacy code
+
+### Fixed
+
+- **store** use too much memory
+- style mytril no load correctly on first launch
+
+## [0.1.2] - mytril - 2024-09-18
 
 ### Added
 
