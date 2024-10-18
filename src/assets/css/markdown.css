@@ -1,0 +1,170 @@
+.markdown :first-child {
+	margin-top: 0;
+}
+
+.markdown h1 {
+	font-size: var(--text-4xl);
+	font-weight: 600;
+	margin-bottom: 24px;
+}
+
+.markdown h2 {
+	font-size: var(--text-2xl);
+	margin: 20px 0 8px;
+	font-weight: 500;
+	line-height: 32px;
+}
+
+.markdown h3 {
+	font-size: var(--text-xl);
+	font-weight: 600;
+	line-height: 24px;
+	margin: 20px 0 8px;
+}
+
+.markdown h4 {
+	font-size: var(--text-lg);
+	font-weight: 600;
+	line-height: 24px;
+	margin: 20px 0 8px;
+}
+
+.markdown h6 {
+	font-size: var(--text-lg);
+	font-weight: 600;
+	height: 36px;
+	margin: 20px 0 8px;
+}
+
+.markdown p {
+	margin: 18px 0;
+	display: block;
+	line-height: 1.5;
+}
+
+.markdown code {
+	display: inline-block;
+	padding: 3px 5px 4px;
+	border-radius: var(--rounded-sm);
+	font-family: var(--f-code);
+	font-size: var(--text-sm);
+	background-color: var(--bg-mute);
+}
+
+.markdown pre {
+	margin: 0;
+	padding: 3px 5px 4px;
+	border-radius: var(--rounded-sm);
+	font-size: var(--text-xm);
+}
+
+.markdown a {
+	color: var(--c-primary);
+	cursor: pointer;
+	transition: color 0.1s;
+	text-decoration: none;
+}
+
+.markdown a:hover {
+	text-decoration: underline;
+}
+
+.markdown ul,
+.markdown ol {
+	margin: 0 0 12px;
+	padding: 0;
+}
+.markdown ul.contains-task-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.markdown ul.contains-task-list li.task-list-item {
+	list-style-type: none;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	margin: 5px 0 0 16px;
+	font-size: var(--text-md);
+	font-weight: 500;
+	line-height: 24px;
+}
+
+.markdown ul.contains-task-list li.task-list-item input {
+	margin: 0;
+	padding: 0;
+	margin-right: 6px;
+}
+
+.markdown ol li {
+	list-style-type: decimal;
+	margin-left: 20px;
+	list-style-position: inside;
+	margin: 5px 0 0 16px;
+	font-size: var(--text-md);
+	font-weight: 500;
+	line-height: 24px;
+}
+
+.markdown ul li {
+	list-style-type: disc;
+	margin: 8px 0 0 20px;
+	list-style-position: inside;
+	font-size: var(--text-md);
+	font-weight: 500;
+	line-height: 24px;
+}
+
+.markdown strong {
+	font-weight: 700;
+}
+
+.markdown blockquote {
+	border-radius: var(--rounded-lg);
+	padding: 10px;
+	margin: 20px 0;
+	border: 1px solid black;
+}
+
+.markdown blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+.markdown .table {
+	border: 1px solid var(--c-divider);
+	border-radius: var(--rounded-lg);
+	margin-bottom: 2rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.markdown .table-wrapper {
+	display: grid;
+	width: 100%;
+	max-height: 450px;
+	overflow: auto;
+}
+
+.markdown table {
+	overflow: auto;
+	border-spacing: 0;
+}
+
+.markdown thead th {
+	text-align: start;
+	border-bottom: 1px solid var(--c-divider);
+	padding: 5px;
+}
+
+.markdown tbody {
+	width: 100%;
+}
+
+.markdown tbody tr td {
+	padding: 5px;
+}
+
+.markdown tbody tr:not(:last-child) td {
+	border-bottom: 1px solid var(--c-divider);
+}

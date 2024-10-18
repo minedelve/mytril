@@ -1,18 +1,102 @@
 {
-  "name": "mytril-monorepo",
-  "description": "monorepo for mytril project",
-  "version": "0.0.1",
-  "private": true,
-  "author": "Nycolaide",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^9.9.1",
-    "globals": "^15.9.0",
-    "husky": "^9.1.5",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.3.0"
-  },
-  "scripts": {
-    "prepare": "husky"
-  }
+	"name": "mytril",
+	"version": "0.2.0",
+	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
+	"license": "MIT",
+	"author": "Nycolaide (laurent.grimaldi@minedelve.com)",
+	"homepage": "https://minedelve.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/minedelve/mytril.git"
+	},
+	"funding": {
+		"type": "buymeacoffee",
+		"url": "https://buymeacoffee.com/nycolaide"
+	},
+	"bugs": {
+		"url": "https://github.com/minedelve/mytril/issues"
+	},
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"components",
+		"ui-library",
+		"component-library",
+		"component",
+		"mytril",
+		"minedelve",
+		"design",
+		"css",
+		"ui",
+		"svelte-component",
+		"interface",
+		"design-system",
+		"theming",
+		"framework",
+		"typescript",
+		"library"
+	],
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build && npm run package",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && npm run packPackage && publint",
+		"packPackage": "npm run scripts/pack-packages.mjs",
+		"prepublishOnly": "npm run package",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write ."
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./vite": {
+			"types": "./dist/plugins/vite/vite.d.ts",
+			"default": "./dist/plugins/vite/vite.js"
+		},
+		"./api": {
+			"types": "./dist/assets/api/index.d.ts",
+			"default": "./dist/assets/api/index.js"
+		},
+		"./store": {
+			"types": "./dist/store/index.d.ts",
+			"default": "./dist/store/index.js"
+		},
+		"./styles": "./dist/index.style.css"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"peerDependencies": {
+		"svelte": "^4.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/eslint": "^9.6.0",
+		"@types/node": "^22.5.5",
+		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.36.0",
+		"globals": "^15.0.0",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"publint": "^0.2.0",
+		"svelte": "^4.2.7",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"typescript-eslint": "^8.0.0",
+		"vite": "^5.0.11"
+	},
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module"
 }
