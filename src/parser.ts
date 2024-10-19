@@ -7,7 +7,7 @@ import { merge } from './utils/merge.js';
 export interface Configuration {
 	theme: {
 		defaultTheme: 'light' | 'dark';
-		noPalette: boolean;
+		palette: 'material' | 'tailwind' | undefined;
 		colors: { [key: string]: string | { [key: string]: string } };
 	};
 	display: {
@@ -43,6 +43,7 @@ export async function mytrilParser(config: Configuration) {
 	let fontStyle = presets.assets.typography.style;
 	let rounded = presets.assets.rounded;
 	let spacing = presets.assets.spacing;
+	let palette = {};
 
 	if (config) {
 		// external config
@@ -50,6 +51,11 @@ export async function mytrilParser(config: Configuration) {
 			// custom theme
 			if (config?.theme?.defaultTheme) defaultTheme = config?.theme?.defaultTheme;
 			if (config?.theme?.colors) colors = merge(colors, config?.theme.colors);
+
+			// load palette
+			if (typeof config?.theme?.palette === 'string') {
+				palette = presets.palette[config?.theme?.palette];
+			}
 		}
 
 		if (config?.display) {
@@ -72,9 +78,6 @@ export async function mytrilParser(config: Configuration) {
 			if (config?.extend?.spacing) spacing = merge(spacing, config?.extend?.spacing);
 		}
 	}
-
-	let palette = {};
-	if (config?.theme?.noPalette !== false) palette = presets.palette;
 
 	const elevation = presets.assets.elevation;
 	const position = presets.assets.position;

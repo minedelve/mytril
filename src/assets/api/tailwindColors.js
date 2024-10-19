@@ -1,4 +1,4 @@
-export const colors = {
+export const tailwindColors = {
 	slate: [
 		{
 			name: 'slate 0',
