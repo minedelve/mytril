@@ -5,106 +5,106 @@ export const themes = {
 		{
 			name: 'primary',
 			css: '--primary',
-			light: '#3b8eed',
-			dark: '#3b8eed'
+			light: '#1976D2',
+			dark: '#2196F3'
 		},
 		{
 			name: 'secondary',
 			css: '--secondary',
-			light: '#ff3e00',
-			dark: '#ff3e00'
+			light: '#424242',
+			dark: '#424242'
 		},
 		{
 			name: 'tertiary',
 			css: '--tertiary',
-			light: 'var(--fuchsia-4)',
-			dark: 'var(--fuchsia-3)'
+			light: '#82B1FF',
+			dark: '#FF4081'
 		}
 	],
 	typography: [
 		{
-			name: 'text head',
-			css: '--text-head',
-			light: 'var(--gray-10)',
-			dark: 'var(--gray-0)'
-		},
-		{
 			name: 'text',
 			css: '--text',
-			light: 'var(--gray-7)',
-			dark: 'var(--gray-3)'
+			light: '#1d1b20',
+			dark: '#e6e0e9'
+		},
+		{
+			name: 'text variant',
+			css: '--text-variant',
+			light: '#322f35',
+			dark: '#e6e0e9'
 		},
 		{
 			name: 'text soft',
 			css: '--text-soft',
-			light: 'var(--gray-5)',
-			dark: 'var(--gray-4)'
+			light: '#49454f',
+			dark: '#cac4d0'
 		},
 		{
 			name: 'text mute',
 			css: '--text-mute',
-			light: 'var(--gray-4)',
-			dark: 'var(--gray-5)'
-		},
-		{
-			name: 'text code',
-			css: '--text-code',
-			light: 'var(--gray-8)',
-			dark: 'var(--gray-3)'
+			light: '#79747e',
+			dark: '#938f99'
 		}
 	],
 	background: [
 		{
-			name: 'bg',
-			css: '--bg',
-			light: 'var(--neutral-0)',
-			dark: 'var(--neutral-9)'
+			name: 'surface',
+			css: '--surface',
+			light: '#FEF7FF',
+			dark: '#141218'
 		},
 		{
-			name: 'bg soft',
-			css: '--bg-soft',
-			light: 'var(--neutral-1)',
-			dark: 'var(--neutral-8)'
+			name: 'surface variant',
+			css: '--surface-variant',
+			light: '#E7E0EC',
+			dark: '#49454F'
 		},
 		{
-			name: 'bg mute',
-			css: '--bg-mute',
-			light: 'var(--neutral-2)',
-			dark: 'var(--neutral-7)'
+			name: 'surface container',
+			css: '--surface-container',
+			light: '#F3EDF7',
+			dark: '#211F26'
 		}
 	],
 	state: [
 		{
 			name: 'info',
 			css: '--info',
-			light: 'var(--blue-5)',
-			dark: 'var(--blue-4)'
+			light: '#2196F3',
+			dark: '#2196F3'
 		},
 		{
 			name: 'success',
 			css: '--success',
-			light: 'var(--green-5)',
-			dark: 'var(--green-4)'
+			light: '#4CAF50',
+			dark: '#4CAF50'
 		},
 		{
 			name: 'error',
 			css: '--error',
-			light: 'var(--red-5)',
-			dark: 'var(--red-4)'
+			light: '#FF5252',
+			dark: '#FF5252'
 		},
 		{
 			name: 'warning',
 			css: '--warning',
-			light: 'var(--yellow-5)',
-			dark: 'var(--yellow-4)'
+			light: '#FB8C00',
+			dark: '#FB8C00'
 		}
 	],
 	global: [
 		{
 			name: 'shadow',
 			css: '--shadow',
-			light: 'var(--stone-10)',
-			dark: 'var(--stone-10)'
+			light: '#000000',
+			dark: '#000000'
+		},
+		{
+			name: 'outline',
+			css: '--outline',
+			light: '#79747e',
+			dark: '#938f99'
 		}
 	]
 };

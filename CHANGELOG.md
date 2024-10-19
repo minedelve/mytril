@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [0.2.2] - 2024-10-19
+
+### Added
+
+- Add **custom config** with `mytril.config.js`.
+  - New key `palette` for choice palette color in your project (**tailwind** or **material**).
+
+### Changed
+
+- New palette colors default on preset theme
+- Delete **propertie noPalette** on `mytril.config.js`.
+
+### Fixed
+
+- Node dev environements errors for packPackages.
+
 ## [0.2.1] - 2024-10-18
 
 ### Changed

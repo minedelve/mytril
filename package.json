@@ -1,7 +1,7 @@
 {
 	"name": "mytril",
 	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"author": {
 		"name": "Nycolaide",
 		"email": "laurent.grimaldi@minedelve.com"
@@ -44,7 +44,7 @@
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && npm run packPackage && publint",
-		"packPackage": "npm run scripts/pack-packages.mjs",
+		"packPackage": "node ./scripts/pack-packages.mjs",
 		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

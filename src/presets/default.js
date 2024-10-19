@@ -1,9 +1,13 @@
-import { colors } from '$lib/assets/api/colors.js';
+import { materialColors } from '$lib/assets/api/materialColors.js';
+import { tailwindColors } from '$lib/assets/api/tailwindColors.js';
 import { themes } from '$lib/assets/api/themes.js';
 
 const presets = {
 	colors: themes,
-	palette: colors,
+	palette: {
+		material: materialColors,
+		tailwind: tailwindColors
+	},
 	assets: {
 		display: [
 			'none',
