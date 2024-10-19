@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- New palette colors default on mytril.config.js
+
 ### Fixed
 
 - Node dev environements errors for packPackages.
