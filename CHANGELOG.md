@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add **custom config** with `mytril.config.js`.
+  - New key `palette` for choice palette color in your project (**tailwind** or **material**).
+
 ### Changed
 
-- New palette colors default on mytril.config.js
+- New palette colors default on preset theme
+- Delete **propertie noPalette** on `mytril.config.js`.
 
 ### Fixed
 
