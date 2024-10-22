@@ -73,7 +73,7 @@
 		flex: 0 0 100%;
 		max-width: 100%;
 		width: 100%;
-		background-color: var(--c-purple-2);
+		background-color: var(--purple-2);
 	}
 
 	.margin-spacing {
@@ -82,7 +82,7 @@
 
 	.padding-spacing {
 		display: block;
-		background-color: var(--c-lime-2);
+		background-color: var(--lime-2);
 	}
 
 	.spacing-element {

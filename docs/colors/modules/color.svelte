@@ -73,7 +73,7 @@
 
 			& p {
 				background-color: var(--c-brand);
-				color: var(--c-text);
+				color: var(--c-text-1);
 				padding: 4px 5px;
 				width: max-content;
 				border-radius: 9999px;

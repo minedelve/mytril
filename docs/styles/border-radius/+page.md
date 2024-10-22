@@ -74,8 +74,8 @@ And you have a possibility to use border radius directly on your css with :root 
 
 ```css
 .custom-class {
-	border-radius: var(--a-rounded-xl);
+	border-radius: var(--rounded-xl);
 }
 ```
 
-root css `--a-rounded-{n}`;
+root css `--rounded-{n}`;

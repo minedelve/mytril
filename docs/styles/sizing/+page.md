@@ -72,9 +72,7 @@ Breakpoints don't apply to the smallest `xs` size, which is inferred.
 ### Usage Example:
 
 ```html
-<div class="h-auto w-75 lg:w-50">
-    My content
-</div>
+<div class="h-auto w-75 lg:w-50">My content</div>
 ```
 
 This example applies a width of 75% by default and switches to 50% on large screens, using Mytril’s utility classes to enhance layout control.
@@ -88,7 +86,7 @@ This example applies a width of 75% by default and switches to 50% on large scre
 
     .wrapper-width div {
         height: 36px;
-        background-color: var(--c-sky-2)
+        background-color: var(--sky-2)
     }
 
     .wrapper-height {
@@ -99,6 +97,6 @@ This example applies a width of 75% by default and switches to 50% on large scre
 
     .wrapper-height div {
         width: 36px;
-        background-color: var(--c-sky-2)
+        background-color: var(--sky-2)
     }
 </style>

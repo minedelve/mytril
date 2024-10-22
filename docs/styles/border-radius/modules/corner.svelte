@@ -33,7 +33,7 @@
 	.block-card {
 		width: 50px;
 		height: 50px;
-		background-color: var(--c-sky-3);
+		background-color: var(--sky-3);
 		margin: 0 auto;
 	}
 

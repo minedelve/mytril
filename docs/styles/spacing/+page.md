@@ -63,8 +63,8 @@ To apply margin or padding, you can combine the property, direction, and size to
 
 ```html
 <div class="p-4 m-2">
-  <!-- This div has padding of 1rem and margin of 0.5rem -->
-  Content
+	<!-- This div has padding of 1rem and margin of 0.5rem -->
+	Content
 </div>
 ```
 
@@ -86,10 +86,9 @@ For example:
 
 ```html
 <div class="md:mx-4 lg:px-2">
-  <!-- Applies 1rem horizontal margin at medium screens, and 0.5rem padding at large screens -->
-  Responsive content
+	<!-- Applies 1rem horizontal margin at medium screens, and 0.5rem padding at large screens -->
+	Responsive content
 </div>
-
 ```
 
 ### Advanced Usage: Custom Spacing with Root Variables {#advanced-usage}
@@ -98,8 +97,8 @@ In addition to the predefined classes, developers can also leverage CSS root var
 
 ```css
 .custom-class {
-  padding: var(--a-spacing-4);
-  margin: var(--a-spacing-2);
+	padding: var(--spacing-4);
+	margin: var(--spacing-2);
 }
 ```
 

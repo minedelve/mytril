@@ -31,12 +31,11 @@ npm run dev
 
 ## Install Mytril
 
-Install **mytril** and **mytril-tools** (not required) within your project. Mytril has no external dependencies in order to facilitate its integration and limit potential version conflicts
+Install **mytril** within your project. Mytril has no external dependencies in order to facilitate its integration and limit potential version conflicts
 
 ```shell
 # terminal
 npm install -D mytril
-npm install -D mytril-tools
 ```
 
 ## Add Mytril on your vite configuration.
@@ -87,8 +86,6 @@ npm run dev
 
 Start using Mytril components, utility classes, and themes to create your interface and content.
 
-_work in progress_
-
 ```svelte
 <script>
 	// +page.svelte
@@ -99,7 +96,7 @@ _work in progress_
 
 <style>
 	.custom-class {
-		color: var(--c-theme-1);
+		color: var(--primary);
 	}
 </style>
 ```

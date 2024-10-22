@@ -55,11 +55,11 @@ In this example, the elevation-2 class applies a subtle shadow effect, giving th
 
 ### Customizing Elevation with Root Variables: {#customizing-elevation-with-root-variables}
 
-You can also leverage Mytril’s root CSS variables to directly control the shadow in your custom classes. Mytril exposes variables like `--a-elevation-{n}`, where `{n}` represents the shadow depth from 0 to 24. This allows you to seamlessly integrate shadows into your existing custom styles:
+You can also leverage Mytril’s root CSS variables to directly control the shadow in your custom classes. Mytril exposes variables like `--elevation-{n}`, where `{n}` represents the shadow depth from 0 to 24. This allows you to seamlessly integrate shadows into your existing custom styles:
 
 ```css
 .custom-class {
-	box-shadow: var(--a-elevation-3);
+	box-shadow: var(--elevation-3);
 }
 ```
 

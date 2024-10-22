@@ -39,12 +39,12 @@ export default {
 		defaultTheme: 'light',
 		colors: {
 			primary: {
-				light: 'var(--c-green-6)',
-				dark: 'var(--c-green-2)'
+				light: 'var(--green-6)',
+				dark: 'var(--green-2)'
 			},
 			secondary: '#eaea',
 			background: {
-				dark: 'var(--c-stone-10)'
+				dark: 'var(--stone-10)'
 			}
 		}
 	}
@@ -68,9 +68,9 @@ export default {
 		defaultTheme: 'dark',
 		colors: {
 			primary: {
-				light: 'var(--c-green-6)',
-				dark: 'var(--c-green-2)',
-				'my-theme': 'var(--c-green-10)'
+				light: 'var(--green-6)',
+				dark: 'var(--green-2)',
+				'my-theme': 'var(--green-10)'
 			},
 			secondary: '#eaea'
 		}
@@ -127,8 +127,8 @@ We provide a **well-balanced default theme** with an extensive set of color valu
         margin-top: 0.5rem;
 
         button {
-            border: 1px solid var(--c-text);
-            color: var(--c-text);
+            border: 1px solid var(--c-text-1);
+            color: var(--c-text-1);
             border-radius: 1rem;
             padding: 0.25rem 1rem;
             background-color: transparent;

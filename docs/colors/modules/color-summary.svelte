@@ -14,7 +14,7 @@
 		padding: 6px 0;
 		width: 100%;
 		font-size: 12px;
-		color: var(--c-text-soft);
+		color: var(--c-text-2);
 		font-weight: 400;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;

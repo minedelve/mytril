@@ -4,101 +4,107 @@ export const themes = {
 	palette: [
 		{
 			name: 'primary',
-			css: '--c-primary',
-			light: '#3b8eed',
-			dark: '#3b8eed'
+			css: '--primary',
+			light: '#1976D2',
+			dark: '#2196F3'
 		},
 		{
 			name: 'secondary',
-			css: '--c-secondary',
-			light: '#ff3e00',
-			dark: '#ff3e00'
+			css: '--secondary',
+			light: '#424242',
+			dark: '#424242'
+		},
+		{
+			name: 'tertiary',
+			css: '--tertiary',
+			light: '#82B1FF',
+			dark: '#FF4081'
 		}
 	],
 	typography: [
 		{
-			name: 'text head',
-			css: '--c-text-head',
-			light: 'var(--c-gray-10)',
-			dark: 'var(--c-gray-0)'
+			name: 'text',
+			css: '--text',
+			light: '#1d1b20',
+			dark: '#e6e0e9'
 		},
 		{
-			name: 'text',
-			css: '--c-text',
-			light: 'var(--c-gray-7)',
-			dark: 'var(--c-gray-3)'
+			name: 'text variant',
+			css: '--text-variant',
+			light: '#322f35',
+			dark: '#e6e0e9'
 		},
 		{
 			name: 'text soft',
-			css: '--c-text-soft',
-			light: 'var(--c-gray-5)',
-			dark: 'var(--c-gray-4)'
+			css: '--text-soft',
+			light: '#49454f',
+			dark: '#cac4d0'
 		},
 		{
 			name: 'text mute',
-			css: '--c-text-mute',
-			light: 'var(--c-gray-4)',
-			dark: 'var(--c-gray-5)'
-		},
-		{
-			name: 'text code',
-			css: '--c-text-code',
-			light: 'var(--c-gray-8)',
-			dark: 'var(--c-gray-3)'
+			css: '--text-mute',
+			light: '#79747e',
+			dark: '#938f99'
 		}
 	],
 	background: [
 		{
-			name: 'bg',
-			css: '--c-bg',
-			light: 'var(--c-neutral-0)',
-			dark: 'var(--c-neutral-9)'
+			name: 'surface',
+			css: '--surface',
+			light: '#FEF7FF',
+			dark: '#141218'
 		},
 		{
-			name: 'bg soft',
-			css: '--c-bg-soft',
-			light: 'var(--c-neutral-1)',
-			dark: 'var(--c-neutral-8)'
+			name: 'surface variant',
+			css: '--surface-variant',
+			light: '#E7E0EC',
+			dark: '#49454F'
 		},
 		{
-			name: 'bg mute',
-			css: '--c-bg-mute',
-			light: 'var(--c-neutral-2)',
-			dark: 'var(--c-neutral-7)'
+			name: 'surface container',
+			css: '--surface-container',
+			light: '#F3EDF7',
+			dark: '#211F26'
 		}
 	],
 	state: [
 		{
 			name: 'info',
-			css: '--c-info',
-			light: 'var(--c-blue-5)',
-			dark: 'var(--c-blue-4)'
+			css: '--info',
+			light: '#2196F3',
+			dark: '#2196F3'
 		},
 		{
 			name: 'success',
-			css: '--c-success',
-			light: 'var(--c-green-5)',
-			dark: 'var(--c-green-4)'
+			css: '--success',
+			light: '#4CAF50',
+			dark: '#4CAF50'
 		},
 		{
 			name: 'error',
-			css: '--c-error',
-			light: 'var(--c-red-5)',
-			dark: 'var(--c-red-4)'
+			css: '--error',
+			light: '#FF5252',
+			dark: '#FF5252'
 		},
 		{
 			name: 'warning',
-			css: '--c-warning',
-			light: 'var(--c-yellow-5)',
-			dark: 'var(--c-yellow-4)'
+			css: '--warning',
+			light: '#FB8C00',
+			dark: '#FB8C00'
 		}
 	],
 	global: [
 		{
 			name: 'shadow',
-			css: '--c-shadow',
-			light: 'var(--c-stone-10)',
-			dark: 'var(--c-stone-10)'
+			css: '--shadow',
+			light: '#000000',
+			dark: '#000000'
+		},
+		{
+			name: 'outline',
+			css: '--outline',
+			light: '#79747e',
+			dark: '#938f99'
 		}
 	]
 };
