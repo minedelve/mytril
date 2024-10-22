@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.3] - 2024-10-22
+
+### Changed
+
+- Change All class position with prexif `.d-{n}` to `.{n}`.
+
 ## [0.2.2] - 2024-10-19
 
 ### Added

@@ -35,7 +35,6 @@ export function convertJStoCSS(props: any) {
 			css += colorsPalette(palette);
 			css += colorsThemes(defaultTheme, colors);
 			css += roundedRoot(rounded);
-			// css += elevationRoot(elevation);
 			css += typographyRoot(fontStyle, fontFamily);
 			// class
 			css += elevationClassName(elevation);
