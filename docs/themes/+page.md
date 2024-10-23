@@ -1,5 +1,5 @@
 ---
-title: Customize Svelte Themes
+title: Customize svelte themes
 description: Quickly modify default themes or create new ones in Mytril. Adjust colors, add themes, and control your Svelte UI with a simple config file
 ---
 
@@ -11,7 +11,7 @@ description: Quickly modify default themes or create new ones in Mytril. Adjust 
     let mode: string = 'light'
 </script>
 
-# Theme Configuration {#theme-configuration}
+# Theme configuration {#theme-configuration}
 
 Customize default surfaces, text colors, breakpoints and more. Easily modify your theme in real time with one file configuration! Mytril comes with standard support for light and dark variants with theme process.
 
@@ -58,7 +58,7 @@ To customize theme colors, you can:
 
 _If you create a new property, it will only apply to the specified theme unless you define it for others._
 
-### Adding a New Theme {#adding-a-new-themes}
+### Adding a new theme {#adding-a-new-themes}
 
 To add a new theme, simply define a new color property to your application.
 
@@ -80,7 +80,7 @@ export default {
 
 To add a new theme, simply define a new color property, like **my-theme** in primary. This will generate a new CSS class `.my-theme`, **which inherits variables from the default theme**.
 
-## Default Color Set
+## Default color set
 
 Mytril comes with a generous set of default colors.
 

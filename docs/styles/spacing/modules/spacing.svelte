@@ -1,8 +1,6 @@
 <script lang="ts">
 	export let datas;
 
-	console.log('datas', datas);
-
 	const properties = ['a', 't', 'b', 'l', 'r', 'x', 'y'];
 
 	let stylePadding = 'a';

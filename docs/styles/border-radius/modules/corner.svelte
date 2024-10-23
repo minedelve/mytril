@@ -1,8 +1,6 @@
 <script lang="ts">
 	export let datas;
 	export let property;
-
-	console.log('datas', datas);
 </script>
 
 <div class="usage-preview">

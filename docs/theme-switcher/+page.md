@@ -1,9 +1,9 @@
 ---
-title: Dynamic Theme Light and Dark Mode
+title: Dynamic theme light and dark mode
 description: Learn how to easily switch between light and dark themes in your Svelte app using Mytril. Save theme preferences with local storage and customize your UI with simple functions like useTheme and setTheme.
 ---
 
-# Change the Theme of Your Application {#change-theme}
+# Change the theme of uour application {#change-theme}
 
 With **Mytril**, you can dynamically switch themes in your Svelte application. The integrated **theme manager** allows you to create an action button that changes the theme based on user selection.
 

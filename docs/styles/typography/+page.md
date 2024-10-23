@@ -1,5 +1,5 @@
 ---
-title: Typography Utility Classes for Responsive Text Styling
+title: Typography utility classes for responsive text styling
 description: Control text size, font weight, alignment, and more with Mytril's typography utility classes. Easily apply responsive styles for text across different breakpoints in your projects.
 ---
 
@@ -50,7 +50,7 @@ Apply predefined font sizes and line heights using simple classes:
 
 The helper classes apply typography at a given breakpoint. These classes can be applied using the following format: `{breakpoint}:{property}-{size}`.
 
-### Font Weight & Emphasis {#font-weight-emphasis}
+### Font weight & emphasis {#font-weight-emphasis}
 
 Control the weight of your text with ease using Mytril’s font weight properties. The following classes provide a range of font weights and styles:
 
@@ -62,7 +62,7 @@ Control the weight of your text with ease using Mytril’s font weight propertie
 - `font-black`: Black text (900)
 - `font-italic`: Italic text
 
-### Text Alignment {#text-alignement}
+### Text alignment {#text-alignement}
 
 Align text across your layout using these properties classes:
 
@@ -73,7 +73,7 @@ Align text across your layout using these properties classes:
 - `text-left`: Aligns text to the left
 - `text-right`: Aligns text to the right
 
-### Text Transform & Decoration {#text-transform-decoration}
+### Text transform & decoration {#text-transform-decoration}
 
 Modify text appearance with transformations or add design touches:
 
@@ -81,7 +81,7 @@ Modify text appearance with transformations or add design touches:
 - `text-lowercase`: Converts text to lowercase
 - `text-capitalize`: Capitalizes the first letter of each word
 
-### Text Wrapping & Overflow {#text-wrapping-overflow}
+### Text wrapping & overflow {#text-wrapping-overflow}
 
 Ensure text behaves as needed in your layout with these helpers:
 
@@ -89,17 +89,14 @@ Ensure text behaves as needed in your layout with these helpers:
 - `text-no-wrap`: Prevents text from wrapping
 - `text-break`: Forces long words to break and wrap to the next line
 
-### Responsive Typography {#responsive-typography}
+### Responsive typography {#responsive-typography}
 
 To apply text styles at specific breakpoints, use the format `{breakpoint}:{property}-{size}`. For example, `lg:text-2xl` applies `text-2xl` on large screens.
 
-**Example Usage:**
+**Example usage:**
 
 ```html
-<p class="text-sm md:text-lg font-bold text-center">
-    Responsive typography made easy with Mytril
-</p>
-
+<p class="text-sm md:text-lg font-bold text-center">Responsive typography made easy with Mytril</p>
 ```
 
 With Mytril’s comprehensive typography utilities, you can effortlessly style text for any project, ensuring consistency and adaptability across different devices.

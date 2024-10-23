@@ -1,5 +1,5 @@
 ---
-title: Customizable Color Schemes
+title: Customizable color schemes
 description: Implement flexible color schemes in Mytril with Hex codes and CSS variables. Easily apply or tweak colors in your components and styles to match your design system.
 ---
 
@@ -13,7 +13,7 @@ description: Implement flexible color schemes in Mytril with Hex codes and CSS v
     const colorKeys = Object.keys(colors);
 </script>
 
-# Color Scheme {#color-scheme}
+# Color scheme {#color-scheme}
 
 Mytril integrates a comprehensive color chart that provides `:root variables`, which you can use directly in your project. These color values are accessible within your style sheets, component files, and can be applied to actual components using the color prop. Whether you're working with CSS variables or Hex codes.
 

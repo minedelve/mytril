@@ -1,13 +1,13 @@
 ---
-title: Responsive Breakpoints - Control Layouts Across
+title: Responsive breakpoints - Control layouts across
 description: Utilize Mytril's predefined breakpoints to effortlessly manage layouts across all screen sizes. Fine-tune or customize these breakpoints directly in your code for complete control over responsive design.
 ---
 
-# Display Your Content with Responsive Breakpoints {#display-breakpoints}
+# Display your content with responsive breakpoints {#display-breakpoints}
 
 Mytril makes it easy to create responsive layouts with predefined **breakpoints** for different screen sizes. These breakpoints help you control how your content is displayed across devices, ensuring that your application is optimized for everything from small tablets to large desktop screens.
 
-## Breakpoint Key Guide: {#breakpoint-key-guide}
+## Breakpoint key guide: {#breakpoint-key-guide}
 
 | Device Type       | Key     | Type                    | Value  |
 | :---------------- | :------ | :---------------------- | :----- |
@@ -20,17 +20,15 @@ Mytril makes it easy to create responsive layouts with predefined **breakpoints*
 
 With these breakpoints, you can create responsive components that adjust seamlessly depending on the user's device. You can target these breakpoints in your CSS or JavaScript, or use them directly in your Mytril components to define how content is displayed at different sizes.
 
-### Example Usage with Mytril: {#example-usage}
+### Example usage with Mytril: {#example-usage}
 
 Mytril’s breakpoints can be used to easily define media queries or set conditional styles based on the screen size directly on your html.
 
 ```html
-<div class="md:ma-3 lg:ma-10 pa-2">
-	your content
-</div>
+<div class="md:ma-3 lg:ma-10 pa-2">your content</div>
 ```
 
-## Default Breakpoint Values: {#default-breakpoint-values}
+## Default breakpoint values: {#default-breakpoint-values}
 
 Mytril provides the following default breakpoint values in the mytril.config.js file:
 
@@ -49,7 +47,7 @@ export default {
 };
 ```
 
-## Customizing Breakpoints: {#customizing-breakpoints}
+## Customizing breakpoints: {#customizing-breakpoints}
 
 You can also modify or add new breakpoints to suit the specific needs of your project. Simply update the mytril.config.js file with your preferred values:
 
@@ -58,7 +56,7 @@ export default {
 	assets: {
 		thresholds: {
 			sm: '340px', // replace default value
-			xlg: '1920px', // add new value
+			xlg: '1920px' // add new value
 		}
 	}
 };

@@ -1,5 +1,5 @@
 ---
-title: Manage Element Positioning CSS Classes
+title: Manage element positioning CSS classes
 description: Use Mytril's CSS classes like static, relative, absolute, and fixed to control element positioning in your project. Easily implement responsive layouts with minimal code.
 ---
 
@@ -7,7 +7,7 @@ description: Use Mytril's CSS classes like static, relative, absolute, and fixed
     import {presets} from "../index.js";
 </script>
 
-# Positioning Styles with Mytril {#position}
+# Positioning styles with Mytril {#position}
 
 Mytril offers of CSS classes to easily manage the positioning of elements in your layout. These classes cover all common CSS position properties, providing a straightforward way for developers to implement responsive and adaptable positioning without complex code.
 
@@ -28,7 +28,7 @@ Mytril offers of CSS classes to easily manage the positioning of elements in you
     </tbody>
 </table>
 
-## Usage Example {#usage}
+## Usage example {#usage}
 
 You can directly apply the position class in your HTML, making it simple to control the layout behavior of elements. Additionally, Mytril supports breakpoints, allowing you to apply different position styles depending on screen size when necessary.
 
@@ -45,7 +45,7 @@ In this example:
 
 This setup enables developers to manage responsive layouts quickly, without the need to manually write media queries.
 
-### Responsive Positioning Made Easy: {#responsive-positionning-made-easy}
+### Responsive positioning made easy: {#responsive-positionning-made-easy}
 
 With Mytril’s positioning utilities, you can easily manage **element positions** for different screen sizes, ensuring your layout adapts as needed. While breakpoints are available, they’re just an option to help you create flexible layouts, not a required feature.
 
