@@ -69,6 +69,10 @@
 			"types": "./dist/store/index.d.ts",
 			"default": "./dist/store/index.js"
 		},
+		"./tools": {
+			"types": "./dist/composables/index.d.ts",
+			"default": "./dist/composables/index.js"
+		},
 		"./styles": "./dist/index.style.css"
 	},
 	"files": [

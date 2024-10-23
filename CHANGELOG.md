@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add **display** class.
+- Add new api tools
+- Add new function `useCapitalize` on your project
 
 ### Fixed
 
