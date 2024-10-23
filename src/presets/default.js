@@ -18,6 +18,7 @@ const presets = {
 			'table-cell',
 			'table-row',
 			'inline-flex',
+			'block',
 			'grid'
 		],
 		position: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
