@@ -1,7 +1,7 @@
 {
 	"name": "mytril",
 	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"author": {
 		"name": "Nycolaide",
 		"email": "laurent.grimaldi@minedelve.com"
@@ -68,6 +68,10 @@
 		"./store": {
 			"types": "./dist/store/index.d.ts",
 			"default": "./dist/store/index.js"
+		},
+		"./tools": {
+			"types": "./dist/composables/index.d.ts",
+			"default": "./dist/composables/index.js"
 		},
 		"./styles": "./dist/index.style.css"
 	},

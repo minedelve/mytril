@@ -8,11 +8,11 @@ description: Using border-radius in Mytril is simple using simple classes and CS
     import Corner from "./modules/corner.svelte";
 </script>
 
-# Border Radius {#rounded}
+# Border radius {#rounded}
 
 ytril its a straightforward way for you why using the CSS to apply border-radius to elements using predefined rounded classes. These classes range from .rounded-0 for no rounding to .rounded-xl for a larger border radius. Developers can easily implement these options to customize the appearance of UI elements.
 
-## Predefined Rounded Classes {#predefined-rounded-classes}
+## Predefined rounded classes {#predefined-rounded-classes}
 
 The following classes allow you to set different border-radius values for various elements:
 

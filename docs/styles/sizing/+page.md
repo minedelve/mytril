@@ -11,7 +11,7 @@ description: Learn how to use Mytril’s sizing utility classes to set element d
 
 Easily control the width and height of elements using utility classes. These flexible and responsive classes allow you to define sizes that adapt to various breakpoints. With Mytril, you can seamlessly apply predefined height and width values, streamlining your layout process.
 
-## Width Classes {#width-classes}
+## Width classes {#width-classes}
 
 <table>
     <thead>
@@ -36,7 +36,7 @@ Easily control the width and height of elements using utility classes. These fle
     </tbody>
 </table>
 
-## Height Classes {#height-classes}
+## Height classes {#height-classes}
 
 <table>
     <thead>
@@ -61,7 +61,7 @@ Easily control the width and height of elements using utility classes. These fle
     </tbody>
 </table>
 
-## Responsive Breakpoints
+## Responsive breakpoints
 
 Use these sizing classes in combination with breakpoints to ensure your layouts are responsive. The format `{breakpoint}:{property}-{size}` allows for easy adjustment. For instance:
 
@@ -69,7 +69,7 @@ Use these sizing classes in combination with breakpoints to ensure your layouts 
 
 Breakpoints don't apply to the smallest `xs` size, which is inferred.
 
-### Usage Example:
+### Usage example:
 
 ```html
 <div class="h-auto w-75 lg:w-50">My content</div>

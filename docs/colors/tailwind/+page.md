@@ -1,21 +1,33 @@
 ---
-title: Customizable Color Schemes
+title: Customizable color schemes
 description: Implement flexible color schemes in Mytril with Hex codes and CSS variables. Easily apply or tweak colors in your components and styles to match your design system.
 ---
 
 <script lang="ts">
-    import Color from "./modules/color.svelte";
-    import ColorSummary from "./modules/color-summary.svelte";
-    import { colors } from "./modules/colors.js";
+    import Color from "../modules/color.svelte";
+    import ColorSummary from "../modules/color-summary.svelte";
+    import { colors } from "../modules/colors.js";
     
 
     let formatColor = "variable"
     const colorKeys = Object.keys(colors);
 </script>
 
-# Color Scheme {#color-scheme}
+# Color scheme {#color-scheme}
 
 Mytril integrates a comprehensive color chart that provides `:root variables`, which you can use directly in your project. These color values are accessible within your style sheets, component files, and can be applied to actual components using the color prop. Whether you're working with CSS variables or Hex codes.
+
+To use the Tailwind color palette, you need to activate the palette in `mytril.config.js`.
+
+```javascript
+export default {
+	theme: {
+		palette: 'tailwind'
+	}
+};
+```
+
+_Once the option has been activated, restart your environment to take advantage of the color variables._
 
 <ul>
     {#each colorKeys as colorKey}

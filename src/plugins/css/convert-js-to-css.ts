@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { roundedClassName, roundedRoot } from '$lib/assets/styles/border-radius.js';
 import { colorsPalette, colorsThemes } from '$lib/assets/styles/colors.js';
+import { displayClassName } from '$lib/assets/styles/display.js';
 import { elevationClassName } from '$lib/assets/styles/elevation.js';
 import { positionClassName } from '$lib/assets/styles/position.js';
 import { sizingClassName } from '$lib/assets/styles/sizing.js';
@@ -26,7 +27,8 @@ export function convertJStoCSS(props: any) {
 		fontTransform,
 		fontStyle,
 		fontAlign,
-		fontFamily
+		fontFamily,
+		display
 	} = props;
 	let css: string = '';
 	for (const [breakpoint, screen] of Object.entries(thresholds)) {
@@ -46,6 +48,7 @@ export function convertJStoCSS(props: any) {
 		css += positionClassName(breakpoint, position);
 		css += sizingClassName(breakpoint, sizing);
 		css += spacingClassName(breakpoint, spacing);
+		css += displayClassName(breakpoint, display);
 		css += typographyClassNameBreakpoint(breakpoint, fontStyle, fontAlign);
 		if (breakpoint !== 'default') css += `}\n`;
 
@@ -54,6 +57,7 @@ export function convertJStoCSS(props: any) {
 		css += positionClassName(`max-${breakpoint}`, position);
 		css += sizingClassName(`max-${breakpoint}`, sizing);
 		css += spacingClassName(`max-${breakpoint}`, spacing);
+		css += displayClassName(breakpoint, display);
 		css += typographyClassNameBreakpoint(`max-${breakpoint}`, fontStyle, fontAlign);
 		if (breakpoint !== 'default') css += `}\n`;
 	}

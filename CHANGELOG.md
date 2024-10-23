@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add **display** class.
+- Add new api tools
+- Add new function `useCapitalize` on your project
+
+### Fixed
+
+- Bad properties for class `position`.
+
 ## [0.2.3] - 2024-10-22
 
 ### Changed

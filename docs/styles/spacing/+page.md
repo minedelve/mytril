@@ -8,13 +8,13 @@ description: Learn how to use Mytril’s spacing utilities to adjust margins, pa
     import Spacing from "./modules/spacing.svelte";
 </script>
 
-# Spacing Utilities {#spacing-utilities}
+# Spacing utilities {#spacing-utilities}
 
 Mytril provides a set of spacing properties that allow you to easily control the margin, padding, and gap of elements using simple CSS classes. These property are flexible and can be applied across different breakpoints, making layout adjustments straightforward and efficient.
 
 <Spacing datas={presets?.spacing}/>
 
-## How to Use Spacing Classes {#how-to-use-spacing-classes}
+## How to use spacing classes {#how-to-use-spacing-classes}
 
 The spacing classes in Mytril follow a consistent naming convention: `{property}{direction}-{size}`. Here's a breakdown:
 
@@ -34,7 +34,7 @@ The **direction** designates the side the property applies to:
 - y - applies the spacing for margin and padding _-top and _-bottom
 - a - applies the spacing for margin, padding and gap in all directions
 
-### Available Sizes {#available-sizes}
+### Available sizes {#available-sizes}
 
 The size defines the spacing amount and is expressed in rem units. Here’s a list of available sizes:
 
@@ -57,7 +57,7 @@ The size defines the spacing amount and is expressed in rem units. Here’s a li
     </tbody>
 </table>
 
-### Example Usage {#example-usage}
+### Example usage {#example-usage}
 
 To apply margin or padding, you can combine the property, direction, and size to target specific elements.
 
@@ -70,7 +70,7 @@ To apply margin or padding, you can combine the property, direction, and size to
 
 This would apply 1rem of padding on all sides and 0.5rem of margin.
 
-## Breakpoints for Responsive Spacing {#breakpoints-for-responsive-spacing}
+## Breakpoints for responsive spacing {#breakpoints-for-responsive-spacing}
 
 Mytril also supports responsive spacing, allowing you to adjust spacing at specific screen sizes using breakpoints. The format is: `{breakpoint}:{property}-{direction}-{size}`.
 
@@ -91,7 +91,7 @@ For example:
 </div>
 ```
 
-### Advanced Usage: Custom Spacing with Root Variables {#advanced-usage}
+### Advanced usage: custom spacing with Root variables {#advanced-usage}
 
 In addition to the predefined classes, developers can also leverage CSS root variables for more granular control over spacing values.
 
@@ -104,7 +104,7 @@ In addition to the predefined classes, developers can also leverage CSS root var
 
 This provides even more flexibility in tailoring your layouts.
 
-### Summary of Spacing Classes {#summary-class}
+### Summary of spacing classes {#summary-class}
 
 - **`m-{size}`**: Margin on all sides
 - **`p-{size}`**: Padding on all sides

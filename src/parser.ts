@@ -43,6 +43,7 @@ export async function mytrilParser(config: Configuration) {
 	let fontStyle = presets.assets.typography.style;
 	let rounded = presets.assets.rounded;
 	let spacing = presets.assets.spacing;
+	const display = presets.assets.display;
 	let palette = {};
 
 	if (config) {
@@ -98,7 +99,8 @@ export async function mytrilParser(config: Configuration) {
 		fontTransform,
 		fontStyle,
 		fontAlign,
-		fontFamily
+		fontFamily,
+		display
 	});
 
 	return css + `\n` + cssJstoCSS;
