@@ -1,6 +1,6 @@
 ---
-title: Color schemes Material Design
-description: Implement flexible color schemes Material Design in Mytril with Hex codes and CSS variables. Easily apply or tweak colors in your components and styles to match your design system.
+title: Material CSS color palette
+description: Learn how to integrate the Material Design color palette in your Svelte projects with Mytril. Use Material’s predefined colors and CSS variables to style your components.
 ---
 
 <script lang="ts">
@@ -13,13 +13,17 @@ description: Implement flexible color schemes Material Design in Mytril with Hex
     const colorKeys = Object.keys(materialColors);
 </script>
 
-# Color scheme Material Design {#color-scheme}
+# Material Design color scheme with Mytril {#color-scheme}
 
-Mytril integrates the full Material Design color chart, which provides `:root' variables that you can use directly in your project. These color values are accessible in your style sheets and component files, and can be applied to actual components using the color accessory. Whether you're working with CSS variables or hexadecimal codes.
+Mytril integrates the full **Material Design** color chart, giving developers access to Google’s design standards directly in their Svelte projects. By activating the Material Design palette in your configuration, you can apply consistent and visually appealing colors across your components using simple CSS variables.
 
-To use the Material Design color palette, you need to activate the palette in `mytril.config.js`.
+## How to Enable the Material Design Palette
+
+1. Open **mytril.config.js**.
+2. Add this configuration to activate the **Material** palette:
 
 ```javascript
+//mytril.config.js
 export default {
 	theme: {
 		palette: 'material'
@@ -27,7 +31,22 @@ export default {
 };
 ```
 
-_Once the option has been activated, restart your environment to take advantage of the color variables._
+3. Restart your environment to load the Material color variables.
+
+## Material Design color options
+
+Once activated, you can access a wide range of colors directly in your stylesheets.
+
+Use material colors in components by easily applying material colors to your components using **CSS variables** like this one:
+
+```css
+button {
+	background-color: var(--red-500);
+	color: var(--blue-100);
+}
+```
+
+Or use hex codes provided within the palette for more detailed control.
 
 <ul>
     {#each colorKeys as colorKey}
@@ -55,6 +74,10 @@ _Once the option has been activated, restart your environment to take advantage 
 {/each}
 </section>
 {/each}
+
+### Why choose Material Design colors?
+
+Material Design colors ensure your interface follows a consistent and standardized color scheme, making it a great choice for developers building with **Material Design principles**.
 
 <style lang="postcss">
 

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.5] - 2024-10-24
+
+### Mytril to Svelte v5
+
+Add support Svelte v5 for Mytril
+
+## [0.2.4] - 2024-10-23
+
 ### Added
 
 - Add **display** class.

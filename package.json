@@ -1,7 +1,7 @@
 {
 	"name": "mytril",
 	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"author": {
 		"name": "Nycolaide",
 		"email": "laurent.grimaldi@minedelve.com"
@@ -81,7 +81,7 @@
 		"LICENSE"
 	],
 	"peerDependencies": {
-		"svelte": "^4.0.0"
+		"svelte": "^4.0.0 || ^5.0.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
