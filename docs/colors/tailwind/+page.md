@@ -1,6 +1,6 @@
 ---
-title: Customizable color schemes
-description: Implement flexible color schemes in Mytril with Hex codes and CSS variables. Easily apply or tweak colors in your components and styles to match your design system.
+title: Tailwind CSS color palette
+description: Integrate the Tailwind CSS color palette into your Svelte project with Mytril. Learn how to configure and apply responsive Tailwind colors using Mytril’s theme system.
 ---
 
 <script lang="ts">
@@ -13,13 +13,17 @@ description: Implement flexible color schemes in Mytril with Hex codes and CSS v
     const colorKeys = Object.keys(colors);
 </script>
 
-# Color scheme {#color-scheme}
+# Tailwind CSS color scheme with Mytril {#color-scheme}
 
-Mytril integrates a comprehensive color chart that provides `:root variables`, which you can use directly in your project. These color values are accessible within your style sheets, component files, and can be applied to actual components using the color prop. Whether you're working with CSS variables or Hex codes.
+Mytril offers seamless integration with the **Tailwind CSS** color palette, allowing developers to harness the power of Tailwind’s extensive color options directly in their Svelte projects. With easy setup and a wide range of utility classes, you can ensure your components are responsive and visually cohesive.
 
-To use the Tailwind color palette, you need to activate the palette in `mytril.config.js`.
+## How to enable the tailwind palette
+
+1. Open **mytril.config.js**.
+2. Add this configuration to activate the **Tailwind** palette:
 
 ```javascript
+//mytril.config.js
 export default {
 	theme: {
 		palette: 'tailwind'
@@ -27,7 +31,20 @@ export default {
 };
 ```
 
-_Once the option has been activated, restart your environment to take advantage of the color variables._
+3. Restart your environment to load the Tailwind color variables.
+
+### Tailwind Color Options
+
+Once activated, you can use Tailwind's extensive color options.
+
+Apply **Tailwind colors** using CSS variables for streamlined styling:
+
+```css
+button {
+	background-color: var(--stone-4);
+	color: var(--slate-1);
+}
+```
 
 <ul>
     {#each colorKeys as colorKey}
@@ -55,6 +72,10 @@ _Once the option has been activated, restart your environment to take advantage 
 {/each}
 </section>
 {/each}
+
+### Why use Tailwind colors?
+
+Tailwind’s utility-first approach gives you more flexibility to apply responsive colors. It’s perfect for developers who want full control over their UI design without relying on predefined themes.
 
 <style lang="postcss">
 
