@@ -195,6 +195,47 @@ const presets = {
 			80: '20rem',
 			96: '24rem'
 		},
+		grids: {
+			flex: [
+				'1 1 auto',
+				'1 1 0%',
+				'1 0 0%',
+				'0 1 auto',
+				'0 0 auto',
+				'1 1 0%',
+				'1 1 100%',
+				'1 0 0%',
+				'1 0 100%',
+				'0 1 0%',
+				' 0 1 100%',
+				' 0 0 0%',
+				'0 0 100%'
+			],
+			'flex-direction': ['row', 'row-reverse', 'column', 'column-reverse'],
+			justify: [
+				'flex-start',
+				'flex-end',
+				'center',
+				'space-between',
+				'space-around',
+				'space-evenly'
+			],
+			align: ['start', 'end', 'center', 'baseline', 'stretch'],
+			'align-self': ['stretch', 'flex-start', 'flex-end', 'center', 'baseline', 'auto'],
+			'align-content': [
+				'flex-start',
+				'flex-end',
+				'center',
+				'space-between',
+				'space-around',
+				'space-evenly',
+				'stretch'
+			],
+			wrap: ['wrap', 'wrap-reverse', 'nowrap'],
+			order: [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+			shrink: [0, 1],
+			grow: [0, 1]
+		},
 		thresholds: {
 			default: {
 				device: 'default',
@@ -227,6 +268,8 @@ const presets = {
 				value: '1536px'
 			}
 		},
+		overflow: ['auto', 'hidden', 'visible'],
+		float: ['left', 'right', 'start', 'end', 'none'],
 		typography: {
 			weight: {
 				thin: 100,
