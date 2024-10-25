@@ -28,7 +28,7 @@ Mytril offers of CSS classes to easily manage the positioning of elements in you
     </tbody>
 </table>
 
-## Usage example {#usage}
+## Predefined Position Classes in Mytril {#usage}
 
 You can directly apply the position class in your HTML, making it simple to control the layout behavior of elements. Additionally, Mytril supports breakpoints, allowing you to apply different position styles depending on screen size when necessary.
 
