@@ -9,7 +9,7 @@ description: 'Learn how to manage CSS display properties and implement responsiv
 
 # Managing display styles with Mytril {#display-styles}
 
-Mytril provides developers with an extensive set of CSS classes to control the display properties of elements. These predefined classes cover all the common CSS display options, making it easier to build responsive and adaptable layouts with minimal code.
+Mytril provides you with an extensive set of CSS classes to control the display properties of elements. These predefined classes cover all the common CSS display options, making it easier to build responsive and adaptable layouts with minimal code.
 
 ### Predefined display classes in Mytril
 
@@ -32,7 +32,7 @@ Mytril includes a range of display classes that map directly to standard CSS pro
     </tbody>
 </table>
 
-These classes allow developers to easily implement common CSS display properties without writing custom styles.
+These classes allow you to easily implement common CSS display properties without writing custom styles.
 
 ## Usage Example: Responsive Layouts {#usage}
 
