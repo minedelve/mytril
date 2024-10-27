@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.6] - 2024-10-27
+
+### Added
+
+- Add **float** class.
+- Add **overflow** class.
+- Add **flex** class.
+- Add **flex-direction** class.
+- Add **justify-content** class.
+- Add **align-items** class.
+- Add **align-self** class.
+- Add **align-content** class.
+- Add **flex-wrap** class.
+- Add **order** class.
+- Add **flex-shrink** class.
+- Add **flex-grow** class.
+
+### Fixed
+
+- Class `display` duplicate with min and max media queries.
+- Class `display` max media screen not working.
+- Class `rounded` not working because **;** has generated on CLI.
+
 ## [0.2.5] - 2024-10-24
 
 ### Mytril to Svelte v5

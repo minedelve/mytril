@@ -7,7 +7,7 @@
 	{#each Object.entries(datas) as [key, value]}
 		<div class="wrapper-card">
 			<div
-				class={`block-card ${key === 'default' ? `.rounded${property ? '-' + property : ''}` : `.rounded${property ? '-' + property : ''}-` + key}`}
+				class={`block-card ${key === 'default' ? `rounded${property ? '-' + property : ''}` : `rounded${property ? '-' + property : ''}-` + key}`}
 			/>
 			<p>
 				{key === 'default'

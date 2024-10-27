@@ -4,9 +4,9 @@
 	const properties = ['a', 't', 'b', 'l', 'r', 'x', 'y'];
 
 	let stylePadding = 'a';
-	let sizingPadding = '0';
+	let sizingPadding = '1';
 	let styleMargin = 'a';
-	let sizingMargin = '0';
+	let sizingMargin = '3';
 </script>
 
 <select bind:value={stylePadding}>
@@ -52,7 +52,7 @@
 <div class="wrapper">
 	<div class="element">
 		<div class={`margin-spacing m${styleMargin}-${sizingMargin}`}>
-			<div class={`padding-spacing m${stylePadding}-${sizingPadding}`}>
+			<div class={`padding-spacing p${stylePadding}-${sizingPadding}`}>
 				<div class="spacing-element">
 					Use the controls above to try out the different spacing helpers.
 				</div>
