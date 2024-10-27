@@ -30,7 +30,7 @@ const className = (breakpoint: string, key: string, value: string) => {
 	// top right
 	css += `${formatBreakpoint(breakpoint)}rounded-tr${key !== 'default' ? '-' + key : ''} {\n`;
 	css += `border-top-right-radius: ${value};\n`;
-	css += `};\n`;
+	css += `}\n`;
 	// top left
 	css += `${formatBreakpoint(breakpoint)}rounded-tl${key !== 'default' ? '-' + key : ''} {\n`;
 	css += `border-top-left-radius: ${value};\n`;

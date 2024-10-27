@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Class `display` duplicate with min and max media queries.
 - Class `display` max media screen not working.
+- Class `rounded` not working because **;** has generated on CLI.
 
 ## [0.2.5] - 2024-10-24
 
