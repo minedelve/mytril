@@ -23,3 +23,29 @@ export async function mytrilImporter() {
 
 	return config;
 }
+
+export async function mytrilImporter2(isTypescript: boolean) {
+	let config = undefined;
+
+	try {
+		const file = await fsPromises.readFile(
+			path.resolve(
+				path.resolve(`${directory}/src/plugins`),
+				`mytril.${isTypescript ? 'ts' : 'js'}`
+			),
+			'utf-8'
+		);
+		if (
+			file.match(/export\s+default\s+createMytril\((\{[^]*?\})\);/) &&
+			file.match(/export\s+default\s+createMytril\((\{[^]*?\})\);/) !== null &&
+			file.match(/export\s+default\s+createMytril\((\{[^]*?\})\);/)!.length > 1
+		) {
+			const match = file.match(/export\s+default\s+createMytril\((\{[^]*?\})\);/);
+			const code = `return ${match![1]};`;
+			config = await new Function(code)();
+		}
+	} catch (err) {
+		console.warn(err);
+	}
+	return config;
+}

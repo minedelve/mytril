@@ -14,6 +14,7 @@ import {
 	typographyClassNameBreakpoint,
 	typographyRoot
 } from '$lib/assets/styles/typography.js';
+import { rootCss } from '$lib/utils/format-root.js';
 
 export function convertJStoCSS(props: any) {
 	const {
@@ -73,5 +74,26 @@ export function convertJStoCSS(props: any) {
 		css += flexClassName(`max-${breakpoint}`, grids);
 		if (breakpoint !== 'default') css += `}\n`;
 	}
+	return css;
+}
+
+export function convertJStoCSS2(props: any) {
+	let css: string = '';
+
+	for (const [breakpoint, screen] of Object.entries(props.breakpoints)) {
+		console.log('breakpoint', breakpoint, screen);
+
+		if (breakpoint === 'default') {
+			// css += rootCss(props.colors);
+		}
+
+		if (breakpoint !== 'default') css += `@media screen and (min-width: ${screen}) {\n`;
+		if (breakpoint !== 'default') css += `}\n`;
+
+		if (breakpoint !== 'default') css += `@media screen and (max-width: ${screen}) {\n`;
+
+		if (breakpoint !== 'default') css += `}\n`;
+	}
+
 	return css;
 }
