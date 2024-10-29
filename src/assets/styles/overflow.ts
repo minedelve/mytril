@@ -1,8 +1,10 @@
 import { formatBreakpoint } from '$lib/utils/format-class.js';
 
-export function overflowClassName(breakpoint: string, values: Array<string>) {
+const overflow = ['auto', 'hidden', 'visible'];
+
+export function overflowClass(breakpoint: string) {
 	let css = '';
-	for (const element of values) {
+	for (const element of overflow) {
 		css += `${formatBreakpoint(breakpoint)}overflow-${element} {\n`;
 		css += `overflow: ${element};\n`;
 		css += `}\n`;

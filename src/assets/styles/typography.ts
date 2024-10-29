@@ -1,15 +1,26 @@
 import { formatBreakpoint } from '$lib/utils/format-class.js';
 
+const weight = {
+	thin: 100,
+	light: 300,
+	regular: 400,
+	medium: 500,
+	bold: 700,
+	black: 900
+};
+const align = ['start', 'end', 'center', 'justify', 'left', 'right'];
+const transform = ['uppercase', 'lowercase', 'capitalize'];
+
 export function typographyRoot(
 	style: {
-		[key: string]: { size: string; height: string; spacing: string };
+		[key: string]: string;
 	},
 	family: { [key: string]: string }
 ) {
 	let css = '';
 	css += ':root {\n';
 	for (const [key, value] of Object.entries(style)) {
-		css += `--text-${key}: ${value?.size};\n`;
+		css += `--text-${key}: ${value};\n`;
 	}
 	css += '}\n';
 
@@ -21,11 +32,7 @@ export function typographyRoot(
 	return css;
 }
 
-export function typographyClassName(
-	weight: { [key: string]: string },
-	transform: Array<string>,
-	family: { [key: string]: string }
-) {
+export function typographyClass(family: { [key: string]: string }) {
 	let css = '';
 	css += `.text-truncate {\n`;
 	css += `overflow: hidden;\n`;
@@ -59,17 +66,11 @@ export function typographyClassName(
 	return css;
 }
 
-export const typographyClassNameBreakpoint = (
-	screen: string,
-	style: { [key: string]: { size: string; height: string; spacing: string } },
-	align: Array<string>
-) => {
+export const typographyClassBreakpoint = (screen: string, size: { [key: string]: string }) => {
 	let css = '';
-	for (const [key, value] of Object.entries(style)) {
+	for (const [key, value] of Object.entries(size)) {
 		css += `${formatBreakpoint(screen)}text-${key} {\n`;
-		css += `font-size: ${value?.size};\n`;
-		css += `line-height: ${value?.height};\n`;
-		css += `letter-spacing: ${value?.spacing};\n`;
+		css += `font-size: ${value};\n`;
 		css += `}\n`;
 	}
 	for (const element of align) {

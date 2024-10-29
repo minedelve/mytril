@@ -1,28 +1,55 @@
 import { formatBreakpoint } from '$lib/utils/format-class.js';
 
-export function flexClassName(
-	breakpoint: string,
-	values: {
-		[key: string]: Array<string | number>;
-	}
-) {
+const flex = [
+	'1 1 auto',
+	'1 1 0%',
+	'1 0 0%',
+	'0 1 auto',
+	'0 0 auto',
+	'1 1 0%',
+	'1 1 100%',
+	'1 0 0%',
+	'1 0 100%',
+	'0 1 0%',
+	' 0 1 100%',
+	' 0 0 0%',
+	'0 0 100%'
+];
+const flexDirection = ['row', 'row-reverse', 'column', 'column-reverse'];
+const justify = [
+	'flex-start',
+	'flex-end',
+	'center',
+	'space-between',
+	'space-around',
+	'space-evenly'
+];
+const align = ['start', 'end', 'center', 'baseline', 'stretch'];
+const alignSelf = ['stretch', 'flex-start', 'flex-end', 'center', 'baseline', 'auto'];
+const alignContent = ['stretch', 'flex-start', 'flex-end', 'center', 'baseline', 'auto'];
+const wrap = ['wrap', 'wrap-reverse', 'nowrap'];
+const order = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+const shrink = [0, 1];
+const grow = [0, 1];
+
+export function flexClass(breakpoint: string) {
 	let css = '';
 
-	css += flexGridClassName(breakpoint, values.flex as Array<string>);
-	css += flexDirectionClassName(breakpoint, values['flex-direction'] as Array<string>);
-	css += flexJustifyContentClassName(breakpoint, values.justify as Array<string>);
-	css += flexAlignItemsClassName(breakpoint, values.align as Array<string>);
-	css += flexAlignSelfClassName(breakpoint, values['align-self'] as Array<string>);
-	css += flexAlignContentClassName(breakpoint, values['align-content'] as Array<string>);
-	css += flexWrapClassName(breakpoint, values.wrap as Array<string>);
-	css += flexOrderClassName(breakpoint, values.order as Array<number>);
-	css += flexShrinkClassName(breakpoint, values.shrink as Array<number>);
-	css += flexGrowClassName(breakpoint, values.grow as Array<number>);
+	css += flexGridClass(breakpoint, flex);
+	css += flexDirectionClass(breakpoint, flexDirection);
+	css += flexJustifyContentClass(breakpoint, justify);
+	css += flexAlignItemsClass(breakpoint, align);
+	css += flexAlignSelfClass(breakpoint, alignSelf);
+	css += flexAlignContentClass(breakpoint, alignContent);
+	css += flexWrapClass(breakpoint, wrap);
+	css += flexOrderClass(breakpoint, order);
+	css += flexShrinkClass(breakpoint, shrink);
+	css += flexGrowClass(breakpoint, grow);
 
 	return css;
 }
 
-export function flexGridClassName(breakpoint: string, values: Array<string>) {
+function flexGridClass(breakpoint: string, values: Array<string>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}flex-${element === '1 1 auto' ? 'fill' : element.replaceAll('%', '').replaceAll(' auto', '').replaceAll(' ', '-').trim()} {\n`;
@@ -32,7 +59,7 @@ export function flexGridClassName(breakpoint: string, values: Array<string>) {
 	return css;
 }
 
-export function flexDirectionClassName(breakpoint: string, values: Array<string>) {
+function flexDirectionClass(breakpoint: string, values: Array<string>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}flex-${element} {\n`;
@@ -42,7 +69,7 @@ export function flexDirectionClassName(breakpoint: string, values: Array<string>
 	return css;
 }
 
-export function flexJustifyContentClassName(breakpoint: string, values: Array<string>) {
+function flexJustifyContentClass(breakpoint: string, values: Array<string>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}justify-${element === 'flex-start' ? 'start' : element === 'flex-end' ? 'end' : element} {\n`;
@@ -52,7 +79,7 @@ export function flexJustifyContentClassName(breakpoint: string, values: Array<st
 	return css;
 }
 
-export function flexAlignSelfClassName(breakpoint: string, values: Array<string>) {
+function flexAlignSelfClass(breakpoint: string, values: Array<string>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}align-self-${element} {\n`;
@@ -62,7 +89,7 @@ export function flexAlignSelfClassName(breakpoint: string, values: Array<string>
 	return css;
 }
 
-export function flexAlignItemsClassName(breakpoint: string, values: Array<string>) {
+function flexAlignItemsClass(breakpoint: string, values: Array<string>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}align-${element} {\n`;
@@ -72,7 +99,7 @@ export function flexAlignItemsClassName(breakpoint: string, values: Array<string
 	return css;
 }
 
-export function flexAlignContentClassName(breakpoint: string, values: Array<string>) {
+function flexAlignContentClass(breakpoint: string, values: Array<string>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}align-content-${element === 'flex-start' ? 'start' : element === 'flex-end' ? 'end' : element} {\n`;
@@ -82,7 +109,7 @@ export function flexAlignContentClassName(breakpoint: string, values: Array<stri
 	return css;
 }
 
-export function flexWrapClassName(breakpoint: string, values: Array<string>) {
+function flexWrapClass(breakpoint: string, values: Array<string>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}flex-${element} {\n`;
@@ -92,7 +119,7 @@ export function flexWrapClassName(breakpoint: string, values: Array<string>) {
 	return css;
 }
 
-export function flexOrderClassName(breakpoint: string, values: Array<number>) {
+function flexOrderClass(breakpoint: string, values: Array<number>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}order-${element === -1 ? 'first' : element === 13 ? 'last' : element} {\n`;
@@ -102,7 +129,7 @@ export function flexOrderClassName(breakpoint: string, values: Array<number>) {
 	return css;
 }
 
-export function flexGrowClassName(breakpoint: string, values: Array<number>) {
+function flexGrowClass(breakpoint: string, values: Array<number>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}flex-grow-${element} {\n`;
@@ -112,7 +139,7 @@ export function flexGrowClassName(breakpoint: string, values: Array<number>) {
 	return css;
 }
 
-export function flexShrinkClassName(breakpoint: string, values: Array<number>) {
+function flexShrinkClass(breakpoint: string, values: Array<number>) {
 	let css = '';
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}flex-shrink-${element} {\n`;

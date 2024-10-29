@@ -30,7 +30,7 @@ export async function mytril() {
 			await mytrilParser2(config2);
 			fsPromises.writeFile(
 				path.resolve(`node_modules/mytril/dist/`, 'index.style.css'),
-				await mytrilParser(config)
+				await mytrilParser2(config2)
 			);
 		},
 		async configureServer(server: ViteDevServer) {

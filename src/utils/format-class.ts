@@ -3,5 +3,5 @@ export const formatClassName = (key: string) => {
 };
 
 export const formatBreakpoint = (breakpoint: string) => {
-	return breakpoint !== 'default' ? `.${breakpoint}\\:` : `.`;
+	return breakpoint !== 'default' && breakpoint !== 'max-default' ? `.${breakpoint}\\:` : `.`;
 };

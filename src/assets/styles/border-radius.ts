@@ -8,7 +8,7 @@ export function roundedRoot(values: { [key: string]: string }) {
 	return (css += '}\n');
 }
 
-export function roundedClassName(screen: string, values: { [key: string]: string }) {
+export function roundedClass(screen: string, values: { [key: string]: string }) {
 	let css = '';
 	for (const [key, value] of Object.entries(values)) {
 		css += className(screen, key, String(value));
