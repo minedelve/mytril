@@ -4,7 +4,7 @@ export const merge = (target: any, source?: any) => {
 
 	if (source) {
 		for (const key in source) {
-			if (typeof source[key] === 'string') {
+			if (typeof source[key] === 'string' || typeof source[key] === 'number') {
 				output[key] = source[key];
 			} else {
 				if (Object.prototype.hasOwnProperty.call(source, key)) {
