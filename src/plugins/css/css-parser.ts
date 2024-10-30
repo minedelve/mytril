@@ -1,9 +1,13 @@
 import fs from 'fs';
-import { loadCssFiles } from './importer-css.js';
+import { mytrilImporterCSS } from '$lib/importer.js';
 
-export function cssParser() {
+export function cssParser(palette?: string) {
 	let css: string = ``;
-	const files = loadCssFiles();
+	const files = mytrilImporterCSS();
+
+	if (palette === 'material' || palette === 'tailwind') {
+		css += fs.readFileSync(files.palette[palette as 'material' | 'tailwind'], 'utf-8');
+	}
 
 	files?._default.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
 

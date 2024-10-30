@@ -1,5 +1,5 @@
 // Reexport your entry components here
-export * from './composables/create.js';
+export { createMytril } from './entry-bundler.js';
 
 // Components
 export { default as App } from './components/app/app.svelte';

@@ -35,6 +35,7 @@ export async function mytrilInit(typescript: boolean) {
 		text += `export default createMytril({\n`;
 		text += `    theme: {\n`;
 		text += `        defaultTheme: 'light',\n`;
+		text += `        palette: 'material',\n`;
 		text += `        colors:  {}\n`;
 		text += `    }\n`;
 		text += `});\n`;
