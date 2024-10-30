@@ -1,22 +1,14 @@
 <script lang="ts">
-	import { useInnerWidth, useBreakpoint } from '$lib/store/breakpoint.js';
-
-	$: innerWidth = 0;
+	import { innerWidth } from '$lib/composables/display.js';
+	$: width = 0;
 
 	$: {
-		if (innerWidth > 0) {
-			useInnerWidth.set(innerWidth);
+		if (width > 0) {
+			innerWidth.set(width);
 		}
 	}
 </script>
 
-<svelte:window bind:innerWidth />
-
-<p>
-	Inner Width: {innerWidth}
-</p>
-<p>
-	breakpoint: {$useBreakpoint}
-</p>
+<svelte:window bind:innerWidth={width} />
 
 <slot />

@@ -1,14 +1,15 @@
-import { writable, get, type Writable } from 'svelte/store';
+import { derived, writable, type Readable, type Writable } from 'svelte/store';
 import { _default } from './defaults.js';
 
+export const innerWidth = writable(0);
 export const mobileBreakpoint = writable(_default.display.mobileBreakpoint);
 const thresholds: Writable<{ [key: string]: number }> = writable(_default.display.thresholds);
 const activeBreakpoint = writable('default');
-const innerWidth = writable(0);
 
-export const useDisplay = (screen: string) => {
-	if (screen === get(activeBreakpoint)) return true;
-	else return false;
+export const useDisplay = (screen: string): Readable<boolean> => {
+	return derived(activeBreakpoint, ($active) => {
+		return screen === $active;
+	});
 };
 
 export const setThresholds = (list: { [key: string]: number }) => {

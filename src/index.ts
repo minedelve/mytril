@@ -1,5 +1,5 @@
-// Reexport your entry components here
+// export entry to the mine
 export { createMytril } from './entry-bundler.js';
 
-// Components
+// components
 export { default as App } from './components/app/app.svelte';

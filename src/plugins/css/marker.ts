@@ -1,13 +1,16 @@
-import { cssParser } from './css-parser.js';
+import { cssParser, cssParserPalette } from './parser.js';
 
 const markerBreakpoint = {
 	start: '/* @breakpoints */',
 	end: '/*! @breakpoints */'
 };
 
-export function cssMarker(breakpoints: { [key: string]: number }, palette?: string): string {
-	const css = cssParser(palette);
+export const cssMarkerPalette = (palette?: string) => {
+	return cssParserPalette(palette);
+};
 
+export const cssMarker = (breakpoints: { [key: string]: number }): string => {
+	const css = cssParser();
 	const startMarkerLength = markerBreakpoint.start.length;
 	const endMarkerLength = markerBreakpoint.end.length;
 
@@ -47,4 +50,4 @@ export function cssMarker(breakpoints: { [key: string]: number }, palette?: stri
 	}
 
 	return cleanedCSS + response.trim();
-}
+};
