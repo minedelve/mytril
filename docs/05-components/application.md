@@ -3,7 +3,7 @@ title: Application
 description: jsp
 ---
 
-# Application {#application}
+# Application {#app}
 
 The application component is an optional feature that acts as a root layout component and offers certain functionalities available through Mytril .
 
