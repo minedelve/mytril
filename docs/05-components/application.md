@@ -21,6 +21,6 @@ The application component is an optional feature that acts as a root layout comp
 
 Here's a list of features that depend on Application to work in your project.
 
-| Tool       | Description                                   | Documentation                               |
-| :--------- | :-------------------------------------------- | :------------------------------------------ |
-| useDisplay | Control your display content width innerWidth | [useDisplay](mytril/docs/tools/use-display) |
+| Tool       | Description                                   | Documentation                                |
+| :--------- | :-------------------------------------------- | :------------------------------------------- |
+| useDisplay | Control your display content width innerWidth | [useDisplay](/mytril/docs/tools/use-display) |
