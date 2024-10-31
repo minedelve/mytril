@@ -5,7 +5,7 @@ description: Apply shadows and control depth in Svelte projects using Mytril's e
 
 <script lang="ts">
     import {presets} from "../index.js"
-    import Elevations from "./modules/elevations.svelte";
+    import Elevations from "../modules/elevations.svelte";
 </script>
 
 # Elevation styles {#elevation-styles}

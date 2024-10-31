@@ -5,7 +5,7 @@ description: Learn how to use Mytril’s spacing utilities to adjust margins, pa
 
 <script lang="ts">
     import {presets} from "../index.js"
-    import Spacing from "./modules/spacing.svelte";
+    import Spacing from "../modules/spacing.svelte";
 </script>
 
 # Spacing utilities {#spacing-utilities}

@@ -17,7 +17,7 @@ Start by creating a new SvelteKit project if you don't have one set up already. 
 
 ```shell
 # terminal
-npm create svelte@latest my-app
+npx sv create my-app
 cd my-app
 npm install
 npm run dev

@@ -1,4 +1,5 @@
 <script lang="ts">
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	export let color: any = {};
 	export let theme: string = 'light';
 

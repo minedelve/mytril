@@ -1,5 +1,6 @@
 ---
 title: Introduction
+description: Mytril is a Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
 ---
 
 # What is Mytril ? {#what-is-mytril}
@@ -10,7 +11,7 @@ Here’s a simple example:
 
 ```svelte
 <script>
-    import { Btn } from 'mytril';
+	import { Btn } from 'mytril';
 </script>
 
 <Btn>Click on me</Btn>

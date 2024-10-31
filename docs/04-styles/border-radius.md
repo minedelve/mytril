@@ -5,7 +5,7 @@ description: Using border-radius in Mytril is simple using simple classes and CS
 
 <script lang="ts">
     import {presets} from "../index.js"
-    import Corner from "./modules/corner.svelte";
+    import Corner from "../modules/corner.svelte";
 </script>
 
 # Border radius {#rounded}

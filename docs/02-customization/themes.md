@@ -4,8 +4,8 @@ description: Quickly modify default themes or create new ones in Mytril. Adjust 
 ---
 
 <script lang="ts">
-    import ColorRow from "./modules/color-row.svelte";
-    import { themes, colorScheme } from "./modules/themes.js";
+    import ColorRow from "../modules/color-row.svelte";
+    import { themes, colorScheme } from "../modules/themes.js";
 
     const colorKeys = Object.keys(themes);
     let mode: string = 'light'
