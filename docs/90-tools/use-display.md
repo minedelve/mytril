@@ -1,6 +1,6 @@
 ---
 title: useDisplay, reactive display in your render
-description: ''
+description: jsp
 ---
 
 # useDisplay function in Mytril: reactive display in your render DOM {#display}

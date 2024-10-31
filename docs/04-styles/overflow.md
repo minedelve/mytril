@@ -1,6 +1,6 @@
 ---
 title: Overflow
-description: 'jsp'
+description: jsp
 ---
 
 # Overflow styles with Mytril {#overflow-styles}

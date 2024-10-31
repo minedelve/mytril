@@ -1,6 +1,6 @@
 ---
 title: content
-description: 'jsp'
+description: jsp
 ---
 
 # Use prose class for your content {#content-styles}

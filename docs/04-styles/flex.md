@@ -1,6 +1,6 @@
 ---
 title: flex
-description: 'jsp'
+description: jsp
 ---
 
 # Flex styles with Mytril {#flex-styles}

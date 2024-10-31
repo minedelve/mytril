@@ -1,6 +1,6 @@
 ---
 title: float
-description: 'jsp'
+description: jsp
 ---
 
 # Float styles with Mytril {#float-styles}

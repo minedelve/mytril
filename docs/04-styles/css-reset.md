@@ -1,6 +1,6 @@
 ---
 title: css reset
-description: 'jsp'
+description: jsp
 ---
 
 # CSS reset {#css-reset}
