@@ -9,16 +9,13 @@ The application component is an optional feature that acts as a root layout comp
 
 ## Use Application on your app
 
-'''svelte
-
+```svelte
 <script>
-    import { App } from "mytril"
+	import { App } from 'mytril';
 </script>
 
-<App>
-    // your content
-</App>
-'''
+<App>// your content</App>
+```
 
 ## Tools
 
