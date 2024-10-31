@@ -1,0 +1,20 @@
+/*! all css to apply in composables and composants mytril */
+
+.no-scroll {
+	overflow: hidden !important;
+}
+
+/* Code
+   ========================================================================== */
+.code .preview-code {
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid var(--divider);
+	position: relative;
+	border-radius: 8px;
+}
+
+.code .code-wrapper {
+	width: 100%;
+	display: grid;
+}

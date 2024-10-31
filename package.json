@@ -58,16 +58,8 @@
 			"default": "./dist/index.js"
 		},
 		"./vite": {
-			"types": "./dist/plugins/vite/vite.d.ts",
-			"default": "./dist/plugins/vite/vite.js"
-		},
-		"./api": {
-			"types": "./dist/assets/api/index.d.ts",
-			"default": "./dist/assets/api/index.js"
-		},
-		"./store": {
-			"types": "./dist/store/index.d.ts",
-			"default": "./dist/store/index.js"
+			"types": "./dist/plugins/vite/plugin.d.ts",
+			"default": "./dist/plugins/vite/plugin.js"
 		},
 		"./tools": {
 			"types": "./dist/composables/index.d.ts",

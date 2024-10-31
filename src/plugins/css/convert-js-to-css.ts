@@ -1,77 +1,58 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { roundedClassName, roundedRoot } from '$lib/assets/styles/border-radius.js';
-import { colorsPalette, colorsThemes } from '$lib/assets/styles/colors.js';
-import { displayClassName } from '$lib/assets/styles/display.js';
-import { elevationClassName } from '$lib/assets/styles/elevation.js';
-import { flexClassName } from '$lib/assets/styles/flex.js';
-import { floatClassName } from '$lib/assets/styles/float.js';
-import { overflowClassName } from '$lib/assets/styles/overflow.js';
-import { positionClassName } from '$lib/assets/styles/position.js';
-import { sizingClassName } from '$lib/assets/styles/sizing.js';
-import { spacingClassName } from '$lib/assets/styles/spacing.js';
 import {
-	typographyClassName,
-	typographyClassNameBreakpoint,
-	typographyRoot
-} from '$lib/assets/styles/typography.js';
+	roundedClass,
+	roundedRoot,
+	displayClass,
+	elevationClass,
+	flexClass,
+	floatClass,
+	overflowClass,
+	positionClass,
+	sizingClass,
+	spacingClass,
+	typographyClass,
+	typographyClassBreakpoint,
+	typographyRoot,
+	colors
+} from '$lib/styles/js/index.js';
 
-export function convertJStoCSS(props: any) {
-	const {
-		defaultTheme,
-		colors,
-		thresholds,
-		palette,
-		rounded,
-		elevation,
-		position,
-		sizing,
-		spacing,
-		fontWeight,
-		fontTransform,
-		fontStyle,
-		fontAlign,
-		fontFamily,
-		display,
-		overflow,
-		float,
-		grids
-	} = props;
+const mediaQueries = ['min', 'max'];
+
+export const convertJStoCSS = (props: {
+	breakpoints: { [key: string]: number };
+	rounded: { [key: string]: string };
+	colors: { [key: string]: string | { [key: string]: string } };
+	fonts: { [key: string]: { [key: string]: string } };
+	theme: string;
+}) => {
 	let css: string = '';
-	for (const [breakpoint, screen] of Object.entries(thresholds)) {
+
+	for (const [breakpoint, screen] of Object.entries(props.breakpoints)) {
 		if (breakpoint === 'default') {
-			// root
-			css += colorsPalette(palette);
-			css += colorsThemes(defaultTheme, colors);
-			css += roundedRoot(rounded);
-			css += typographyRoot(fontStyle, fontFamily);
-			// class
-			css += elevationClassName(elevation);
-			css += typographyClassName(fontWeight, fontTransform, fontFamily);
+			css += colors(props.theme, props.colors);
+			css += roundedRoot(props.rounded);
+			css += typographyRoot(props.fonts.size, props.fonts.family);
+
+			// class css
+			css += typographyClass(props.fonts.family);
+			css += elevationClass();
 		}
 
-		if (breakpoint !== 'default') css += `@media screen and (min-width: ${screen}) {\n`;
-		css += roundedClassName(breakpoint, rounded);
-		css += positionClassName(breakpoint, position);
-		css += sizingClassName(breakpoint, sizing);
-		css += spacingClassName(breakpoint, spacing);
-		css += displayClassName(breakpoint, display);
-		css += typographyClassNameBreakpoint(breakpoint, fontStyle, fontAlign);
-		css += overflowClassName(breakpoint, overflow);
-		css += floatClassName(breakpoint, float);
-		css += flexClassName(breakpoint, grids);
-		if (breakpoint !== 'default') css += `}\n`;
-
-		if (breakpoint !== 'default') css += `@media screen and (max-width: ${screen}) {\n`;
-		css += roundedClassName(`max-${breakpoint}`, rounded);
-		css += positionClassName(`max-${breakpoint}`, position);
-		css += sizingClassName(`max-${breakpoint}`, sizing);
-		css += spacingClassName(`max-${breakpoint}`, spacing);
-		css += displayClassName(`max-${breakpoint}`, display);
-		css += typographyClassNameBreakpoint(`max-${breakpoint}`, fontStyle, fontAlign);
-		css += overflowClassName(`max-${breakpoint}`, overflow);
-		css += floatClassName(`max-${breakpoint}`, float);
-		css += flexClassName(`max-${breakpoint}`, grids);
-		if (breakpoint !== 'default') css += `}\n`;
+		for (const mediaQuerie of mediaQueries) {
+			if (breakpoint !== 'default')
+				css += `@media screen and (${mediaQuerie}-width: ${screen}px) {\n`;
+			const prefix = mediaQuerie === 'max' ? `max-${breakpoint}` : breakpoint;
+			css += roundedClass(prefix, props.rounded);
+			css += positionClass(prefix);
+			css += sizingClass(prefix);
+			css += spacingClass(prefix);
+			css += displayClass(prefix);
+			css += typographyClassBreakpoint(prefix, props.fonts.size);
+			css += overflowClass(prefix);
+			css += floatClass(prefix);
+			css += flexClass(prefix);
+			if (breakpoint !== 'default') css += `}\n`;
+		}
 	}
+
 	return css;
-}
+};
