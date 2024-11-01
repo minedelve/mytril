@@ -1,11 +1,19 @@
 ---
-title: flex
-description: jsp
+title: Flexbox Layouts with Mytril’s CSS
+description: Optimize your Svelte layouts with Mytril’s flex. Predefined CSS classes for fast, responsive design. Control flex direction, alignment, wrapping, and more, tailored for you building adaptable design for your users.
 ---
 
-# Flex styles with Mytril {#flex-styles}
+# Flex styles with Mytril {#flex-styles-with-mytril}
 
-## Flexbox
+Harness of CSS Flexbox with Mytril’s pre-defined classes for easy, responsive layout management. With Mytril, you get a comprehensive set of flex styles that simplify controlling layout direction, alignment, wrapping, and more, all with minimal code.
+
+## Flexbox layout control {#flexbox-layout-control}
+
+Each class in Mytril corresponds to essential Flexbox properties, allowing for clear, structured layouts in your Svelte projects.
+
+### Flex basis {#flex-basis}
+
+Control how your flex items behave within a container:
 
 | Class          | Properties      |
 | :------------- | :-------------- |
@@ -21,7 +29,9 @@ description: jsp
 | .flex-0-0-0    | flex: 0 0 0%;   |
 | .flex-0-0-100  | flex: 0 0 100%; |
 
-## Flex direction
+## Flex direction {#flex-direction}
+
+Set the layout direction of items in a container for rows, columns, and reversed order:
 
 | Class                | Properties                      |
 | :------------------- | :------------------------------ |
@@ -30,7 +40,9 @@ description: jsp
 | .flex-column         | flex-direction: column;         |
 | .flex-column-reverse | flex-direction: column-reverse; |
 
-## Justify content
+## Justify content {#justify-content}
+
+Align flex items along the main axis:
 
 | Class                  | Properties                      |
 | :--------------------- | :------------------------------ |
@@ -41,7 +53,9 @@ description: jsp
 | .justify-space-around  | justify-content: space-around;  |
 | .justify-space-evenly  | justify-content: space-evenly;  |
 
-## Align items
+## Align items {#align-items}
+
+Control vertical alignment for flex items:
 
 | Class           | Properties             |
 | :-------------- | :--------------------- |
@@ -51,7 +65,9 @@ description: jsp
 | .align-baseline | align-items: baseline; |
 | .align-stretch  | align-items: stretch;  |
 
-## Align self
+## Align self {#align-self}
+
+Manage alignment of individual items within a flex container:
 
 | Class                | Properties              |
 | :------------------- | :---------------------- |
@@ -62,7 +78,9 @@ description: jsp
 | .align-self-baseline | align-self: baseline;   |
 | .align-self-auto     | align-self: auto;       |
 
-## Align content
+## Align content {#align-content}
+
+Align flex lines within a container:
 
 | Class                   | Properties                 |
 | :---------------------- | :------------------------- |
@@ -73,7 +91,9 @@ description: jsp
 | .align-content-baseline | align-content: baseline;   |
 | .align-content-auto     | align-content: auto;       |
 
-## Wrap
+## Flex wrap {#flex-wrap}
+
+Control wrapping behavior in the flex container:
 
 | Class              | Properties               |
 | :----------------- | :----------------------- |
@@ -81,7 +101,9 @@ description: jsp
 | .flex-wrap-reverse | flex-wrap: wrap-reverse; |
 | .flex-nowrap       | flex-wrap: nowrap;       |
 
-## Order
+## Order {#order}
+
+Set the display order of items within a flex container:
 
 | Class        | Properties |
 | :----------- | :--------- |
@@ -101,16 +123,26 @@ description: jsp
 | .order-12    | order: 12; |
 | .order-last  | order: 13; |
 
-## Grow
+## Flex grow and shrink {#flex-grow-and-shrink}
+
+Define how items grow or shrink within a container:
+
+**Grow**
 
 | Class        | Properties    |
 | :----------- | :------------ |
 | .flex-grow-0 | flex-grow: 0; |
 | .flex-grow-1 | flex-grow: 1; |
 
-## Shrink
+**Shrink**
 
 | Class          | Properties      |
 | :------------- | :-------------- |
 | .flex-shrink-0 | flex-shrink: 0; |
 | .flex-shrink-1 | flex-shrink: 1; |
+
+### Why use Mytril flex styles?
+
+With Mytril’s flexbox styles, managing complex layouts becomes straightforward. By using these flex classes, you can reduce CSS writing time, maintain responsive design consistency, and adapt to different screen sizes seamlessly.
+
+This setup streamlines layout development, focusing on modular, flexible, and responsive code for modern web applications.

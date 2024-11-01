@@ -1,11 +1,13 @@
 ---
-title: Overflow
-description: jsp
+title: Effortless Overflow Management with Mytril
+description: Learn how to manage overflow styles with Mytril's pre-built CSS classes. Discover effective techniques for responsive design and control element overflow effortlessly. Explore examples and optimize your web layouts.
 ---
 
-# Overflow styles with Mytril {#overflow-styles}
+# Overflow styles with Mytril {#overflow-styles-with-mytril}
 
-With Mytril, you can manage the overflow of your DOM elements directly with pre-built CSS classes.
+Mytril provides a simple and effective way to manage the overflow properties of your DOM elements using pre-built CSS classes. These classes allow for straightforward implementation of overflow control in your web layouts, enhancing the responsiveness and usability of your applications.
+
+## Overflow class properties {#overflow-class-properties}
 
 | Class               | Properties           |
 | :------------------ | :------------------- |
@@ -19,9 +21,9 @@ With Mytril, you can manage the overflow of your DOM elements directly with pre-
 | .overflow-y-hidden  | overflow-y: hidden;  |
 | .overflow-y-visible | overflow-y: visible; |
 
-## Usage example {#usage}
+**Usage example**
 
-You can apply the overflow management class directly in your HTML, making it easy to control the layout of elements. What's more, Mytril supports breakpoints, allowing you to apply different overflow styles according to screen size if required.
+Integrating overflow management in your HTML is seamless with Mytril’s classes. The framework also supports breakpoints, enabling you to apply different overflow styles based on screen size.
 
 ```html
 <div class="custom-class overflow-hidden md:overflow-auto">
@@ -29,9 +31,11 @@ You can apply the overflow management class directly in your HTML, making it eas
 </div>
 ```
 
+**Explanation:**
+
 In this example:
 
-- By default, the header is set to `none`, which hides the element overflow in the `div`.
-- When the screen size reaches the `md` (medium) breakpoint, the `div` is displayed in the `overflow-auto` state, allowing overflow.
+- By default, the header’s overflow is set to hidden, concealing any overflowing content within the div.
+- Once the screen size reaches the `md` (medium) breakpoint, the overflow style switches to `overflow-auto`, allowing the content to overflow and enabling scrolling as necessary.
 
-This configuration allows developers to quickly manage responsive layouts, without having to manually write media requests.
+This configuration empowers you to efficiently manage responsive layouts without the complexity of writing manual media queries.

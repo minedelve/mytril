@@ -1,11 +1,15 @@
 ---
-title: float
-description: jsp
+title: Efficient Float Styles with Mytril
+description: Explore practical examples and enhance your web applications projects. Discover how Mytril's float streamline layout management for you. Learn to use pre-defined CSS classes to control element positioning, making responsive design easy and efficient.
 ---
 
-# Float styles with Mytril {#float-styles}
+# Float styles with Mytril {#float-styles-with-mytril}
 
-With Mytril, you can manage the float of your DOM elements directly with pre-built CSS classes.
+Mytril's float style you provide with quick ways to manage element positioning using pre-defined CSS classes. These classes support adaptable layouts with minimal code, streamlining your workflow without adding styling complexity.
+
+With Mytril, you can manage the float of your DOM elements directly using pre-built CSS classes.
+
+## Available float classes in Mytril {#available-float-classes-in-mytril}
 
 | Class        | Properties    |
 | :----------- | :------------ |
@@ -15,9 +19,9 @@ With Mytril, you can manage the float of your DOM elements directly with pre-bui
 | .float-end   | float: end;   |
 | .float-none  | float: none;  |
 
-## Usage example {#usage}
+## Float usage example {#float-usage-example}
 
-You can apply the display management class directly in your HTML, giving you easy control over the layout of elements. What's more, Mytril supports breakpoints, allowing you to apply different display styles according to screen size if required.
+Mytril's float classes offer direct control over layout positioning in HTML. With built-in responsive breakpoints, you can easily adjust float behavior across different screen sizes.
 
 ```html
 <div class="custom-class float-left md:float-start">
@@ -27,7 +31,7 @@ You can apply the display management class directly in your HTML, giving you eas
 
 In this example:
 
-- By default, the header is set to `none`, which displays the `div` on the left of the screen.
-- When the screen size reaches the `md` (medium) breakpoint, the `div` is displayed in `float-start`, ensuring alignment at the start of the parent element.
+- The default `float-left` aligns the element to the left side of the screen.
+- At the medium (`md`) breakpoint, the element switches to `float-start`, aligning it with the start of its parent container.
 
-This configuration allows developers to quickly manage responsive layouts, without having to manually write media requests.
+Mytril's float style streamline responsive layout creation, allowing you to focus on coding efficient, clean user interfaces.
