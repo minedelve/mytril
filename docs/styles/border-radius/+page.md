@@ -10,7 +10,7 @@ description: Using border-radius in Mytril is simple using simple classes and CS
 
 # Border radius {#rounded}
 
-ytril its a straightforward way for you why using the CSS to apply border-radius to elements using predefined rounded classes. These classes range from .rounded-0 for no rounding to .rounded-xl for a larger border radius. Developers can easily implement these options to customize the appearance of UI elements.
+Mytril its a straightforward way for you why using the CSS to apply border-radius to elements using predefined rounded classes. These classes range from .rounded-0 for no rounding to .rounded-xl for a larger border radius. Developers can easily implement these options to customize the appearance of UI elements.
 
 ## Predefined rounded classes {#predefined-rounded-classes}
 
