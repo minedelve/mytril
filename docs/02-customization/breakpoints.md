@@ -30,18 +30,19 @@ Mytril’s breakpoints can be used to easily define media queries or set conditi
 
 ## Default breakpoint values: {#default-breakpoint-values}
 
-Mytril provides the following default breakpoint values in the mytril.config.js file:
+Mytril provides the following default breakpoint values in the `plugins/mytril.(js|ts)` file:
 
 ```javascript
+// plugins/mytril.(js|ts)
 export default {
-	assets: {
+	display: {
 		thresholds: {
 			default: 0,
-			sm: '640px',
-			md: '768px',
-			lg: '1024px',
-			xl: '1280px',
-			xxl: '1536px'
+			sm: 640,
+			md: 768,
+			lg: 1024,
+			xl: 1280,
+			xxl: 1536
 		}
 	}
 };
@@ -49,14 +50,15 @@ export default {
 
 ## Customizing breakpoints: {#customizing-breakpoints}
 
-You can also modify or add new breakpoints to suit the specific needs of your project. Simply update the mytril.config.js file with your preferred values:
+You can also modify or add new breakpoints to suit the specific needs of your project. Simply update the `plugins/mytril.(js|ts)` file with your preferred values:
 
 ```javascript
+// plugins/mytril.(js|ts)
 export default {
-	assets: {
+	display: {
 		thresholds: {
-			sm: '340px', // replace default value
-			xlg: '1920px' // add new value
+			sm: 340, // replace default value
+			xlg: 1920 // add new value
 		}
 	}
 };

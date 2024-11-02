@@ -7,13 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.6] - 2024-10-27
+## [0.3.0] - 2024-11-02
 
 ### Added
 
 - Add **float** class.
 - Add **overflow** class.
 - Add **flex** class.
+- New process for customize mytril mytril.config.js to plugins/mytril.ts or js
+- Mytril support Typescript and Javascript standard
+- Minimify CSS files
+- First components `App`
+- Add new tools `useDisplay`
+
+### Fixed
+
+- Class `display` duplicate with min and max media queries.
+- Duplication all class in max media queries
+- Optimize CSS
+- Fix store not working for `useTheme`
+
+## [0.2.6] - 2024-10-27
+
+### Added
+
 - Add **flex-direction** class.
 - Add **justify-content** class.
 - Add **align-items** class.

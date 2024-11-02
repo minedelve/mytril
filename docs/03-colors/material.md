@@ -19,11 +19,11 @@ Mytril integrates the full **Material Design** color chart, giving developers ac
 
 ## How to Enable the Material Design Palette
 
-1. Open **mytril.config.js**.
+1. Open **plugins/mytril.(js|ts)**.
 2. Add this configuration to activate the **Material** palette:
 
 ```javascript
-//mytril.config.js
+// plugins/mytril.(js|ts)
 export default {
 	theme: {
 		palette: 'material'

@@ -14,7 +14,7 @@ Mytril uses its **store** to keep the theme persistent throughout the user’s s
 - Return: `string`
 - Default: `'default'
 
-This function returns the current theme name used in your application. It is available in all Svelte components. By default, it returns the theme set in `mytril.config.js` under the `defaultTheme` property.
+This function returns the current theme name used in your application. It is available in all Svelte components. By default, it returns the theme set in `plugins/mytril.(js|ts)` under the `defaultTheme` property.
 
 ```svelte
 <script lang="ts">

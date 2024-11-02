@@ -19,11 +19,11 @@ Mytril offers seamless integration with the **Tailwind CSS** color palette, allo
 
 ## How to enable the tailwind palette
 
-1. Open **mytril.config.js**.
+1. Open **plugins/mytril.(js|ts)**.
 2. Add this configuration to activate the **Tailwind** palette:
 
 ```javascript
-//mytril.config.js
+// plugins/mytril.(js|ts)
 export default {
 	theme: {
 		palette: 'tailwind'

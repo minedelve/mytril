@@ -17,9 +17,10 @@ Customize default surfaces, text colors, breakpoints and more. Easily modify you
 
 ## Basic {#basic}
 
-Mytril comes pre-installed with two default themes: light and dark. To set your app's default theme, edit the `defaultTheme` option in the `mytril.config.js` file.
+Mytril comes pre-installed with two default themes: light and dark. To set your app's default theme, edit the `defaultTheme` option in the `plugins/mytril.(js|ts)` file.
 
 ```javascript
+// plugins/mytril.(js|ts)
 export default {
 	theme: {
 		defaultTheme: 'light'
@@ -34,6 +35,8 @@ By default, the **light** theme is applied, but you can easily switch to **dark*
 You can modify existing themes or create new ones by adjusting properties. Mytril generates style variables for each property, linked to the theme name. The default theme is also included in the global CSS **root**.
 
 ```javascript
+// plugins/mytril.(js|ts)
+
 export default {
 	theme: {
 		defaultTheme: 'light',
@@ -63,6 +66,8 @@ _If you create a new property, it will only apply to the specified theme unless 
 To add a new theme, simply define a new color property to your application.
 
 ```javascript
+// plugins/mytril.(js|ts)
+
 export default {
 	theme: {
 		defaultTheme: 'dark',

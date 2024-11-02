@@ -29,6 +29,8 @@ npm run dev
 - Node v18 or more
 - Vite.js v4.5 or more
 
+> Mytril is compatible with Svelte 5, and we are actively working to offer Svelte's new functions directly via Mytril.
+
 ## Install Mytril
 
 Install **mytril** within your project. Mytril has no external dependencies in order to facilitate its integration and limit potential version conflicts
