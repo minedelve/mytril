@@ -1,4 +1,4 @@
-import { cssParser, cssParserPalette } from './parser.js';
+import { cssParser, cssParserComponents, cssParserPalette } from './parser.js';
 
 const markerBreakpoint = {
 	start: '/* @breakpoints */',
@@ -10,7 +10,7 @@ export const cssMarkerPalette = (palette?: string) => {
 };
 
 export const cssMarker = (breakpoints: { [key: string]: number }): string => {
-	const css = cssParser();
+	const css = cssParser() + '\n' + cssParserComponents();
 	const startMarkerLength = markerBreakpoint.start.length;
 	const endMarkerLength = markerBreakpoint.end.length;
 

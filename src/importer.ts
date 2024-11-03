@@ -1,5 +1,6 @@
 import path from 'path';
 import fsPromises from 'fs/promises';
+import { componentsCSS } from './components/css.js';
 
 const directory = process.cwd();
 const directoryBuild = 'node_modules/mytril/dist';
@@ -40,6 +41,7 @@ export const mytrilImporterCSS = () => {
 		palette: {
 			material: path.resolve(`${directoryBuild}/styles/colors`, 'material.css'),
 			tailwind: path.resolve(`${directoryBuild}/styles/colors`, 'tailwind.css')
-		}
+		},
+		components: [...componentsCSS]
 	};
 };
