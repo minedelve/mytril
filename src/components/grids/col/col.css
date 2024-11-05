@@ -1,0 +1,14 @@
+.myt-col {
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+}
+
+.myt-col {
+	width: 100%;
+	padding: 12px;
+}
+
+.myt-col.col-auto {
+	width: 100%;
+}

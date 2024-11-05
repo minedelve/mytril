@@ -1,0 +1,8 @@
+.myt-container {
+	width: 100%;
+	padding: 16px;
+	margin-right: auto;
+	margin-left: auto;
+	color: var(--text);
+	background-color: var(--surface);
+}

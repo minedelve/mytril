@@ -6,4 +6,4 @@
 	export { _class as class };
 </script>
 
-<div class={className('my-spacer', _class)} {...$$restProps}></div>
+<div class={className('myt-spacer', _class)} {...$$restProps}></div>
