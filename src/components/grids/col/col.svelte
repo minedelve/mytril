@@ -30,6 +30,8 @@
 	export let orderLg: string | number | undefined = undefined;
 	export let orderXl: string | number | undefined = undefined;
 	export let orderXxl: string | number | undefined = undefined;
+	// props align self
+	export let alignSelf: string | undefined = undefined;
 
 	type PropertyKeys = '_default' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 	type PropertyValues = {
@@ -72,6 +74,9 @@
 				lg: orderLg,
 				xl: orderXl,
 				xxl: orderXxl
+			},
+			'align-self': {
+				_default: alignSelf
 			}
 		};
 

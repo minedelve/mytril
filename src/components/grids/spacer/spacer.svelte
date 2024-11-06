@@ -4,6 +4,7 @@
 	// props
 	let _class: string | undefined = undefined;
 	export { _class as class };
+	export let tag: string = 'div';
 </script>
 
-<div class={className('myt-spacer', _class)} {...$$restProps}></div>
+<svelte:element this={tag} class={className('myt-spacer', _class)} {...$$restProps} />
