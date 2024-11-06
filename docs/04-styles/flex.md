@@ -101,6 +101,26 @@ Control wrapping behavior in the flex container:
 | .flex-wrap-reverse | flex-wrap: wrap-reverse; |
 | .flex-nowrap       | flex-wrap: nowrap;       |
 
+## Offset {#offset}
+
+Set spacer on your content with use grids column.
+
+| Class      | Properties                                    |
+| :--------- | :-------------------------------------------- |
+| .offset-0  | margin-inline-start: calc((100% / 12) \* 0);  |
+| .offset-1  | margin-inline-start: calc((100% / 12) \* 1);  |
+| .offset-2  | margin-inline-start: calc((100% / 12) \* 2);  |
+| .offset-3  | margin-inline-start: calc((100% / 12) \* 3);  |
+| .offset-4  | margin-inline-start: calc((100% / 12) \* 4);  |
+| .offset-5  | margin-inline-start: calc((100% / 12) \* 5);  |
+| .offset-6  | margin-inline-start: calc((100% / 12) \* 6);  |
+| .offset-7  | margin-inline-start: calc((100% / 12) \* 7);  |
+| .offset-8  | margin-inline-start: calc((100% / 12) \* 8);  |
+| .offset-9  | margin-inline-start: calc((100% / 12) \* 9);  |
+| .offset-10 | margin-inline-start: calc((100% / 12) \* 10); |
+| .offset-11 | margin-inline-start: calc((100% / 12) \* 11); |
+| .offset-12 | margin-inline-start: calc((100% / 12) \* 12); |
+
 ## Order {#order}
 
 Set the display order of items within a flex container:
