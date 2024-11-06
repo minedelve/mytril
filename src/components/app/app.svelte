@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { innerWidth } from '$lib/composables/display.js';
-	$: width = 0;
+
+	// state
+	let width = 0;
 
 	$: {
 		if (width > 0) {

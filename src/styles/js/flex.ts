@@ -7,6 +7,7 @@ import {
 	flexDirection,
 	grow,
 	justify,
+	offset,
 	order,
 	shrink,
 	wrap
@@ -25,6 +26,7 @@ export const flexClass = (breakpoint: string) => {
 	css += flexOrderClass(breakpoint, order);
 	css += flexShrinkClass(breakpoint, shrink);
 	css += flexGrowClass(breakpoint, grow);
+	css += flexOffsetClass(breakpoint, offset);
 
 	return css;
 };
@@ -104,6 +106,16 @@ const flexOrderClass = (breakpoint: string, values: Array<number>) => {
 	for (const element of values) {
 		css += `${formatBreakpoint(breakpoint)}order-${element === -1 ? 'first' : element === 13 ? 'last' : element} {\n`;
 		css += `order: ${element};\n`;
+		css += `}\n`;
+	}
+	return css;
+};
+
+const flexOffsetClass = (breakpoint: string, values: Array<number>) => {
+	let css = '';
+	for (const element of values) {
+		css += `${formatBreakpoint(breakpoint)}offset-${element} {\n`;
+		css += `margin-inline-start: calc((100% / 12) * ${element});\n`;
 		css += `}\n`;
 	}
 	return css;
