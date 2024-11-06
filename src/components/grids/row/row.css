@@ -5,25 +5,25 @@
 	margin: -0.75rem;
 }
 
-.myt-row.row-no-gutters {
+.myt-row.myt-row--no-gutters {
 	margin: 0;
 }
-.myt-row.row-no-gutters > .myt-col,
-.myt-row.row-no-gutters > [class*='myt-col-'] {
+.myt-row.row--no-gutters > .myt-col,
+.myt-row.row--no-gutters > [class*='col-'] {
 	padding: 0;
 }
 
-.myt-row .row-dense {
+.myt-row .row--dense {
 	margin: -0.25rem;
 }
-.myt-row .row-dense > .myt-col,
-.myt-row .row-dense > [class*='myt-col-'] {
+.myt-row .row--dense > .myt-col,
+.myt-row .row--dense > [class*='col-'] {
 	padding: 0.25rem;
 }
 
 .myt-row + .myt-row {
 	margin-top: 0.75rem;
 }
-.myt-row + .row-dense {
+.myt-row + .row--dense {
 	margin-top: 0.25rem;
 }

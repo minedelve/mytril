@@ -6,3 +6,37 @@
 	color: var(--text);
 	background-color: var(--surface);
 }
+
+.myt-container.fill-height {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.myt-container.myt-container--fluid {
+	max-width: 100%;
+}
+
+@media (min-width: 960px) {
+	.myt-container {
+		max-width: 900px;
+	}
+}
+
+@media (min-width: 1280px) {
+	.myt-container {
+		max-width: 1200px;
+	}
+}
+
+@media (min-width: 1920px) {
+	.myt-container {
+		max-width: 1800px;
+	}
+}
+
+@media (min-width: 2560px) {
+	.myt-container {
+		max-width: 2400px;
+	}
+}

@@ -36,12 +36,12 @@ export const cssMarker = (breakpoints: { [key: string]: number }): string => {
 	let response = '';
 	if (extractedContent && extractedContent !== '') {
 		for (const property in breakpoints) {
-			if (response !== 'default') {
+			if (property !== 'default') {
 				response += `@media screen and (min-width: ${breakpoints[property]}px) {`;
 				response += extractedContent.trim().replaceAll('[breakpoint]', `.${property}\\:`);
 				response += `}`;
 				response += `@media screen and (max-width: ${breakpoints[property]}px) {`;
-				response += extractedContent.trim().replaceAll('[breakpoint]', `.${property}\\:`);
+				response += extractedContent.trim().replaceAll('[breakpoint]', `.max-${property}\\:`);
 				response += `}`;
 			} else {
 				response += extractedContent.trim().replaceAll('[breakpoint]', `.`);
