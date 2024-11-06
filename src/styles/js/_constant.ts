@@ -164,6 +164,7 @@ export const alignSelf = ['stretch', 'flex-start', 'flex-end', 'center', 'baseli
 export const alignContent = ['stretch', 'flex-start', 'flex-end', 'center', 'baseline', 'auto'];
 export const wrap = ['wrap', 'wrap-reverse', 'nowrap'];
 export const order = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+export const offset = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 export const shrink = [0, 1];
 export const grow = [0, 1];
 export const float = ['left', 'right', 'start', 'end', 'none'];

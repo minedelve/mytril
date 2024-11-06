@@ -20,3 +20,12 @@ export function cssParserPalette(palette?: string) {
 
 	return css;
 }
+
+export function cssParserComponents() {
+	let css: string = ``;
+	const files = mytrilImporterCSS();
+
+	files?.components.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+
+	return css;
+}

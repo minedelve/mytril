@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2024-11-06
+
+### Added
+
+- Add `Container` component.
+- Add `Row` component.
+- Add `Col` component.
+- Add `Spacer` component.
+- Add new global class **fill-height**.
+- Add **offset** class.
+
+### Fixed
+
+- Duplication all class in max media queries in css parser
+
 ## [0.3.0] - 2024-11-02
 
 ### Added

@@ -4,6 +4,10 @@
 	overflow: hidden !important;
 }
 
+.fill-height {
+	height: 100% !important;
+}
+
 /* Code
    ========================================================================== */
 .code .preview-code {
