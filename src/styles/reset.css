@@ -25,6 +25,10 @@ html {
 	margin: 0;
 }
 
+img {
+	border-style: none;
+}
+
 *,
 ::before,
 ::after {
