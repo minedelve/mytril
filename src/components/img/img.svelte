@@ -10,7 +10,7 @@
 	export let contentClass: string | undefined = undefined;
 	export let src: string | undefined = undefined;
 	export let lazySrc: string | undefined = undefined;
-	export let alt: string = '';
+	export let alt: string | undefined = undefined;
 	export let options = { root: null, rootMargin: '0px 0px 0px 0px', threshold: 0.0 };
 	export let cover: boolean = false;
 	export let contain: boolean = false;
