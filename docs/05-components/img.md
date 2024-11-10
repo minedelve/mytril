@@ -3,7 +3,7 @@ title: Image Component
 description: jsp
 ---
 
-# Image component with Mytril {#Image-component-with-mytril}
+# Image component with Mytril {#image-component-with-mytril}
 
 ## Using the image component {#using-the-image-component}
 
