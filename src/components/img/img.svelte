@@ -1,14 +1,17 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import useLazyImage from './utils.js';
+	import { onMount, tick } from 'svelte';
+	import Responsive from '../responsive/responsive.svelte';
+	import { className } from '$lib/utils/dom.js';
+	import { useLazyImg } from '$lib/composables/lazy.js';
 
+	// props
+	let _class: string | undefined = undefined;
+	export { _class as class };
 	export let contentClass: string | undefined = undefined;
 	export let src: string | undefined = undefined;
 	export let lazySrc: string | undefined = undefined;
-
-	export let options = { root: null, rootMargin: '0px 0px 0px 0px', threshold: 0.0 };
-
 	export let alt: string = '';
+	export let options = { root: null, rootMargin: '0px 0px 0px 0px', threshold: 0.0 };
 	export let cover: boolean = false;
 	export let contain: boolean = false;
 	export let absolute: boolean = false;
@@ -17,69 +20,67 @@
 	export let crossorigin: '' | 'anonymous' | 'use-credentials' | undefined = undefined;
 	export let draggable: boolean | 'true' | 'false' | undefined = undefined;
 
-	$: paddingBottom = 100;
-
-	let lazyImgElement: Element;
-	let mainImgElement: Element;
+	// state
+	let lazyElement: Element;
+	let imgElement: Element;
 	let observer: IntersectionObserver;
 	let intersected = false;
 
 	onMount(() => {
-		observer = new IntersectionObserver((entries, self) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					intersected = true;
-					self.unobserve(lazyImgElement);
-				}
-			});
-		}, options);
-		observer.observe(lazyImgElement);
+		const initializeObserver = async () => {
+			await tick(); // await DOM
+			if (lazyElement) {
+				observer = new IntersectionObserver((entries, self) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							intersected = true;
+							self.unobserve(lazyElement);
+						}
+					});
+				}, options);
+				observer.observe(lazyElement);
+			}
+		};
+
+		initializeObserver();
 
 		return () => {
-			if (observer) {
-				observer.unobserve(lazyImgElement);
+			if (observer && lazyElement) {
+				observer.unobserve(lazyElement);
 			}
 		};
 	});
-
-	$: {
-		if (aspectRatio) {
-			const [width, height] = aspectRatio.split('/').map(Number);
-			paddingBottom = (height / width) * 100;
-		}
-	}
 </script>
 
-<div
-	class="myt-responsive myt-img"
-	class:myt-img--absolute={absolute}
-	class:myt-responsive--inline={inline}
+<Responsive
+	class={className('myt-img', _class, absolute ? 'myt-img--absolute' : '')}
+	{aspectRatio}
+	{inline}
 	{...$$restProps}
 >
-	<div class="myt-responsive--sizer" style={`padding-bottom: ${paddingBottom}%;`}></div>
-
 	{#if !intersected && lazySrc}
 		<img
-			class={`myt-img--img ${contentClass}`}
+			class={className('myt-img--img', contentClass)}
 			src={lazySrc}
 			{alt}
-			bind:this={lazyImgElement}
+			bind:this={lazyElement}
 			class:myt-img--img-cover={cover}
 			class:myt-img--img-contain={contain}
+			class:myt-img--preload={$$slots.placeholder}
 		/>
 	{/if}
 
 	<img
-		class={`myt-img--img ${contentClass}`}
+		class={className('myt-img--img', contentClass)}
 		{src}
 		{alt}
-		bind:this={mainImgElement}
+		bind:this={imgElement}
 		class:myt-img--img-cover={cover}
 		class:myt-img--img-contain={contain}
 		class:none={!intersected && lazySrc}
 		{crossorigin}
 		{draggable}
-		use:useLazyImage={{
+		use:useLazyImg={{
 			root: options.root,
 			rootMargin: options.rootMargin,
 			threshold: options.threshold
@@ -87,8 +88,8 @@
 	/>
 
 	{#if $$slots.placeholder}
-		<div class="myt-img--placerholder">
+		<div class="myt-img--placeholder">
 			<slot name="placeholder" />
 		</div>
 	{/if}
-</div>
+</Responsive>
