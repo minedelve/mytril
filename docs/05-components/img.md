@@ -27,7 +27,7 @@ description: jsp
 | draggable      | boolean or 'true' or 'false'           | false     | Controls the draggable behavior of the image. See MDN. [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable)                                                                      |
 | inline         | boolean                                | false     | Display as an inline element instead of a block, also disables flex-grow.                                                                                                                                                 |
 | lazySrc        | string                                 | undefined | Something to show while waiting for the main image to load, typically a small base64-encoded thumbnail. Has a slight blur filter applied. NOTE: This prop has no effect unless either height or aspect-ratio are provided |
-| options        | IntersectionObserverInit               | {}        | Options that are passed to the [Intersection observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) constructor.                                                                           |
+| options        | IntersectionObserverInit               | undefined | Options that are passed to the [Intersection observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) constructor.                                                                           |
 | referrerpolicy | 'origin'                               |
 
 or 'no-referrer'
