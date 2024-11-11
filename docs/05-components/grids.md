@@ -1,22 +1,20 @@
 ---
-title: Grids
-description: jsp
+title: Responsive Grid Layouts with Mytril
+description: Master the 12-point grid system for creating responsive layouts. Learn to use container, row and col components with custom breakpoints for adaptive web design.
 ---
 
-# Grids components with Mytril {#grids-components-with-mytril}
+# Building layouts with grid components with Mytril {#building-layouts-with-grid-components-with-mytril}
 
-**Mytril comes with a 12 point grid system built using flexbox.**
+The Mytril grid system uses a flexible 12-column layout powered by flexbox, allowing developers to create responsive and customized designs with ease. With adaptable breakpoints and a range of components, Mytril’s grid enables tailored, device-friendly layouts.
 
-The grid is used to create specific layouts within the content of your application. By default, it contains **7** types of breakpoints which are used to target specific screen sizes or orientations: **default**, **xs**, **sm**, **md**, **lg**, **xl** and **Xxl**. These breakpoints are defined below in the [Breakpoints](/mytril/docs/customization/breakpoints) table and can be modified by customizing it via `plugins/mytril.(js|ts)`.
+## Core grid sub components {#core-grid-sub-components}
 
-## Sub components {#sub-components}
-
-| Component | Description                               |
-| :-------- | :---------------------------------------- |
-| Container | The container component.                  |
-| Row       | Sub-component used to create rows.        |
-| Col       | Sub-component used to create columns.     |
-| Spacer    | A component often used in grid scenarios. |
+| Component | Description                                |
+| :-------- | :----------------------------------------- |
+| Container | The main element to house grid layouts.    |
+| Row       | Used to define horizontal rows of columns. |
+| Col       | Specifies individual columns within a row. |
+| Spacer    | Adds adjustable spacing between columns.   |
 
 ```svelte
 <script>
@@ -28,22 +26,20 @@ The grid is used to create specific layouts within the content of your applicati
 		<Col>1</Col>
 		<Col>2</Col>
 		<Col>3</Col>
-		<Col>4</Col>
-		<Col>5</Col>
-		<Col>6</Col>
-		<Col>7</Col>
-		<Col>8</Col>
-		<Col>9</Col>
-		<Col>10</Col>
-		<Col>11</Col>
-		<Col>12</Col>
+		<!-- Add more columns as needed -->
 	</Row>
 </Container>
 ```
 
-## Custom grids {#custom-grids}
+### Responsive breakpoints grid system {#responsive-breakpoints-grid-system}
 
-With `Col` de Mytril, you can customize your grid following the breakpoints.
+Mytril’s grid system includes seven default breakpoints (`xs`, `sm`, `md`, `lg`, `xl`, `xxl`, and `default` ) designed to match specific screen sizes. Each breakpoint allows you to target particular devices or orientations, ensuring flexibility across viewports.
+
+These breakpoints are defined within Mytril’s configuration and can be customized to fit specific project needs. To modify breakpoints, you can adjust the settings in `plugins/mytril.(js|ts)`, tailoring your grid to accommodate different design preferences and responsive requirements.
+
+## Customizing grid layouts {#customizing-grid-layouts}
+
+With the `Col` component, you can define custom spans and adjust layouts for different breakpoints. The following example adapts column widths based on screen size:
 
 ```svelte
 <script>
@@ -60,7 +56,9 @@ With `Col` de Mytril, you can customize your grid following the breakpoints.
 </Container>
 ```
 
-### Props {#props}
+### Properties of each grid component {#properties-of-each-grid-component}
+
+Each component in the grid system has properties that allow for precise layout control:
 
 **Container**
 
@@ -168,9 +166,9 @@ With `Col` de Mytril, you can customize your grid following the breakpoints.
 
 <Container>
 	<Row>
-		<Col>// your content</Col>
+		<Col>// your content 1</Col>
 		<Spacer />
-		<Col>// your content</Col>
+		<Col>// your content 2</Col>
 	</Row>
 </Container>
 ```
@@ -178,3 +176,11 @@ With `Col` de Mytril, you can customize your grid following the breakpoints.
 | Property | Type   | Default | Description                                    |
 | :------- | :----- | :------ | :--------------------------------------------- |
 | tag      | string | div     | Specify a custom tag used on the root element. |
+
+### Key benefits of this grid system {#key-benefits-of-this-grid-system}
+
+1. **Effortless responsiveness**: pre-defined breakpoints make adapting layouts to various screen sizes easy.
+2. **Fine-grained control**: alignment, spacing, and ordering can be customized without additional CSS.
+3. **Developer-focused design**: each component integrates smoothly, saving time and simplifying layout management.
+
+Using Mytril’s grid components, developers can build professional-grade, responsive layouts that are efficient and easy to manage.
