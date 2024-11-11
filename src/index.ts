@@ -3,6 +3,8 @@ export { createMytril } from './entry-bundler.js';
 
 // components
 export { default as App } from './components/app/app.svelte';
+export { default as Img } from './components/img/img.svelte';
+export { default as Responsive } from './components/responsive/responsive.svelte';
 
 // grids
 export { default as Container } from './components/grids/container/container.svelte';
