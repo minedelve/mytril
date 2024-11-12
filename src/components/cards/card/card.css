@@ -1,0 +1,13 @@
+.myt-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--rounded-lg);
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	text-align: start;
+	color: var(--text);
+	background-color: var(--surface-container);
+	overflow: hidden;
+}
