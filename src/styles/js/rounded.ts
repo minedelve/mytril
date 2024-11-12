@@ -3,7 +3,7 @@ import { formatRootVar, formatBreakpoint } from '$lib/utils/formater.js';
 export const roundedRoot = (values: { [key: string]: string }) => {
 	let css = ':root {\n';
 	for (const [key, value] of Object.entries(values)) {
-		css += `${formatRootVar('rounded-' + key)}: ${value};\n`;
+		css += `${formatRootVar(key === 'default' ? 'rounded' : 'rounded-' + key)}: ${value};\n`;
 	}
 	return (css += '}\n');
 };
