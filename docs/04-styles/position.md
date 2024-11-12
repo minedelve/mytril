@@ -46,7 +46,7 @@ With Mytril, implementing **responsive positioning** is straightforward. You can
 
 While breakpoints allow for responsive behavior, they are optional. You can still create flexible layouts without them, but their availability helps ensure your projects are adaptable without additional effort.
 
-## Why use Mytril for positioning styles ?{#why-use-mytril-for-positionning-styles}
+## Why use Mytril for positioning styles? {#why-use-mytril-for-positionning-styles}
 
 1. **Predefined Classes**: Mytril’s predefined positioning classes reduce the need for custom CSS, speeding up development.
 2. **Responsive Breakpoints**: Easily manage element positions at different screen sizes without writing media queries manually.
