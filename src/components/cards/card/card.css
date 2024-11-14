@@ -1,14 +1,20 @@
 .myt-card {
+	--c-color: var(--text);
+	--c-background-color: var(--surface-container);
+	--c-rounded: var(--rounded-lg);
+}
+
+.myt-card {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	border-radius: var(--rounded-lg);
+	border-radius: var(--c-rounded);
 	border-color: transparent;
 	border-width: 1px;
 	border-style: solid;
 	text-align: start;
-	color: var(--text);
-	background-color: var(--surface-container);
+	color: var(--c-color);
+	background-color: var(--c-background-color);
 	overflow: hidden;
 }
 
@@ -17,16 +23,16 @@ a.myt-card {
 }
 
 .myt-card:hover:not(div) {
-	background-color: color-mix(in oklab, var(--surface-container) 90%, black);
+	background-color: color-mix(in oklab, var(--c-background-color) 90%, black);
 }
 
 .myt-card:focus:not(div) {
-	background-color: color-mix(in oklab, var(--surface-container) 95%, black);
+	background-color: color-mix(in oklab, var(--c-background-color) 95%, black);
 }
 
 .myt-card:active:not(div),
 .myt-card.myt-card--active {
-	background-color: color-mix(in oklab, var(--surface-container) 95%, black);
+	background-color: color-mix(in oklab, var(--c-background-color) 95%, black);
 }
 
 .myt-card:not(div) {
@@ -34,7 +40,7 @@ a.myt-card {
 }
 
 .myt-card.myt-card--outline {
-	border-color: var(--outline);
+	border-color: currentColor;
 }
 
 .myt-card.myt-card--outline,
@@ -44,19 +50,19 @@ a.myt-card {
 
 .myt-card.myt-card--outline:hover:not(div),
 .myt-card.myt-card--text:hover:not(div) {
-	background-color: color-mix(in oklab, var(--text) 20%, transparent);
+	background-color: color-mix(in oklab, currentColor 7%, transparent);
 }
 
 .myt-card.myt-card--outline:focus:not(div),
 .myt-card.myt-card--text:focus:not(div) {
-	background-color: color-mix(in oklab, var(--text) 25%, transparent);
+	background-color: color-mix(in oklab, currentColor 15%, transparent);
 }
 
 .myt-card.myt-card--outline:active:not(div),
-.myt-card.myt-card--outline.card-active,
 .myt-card.myt-card--text:active:not(div),
-.myt-card.myt-card--text.card-active {
-	background-color: color-mix(in oklab, var(--text) 25%, transparent);
+.myt-card.myt-card--outline.myt-card--active,
+.myt-card.myt-card--text.myt-card--active {
+	background-color: color-mix(in oklab, currentColor 10%, transparent);
 }
 
 .myt-card.myt-card--disabled,
@@ -64,24 +70,9 @@ a.myt-card {
 .myt-card:disabled {
 	pointer-events: none;
 	user-select: none;
-	color: color-mix(in oklab, var(--shadow) 25%, transparent) !important;
 }
-.myt-card.myt-card--disabled.myt-card--outline,
-.myt-card[disabled].myt-card--outline,
-.myt-card:disabled.myt-card--outline {
-	border-color: color-mix(in oklab, var(--shadow) 25%, transparent) !important;
-}
-
-.myt-card.myt-card--disabled:not(.myt-card--text)::before,
-.myt-card[disabled]:not(.myt-card--text)::before,
-.myt-card:disabled:not(.myt-card--text)::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: color-mix(in oklab, var(--shadow) 8%, transparent) !important;
-	z-index: 100;
-	border-radius: var(--rounded-lg);
+.myt-card.myt-card--disabled > *,
+.myt-card[disabled] > *,
+.myt-card:disabled > * {
+	opacity: 0.6;
 }
