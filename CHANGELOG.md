@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.4] - 2024-11-14
+
+### Added
+
+- Add `Card` component.
+- Delete **background** and **color** on component `Container`.
+- Add new system color for generate key color on Mytil component.
+- Add x11 Colors on Mytril.
+
+### Fixed
+
+- Fix no update store on launch local application
+- Fix color not working on derived store
+
 ## [0.3.3] - 2024-11-12
 
 ### Fixed
