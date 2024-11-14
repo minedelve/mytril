@@ -23,6 +23,7 @@ export interface MytrilConfig {
 }
 
 export function createMytril(config: MytrilConfig) {
+	console.log('createMytril', config);
 	if (config?.theme?.colors) {
 		setColors(merge(_default.theme.colors, config?.theme.colors));
 	}

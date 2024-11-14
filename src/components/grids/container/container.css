@@ -3,8 +3,6 @@
 	padding: 16px;
 	margin-right: auto;
 	margin-left: auto;
-	color: var(--text);
-	background-color: var(--surface);
 }
 
 .myt-container.fill-height {
