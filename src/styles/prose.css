@@ -112,7 +112,7 @@
 	margin-top: 0;
 }
 
-.prose h1 {
+/* .prose h1 {
 	font-size: var(--text-4xl);
 	font-weight: 600;
 	margin-bottom: 24px;
@@ -144,13 +144,13 @@
 	font-weight: 600;
 	height: 36px;
 	margin: 20px 0 8px;
-}
+} */
 
-.prose p {
+/* .prose p {
 	margin: 18px 0;
 	display: block;
 	line-height: 1.5;
-}
+} */
 
 .prose code {
 	display: inline-block;
