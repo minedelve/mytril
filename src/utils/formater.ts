@@ -1,3 +1,6 @@
+import { getColor } from '$lib/composables/colors.js';
+import { getRounded } from '$lib/composables/rounded.js';
+
 export const formatRootVar = (key: string) => {
 	return `--${key.replaceAll(' ', '-')}`;
 };
@@ -8,4 +11,17 @@ export const formatClassName = (key: string) => {
 
 export const formatBreakpoint = (breakpoint: string) => {
 	return breakpoint !== 'default' && breakpoint !== 'max-default' ? `.${breakpoint}\\:` : `.`;
+};
+
+export const formatStyleProperties = (params: {
+	background?: string;
+	color?: string;
+	border?: string;
+	rounded?: string;
+}) => {
+	let style = '';
+	if (params?.background) style += `--c-background-color: ${getColor(params?.background)}; `;
+	if (params?.color) style += `--c-color: ${getColor(params?.color)}; `;
+	if (params?.rounded) style += `--c-rounded: ${getRounded(params?.rounded)}; `;
+	return style;
 };
