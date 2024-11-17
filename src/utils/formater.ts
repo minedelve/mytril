@@ -18,10 +18,12 @@ export const formatStyleProperties = (params: {
 	color?: string;
 	border?: string;
 	rounded?: string;
+	opacity?: string | number;
 }) => {
 	let style = '';
 	if (params?.background) style += `--c-background-color: ${getColor(params?.background)}; `;
 	if (params?.color) style += `--c-color: ${getColor(params?.color)}; `;
 	if (params?.rounded) style += `--c-rounded: ${getRounded(params?.rounded)}; `;
+	if (params?.opacity) style += `--c-opacity: ${params?.opacity}; `;
 	return style;
 };

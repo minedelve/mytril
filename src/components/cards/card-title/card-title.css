@@ -1,0 +1,22 @@
+.myt-card-title {
+	display: block;
+	flex: none;
+	font-size: 1.25rem;
+	font-weight: 500;
+	hyphens: auto;
+	letter-spacing: 0.0125em;
+	min-width: 0;
+	overflow-wrap: normal;
+	overflow: hidden;
+	padding: 0.5rem 1rem;
+	text-overflow: ellipsis;
+	text-transform: none;
+	white-space: nowrap;
+	word-break: normal;
+	word-wrap: break-word;
+}
+
+.myt-card-title + .myt-card-text,
+.myt-card-title + .myt-card-actions {
+	padding-top: 0;
+}

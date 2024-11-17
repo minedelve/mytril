@@ -1,0 +1,42 @@
+.myt-card-item {
+	align-items: center;
+	display: grid;
+	flex: none;
+	grid-template-areas: 'prepend content append';
+	grid-template-columns: max-content auto max-content;
+	padding: 0.625rem 1rem;
+}
+
+.myt-card-item .myt-card-item--prepend,
+.myt-card-item .myt-card-item--append {
+	align-items: center;
+	display: flex;
+}
+
+.myt-card-item .myt-card-item--prepend {
+	grid-area: prepend;
+	padding-inline-end: 0.5rem;
+}
+
+.myt-card-item .myt-card-item--content {
+	align-self: center;
+	grid-area: content;
+	overflow: hidden;
+}
+
+.myt-card-item .myt-card-item--append {
+	grid-area: append;
+	padding-inline-start: 0.5rem;
+}
+
+.myt-card-item + .myt-card-text {
+	padding-top: 0;
+}
+
+.myt-card-item .myt-card-title {
+	padding: 0;
+}
+
+.myt-card-item .myt-card-subtitle {
+	padding: 0 0 0.25rem;
+}

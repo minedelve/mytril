@@ -10,5 +10,9 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/img`, 'img.css'),
 	path.resolve(`${directory}/components/responsive`, 'responsive.css'),
 	path.resolve(`${directory}/components/cards/card`, 'card.css'),
-	path.resolve(`${directory}/components/cards/card-items`, 'card-items.css')
+	path.resolve(`${directory}/components/cards/card-item`, 'card-item.css'),
+	path.resolve(`${directory}/components/cards/card-title`, 'card-title.css'),
+	path.resolve(`${directory}/components/cards/card-subtitle`, 'card-subtitle.css'),
+	path.resolve(`${directory}/components/cards/card-text`, 'card-text.css'),
+	path.resolve(`${directory}/components/cards/card-actions`, 'card-actions.css')
 ];

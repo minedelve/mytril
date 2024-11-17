@@ -1,0 +1,8 @@
+.myt-card-actions {
+	align-items: center;
+	display: flex;
+	flex: none;
+	min-height: 52px;
+	padding: 0.5rem;
+	gap: 0.5rem;
+}
