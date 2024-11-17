@@ -54,14 +54,14 @@ You can also modify or add new breakpoints to suit the specific needs of your pr
 
 ```javascript
 // plugins/mytril.(js|ts)
-export default {
+export default createMytril({
 	display: {
 		thresholds: {
 			sm: 340, // replace default value
 			xlg: 1920 // add new value
 		}
 	}
-};
+});
 ```
 
 With this flexibility, Mytril allows you to fine-tune the responsiveness of your application to ensure a seamless experience on all screen sizes, from small mobile devices to extra-large desktops.
