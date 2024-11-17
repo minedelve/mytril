@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.5] - 2024-11-17
+
+### Added
+
+- Add `CardItem` component.
+- Add `CardTitle` component.
+- Add `CardSubtitle` component.
+- Add `CardText` component.
+- Add `CardActions` component.
+
 ### Changed
 
 - Disabled prose heading for `h1`, `h2`, `h3`, `h4`, `h5`, `h6` .
+- Update reset.css for new condition + add new value global CSS.
 
 ## [0.3.4] - 2024-11-14
 
