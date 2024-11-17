@@ -76,3 +76,15 @@ a.myt-card {
 .myt-card:disabled > * {
 	opacity: 0.6;
 }
+
+.myt-card .myt-card-title {
+	line-height: 1.6;
+}
+
+.myt-card .myt-card-subtitle {
+	line-height: 1.425;
+}
+
+.myt-card .myt-card-text {
+	line-height: 1.425;
+}
