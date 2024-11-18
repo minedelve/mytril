@@ -18,7 +18,7 @@ This function returns the current theme name used in your application. It is ava
 
 ```svelte
 <script lang="ts">
-	import { useTheme } from 'mytril';
+	import { useTheme } from 'mytril/tools';
 </script>
 
 <p>{$useTheme}</p>
@@ -34,7 +34,7 @@ This function changes the theme globally by adding a class having the name of th
 
 ```svelte
 <script lang="ts">
-	import { setTheme } from 'mytril';
+	import { setTheme } from 'mytril/tools';
 </script>
 
 <button on:click={() => setTheme('light')}> Light </button>
@@ -50,7 +50,7 @@ This function allows you to retrieve the value saved in the application’s loca
 ```svelte
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getLocalTheme } from 'mytril';
+	import { getLocalTheme } from 'mytril/tools';
 
 	onMount(() => {
 		getLocalTheme('key-local', true);
@@ -86,7 +86,7 @@ Here’s an example that saves in localstorage and set the theme with `prefers-c
 ```svelte
 <!--+(layout | page | component).svelte  -->
 <script lang="ts">
-	import { useTheme, setTheme } from 'mytril';
+	import { useTheme, setTheme } from 'mytril/tools';
 
 	function toggleTheme(type: string) {
 		const scheme = type === 'dark' ? 'light' : 'dark'
@@ -102,7 +102,7 @@ Here’s an example that saves in localstorage and set the theme with `prefers-c
 <!--+(layout | page).svelte  -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { getLocalTheme } from 'mytril';
+	import { getLocalTheme } from 'mytril/tools';
 
 	onMount(() => {
 		getLocalTheme('key-local', true);
