@@ -21,11 +21,11 @@ Mytril comes pre-installed with two default themes: light and dark. To set your 
 
 ```javascript
 // plugins/mytril.(js|ts)
-export default {
+export default createMytril({
 	theme: {
 		defaultTheme: 'light'
 	}
-};
+});
 ```
 
 By default, the **light** theme is applied, but you can easily switch to **dark** or any custom theme you've created.
@@ -37,7 +37,7 @@ You can modify existing themes or create new ones by adjusting properties. Mytri
 ```javascript
 // plugins/mytril.(js|ts)
 
-export default {
+export default createMytril({
 	theme: {
 		defaultTheme: 'light',
 		colors: {
@@ -51,7 +51,7 @@ export default {
 			}
 		}
 	}
-};
+});
 ```
 
 To customize theme colors, you can:
@@ -68,7 +68,7 @@ To add a new theme, simply define a new color property to your application.
 ```javascript
 // plugins/mytril.(js|ts)
 
-export default {
+export default createMytril({
 	theme: {
 		defaultTheme: 'dark',
 		colors: {
@@ -80,7 +80,7 @@ export default {
 			secondary: '#eaea'
 		}
 	}
-};
+});
 ```
 
 To add a new theme, simply define a new color property, like **my-theme** in primary. This will generate a new CSS class `.my-theme`, **which inherits variables from the default theme**.

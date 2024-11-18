@@ -7,11 +7,11 @@ description: Discover Mytril, a Svelte Component library, and follow our  guide 
 
 </script>
 
-# Installation {#installation}
+# Installation. {#installation}
 
 Quickly install and configure mytril for your svelte project.
 
-## Create your project
+## Create your project. {#create-your-project}
 
 Start by creating a new SvelteKit project if you don't have one set up already. The most common approach is outlined in the [Getting Started](https://kit.svelte.dev/docs/introduction#introduction-getting-started) with SvelteKit introduction.
 
@@ -23,7 +23,7 @@ npm install
 npm run dev
 ```
 
-### Requirement
+### Requirement {#requirement}
 
 - Svelte v4
 - Node v18 or more
@@ -31,7 +31,7 @@ npm run dev
 
 > Mytril is compatible with Svelte 5, and we are actively working to offer Svelte's new functions directly via Mytril.
 
-## Install Mytril
+## Install Mytril. {#install-mytril}
 
 Install **mytril** within your project. Mytril has no external dependencies in order to facilitate its integration and limit potential version conflicts
 
@@ -40,7 +40,7 @@ Install **mytril** within your project. Mytril has no external dependencies in o
 npm install -D mytril
 ```
 
-## Add Mytril on your vite configuration.
+## Add Mytril on your vite configuration. {#add-mytril-on-your-vite-configuration}
 
 Add mytril plugin vite on your `vite.config.(js|ts)` file.
 
@@ -53,31 +53,48 @@ export default defineConfig({
 });
 ```
 
-## Add the Mytril to your CSS
+And launch your project with `npm run dev`, mytril create automaticly file configuration in `plugins/mytril.(js|ts)`.
 
-Create a `./src/app.css` file and add the **mytril/styles**.
+## Import Mytril on your svelte environement. {#import-mytril-on-your-svelte-environement}
 
-```css
-/** app.css */
-@import 'mytril/styles';
-```
+To import the various mytril styles into your application. Depending on your configuration, there may be variations in the way Mytril is imported into your application.
 
-## Import the CSS file
+**On Sveltekit, you have 2 possibilities for importing Mytril.**
 
-Create a `./src/routes/+layout.svelte` file and import the newly created app.css file.
+You can import Mytril directly into the **+layout.svelte** page at the top of your tree.
 
 ```svelte
-<script>
+<script lang="ts">
 	// +layout.svelte
-	import '../app.css';
+	import '../plugins/mytril.ts';
 </script>
 
-<slot />
+your content
 ```
 
-## Start your build process
+Alternatively, you can use **+layout.ts** at the start of your tree to ensure style preloading and configuration before rendering.
 
-Run your build process with `npm run dev`.
+```js
+// +layout.(js|ts)
+import '../plugins/mytril.ts';
+```
+
+**If you're on Svelte, first import the Mytril configuration into your App.svelte or index.svelte.**
+
+```svelte
+<script lang="ts">
+	// (App|index).svelte
+	import '../plugins/mytril.ts';
+</script>
+
+your content
+```
+
+> After importing Mytril into your project, we strongly recommend that you restart your development environment.
+
+## Start your developement process
+
+Run your developement process with `npm run dev`.
 
 ```shell
 # terminal

@@ -24,11 +24,11 @@ Mytril integrates the full **Material Design** color chart, giving developers ac
 
 ```javascript
 // plugins/mytril.(js|ts)
-export default {
+export default createMytril({
 	theme: {
 		palette: 'material'
 	}
-};
+});
 ```
 
 3. Restart your environment to load the Material color variables.

@@ -24,11 +24,11 @@ Mytril offers seamless integration with the **Tailwind CSS** color palette, allo
 
 ```javascript
 // plugins/mytril.(js|ts)
-export default {
+export default createMytril({
 	theme: {
 		palette: 'tailwind'
 	}
-};
+});
 ```
 
 3. Restart your environment to load the Tailwind color variables.
