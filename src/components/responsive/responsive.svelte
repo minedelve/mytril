@@ -24,5 +24,7 @@
 	{...$$restProps}
 >
 	<div class="myt-responsive--sizer" style={`padding-bottom: ${paddingBottom}%;`}></div>
+	<!-- slot: default -->
 	<slot />
+	<!-- /slot: default -->
 </div>

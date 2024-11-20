@@ -14,5 +14,6 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/cards/card-title`, 'card-title.css'),
 	path.resolve(`${directory}/components/cards/card-subtitle`, 'card-subtitle.css'),
 	path.resolve(`${directory}/components/cards/card-text`, 'card-text.css'),
-	path.resolve(`${directory}/components/cards/card-actions`, 'card-actions.css')
+	path.resolve(`${directory}/components/cards/card-actions`, 'card-actions.css'),
+	path.resolve(`${directory}/components/toolbar`, 'toolbar.css')
 ];

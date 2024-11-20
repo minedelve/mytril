@@ -5,6 +5,7 @@ export { createMytril } from './entry-bundler.js';
 export { default as App } from './components/app/app.svelte';
 export { default as Img } from './components/img/img.svelte';
 export { default as Responsive } from './components/responsive/responsive.svelte';
+export { default as Toolbar } from './components/toolbar/toolbar.svelte';
 
 // cards
 export { default as Card } from './components/cards/card/card.svelte';

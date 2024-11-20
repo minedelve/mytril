@@ -1,0 +1,44 @@
+.myt-toolbar {
+	--c-color: var(--text);
+	--c-background-color: var(--surface-container);
+	--c-rounded: var(--rounded-lg);
+}
+
+.myt-toolbar {
+	align-items: flex-start;
+	display: flex;
+	flex: none;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 100%;
+	position: relative;
+	width: 100%;
+	border-radius: var(--c-rounded);
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	color: var(--c-color);
+	background-color: var(--c-background-color);
+}
+
+.myt-toolbar.myt-toolbar--text,
+.myt-toolbar.myt-toolbar--outline {
+	background-color: transparent;
+}
+
+.myt-toolbar.myt-toolbar--outline {
+	border-color: currentColor;
+}
+
+.myt-toolbar .myt-toolbar--content {
+	align-items: center;
+	display: flex;
+	flex: 0 0 auto;
+	position: relative;
+	transition: inherit;
+	width: 100%;
+}
+
+.myt-toolbar .myt-toolbar--content {
+	overflow: hidden;
+}
