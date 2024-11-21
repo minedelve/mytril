@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.8] - 2024-11-21
+
+### Fixed
+
+- Fix **critial crash**, with bad path file for `app-bar-title.css`.
+
 ## [0.3.7] - 2024-11-21
 
 ### Added
