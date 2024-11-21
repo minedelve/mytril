@@ -1,0 +1,5 @@
+.myt-toolbar-items {
+	display: flex;
+	height: inherit;
+	align-self: stretch;
+}

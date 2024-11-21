@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.7] - 2024-11-21
+
+### Added
+
+- Add `Toolbar` component.
+- Add `ToolbarItems` component.
+- Add `ToolbarTitle` component.
+- Add `AppBar` component.
+- Add `AppBarTitle` component.
+
 ## [0.3.6] - 2024-11-18
 
 ### Fixed
