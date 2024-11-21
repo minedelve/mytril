@@ -19,5 +19,5 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/toolbar/toolbar-title`, 'toolbar-title.css'),
 	path.resolve(`${directory}/components/toolbar/toolbar-items`, 'toolbar-items.css'),
 	path.resolve(`${directory}/components/app-bar/app-bar`, 'app-bar.css'),
-	path.resolve(`${directory}/components/app-bar-title/app-bar-title`, 'app-bar-title.css')
+	path.resolve(`${directory}/components/app-bar/app-bar-title`, 'app-bar-title.css')
 ];
