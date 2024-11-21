@@ -1,7 +1,7 @@
 .myt-toolbar {
 	--c-color: var(--text);
 	--c-background-color: var(--surface-container);
-	--c-rounded: var(--rounded-lg);
+	--c-rounded: var(--rounded-0);
 }
 
 .myt-toolbar {
@@ -19,6 +19,10 @@
 	border-style: solid;
 	color: var(--c-color);
 	background-color: var(--c-background-color);
+}
+
+.myt-toolbar.myt-toolbar--floating {
+	display: inline-flex;
 }
 
 .myt-toolbar.myt-toolbar--text,
@@ -41,4 +45,8 @@
 
 .myt-toolbar .myt-toolbar--content {
 	overflow: hidden;
+}
+
+.myt-toolbar .myt-toolbar--content > .myt-toolbar-title {
+	margin-inline-start: 20px;
 }

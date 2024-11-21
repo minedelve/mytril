@@ -5,7 +5,13 @@ export { createMytril } from './entry-bundler.js';
 export { default as App } from './components/app/app.svelte';
 export { default as Img } from './components/img/img.svelte';
 export { default as Responsive } from './components/responsive/responsive.svelte';
-export { default as Toolbar } from './components/toolbar/toolbar.svelte';
+
+// toolbar
+export { default as Toolbar } from './components/toolbar/toolbar/toolbar.svelte';
+export { default as ToolbarTitle } from './components/toolbar/toolbar-title/toolbar-title.svelte';
+export { default as ToolbarItems } from './components/toolbar/toolbar-items/toolbar-items.svelte';
+export { default as AppBar } from './components/app-bar/app-bar/app-bar.svelte';
+export { default as AppBarTitle } from './components/app-bar/app-bar-title/app-bar-title.svelte';
 
 // cards
 export { default as Card } from './components/cards/card/card.svelte';
