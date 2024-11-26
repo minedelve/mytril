@@ -17,8 +17,27 @@
 	vertical-align: middle;
 	width: 1em;
 	min-width: 1em;
-	font-size: calc(1 * 1.5rem);
 	color: var(--c-color);
+}
+
+.myt-icon.myt-icon--size-x-small {
+	font-size: 1em;
+}
+
+.myt-icon.myt-icon--size-small {
+	font-size: 1.25em;
+}
+
+.myt-icon.myt-icon--size-default {
+	font-size: 1.5em;
+}
+
+.myt-icon.myt-icon--size-large {
+	font-size: 1.75em;
+}
+
+.myt-icon.myt-icon--size-x-large {
+	font-size: 2em;
 }
 
 .myt-icon > svg,
@@ -28,15 +47,15 @@
 	height: 100%;
 }
 
-.myt-icon--start {
+.myt-icon.myt-icon--start {
 	margin-inline-end: 8px;
 }
 
-.myt-icon--end {
+.myt-icon.myt-icon--end {
 	margin-inline-start: 8px;
 }
 
-.myt-icon--disabled {
+.myt-icon.myt-icon--disabled {
 	pointer-events: none;
 	opacity: 0.38;
 }

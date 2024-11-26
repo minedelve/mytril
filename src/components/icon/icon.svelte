@@ -52,9 +52,6 @@
 				const svgElement = svgDoc.querySelector('svg');
 
 				if (svgElement) {
-					// svgElement.setAttribute('width', size);
-					// svgElement.setAttribute('height', size);
-					// svgElement.setAttribute('fill', color);
 					svgNode.innerHTML = '';
 					svgNode.appendChild(svgElement);
 				}
@@ -83,7 +80,11 @@
 	class:myt-icon--start={start}
 	class:myt-icon--end={end}
 	class:myt-icon--disabled={disabled}
+	class:myt-icon--size-x-small={size === 'xs'}
+	class:myt-icon--size-small={size === 'sm'}
 	class:myt-icon--size-default={size === 'md' || size === 'default'}
+	class:myt-icon--size-large={size === 'lg'}
+	class:myt-icon--size-x-large={size === 'xl'}
 	on:click
 	{...$$restProps}
 >
