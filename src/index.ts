@@ -6,6 +6,8 @@ export { default as App } from './components/app/app.svelte';
 export { default as Img } from './components/img/img.svelte';
 export { default as Responsive } from './components/responsive/responsive.svelte';
 export { default as Icon } from './components/icon/icon.svelte';
+export { default as Divider } from './components/divider/divider.svelte';
+export { default as Tooltip } from './components/tooltip/tooltip.svelte';
 
 // toolbar
 export { default as Toolbar } from './components/toolbar/toolbar/toolbar.svelte';
