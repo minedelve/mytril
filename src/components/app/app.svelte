@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { innerWidth } from '$lib/composables/display.js';
+	import Provider from './provider.svelte';
 
 	// state
 	let width = 0;
@@ -13,4 +14,6 @@
 
 <svelte:window bind:innerWidth={width} />
 
-<slot />
+<Provider>
+	<slot />
+</Provider>

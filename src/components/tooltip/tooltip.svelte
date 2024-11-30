@@ -1,54 +1,53 @@
 <script lang="ts">
-	import { className, styleName } from '$lib/utils/dom.js';
-	import { formatStyleProperties } from '$lib/utils/formater.js';
+	import { useTooltip } from './useTooltip.js';
 	import { uniqueID } from '$lib/utils/uid.js';
-
-	// Props
-	let _class: string | undefined = undefined;
-	let _style: string | undefined = undefined;
-	export { _class as class, _style as style };
-	export let dark: boolean = false;
-	export let light: boolean = false;
+	import { getAllContexts, setContext } from 'svelte';
 	export let text: string | undefined = undefined;
 
 	$: id = uniqueID();
-	$: open = false;
 
-	$: styled = formatStyleProperties({
-		borderColor: undefined
-	});
+	// Récupérer la fonction via le contexte
+	const handleTooltip = useTooltip();
+
+	const contexts = getAllContexts();
+
+	let customTooltip:
+		| { id: string; content: string | undefined; screen: { x: number; y: number } }
+		| undefined = undefined;
+
+	// Fonction pour gérer l'affichage
+
+	const demoTooltip = (display?: unknown) => {
+		console.log('demoTooltip', display);
+	};
+
+	setContext('showTooltip', demoTooltip);
+
+	$: {
+		console.log('contexts component', contexts);
+		console.log('customTooltip', customTooltip);
+	}
 </script>
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<span
-	aria-describedby={id}
-	class={className('myt-tooltip', _class)}
-	style={styleName(styled, _style)}
-	class:light
-	class:dark
-	on:mouseenter={() => (open = true)}
-	on:mouseleave={() => (open = false)}
-	{...$$restProps}
+<!-- Appeler la fonction récupérée lors du clic -->
+<button
+	on:mouseenter={() =>
+		handleTooltip({
+			id: id,
+			content: text,
+			screen: {
+				x: 0,
+				y: 0
+			}
+		})}
+	on:mouseleave={() => handleTooltip(undefined)}
 >
-	{open}
-	<!-- slot: default -->
 	<slot />
-	<!-- </slot: default -->
+</button>
 
+{#if text}
 	<!-- Contenu de la tooltip -->
-	{#if $$slots.tooltip || text}
-		<span
-			{id}
-			class="tooltip-content"
-			class:myt-tooltip-content--display={open}
-			aria-label={text}
-			role="tooltip"
-		>
-			{#if $$slots.tooltip}
-				<slot name="tooltip" />
-			{:else if text}
-				{text}
-			{/if}
-		</span>
-	{/if}
-</span>
+	<span aria-describedby={id} class="tooltip-content" role="tooltip">
+		{text}
+	</span>
+{/if}
