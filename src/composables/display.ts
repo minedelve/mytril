@@ -3,6 +3,7 @@ import { _default } from './defaults.js';
 
 export const innerWidth = writable(0);
 export const innerHeight = writable(0);
+export const scrollY = writable(0);
 export const mobileBreakpoint = writable(_default.display.mobileBreakpoint);
 const thresholds: Writable<{ [key: string]: number }> = writable(_default.display.thresholds);
 const activeBreakpoint = writable('default');

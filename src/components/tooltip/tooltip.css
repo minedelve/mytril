@@ -134,6 +134,12 @@
 	bottom: calc(100% + 1px + 0.1875rem);
 }
 
+/* .tooltip-example {
+	position: absolute;
+	inset: 0px auto auto 0px;
+	margin: 0px;
+} */
+
 .tooltip-example {
 	/* position: fixed;
 	z-index: 9999;
@@ -141,6 +147,9 @@
 	color: white;
 	margin: 4px 6px;
 	border-radius: 10px; */
+
+	inset: 0px auto auto 0px;
+	margin: 0px;
 
 	position: fixed;
 	z-index: 9999;

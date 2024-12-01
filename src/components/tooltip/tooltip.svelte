@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { innerHeight, innerWidth } from '$lib/composables/display.js';
+	import { innerHeight, innerWidth, scrollY } from '$lib/composables/display.js';
 
 	export let text: string | undefined = undefined;
 	export let bottom: boolean = false;
@@ -22,11 +22,7 @@
 	}
 
 	$: {
-		if (ref && refTooltip) {
-			// console.log('ref', ref.getBoundingClientRect());
-			// console.log('refTooltip', refTooltip.getBoundingClientRect());
-			// console.log('screen', $innerWidth, $innerHeight);
-
+		if (ref && refTooltip && $scrollY) {
 			let display = top ? 'top' : left ? 'left' : right ? 'right' : bottom ? 'bottom' : 'bottom';
 			let axis = { x: 0, y: 0 };
 
@@ -53,7 +49,6 @@
 
 			const diffWidth = w - tw < 0 ? (tw - w) / 2 : (w - tw) / 2;
 			const diffHeight = h - th < 0 ? (th - h) / 2 : (h - th) / 2;
-			// console.log('diff', diffWidth, diffHeight);
 
 			if (display === 'top') {
 				if (w - tw < 0) {
@@ -80,23 +75,6 @@
 					axis = { x: x + diffWidth, y: y + h };
 				}
 			}
-
-			console.log('axis before control', $innerWidth, axis.x, axis);
-
-			console.log(
-				'diffWidth',
-				diffWidth,
-				'$innerWidth',
-				$innerWidth,
-				'axis.x',
-				axis.x,
-				'x',
-				x,
-				'w',
-				w,
-				'tw',
-				tw
-			);
 			if (axis.x < 0) {
 				axis = { x: x, y: axis.y };
 			}
@@ -104,10 +82,45 @@
 				axis = { x: x + w - tw, y: axis.y };
 			}
 
-			console.log('axis after control', axis);
+			console.log('scroll', $scrollY);
 
 			position = axis;
 		}
+
+		// if (ref && refTooltip) {
+		// 	const rect = ref.getBoundingClientRect();
+		// 	const tooltipRect = refTooltip.getBoundingClientRect();
+		// 	const { x, y, width: w, height: h } = rect;
+		// 	const { width: tw, height: th } = tooltipRect;
+
+		// 	let display = bottom ? 'bottom' : top ? 'top' : left ? 'left' : right ? 'right' : 'bottom';
+
+		// 	if (right && x + w + tw + 10 >= $innerWidth) display = 'left';
+		// 	else if (top && y - th - 10 <= 0) display = 'bottom';
+		// 	else if (left && x - tw - 10 <= 0) display = 'right';
+		// 	else if (bottom && y + h + th + 10 >= $innerHeight) display = 'top';
+
+		// 	const diffWidth = (w - tw) / 2;
+		// 	const diffHeight = (h - th) / 2;
+
+		// 	switch (display) {
+		// 		case 'top':
+		// 			position = { x: x + diffWidth, y: y - th };
+		// 			break;
+		// 		case 'left':
+		// 			position = { x: x - tw, y: y + diffHeight };
+		// 			break;
+		// 		case 'right':
+		// 			position = { x: x + w, y: y + diffHeight };
+		// 			break;
+		// 		case 'bottom':
+		// 			position = { x: x + diffWidth, y: y + h };
+		// 			break;
+		// 	}
+
+		// 	position.x = Math.max(0, Math.min(position.x, $innerWidth - tw));
+		// 	position.y = Math.max(0, Math.min(position.y, $innerHeight - th));
+		// }
 	}
 </script>
 
@@ -116,11 +129,13 @@
 	<slot />
 </span>
 
+<!-- style={`top: ${position.y}px; left: ${position.x}px;`} -->
+
 {#if openTooltip}
 	<div
 		bind:this={refTooltip}
 		class="tooltip-example"
-		style={`top: ${position.y}px; left: ${position.x}px;`}
+		style={`transform: translate(${position.x}px, ${position.y}px);`}
 	>
 		{#if text}
 			{text}
