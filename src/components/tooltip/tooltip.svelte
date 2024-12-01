@@ -97,41 +97,6 @@
 
 			position = axis;
 		}
-
-		// if (ref && refTooltip) {
-		// 	const rect = ref.getBoundingClientRect();
-		// 	const tooltipRect = refTooltip.getBoundingClientRect();
-		// 	const { x, y, width: w, height: h } = rect;
-		// 	const { width: tw, height: th } = tooltipRect;
-
-		// 	let display = bottom ? 'bottom' : top ? 'top' : left ? 'left' : right ? 'right' : 'bottom';
-
-		// 	if (right && x + w + tw + 10 >= $innerWidth) display = 'left';
-		// 	else if (top && y - th - 10 <= 0) display = 'bottom';
-		// 	else if (left && x - tw - 10 <= 0) display = 'right';
-		// 	else if (bottom && y + h + th + 10 >= $innerHeight) display = 'top';
-
-		// 	const diffWidth = (w - tw) / 2;
-		// 	const diffHeight = (h - th) / 2;
-
-		// 	switch (display) {
-		// 		case 'top':
-		// 			position = { x: x + diffWidth, y: y - th };
-		// 			break;
-		// 		case 'left':
-		// 			position = { x: x - tw, y: y + diffHeight };
-		// 			break;
-		// 		case 'right':
-		// 			position = { x: x + w, y: y + diffHeight };
-		// 			break;
-		// 		case 'bottom':
-		// 			position = { x: x + diffWidth, y: y + h };
-		// 			break;
-		// 	}
-
-		// 	position.x = Math.max(0, Math.min(position.x, $innerWidth - tw));
-		// 	position.y = Math.max(0, Math.min(position.y, $innerHeight - th));
-		// }
 	}
 </script>
 
