@@ -9,6 +9,10 @@ export { default as Icon } from './components/icon/icon.svelte';
 export { default as Divider } from './components/divider/divider.svelte';
 export { default as Tooltip } from './components/tooltip/tooltip.svelte';
 
+// expansion panels
+export { default as ExpansionPanels } from './components/expansion-panels/expansion-panels/expansion-panels.svelte';
+export { default as ExpansionPanel } from './components/expansion-panels/expansion-panel/expansion-panel.svelte';
+
 // toolbar
 export { default as Toolbar } from './components/toolbar/toolbar/toolbar.svelte';
 export { default as ToolbarTitle } from './components/toolbar/toolbar-title/toolbar-title.svelte';

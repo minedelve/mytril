@@ -1,0 +1,44 @@
+.myt-expansion-panel {
+	flex: 1 0 100%;
+	max-width: 100%;
+	position: relative;
+	transition: 0.3s all cubic-bezier(0.4, 0, 0.2, 1);
+	transition-property: margin-top, border-radius, border, max-width;
+	border-radius: 4px;
+}
+
+.myt-expansion-panel > button,
+.myt-expansion-panel > [type='button'] {
+	font: inherit;
+	overflow: visible;
+	background-color: transparent;
+	border-style: none;
+	cursor: pointer;
+	color: inherit;
+}
+
+.myt-expansion-panel .myt-expansion-panel--title {
+	align-items: center;
+	text-align: start;
+	border-radius: inherit;
+	display: flex;
+	font-size: 0.9375rem;
+	line-height: 1;
+	min-height: 48px;
+	outline: none;
+	padding: 16px 24px;
+	position: relative;
+	transition: 0.3s min-height cubic-bezier(0.4, 0, 0.2, 1);
+	width: 100%;
+	justify-content: space-between;
+}
+
+.myt-expansion-panel .myt-expansion-panel--text {
+	display: flex;
+}
+
+.myt-expansion-panel .myt-expansion-panel--text .myt-expansion-panel--text-wrapper {
+	padding: 8px 24px 16px;
+	flex: 1 1 auto;
+	max-width: 100%;
+}

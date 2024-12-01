@@ -1,0 +1,50 @@
+.myt-expansion-panels {
+	--c-color: var(--text);
+	--c-background-color: var(--surface-container);
+	--c-rounded: var(--rounded);
+}
+
+.myt-expansion-panels {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.myt-expansion-panels .myt-expansion-panel {
+	border-radius: var(--c-rounded);
+	color: var(--c-color);
+	background-color: var(--c-background-color);
+}
+
+.myt-expansion-panels .myt-expansion-panel {
+	border-radius: var(--c-rounded);
+	color: var(--c-color);
+	background-color: var(--c-background-color);
+}
+
+.myt-expansion-panels .myt-expansion-panel:first-child:not(:last-child) {
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+.myt-expansion-panels .myt-expansion-panel:not(:first-child):not(:last-child) {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}
+
+.myt-expansion-panels .myt-expansion-panel:not(:first-child):not(:last-child) {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+}
+
+.myt-expansion-panels .myt-expansion-panel:last-child:not(:first-child) {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}
