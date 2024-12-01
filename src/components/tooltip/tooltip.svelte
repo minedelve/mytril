@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { innerHeight, innerWidth, scrollY } from '$lib/composables/display.js';
+	import { className, styleName } from '$lib/utils/dom.js';
+	import { formatStyleProperties } from '$lib/utils/formater.js';
+	import { uniqueID } from '$lib/utils/uid.js';
 
+	// Props
+	let _class: string | undefined = undefined;
+	let _style: string | undefined = undefined;
+	export { _class as class, _style as style };
+	export let dark: boolean = false;
+	export let light: boolean = false;
 	export let text: string | undefined = undefined;
 	export let bottom: boolean = false;
 	export let left: boolean = false;
@@ -12,6 +21,11 @@
 
 	let openTooltip = false;
 	$: position = { x: 0, y: 0 };
+	$: id = uniqueID();
+
+	$: styled = formatStyleProperties({
+		borderColor: undefined
+	});
 
 	function handleMouseEnter() {
 		openTooltip = true;
@@ -22,7 +36,7 @@
 	}
 
 	$: {
-		if (ref && refTooltip && $scrollY) {
+		if (ref && refTooltip && openTooltip && $scrollY !== undefined) {
 			let display = top ? 'top' : left ? 'left' : right ? 'right' : bottom ? 'bottom' : 'bottom';
 			let axis = { x: 0, y: 0 };
 
@@ -33,7 +47,6 @@
 			const w = ref.getBoundingClientRect().width;
 
 			// tooltip
-			// const ty = refTooltip.getBoundingClientRect().y;
 			const th = refTooltip.getBoundingClientRect().height;
 			const tw = refTooltip.getBoundingClientRect().width;
 
@@ -82,8 +95,6 @@
 				axis = { x: x + w - tw, y: axis.y };
 			}
 
-			console.log('scroll', $scrollY);
-
 			position = axis;
 		}
 
@@ -125,22 +136,32 @@
 </script>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<span bind:this={ref} on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
+<span
+	bind:this={ref}
+	aria-describedby={id}
+	class={className('myt-tooltip', _class)}
+	class:light
+	class:dark
+	on:mouseenter={handleMouseEnter}
+	on:mouseleave={handleMouseLeave}
+	{...$$restProps}
+>
 	<slot />
 </span>
 
-<!-- style={`top: ${position.y}px; left: ${position.x}px;`} -->
-
-{#if openTooltip}
+{#if openTooltip && (text || $$slots.tooltip)}
 	<div
+		{id}
 		bind:this={refTooltip}
-		class="tooltip-example"
-		style={`transform: translate(${position.x}px, ${position.y}px);`}
+		class="myt-tooltip-content"
+		aria-label={text}
+		role="tooltip"
+		style={styleName(styled, _style, `transform: translate(${position.x}px, ${position.y}px);`)}
 	>
-		{#if text}
+		{#if $$slots.tooltip}
+			<slot name="tooltip" />
+		{:else if text}
 			{text}
-		{:else}
-			<slot name="tooltip-area" />
 		{/if}
 	</div>
 {/if}

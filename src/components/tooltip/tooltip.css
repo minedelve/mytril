@@ -1,3 +1,29 @@
+.myt-tooltip-content {
+	background: var(--surface-variant);
+	color: var(--text-variant);
+}
+
+.myt-tooltip-content {
+	inset: 0px auto auto 0px;
+	margin: 0px;
+	position: fixed;
+	z-index: 9999;
+	background: var(--surface-variant);
+	color: var(--text-variant);
+	border-radius: 4px;
+	font-size: 0.875rem;
+	line-height: 1.6;
+	display: inline-block;
+	padding: 5px 16px;
+	text-transform: initial;
+	width: auto;
+	opacity: 1;
+	pointer-events: none;
+	transition-property: opacity, transform;
+	overflow-wrap: break-word;
+	max-width: 300px;
+}
+
 /* .myt-tooltip {
 	--background-color: black;
 	--color: white;
@@ -99,7 +125,7 @@
 	transition-delay: 75ms;
 } */
 
-.myt-tooltip {
+/* .myt-tooltip {
 	--background-color: black;
 	--color: white;
 	position: relative;
@@ -132,23 +158,23 @@
 	left: 50%;
 	right: auto;
 	bottom: calc(100% + 1px + 0.1875rem);
-}
+} */
 
 /* .tooltip-example {
 	position: absolute;
 	inset: 0px auto auto 0px;
 	margin: 0px;
 } */
-
-.tooltip-example {
-	/* position: fixed;
+/* 
+.tooltip-example { */
+/* position: fixed;
 	z-index: 9999;
 	background-color: black;
 	color: white;
 	margin: 4px 6px;
 	border-radius: 10px; */
 
-	inset: 0px auto auto 0px;
+/* inset: 0px auto auto 0px;
 	margin: 0px;
 
 	position: fixed;
@@ -168,4 +194,4 @@
 	transition-property: opacity, transform;
 	overflow-wrap: break-word;
 	max-width: 300px;
-}
+} */
