@@ -15,16 +15,23 @@
 	export let left: boolean = false;
 	export let top: boolean = false;
 	export let right: boolean = false;
+	export let open: boolean = false;
+	export let dense: boolean = false;
+	export let rounded: string | undefined = undefined;
+	export let color: string | undefined = undefined;
+	export let colorText: string | undefined = undefined;
 
 	let ref: HTMLElement | null = null;
 	let refTooltip: HTMLElement | null = null;
 
-	let openTooltip = false;
+	let openTooltip = open;
 	$: position = { x: 0, y: 0 };
 	$: id = uniqueID();
 
 	$: styled = formatStyleProperties({
-		borderColor: undefined
+		background: color,
+		color: colorText,
+		rounded: rounded
 	});
 
 	function handleMouseEnter() {
@@ -119,6 +126,7 @@
 		{id}
 		bind:this={refTooltip}
 		class="myt-tooltip-content"
+		class:myt-tooltip-content--dense={dense}
 		aria-label={text}
 		role="tooltip"
 		style={styleName(styled, _style, `transform: translate(${position.x}px, ${position.y}px);`)}

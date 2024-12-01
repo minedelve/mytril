@@ -1,6 +1,7 @@
 .myt-tooltip-content {
-	background: var(--surface-variant);
-	color: var(--text-variant);
+	--c-color: var(--text-variant);
+	--c-background-color: var(--surface-variant);
+	--c-rounded: var(--rounded);
 }
 
 .myt-tooltip-content {
@@ -8,8 +9,8 @@
 	margin: 0px;
 	position: fixed;
 	z-index: 9999;
-	background: var(--surface-variant);
-	color: var(--text-variant);
+	background: var(--c-background-color);
+	color: var(--c-color);
 	border-radius: 4px;
 	font-size: 0.875rem;
 	line-height: 1.6;
@@ -22,4 +23,8 @@
 	transition-property: opacity, transform;
 	overflow-wrap: break-word;
 	max-width: 300px;
+}
+
+.myt-tooltip-content.myt-tooltip-content--dense {
+	padding: 2px 8px;
 }
