@@ -28,6 +28,7 @@
 			// console.log('screen', $innerWidth, $innerHeight);
 
 			let display = top ? 'top' : left ? 'left' : right ? 'right' : bottom ? 'bottom' : 'bottom';
+			let axis = { x: 0, y: 0 };
 
 			// element
 			const x = ref.getBoundingClientRect().x;
@@ -36,7 +37,7 @@
 			const w = ref.getBoundingClientRect().width;
 
 			// tooltip
-			const ty = refTooltip.getBoundingClientRect().y;
+			// const ty = refTooltip.getBoundingClientRect().y;
 			const th = refTooltip.getBoundingClientRect().height;
 			const tw = refTooltip.getBoundingClientRect().width;
 
@@ -56,29 +57,56 @@
 
 			if (display === 'top') {
 				if (w - tw < 0) {
-					position = { x: x - diffWidth, y: y - th };
+					axis = { x: x - diffWidth, y: y - th };
 				} else {
-					position = { x: x + diffWidth, y: y - th };
+					axis = { x: x + diffWidth, y: y - th };
 				}
 			} else if (display === 'left') {
 				if (h - th < 0) {
-					position = { x: x - tw, y: y - diffHeight };
+					axis = { x: x - tw, y: y - diffHeight };
 				} else {
-					position = { x: x - tw, y: y + diffHeight };
+					axis = { x: x - tw, y: y + diffHeight };
 				}
 			} else if (display === 'right') {
 				if (h - th < 0) {
-					position = { x: x + w, y: y - diffHeight };
+					axis = { x: x + w, y: y - diffHeight };
 				} else {
-					position = { x: x + w, y: y + diffHeight };
+					axis = { x: x + w, y: y + diffHeight };
 				}
 			} else {
 				if (w - tw < 0) {
-					position = { x: x - diffWidth, y: y + h };
+					axis = { x: x - diffWidth, y: y + h };
 				} else {
-					position = { x: x + diffWidth, y: y + h };
+					axis = { x: x + diffWidth, y: y + h };
 				}
 			}
+
+			console.log('axis before control', $innerWidth, axis.x, axis);
+
+			console.log(
+				'diffWidth',
+				diffWidth,
+				'$innerWidth',
+				$innerWidth,
+				'axis.x',
+				axis.x,
+				'x',
+				x,
+				'w',
+				w,
+				'tw',
+				tw
+			);
+			if (axis.x < 0) {
+				axis = { x: x, y: axis.y };
+			}
+			if (x + diffWidth > $innerWidth) {
+				axis = { x: x + w - tw, y: axis.y };
+			}
+
+			console.log('axis after control', axis);
+
+			position = axis;
 		}
 	}
 </script>
