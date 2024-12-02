@@ -42,3 +42,12 @@
 	flex: 1 1 auto;
 	max-width: 100%;
 }
+
+.myt-expansion-panel .myt-expansion-panel--icon {
+	display: inline-flex;
+	margin-bottom: -4px;
+	margin-top: -4px;
+	-webkit-user-select: none;
+	user-select: none;
+	margin-inline-start: auto;
+}
