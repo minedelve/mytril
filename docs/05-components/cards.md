@@ -1,22 +1,26 @@
 ---
-title: Cards with Mytril
-description: jsp
+title: Card Component
+description: Learn how to use Mytril's card component to create structured, responsive layouts with headings, text, images, and actions. Optimize your Svelte projects with ease.
 ---
 
 # Card components with Mytril {#card-components-with-mytril}
 
-The Card component that provides a simple interface for headings, text, images, icons, and more.
+The **Card component** in Mytril offers a modular and flexible interface to structure and display headings, text, images, icons, and actions. It’s designed to streamline your layout while keeping your code maintainable and responsive.
 
-## Core Cards sub components {#core-cards-sub-components}
+## Core subcomponents {#core-subcomponents}
 
-| Component    | Description                                                                        |
-| :----------- | :--------------------------------------------------------------------------------- |
-| Card         | The main element to house card sub components.                                     |
-| CardItem     | Used to defined, area for display content on card with **margin** and **padding**. |
-| CardTitle    | Add title on your card.                                                            |
-| CardSubtitle | Add subtitle on your card.                                                         |
-| CardText     | Add text and content on your card.                                                 |
-| CardActions  | Add area for display actions ( Btn for example) on your card.                      |
+Mytril’s card system is built on reusable subcomponents, enabling granular control over layout and design.
+
+| Component    | Description                                                            |
+| :----------- | :--------------------------------------------------------------------- |
+| Card         | The container that houses all card subcomponents                       |
+| CardItem     | Defines sections within the card with customizable margins and padding |
+| CardTitle    | Displays the card’s title                                              |
+| CardSubtitle | Adds a subtitle below the title for additional context                 |
+| CardText     | Embeds descriptive text or other content inside the card               |
+| CardActions  | Creates an area for buttons or other actionable elements like links    |
+
+### Example usage {#example-usage}
 
 ```svelte
 <script>
@@ -45,11 +49,9 @@ The Card component that provides a simple interface for headings, text, images, 
 </Card>
 ```
 
-### Properties of each cards component {#properties-of-each-cards-component}
+## Properties overview {#properties-overview}
 
-Each card component has properties that allow precise control of the layout:
-
-**Card**
+### Card {#card}
 
 ```svelte
 <script>
@@ -59,21 +61,21 @@ Each card component has properties that allow precise control of the layout:
 <Card>// your content</Card>
 ```
 
-| Property  | Type    | Default   | Description                                                                                                                                                                                                                    |
-| :-------- | :------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| tag       | string  | div       | Specify a custom tag used on the root element.                                                                                                                                                                                 |
-| dark      | boolean | false     | Force color theme on **dark**.                                                                                                                                                                                                 |
-| light     | boolean | false     | Force color theme on **light**.                                                                                                                                                                                                |
-| active    | boolean | false     | Add effect hover/active on this card.                                                                                                                                                                                          |
-| href      | string  | undefined | Add anchor on your Card.                                                                                                                                                                                                       |
-| outlined  | boolean | false     | Add border on your Card and delete background.                                                                                                                                                                                 |
-| text      | boolean | false     | Remove background and border on your Card.                                                                                                                                                                                     |
-| disabled  | boolean | false     | Disabled button and anchor card and style disabled.                                                                                                                                                                            |
-| rounded   | string  | undefined | Add [border radius](/mytril/docs/styles/border-radius) on Card                                                                                                                                                                 |
-| color     | string  | undefined | Add color scheme on your card, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes). If properties outline or text is activate, color is property used border and text color |
-| colorText | string  | undefined | Add color scheme on your content, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes). If properties outline or text is activate, this propertie is disabled                |
+| Property  | Type    | Default   | Description                                                                                                                                 |
+| :-------- | :------ | :-------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| tag       | string  | div       | Custom tag for the root element                                                                                                             |
+| dark      | boolean | false     | Force a **dark** theme                                                                                                                      |
+| light     | boolean | false     | Force a **light** theme                                                                                                                     |
+| active    | boolean | false     | Adds hover/active effects                                                                                                                   |
+| href      | string  | undefined | Converts the card into an anchor element                                                                                                    |
+| outlined  | boolean | false     | Adds a border and removes the background                                                                                                    |
+| text      | boolean | false     | Removes both background and border styles                                                                                                   |
+| disabled  | boolean | false     | Disables interaction styles for button or anchor cards                                                                                      |
+| rounded   | string  | undefined | Adds [border radius](/mytril/docs/styles/border-radius) to the Card                                                                         |
+| color     | string  | undefined | Sets the card’s background color. Accepts **HEX**, **RGB**, **RGBA**, **X11**, or [Mytril themes](/mytril/docs/customization/themes) colors |
+| colorText | string  | undefined | Sets the text color. Ignored when `outline` or `text` is active                                                                             |
 
-**CardItem**
+### CardItem {#card-item}
 
 ```svelte
 <script>
@@ -87,13 +89,13 @@ Each card component has properties that allow precise control of the layout:
 
 CardItem has **3** slots for display your content
 
-| Slot    | Description                         |
-| :------ | :---------------------------------- |
-| default | Is default slot for display content |
-| prepend | Add content on start                |
-| append  | Add content on end                  |
+| Slot    | Description                     |
+| :------ | :------------------------------ |
+| default | Main content slot               |
+| prepend | Content to display at the start |
+| append  | Content to display at the end   |
 
-**CardTitle**
+### CardTitle {#card-title}
 
 ```svelte
 <script>
@@ -111,7 +113,7 @@ CardItem has **3** slots for display your content
 | :------- | :----- | :------ | :--------------------------------------------- |
 | tag      | string | div     | Specify a custom tag used on the root element. |
 
-**CardSubtitle**
+### CardSubtitle {#card-subtitle}
 
 ```svelte
 <script>
@@ -131,7 +133,7 @@ CardItem has **3** slots for display your content
 | tag      | string           | div       | Specify a custom tag used on the root element. |
 | opacity  | number or string | undefined | Add opacity on content.                        |
 
-**CardText**
+### CardText {#card-text}
 
 ```svelte
 <script>
@@ -152,7 +154,7 @@ CardItem has **3** slots for display your content
 | tag      | string           | div       | Specify a custom tag used on the root element. |
 | opacity  | number or string | undefined | Add opacity on content.                        |
 
-**CardActions**
+### CardActions {#card-actions}
 
 ```svelte
 <script>
@@ -168,3 +170,12 @@ CardItem has **3** slots for display your content
 	</CardItem>
 </Card>
 ```
+
+### Why use Mytril’s card component? {#why-use-mytril-card-component}
+
+- **Simplified development**: predefined components minimize custom CSS requirements, enabling rapid prototyping
+- **Responsive design**: automatic adaptation to various screen sizes maintains UI consistency
+- **Customizable**: rich properties and slots enable precise adjustments for specific needs
+- **Accessibility**: semantic HTML foundation ensures strong accessibility and SEO performance
+
+Mytril's card component delivers a clean, scalable foundation for modern web applications, elevating both development efficiency and user experience.
