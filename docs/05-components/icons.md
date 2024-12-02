@@ -1,5 +1,5 @@
 ---
-title: Icon Component with Mytril - Versatile and Flexible
+title: Icons Component
 description: Mytril's Icon component makes it simple to integrate icons from various sources. The component seamlessly handles icons from Font Awesome, Iconify, Material Design Icons, custom fonts, and SVGs, providing both compatibility and ease of use.
 ---
 
