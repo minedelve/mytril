@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 	import { className, styleName } from '$lib/utils/dom.js';
 	import { formatStyleProperties } from '$lib/utils/formater.js';
+	import { uniqueID } from '$lib/utils/uid.js';
 
 	// props
 	let _class: string | undefined = undefined;
@@ -13,41 +14,32 @@
 	export let rounded: string | undefined = undefined;
 	export let color: string | undefined = undefined;
 	export let colorText: string | undefined = undefined;
+	export let multiple: boolean = false;
+	export let expansion: boolean = false;
+	export let spacer: boolean = false;
+	export let readonly: boolean = false;
+	export let hideIcon: boolean = false;
 
+	let openIndexes: (number | string)[] = [];
+	const dispatch = createEventDispatcher<{ change: { openIndexes: (number | string)[] } }>();
+
+	$: id = uniqueID();
 	let ref: HTMLElement | null = null;
-	let observer: MutationObserver | null = null;
-	let expansionPanels: HTMLElement[] = [];
 
-	$: {
-		if (ref) {
-			expansionPanels = Array.from(
-				ref.querySelectorAll(':scope > .myt-expansion-panel')
-			) as HTMLElement[];
-
-			if (observer) {
-				observer.disconnect();
-			}
-
-			observer = new MutationObserver((mutations) => {
-				for (const mutation of mutations) {
-					if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-						const target = mutation.target as HTMLElement;
-						if (target.classList.contains('myt-expansion-panel--active')) {
-							console.log('Mise à jour détectée: ', target);
-						}
-					}
+	function toggle(index: number | string) {
+		if (!readonly) {
+			if (multiple) {
+				if (openIndexes.includes(index)) {
+					openIndexes = openIndexes.filter((i) => i !== index);
+				} else {
+					openIndexes = [...openIndexes, index];
 				}
-			});
-
-			expansionPanels.forEach((panel) => {
-				observer?.observe(panel, { attributes: true });
-			});
+			} else {
+				openIndexes = openIndexes.includes(index) ? [] : [index];
+			}
+			dispatch('change', { openIndexes });
 		}
 	}
-
-	onDestroy(() => {
-		observer?.disconnect();
-	});
 
 	$: styled = formatStyleProperties({
 		background: color,
@@ -58,14 +50,19 @@
 
 <svelte:element
 	this={tag}
+	{id}
 	bind:this={ref}
 	class={className('myt-expansion-panels', _class)}
 	style={styleName(styled, _style)}
+	class:myt-expansion-panels--expansion={expansion}
+	class:myt-expansion-panels--spacer={spacer}
+	class:myt-expansion-panels--readonly={readonly}
+	class:myt-expansion-panels--hide-icon={hideIcon}
 	class:light
 	class:dark
 	{...$$restProps}
 >
 	<!-- slot: default -->
-	<slot />
+	<slot {openIndexes} {toggle} />
 	<!-- /slot: default -->
 </svelte:element>

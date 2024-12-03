@@ -7,7 +7,6 @@
 	let _class: string | undefined = undefined;
 	let _style: string | undefined = undefined;
 	export { _class as class, _style as style };
-	export let open: boolean = false;
 	export let text: string | undefined = undefined;
 	export let tag: string = 'div';
 	export let dark: boolean = false;
@@ -15,6 +14,10 @@
 	export let rounded: string | undefined = undefined;
 	export let color: string | undefined = undefined;
 	export let colorText: string | undefined = undefined;
+	export let index: number | string | undefined = undefined;
+	export let open: boolean = false;
+	export let toggle: (index: number) => void;
+	export let disabled: boolean = false;
 
 	import arrowUp from './icons/arrow-up.svg';
 	import arrowDown from './icons/arrow-down.svg';
@@ -39,7 +42,9 @@
 		class="myt-expansion-panel--title"
 		aria-expanded={open}
 		type="button"
-		on:click={() => (open = open ? false : true)}
+		class:myt-expansion-panel--disabled={disabled}
+		disabled={$$props.disabled}
+		on:click={() => toggle(index as never)}
 	>
 		{#if $$slots.title}
 			<!-- slot: title -->

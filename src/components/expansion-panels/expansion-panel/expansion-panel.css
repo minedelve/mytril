@@ -28,7 +28,7 @@
 	outline: none;
 	padding: 16px 24px;
 	position: relative;
-	transition: 0.3s min-height cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 0.3s min-height margin-bottom margin-top border-radius cubic-bezier(0.4, 0, 0.2, 1);
 	width: 100%;
 	justify-content: space-between;
 }
@@ -50,4 +50,17 @@
 	-webkit-user-select: none;
 	user-select: none;
 	margin-inline-start: auto;
+}
+
+.myt-expansion-panel .myt-expansion-panel--title.myt-expansion-panel--disabled,
+.myt-expansion-panel .myt-expansion-panel--title[disabled],
+.myt-expansion-panel .myt-expansion-panel--title:disabled {
+	pointer-events: none;
+	user-select: none;
+}
+
+.myt-expansion-panel .myt-expansion-panel--title.myt-expansion-panel--disabled > *,
+.myt-expansion-panel .myt-expansion-panel--title[disabled] > *,
+.myt-expansion-panel .myt-expansion-panel--title:disabled > * {
+	opacity: 0.6;
 }
