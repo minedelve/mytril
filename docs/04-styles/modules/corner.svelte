@@ -8,12 +8,13 @@
 		<div class="wrapper-card">
 			<div
 				class={`block-card ${key === 'default' ? `rounded${property ? '-' + property : ''}` : `rounded${property ? '-' + property : ''}-` + key}`}
-			/>
-			<p>
-				{key === 'default'
-					? `.rounded${property ? '-' + property : ''}`
-					: `.rounded${property ? '-' + property : ''}-${key}`}
-			</p>
+			>
+				<p>
+					{key === 'default'
+						? `.rounded${property ? '-' + property : ''}`
+						: `.rounded${property ? '-' + property : ''}-${key}`}
+				</p>
+			</div>
 		</div>
 	{/each}
 </div>
