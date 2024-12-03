@@ -8,6 +8,7 @@ export { default as Responsive } from './components/responsive/responsive.svelte
 export { default as Icon } from './components/icon/icon.svelte';
 export { default as Divider } from './components/divider/divider.svelte';
 export { default as Tooltip } from './components/tooltip/tooltip.svelte';
+export { default as SystemBar } from './components/system-bar/system-bar.svelte';
 
 // expansion panels
 export { default as ExpansionPanels } from './components/expansion-panels/expansion-panels/expansion-panels.svelte';

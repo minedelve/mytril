@@ -24,5 +24,6 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/divider`, 'divider.css'),
 	path.resolve(`${directory}/components/tooltip`, 'tooltip.css'),
 	path.resolve(`${directory}/components/expansion-panels/expansion-panels`, 'expansion-panels.css'),
-	path.resolve(`${directory}/components/expansion-panels/expansion-panel`, 'expansion-panel.css')
+	path.resolve(`${directory}/components/expansion-panels/expansion-panel`, 'expansion-panel.css'),
+	path.resolve(`${directory}/components/system-bar`, 'system-bar.css')
 ];
