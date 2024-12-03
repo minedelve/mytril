@@ -31,7 +31,7 @@
 	.block-card {
 		width: 50px;
 		height: 50px;
-		background-color: var(--sky-3);
+		background-color: #7dd3fc;
 		margin: 0 auto;
 	}
 
