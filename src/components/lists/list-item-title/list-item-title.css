@@ -1,0 +1,18 @@
+.myt-list-item-title {
+	hyphens: auto;
+	overflow-wrap: normal;
+	overflow: hidden;
+	padding: 0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	word-break: normal;
+	word-wrap: break-word;
+}
+
+.myt-list-item-title {
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0.009375em;
+	line-height: 1.5;
+	text-transform: none;
+}

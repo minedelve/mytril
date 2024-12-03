@@ -25,5 +25,11 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/tooltip`, 'tooltip.css'),
 	path.resolve(`${directory}/components/expansion-panels/expansion-panels`, 'expansion-panels.css'),
 	path.resolve(`${directory}/components/expansion-panels/expansion-panel`, 'expansion-panel.css'),
-	path.resolve(`${directory}/components/system-bar`, 'system-bar.css')
+	path.resolve(`${directory}/components/system-bar`, 'system-bar.css'),
+	path.resolve(`${directory}/components/lists/list`, 'list.css'),
+	path.resolve(`${directory}/components/lists/list-subheader`, 'list-subheader.css'),
+	path.resolve(`${directory}/components/lists/list-group`, 'list-group.css'),
+	path.resolve(`${directory}/components/lists/list-item`, 'list-item.css'),
+	path.resolve(`${directory}/components/lists/list-item-title`, 'list-item-title.css'),
+	path.resolve(`${directory}/components/lists/list-item-subtitle`, 'list-item-subtitle.css')
 ];

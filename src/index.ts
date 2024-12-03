@@ -10,6 +10,14 @@ export { default as Divider } from './components/divider/divider.svelte';
 export { default as Tooltip } from './components/tooltip/tooltip.svelte';
 export { default as SystemBar } from './components/system-bar/system-bar.svelte';
 
+// lists
+export { default as List } from './components/lists/list/list.svelte';
+export { default as ListSubheader } from './components/lists/list-subheader/list-subheader.svelte';
+export { default as ListGroup } from './components/lists/list-group/list-group.svelte';
+export { default as ListItem } from './components/lists/list-item/list-item.svelte';
+export { default as ListItemTitle } from './components/lists/list-item-title/list-item-title.svelte';
+export { default as ListItemSubtitle } from './components/lists/list-item-subtitle/list-item-subtitle.svelte';
+
 // expansion panels
 export { default as ExpansionPanels } from './components/expansion-panels/expansion-panels/expansion-panels.svelte';
 export { default as ExpansionPanel } from './components/expansion-panels/expansion-panel/expansion-panel.svelte';

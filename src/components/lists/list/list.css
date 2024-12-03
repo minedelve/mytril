@@ -1,0 +1,45 @@
+.myt-list {
+	--c-color: var(--text);
+	--c-background-color: var(--surface-container);
+	--c-rounded: var(--rounded-0);
+	--indent-padding: 0px;
+}
+
+.myt-list {
+	overflow: auto;
+	padding: 8px 0;
+	position: relative;
+	outline: none;
+}
+
+.myt-list.myt-list--disabled {
+	pointer-events: none;
+	user-select: none;
+}
+
+.myt-list.myt-list--nav {
+	--indent-padding: -8px;
+	padding-inline: 8px;
+}
+
+.myt-list:not(.myt-list--dense) .myt-list-subheader {
+	min-height: 40px;
+	padding-inline-start: calc(16px + var(--indent-padding));
+}
+
+.myt-list.myt-list--dense .myt-list-subheader {
+	min-height: 36px;
+	padding-inline-start: calc(16px + var(--indent-padding));
+}
+
+.myt-list:not(.myt-list--tow-line):not(.myt-list--three-line) .myt-list-item-subtitle {
+	-webkit-line-clamp: 1;
+}
+
+.myt-list.myt-list--tow-line .myt-list-item-subtitle {
+	-webkit-line-clamp: 2;
+}
+
+.myt-list.myt-list--three-line .myt-list-item-subtitle {
+	-webkit-line-clamp: 3;
+}
