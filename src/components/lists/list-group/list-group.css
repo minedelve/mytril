@@ -4,22 +4,22 @@
 	--prepend-width: 40px;
 }
 
-.myt-list-group.myt-list-group--fluid {
+.myt-list-group .myt-list-group--fluid {
 	--list-indent-size: 0px;
 }
 
-.myt-list-group.myt-list-group--prepend {
+.myt-list-group .myt-list-group--prepend {
 	--parent-padding: calc(var(--indent-padding) + var(--prepend-width));
 }
 
-.myt-list-group.myt-list-group--fluid.myt-list-group--prepend {
+.myt-list-group .myt-list-group--fluid .myt-list-group--prepend {
 	--parent-padding: var(--indent-padding);
 }
 
-.myt-list-group.myt-list-group--items {
+.myt-list-group .myt-list-group--items {
 	--indent-padding: calc(var(--parent-padding) + var(--list-indent-size));
 }
 
-.myt-list-group.myt-list-group--items .v-list-item {
+.myt-list-group .myt-list-group--items .myt-list-item {
 	padding-inline-start: calc(16px + var(--indent-padding)) !important;
 }

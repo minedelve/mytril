@@ -16,6 +16,7 @@
 	export let color: string | undefined = undefined;
 	export let colorText: string | undefined = undefined;
 	export let link: boolean = false;
+	export let active: boolean = false;
 
 	$: styled = formatStyleProperties({
 		background: color,
@@ -37,6 +38,7 @@
 	class:light
 	class:dark
 	class:myt-list-item--link={link}
+	class:myt-list-item--active={active}
 	on:click
 	on:change
 	{...$$restProps}

@@ -1,7 +1,7 @@
 .myt-list {
 	--c-color: var(--text);
 	--c-background-color: var(--surface-container);
-	--c-rounded: var(--rounded-0);
+	--c-rounded: var(--rounded);
 	--indent-padding: 0px;
 }
 
@@ -34,12 +34,19 @@
 
 .myt-list:not(.myt-list--tow-line):not(.myt-list--three-line) .myt-list-item-subtitle {
 	-webkit-line-clamp: 1;
+	line-clamp: 1;
 }
 
 .myt-list.myt-list--tow-line .myt-list-item-subtitle {
 	-webkit-line-clamp: 2;
+	line-clamp: 2;
 }
 
 .myt-list.myt-list--three-line .myt-list-item-subtitle {
 	-webkit-line-clamp: 3;
+	line-clamp: 3;
+}
+
+.myt-list.myt-list--nav .myt-list-item {
+	border-radius: var(--c-rounded);
 }

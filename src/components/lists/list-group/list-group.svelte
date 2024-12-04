@@ -45,9 +45,21 @@
 		tabindex="-2"
 		activator
 	>
+		<svelte:fragment slot="prepend">
+			<!-- slot: prepend-activator -->
+			<slot name="prepend-activator" />
+			<!-- /slot: prepend-activator -->
+		</svelte:fragment>
+
 		<!-- slot: activator -->
 		<slot name="activator" />
 		<!-- /slot: activator -->
+
+		<svelte:fragment slot="append">
+			<!-- slot: append-activator -->
+			<slot name="append-activator" />
+			<!-- /slot: append-activator -->
+		</svelte:fragment>
 
 		<svelte:fragment slot="activator">
 			{#if open}
@@ -64,7 +76,7 @@
 		role="group"
 		aria-labelledby={`myt-list-group-${id}`}
 	>
-		<div class="myt-expansion-panel--text-wrapper">
+		<div class="myt-list-group--text-wrapper">
 			<!-- slot: default -->
 			<slot />
 			<!-- /slot: default -->

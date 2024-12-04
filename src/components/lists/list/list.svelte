@@ -18,21 +18,18 @@
 	export let dense: boolean = false;
 	export let disabled: boolean = false;
 	export let nav: boolean = false;
-	export let multiple: boolean = false;
 
 	let openIndexes: (number | string)[] = [];
+
 	const dispatch = createEventDispatcher<{ change: { openIndexes: (number | string)[] } }>();
 
 	function toggle(index: number | string) {
-		if (multiple) {
-			if (openIndexes.includes(index)) {
-				openIndexes = openIndexes.filter((i) => i !== index);
-			} else {
-				openIndexes = [...openIndexes, index];
-			}
+		if (openIndexes.includes(index)) {
+			openIndexes = openIndexes.filter((i) => i !== index);
 		} else {
-			openIndexes = openIndexes.includes(index) ? [] : [index];
+			openIndexes = [...openIndexes, index];
 		}
+
 		dispatch('change', { openIndexes });
 	}
 
