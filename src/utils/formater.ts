@@ -27,3 +27,28 @@ export const formatStyleProperties = (params: {
 	if (params?.opacity) style += `--c-opacity: ${params?.opacity}; `;
 	return style;
 };
+
+export const formatClassSizeElement = (
+	key: string,
+	size: {
+		_default?: string;
+		xs?: string;
+		sm?: string;
+		md?: string;
+		lg?: string;
+		xl?: string;
+		xxl?: string;
+	}
+) => {
+	let className = '';
+
+	if (size._default) className += `myt-${key}-${size._default} `;
+	if (size.xs) className += `xs:myt-${key}-${size.xs} `;
+	if (size.sm) className += `sm:myt-${key}-${size.sm} `;
+	if (size.md) className += `md:myt-${key}-${size.md} `;
+	if (size.lg) className += `lg:myt-${key}-${size.lg} `;
+	if (size.xl) className += `xl:myt-${key}-${size.xl} `;
+	if (size.xxl) className += `xxl:myt-${key}-${size.xxl} `;
+
+	return className;
+};

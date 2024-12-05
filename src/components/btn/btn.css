@@ -1,0 +1,309 @@
+.myt-btn {
+	--c-color: var(--text);
+	--c-background-color: var(--surface-container);
+	--c-rounded: var(--rounded);
+}
+
+.myt-btn {
+	display: inline-flex;
+	height: 2.5rem;
+	min-height: 2.5rem;
+	flex-shrink: 0;
+	cursor: pointer;
+	-webkit-user-select: none;
+	user-select: none;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	border-radius: var(--c-rounded);
+	border-color: transparent;
+	border-style: solid;
+	border-width: 1px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: center;
+	font-size: 0.875rem;
+	line-height: 1em;
+	gap: 0.5rem;
+	font-weight: 600;
+	text-decoration-line: none;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	animation: button-effect 0.25s ease-out;
+	color: var(--c-color);
+	background-color: var(--c-background-color);
+}
+
+.myt-btn.myt-btn-wide {
+	width: 16rem;
+}
+.myt-btn.myt-btn-block {
+	width: 100%;
+}
+
+.myt-btn svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.myt-btn:active:hover,
+.myt-btn:active:focus {
+	animation: button-effect 0s ease-out;
+	transform: scale(0.97);
+}
+
+.myt-btn.myt-btn-active:not(.myt-btn-outline):not(.myt-btn-text):not(.myt-btn-link) {
+	background-color: color-mix(in oklab, var(--background-color) 85%, black);
+}
+.myt-btn:hover:not(.myt-btn-outline):not(.myt-btn-text):not(.myt-btn-link) {
+	background-color: color-mix(in oklab, var(--background-color) 90%, black);
+}
+
+.myt-btn.myt-btn-rounded {
+	border-radius: 9999px;
+}
+
+.myt-btn.myt-btn-square {
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
+	padding: 0;
+}
+
+.myt-btn.myt-btn-circle {
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
+	padding: 0;
+	border-radius: 9999px;
+}
+
+.myt-btn.myt-btn-outline {
+	background-color: transparent;
+	border-color: var(--color);
+}
+.myt-btn.myt-btn-text {
+	background-color: transparent;
+}
+
+.myt-btn.myt-btn-outline.btn-active,
+.myt-btn.myt-btn-text.btn-active {
+	background-color: color-mix(in oklab, var(--color) 15%, transparent);
+}
+.myt-btn.myt-btn-outline:hover,
+.myt-btn.myt-btn-text:hover {
+	background-color: color-mix(in oklab, var(--color) 20%, transparent);
+}
+
+.myt-btn.myt-btn-link {
+	background-color: transparent;
+	text-decoration-line: underline;
+}
+
+.myt-btn.myt-btn-disabled,
+.myt-btn[disabled] {
+	pointer-events: none;
+	user-select: none;
+	color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+	background-color: color-mix(in oklab, var(--background-color) 70%, transparent) !important;
+}
+.myt-btn.myt-btn-disabled.myt-btn-outline,
+.myt-btn[disabled].myt-btn-outline {
+	border-color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+}
+
+.myt-btn.myt-btn-disabled.myt-btn-outline,
+.myt-btn[disabled].myt-btn-outline,
+.myt-btn.myt-btn-disabled.myt-btn-text,
+.myt-btn[disabled].myt-btn-text,
+.myt-btn.myt-btn-disabled.myt-btn-link,
+.myt-btn[disabled].myt-btn-link {
+	background-color: transparent;
+}
+
+.myt-btn:where(.myt-btn:is(input[type='checkbox'])),
+.myt-btn:where(.myt-btn:is(input[type='radio'])) {
+	width: auto;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.myt-btn:is(input[type='checkbox']):after,
+.myt-btn:is(input[type='radio']):after {
+	--mytril-content: attr(aria-label);
+	content: var(--mytril-content);
+}
+.myt-btn:is(input[type='checkbox']:checked),
+.myt-btn:is(input[type='radio']:checked) {
+	--color: var(--on-primary);
+	--background-color: var(--primary);
+}
+
+/* @themes */
+.myt-btn.myt-btn-info {
+	--color: var(--on-info);
+	--background-color: var(--info);
+}
+.myt-btn.myt-btn-info.myt-btn-outline,
+.myt-btn.myt-btn-info.myt-btn-text,
+.myt-btn.myt-btn-info.myt-btn-link {
+	--color: var(--info);
+}
+
+.myt-btn.myt-btn-success {
+	--color: var(--on-success);
+	--background-color: var(--success);
+}
+.myt-btn.myt-btn-success.myt-btn-outline,
+.myt-btn.myt-btn-success.myt-btn-text,
+.myt-btn.myt-btn-success.myt-btn-link {
+	--color: var(--success);
+}
+
+.myt-btn.myt-btn-warning {
+	--color: var(--on-warning);
+	--background-color: var(--warning);
+}
+.myt-btn.myt-btn-warning.myt-btn-outline,
+.myt-btn.myt-btn-warning.myt-btn-text,
+.myt-btn.myt-btn-warning.myt-btn-link {
+	--color: var(--warning);
+}
+
+.myt-btn.myt-btn-error {
+	--color: var(--on-error);
+	--background-color: var(--error);
+}
+.myt-btn.myt-btn-error.myt-btn-outline,
+.myt-btn.myt-btn-error.myt-btn-text,
+.myt-btn.myt-btn-error.myt-btn-link {
+	--color: var(--error);
+}
+
+/* @keyframes */
+@keyframes button-effect {
+	0% {
+		transform: scale(0.98);
+	}
+	40% {
+		transform: scale(1.02);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* @breakpoints */
+/* @svg size */
+.myt-btn[breakpoint]myt-btn-xs svg {
+	width: 1.15rem;
+	height: 1.15rem;
+}
+.myt-btn[breakpoint]myt-btn-sm svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+.myt-btn[breakpoint]myt-btn-md svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+.myt-btn[breakpoint]myt-btn-lg svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.myt-btn[breakpoint]myt-btn-xl svg {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+/* @default */
+.myt-btn[breakpoint]myt-btn-xs:not(.myt-btn-square):not(.myt-btn-circle) {
+	height: 1.5rem;
+	min-height: 1.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	font-size: 0.75rem;
+}
+.myt-btn[breakpoint]myt-btn-sm:not(.myt-btn-square):not(.myt-btn-circle) {
+	height: 2rem;
+	min-height: 2rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	font-size: 0.875rem;
+}
+.myt-btn[breakpoint]myt-btn-md:not(.myt-btn-square):not(.myt-btn-circle) {
+	height: 2.5rem;
+	min-height: 2.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.875rem;
+}
+.myt-btn[breakpoint]myt-btn-lg:not(.myt-btn-square):not(.myt-btn-circle) {
+	height: 3rem;
+	min-height: 3rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-size: 1rem;
+}
+.myt-btn[breakpoint]myt-btn-xl:not(.myt-btn-square):not(.myt-btn-circle) {
+	height: 3.5rem;
+	min-height: 3.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-size: 1.125rem;
+}
+
+/* @square */
+.myt-btn[breakpoint]myt-btn-xs.myt-btn-square {
+	height: 1.5rem;
+	width: 1.5rem;
+	min-height: 1.5rem;
+}
+.myt-btn[breakpoint]myt-btn-sm.myt-btn-square {
+	height: 2rem;
+	width: 2rem;
+	min-height: 2rem;
+}
+.myt-btn[breakpoint]myt-btn-md.myt-btn-square {
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
+}
+.myt-btn[breakpoint]myt-btn-lg.myt-btn-square {
+	height: 3rem;
+	width: 3rem;
+	min-height: 3rem;
+}
+.myt-btn[breakpoint]myt-btn-xl.myt-btn-square {
+	height: 3.5rem;
+	width: 3.5rem;
+	min-height: 3.5rem;
+}
+
+/* @circle */
+.myt-btn[breakpoint]myt-btn-xs.myt-btn-circle {
+	height: 1.5rem;
+	width: 1.5rem;
+	min-height: 1.5rem;
+}
+.myt-btn[breakpoint]myt-btn-sm.myt-btn-circle {
+	height: 2rem;
+	width: 2rem;
+	min-height: 2rem;
+}
+.myt-btn[breakpoint]myt-btn-md.myt-btn-circle {
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
+}
+.myt-btn[breakpoint]myt-btn-lg.myt-btn-circle {
+	height: 3rem;
+	width: 3rem;
+	min-height: 3rem;
+}
+.myt-btn[breakpoint]myt-btn-xl.myt-btn-circle {
+	height: 3.5rem;
+	width: 3.5rem;
+	min-height: 3.5rem;
+}
+/*! @breakpoints */

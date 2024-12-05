@@ -21,5 +21,6 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/app-bar/app-bar`, 'app-bar.css'),
 	path.resolve(`${directory}/components/app-bar/app-bar-title`, 'app-bar-title.css'),
 	path.resolve(`${directory}/components/icon`, 'icon.css'),
-	path.resolve(`${directory}/components/dialog`, 'dialog.css')
+	path.resolve(`${directory}/components/dialog`, 'dialog.css'),
+	path.resolve(`${directory}/components/btn`, 'btn.css')
 ];
