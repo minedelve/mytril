@@ -9,6 +9,7 @@ export { default as Icon } from './components/icon/icon.svelte';
 export { default as Divider } from './components/divider/divider.svelte';
 export { default as Tooltip } from './components/tooltip/tooltip.svelte';
 export { default as SystemBar } from './components/system-bar/system-bar.svelte';
+export { default as Menu } from "./components/menu/menu.svelte";
 
 // lists
 export { default as List } from './components/lists/list/list.svelte';

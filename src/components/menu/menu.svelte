@@ -10,21 +10,19 @@
 	export { _class as class, _style as style };
 	export let dark: boolean = false;
 	export let light: boolean = false;
-	export let text: string | undefined = undefined;
 	export let bottom: boolean = false;
 	export let left: boolean = false;
 	export let top: boolean = false;
 	export let right: boolean = false;
 	export let open: boolean = false;
-	export let dense: boolean = false;
 	export let rounded: string | undefined = undefined;
 	export let color: string | undefined = undefined;
 	export let colorText: string | undefined = undefined;
 
 	let ref: HTMLElement | null = null;
-	let refTooltip: HTMLElement | null = null;
+	let refMenu: HTMLElement | null = null;
 
-	let openTooltip = open;
+	let openMenu = open;
 	$: position = { x: 0, y: 0 };
 	$: id = uniqueID();
 
@@ -34,16 +32,20 @@
 		rounded: rounded
 	});
 
-	function handleMouseEnter() {
-		openTooltip = true;
+	function handleMenu() {
+		openMenu = openMenu ? false : true;
 	}
 
-	function handleMouseLeave() {
-		openTooltip = false;
+	// function handleMouseLeave() {
+	// 	openTooltip = false;
+	// }
+
+	$: {
+		console.log('menu', openMenu);
 	}
 
 	$: {
-		if (ref && refTooltip && openTooltip && $scrollY !== undefined) {
+		if (ref && refMenu && openMenu && $scrollY !== undefined) {
 			let display = top ? 'top' : left ? 'left' : right ? 'right' : bottom ? 'bottom' : 'bottom';
 			let axis = { x: 0, y: 0 };
 
@@ -54,8 +56,8 @@
 			const w = ref.getBoundingClientRect().width;
 
 			// tooltip
-			const th = refTooltip.getBoundingClientRect().height;
-			const tw = refTooltip.getBoundingClientRect().width;
+			const th = refMenu.getBoundingClientRect().height;
+			const tw = refMenu.getBoundingClientRect().width;
 
 			if (right) {
 				display = x + w + tw + 10 >= $innerWidth ? 'left' : 'right';
@@ -107,36 +109,29 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<span
-	bind:this={ref}
-	aria-describedby={id}
-	class={className('myt-tooltip', _class)}
-	class:light
-	class:dark
-	on:mouseenter={handleMouseEnter}
-	on:mouseleave={handleMouseLeave}
-	{...$$restProps}
->
-	<slot />
-</span>
+{#if $$slots.activator}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<span
+		bind:this={ref}
+		aria-describedby={id}
+		class={className('myt-menu', _class)}
+		class:light
+		class:dark
+		on:click={() => handleMenu()}
+		{...$$restProps}
+	>
+		<slot name="activator" />
+	</span>
+{/if}
 
-{#if openTooltip && (text || $$slots.tooltip)}
+{#if openMenu}
 	<div
 		{id}
-		bind:this={refTooltip}
-		class="myt-tooltip-content"
-		class:myt-tooltip-content--dense={dense}
-		aria-label={text}
-		role="tooltip"
+		bind:this={refMenu}
+		class="myt-menu-content"
+		role="menu"
 		style={styleName(styled, _style, `transform: translate(${position.x}px, ${position.y}px);`)}
 	>
-		{#if $$slots.tooltip}
-			<!-- slot: tooltip -->
-			<slot name="tooltip" />
-			<!-- /slot: tooltip -->
-		{:else if text}
-			{text}
-		{/if}
+		<slot />
 	</div>
 {/if}

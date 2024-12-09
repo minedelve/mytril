@@ -31,5 +31,6 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/lists/list-group`, 'list-group.css'),
 	path.resolve(`${directory}/components/lists/list-item`, 'list-item.css'),
 	path.resolve(`${directory}/components/lists/list-item-title`, 'list-item-title.css'),
-	path.resolve(`${directory}/components/lists/list-item-subtitle`, 'list-item-subtitle.css')
+	path.resolve(`${directory}/components/lists/list-item-subtitle`, 'list-item-subtitle.css'),
+	path.resolve(`${directory}/components/menu`, 'menu.css')
 ];
