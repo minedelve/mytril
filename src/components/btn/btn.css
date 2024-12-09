@@ -19,7 +19,6 @@
 	position: relative;
 	text-decoration: none;
 	text-indent: 0.0892857143em;
-	text-transform: uppercase;
 	transition-property: box-shadow, transform, opacity, background-color, background;
 	transition-duration: 0.28s;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,8 +138,8 @@
 	background-color: color-mix(in oklab, var(--c-background-color) 90%, black);
 }
 
-.myt-btn.myt-btn--outlined.btn-active,
-.myt-btn.myt-btn--text.btn-active {
+.myt-btn.myt-btn--outlined.myt-btn--active,
+.myt-btn.myt-btn--text.myt-btn--active {
 	background-color: color-mix(in oklab, var(--c-color) 15%, transparent);
 }
 .myt-btn.myt-btn--outlined:hover,

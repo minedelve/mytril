@@ -8,6 +8,7 @@ export { default as Responsive } from './components/responsive/responsive.svelte
 export { default as Icon } from './components/icon/icon.svelte';
 export { default as Dialog } from './components/dialog/dialog.svelte';
 export { default as Btn } from './components/btn/btn.svelte';
+export { default as Chip } from './components/chip/chip.svelte';
 
 // toolbar
 export { default as Toolbar } from './components/toolbar/toolbar/toolbar.svelte';
