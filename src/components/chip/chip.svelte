@@ -99,10 +99,10 @@
 	{/if}
 	{#if closable}
 		<button class="myt-chip--close" type="button" aria-label="close">
-			{#if $$slots.closable}
-				<!-- slot: closable -->
-				<slot name="closable" />
-				<!-- /slot: closable -->
+			{#if $$slots.close}
+				<!-- slot: close -->
+				<slot name="close" />
+				<!-- /slot: close -->
 			{:else}
 				<Icon icon={`svg:${iconClose}`} />
 			{/if}
