@@ -25,5 +25,6 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/btn`, 'btn.css'),
 	path.resolve(`${directory}/components/chip`, 'chip.css'),
 	path.resolve(`${directory}/components/alerts/alert`, 'alert.css'),
-	path.resolve(`${directory}/components/alerts/alert-title`, 'alert-title.css')
+	path.resolve(`${directory}/components/alerts/alert-title`, 'alert-title.css'),
+	path.resolve(`${directory}/components/bottom-navigation`, 'bottom-navigation.css')
 ];
