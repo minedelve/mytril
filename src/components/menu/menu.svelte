@@ -1,5 +1,11 @@
 <script lang="ts">
 	import { innerHeight, innerWidth, scrollY } from '$lib/composables/display.js';
+	import {
+		hasMenuListExist,
+		menuState,
+		removeMenuListState,
+		setMenuListState
+	} from '$lib/composables/menu.js';
 	import { className, styleName } from '$lib/utils/dom.js';
 	import { formatStyleProperties } from '$lib/utils/formater.js';
 	import { uniqueID } from '$lib/utils/uid.js';
@@ -15,6 +21,9 @@
 	export let top: boolean = false;
 	export let right: boolean = false;
 	export let open: boolean = false;
+	export let openOnHover: boolean = false;
+	export let closeOnClick: boolean = false;
+	export let persistent: boolean = false;
 	export let rounded: string | undefined = undefined;
 	export let color: string | undefined = undefined;
 	export let colorText: string | undefined = undefined;
@@ -22,9 +31,10 @@
 	let ref: HTMLElement | null = null;
 	let refMenu: HTMLElement | null = null;
 
-	let openMenu = open;
 	$: position = { x: 0, y: 0 };
 	$: id = uniqueID();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	let timeoutId: any = null;
 
 	$: styled = formatStyleProperties({
 		background: color,
@@ -33,19 +43,52 @@
 	});
 
 	function handleMenu() {
-		openMenu = openMenu ? false : true;
-	}
-
-	// function handleMouseLeave() {
-	// 	openTooltip = false;
-	// }
-
-	$: {
-		console.log('menu', openMenu);
+		if (!open && !openOnHover) {
+			setMenuListState(id);
+			if (!persistent) document?.body?.addEventListener('click', handleMenuClose);
+			open = true;
+		} else {
+			handleMenuClose();
+		}
 	}
 
 	$: {
-		if (ref && refMenu && openMenu && $scrollY !== undefined) {
+		if ($menuState.length >= 1 && !hasMenuListExist(id)) {
+			if (!hasMenuListExist(id) && !persistent) {
+				open = false;
+			}
+		}
+	}
+
+	function handleMenuClose() {
+		open = false;
+		document?.body?.removeEventListener('click', handleMenuClose);
+		removeMenuListState(id);
+	}
+
+	function handleMouse(state: string) {
+		if (openOnHover && state === 'over') {
+			if (timeoutId) {
+				clearTimeout(timeoutId);
+				timeoutId = null;
+			}
+			open = true;
+		}
+
+		if (openOnHover && state === 'leave') {
+			timeoutId = setTimeout(() => {
+				open = false;
+				timeoutId = null;
+			}, 100);
+		}
+	}
+
+	function handleAction() {
+		if (closeOnClick && open) handleMenuClose();
+	}
+
+	$: {
+		if (ref && refMenu && open && $scrollY !== undefined) {
 			let display = top ? 'top' : left ? 'left' : right ? 'right' : bottom ? 'bottom' : 'bottom';
 			let axis = { x: 0, y: 0 };
 
@@ -109,25 +152,36 @@
 	}
 </script>
 
+<!-- <svelte:window on:click={() => handleMenuClose()} /> -->
+
 {#if $$slots.activator}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
+	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 	<span
 		bind:this={ref}
 		aria-describedby={id}
 		class={className('myt-menu', _class)}
 		class:light
 		class:dark
-		on:click={() => handleMenu()}
+		on:click|stopPropagation={() => !openOnHover && handleMenu()}
+		on:mouseover={() => openOnHover && handleMouse('over')}
+		on:mouseleave={() => openOnHover && handleMouse('leave')}
 		{...$$restProps}
 	>
 		<slot name="activator" />
 	</span>
 {/if}
 
-{#if openMenu}
+{#if open}
+	<!-- svelte-ignore a11y_interactive_supports_focus -->
+	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
+	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<div
 		{id}
 		bind:this={refMenu}
+		on:mouseover={() => handleMouse('over')}
+		on:mouseleave={() => handleMouse('leave')}
+		on:click|stopPropagation={handleAction}
 		class="myt-menu-content"
 		role="menu"
 		style={styleName(styled, _style, `transform: translate(${position.x}px, ${position.y}px);`)}

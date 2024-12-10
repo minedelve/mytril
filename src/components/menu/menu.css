@@ -11,15 +11,9 @@
 	z-index: 9999;
 	background: var(--c-background-color);
 	color: var(--c-color);
-	border-radius: 4px;
-	font-size: 0.875rem;
-	line-height: 1.6;
+	border-radius: var(--c-rounded);
 	display: inline-block;
-	padding: 5px 16px;
-	text-transform: initial;
 	width: auto;
 	opacity: 1;
 	transition-property: opacity, transform;
-	overflow-wrap: break-word;
-	max-width: 300px;
 }

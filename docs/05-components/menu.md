@@ -31,16 +31,19 @@ Implementing the Menu in your project:
 
 ## Menu component properties {#menu-component-properties}
 
-| Property  | Type    | Default   | Description                                                                                                                           |
-| :-------- | :------ | :-------- | :------------------------------------------------------------------------------------------------------------------------------------ |
-| tag       | string  | div       | Specify a custom tag for the root element                                                                                             |
-| dark      | boolean | false     | Force a **dark** theme                                                                                                                |
-| light     | boolean | false     | Force a **light** theme                                                                                                               |
-| bottom    | boolean | false     | display menu on bottom element                                                                                                        |
-| top       | boolean | false     | display menu on top element                                                                                                           |
-| left      | boolean | false     | display menu on left element                                                                                                          |
-| right     | boolean | false     | display menu on right element                                                                                                         |
-| open      | boolean | false     | Open props, for open or close menu                                                                                                    |
-| rounded   | string  | undefined | Add [border radius](/mytril/docs/styles/border-radius) on Menu                                                                        |
-| color     | string  | undefined | Add color scheme on your Menu, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes) |
-| colorText | string  | undefined | Add color scheme on your text Menu                                                                                                    |
+| Property     | Type    | Default   | Description                                                                                                                           |
+| :----------- | :------ | :-------- | :------------------------------------------------------------------------------------------------------------------------------------ |
+| tag          | string  | div       | Specify a custom tag for the root element                                                                                             |
+| dark         | boolean | false     | Force a **dark** theme                                                                                                                |
+| light        | boolean | false     | Force a **light** theme                                                                                                               |
+| bottom       | boolean | false     | display menu on bottom element                                                                                                        |
+| top          | boolean | false     | display menu on top element                                                                                                           |
+| left         | boolean | false     | display menu on left element                                                                                                          |
+| right        | boolean | false     | display menu on right element                                                                                                         |
+| closeOnClick | boolean | false     | mouse event to close on click on item and action in menu                                                                              |
+| persistent   | boolean | false     | force user to click to activator for close menu                                                                                       |
+| openOnHover  | boolean | false     | mouse hover event open and close menu                                                                                                 |
+| open         | boolean | false     | Open props, for open or close menu                                                                                                    |
+| rounded      | string  | undefined | Add [border radius](/mytril/docs/styles/border-radius) on Menu                                                                        |
+| color        | string  | undefined | Add color scheme on your Menu, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes) |
+| colorText    | string  | undefined | Add color scheme on your text Menu                                                                                                    |

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { innerHeight, innerWidth, scrollY } from '$lib/composables/display.js';
+	import { innerHeight, innerWidth, scrollOrientation, scrollY } from '$lib/composables/display.js';
 	import Provider from './provider.svelte';
 
 	// state
@@ -16,6 +16,18 @@
 		}
 		if (y > 0) {
 			scrollY.set(y);
+
+			if (y > $scrollOrientation.position) {
+				scrollOrientation.set({
+					position: y,
+					orientation: 'down'
+				});
+			} else if (y < $scrollOrientation.position) {
+				scrollOrientation.set({
+					position: y,
+					orientation: 'up'
+				});
+			}
 		}
 	}
 </script>

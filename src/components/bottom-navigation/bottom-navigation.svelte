@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scrollOrientation } from '$lib/composables/display.js';
 	import { className, styleName } from '$lib/utils/dom.js';
 	import { formatStyleProperties } from '$lib/utils/formater.js';
 
@@ -14,6 +15,7 @@
 	export let height: string | number | undefined = '56px';
 	export let absolute: boolean = false;
 	export let rounded: string | undefined = undefined;
+	export let active: boolean = false;
 	export let color: string | undefined = undefined;
 	export let colorText: string | undefined = undefined;
 
@@ -31,6 +33,7 @@
 	class:myt-bottom-navigation--shift={shift}
 	class:myt-bottom-navigation--grow={grow}
 	class:absolute
+	class:myt-bottom-navigation--hidden={active && $scrollOrientation.orientation === 'down'}
 	class:light
 	class:dark
 	{...$$restProps}

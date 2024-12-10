@@ -43,6 +43,7 @@ The **Bottom Navigation** component is an alternative to the sidebar. It is prim
 | shift     | boolean          | false     | display none **span** element on **Btn** component and display block if **Btn** is selected                                                        |
 | height    | string or number | 56px      | Adapte height BottomNavigation                                                                                                                     |
 | absolute  | boolean          | false     | Add absolute position                                                                                                                              |
+| active    | boolean          | false     | If scroll down bottom navigation hidden and if scroll up bottom navigation is visible                                                              |
 | rounded   | string           | undefined | Add [border radius](/mytril/docs/styles/border-radius) on Alert                                                                                    |
 | color     | string           | undefined | Add color scheme on your bottom navigation, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes) |
 | colorText | string           | undefined | If properties outline or text is activate, this propertie is disabled                                                                              |
