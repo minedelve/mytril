@@ -86,7 +86,7 @@ The List component is used to display information. It can contain an content, ac
 | color       | string                 | undefined | Add color scheme on your list, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes) |
 | colorText   | string                 | undefined | If properties outline or text is activate, this propertie is disabled                                                                 |
 
-## ListSubheader {#list-sub-title}
+## ListSubheader {#list-sub-header}
 
 ```svelte
 <script>
@@ -165,66 +165,67 @@ And props
 </List>
 ```
 
-| Property | Type    | Default | Description                                    |
-| :------- | :------ | :------ | :--------------------------------------------- |
-| tag      | string  | div     | Specify a custom tag used on the root element. |
-| dark     | boolean | false   | Force color theme on **dark**.                 |
-| light    | boolean | false   | Force color theme on **light**.                |
+| Property  | Type    | Default   | Description                                                                                                                                |
+| :-------- | :------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| tag       | string  | div       | Specify a custom tag used on the root element.                                                                                             |
+| dark      | boolean | false     | Force color theme on **dark**.                                                                                                             |
+| light     | boolean | false     | Force color theme on **light**.                                                                                                            |
+| text      | string  | -         | Add content directly on content area if you not use slot                                                                                   |
+| link      | boolean | false     | Action on list for clickable and router with sveltekit                                                                                     |
+| active    | boolean | false     | Add class _active_ on ListItem element                                                                                                     |
+| color     | string  | undefined | Add color scheme on your list item, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes) |
+| colorText | string  | undefined | Add color on text                                                                                                                          |
+| rounded   | string  | undefined | Add [border radius](/mytril/docs/styles/border-radius) on ListItem                                                                         |
 
-**CardSubtitle**
-
-```svelte
-<script>
-	import { Card, CardItem, CardTitle, CardSubtitle } from 'mytril';
-</script>
-
-<Card>
-	<CardItem>
-		<CardTitle>Title</CardTitle>
-		<CardSubtitle>SubTitle</CardSubtitle>
-	</CardItem>
-</Card>
-```
-
-| Property | Type             | Default   | Description                                    |
-| :------- | :--------------- | :-------- | :--------------------------------------------- |
-| tag      | string           | div       | Specify a custom tag used on the root element. |
-| opacity  | number or string | undefined | Add opacity on content.                        |
-
-**CardText**
+**ListItemTitle**
 
 ```svelte
 <script>
-	import { Card, CardItem, CardTitle, CardSubtitle, CardText } from 'mytril';
+	import { List, Icon, ListItem, ListItemTitle } from 'mytril';
 </script>
 
-<Card>
-	<CardItem>
-		<CardTitle>Title</CardTitle>
-		<CardSubtitle>SubTitle</CardSubtitle>
-		<CardText>// your content</CardText>
-	</CardItem>
-</Card>
+<List style="width: 320px">
+	<ListItem>
+		<svelte:fragment slot="prepend">
+			<Icon icon="mdi:account" />
+		</svelte:fragment>
+
+		<ListItemTitle>Title</ListItemTitle>
+		<svelte:fragment slot="description">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem 2 ipsum dolor sit amet
+			consectetur adipisicing elit. Lorem 3 ipsum dolor sit amet consectetur adipisicing elit.
+		</svelte:fragment>
+	</ListItem>
+</List>
 ```
 
-| Property | Type             | Default   | Description                                    |
-| :------- | :--------------- | :-------- | :--------------------------------------------- |
-| tag      | string           | div       | Specify a custom tag used on the root element. |
-| opacity  | number or string | undefined | Add opacity on content.                        |
+| Property | Type   | Default | Description                                    |
+| :------- | :----- | :------ | :--------------------------------------------- |
+| tag      | string | div     | Specify a custom tag used on the root element. |
 
-**CardActions**
+**ListItemSubtitle**
 
 ```svelte
 <script>
-	import { Card, CardItem, CardTitle, CardSubtitle, CardText, CardActions } from 'mytril';
+	import { List, Icon, ListItem, ListItemTitle, ListItemSubtitle } from 'mytril';
 </script>
 
-<Card>
-	<CardItem>
-		<CardTitle>Title</CardTitle>
-		<CardSubtitle>SubTitle</CardSubtitle>
-		<CardText>// your content</CardText>
-		<CardActions>// actions area</CardActions>
-	</CardItem>
-</Card>
+<List style="width: 320px">
+	<ListItem>
+		<svelte:fragment slot="prepend">
+			<Icon icon="mdi:account" />
+		</svelte:fragment>
+
+		<ListItemTitle>Title</ListItemTitle>
+		<ListItemSubtitle>SubTitle</ListItemSubtitle>
+		<svelte:fragment slot="description">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem 2 ipsum dolor sit amet
+			consectetur adipisicing elit. Lorem 3 ipsum dolor sit amet consectetur adipisicing elit.
+		</svelte:fragment>
+	</ListItem>
+</List>
 ```
+
+| Property | Type   | Default | Description                                    |
+| :------- | :----- | :------ | :--------------------------------------------- |
+| tag      | string | div     | Specify a custom tag used on the root element. |
