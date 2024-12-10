@@ -135,15 +135,16 @@
 				}
 			} else {
 				if (w - tw < 0) {
-					axis = { x: x - diffWidth, y: y + h };
+					axis = { x: x, y: y + h };
 				} else {
-					axis = { x: x + diffWidth, y: y + h };
+					axis = { x: x, y: y + h };
 				}
 			}
 			if (axis.x < 0) {
 				axis = { x: x, y: axis.y };
 			}
-			if (x + diffWidth > $innerWidth) {
+
+			if (x + tw > $innerWidth) {
 				axis = { x: x + w - tw, y: axis.y };
 			}
 
