@@ -1,13 +1,15 @@
 ---
-title: Icons with Mytril
-description: jsp
+title: Icons Component
+description: Mytril's Icon component makes it simple to integrate icons from various sources. The component seamlessly handles icons from Font Awesome, Iconify, Material Design Icons, custom fonts, and SVGs, providing both compatibility and ease of use.
 ---
 
-# Icon components with Mytril {#icon-components-with-mytril}
+# Icon Component with Mytril: Versatile and Flexible {#icon-component-with-mytril}
 
-The Icon component offers great flexibility in the use of icon libraries. We ensure compatibility with Font Awesome, Iconify, Material Design Icons, custom fonts and SVGs.
+Mytril's **Icon** component makes it simple to integrate icons from various sources. The component seamlessly handles icons from Font Awesome, Iconify, Material Design Icons, custom fonts, and SVGs, providing both compatibility and ease of use.
 
-## Use Icon on your app {#use-icon-on-your-app}
+## Using Icons in your application {#using-icons-in-your-application}
+
+Adding icons is straightforward with Mytril’s `Icon` component:
 
 ```svelte
 <script>
@@ -17,21 +19,23 @@ The Icon component offers great flexibility in the use of icon libraries. We ens
 <Icon icon="mdi:home" />
 ```
 
-### Support library icons list {#support-library-icons-list}
+## Supported Icon libraries {#support-library-icons-list}
 
-| Support              | Tag     | Documentation                                            |
-| :------------------- | :------ | :------------------------------------------------------- |
-| Iconify              | -       | [visit iconify libs](https://icon-sets.iconify.design/)  |
-| Font Awesome         | `fa:`   | [visit font awesome libs](https://fontawesome.com/icons) |
-| Material Design Icon | -       | [visit MDI libs](https://pictogrammers.com/library/mdi/) |
-| Custom Font          | `font:` | Import your custom font icon                             |
-| SVG                  | `svg:`  | Use standard svg icon                                    |
+Mytril supports a range of popular icon libraries and custom sources:
 
-**Iconify**
+| Support              | Tag           | Documentation                                                  |
+| :------------------- | :------------ | :------------------------------------------------------------- |
+| Iconify              | None required | [Browse Iconify libraries](https://icon-sets.iconify.design/)  |
+| Font Awesome         | `fa:`         | [Learn more about Font Awesome](https://fontawesome.com/icons) |
+| Material Design Icon | None required | [Explore MDI](https://pictogrammers.com/library/mdi/)          |
+| Custom Font          | `font:`       | Import custom font icons into your CSS                         |
+| SVG                  | `svg:`        | Use custom SVG files for icons                                 |
 
-Iconify requires the @iconify/svelte package to be installed on your project. Please consult their [documentation](https://iconify.design/docs/icon-components/svelte/) to ensure proper installation of the package.
+## Icon library integration examples {#icon-library-integration-examples}
 
-Then you don't need to import iconify into your project, as Mytril provides the link and works seamlessly.
+### 1. Iconify {#iconify}
+
+No additional setup is required if your project includes the `@iconify/svelte` package. Install it by following the [Iconify Svelte Documentation](https://iconify.design/docs/icon-components/svelte/).
 
 ```svelte
 <script>
@@ -41,11 +45,9 @@ Then you don't need to import iconify into your project, as Mytril provides the 
 <Icon icon="material-symbols:10k-rounded" />
 ```
 
-**Font Awesome**
+### 2. Font Awesome {#font-awesome}
 
-You do need to install [Font Awesome](https://fontawesome.com/start) dependencies to import the icons into your application, but Mytril ensures compatibility and option support directly via the Icon component.
-
-Use the `fa:` prefix to display your icons correctly
+Install the necessary Font Awesome dependencies to start using its icons. Use the `fa:` prefix to specify icons.
 
 ```svelte
 <script>
@@ -55,11 +57,9 @@ Use the `fa:` prefix to display your icons correctly
 <Icon icon="fa:fa-solid fa-house" />
 ```
 
-**Material Design Icon**
+### 3. Material Design Icons (MDI) {#material-design-icons}
 
-You do need to install [Material Design Icon](https://pictogrammers.com/docs/library/mdi/getting-started/svelte/) dependencies to import the icons into your application, but Mytril ensures compatibility and option support directly via the Icon component.
-
-You install `@mdi/js` only,
+For MDI, install the `@mdi/js` package. Mytril’s Icon component handles these icons effortlessly.
 
 ```svelte
 <script>
@@ -70,9 +70,9 @@ You install `@mdi/js` only,
 <Icon icon={mdiAccount} />
 ```
 
-**Custom Fonts**
+### 4. Custom Fonts {#custom-fonts}
 
-Import your icon fonts into your CSS and call your icons directly into Mytril's Icon component with the `font:` prefix
+Add your custom fonts to your project’s CSS and reference them using the font: prefix.
 
 ```svelte
 <script>
@@ -82,7 +82,7 @@ Import your icon fonts into your CSS and call your icons directly into Mytril's 
 <Icon icon="font:demo-pacman" />
 ```
 
-**SVG**
+### 5. SVG {#svg}
 
 Add your svg file icons and import directly into Mytril's Icon component with the `svg:` prefix
 
@@ -95,16 +95,36 @@ Add your svg file icons and import directly into Mytril's Icon component with th
 <Icon icon={`svg:${iconSVG}`} />
 ```
 
-### Properties of Icon component {#properties-of-icon-component}
+## Icon component properties {#icon-component-properties}
 
-| Property | Type    | Default   | Description                                                                                                                                                                                                                    |
-| :------- | :------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| tag      | string  | i         | Specify a custom tag used on the root element.                                                                                                                                                                                 |
-| dark     | boolean | false     | Force color theme on **dark**.                                                                                                                                                                                                 |
-| light    | boolean | false     | Force color theme on **light**.                                                                                                                                                                                                |
-| disabled | boolean | false     | Disabled icon and style disabled.                                                                                                                                                                                              |
-| start    | boolean | false     | Add `margin-inline-end` on your icon                                                                                                                                                                                           |
-| end      | boolean | false     | Add `margin-inline-start` on your icon                                                                                                                                                                                         |
-| icon     | string  | -         | Add path, IconElement or class for display icon                                                                                                                                                                                |
-| size     | string  | 'default' | Add size on icon with properties `xs`, `sm`, `md`, `lg`, `xl`,                                                                                                                                                                 |
-| color    | string  | undefined | Add color scheme on your card, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes). If properties outline or text is activate, color is property used border and text color |
+The `Icon` component comes with several customizable properties, ensuring flexibility for developers:
+
+| Property | Type    | Default   | Description                                                                                        |
+| :------- | :------ | :-------- | :------------------------------------------------------------------------------------------------- |
+| tag      | string  | i         | Specifies the icon to display (with prefix for type)                                               |
+| dark     | boolean | false     | Force color theme on **dark**.                                                                     |
+| light    | boolean | false     | Force color theme on **light**.                                                                    |
+| disabled | boolean | false     | Disabled icon and style disabled.                                                                  |
+| start    | boolean | false     | Add `margin-inline-end` on your icon                                                               |
+| end      | boolean | false     | Add `margin-inline-start` on your icon                                                             |
+| icon     | string  | -         | Add path, IconElement or class for display icon                                                    |
+| size     | string  | 'default' | Adjusts the icon size `xs`, `sm`, `md`, `lg`, `xl`,                                                |
+| color    | string  | undefined | Defines the icon color (accepts HEX, RGB, or [theme variables](/mytril/docs/customization/themes)) |
+
+### Customizing Icon appearance {#customzing-icon-appearance}
+
+```svelte
+<script>
+	import { Icon } from 'mytril';
+</script>
+
+<Icon icon="mdi:home" size="lg" color="primary" class="custom-icon" />
+```
+
+## Why choose Mytril's Icon component? {#why-choose-mytril-icon-component}
+
+1. **Extensive compatibility:** supports multiple icon libraries and formats, from standard libraries to custom fonts and SVGs
+2. **Ease of use:** simple, intuitive syntax that requires minimal setup
+3. **Customization:** flexible properties for adjusting size, color, and style to match your design
+4. **Performance optimized:** built with Svelte's framework for lightweight, reactive performance
+5. **Accessibility:** built-in ARIA roles ensure proper screen reader support

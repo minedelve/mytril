@@ -39,3 +39,28 @@ export const formatStyleProperties = (params: {
 		style += `border-right-width: ${addUnit(params?.borderRightWidth)};`;
 	return style;
 };
+
+export const formatClassSizeElement = (
+	key: string,
+	size: {
+		_default?: string;
+		xs?: string;
+		sm?: string;
+		md?: string;
+		lg?: string;
+		xl?: string;
+		xxl?: string;
+	}
+) => {
+	let className = '';
+
+	if (size._default) className += `myt-${key}--size-${size._default} `;
+	if (size.xs) className += `xs:myt-${key}--size-${size.xs} `;
+	if (size.sm) className += `sm:myt-${key}--size-${size.sm} `;
+	if (size.md) className += `md:myt-${key}--size-${size.md} `;
+	if (size.lg) className += `lg:myt-${key}--size-${size.lg} `;
+	if (size.xl) className += `xl:myt-${key}--size-${size.xl} `;
+	if (size.xxl) className += `xxl:myt-${key}--size-${size.xxl} `;
+
+	return className;
+};

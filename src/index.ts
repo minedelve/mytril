@@ -23,6 +23,14 @@ export { default as ListItemSubtitle } from './components/lists/list-item-subtit
 export { default as ExpansionPanels } from './components/expansion-panels/expansion-panels/expansion-panels.svelte';
 export { default as ExpansionPanel } from './components/expansion-panels/expansion-panel/expansion-panel.svelte';
 
+export { default as Dialog } from './components/dialog/dialog.svelte';
+export { default as Btn } from './components/btn/btn.svelte';
+export { default as Chip } from './components/chip/chip.svelte';
+export { default as Alert } from './components/alerts/alert/alert.svelte';
+export { default as AlertTitle } from './components/alerts/alert-title/alert-title.svelte';
+export { default as BottomNavigation } from './components/bottom-navigation/bottom-navigation.svelte';
+
+
 // toolbar
 export { default as Toolbar } from './components/toolbar/toolbar/toolbar.svelte';
 export { default as ToolbarTitle } from './components/toolbar/toolbar-title/toolbar-title.svelte';

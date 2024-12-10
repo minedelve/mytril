@@ -3,17 +3,13 @@ title: Install the Svelte Component Library
 description: Discover Mytril, a Svelte Component library, and follow our  guide to install it. Perfect for developers looking to streamline their Svelte projects with efficient components.
 ---
 
-<script lang="ts">
+# Installation Guide for Mytril {#installation-guide-for-mytril}
 
-</script>
+Get started with Mytril, a lightweight and versatile component library for Svelte projects. Follow this step-by-step guide to integrate Mytril seamlessly into your SvelteKit application.
 
-# Installation. {#installation}
+## Step 1: create your SvelteKit project {#create-your-sveltekit-project}
 
-Quickly install and configure mytril for your svelte project.
-
-## Create your project. {#create-your-project}
-
-Start by creating a new SvelteKit project if you don't have one set up already. The most common approach is outlined in the [Getting Started](https://kit.svelte.dev/docs/introduction#introduction-getting-started) with SvelteKit introduction.
+If you don’t already have a SvelteKit project, you can create one using the following commands:
 
 ```shell
 # terminal
@@ -23,29 +19,36 @@ npm install
 npm run dev
 ```
 
+For more details, refer to the official [SvelteKit getting started guide](https://kit.svelte.dev/docs/introduction#introduction-getting-started).
+
 ### Requirement {#requirement}
 
-- Svelte v4
-- Node v18 or more
-- Vite.js v4.5 or more
+### **Requirements**
 
-> Mytril is compatible with Svelte 5, and we are actively working to offer Svelte's new functions directly via Mytril.
+To use Mytril, ensure your development environment meets the following prerequisites:
 
-## Install Mytril. {#install-mytril}
+- **Svelte**: v4 or later
+- **Node.js**: v18 or later
+- **Vite.js**: v4.5 or later
 
-Install **mytril** within your project. Mytril has no external dependencies in order to facilitate its integration and limit potential version conflicts
+> Note: Mytril is compatible with Svelte v5, and we’re actively enhancing Mytril to leverage new Svelte features.
+
+## Step 2: install Mytril {#install-mytril}
+
+Mytril can be added to your project with a simple npm command. Its design avoids external dependencies to minimize version conflicts.
 
 ```shell
 # terminal
 npm install -D mytril
 ```
 
-## Add Mytril on your vite configuration. {#add-mytril-on-your-vite-configuration}
+## Step 3: configure Vite to use Mytril {#configure-vite-to-use-mytril}
 
-Add mytril plugin vite on your `vite.config.(js|ts)` file.
+Update your `vite.config.(js|ts)` file to include the Mytril plugin:
 
 ```javascript
 // vite.config.(js|ts)
+import { sveltekit } from '@sveltejs/kit/vite';
 import { mytril } from 'mytril/vite';
 
 export default defineConfig({
@@ -55,7 +58,7 @@ export default defineConfig({
 
 And launch your project with `npm run dev`, mytril create automaticly file configuration in `plugins/mytril.(js|ts)`.
 
-## Import Mytril on your svelte environement. {#import-mytril-on-your-svelte-environement}
+## Step 4: Import Mytril on your svelte environement. {#import-mytril-on-your-svelte-environement}
 
 To import the various mytril styles into your application. Depending on your configuration, there may be variations in the way Mytril is imported into your application.
 
@@ -92,18 +95,18 @@ your content
 
 > After importing Mytril into your project, we strongly recommend that you restart your development environment.
 
-## Start your developement process
+## Step 5: start your development server {#start-your-development}
 
-Run your developement process with `npm run dev`.
+Run the build process to initialize your project and preview your application:
 
 ```shell
 # terminal
 npm run dev
 ```
 
-## Start using Mytril in your project
+## Step 6: start building with Mytril {#start-building-with-mytril}
 
-Start using Mytril components, utility classes, and themes to create your interface and content.
+You’re ready to start using Mytril’s components, utility classes, and themes. Here’s a quick example of adding a button to your application:
 
 ```svelte
 <script>
@@ -119,3 +122,10 @@ Start using Mytril components, utility classes, and themes to create your interf
 	}
 </style>
 ```
+
+### Why choose Mytril? {#why-choose-mytril}
+
+- **Lightweight and dependency-Free**: Designed for seamless integration and minimal version conflicts.
+- **Full Svelte compatibility**: Works effortlessly with the latest Svelte and Vite versions.
+- **Customizable and flexible**: Supports utility-first classes and theming for complete design control.
+- **Future-ready**: Actively maintained with support for upcoming Svelte features.
