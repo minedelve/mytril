@@ -7,6 +7,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2024-12-13
+
+### Added
+
+- Add `Alert` component.
+- Add `AlertTitle` component.
+- Add `BottomNavigation` component.
+- Add `Btn` component.
+- Add `Chip` component.
+- Add `Dialog` component.
+- Add `Divider` component.
+- Add `ExpansionPanels` component.
+- Add `ExpansionPanel` component.
+- Add `List` component.
+- Add `ListSubheader` component.
+- Add `ListGroup` component.
+- Add `ListItem` component.
+- Add `ListItemSubtitle` component.
+- Add `ListItemTitle` component.
+- Add `ListItemTitle` component.
+- Add `Menu` component.
+- Add `SystemBar` component.
+- Add `Tooltip` component.
+
+- Add in store **innerWith** and **innerHeight** for orientation position in all component Mytril.
+- Add first reader properties for use breakpoints size on components Btn.
+
+### Changed
+
+- Updated `App` component with a new provider for prepare for use context.
+
+### Fixed
+
+- Fix CSS surcharge not load correctly on build.
+
 ## [0.3.9] - 2024-12-02
 
 ### Fixed

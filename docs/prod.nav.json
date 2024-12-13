@@ -126,6 +126,10 @@
 			{
 				"name": "icons",
 				"path": "/mytril/docs/components/icons"
+			},
+			{
+				"name": "dialog",
+				"path": "/mytril/docs/components/dialog"
 			}
 		]
 	},
