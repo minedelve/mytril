@@ -1,0 +1,146 @@
+[
+	{
+		"section": "getting started",
+		"icon": "pajamas:rocket-launch",
+		"routes": [
+			{
+				"name": "installation",
+				"path": "/mytril/docs/getting-started/installation"
+			}
+		]
+	},
+	{
+		"section": "Customization",
+		"icon": "dashicons:admin-customizer",
+		"routes": [
+			{
+				"name": "themes",
+				"path": "/mytril/docs/customization/themes"
+			},
+			{
+				"name": "theme switcher",
+				"path": "/mytril/docs/customization/theme-switcher"
+			},
+			{
+				"name": "Breakpoints",
+				"path": "/mytril/docs/customization/breakpoints"
+			}
+		]
+	},
+	{
+		"section": "Colors",
+		"icon": "material-symbols:invert-colors-rounded",
+		"routes": [
+			{
+				"name": "Material color palette",
+				"path": "/mytril/docs/colors/material"
+			},
+			{
+				"name": "Tailwind color palette",
+				"path": "/mytril/docs/colors/tailwind"
+			}
+		]
+	},
+	{
+		"section": "Styles",
+		"icon": "material-symbols:style",
+		"routes": [
+			{
+				"name": "CSS reset",
+				"path": "/mytril/docs/styles/css-reset"
+			},
+			{
+				"name": "display",
+				"path": "/mytril/docs/styles/display"
+			},
+			{
+				"name": "position",
+				"path": "/mytril/docs/styles/position"
+			},
+			{
+				"name": "elevation",
+				"path": "/mytril/docs/styles/elevation"
+			},
+			{
+				"name": "border radius",
+				"path": "/mytril/docs/styles/border-radius"
+			},
+			{
+				"name": "flexbox",
+				"path": "/mytril/docs/styles/flex"
+			},
+			{
+				"name": "float",
+				"path": "/mytril/docs/styles/float"
+			},
+			{
+				"name": "overflow",
+				"path": "/mytril/docs/styles/overflow"
+			},
+			{
+				"name": "spacing",
+				"path": "/mytril/docs/styles/spacing"
+			},
+			{
+				"name": "sizing",
+				"path": "/mytril/docs/styles/sizing"
+			},
+			{
+				"name": "typography",
+				"path": "/mytril/docs/styles/typography"
+			}
+		]
+	},
+	{
+		"section": "Components",
+		"icon": "tdesign:module",
+		"routes": [
+			{
+				"name": "application",
+				"path": "/mytril/docs/components/application"
+			},
+			{
+				"name": "grids",
+				"path": "/mytril/docs/components/grids"
+			},
+			{
+				"name": "images",
+				"path": "/mytril/docs/components/img"
+			},
+			{
+				"name": "responsive",
+				"path": "/mytril/docs/components/responsive"
+			},
+			{
+				"name": "cards",
+				"path": "/mytril/docs/components/cards"
+			},
+			{
+				"name": "app bar",
+				"path": "/mytril/docs/components/app-bar"
+			},
+			{
+				"name": "toolbar",
+				"path": "/mytril/docs/components/toolbar"
+			},
+			{
+				"name": "icons",
+				"path": "/mytril/docs/components/icons"
+			}
+		]
+	},
+	{
+		"section": "Tools",
+		"icon": "nimbus:tools",
+		"routes": [
+			{
+				"name": "use capitalize",
+				"path": "/mytril/docs/tools/capitalize"
+			},
+			{
+				"name": "use display",
+				"path": "/mytril/docs/tools/use-display"
+			}
+		]
+	}
+]
