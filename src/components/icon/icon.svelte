@@ -2,7 +2,7 @@
 	import { onMount, type Component } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { className, styleName } from '$lib/utils/dom.js';
-	import { formatStyleProperties } from '$lib/utils/formater.js';
+	import { formatClassSizeElement, formatStyleProperties } from '$lib/utils/formater.js';
 
 	// props
 	let _class: string | undefined = undefined;
@@ -16,7 +16,12 @@
 	export let end: boolean = false;
 	export let color: string | undefined = undefined;
 	export let icon: string = '';
-	export let size: string = 'default';
+	export let size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined = 'md';
+	export let sizeXs: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined = undefined;
+	export let sizeSm: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined = undefined;
+	export let sizeMd: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined = undefined;
+	export let sizeLg: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined = undefined;
+	export let sizeXl: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | undefined = undefined;
 
 	// stored
 	const isIconifyAvailable = writable(false);
@@ -70,6 +75,14 @@
 	class={className(
 		'myt-icon',
 		_class,
+		formatClassSizeElement('icon', {
+			_default: size,
+			xs: sizeXs,
+			sm: sizeSm,
+			md: sizeMd,
+			lg: sizeLg,
+			xl: sizeXl
+		}),
 		icon.startsWith('font:') || icon.startsWith('fa:')
 			? icon.replace('font:', '').replace('fa:', '')
 			: ''
@@ -80,11 +93,6 @@
 	class:myt-icon--start={start}
 	class:myt-icon--end={end}
 	class:myt-icon--disabled={disabled}
-	class:myt-icon--size-x-small={size === 'xs'}
-	class:myt-icon--size-small={size === 'sm'}
-	class:myt-icon--size-default={size === 'md' || size === 'default'}
-	class:myt-icon--size-large={size === 'lg'}
-	class:myt-icon--size-x-large={size === 'xl'}
 	on:click
 	{...$$restProps}
 >

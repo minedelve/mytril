@@ -1,0 +1,15 @@
+.myt-alert-title {
+	align-items: center;
+	align-self: center;
+	display: flex;
+	font-size: 1.25rem;
+	font-weight: 500;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	letter-spacing: 0.0125em;
+	line-height: 1.75rem;
+	overflow-wrap: normal;
+	text-transform: none;
+	word-break: normal;
+	word-wrap: break-word;
+}

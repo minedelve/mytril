@@ -8,12 +8,13 @@
 		<div class="wrapper-card">
 			<div
 				class={`block-card ${key === 'default' ? `rounded${property ? '-' + property : ''}` : `rounded${property ? '-' + property : ''}-` + key}`}
-			/>
-			<p>
-				{key === 'default'
-					? `.rounded${property ? '-' + property : ''}`
-					: `.rounded${property ? '-' + property : ''}-${key}`}
-			</p>
+			>
+				<p>
+					{key === 'default'
+						? `.rounded${property ? '-' + property : ''}`
+						: `.rounded${property ? '-' + property : ''}-${key}`}
+				</p>
+			</div>
 		</div>
 	{/each}
 </div>
@@ -31,7 +32,7 @@
 	.block-card {
 		width: 50px;
 		height: 50px;
-		background-color: var(--sky-3);
+		background-color: #7dd3fc;
 		margin: 0 auto;
 	}
 
