@@ -27,18 +27,18 @@ Integrating a Dialog in your application is straightforward. The `bind:open` pro
 
 Mytril’s Dialog component includes various properties for customization:
 
-| Property     | Type    | Default                                                                                                                 | Description                                                                                                  |
-| :----------- | :------ | :---------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
-| open         | boolean | false                                                                                                                   | Controls whether the dialog is open or closed. Can be bound to a variable                                    |
-| classContent | string  | -                                                                                                                       | Adds a custom class to the dialog container for advanced styling                                             |
-| dark         | boolean | false                                                                                                                   | Forces the dialog to use the dark theme                                                                      |
-| light        | boolean | false                                                                                                                   | Forces the dialog to use the light theme                                                                     |
-| position     | string  | `center`                                                                                                                | Positions the dialog `top`, `center`, `bottom`.                                                              |
-| fullscreen   | boolean | false                                                                                                                   | Displays the dialog in full-screen mode                                                                      |
-| persistent   | boolean | false                                                                                                                   | Prevents the dialog from closing when clicking outside of it                                                 |
-| size         | string  | 'default'                                                                                                               | Sets the dialog size `xs`, `sm`, `md`, `lg`, `xl`,                                                           |
-| color        | string  | undefined                                                                                                               | Defines the dialog's color using HEX, RGB, RGBA, X11, or [Mytril themes](/mytril/docs/customization/themes). |
-| colorText    | string  | Sets the text color within the dialog using HEX, RGB, RGBA, X11, or [Mytril themes](/mytril/docs/customization/themes). |
+| Property     | Type    | Default   | Description                                                                                                             |
+| :----------- | :------ | :-------- | :---------------------------------------------------------------------------------------------------------------------- |
+| open         | boolean | false     | Controls whether the dialog is open or closed. Can be bound to a variable                                               |
+| classContent | string  | -         | Adds a custom class to the dialog container for advanced styling                                                        |
+| dark         | boolean | false     | Forces the dialog to use the dark theme                                                                                 |
+| light        | boolean | false     | Forces the dialog to use the light theme                                                                                |
+| position     | string  | `center`  | Positions the dialog `top`, `center`, `bottom`.                                                                         |
+| fullscreen   | boolean | false     | Displays the dialog in full-screen mode                                                                                 |
+| persistent   | boolean | false     | Prevents the dialog from closing when clicking outside of it                                                            |
+| size         | string  | 'default' | Sets the dialog size `xs`, `sm`, `md`, `lg`, `xl`,                                                                      |
+| color        | string  | undefined | Defines the dialog's color using HEX, RGB, RGBA, X11, or [Mytril themes](/mytril/docs/customization/themes).            |
+| colorText    | string  | undefined | Sets the text color within the dialog using HEX, RGB, RGBA, X11, or [Mytril themes](/mytril/docs/customization/themes). |
 
 ### Customizing Dialog appearance {#customizing-dialog-appearance}
 
