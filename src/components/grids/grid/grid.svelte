@@ -11,8 +11,8 @@
 
 <svelte:element
 	this={tag}
-	class={className('myt-container', _class)}
-	class:myt-container--fluid={fluid}
+	class={className('myt-grid', _class)}
+	class:myt-grid--fluid={fluid}
 	class:fill-height={fillHeight}
 	{...$$restProps}
 >

@@ -1,40 +1,40 @@
-.myt-container {
+.myt-grid {
 	width: 100%;
 	padding: 16px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.myt-container.fill-height {
+.myt-grid.fill-height {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.myt-container.myt-container--fluid {
+.myt-grid.myt-grid--fluid {
 	max-width: 100%;
 }
 
 @media (min-width: 960px) {
-	.myt-container {
+	.myt-grid {
 		max-width: 900px;
 	}
 }
 
 @media (min-width: 1280px) {
-	.myt-container {
+	.myt-grid {
 		max-width: 1200px;
 	}
 }
 
 @media (min-width: 1920px) {
-	.myt-container {
+	.myt-grid {
 		max-width: 1800px;
 	}
 }
 
 @media (min-width: 2560px) {
-	.myt-container {
+	.myt-grid {
 		max-width: 2400px;
 	}
 }
