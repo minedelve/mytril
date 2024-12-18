@@ -16,6 +16,8 @@ export { default as Chip } from './components/chip/chip.svelte';
 export { default as Alert } from './components/alerts/alert/alert.svelte';
 export { default as AlertTitle } from './components/alerts/alert-title/alert-title.svelte';
 export { default as BottomNavigation } from './components/bottom-navigation/bottom-navigation.svelte';
+export { default as BottomView } from './components/bottom-view/bottom-view.svelte';
+export { default as Switch } from './components/switch/switch.svelte';
 
 // lists
 export { default as List } from './components/lists/list/list.svelte';
@@ -45,7 +47,7 @@ export { default as CardText } from './components/cards/card-text/card-text.svel
 export { default as CardActions } from './components/cards/card-actions/card-actions.svelte';
 
 // grids
-export { default as Container } from './components/grids/container/container.svelte';
-export { default as Row } from './components/grids/row/row.svelte';
-export { default as Col } from './components/grids/col/col.svelte';
+export { default as Grid } from './components/grids/grid/grid.svelte';
+export { default as GridRow } from './components/grids/grid-row/grid-row.svelte';
+export { default as GridCol } from './components/grids/grid-col/grid-col.svelte';
 export { default as Spacer } from './components/grids/spacer/spacer.svelte';

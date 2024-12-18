@@ -11,24 +11,24 @@ The Mytril grid system uses a flexible 12-column layout powered by flexbox, allo
 
 | Component | Description                                |
 | :-------- | :----------------------------------------- |
-| Container | The main element to house grid layouts.    |
-| Row       | Used to define horizontal rows of columns. |
-| Col       | Specifies individual columns within a row. |
+| Grid      | The main element to house grid layouts.    |
+| GridRow   | Used to define horizontal rows of columns. |
+| GridCol   | Specifies individual columns within a row. |
 | Spacer    | Adds adjustable spacing between columns.   |
 
 ```svelte
 <script>
-	import { Container, Row, Col } from 'mytril';
+	import { Grid, GridRow, GridCol } from 'mytril';
 </script>
 
-<Container>
-	<Row>
-		<Col>1</Col>
-		<Col>2</Col>
-		<Col>3</Col>
+<Grid>
+	<GridRow>
+		<GridCol>1</GridCol>
+		<GridCol>2</GridCol>
+		<GridCol>3</GridCol>
 		<!-- Add more columns as needed -->
-	</Row>
-</Container>
+	</GridRow>
+</Grid>
 ```
 
 ### Responsive breakpoints grid system {#responsive-breakpoints-grid-system}
@@ -39,35 +39,35 @@ These breakpoints are defined within Mytril’s configuration and can be customi
 
 ## Customizing grid layouts {#customizing-grid-layouts}
 
-With the `Col` component, you can define custom spans and adjust layouts for different breakpoints. The following example adapts column widths based on screen size:
+With the `GridCol` component, you can define custom spans and adjust layouts for different breakpoints. The following example adapts column widths based on screen size:
 
 ```svelte
 <script>
-	import { Container, Row, Col } from 'mytril';
+	import { Grid, GridRow, GridCol } from 'mytril';
 </script>
 
-<Container>
-	<Row dense>
-		<Col cols="12" lg="4">1</Col>
-		<Col cols="12" md="6" lg="2">2</Col>
-		<Col cols="12" md="6" lg="2">3</Col>
-		<Col cols="12" lg="4">4</Col>
-	</Row>
-</Container>
+<Grid>
+	<GridRow dense>
+		<GridCol cols="12" lg="4">1</GridCol>
+		<GridCol cols="12" md="6" lg="2">2</GridCol>
+		<GridCol cols="12" md="6" lg="2">3</GridCol>
+		<GridCol cols="12" lg="4">4</GridCol>
+	</GridRow>
+</Grid>
 ```
 
 ### Properties of each grid component {#properties-of-each-grid-component}
 
 Each component in the grid system has properties that allow for precise layout control:
 
-**Container**
+**Grid**
 
 ```svelte
 <script>
-	import { Container } from 'mytril';
+	import { Grid } from 'mytril';
 </script>
 
-<Container>// your content</Container>
+<Grid>// your content</Grid>
 ```
 
 | Property   | Type    | Default | Description                                               |
@@ -76,23 +76,23 @@ Each component in the grid system has properties that allow for precise layout c
 | fluid      | boolean | false   | Removes maximum-width size breakpoints.                   |
 | fillHeight | boolean | false   | The class fill-height applies height: 100% to an element. |
 
-**Row**
+**GridRow**
 
 ```svelte
 <script>
-	import { Container, Row } from 'mytril';
+	import { Grid, GridRow } from 'mytril';
 </script>
 
-<Container>
-	<Row>// your content</Row>
-</Container>
+<Grid>
+	<GridRow>// your content</GridRow>
+</Grid>
 ```
 
 | Property                       | Type    | Default   | Description                                                                            |
 | :----------------------------- | :------ | :-------- | :------------------------------------------------------------------------------------- |
 | tag                            | string  | div       | Specify a custom tag used on the root element.                                         |
-| dense                          | boolean | false     | Reduces the gutter between `Col`.                                                      |
-| noGutters                      | boolean | false     | Removes the gutter between `Col`.                                                      |
+| dense                          | boolean | false     | Reduces the gutter between `GridCol`.                                                  |
+| noGutters                      | boolean | false     | Removes the gutter between `GridCol`.                                                  |
 | align                          | string  | undefined | Applies the [align-items](/mytril/docs/styles/flex#align-items) css property.          |
 | alignXs                        | string  | undefined | Changes the **align-items** property on extra small and greater breakpoints.           |
 | alignSm                        | string  | undefined | Changes the **align-items** property on small large and greater breakpoints.           |
@@ -116,18 +116,18 @@ Each component in the grid system has properties that allow for precise layout c
 | justifyXl                      | string  | undefined | Changes the **justify-content** property on extra large and greater breakpoints.       |
 | justifyXxl                     | string  | undefined | Changes the **justify-content** property on extra extra large and greater breakpoints. |
 
-**Col**
+**GridCol**
 
 ```svelte
 <script>
-	import { Container, Row, Col } from 'mytril';
+	import { Grid, GridRow, GridCol } from 'mytril';
 </script>
 
-<Container>
-	<Row>
-		<Col>// your content</Col>
-	</Row>
-</Container>
+<Grid>
+	<GridRow>
+		<GridCol>// your content</GridCol>
+	</GridRow>
+</Grid>
 ```
 
 | Property      | Type          | Default   | Description                                                                                        |
@@ -161,16 +161,16 @@ Each component in the grid system has properties that allow for precise layout c
 
 ```svelte
 <script>
-	import { Container, Row, Col, Spacer } from 'mytril';
+	import { Grid, GridRow, GridCol, Spacer } from 'mytril';
 </script>
 
-<Container>
-	<Row>
-		<Col>// your content 1</Col>
+<Grid>
+	<GridRow>
+		<GridCol>// your content 1</GridCol>
 		<Spacer />
-		<Col>// your content 2</Col>
-	</Row>
-</Container>
+		<GridCol>// your content 2</GridCol>
+	</GridRow>
+</Grid>
 ```
 
 | Property | Type   | Default | Description                                    |

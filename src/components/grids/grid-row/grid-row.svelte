@@ -92,9 +92,9 @@
 
 <svelte:element
 	this={tag}
-	class={className('myt-row', _class, propertiesCss)}
-	class:myt-row--no-gutters={noGutters}
-	class:myt-row--dense={dense}
+	class={className('myt-grid-row', _class, propertiesCss)}
+	class:myt-grid-row--no-gutters={noGutters}
+	class:myt-grid-row--dense={dense}
 	{...$$restProps}
 >
 	<!-- slot: default -->

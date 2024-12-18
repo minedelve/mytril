@@ -4,9 +4,9 @@ const directory = 'node_modules/mytril/dist';
 
 export const componentsCSS = [
 	path.resolve(`${directory}/components/grids/spacer`, 'spacer.css'),
-	path.resolve(`${directory}/components/grids/container`, 'container.css'),
-	path.resolve(`${directory}/components/grids/col`, 'col.css'),
-	path.resolve(`${directory}/components/grids/row`, 'row.css'),
+	path.resolve(`${directory}/components/grids/grid`, 'grid.css'),
+	path.resolve(`${directory}/components/grids/grid-col`, 'grid-col.css'),
+	path.resolve(`${directory}/components/grids/grid-row`, 'grid-row.css'),
 	path.resolve(`${directory}/components/img`, 'img.css'),
 	path.resolve(`${directory}/components/responsive`, 'responsive.css'),
 	path.resolve(`${directory}/components/cards/card`, 'card.css'),
@@ -38,5 +38,7 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/chip`, 'chip.css'),
 	path.resolve(`${directory}/components/alerts/alert`, 'alert.css'),
 	path.resolve(`${directory}/components/alerts/alert-title`, 'alert-title.css'),
-	path.resolve(`${directory}/components/bottom-navigation`, 'bottom-navigation.css')
+	path.resolve(`${directory}/components/bottom-navigation`, 'bottom-navigation.css'),
+	path.resolve(`${directory}/components/bottom-view`, 'bottom-view.css'),
+	path.resolve(`${directory}/components/switch`, 'switch.css')
 ];

@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1] - 2024-12-18
+
+### Added
+
+- Add `Switch` component.
+- Add `BottomView` component.
+
+### Changed
+
+- Updated `Container` component name to Grid for unify logic grid on Mytril.
+- Updated `Row` component name to GridRow for unify logic grid on Mytril.
+- Updated `Col` component name to GridCol for unify logic grid on Mytril.
+
 ## [0.4.0] - 2024-12-13
 
 ### Added
