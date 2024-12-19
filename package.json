@@ -51,6 +51,9 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},
+	"bin": {
+		"mytril": "bin/mytril.js"
+	},
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -68,6 +71,7 @@
 		"./styles": "./dist/index.style.css"
 	},
 	"files": [
+		"bin",
 		"dist",
 		"README.md",
 		"LICENSE"
