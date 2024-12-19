@@ -1,3 +1,5 @@
+import { display } from '$lib/styles/js/_constant.js';
+
 export const _defaultLegacy = {
 	theme: {
 		defaultTheme: 'light',
@@ -145,5 +147,43 @@ export const _default = {
 		},
 		shadow: '#000000',
 		scrim: '#000000'
+	},
+	typography: {
+		fontFamily: {
+			display: 'Roboto, sans-serif',
+			headline: 'Roboto, sans-serif',
+			title: 'Roboto, sans-serif',
+			body: 'Roboto, sans-serif',
+			label: 'Roboto, sans-serif',
+			code: 'Roboto Mono, monospace'
+		},
+		fontSize: {
+			display: {
+				large: '4.75em',
+				medium: '3.75em',
+				small: '3em'
+			},
+			headline: {
+				large: '2.667em',
+				medium: '2.333em',
+				small: '2em'
+			},
+			title: {
+				large: '1.833em',
+				medium: '1.333em',
+				small: '1.167em'
+			},
+			body: {
+				large: '1.333em',
+				medium: '1.167em',
+				small: '1em'
+			},
+			label: {
+				large: '1.167em',
+				medium: '1em',
+				small: '0.917em'
+			},
+			code: '1em'
+		}
 	}
 };

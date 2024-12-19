@@ -69,7 +69,9 @@
 			"default": "./dist/composables/index.js"
 		},
 		"./styles": "./dist/index.style.css",
-		"./styles/themes": "./dist/styles/themes.css"
+		"./themes": "./dist/styles/themes.css",
+		"./variables": "./dist/styles/variables.css",
+		"./components": "./dist/styles/components.css"
 	},
 	"files": [
 		"bin",

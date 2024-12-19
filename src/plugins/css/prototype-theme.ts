@@ -1,5 +1,5 @@
 import { _default } from '$lib/composables/defaults.js';
-import { formatRootVar } from '$lib/utils/formater.js';
+import { rootVariables } from '$lib/utils/formater.js';
 
 type Colors = {
 	[key: string]: string | { [key: string]: string | { [key: string]: string } };
@@ -69,8 +69,8 @@ export const prototypeTheme = () => {
 	for (const scheme in list) {
 		classCSS += `.${scheme} {\n`;
 		Object.entries(list[scheme]).map(([key, value]) => {
-			if (scheme === DEFAULT) rootCss += `${formatRootVar(key)}: ${value};\n`;
-			classCSS += `${formatRootVar(key)}: ${value};\n`;
+			if (scheme === DEFAULT) rootCss += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
+			classCSS += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
 		});
 		classCSS += `}\n`;
 	}

@@ -21,9 +21,11 @@ export const rootVariables = ({
 }: {
 	key: string;
 	prefix?: string;
-	type?: 'color';
+	type?: 'color' | 'typography';
 }) => {
-	const subkey = type === 'color' ? 'myt-sys-color-' : '';
+	let subkey = '';
+	if (type === 'color') subkey = 'myt-color-';
+	if (type === 'typography') subkey = 'myt-typography-';
 	return `--${prefix ? prefix + '-' : ''}${subkey}${key.replaceAll(' ', '-')}`;
 };
 

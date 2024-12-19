@@ -7,6 +7,7 @@ import { mytrilCSS } from '$lib/plugins/css/compiler.js';
 import { cssMinimify } from '$lib/plugins/css/minimify.js';
 
 import { prototypeTheme } from '../css/prototype-theme.js';
+import { prototypeVariables } from '../css/prototype-variables.js';
 
 export async function mytrilCssFile(isTypescript: boolean) {
 	const config = await mytrilImporter(isTypescript);
@@ -18,6 +19,11 @@ export async function mytrilCssFile(isTypescript: boolean) {
 }
 
 export async function prototypeThemeFile() {
-	const css = await prototypeTheme();
-	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/styles/`, 'themes.css'), css);
+	const cssTheme = await prototypeTheme();
+	const cssVariables = await prototypeVariables();
+	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/styles/`, 'themes.css'), cssTheme);
+	fsPromises.writeFile(
+		path.resolve(`node_modules/mytril/dist/styles/`, 'variables.css'),
+		cssVariables
+	);
 }
