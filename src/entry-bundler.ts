@@ -3,7 +3,7 @@ import { merge } from '$lib/utils/merge.js';
 // composables
 import { setThresholds } from '$lib/composables/display.js';
 import { setColors } from '$lib/composables/colors.js';
-import { _default } from './composables/defaults.js';
+import { _defaultLegacy } from './composables/defaults.js';
 
 export interface MytrilConfig {
 	theme?: {
@@ -24,12 +24,12 @@ export interface MytrilConfig {
 
 export function createMytril(config: MytrilConfig) {
 	if (config?.theme?.colors) {
-		setColors(merge(_default.theme.colors, config?.theme.colors));
+		setColors(merge(_defaultLegacy.theme.colors, config?.theme.colors));
 	}
 
 	if (config?.display) {
 		if (config.display?.thresholds) {
-			setThresholds(merge(_default.display.thresholds, config?.display?.thresholds));
+			setThresholds(merge(_defaultLegacy.display.thresholds, config?.display?.thresholds));
 		}
 	}
 }
