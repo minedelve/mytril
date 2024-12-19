@@ -1,4 +1,4 @@
-export const _default = {
+export const _defaultLegacy = {
 	theme: {
 		defaultTheme: 'light',
 		palette: 'material',

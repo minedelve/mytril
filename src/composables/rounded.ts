@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
-import { _default } from './defaults.js';
+import { _defaultLegacy } from './defaults.js';
 
-export const rounded = writable(_default.rounded);
+export const rounded = writable(_defaultLegacy.rounded);
 
 export const getRounded = (rounded?: string) => {
 	if (rounded) {

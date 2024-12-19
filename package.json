@@ -68,7 +68,8 @@
 			"types": "./dist/composables/index.d.ts",
 			"default": "./dist/composables/index.js"
 		},
-		"./styles": "./dist/index.style.css"
+		"./styles": "./dist/index.style.css",
+		"./styles/themes": "./dist/styles/themes.css"
 	},
 	"files": [
 		"bin",

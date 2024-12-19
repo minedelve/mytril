@@ -64,3 +64,17 @@ export const formatClassSizeElement = (
 
 	return className;
 };
+
+/**
+ * Formats a given date object into a string with the format "hh:mm:ss AM/PM".
+ * @param {Date} date - The date object to format.
+ * @returns {string} The formatted time string.
+ */
+export function formatTime(date: Date) {
+	let hours = date.getHours();
+	const minutes = date.getMinutes().toString().padStart(2, '0');
+	const seconds = date.getSeconds().toString().padStart(2, '0');
+	const ampm = hours >= 12 ? 'PM' : 'AM';
+	hours = hours % 12 || 12; // Convertir en format 12 heures
+	return `${hours}:${minutes}:${seconds} ${ampm}`;
+}

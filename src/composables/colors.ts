@@ -1,10 +1,10 @@
 import { writable, type Writable } from 'svelte/store';
-import { _default } from './defaults.js';
+import { _defaultLegacy } from './defaults.js';
 import { x11Colors } from '$lib/styles/constant/x11.js';
 
 const colorFormatRegex = /^(?:[a-zA-Z]+)(?:\d+|A\d+)$/;
 const colors: Writable<{ [key: string]: string | { [key: string]: string } }> = writable(
-	_default.theme.colors
+	_defaultLegacy.theme.colors
 );
 
 export const setColors = (list: { [key: string]: string | { [key: string]: string } }) => {
