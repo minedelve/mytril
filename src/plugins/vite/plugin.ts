@@ -43,7 +43,7 @@ export async function mytril(props: { modeDev?: boolean }) {
 		},
 		transform(code: string | string[], id: string) {
 			if (props?.modeDev && id.includes('mytril/dist/styles/') && id.endsWith('.css')) {
-				if (code.includes('/** Hello **/')) prototypeThemeFile();
+				if (code.includes('/** @mytril/themes **/')) prototypeThemeFile();
 			}
 		}
 	};

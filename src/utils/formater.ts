@@ -5,6 +5,28 @@ export const formatRootVar = (key: string) => {
 	return `--${key.replaceAll(' ', '-')}`;
 };
 
+/**
+ * Generates a CSS variable name based on the provided parameters.
+ *
+ * @param {Object} param0 - The parameters object.
+ * @param {string} param0.key - The key for the variable.
+ * @param {string} [param0.prefix] - An optional prefix for the variable.
+ * @param {'color'} [param0.type] - The type of the variable, currently only supports 'color'.
+ * @returns {string} The formatted CSS variable name.
+ */
+export const rootVariables = ({
+	prefix,
+	key,
+	type
+}: {
+	key: string;
+	prefix?: string;
+	type?: 'color';
+}) => {
+	const subkey = type === 'color' ? 'myt-sys-color-' : '';
+	return `--${prefix ? prefix + '-' : ''}${subkey}${key.replaceAll(' ', '-')}`;
+};
+
 export const formatClassName = (key: string) => {
 	return key.replaceAll('.', '\\.').replaceAll('%', '');
 };
