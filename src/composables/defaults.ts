@@ -128,7 +128,7 @@ export const _default = {
 			variant: { light: '#e0e3e3', dark: '#3a3939' },
 			bright: { light: '#fcf8f8', dark: '#3a3939' },
 			dim: { light: '#ddd9d9', dark: '#141313' },
-			container: { light: '', dark: '#201f1f' },
+			container: { light: '#f1edec', dark: '#201f1f' },
 			tint: { light: '#5d5f5f', dark: '#c6c6c7' },
 			'container-lowest': { light: '#ffffff', dark: '#0e0e0e' },
 			'container-low': { light: '#f6f3f2', dark: '#1c1b1b' },
