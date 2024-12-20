@@ -45,3 +45,14 @@ export const mytrilImporterCSS = () => {
 		components: [...componentsCSS]
 	};
 };
+
+export const mytrilImporterCSSModern = () => {
+	return {
+		_default: [path.resolve(`${directoryBuild}/styles`, 'base.css')],
+		palette: {
+			material: path.resolve(`${directoryBuild}/styles/colors`, 'material.css'),
+			tailwind: path.resolve(`${directoryBuild}/styles/colors`, 'tailwind.css')
+		},
+		components: [...componentsCSS]
+	};
+};

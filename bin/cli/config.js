@@ -5,11 +5,9 @@ import path from 'path';
 const content = `
 /** @type {import('mytril').Config} */
 export default {
-    theme: {
-        defaultTheme: 'light',
-        palette: 'material',
-        colors: {},
-    },
+	themes: 'light',
+	defaultTheme: 'light',
+	colors: {}
 };
 `;
 

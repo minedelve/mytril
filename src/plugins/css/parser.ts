@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { mytrilImporterCSS } from '$lib/importer.js';
+import { mytrilImporterCSS, mytrilImporterCSSModern } from '$lib/importer.js';
 
 export function cssParser() {
 	let css: string = ``;
@@ -9,6 +9,16 @@ export function cssParser() {
 
 	return css;
 }
+
+export const cssParserModern = () => {
+	let css: string = ``;
+	const files = mytrilImporterCSSModern();
+
+	files?._default.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+	files?.components.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+
+	return css;
+};
 
 export function cssParserPalette(palette?: string) {
 	let css: string = ``;

@@ -11,22 +11,25 @@ export const formatRootVar = (key: string) => {
  * @param {Object} param0 - The parameters object.
  * @param {string} param0.key - The key for the variable.
  * @param {string} [param0.prefix] - An optional prefix for the variable.
- * @param {'color'} [param0.type] - The type of the variable, currently only supports 'color'.
+ * @param {'color'} [param0.type] - The type of the variable, supports 'color' , 'typescale', 'corner'.
  * @returns {string} The formatted CSS variable name.
  */
 export const rootVariables = ({
 	prefix,
+	suffix,
 	key,
 	type
 }: {
 	key: string;
 	prefix?: string;
-	type?: 'color' | 'typography';
+	suffix?: string;
+	type?: 'color' | 'typescale' | 'corner';
 }) => {
 	let subkey = '';
 	if (type === 'color') subkey = 'myt-color-';
-	if (type === 'typography') subkey = 'myt-typography-';
-	return `--${prefix ? prefix + '-' : ''}${subkey}${key.replaceAll(' ', '-')}`;
+	if (type === 'typescale') subkey = 'myt-typescale-';
+	if (type === 'corner') subkey = 'myt-shapecorner-';
+	return `--${prefix ? prefix + '-' : ''}${subkey}${key.replaceAll(' ', '-')}${suffix ? '-' + suffix : ''}`;
 };
 
 export const formatClassName = (key: string) => {

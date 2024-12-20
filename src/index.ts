@@ -18,6 +18,7 @@ export { default as AlertTitle } from './components/alerts/alert-title/alert-tit
 export { default as BottomNavigation } from './components/bottom-navigation/bottom-navigation.svelte';
 export { default as BottomView } from './components/bottom-view/bottom-view.svelte';
 export { default as Switch } from './components/switch/switch.svelte';
+export { default as Layout } from './components/layouts/layout.svelte';
 
 // lists
 export { default as List } from './components/lists/list/list.svelte';

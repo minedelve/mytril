@@ -1,5 +1,3 @@
-import { display } from '$lib/styles/js/_constant.js';
-
 export const _defaultLegacy = {
 	theme: {
 		defaultTheme: 'light',
@@ -148,42 +146,45 @@ export const _default = {
 		shadow: '#000000',
 		scrim: '#000000'
 	},
+	display: {
+		mobileBreakpoint: 'sm',
+		thresholds: {
+			none: 0,
+			sm: 600,
+			md: 840,
+			lg: 1200,
+			xl: 1600,
+			xxl: 1920
+		}
+	},
+	shape: {
+		none: '0',
+		sm: '4px',
+		md: '8px',
+		lg: '16px',
+		xl: '24px',
+		pill: '9999px',
+		circle: '50%'
+	},
 	typography: {
 		fontFamily: {
-			display: 'Roboto, sans-serif',
-			headline: 'Roboto, sans-serif',
+			heading: 'Roboto, sans-serif',
 			title: 'Roboto, sans-serif',
 			body: 'Roboto, sans-serif',
-			label: 'Roboto, sans-serif',
 			code: 'Roboto Mono, monospace'
 		},
 		fontSize: {
-			display: {
-				large: '4.75em',
-				medium: '3.75em',
-				small: '3em'
-			},
-			headline: {
-				large: '2.667em',
-				medium: '2.333em',
-				small: '2em'
-			},
-			title: {
-				large: '1.833em',
-				medium: '1.333em',
-				small: '1.167em'
-			},
-			body: {
-				large: '1.333em',
-				medium: '1.167em',
-				small: '1em'
-			},
-			label: {
-				large: '1.167em',
-				medium: '1em',
-				small: '0.917em'
-			},
-			code: '1em'
+			xs: '0.75rem',
+			sm: '0.875rem',
+			md: '1rem',
+			lg: '1.25rem',
+			xl: '1.5rem',
+			'2xl': '1.75rem',
+			'3xl': '2.125rem',
+			'4xl': '3rem',
+			'5xl': '3.75rem',
+			'6xl': '4.75em',
+			'7xl': '6rem'
 		}
 	}
 };

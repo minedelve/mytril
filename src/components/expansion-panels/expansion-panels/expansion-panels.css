@@ -1,7 +1,7 @@
 .myt-expansion-panels {
-	--c-color: var(--text);
-	--c-background-color: var(--surface-container);
-	--c-rounded: var(--rounded);
+	--c-color: var(--myt-color-on-surface);
+	--c-background-color: var(--myt-color-surface);
+	--c-rounded: var(--myt-shape-corner-md);
 }
 
 .myt-expansion-panels {

@@ -1,0 +1,21 @@
+.myt-layout {
+	margin: 0 16px;
+}
+
+@media screen and (min-width: 600px) {
+	.myt-layout {
+		margin: 0 24px;
+	}
+}
+
+@media screen and (min-width: 840px) {
+	.myt-layout {
+		margin: 0 0 0 24px;
+	}
+}
+
+@media screen and (min-width: 1200) {
+	.myt-layout {
+		margin: 0 0 0 24px;
+	}
+}
