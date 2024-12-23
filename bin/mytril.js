@@ -6,10 +6,10 @@ import { dirname } from 'path';
 import path from 'path';
 
 // ulitity functions
-import { envTypescript, linkToPrompt, spacerConsole } from './utils';
-import { initMytril } from './cli/config';
-import { adapterViteConfig } from './cli/vite';
-import { modifyCssFile } from './cli/css';
+import { envTypescript, linkToPrompt, spacerConsole } from './utils.js';
+import { initMytril } from './cli/config.js';
+import { adapterViteConfig } from './cli/vite.js';
+import { modifyCssFile } from './cli/css.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

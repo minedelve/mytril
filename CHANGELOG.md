@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.3] - 2024-12-23
+
+### Fixed
+
+- fixe throw new ERR_MODULE_NOT_FOUND /utils on CLI
+
 ## [0.4.2] - 2024-12-23
 
 ### Added
