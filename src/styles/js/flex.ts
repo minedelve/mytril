@@ -1,32 +1,20 @@
 import { formatBreakpoint } from '$lib/utils/formater.js';
-import {
-	align,
-	alignContent,
-	alignSelf,
-	flex,
-	flexDirection,
-	grow,
-	justify,
-	offset,
-	order,
-	shrink,
-	wrap
-} from './_constant.js';
+import { configDefault } from '../../presets/config.full.js';
 
 export const flexClass = (breakpoint: string) => {
 	let css = '';
 
-	css += flexGridClass(breakpoint, flex);
-	css += flexDirectionClass(breakpoint, flexDirection);
-	css += flexJustifyContentClass(breakpoint, justify);
-	css += flexAlignItemsClass(breakpoint, align);
-	css += flexAlignSelfClass(breakpoint, alignSelf);
-	css += flexAlignContentClass(breakpoint, alignContent);
-	css += flexWrapClass(breakpoint, wrap);
-	css += flexOrderClass(breakpoint, order);
-	css += flexShrinkClass(breakpoint, shrink);
-	css += flexGrowClass(breakpoint, grow);
-	css += flexOffsetClass(breakpoint, offset);
+	css += flexGridClass(breakpoint, configDefault.assets!.flex!);
+	css += flexDirectionClass(breakpoint, configDefault.assets!.flexDirection!);
+	css += flexJustifyContentClass(breakpoint, configDefault.assets!.justify!);
+	css += flexAlignItemsClass(breakpoint, configDefault.assets!.align!);
+	css += flexAlignSelfClass(breakpoint, configDefault.assets!.alignSelf!);
+	css += flexAlignContentClass(breakpoint, configDefault.assets!.alignContent!);
+	css += flexWrapClass(breakpoint, configDefault.assets!.wrap!);
+	css += flexOrderClass(breakpoint, configDefault.assets!.order!);
+	css += flexShrinkClass(breakpoint, configDefault.assets!.shrink!);
+	css += flexGrowClass(breakpoint, configDefault.assets!.grow!);
+	css += flexOffsetClass(breakpoint, configDefault.assets!.offset!);
 
 	return css;
 };

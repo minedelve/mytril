@@ -28,7 +28,7 @@ export const rootVariables = ({
 	let subkey = '';
 	if (type === 'color') subkey = 'myt-color-';
 	if (type === 'typescale') subkey = 'myt-typescale-';
-	if (type === 'corner') subkey = 'myt-shapecorner-';
+	if (type === 'corner') subkey = 'myt-shape-corner-';
 	return `--${prefix ? prefix + '-' : ''}${subkey}${key.replaceAll(' ', '-')}${suffix ? '-' + suffix : ''}`;
 };
 

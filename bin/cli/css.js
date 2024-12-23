@@ -5,8 +5,8 @@ import path from 'path';
 // ulitity functions
 import { getCssPathFromArgs } from '../utils';
 
-const importMytrilCSSThemes = `@import 'mytril/themes';`;
-const importMytrilCSSVariables = `@import 'mytril/variables';`;
+const importMytrilCSSBase = `@import 'mytril/base';`;
+const importMytrilCSSUtilities = `@import 'mytril/utilities';`;
 const importMytrilCSSComponents = `@import 'mytril/components';`;
 
 export async function modifyCssFile() {
@@ -15,11 +15,9 @@ export async function modifyCssFile() {
 	try {
 		await fs.access(resolvedPath);
 		let appCssContent = await fs.readFile(resolvedPath, 'utf8');
-
-		if (!appCssContent.includes(`${importMytrilCSSThemes}`))
-			appCssContent =
-				`${importMytrilCSSThemes}\n${importMytrilCSSVariables}\n${importMytrilCSSComponents}` +
-				appCssContent;
+		appCssContent =
+			`${importMytrilCSSBase}\n${importMytrilCSSUtilities}\n${importMytrilCSSComponents}` +
+			appCssContent;
 
 		await fs.writeFile(resolvedPath, appCssContent, 'utf8');
 

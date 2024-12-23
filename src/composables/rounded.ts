@@ -1,14 +1,13 @@
+import { configDefault } from '$lib/presets/config.full.js';
 import { writable } from 'svelte/store';
-import { _defaultLegacy } from './defaults.js';
 
-export const rounded = writable(_defaultLegacy.rounded);
+export const rounded = writable(configDefault.shape);
 
 export const getRounded = (rounded?: string) => {
 	if (rounded) {
 		if (/^[0-9]/.test(rounded)) return rounded;
 
-		if (rounded === 'md') return `var(--rounded)`;
-		else return `var(--rounded-${rounded})`;
+		return `var(--myt-shape-corner-${rounded})`;
 	}
 	return undefined;
 };
