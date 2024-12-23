@@ -16,7 +16,7 @@ export async function modifyCssFile() {
 		await fs.access(resolvedPath);
 		let appCssContent = await fs.readFile(resolvedPath, 'utf8');
 		appCssContent =
-			`${importMytrilCSSBase}\n${importMytrilCSSUtilities}\n${importMytrilCSSComponents}` +
+			`${importMytrilCSSBase}\n${importMytrilCSSUtilities}\n${importMytrilCSSComponents}\n\n` +
 			appCssContent;
 
 		await fs.writeFile(resolvedPath, appCssContent, 'utf8');
