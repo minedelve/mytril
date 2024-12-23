@@ -1,5 +1,5 @@
 .myt-divider {
-	--c-border-color: var(--outline);
+	--c-border-color: var(--myt-color-outline);
 	--c-opacity: 0.12;
 }
 

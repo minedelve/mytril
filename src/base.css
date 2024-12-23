@@ -1,0 +1,144 @@
+/*! all css to apply in composables and composants mytril */
+
+/* Base
+   ========================================================================== */
+
+html {
+	font-family: var(--myt-typescale-body);
+	font-size: var(--myt-typescale-md);
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	box-sizing: border-box;
+}
+
+h1,
+h2 {
+	font-family: var(--myt-typescale-heading);
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--myt-typescale-heading);
+}
+
+pre,
+code {
+	font-family: var(--myt-typescale-code);
+}
+
+/* Reset
+    @based on normalize.css: https://necolas.github.io/normalize.css/8.0.1/normalize.css
+   ========================================================================== */
+
+body {
+	background-color: var(--myt-color-background);
+	color: var(--myt-color-on-background);
+	font-size: 16px;
+	margin: 0;
+	min-height: 100vh;
+	transition:
+		color 0.5s,
+		background-color 0.5s;
+}
+
+main {
+	display: block;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font: inherit;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+[role='button'] {
+	cursor: pointer;
+	color: inherit;
+}
+button,
+input,
+select,
+textarea {
+	background-color: transparent;
+	border-style: none;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+*:not(body) {
+	outline: none !important;
+}
+
+*:not(body):focus-visible {
+	box-shadow: 0px 0px 0px 3px var(--myt-color-outline);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	border-style: none;
+}
+
+*,
+::before,
+::after {
+	background-repeat: no-repeat;
+	box-sizing: inherit;
+}
+
+::before,
+::after {
+	text-decoration: inherit;
+	vertical-align: inherit;
+}
+
+[type='search'] {
+	-webkit-appearance: textfield;
+	appearance: textfield;
+	outline-offset: -2px;
+}
+
+/* Code
+   ========================================================================== */
+.code .preview-code {
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid var(--myt-color-outline);
+	position: relative;
+	border-radius: 8px;
+}
+
+.code .code-wrapper {
+	width: 100%;
+	display: grid;
+}
+
+/* Area Event
+   ========================================================================== */
+.no-scroll {
+	overflow: hidden !important;
+}
+
+.fill-height {
+	height: 100% !important;
+}
+
+/** @mytril/themes **/

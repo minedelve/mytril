@@ -7,6 +7,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.2] - 2024-12-23
+
+### Added
+
+Mytril have the first version to CLI for config mytril on your project !
+
+- Add `Layout` component (alpha).
+- New logic for load all css Mytril directly on your `css` local.
+- First version to CLI mytril
+
+### Changed
+
+- Updated `colors` with new variables names `--myt-color`.
+- Updated `rounded` with new variables names `--myt-shape-coner`.
+- Updated `text` with new variables names `--myt-typescale`.
+- Update mytril theme default by new key and color for light and dark nuance.
+- Optimize plugin mytril/vite for load and render.
+
+### Fixed
+
+- Fix vite plugin not working if mytril has not configured
+- Fix css not optimize by postcss
+- Fix bad compatibility with other styles
+
 ## [0.4.1] - 2024-12-18
 
 ### Added

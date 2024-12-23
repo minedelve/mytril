@@ -17,7 +17,7 @@
 }
 
 .myt-bottom-view::backdrop {
-	background-color: color-mix(in oklab, var(--shadow) 30%, transparent);
+	background-color: color-mix(in oklab, var(--myt-color-shadow) 30%, transparent);
 	animation: fade 0.2s ease-out;
 }
 .myt-bottom-view[open]::backdrop {

@@ -1,7 +1,7 @@
 .myt-tooltip-content {
-	--c-color: var(--text-variant);
-	--c-background-color: var(--surface-variant);
-	--c-rounded: var(--rounded);
+	--c-color: var(--myt-color-on-surface-variant);
+	--c-background-color: var(--myt-color-surface-variant);
+	--c-rounded: var(--myt-shape-corner-md);
 }
 
 .myt-tooltip-content {

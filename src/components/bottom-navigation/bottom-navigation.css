@@ -1,7 +1,7 @@
 .myt-bottom-navigation {
-	--c-color: var(--text);
-	--c-background-color: var(--surface-container);
-	--c-rounded: var(--rounded-0);
+	--c-color: var(--myt-color-on-surface-variant);
+	--c-background-color: var(--myt-color-surface-variant);
+	--c-rounded: var(--myt-shape-corner-none);
 }
 
 .myt-bottom-navigation {

@@ -1,7 +1,7 @@
 .myt-alert {
-	--c-color: var(--text);
-	--c-background-color: var(--surface-container);
-	--c-rounded: var(--rounded-lg);
+	--c-color: var(--myt-color-on-surface-variant);
+	--c-background-color: var(--myt-color-surface-variant);
+	--c-rounded: var(--myt-shape-corner-md);
 }
 
 .myt-alert {
@@ -22,12 +22,12 @@
 	grid-area: none;
 	position: absolute;
 	background-color: var(--c-background-color);
-	opacity: var(--c-activated-opacity);
 	border-radius: inherit;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	z-index: -1;
 }
 
 .myt-alert.myt-alert--outlined {
@@ -57,14 +57,12 @@
 	align-items: center;
 	grid-area: prepend;
 	margin-inline-end: 16px;
-	z-index: 1;
 }
 
 .myt-alert .myt-alert--content {
 	align-self: center;
 	grid-area: content;
 	overflow: hidden;
-	z-index: 1;
 }
 
 .myt-alert .myt-alert--close {
@@ -72,24 +70,21 @@
 	margin-inline-start: 16px;
 	flex: 0 1 auto;
 	grid-area: close;
-	z-index: 1;
 }
 
 .myt-alert.myt-alert--variant-tonal {
-	--c-border-opacity: 0.8;
-	--c-activated-opacity: 0.4;
 	padding-inline-start: 24px;
 }
 
 .myt-alert .myt-alert--border {
 	border-inline-start-width: 8px !important;
-	border-color: var(--c-background-color);
+	border-color: var(--c-color);
 	border-style: solid;
 	border-width: 0;
 	border-radius: inherit;
 	bottom: 0;
 	left: 0;
-	opacity: var(--c-border-opacity);
+	opacity: 1;
 	position: absolute;
 	pointer-events: none;
 	right: 0;
@@ -98,33 +93,49 @@
 }
 
 .myt-alert.myt-alert--info:not(.myt-alert--outlined) {
-	--c-color: var(--on-info);
-	--c-background-color: var(--info);
+	--c-color: var(--myt-color-on-info);
+	--c-background-color: var(--myt-color-info);
 }
 .myt-alert.myt-alert--info.myt-alert--outlined {
-	--c-color: var(--info);
+	--c-color: var(--myt-color-info);
+}
+.myt-alert.myt-alert--info.myt-alert--variant-tonal {
+	--c-background-color: var(--myt-color-info-container);
+	--c-color: var(--myt-color-on-info-container);
 }
 
 .myt-alert.myt-alert--success:not(.myt-alert--outlined) {
-	--c-color: var(--on-success);
-	--c-background-color: var(--success);
+	--c-color: var(--myt-color-on-success);
+	--c-background-color: var(--myt-color-success);
 }
 .myt-alert.myt-alert--success.myt-alert--outlined {
-	--c-color: var(--success);
+	--c-color: var(--myt-color-success);
+}
+.myt-alert.myt-alert--success.myt-alert--variant-tonal {
+	--c-background-color: var(--myt-color-success-container);
+	--c-color: var(--myt-color-on-success-container);
 }
 
 .myt-alert.myt-alert--warning:not(.myt-alert--outlined) {
-	--c-color: var(--on-warning);
-	--c-background-color: var(--warning);
+	--c-color: var(--myt-color-on-warning);
+	--c-background-color: var(--myt-color-warning);
 }
 .myt-alert.myt-alert--warning.myt-alert--outlined {
-	--c-color: var(--warning);
+	--c-color: var(--myt-color-warning);
+}
+.myt-alert.myt-alert--warning.myt-alert--variant-tonal {
+	--c-background-color: var(--myt-color-warning-container);
+	--c-color: var(--myt-color-on-warning-container);
 }
 
 .myt-alert.myt-alert--error:not(.myt-alert--outlined) {
-	--c-color: var(--on-error);
-	--c-background-color: var(--error);
+	--c-color: var(--myt-color-on-error);
+	--c-background-color: var(--myt-color-error);
 }
 .myt-alert.myt-alert--error.myt-alert--outlined {
-	--c-color: var(--error);
+	--c-color: var(--myt-color-error);
+}
+.myt-alert.myt-alert--error.myt-alert--variant-tonal {
+	--c-background-color: var(--myt-color-error-container);
+	--c-color: var(--myt-color-on-error-container);
 }
