@@ -29,7 +29,7 @@ export const mytrilCSS = async (config?: MytrilConfig) => {
 
 	// base css
 	const base = await fsPromises.readFile(
-		path.resolve(`node_modules/mytril/dist/styles/`, 'base.css'),
+		path.resolve(`node_modules/mytril/dist/`, 'base.css'),
 		'utf8'
 	);
 
@@ -40,30 +40,21 @@ export const mytrilCSS = async (config?: MytrilConfig) => {
 			`$1\n${newContent}`
 		);
 
-		fsPromises.writeFile(
-			path.resolve(`node_modules/mytril/dist/styles/`, 'base.css'),
-			updatedContent
-		);
+		fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'base.css'), updatedContent);
 	}
 
 	// components css
 	if (config) {
 		const newContent = convertJStoCSS_Components(config, files.components);
 
-		fsPromises.writeFile(
-			path.resolve(`node_modules/mytril/dist/styles/`, 'components.css'),
-			newContent
-		);
+		fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'components.css'), newContent);
 	}
 
 	// utilities css
 	if (config) {
 		const newContent = convertJStoCSS_Utilities(config);
 
-		fsPromises.writeFile(
-			path.resolve(`node_modules/mytril/dist/styles/`, 'utilities.css'),
-			newContent
-		);
+		fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'utilities.css'), newContent);
 	}
 };
 

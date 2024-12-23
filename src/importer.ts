@@ -15,7 +15,7 @@ const config: {
 } = {
 	params: undefined,
 	css: {
-		_default: [path.resolve(`${directoryBuild}/styles`, 'base.css')],
+		_default: [path.resolve(`${directoryBuild}`, 'base.css')],
 		palette: {
 			material: path.resolve(`${directoryBuild}/styles/colors`, 'material.css'),
 			tailwind: path.resolve(`${directoryBuild}/styles/colors`, 'tailwind.css')
