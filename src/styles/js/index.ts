@@ -1,4 +1,3 @@
-export * from './colors.js';
 export * from './display.js';
 export * from './elevation.js';
 export * from './flex.js';

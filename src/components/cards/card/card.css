@@ -1,7 +1,7 @@
 .myt-card {
-	--c-color: var(--text);
-	--c-background-color: var(--surface-container);
-	--c-rounded: var(--rounded-lg);
+	--c-color: var(--myt-color-on-surface);
+	--c-background-color: var(--myt-color-surface-container);
+	--c-rounded: var(--myt-shape-corner-md);
 }
 
 .myt-card {

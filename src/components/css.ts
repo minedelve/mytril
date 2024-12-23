@@ -40,5 +40,6 @@ export const componentsCSS = [
 	path.resolve(`${directory}/components/alerts/alert-title`, 'alert-title.css'),
 	path.resolve(`${directory}/components/bottom-navigation`, 'bottom-navigation.css'),
 	path.resolve(`${directory}/components/bottom-view`, 'bottom-view.css'),
-	path.resolve(`${directory}/components/switch`, 'switch.css')
+	path.resolve(`${directory}/components/switch`, 'switch.css'),
+	path.resolve(`${directory}/components/layouts`, 'layout.css')
 ];

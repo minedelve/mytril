@@ -1,5 +1,5 @@
 .myt-icon {
-	--c-color: var(--text);
+	--c-color: var(--myt-color-on-background);
 }
 .myt-icon {
 	--c-icon-size-multiplier: 1;

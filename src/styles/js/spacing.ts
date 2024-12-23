@@ -1,5 +1,5 @@
 import { formatBreakpoint, formatClassName } from '$lib/utils/formater.js';
-import { spacing } from './_constant.js';
+import { configDefault } from '../../presets/config.full.js';
 
 const mark = [
 	{
@@ -22,7 +22,7 @@ const mark = [
 export const spacingClass = (screen: string) => {
 	let css = '';
 	mark.map((className) => {
-		for (const [key, value] of Object.entries(spacing)) {
+		for (const [key, value] of Object.entries(configDefault.assets!.spacing!)) {
 			if (className?.property === 'margin' || className?.property === 'padding')
 				css += classSpacing(screen, className, key, value);
 			if (className?.property === 'gap') css += classGap(screen, className, key, value);

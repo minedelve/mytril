@@ -1,9 +1,9 @@
 import { formatBreakpoint } from '$lib/utils/formater.js';
-import { overflow } from './_constant.js';
+import { configDefault } from '../../presets/config.full.js';
 
 export const overflowClass = (breakpoint: string) => {
 	let css = '';
-	for (const element of overflow) {
+	for (const element of configDefault.assets!.overflow!) {
 		css += `${formatBreakpoint(breakpoint)}overflow-${element} {\n`;
 		css += `overflow: ${element};\n`;
 		css += `}\n`;

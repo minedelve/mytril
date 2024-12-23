@@ -1,7 +1,7 @@
 .myt-btn {
-	--c-color: var(--text);
-	--c-background-color: var(--surface-container);
-	--c-rounded: var(--rounded);
+	--c-color: var(--myt-color-on-surface-variant);
+	--c-background-color: var(--myt-color-surface-variant);
+	--c-rounded: var(--myt-shape-corner-md);
 }
 
 .myt-btn {
@@ -48,15 +48,15 @@
 }
 
 .myt-btn.myt-btn--square {
-	border-radius: var(--rounded-lg);
+	border-radius: var(--myt-shape-corner-lg);
 }
 
 .myt-btn.myt-btn--rounded {
-	border-radius: 9999px;
+	border-radius: var(--myt-shape-corner-pill);
 }
 
 .myt-btn.myt-btn--circle:not(.myt-btn--icon) {
-	border-radius: 9999px;
+	border-radius: var(--myt-shape-corner-circle);
 }
 
 .myt-btn.myt-btn--block {
@@ -187,48 +187,48 @@
 }
 .myt-btn:is(input[type='checkbox']:checked),
 .myt-btn:is(input[type='radio']:checked) {
-	--c-color: var(--on-primary);
-	--c-background-color: var(--primary);
+	--c-color: var(--myt-color-on-surface);
+	--c-background-color: var(--myt-color-surface-tint);
 }
 
 .myt-btn.myt-btn--info:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--c-color: var(--on-info);
-	--c-background-color: var(--info);
+	--c-color: var(--myt-color-on-info);
+	--c-background-color: var(--myt-color-info);
 }
 .myt-btn.myt-btn--info.myt-btn--outlined,
 .myt-btn.myt-btn--info.myt-btn--text,
 .myt-btn.myt-btn--info.myt-btn--link {
-	--c-color: var(--info);
+	--c-color: var(--myt-color-info);
 }
 
 .myt-btn.myt-btn--success:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--c-color: var(--on-success);
-	--c-background-color: var(--success);
+	--c-color: var(--myt-color-on-success);
+	--c-background-color: var(--myt-color-success);
 }
 .myt-btn.myt-btn--success.myt-btn--outlined,
 .myt-btn.myt-btn--success.myt-btn--text,
 .myt-btn.myt-btn--success.myt-btn--link {
-	--c-color: var(--success);
+	--c-color: var(--myt-color-success);
 }
 
 .myt-btn.myt-btn--warning:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--c-color: var(--on-warning);
-	--c-background-color: var(--warning);
+	--c-color: var(--myt-color-on-warning);
+	--c-background-color: var(--myt-color-warning);
 }
 .myt-btn.myt-btn--warning.myt-btn--outlined,
 .myt-btn.myt-btn--warning.myt-btn--text,
 .myt-btn.myt-btn--warning.myt-btn--link {
-	--c-color: var(--warning);
+	--c-color: var(--myt-color-warning);
 }
 
 .myt-btn.myt-btn--error:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--c-color: var(--on-error);
-	--c-background-color: var(--error);
+	--c-color: var(--myt-color-on-error);
+	--c-background-color: var(--myt-color-error);
 }
 .myt-btn.myt-btn--error.myt-btn--outlined,
 .myt-btn.myt-btn--error.myt-btn--text,
 .myt-btn.myt-btn--error.myt-btn--link {
-	--c-color: var(--error);
+	--c-color: var(--myt-color-error);
 }
 
 /* @breakpoints */

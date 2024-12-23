@@ -23,14 +23,17 @@ Mytril Svelte library component for rapidly building modern websites based on Sv
 
 ```cmd
 npm install --save-dev mytril
+npx mytril init
 ```
 
 ```cmd
 yarn add -D mytril
+npx mytril init
 ```
 
 ```cmd
 bun add -D mytril
+npx mytril init
 ```
 
 ## Documentation
