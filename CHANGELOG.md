@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- fix on CLI import CSS path not have `/n` space on file client
+
 ## [0.4.4] - 2024-12-24
 
 ### Fixed
