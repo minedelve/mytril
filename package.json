@@ -67,9 +67,9 @@
 			"types": "./dist/composables/index.d.ts",
 			"default": "./dist/composables/index.js"
 		},
-		"./base": "./dist/styles/base.css",
-		"./utilities": "./dist/styles/utilities.css",
-		"./components": "./dist/styles/components.css"
+		"./base": "./dist/base.css",
+		"./utilities": "./dist/utilities.css",
+		"./components": "./dist/components.css"
 	},
 	"files": [
 		"bin",
