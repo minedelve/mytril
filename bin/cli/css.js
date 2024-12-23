@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 // ulitity functions
-import { getCssPathFromArgs } from '../utils';
+import { getCssPathFromArgs } from '../utils.js';
 
 const importMytrilCSSBase = `@import 'mytril/base';`;
 const importMytrilCSSUtilities = `@import 'mytril/utilities';`;
