@@ -7,11 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4] - 2024-12-24
+
+### Fixed
+
+- fix throw new ERR_MODULE_NOT_FOUND /utils on CLI in CSS logic
+- fix bad path on package.json
+- fix alignement on logo Mytril on prompt
+
 ## [0.4.3] - 2024-12-23
 
 ### Fixed
 
-- fixe throw new ERR_MODULE_NOT_FOUND /utils on CLI
+- fix throw new ERR_MODULE_NOT_FOUND /utils on CLI
 
 ## [0.4.2] - 2024-12-23
 

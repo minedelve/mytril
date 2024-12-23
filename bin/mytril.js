@@ -13,7 +13,7 @@ import { modifyCssFile } from './cli/css.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const packageJsonPath = path.resolve(__dirname, '../../package.json');
+const packageJsonPath = path.resolve(__dirname, '../../../package.json');
 
 const [, , command] = process.argv;
 const { name } = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
@@ -27,7 +27,7 @@ if (process.argv.includes('--help') || process.argv.includes('-h')) {
 	console.log(' __  __       _        _ _ ');
 	console.log('|  \\/  |     | |      (_) |');
 	console.log('| \\  / |_   _| |_ _ __ _| |');
-	console.log("| |\\/| | | | | __| \\'__| | |");
+	console.log("| |\\/| | | | | __| '__| | |");
 	console.log('| |  | | |_| | |_| |  | | |');
 	console.log('|_|  |_|\\__, |\\__|_|  |_|_|');
 	console.log('         __/ |             ');
