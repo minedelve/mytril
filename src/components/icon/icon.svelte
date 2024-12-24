@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, type Component } from 'svelte';
+	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 	import { className, styleName } from '$lib/utils/dom.js';
 	import { formatClassSizeElement, formatStyleProperties } from '$lib/utils/formater.js';
@@ -27,7 +27,7 @@
 	const isIconifyAvailable = writable(false);
 
 	// state
-	let IconifyComponent: Component<Record<string, unknown>> | null = null;
+	let IconifyComponent: typeof import('@iconify/svelte').default | null = null;
 	let svgNode: HTMLElement | null = null;
 
 	$: styled = formatStyleProperties({
@@ -36,8 +36,6 @@
 
 	onMount(async () => {
 		try {
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-expect-error
 			const Iconify = await import('@iconify/svelte');
 			IconifyComponent = Iconify.default;
 			isIconifyAvailable.set(true);

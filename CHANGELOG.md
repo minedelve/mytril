@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.7] - 2024-12-24
+
+### Fixed
+
+- Add `peerDependencies` to `@iconify/svelte` for fix [plugin:vite:import-analysis] Failed to resolve import
+
 ## [0.4.6] - 2024-12-24
 
 ### Fixed
