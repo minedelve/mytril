@@ -34,11 +34,19 @@
 		color: color
 	});
 
+	function importStatic(modulePath: string) {
+		return import(/* @vite-ignore */ `${modulePath}`);
+	}
+
 	onMount(async () => {
 		try {
-			const Iconify = await import('@iconify/svelte');
-			IconifyComponent = Iconify.default;
-			isIconifyAvailable.set(true);
+			const path = '@iconify/svelte';
+			const Iconify = await importStatic(path);
+			if (!Iconify) isIconifyAvailable.set(false);
+			else {
+				IconifyComponent = Iconify.default;
+				isIconifyAvailable.set(true);
+			}
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		} catch (error) {
 			/* empty */
