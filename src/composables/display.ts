@@ -1,5 +1,5 @@
 import { derived, writable, type Readable, type Writable } from 'svelte/store';
-import { _defaultLegacy } from './defaults.js';
+import { configDefault } from '$lib/presets/config.full.js';
 
 export const innerWidth = writable(0);
 export const innerHeight = writable(0);
@@ -9,8 +9,8 @@ export const scrollOrientation = writable({
 	orientation: 'initial'
 });
 
-export const mobileBreakpoint = writable(_defaultLegacy.display.mobileBreakpoint);
-const thresholds: Writable<{ [key: string]: number }> = writable(_defaultLegacy.display.thresholds);
+export const mobileBreakpoint = writable(configDefault.display?.mobileBreakpoint);
+const thresholds: Writable<{ [key: string]: number }> = writable(configDefault.display?.thresholds);
 const activeBreakpoint = writable('default');
 
 export const useDisplay = (screen: string): Readable<boolean> => {
