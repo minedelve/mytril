@@ -37,7 +37,7 @@ export const formatClassName = (key: string) => {
 };
 
 export const formatBreakpoint = (breakpoint: string) => {
-	return breakpoint !== 'default' && breakpoint !== 'max-default' ? `.${breakpoint}\\:` : `.`;
+	return breakpoint !== 'none' && breakpoint !== 'max-none' ? `.${breakpoint}\\:` : `.`;
 };
 
 export const addUnit = (value: string | number) => {

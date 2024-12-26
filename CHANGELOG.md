@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- fix background color not display on `html` DOM
+- fix bad sub class for breakpoint 0. all class utilities not working 0 width screensize
+
 ## [0.4.8] - 2024-12-24
 
 ### Fixed

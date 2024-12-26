@@ -37,6 +37,7 @@ export const cssParser = (breakpoints: { [key: string]: number }, css: string): 
 	let response = '';
 	if (extractedContent && extractedContent !== '') {
 		for (const property in breakpoints) {
+			console.log('property', property);
 			if (property !== 'none') {
 				response += `@media screen and (min-width: ${breakpoints[property]}px) {`;
 				response += extractedContent.trim().replaceAll('[breakpoint]', `.${property}\\:`);
