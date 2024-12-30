@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.10] - 2024-12-30
+
+### Added
+
+- Add new props contentClass on toolbar component [62](https://github.com/minedelve/mytril/issues/62)
+
+### Fixed
+
+- fix Col not working on GridCol [64](https://github.com/minedelve/mytril/issues/64)
+- Change order for load mytril css [63](https://github.com/minedelve/mytril/issues/63)
+
 ## [0.4.9] - 2024-12-26
 
 ### Fixed

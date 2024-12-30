@@ -93,7 +93,11 @@
 	}
 </script>
 
-<svelte:element this={tag} class={className('myt-grid', _class, propertiesCss)} {...$$restProps}>
+<svelte:element
+	this={tag}
+	class={className('myt-grid-col', _class, propertiesCss)}
+	{...$$restProps}
+>
 	<!-- slot: default -->
 	<slot />
 	<!-- /slot: default -->
