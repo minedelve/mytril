@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- fix Col not working on GridCol [64](https://github.com/minedelve/mytril/issues/64)
+- Fix Col not working on GridCol [64](https://github.com/minedelve/mytril/issues/64)
 - Change order for load mytril css [63](https://github.com/minedelve/mytril/issues/63)
 
 ## [0.4.9] - 2024-12-26
