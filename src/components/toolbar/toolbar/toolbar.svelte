@@ -6,6 +6,7 @@
 	let _class: string | undefined = undefined;
 	let _style: string | undefined = undefined;
 	export { _class as class, _style as style };
+	export let contentClass: string | undefined = undefined;
 	export let tag: 'div' | 'header' | 'nav' = 'div';
 	export let dark: boolean = false;
 	export let light: boolean = false;
@@ -38,7 +39,10 @@
 	class:dark
 	{...$$restProps}
 >
-	<div class="myt-toolbar--content" style={`height: ${dense ? '48px' : height};`}>
+	<div
+		class={className('myt-toolbar--content', contentClass)}
+		style={`height: ${dense ? '48px' : height};`}
+	>
 		<!-- slot: default -->
 		<slot />
 		<!-- /slot: default -->
