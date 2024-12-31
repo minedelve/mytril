@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.11] - 2024-12-31
+
+### Fixed
+
+- Fix colors `getColor()` variables not working
+
 ## [0.4.10] - 2024-12-30
 
 ### Added

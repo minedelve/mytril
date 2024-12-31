@@ -25,7 +25,7 @@ export const getColor = (color?: string) => {
 			if (match) return `var(--${match[1]}-${match[2]})`;
 		}
 
-		return `var(-myt-color-${color})`;
+		return `var(--myt-color-${color})`;
 	}
 	return undefined;
 };
