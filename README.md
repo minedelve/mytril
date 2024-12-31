@@ -46,7 +46,7 @@ For chatting with others using the framework:
 
 [Join the Mytril Discord Server](https://discord.gg/fwyaGUhbav)
 
-Copyright © 2022-2024 [Minedelve](https://minedelve.com), [Nycolaide](https://github.com/Nycolaide)
+Copyright © 2022-2025 [Minedelve](https://minedelve.com), [Nycolaide](https://github.com/Nycolaide)
 
 [version]: https://img.shields.io/npm/v/mytril.svg?label=Version&color=f58142
 [license]: https://badgen.net/github/license/minedelve/mytril?label=License&color=cc5640
