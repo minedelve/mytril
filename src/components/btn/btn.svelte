@@ -42,7 +42,6 @@
 
 	$: {
 		if ($$props.href) tag = 'a';
-		if ($$props.href) link = true;
 	}
 </script>
 
