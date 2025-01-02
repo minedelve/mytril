@@ -76,6 +76,14 @@ const classSpacing = (
 	css += `${element?.property}-top: ${negative ? '-' : ''}${value};\n`;
 	css += `${element?.property}-bottom: ${negative ? '-' : ''}${value};\n`;
 	css += `}\n`;
+	// inline-start
+	css += `${formatBreakpoint(breakpoint)}${element?.name}s-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
+	css += `${element?.property}-inline-start: ${negative ? '-' : ''}${value};\n`;
+	css += `}\n`;
+	// inline-end
+	css += `${formatBreakpoint(breakpoint)}${element?.name}e-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
+	css += `${element?.property}-inline-end: ${negative ? '-' : ''}${value};\n`;
+	css += `}\n`;
 	// all
 	css += `${formatBreakpoint(breakpoint)}${element?.name}a-${negative ? 'n' : ''}${formatClassName(key)} {\n`;
 	css += `${element?.property}: ${negative ? '-' : ''}${value};\n`;
