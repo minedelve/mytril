@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.13] - 2025-01-02
+
+### Added
+
+- Add new utilities `margin` and `padding` for \*\*-inline-start propertie
+- Add new utilities `margin` and `padding` for \*\*-inline-end propertie
+
 ## [0.4.12] - 2025-01-01
 
 ### Changed
