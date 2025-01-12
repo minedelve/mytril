@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getPositions } from './menu.svelte.js';
 
-	let { activator } = $props();
+	let { activator, location = 'bottom' } = $props();
 
 	let ref: HTMLElement | null = $state(null);
 	let refActivator: HTMLElement | null = $state(null);
@@ -49,7 +49,7 @@
 	$effect(() => {
 		if (open && ref && refActivator) {
 			if (scrollX || scrollY || innerHeight || innerWidth) {
-				position.update(refActivator, ref);
+				position.update(refActivator, ref, location);
 			}
 		}
 		console.log('scrollY', scrollY);
@@ -71,7 +71,13 @@
 		class="myt-menu-content"
 		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
 	>
-		menu position test
+		<div>
+			<div>Item 1</div>
+			<div>Item 2</div>
+			<div>Item 3</div>
+			<div>Item 4</div>
+			<div>Icon - Acces to params - Icon - Effect</div>
+		</div>
 	</div>
 {/if}
 

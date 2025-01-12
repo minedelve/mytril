@@ -64,16 +64,64 @@ export function getPositions() {
 		scrollY: scrollY.current
 	});
 
-	const update = (activator: HTMLElement, element: HTMLElement) => {
+	const update = (activator: HTMLElement, element: HTMLElement, location?: string) => {
 		if (!activator || !element) return;
 
 		const activatorRect = activator.getBoundingClientRect();
 		const elementRect = element.getBoundingClientRect();
-		console.log('activator', activator.classList, activator.style, activatorRect);
+		console.log('activator', activatorRect);
 		console.log('element', elementRect);
 
-		axis.x = activatorRect.left;
-		axis.y = activatorRect.bottom;
+		// console.log(
+		// 	'outside sreen right',
+		// 	activatorRect.left + elementRect.width > innerWidth.current!
+		// 		? activatorRect.left - (elementRect.width - activatorRect.width)
+		// 		: false
+		// );
+
+		// console.log(
+		// 	'outside sreen left',
+		// 	activatorRect.left - elementRect.width < 0
+		// 		? activatorRect.left + (elementRect.width + activatorRect.width)
+		// 		: false
+		// );
+
+		console.log(
+			'outside sreen bottom',
+			activatorRect.bottom - elementRect.height > outerHeight.current!
+				? activatorRect.top + (elementRect.width + activatorRect.width)
+				: false
+		);
+
+		if (location === 'top' || location === 'bottom') {
+			if (location === 'top') axis.y = activatorRect.top - elementRect.height;
+			if (location === 'bottom') axis.y = activatorRect.bottom;
+
+			if (activatorRect.left + elementRect.width > innerWidth.current!) {
+				axis.x = activatorRect.left - (elementRect.width - activatorRect.width);
+			} else {
+				axis.x = activatorRect.left;
+			}
+		} else if (location === 'left' || location === 'right') {
+			if (location === 'left' && !(activatorRect.left - elementRect.width < 0)) {
+				axis.x = activatorRect.left - elementRect.width;
+			} else {
+				axis.x = activatorRect.left + activatorRect.width;
+			}
+
+			if (activatorRect.y + elementRect.height > innerHeight.current!) {
+				axis.y = activatorRect.y - elementRect.height + activatorRect.height;
+			} else {
+				axis.y = activatorRect.y;
+			}
+		} else {
+			axis.y = activatorRect.bottom;
+			if (activatorRect.left + elementRect.width > innerWidth.current!) {
+				axis.x = activatorRect.left - (elementRect.width - activatorRect.width);
+			} else {
+				axis.x = activatorRect.left;
+			}
+		}
 	};
 
 	return {
