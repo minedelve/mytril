@@ -1,7 +1,6 @@
 .myt-system-bar {
-	--c-color: var(--myt-color-on-surface-variant);
-	--c-background-color: var(--myt-color-surface-variant);
-	--c-rounded: var(--myt-shape-corner-none);
+	--color: var(--myt-color-on-surface-variant);
+	--background: var(--myt-color-surface-variant);
 }
 
 .myt-system-bar {
@@ -23,9 +22,8 @@
 	position: relative;
 	text-align: end;
 	width: 100%;
-	border-radius: var(--c-rounded);
-	color: var(--c-color);
-	background-color: var(--c-background-color);
+	color: var(--color);
+	background-color: var(--background);
 }
 
 .myt-system-bar.myt-system-bar--window {

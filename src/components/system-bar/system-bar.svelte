@@ -1,40 +1,38 @@
 <script lang="ts">
-	import { className, styleName } from '$lib/utils/dom.js';
-	import { formatStyleProperties } from '$lib/utils/formater.js';
+	import { getAssets } from '$lib/state/assets.svelte.js';
+	import type { SystemBarProps } from './system-bar.js';
 
-	// props
-	let _class: string | undefined = undefined;
-	let _style: string | undefined = undefined;
-	export { _class as class, _style as style };
-	export let tag: string = 'div';
-	export let dark: boolean = false;
-	export let light: boolean = false;
-	export let rounded: string | undefined = undefined;
-	export let color: string | undefined = undefined;
-	export let colorText: string | undefined = undefined;
-	export let window: boolean = false;
-	export let absolute: boolean = false;
-	export let fixed: boolean = false;
-
-	$: styled = formatStyleProperties({
-		background: color,
-		color: colorText,
-		rounded: rounded
-	});
+	let {
+		is = 'div',
+		light,
+		dark,
+		window,
+		fixed,
+		absolute,
+		rounded,
+		background,
+		color,
+		children,
+		...rest
+	}: SystemBarProps = $props();
+	const assets = getAssets();
 </script>
 
 <svelte:element
-	this={tag}
-	class={className('myt-system-bar', _class)}
-	style={styleName(styled, _style)}
-	class:light
-	class:dark
-	class:myt-system-bar--window={window}
-	class:myt-system-bar--fixed={fixed}
-	class:myt-system-bar--absolute={absolute}
-	{...$$restProps}
+	this={is}
+	{...rest}
+	class={[
+		'myt-system-bar',
+		light && 'light',
+		dark && 'dark',
+		window && 'myt-system-bar--window',
+		fixed && 'myt-system-bar--fixed',
+		absolute && 'myt-system-bar--absolute',
+		rounded && assets.shape(rounded),
+		rest.class
+	]}
+	style:--background={background}
+	style:--color={color}
 >
-	<!-- slot: default -->
-	<slot />
-	<!-- /slot: default -->
+	{@render children?.()}
 </svelte:element>

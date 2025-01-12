@@ -11,3 +11,9 @@ export const getRounded = (rounded?: string) => {
 	}
 	return undefined;
 };
+
+export const setRounded = (key: string, value: string) => {
+	rounded.update((current) => {
+		return { ...current, [key]: value };
+	});
+};
