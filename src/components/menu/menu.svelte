@@ -3,7 +3,8 @@
 
 	let { activator } = $props();
 
-	// let refElement: HTMLElement | null = $state(null);
+	let ref: HTMLElement | null = $state(null);
+	let refActivator: HTMLElement | null = $state(null);
 	let open = $state(false);
 	let axis = $state({ x: 0, y: 0 });
 
@@ -17,26 +18,58 @@
 
 	const testToggle = (element: HTMLElement) => {
 		// const target = event.target as HTMLElement;
-		console.log('testToggle', element);
-		const newPosition = getPositions(element);
-
-		if (newPosition?.values) axis = newPosition?.values;
+		console.log('testToggle', element, ref);
+		refActivator = element;
 		open = !open;
 	};
 
 	let value = 'demo';
 
+	// $effect(() => {
+	// 	console.log('open', open, ref);
+	// 	if (open && refActivator && ref) {
+	// 		const newPosition = getPositions(refActivator, ref);
+	// 		if (newPosition?.values) axis = newPosition?.values;
+	// 	}
+	// });
+
+	const position = getPositions();
+
+	let innerHeight = $state(0);
+	let innerWidth = $state(0);
+	let scrollX = $state(0);
+	let scrollY = $state(0);
+
+	// $effect(() => {
+	// 	console.log('UPDATEDDDD');
+
+	// 	if (open && ref && refActivator) position.update(refActivator, ref);
+	// });
+
 	$effect(() => {
-		console.log('open', open);
+		if (open && ref && refActivator) {
+			if (scrollX || scrollY || innerHeight || innerWidth) {
+				position.update(refActivator, ref);
+			}
+		}
+		console.log('scrollY', scrollY);
 	});
+
+	axis = position?.values;
 </script>
+
+<svelte:window bind:innerHeight bind:innerWidth bind:scrollX bind:scrollY />
 
 {@render activator?.(value, model)}
 
+<!-- style={`transform: translate(${axis.x}px, ${axis.y}px);opacity: 0.5; background: orange; padding: 10px; position: absolute;`} -->
+<!-- style={`left:${axis.x}px; top:${axis.y}px; opacity: 0.5; background: orange; padding: 10px; position: absolute;`} -->
 {#if open}
 	<div
-		class="element bloc position"
-		style={`transform: translate(${axis.x}px, ${axis.y}px);opacity: 0.5; background: orange; padding: 10px; position: fixed;`}
+		bind:this={ref}
+		role="menu"
+		class="myt-menu-content"
+		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
 	>
 		menu position test
 	</div>
