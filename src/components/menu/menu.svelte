@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { getPositions } from './menu.svelte.js';
 
-	let { activator, location = 'bottom' } = $props();
+	let { activator, location } = $props();
 
 	let ref: HTMLElement | null = $state(null);
-	let refActivator: HTMLElement | null = $state(null);
+	let refActivator: HTMLElement | PointerEvent | null = $state(null);
 	let open = $state(false);
 	let axis = $state({ x: 0, y: 0 });
 
@@ -13,10 +13,10 @@
 			return open;
 		},
 		close: () => (open = false),
-		toggle: (element: HTMLElement) => testToggle(element)
+		toggle: (element: HTMLElement | PointerEvent) => testToggle(element)
 	};
 
-	const testToggle = (element: HTMLElement) => {
+	const testToggle = (element: HTMLElement | PointerEvent) => {
 		// const target = event.target as HTMLElement;
 		console.log('testToggle', element, ref);
 		refActivator = element;
