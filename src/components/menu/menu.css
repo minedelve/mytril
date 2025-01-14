@@ -1,7 +1,6 @@
 .myt-menu-content {
-	--c-color: var(--myt-color-on-surface-variant);
-	--c-background-color: var(--myt-color-surface-variant);
-	--c-rounded: var(--myt-shape-corner-md);
+	--color: var(--myt-color-on-surface-variant);
+	--background: var(--myt-color-surface-variant);
 }
 
 .myt-menu-content {
@@ -9,9 +8,9 @@
 	margin: 0px;
 	position: fixed;
 	z-index: 9999;
-	background: var(--c-background-color);
-	color: var(--c-color);
-	border-radius: var(--c-rounded);
+	background: var(--background);
+	color: var(--color);
+	border-radius: var(--myt-shape-corner-md);
 	display: inline-block;
 	width: auto;
 	opacity: 1;

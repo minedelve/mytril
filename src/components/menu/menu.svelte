@@ -1,100 +1,108 @@
 <script lang="ts">
-	import { getPositions } from './menu.svelte.js';
+	import { getAssets } from '$lib/state/assets.svelte.js';
+	import { getPositions } from '$lib/state/positions.svelte.js';
+	import type { MenuProps } from './menu.js';
 
-	let { activator, location } = $props();
+	let {
+		children,
+		activator,
+		dark,
+		light,
+		rounded,
+		position,
+		closeOnClick,
+		openOnHover,
+		color,
+		background,
+		...rest
+	}: MenuProps = $props();
+
+	const positionAxis = getPositions();
+	const assets = getAssets();
 
 	let ref: HTMLElement | null = $state(null);
 	let refActivator: HTMLElement | PointerEvent | null = $state(null);
 	let open = $state(false);
 	let axis = $state({ x: 0, y: 0 });
+	let innerHeight = $state(0);
+	let innerWidth = $state(0);
+	let scrollX = $state(0);
+	let scrollY = $state(0);
+	let timeoutId: ReturnType<typeof setTimeout> | null = $state(null);
+
+	axis = positionAxis?.values;
 
 	let model = {
 		get open() {
 			return open;
 		},
 		close: () => (open = false),
-		toggle: (element: HTMLElement | PointerEvent) => testToggle(element)
+		toggle: (element: HTMLElement | PointerEvent) => handleToggle(element)
 	};
 
-	const testToggle = (element: HTMLElement | PointerEvent) => {
-		// const target = event.target as HTMLElement;
-		console.log('testToggle', element, ref);
+	const handleToggle = (element: HTMLElement | PointerEvent) => {
 		refActivator = element;
 		open = !open;
 	};
 
-	let value = 'demo';
+	const handleClose = () => {
+		if (closeOnClick && open) open = false;
+	};
 
-	// $effect(() => {
-	// 	console.log('open', open, ref);
-	// 	if (open && refActivator && ref) {
-	// 		const newPosition = getPositions(refActivator, ref);
-	// 		if (newPosition?.values) axis = newPosition?.values;
-	// 	}
-	// });
+	const handleMouseEvent = (state: string) => {
+		if (openOnHover && state === 'over') {
+			if (timeoutId) {
+				clearTimeout(timeoutId);
+				timeoutId = null;
+			}
+			open = true;
+		}
 
-	const position = getPositions();
-
-	let innerHeight = $state(0);
-	let innerWidth = $state(0);
-	let scrollX = $state(0);
-	let scrollY = $state(0);
-
-	// $effect(() => {
-	// 	console.log('UPDATEDDDD');
-
-	// 	if (open && ref && refActivator) position.update(refActivator, ref);
-	// });
+		if (openOnHover && state === 'leave') {
+			timeoutId = setTimeout(() => {
+				open = false;
+				timeoutId = null;
+			}, 100);
+		}
+	};
 
 	$effect(() => {
 		if (open && ref && refActivator) {
 			if (scrollX || scrollY || innerHeight || innerWidth) {
-				position.update(refActivator, ref, location);
+				positionAxis.update(refActivator, ref, position);
 			}
 		}
-		console.log('scrollY', scrollY);
 	});
-
-	axis = position?.values;
 </script>
 
 <svelte:window bind:innerHeight bind:innerWidth bind:scrollX bind:scrollY />
 
-{@render activator?.(value, model)}
+{@render activator?.(model, handleMouseEvent)}
 
-<!-- style={`transform: translate(${axis.x}px, ${axis.y}px);opacity: 0.5; background: orange; padding: 10px; position: absolute;`} -->
-<!-- style={`left:${axis.x}px; top:${axis.y}px; opacity: 0.5; background: orange; padding: 10px; position: absolute;`} -->
 {#if open}
+	<!-- svelte-ignore a11y_interactive_supports_focus -->
+	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 	<div
 		bind:this={ref}
+		{...rest}
 		role="menu"
-		class="myt-menu-content"
+		class={[
+			'myt-menu-content',
+			light && 'light',
+			dark && 'dark',
+			rounded && assets.shape(rounded),
+			rest.class
+		]}
 		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
+		onmouseover={() => handleMouseEvent('over')}
+		onmouseleave={() => handleMouseEvent('leave')}
+		onclick={(e) => {
+			e.stopPropagation();
+			handleClose();
+		}}
+		style:--background={background}
+		style:--color={color}
 	>
-		<div>
-			<div>Item 1</div>
-			<div>Item 2</div>
-			<div>Item 3</div>
-			<div>Item 4</div>
-			<div>Icon - Acces to params - Icon - Effect</div>
-		</div>
-	</div>
-{/if}
-
-<!-- {#if open}
-	<div>
 		{@render children?.()}
 	</div>
-{/if} -->
-
-<!-- <Menu name="obiwan">
-			{#snippet activator(value: any, model: any)}
-				<button bind:this={refElement} onclick={() => model.toggle(refElement)}>
-					button {model.open}
-
-					<div>
-						Event Click {model.open}
-					</div>
-				</button>
-			{/snippet}
-		</Menu> -->
+{/if}
