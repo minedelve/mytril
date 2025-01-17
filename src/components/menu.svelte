@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
 	import { getPositions } from '$lib/state/positions.svelte.js';
-	import type { MenuProps } from './menu.js';
+	import type { MenuProps } from './menu/menu.js';
 
 	let {
 		children,
@@ -67,10 +67,13 @@
 	};
 
 	$effect(() => {
-		if (open && ref && refActivator) {
-			if (scrollX || scrollY || innerHeight || innerWidth) {
-				positionAxis.update(refActivator, ref, position);
-			}
+		if (
+			open &&
+			ref &&
+			refActivator &&
+			(scrollX > 0 || scrollY > 0 || innerHeight > 0 || innerWidth > 0)
+		) {
+			positionAxis.update(refActivator, ref, position);
 		}
 	});
 </script>
@@ -100,8 +103,8 @@
 			e.stopPropagation();
 			handleClose();
 		}}
-		style:--background={background}
-		style:--color={color}
+		style:--background={assets.color(background)}
+		style:--color={assets.color(color)}
 	>
 		{@render children?.()}
 	</div>

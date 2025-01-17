@@ -1,7 +1,7 @@
 .myt-list-subheader {
 	align-items: center;
 	background: inherit;
-	color: color-mix(in oklab, var(--c-color) 60%, black);
+	color: color-mix(in oklab, var(--color) 60%, black);
 	display: flex;
 	font-size: 0.875rem;
 	font-weight: 400;

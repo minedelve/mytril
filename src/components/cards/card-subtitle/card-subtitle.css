@@ -1,5 +1,5 @@
 .myt-card-subtitle {
-	--c-opacity: 0.8;
+	--opacity: 0.8;
 }
 
 .myt-card-subtitle {
@@ -7,7 +7,7 @@
 	flex: none;
 	font: 0.875rem;
 	font-weight: 400;
-	opacity: var(--c-opacity);
+	opacity: var(--opacity);
 	overflow: hidden;
 	padding: 0 1rem;
 	text-overflow: ellipsis;

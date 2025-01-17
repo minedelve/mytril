@@ -1,0 +1,63 @@
+<script lang="ts">
+	import type { GridColProps } from '../types/index.js';
+	let {
+		children,
+		is = 'div',
+		cols,
+		xs,
+		sm,
+		md,
+		lg,
+		xl,
+		xxl,
+		offset,
+		offsetXs,
+		offsetSm,
+		offsetMd,
+		offsetLg,
+		offsetXl,
+		offsetXxl,
+		order,
+		orderXs,
+		orderSm,
+		orderMd,
+		orderLg,
+		orderXl,
+		orderXxl,
+		alignSelf,
+		...rest
+	}: GridColProps = $props();
+</script>
+
+<svelte:element
+	this={is}
+	{...rest}
+	class={[
+		'myt-grid-col',
+		cols && `col-${cols}`,
+		xs && `xs:col-${xs}`,
+		sm && `sm:col-${sm}`,
+		md && `md:col-${md}`,
+		lg && `lg:col-${lg}`,
+		xl && `xl:col-${xl}`,
+		xxl && `xxl:col-${xxl}`,
+		offset && `offset-${offset}`,
+		offsetXs && `xs:offset-${offsetXs}`,
+		offsetSm && `sm:offset-${offsetSm}`,
+		offsetMd && `md:offset-${offsetMd}`,
+		offsetLg && `lg:offset-${offsetLg}`,
+		offsetXl && `xl:offset-${offsetXl}`,
+		offsetXxl && `xxl:offset-${offsetXxl}`,
+		order && `order-${order}`,
+		orderXs && `xs:order-${orderXs}`,
+		orderSm && `sm:order-${orderSm}`,
+		orderMd && `md:order-${orderMd}`,
+		orderLg && `lg:order-${orderLg}`,
+		orderXl && `xl:order-${orderXl}`,
+		orderXxl && `xxl:order-${orderXxl}`,
+		alignSelf && `align-self-${alignSelf}`,
+		rest.class
+	]}
+>
+	{@render children?.()}
+</svelte:element>

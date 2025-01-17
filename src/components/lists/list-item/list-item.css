@@ -27,7 +27,7 @@ a.myt-list-item {
 }
 
 .myt-list-item.myt-list-item--link:hover {
-	background-color: color-mix(in oklab, var(--c-background-color) 90%, black);
+	background-color: color-mix(in oklab, var(--background) 90%, black);
 }
 
 /* .myt-list-item.myt-list-item--link:focus {
@@ -37,7 +37,7 @@ a.myt-list-item {
 .myt-list-item.myt-list-item--link:active,
 .myt-list-item.myt-list-item--link.myt-list-item--active,
 .myt-list-item.myt-list-group--activator.myt-list-group--active {
-	background-color: color-mix(in oklab, var(--c-background-color) 95%, black);
+	background-color: color-mix(in oklab, var(--background) 95%, black);
 }
 
 .myt-list-item .myt-list-item--content {

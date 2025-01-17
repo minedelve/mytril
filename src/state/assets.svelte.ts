@@ -3,14 +3,22 @@ import { get } from 'svelte/store';
 
 export function getAssets() {
 	return {
-		// shapeVar(params?: string) {
-		// 	if (params && params in get(rounded)) return `var(--myt-shape-corner-${params})`;
-		// 	return params;
-		// },
 		shape(params?: string) {
 			if (params && params in get(rounded)) {
 				if (params === 'none') return 'rounded';
 				return `rounded-${params}`;
+			}
+		},
+		color(params?: string) {
+			if (params) {
+				if (
+					params.includes('#') ||
+					params.includes('rgb') ||
+					params.includes('rgba') ||
+					params.includes('var(')
+				)
+					return params;
+				return `var(--myt-color-${params})`;
 			}
 		}
 	};

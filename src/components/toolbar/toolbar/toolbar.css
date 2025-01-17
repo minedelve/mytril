@@ -1,7 +1,6 @@
 .myt-toolbar {
-	--c-color: var(--myt-color-on-surface);
-	--c-background-color: var(--myt-color-surface);
-	--c-rounded: var(--myt-shape-corner-none);
+	--color: var(--myt-color-on-surface);
+	--background: var(--myt-color-surface);
 }
 
 .myt-toolbar {
@@ -13,12 +12,12 @@
 	max-width: 100%;
 	position: relative;
 	width: 100%;
-	border-radius: var(--c-rounded);
+	border-radius: var(--myt-shape-corner-none);
 	border-color: transparent;
 	border-width: 1px;
 	border-style: solid;
-	color: var(--c-color);
-	background-color: var(--c-background-color);
+	color: var(--color);
+	background-color: var(--background);
 }
 
 .myt-toolbar.myt-toolbar--floating {

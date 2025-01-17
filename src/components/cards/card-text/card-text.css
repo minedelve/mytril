@@ -1,12 +1,12 @@
 .myt-card-text {
-	--c-opacity: 1;
+	--opacity: 1;
 }
 
 .myt-card-text {
 	flex: 1 1 auto;
 	font-size: 0.875rem;
 	font-weight: 400;
-	opacity: var(--c-opacity);
+	opacity: var(--opacity);
 	padding: 1rem;
 	text-transform: none;
 }

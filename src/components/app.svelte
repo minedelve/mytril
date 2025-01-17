@@ -1,5 +1,10 @@
 <script lang="ts">
+	import { persistedPackages } from '$lib/state/persisted.svelte.js';
+
 	let { children } = $props();
+	const persistedPackagesStore = persistedPackages();
+
+	persistedPackagesStore();
 </script>
 
 <svelte:head>

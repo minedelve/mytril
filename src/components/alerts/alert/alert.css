@@ -1,7 +1,6 @@
 .myt-alert {
-	--c-color: var(--myt-color-on-surface-variant);
-	--c-background-color: var(--myt-color-surface-variant);
-	--c-rounded: var(--myt-shape-corner-md);
+	--color: var(--myt-color-on-surface-variant);
+	--background: var(--myt-color-surface-variant);
 }
 
 .myt-alert {
@@ -14,14 +13,14 @@
 	position: relative;
 	padding: 16px;
 	overflow: hidden;
-	color: var(--c-color);
-	border-radius: var(--c-rounded);
+	color: var(--color);
+	border-radius: var(--myt-shape-corner-md);
 }
 
 .myt-alert .myt-alert--underlay {
 	grid-area: none;
 	position: absolute;
-	background-color: var(--c-background-color);
+	background-color: var(--background);
 	border-radius: inherit;
 	top: 0;
 	right: 0;
@@ -78,7 +77,7 @@
 
 .myt-alert .myt-alert--border {
 	border-inline-start-width: 8px !important;
-	border-color: var(--c-color);
+	border-color: var(--color);
 	border-style: solid;
 	border-width: 0;
 	border-radius: inherit;

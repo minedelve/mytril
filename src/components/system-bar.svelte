@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import type { SystemBarProps } from './system-bar.js';
+	import type { SystemBarProps } from '../types/index.js';
 
 	let {
 		is = 'div',
@@ -15,6 +15,7 @@
 		children,
 		...rest
 	}: SystemBarProps = $props();
+
 	const assets = getAssets();
 </script>
 
@@ -31,8 +32,8 @@
 		rounded && assets.shape(rounded),
 		rest.class
 	]}
-	style:--background={background}
-	style:--color={color}
+	style:--background={assets.color(background)}
+	style:--color={assets.color(color)}
 >
 	{@render children?.()}
 </svelte:element>

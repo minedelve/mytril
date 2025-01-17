@@ -1,6 +1,6 @@
 .myt-divider {
-	--c-border-color: var(--myt-color-outline);
-	--c-opacity: 0.12;
+	--border-color: var(--myt-color-outline);
+	--opacity: 0.12;
 }
 
 .myt-divider {
@@ -8,9 +8,9 @@
 	flex: 1 1 100%;
 	height: 0px;
 	max-height: 0px;
-	opacity: var(--c-opacity);
+	opacity: var(--opacity);
 	transition: inherit;
-	border-color: var(--c-border-color);
+	border-color: var(--border-color);
 }
 
 .myt-divider {

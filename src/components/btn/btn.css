@@ -1,7 +1,6 @@
 .myt-btn {
-	--c-color: var(--myt-color-on-surface-variant);
-	--c-background-color: var(--myt-color-surface-variant);
-	--c-rounded: var(--myt-shape-corner-md);
+	--color: var(--myt-color-on-surface-variant);
+	--background: var(--myt-color-surface-variant);
 }
 
 .myt-btn {
@@ -25,9 +24,9 @@
 	user-select: none;
 	vertical-align: middle;
 	flex-shrink: 0;
-	color: var(--c-color);
-	background-color: var(--c-background-color);
-	border-radius: var(--c-rounded);
+	color: var(--color);
+	background-color: var(--background);
+	border-radius: var(--myt-shape-corner-md);
 }
 
 .myt-btn.myt-btn--outlined {
@@ -132,19 +131,19 @@
 }
 
 .myt-btn.myt-btn--active:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	background-color: color-mix(in oklab, var(--c-background-color) 85%, black);
+	background-color: color-mix(in oklab, var(--background) 85%, black);
 }
 .myt-btn:hover:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	background-color: color-mix(in oklab, var(--c-background-color) 90%, black);
+	background-color: color-mix(in oklab, var(--background) 90%, black);
 }
 
 .myt-btn.myt-btn--outlined.myt-btn--active,
 .myt-btn.myt-btn--text.myt-btn--active {
-	background-color: color-mix(in oklab, var(--c-color) 15%, transparent);
+	background-color: color-mix(in oklab, var(--color) 15%, transparent);
 }
 .myt-btn.myt-btn--outlined:hover,
 .myt-btn.myt-btn--text:hover {
-	background-color: color-mix(in oklab, var(--c-color) 20%, transparent);
+	background-color: color-mix(in oklab, var(--color) 20%, transparent);
 }
 
 .myt-btn.myt-btn--link {
@@ -156,12 +155,12 @@
 .myt-btn[disabled] {
 	pointer-events: none;
 	user-select: none;
-	color: color-mix(in oklab, var(--c-color) 40%, transparent) !important;
-	background-color: color-mix(in oklab, var(--c-background-color) 70%, transparent) !important;
+	color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+	background-color: color-mix(in oklab, var(--background) 70%, transparent) !important;
 }
 .myt-btn.myt-btn--disabled.myt-btn--outlined,
 .myt-btn[disabled].myt-btn--outlined {
-	border-color: color-mix(in oklab, var(--c-color) 40%, transparent) !important;
+	border-color: color-mix(in oklab, var(--color) 40%, transparent) !important;
 }
 
 .myt-btn.myt-btn--disabled.myt-btn--outlined,

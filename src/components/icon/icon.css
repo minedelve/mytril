@@ -1,5 +1,5 @@
 .myt-icon {
-	--c-color: var(--myt-color-on-background);
+	--color: var(--myt-color-on-background);
 }
 .myt-icon {
 	--c-icon-size-multiplier: 1;
@@ -17,7 +17,7 @@
 	vertical-align: middle;
 	width: 1em;
 	min-width: 1em;
-	color: var(--c-color);
+	color: var(--color);
 }
 
 .myt-icon > svg,

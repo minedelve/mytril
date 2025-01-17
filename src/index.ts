@@ -1,13 +1,13 @@
 // components
-export { default as App } from './components/app/app.svelte';
+export { default as App } from './components/app.svelte';
 export { default as Img } from './components/img/img.svelte';
 export { default as Responsive } from './components/responsive/responsive.svelte';
 export { default as Icon } from './components/icon/icon.svelte';
 export { default as Divider } from './components/divider/divider.svelte';
-export { default as Tooltip } from './components/tooltip/tooltip.svelte';
-export { default as SystemBar } from './components/system-bar/system-bar.svelte';
-export { default as Menu } from './components/menu/menu.svelte';
-export { default as Dialog } from './components/dialog/dialog.svelte';
+export { default as Tooltip } from './components/tooltip.svelte';
+export { default as SystemBar } from './components/system-bar.svelte';
+export { default as Menu } from './components/menu.svelte';
+export { default as Dialog } from './components/dialog.svelte';
 export { default as Btn } from './components/btn/btn.svelte';
 export { default as Chip } from './components/chip/chip.svelte';
 export { default as Alert } from './components/alerts/alert/alert.svelte';

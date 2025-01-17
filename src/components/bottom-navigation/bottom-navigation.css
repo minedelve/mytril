@@ -1,7 +1,6 @@
 .myt-bottom-navigation {
-	--c-color: var(--myt-color-on-surface-variant);
-	--c-background-color: var(--myt-color-surface-variant);
-	--c-rounded: var(--myt-shape-corner-none);
+	--color: var(--myt-color-on-surface-variant);
+	--background: var(--myt-color-surface-variant);
 }
 
 .myt-bottom-navigation {
@@ -10,9 +9,9 @@
 	transform: translateY(0px);
 	left: 0px;
 	width: calc(100% + 0px);
-	color: var(--c-color);
-	background-color: var(--c-background-color);
-	border-radius: var(--c-rounded);
+	color: var(--color);
+	background-color: var(--background);
+	border-radius: var(--myt-shape-corner-none);
 }
 
 .myt-bottom-navigation.myt-bottom-navigation--hidden {
