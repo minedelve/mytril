@@ -1,0 +1,188 @@
+.myt-card {
+	--color: var(--myt-color-on-surface);
+	--background: var(--myt-color-surface-container);
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--myt-shape-corner-md);
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	text-align: start;
+	color: var(--color);
+	background-color: var(--background);
+	overflow: hidden;
+}
+
+a.myt-card {
+	text-decoration: none;
+}
+
+.myt-card:hover:not(div) {
+	background-color: color-mix(in oklab, var(--background) 90%, black);
+}
+
+.myt-card:focus:not(div) {
+	background-color: color-mix(in oklab, var(--background) 95%, black);
+}
+
+.myt-card:active:not(div),
+.myt-card.myt-card--active {
+	background-color: color-mix(in oklab, var(--background) 95%, black);
+}
+
+.myt-card:not(div) {
+	cursor: pointer;
+}
+
+.myt-card.myt-card--outline {
+	border-color: currentColor;
+}
+
+.myt-card.myt-card--outline,
+.myt-card.myt-card--text {
+	background-color: transparent;
+}
+
+.myt-card.myt-card--outline:hover:not(div),
+.myt-card.myt-card--text:hover:not(div) {
+	background-color: color-mix(in oklab, currentColor 7%, transparent);
+}
+
+.myt-card.myt-card--outline:focus:not(div),
+.myt-card.myt-card--text:focus:not(div) {
+	background-color: color-mix(in oklab, currentColor 15%, transparent);
+}
+
+.myt-card.myt-card--outline:active:not(div),
+.myt-card.myt-card--text:active:not(div),
+.myt-card.myt-card--outline.myt-card--active,
+.myt-card.myt-card--text.myt-card--active {
+	background-color: color-mix(in oklab, currentColor 10%, transparent);
+}
+
+.myt-card.myt-card--disabled,
+.myt-card[disabled],
+.myt-card:disabled {
+	pointer-events: none;
+	user-select: none;
+}
+.myt-card.myt-card--disabled > *,
+.myt-card[disabled] > *,
+.myt-card:disabled > * {
+	opacity: 0.6;
+}
+
+.myt-card .myt-card-title {
+	line-height: 1.6;
+}
+
+.myt-card .myt-card-subtitle {
+	line-height: 1.425;
+}
+
+.myt-card .myt-card-text {
+	line-height: 1.425;
+}
+
+.myt-card-title {
+	display: block;
+	flex: none;
+	font-size: 1.25rem;
+	font-weight: 500;
+	hyphens: auto;
+	letter-spacing: 0.0125em;
+	min-width: 0;
+	overflow-wrap: normal;
+	overflow: hidden;
+	padding: 0.5rem 1rem;
+	text-overflow: ellipsis;
+	text-transform: none;
+	white-space: nowrap;
+	word-break: normal;
+	word-wrap: break-word;
+}
+
+.myt-card-title + .myt-card-text,
+.myt-card-title + .myt-card-actions {
+	padding-top: 0;
+}
+
+.myt-card-text {
+	--opacity: 1;
+
+	flex: 1 1 auto;
+	font-size: 0.875rem;
+	font-weight: 400;
+	opacity: var(--opacity);
+	padding: 1rem;
+	text-transform: none;
+}
+
+.myt-card-subtitle {
+	--opacity: 0.8;
+
+	display: block;
+	flex: none;
+	font: 0.875rem;
+	font-weight: 400;
+	opacity: var(--opacity);
+	overflow: hidden;
+	padding: 0 1rem;
+	text-overflow: ellipsis;
+	text-transform: none;
+	white-space: nowrap;
+}
+
+.myt-card-item {
+	align-items: center;
+	display: grid;
+	flex: none;
+	grid-template-areas: 'prepend content append';
+	grid-template-columns: max-content auto max-content;
+	padding: 0.625rem 1rem;
+}
+
+.myt-card-item .myt-card-item--prepend,
+.myt-card-item .myt-card-item--append {
+	align-items: center;
+	display: flex;
+}
+
+.myt-card-item .myt-card-item--prepend {
+	grid-area: prepend;
+	padding-inline-end: 0.5rem;
+}
+
+.myt-card-item .myt-card-item--content {
+	align-self: center;
+	grid-area: content;
+	overflow: hidden;
+}
+
+.myt-card-item .myt-card-item--append {
+	grid-area: append;
+	padding-inline-start: 0.5rem;
+}
+
+.myt-card-item + .myt-card-text {
+	padding-top: 0;
+}
+
+.myt-card-item .myt-card-title {
+	padding: 0;
+}
+
+.myt-card-item .myt-card-subtitle {
+	padding: 0 0 0.25rem;
+}
+
+.myt-card-actions {
+	align-items: center;
+	display: flex;
+	flex: none;
+	min-height: 52px;
+	padding: 0.5rem;
+	gap: 0.5rem;
+}

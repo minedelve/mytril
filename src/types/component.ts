@@ -7,6 +7,17 @@ export interface ComponentBase {
 	children: Snippet;
 }
 
+export interface TooltipProps extends ComponentBase {
+	dark?: boolean;
+	light?: boolean;
+	rounded?: string;
+	label?: string;
+	position?: 'top' | 'bottom' | 'left' | 'right';
+	color?: string;
+	background?: string;
+	tooltip?: Snippet;
+}
+
 export interface ToolbarProps extends ComponentBase {
 	is?: 'div' | 'header' | 'nav';
 	classContent?: string;

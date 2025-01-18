@@ -1,0 +1,88 @@
+.myt-switch {
+	--color: var(--myt-color-on-surface-variant);
+	--background: var(--myt-color-surface-variant);
+	--handleoffset: 1.5rem;
+	--handleoffsetcalculator: calc(var(--handleoffset) * -1);
+	--togglehandleborder: 0 0;
+
+	flex-shrink: 0;
+	height: 1.5rem;
+	width: 3rem;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 1.9rem;
+	border-width: 1px;
+	border-color: currentColor;
+	border-style: solid;
+	background-color: currentColor;
+	color: color-mix(in oklab, var(--color) 50%, white);
+	transition:
+		background-color,
+		box-shadow 0.2s ease-out;
+	box-shadow:
+		var(--handleoffsetcalculator) 0 0 2px color-mix(in oklab, var(--background) 90%, white) inset,
+		0 0 0 2px color-mix(in oklab, var(--background) 90%, white) inset,
+		var(--togglehandleborder);
+}
+
+.myt-switch:checked,
+.myt-switch[checked='true'],
+.myt-switch[aria-checked='true'] {
+	background-image: none;
+	color: var(--color);
+	--handleoffsetcalculator: var(--handleoffset);
+}
+
+.myt-switch[disabled],
+.myt-switch.myt-switch--disabled,
+.myt-switch-area.myt-switch-area--disabled {
+	cursor: default;
+	pointer-events: none;
+	user-select: none;
+	color: color-mix(in oklab, var(--color) 30%, white);
+}
+
+.myt-switch-area {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.myt-switch-area > .label {
+	display: flex;
+	-webkit-user-select: none;
+	user-select: none;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 0.25rem;
+}
+
+/* @breakpoints */
+.myt-switch[breakpoint]myt-switch--size-xs {
+	--handleoffset: 0.5rem;
+	height: 1rem;
+	width: 1.5rem;
+}
+.myt-switch[breakpoint]myt-switch--size-sm {
+	--handleoffset: 0.75rem;
+	height: 1.25rem;
+	width: 2rem;
+}
+.myt-switch[breakpoint]myt-switch--size-md {
+	--handleoffset: 1.5rem;
+	height: 1.5rem;
+	width: 3rem;
+}
+.myt-switch[breakpoint]myt-switch--size-lg {
+	--handleoffset: 1.75rem;
+	height: 1.75rem;
+	width: 4rem;
+}
+.myt-switch[breakpoint]myt-switch--size-xl {
+	--handleoffset: 2rem;
+	height: 2rem;
+	width: 4rem;
+}
+/*! @breakpoints */

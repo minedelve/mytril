@@ -1,0 +1,75 @@
+.myt-toolbar {
+	--color: var(--myt-color-on-surface);
+	--background: var(--myt-color-surface);
+
+	align-items: flex-start;
+	display: flex;
+	flex: none;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 100%;
+	position: relative;
+	width: 100%;
+	border-radius: var(--myt-shape-corner-none);
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	color: var(--color);
+	background-color: var(--background);
+}
+
+.myt-toolbar.myt-toolbar--floating {
+	display: inline-flex;
+}
+
+.myt-toolbar.myt-toolbar--text,
+.myt-toolbar.myt-toolbar--outline {
+	background-color: transparent;
+}
+
+.myt-toolbar.myt-toolbar--outline {
+	border-color: currentColor;
+}
+
+.myt-toolbar .myt-toolbar--content {
+	align-items: center;
+	display: flex;
+	flex: 0 0 auto;
+	position: relative;
+	transition: inherit;
+	width: 100%;
+}
+
+.myt-toolbar .myt-toolbar--content {
+	overflow: hidden;
+}
+
+.myt-toolbar .myt-toolbar--content > .myt-toolbar-title {
+	margin-inline-start: 20px;
+}
+
+.myt-toolbar-items {
+	display: flex;
+	height: inherit;
+	align-self: stretch;
+}
+
+.myt-toolbar-title {
+	flex: 1 1;
+	font-size: 1.25rem;
+	min-width: 0;
+}
+
+.myt-toolbar-title {
+	font-size: 1.25rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.75rem;
+	text-transform: none;
+}
+
+.myt-toolbar-title .myt-toolbar-title--placeholder {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
