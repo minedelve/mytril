@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { persistedPackages } from '$lib/state/persisted.svelte.js';
+	import { getColorScheme } from '$lib/stores/global.js';
 
 	let { children } = $props();
 	persistedPackages();
 
 	$effect.pre(() => {
-		const colorScheme = localStorage.getItem('@mytril:theme');
-
-		console.log('CALL localstorage', colorScheme);
-		console.log('CALL document class List ', document?.documentElement?.classList);
+		getColorScheme();
 	});
 </script>
 

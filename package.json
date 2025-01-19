@@ -92,6 +92,9 @@
 		"./vite": {
 			"default": "./dist/plugins/vite/plugin.js"
 		},
+		"./actions": {
+			"default": "./dist/actions/index.js"
+		},
 		"./styles/base": "./dist/styles/base.css",
 		"./styles/utilities": "./dist/styles/utilities.css",
 		"./styles/components": "./dist/styles/components.css"
