@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { disabledScroll } from '$lib/actions/index.js';
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import type { DialogProps } from '../types/index.js';
+	import type { DialogProps } from '$lib/types/index.js';
 
 	let {
 		children,

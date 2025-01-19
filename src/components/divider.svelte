@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import type { DividerProps } from '../types/index.js';
+	import type { DividerProps } from '$lib/types/index.js';
 
 	let {
 		is = 'hr',

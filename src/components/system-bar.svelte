@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import type { SystemBarProps } from '../types/index.js';
+	import type { SystemBarProps } from '$lib/types/index.js';
 
 	let {
 		is = 'div',

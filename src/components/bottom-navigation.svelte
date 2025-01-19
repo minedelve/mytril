@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import type { BottomNavigationProps } from '../types/index.js';
+	import type { BottomNavigationProps } from '$lib/types/index.js';
 
 	let {
 		children,

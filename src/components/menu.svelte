@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
 	import { getPositions } from '$lib/state/positions.svelte.js';
-	import type { MenuProps } from './menu/menu.js';
+	import type { MenuProps } from '$lib/types/index.js';
 
 	let {
 		children,

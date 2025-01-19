@@ -5,7 +5,7 @@ function importStatic(modulePath: string) {
 	return import(/* @vite-ignore */ `${modulePath}`);
 }
 
-export function persitedPackages() {
+export function persistedPackages() {
 	onMount(async () => {
 		try {
 			const path = '@iconify/svelte';

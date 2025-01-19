@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { CardTitleProps } from '../types/index.js';
+	import type { CardTitleProps } from '$lib/types/index.js';
 
 	let { children, is = 'div', ...rest }: CardTitleProps = $props();
 </script>

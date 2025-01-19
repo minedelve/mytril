@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AppBar } from '../types/index.js';
+	import type { AppBar } from '$lib/types/index.js';
 
 	// components
 	import Toolbar from './toolbar.svelte';

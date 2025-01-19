@@ -6,8 +6,8 @@
 	import Icon from './icon.svelte';
 
 	//  assets
-	import arrowUp from '../assets/arrow-up.svg';
-	import arrowDown from '../assets/arrow-down.svg';
+	import arrowUp from '../icons/arrow-up.svg';
+	import arrowDown from '../icons/arrow-down.svg';
 
 	let {
 		activator,
@@ -52,7 +52,7 @@
 			open && 'myt-expansion-panel--active',
 			rest.class
 		]}
-		onclick={() => toggle(index as never)}
+		onclick={() => toggle && toggle(index as never)}
 		aria-expanded={open}
 		type="button"
 		{disabled}
@@ -71,7 +71,7 @@
 			{/if}
 		</span>
 	</button>
-	<div class="myt-expansion-panel--text" style:display={!open && 'none'}>
+	<div class="myt-expansion-panel--text" style:display={!open ? 'none' : ''}>
 		<div class="myt-expansion-panel--text-wrapper">
 			{@render children?.()}
 		</div>

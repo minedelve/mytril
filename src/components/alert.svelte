@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import type { AlertProps } from '../types/index.js';
+	import type { AlertProps } from '$lib/types/index.js';
 
 	// components
 	import Icon from './icon.svelte';
 
 	//  assets
-	import closeSvg from '../assets/close.svg';
+	import closeSvg from '$lib/icons/close.svg';
 
 	let {
 		children,

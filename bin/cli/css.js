@@ -5,9 +5,9 @@ import path from 'path';
 // ulitity functions
 import { getCssPathFromArgs } from '../utils.js';
 
-const importMytrilCSSBase = `@import 'mytril/base';`;
-const importMytrilCSSComponents = `@import 'mytril/components';`;
-const importMytrilCSSUtilities = `@import 'mytril/utilities';`;
+const importMytrilCSSBase = `@import 'mytril/styles/base';`;
+const importMytrilCSSComponents = `@import 'mytril/styles/components';`;
+const importMytrilCSSUtilities = `@import 'mytril/styles/utilities';`;
 
 export async function modifyCssFile() {
 	const cssPath = getCssPathFromArgs();

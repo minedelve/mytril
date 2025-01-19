@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ListTitleProps } from '../types/index.js';
+	import type { ListTitleProps } from '$lib/types/index.js';
 
 	let { children, is = 'div', ...rest }: ListTitleProps = $props();
 </script>

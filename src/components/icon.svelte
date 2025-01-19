@@ -1,7 +1,8 @@
 <script lang="ts">
+	import { onMount, type Component as ComponentSVType } from 'svelte';
 	import type { IconProps } from '../types/index.js';
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import { iconifyAvailable, IconifyComponent } from '$lib/store/index.js';
+	import { iconifyAvailable, IconifyComponent } from '$lib/stores/index.js';
 
 	let {
 		is = 'i',
@@ -26,9 +27,10 @@
 
 	// state
 	let svgNode: HTMLElement | null = $state(null);
-	let Component = $state();
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	let Component: ComponentSVType<any, any, any> | null | undefined = $state();
 
-	$effect(async () => {
+	onMount(async () => {
 		if (typeof icon === 'string' && icon.endsWith('.svg') && svgNode) {
 			try {
 				const response = await fetch(icon.replace('svg:', ''));
@@ -49,7 +51,12 @@
 	});
 
 	$effect(() => {
-		if (iconifyAvailable && IconifyComponent) Component = IconifyComponent;
+		if (iconifyAvailable) {
+			const unsubscribe = IconifyComponent.subscribe((value) => {
+				Component = value;
+			});
+			return () => unsubscribe();
+		}
 	});
 </script>
 
@@ -71,13 +78,13 @@
 		sizeLg && `lg:myt-icon--size-${sizeLg}`,
 		sizeXl && `xl:myt-icon--size-${sizeXl}`,
 		sizeXxl && `xxl:myt-icon--size-${sizeXxl}`,
-		icon.startsWith('font:') || icon.startsWith('fa:')
+		icon?.startsWith('font:') || icon?.startsWith('fa:')
 			? icon.replace('font:', '').replace('fa:', '')
 			: ''
 	]}
 	style:--color={assets.color(color)}
 >
-	{#if iconifyAvailable && IconifyComponent && !(icon.startsWith('font:') || icon.startsWith('fa:'))}
+	{#if iconifyAvailable && IconifyComponent && !(icon?.startsWith('font:') || icon?.startsWith('fa:'))}
 		<Component {icon} />
 	{/if}
 </svelte:element>

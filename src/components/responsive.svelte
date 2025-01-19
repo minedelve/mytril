@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ResponsiveProps } from '../types/index.js';
+	import type { ResponsiveProps } from '$lib/types/index.js';
 	let { children, aspectRatio, inline, ...rest }: ResponsiveProps = $props();
 
 	let paddingBottom = $state(100);

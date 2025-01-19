@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { GridRowProps } from '../types/index.js';
+	import type { GridRowProps } from '$lib/types/index.js';
 	let {
 		children,
 		is = 'div',

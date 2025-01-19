@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { AlertTitleProps } from '../types/index.js';
+	import type { AlertTitleProps } from '$lib/types/index.js';
 
 	let { children, is = 'div', ...rest }: AlertTitleProps = $props();
 </script>

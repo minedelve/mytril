@@ -38,6 +38,7 @@
 	position: relative;
 	transition: inherit;
 	width: 100%;
+	height: 64px;
 }
 
 .myt-toolbar .myt-toolbar--content {

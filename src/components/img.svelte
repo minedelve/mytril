@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { useLazyImg } from '../actions/index.js';
-	import type { ImgProps } from '../types/index.js';
+	import { useLazyImg } from '$lib/actions/index.js';
+	import type { ImgProps } from '$lib/types/index.js';
 
 	// components
 	import Responsive from './responsive.svelte';
 
 	let {
 		placeholder,
-		contentClass,
+		classContent,
 		src,
 		lazySrc,
 		alt,
@@ -32,12 +32,12 @@
 	onMount(() => {
 		const initializeObserver = async () => {
 			await tick(); // await DOM
-			if (lazyElement) {
+			if (lazyElement && lazyElement !== null) {
 				observer = new IntersectionObserver((entries, self) => {
 					entries.forEach((entry) => {
 						if (entry.isIntersecting) {
 							intersected = true;
-							self.unobserve(lazyElement);
+							self.unobserve(lazyElement!);
 						}
 					});
 				}, options);
@@ -68,7 +68,7 @@
 				'myt-img--img',
 				cover && 'myt-img--img-cover',
 				contain && 'myt-img--img-contain',
-				placeholder && 'myt-img--preload' && contentClass
+				placeholder && 'myt-img--preload' && classContent
 			]}
 			src={lazySrc}
 			{alt}
@@ -80,7 +80,7 @@
 			'myt-img--img',
 			cover && 'myt-img--img-cover',
 			contain && 'myt-img--img-contain',
-			contentClass
+			classContent
 		]}
 		{src}
 		{alt}

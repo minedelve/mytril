@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ToolbarTitleProps } from '../types/index.js';
+	import type { ToolbarTitleProps } from '$lib/types/index.js';
 
 	let { children, is = 'div', ...rest }: ToolbarTitleProps = $props();
 </script>

@@ -2,9 +2,14 @@
 	import { persistedPackages } from '$lib/state/persisted.svelte.js';
 
 	let { children } = $props();
-	const persistedPackagesStore = persistedPackages();
+	persistedPackages();
 
-	persistedPackagesStore();
+	$effect.pre(() => {
+		const colorScheme = localStorage.getItem('@mytril:theme');
+
+		console.log('CALL localstorage', colorScheme);
+		console.log('CALL document class List ', document?.documentElement?.classList);
+	});
 </script>
 
 <svelte:head>

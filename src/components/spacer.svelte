@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { SpacerProps } from '../types/index.js';
+	import type { SpacerProps } from '$lib/types/index.js';
 
 	let { children, is = 'div', ...rest }: SpacerProps = $props();
 </script>

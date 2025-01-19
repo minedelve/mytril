@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import { getPositions } from '$../state/positions.svelte.js';
-	import type { TooltipProps } from '../types/index.js';
+	import { getPositions } from '$lib/state/positions.svelte.js';
+	import type { TooltipProps } from '$lib/types/index.js';
 
 	let { children, tooltip, label, dark, light, rounded, color, background, ...rest }: TooltipProps =
 		$props();

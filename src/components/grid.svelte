@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { GridProps } from '../types/index.js';
+	import type { GridProps } from '$lib/types/index.js';
 	let { children, is = 'div', fluid, fillHeight, ...rest }: GridProps = $props();
 </script>
 

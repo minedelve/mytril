@@ -1,24 +1,24 @@
-import { rounded } from '$lib/composables/rounded.js';
-import { get } from 'svelte/store';
+import { configDefault } from '$lib/presets/config.full.js';
+import { x11Colors } from '$lib/styles/x11.js';
 
 export function getAssets() {
 	return {
 		shape(params?: string) {
-			if (params && params in get(rounded)) {
+			if (params && params in configDefault.shape!) {
 				if (params === 'none') return 'rounded';
 				return `rounded-${params}`;
 			}
 		},
-		color(params?: string) {
-			if (params) {
+		color(color?: string) {
+			if (color) {
 				if (
-					params.includes('#') ||
-					params.includes('rgb') ||
-					params.includes('rgba') ||
-					params.includes('var(')
+					color.includes('#') ||
+					color.includes('rgb') ||
+					color.includes('rgba') ||
+					x11Colors.has(color.toLowerCase())
 				)
-					return params;
-				return `var(--myt-color-${params})`;
+					return color;
+				return `var(--myt-color-${color})`;
 			}
 		}
 	};

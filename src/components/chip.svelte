@@ -6,7 +6,7 @@
 	import Icon from './icon.svelte';
 
 	//  assets
-	import closeSvg from '../assets/close.svg';
+	import closeSvg from '../icons/close.svg';
 
 	let {
 		children,

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import type { ListItemProps } from '../types/index.js';
+	import type { ListItemProps } from '$lib/types/index.js';
 
 	let {
 		children,

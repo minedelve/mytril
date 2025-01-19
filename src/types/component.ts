@@ -1,10 +1,15 @@
 import type { Snippet } from 'svelte';
 
+type IdElementType = string | undefined;
+type ClassNameType = string | string[] | undefined;
+type StylePropertiesType = string | undefined;
 export interface ComponentBase {
-	id?: string;
-	class?: string;
-	style?: string;
+	id?: IdElementType;
+	class?: ClassNameType;
+	style?: StylePropertiesType;
 	children: Snippet;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[key: string]: any;
 }
 
 export interface TooltipProps extends ComponentBase {
@@ -145,6 +150,9 @@ export interface ListSubHeaderProps extends ComponentBase {
 }
 
 export interface ImgProps {
+	id?: IdElementType;
+	class?: ClassNameType;
+	style?: StylePropertiesType;
 	placeholder?: Snippet;
 	classContent?: string;
 	src?: string;
@@ -161,21 +169,23 @@ export interface ImgProps {
 	draggable?: boolean;
 }
 
+type sizeIconString = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export interface IconProps {
-	placeholder?: Snippet;
-	classContent?: string;
-	src?: string;
-	srcset?: string;
-	lazySrc?: string;
-	alt?: string;
-	options: { root?: Element | Document | null; rootMargin?: string; threshold?: number | number[] };
-	cover?: boolean;
-	contain?: boolean;
-	absolute?: boolean;
-	aspectRatio?: string;
-	inline?: boolean;
-	crossorigin?: 'anonymous' | 'use-credentials' | '';
-	draggable?: boolean;
+	is?: 'i' | 'span';
+	dark?: boolean;
+	light?: boolean;
+	disabled?: boolean;
+	start?: boolean;
+	end?: boolean;
+	size?: sizeIconString;
+	icon?: string;
+	color?: sizeIconString;
+	sizeXs?: sizeIconString;
+	sizeSm?: sizeIconString;
+	sizeMd?: sizeIconString;
+	sizeLg?: sizeIconString;
+	sizeXl?: sizeIconString;
+	sizeXxl?: sizeIconString;
 }
 
 export interface GridProps extends ComponentBase {
@@ -253,7 +263,10 @@ export interface GridRowProps extends ComponentBase {
 	justifyXxl?: string;
 }
 
-export interface SpacerProps extends ComponentBase {
+export interface SpacerProps {
+	id?: IdElementType;
+	class?: ClassNameType;
+	style?: StylePropertiesType;
 	is?: 'div';
 }
 
@@ -287,7 +300,7 @@ export interface ExpansionPanelsProps extends ComponentBase {
 	hideIcon?: boolean;
 }
 
-export interface DividerProps {
+export interface DividerProps extends ComponentBase {
 	is?: 'div' | 'hr';
 	light?: boolean;
 	dark?: boolean;
@@ -455,6 +468,10 @@ export interface AlertProps extends ComponentBase {
 	closable?: boolean;
 	color?: string;
 	background?: string;
+	warning?: boolean;
+	info?: boolean;
+	success?: boolean;
+	error?: boolean;
 }
 
 export interface AlertTitleProps extends ComponentBase {
