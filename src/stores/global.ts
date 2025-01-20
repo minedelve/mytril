@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 
 const isBrowser = typeof window !== 'undefined';
 const defaultValues = { theme: 'default', colorScheme: 'system' };
-const themeStore = writable(defaultValues);
+export const themeStore = writable(defaultValues);
 
 function updateThemeStore(
 	update: Partial<{ theme: string; colorScheme: 'system' | 'dark' | 'light' }>
@@ -25,4 +25,11 @@ function updateThemeStore(
 	});
 }
 
-export { themeStore, updateThemeStore };
+// alias
+export function setTheme(theme: string) {
+	updateThemeStore({ theme: theme });
+}
+
+export function setColorScheme(scheme: 'system' | 'dark' | 'light') {
+	updateThemeStore({ colorScheme: scheme });
+}
