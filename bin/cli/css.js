@@ -24,5 +24,9 @@ export async function modifyCssFile() {
 		console.log(chalk.green(`Mytril has added on ${cssPath} successfully`));
 	} catch (error) {
 		console.error('Error modifying CSS file:', error.message);
+		console.warn('you can add manually on your css file this import:');
+		console.warn(importMytrilCSSBase);
+		console.warn(importMytrilCSSUtilities);
+		console.warn(importMytrilCSSComponents);
 	}
 }

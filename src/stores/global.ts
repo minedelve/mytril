@@ -4,7 +4,7 @@ const isBrowser = typeof window !== 'undefined';
 const defaultValues = { theme: 'default', colorScheme: 'system' };
 export const themeStore = writable(defaultValues);
 
-function updateThemeStore(
+export function updateThemeStore(
 	update: Partial<{ theme: string; colorScheme: 'system' | 'dark' | 'light' }>
 ) {
 	themeStore.update((current) => {

@@ -21,3 +21,17 @@ export function persistedPackages() {
 		}
 	});
 }
+
+export function persistedConfiguration() {
+	onMount(async () => {
+		try {
+			const path = '../../../my-app/mytril.config.js';
+			const demo = await importStatic(path);
+			console.log(demo);
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		} catch (error) {
+			/* empty */
+			console.log(error);
+		}
+	});
+}

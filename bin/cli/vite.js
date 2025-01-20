@@ -29,5 +29,9 @@ export async function adapterViteConfig(typescript) {
 		console.log(chalk.green('Mytril has added on vite.config.js successfully'));
 	} catch (error) {
 		console.error('Error modifying vite.config.js:', error.message);
+		console.warn(
+			'you can add manually on your vite.config.js import { mytril } from "mytril/vite";'
+		);
+		console.warn('and add on yours plugins : mytril()');
 	}
 }
