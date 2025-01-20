@@ -119,63 +119,83 @@ export const convertJStoCSS_Variables = (config: MytrilConfig) => {
  * @param {string} config.defaultTheme - The default theme name.
  * @param {object} config.colors - An object containing color definitions.
  * @param {string | string[]} config.themes - A string or array of strings representing theme names.
+ * @param {string} config.colorScheme - The system color scheme with navigator or user params.
  * @returns {string} The generated CSS string.
  *
  * @example
  * const config = {
- *   defaultTheme: 'light',
+ *   themes: ['default', 'demo']
+ *   defaultTheme: 'default',
+ * 	 colorScheme: 'system',
  *   colors: {
- *     primary: {
- *       light: '#ffffff',
- *       dark: '#000000',
- *     },
- *     secondary: '#ff00ff',
- *	   tertiary:{
- *       _default: '#ffffff',
- *       container:  {
+ * 	   default: {
+ *       primary: {
  *         light: '#ffffff',
- *		   dark: '#000000',
- *		 },
- * 	   }
+ *         dark: '#000000',
+ *       },
+ *       secondary: '#ff00ff',
+ *	     tertiary:{
+ *         _default: '#ffffff',
+ *         container:  {
+ *           light: '#ffffff',
+ *		     dark: '#000000',
+ *		   },
+ * 	     }
+ *     }
  *   },
- *   themes: ['light', 'dark']
  * };
  * const css = convertJStoCSS_Theme(config);
- * console.log(css);
  */
 export const convertJStoCSS_Theme = (config: MytrilConfig) => {
 	const DEFAULT = config.defaultTheme;
+	const mode = config.colorScheme;
 	const colors = config.colors;
 	let themes = config.themes;
-	const list: { [key: string]: { [key: string]: string } } = {};
+	const list: { [key: string]: { [key: string]: { [key: string]: string } } } = {};
 	let css = '';
 
 	if (typeof themes === 'string') themes = [themes];
 
 	if (themes) {
 		themes.map((theme) => {
-			list[theme] = {}; //init
+			list[theme] = {
+				light: {},
+				dark: {}
+			}; //init
 
-			for (const property in colors) {
-				if (typeof colors[property] === 'string') {
-					list[theme][property] = colors[property];
-				} else if (typeof colors[property] === 'object') {
-					if (colors[property][theme]) {
-						list[theme][property] =
-							typeof colors[property][theme] === 'string' ? colors[property][theme] : '';
-					} else {
-						for (const key in colors[property]) {
+			if (!colors || !colors[theme]) return;
+
+			for (const property in colors[theme]) {
+				if (typeof colors[theme][property] === 'string') {
+					list[theme]['light'][property] = colors[theme][property];
+					list[theme]['dark'][property] = colors[theme][property];
+				} else if (typeof colors[theme][property] === 'object') {
+					for (const key in colors[theme][property]) {
+						if (typeof colors[theme][property][key] === 'string') {
+							if (key === 'light') list[theme]['light'][property] = colors[theme][property][key];
+							if (key === 'dark') list[theme]['dark'][property] = colors[theme][property][key];
+						} else if (typeof colors[theme][property][key] === 'object') {
 							if (key === '_default') {
-								if (typeof colors[property][key] === 'string') {
-									list[theme][property] = colors[property][key];
-								} else if (typeof colors[property][key] === 'object') {
-									list[theme][property] = colors[property][key][theme];
+								if (typeof colors[theme][property][key] === 'string') {
+									list[theme]['light'][property] = colors[theme][property][key];
+									list[theme]['dark'][property] = colors[theme][property][key];
+								} else if (typeof colors[theme][property][key] === 'object') {
+									if (colors[theme][property][key]['light'])
+										list[theme]['light'][property] = colors[theme][property][key]['light'];
+									if (colors[theme][property][key]['dark'])
+										list[theme]['dark'][property] = colors[theme][property][key]['dark'];
 								}
 							} else {
-								if (typeof colors[property][key] === 'string') {
-									list[theme][`${property}-${key}`] = colors[property][key];
-								} else if (typeof colors[property][key] === 'object') {
-									list[theme][`${property}-${key}`] = colors[property][key][theme];
+								if (typeof colors[theme][property][key] === 'string') {
+									list[theme]['light'][`${property}-${key}`] = colors[theme][property][key];
+									list[theme]['dark'][`${property}-${key}`] = colors[theme][property][key];
+								} else if (typeof colors[theme][property][key] === 'object') {
+									if (colors[theme][property][key]['light'])
+										list[theme]['light'][`${property}-${key}`] =
+											colors[theme][property][key]['light'];
+									if (colors[theme][property][key]['dark'])
+										list[theme]['dark'][`${property}-${key}`] =
+											colors[theme][property][key]['dark'];
 								}
 							}
 						}
@@ -186,13 +206,29 @@ export const convertJStoCSS_Theme = (config: MytrilConfig) => {
 
 		let classCSS = '';
 		let rootCss = '';
-		for (const scheme in list) {
-			classCSS += `.${scheme} {\n`;
-			Object.entries(list[scheme]).map(([key, value]) => {
-				if (scheme === DEFAULT) rootCss += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
-				classCSS += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
-			});
-			classCSS += `}\n`;
+		for (const theme in list) {
+			for (const scheme in list[theme]) {
+				classCSS += `[mytril-theme='${theme}'].${scheme}, [mytril-theme='${theme}'] .${scheme} {`;
+				Object.entries(list[theme][scheme]).map(([key, value]) => {
+					if (theme === DEFAULT) {
+						if (mode === 'system' && scheme === 'light')
+							rootCss += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
+						else if (mode !== 'system' && mode === scheme)
+							rootCss += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
+					}
+					classCSS += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
+				});
+				classCSS += `}\n`;
+
+				classCSS += `@media (prefers-color-scheme: ${scheme}) {`;
+				classCSS += `[mytril-theme='${theme}']:not(.dark):not(.light) {`;
+				classCSS += `color-scheme: ${scheme};`;
+				Object.entries(list[theme][scheme]).map(([key, value]) => {
+					classCSS += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
+				});
+				classCSS += `}\n`;
+				classCSS += `}\n`;
+			}
 		}
 		css += `:root {\n`;
 		css += `${rootCss}`;
@@ -200,5 +236,6 @@ export const convertJStoCSS_Theme = (config: MytrilConfig) => {
 		css += classCSS;
 		css += `\n`;
 	}
+
 	return css;
 };

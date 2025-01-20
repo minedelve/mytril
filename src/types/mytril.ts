@@ -1,13 +1,16 @@
-export type Colors = {
-	[key: string]: string | { [key: string]: string | { [key: string]: string } };
-};
 export type Themes = Array<string>;
 export type typographyFamily = { [key: string]: string };
 export type TypographySize = { [key: string]: string | { [variant: string]: string } };
 export type CornerSize = { [key: string]: string };
+export type Colors = {
+	[key: string]: {
+		[key: string]: string | { [key: string]: string | { [key: string]: string } };
+	};
+};
 
 export interface MytrilConfig {
 	themes?: Themes;
+	colorScheme?: 'system' | 'dark' | 'light';
 	defaultTheme?: string;
 	colors?: Colors;
 	display?: {

@@ -21,6 +21,7 @@ export function mytrilConfig(config?: MytrilConfig): MytrilConfig {
 	return {
 		defaultTheme: config?.defaultTheme || configDefault.defaultTheme,
 		themes: config?.themes || configDefault.themes,
+		colorScheme: config?.colorScheme || configDefault.colorScheme,
 		colors: newColors,
 		display: {
 			mobileBreakpoint:

@@ -67,26 +67,26 @@
 }
 
 .myt-btn.myt-btn--density-default:not(.myt-btn--icon) {
-	height: calc(var(--c-btn-height) + 0px);
+	height: calc(var(--btn-height) + 0px);
 }
 .myt-btn.myt-btn--density-comfortable:not(.myt-btn--icon) {
-	height: calc(var(--c-btn-height) + -8px);
+	height: calc(var(--btn-height) + -8px);
 }
 .myt-btn.myt-btn--density-compact:not(.myt-btn--icon) {
-	height: calc(var(--c-btn-height) + -12px);
+	height: calc(var(--btn-height) + -12px);
 }
 
 .myt-btn.myt-btn--icon.myt-btn--density-comfortable {
-	width: calc(var(--c-btn-height) + 0px);
-	height: calc(var(--c-btn-height) + 0px);
+	width: calc(var(--btn-height) + 0px);
+	height: calc(var(--btn-height) + 0px);
 }
 .myt-btn.myt-btn--icon.myt-btn--density-compact {
-	width: calc(var(--c-btn-height) + -8px);
-	height: calc(var(--c-btn-height) + -8px);
+	width: calc(var(--btn-height) + -8px);
+	height: calc(var(--btn-height) + -8px);
 }
 .myt-btn.myt-btn--icon.myt-btn--density-default {
-	width: calc(var(--c-btn-height) + 12px);
-	height: calc(var(--c-btn-height) + 12px);
+	width: calc(var(--btn-height) + 12px);
+	height: calc(var(--btn-height) + 12px);
 }
 
 .myt-btn .myt-btn--content {
@@ -97,12 +97,12 @@
 
 .myt-btn .myt-btn--prepend {
 	grid-area: prepend;
-	margin-inline: calc(var(--c-btn-height) / -9) calc(var(--c-btn-height) / 4.5);
+	margin-inline: calc(var(--btn-height) / -9) calc(var(--btn-height) / 4.5);
 }
 
 .myt-btn .myt-btn--append {
 	grid-area: append;
-	margin-inline: calc(var(--c-btn-height) / 4.5) calc(var(--c-btn-height) / -9);
+	margin-inline: calc(var(--btn-height) / 4.5) calc(var(--btn-height) / -9);
 }
 
 .myt-btn .myt-btn--content,
@@ -116,10 +116,10 @@
 }
 
 .myt-btn.myt-btn--icon .myt-icon {
-	--c-icon-size-multiplier: 1;
+	--icon-size-multiplier: 1;
 }
 .myt-btn .myt-icon {
-	--c-icon-size-multiplier: 0.86;
+	--icon-size-multiplier: 0.86;
 }
 
 .myt-btn:active:hover,
@@ -230,55 +230,55 @@
 
 /* @breakpoints */
 .myt-btn[breakpoint]myt-btn--size-xs {
-	--c-btn-size: 0.625rem;
-	--c-btn-height: 20px;
-	font-size: var(--c-btn-size);
+	--btn-size: 0.625rem;
+	--btn-height: 20px;
+	font-size: var(--btn-size);
 	min-width: 36px;
 	padding: 0 8px;
 }
 .myt-btn[breakpoint]myt-btn--size-sm {
-	--c-btn-size: 0.75rem;
-	--c-btn-height: 28px;
-	font-size: var(--c-btn-size);
+	--btn-size: 0.75rem;
+	--btn-height: 28px;
+	font-size: var(--btn-size);
 	min-width: 50px;
 	padding: 0 12px;
 }
 .myt-btn[breakpoint]myt-btn--size-md {
-	--c-btn-size: 0.875rem;
-	--c-btn-height: 36px;
-	font-size: var(--c-btn-size);
+	--btn-size: 0.875rem;
+	--btn-height: 36px;
+	font-size: var(--btn-size);
 	min-width: 64px;
 	padding: 0 16px;
 }
 .myt-btn[breakpoint]myt-btn--size-lg {
-	--c-btn-size: 1rem;
-	--c-btn-height: 44px;
-	font-size: var(--c-btn-size);
+	--btn-size: 1rem;
+	--btn-height: 44px;
+	font-size: var(--btn-size);
 	min-width: 78px;
 	padding: 0 20px;
 }
 .myt-btn[breakpoint]myt-btn--size-xl {
-	--c-btn-size: 1.125rem;
-	--c-btn-height: 52px;
-	font-size: var(--c-btn-size);
+	--btn-size: 1.125rem;
+	--btn-height: 52px;
+	font-size: var(--btn-size);
 	min-width: 92px;
 	padding: 0 24px;
 }
 
 .myt-btn[breakpoint]myt-btn--size-xs .myt-icon {
-	font-size: calc(var(--c-icon-size-multiplier) * 1em);
+	font-size: calc(var(--icon-size-multiplier) * 1em);
 }
 .myt-btn[breakpoint]myt-btn--size-sm .myt-icon {
-	font-size: calc(var(--c-icon-size-multiplier) * 1.25em);
+	font-size: calc(var(--icon-size-multiplier) * 1.25em);
 }
 .myt-btn[breakpoint]myt-btn--size-md .myt-icon {
-	font-size: calc(var(--c-icon-size-multiplier) * 1.5em);
+	font-size: calc(var(--icon-size-multiplier) * 1.5em);
 }
 .myt-btn[breakpoint]myt-btn--size-lg .myt-icon {
-	font-size: calc(var(--c-icon-size-multiplier) * 1.75em);
+	font-size: calc(var(--icon-size-multiplier) * 1.75em);
 }
 .myt-btn[breakpoint]myt-btn--size-xl .myt-icon {
-	font-size: calc(var(--c-icon-size-multiplier) * 2em);
+	font-size: calc(var(--icon-size-multiplier) * 2em);
 }
 /*! @breakpoints */
 

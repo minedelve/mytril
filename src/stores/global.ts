@@ -1,21 +1,28 @@
 import { writable } from 'svelte/store';
-import { BROWSER } from 'esm-env';
 
-export const colorScheme = writable('');
+const isBrowser = typeof window !== 'undefined';
+const defaultValues = { theme: 'default', colorScheme: 'system' };
+const themeStore = writable(defaultValues);
 
-export function changeColorScheme(theme: string) {
-	colorScheme.set(theme);
-}
+function updateThemeStore(
+	update: Partial<{ theme: string; colorScheme: 'system' | 'dark' | 'light' }>
+) {
+	themeStore.update((current) => {
+		const newValues = { ...current, ...update };
+		if (isBrowser) {
+			const ref = document.documentElement.classList;
+			document.documentElement.setAttribute('mytril-theme', newValues.theme);
 
-export function getColorScheme() {
-	const storage = BROWSER ? localStorage : null;
-	const value = storage == null ? void 0 : storage.getItem('@mytril:theme');
+			if (newValues.colorScheme === 'system') ref.remove('light', 'dark');
+			else {
+				ref.remove(newValues.colorScheme === 'dark' ? 'light' : 'dark');
+				ref.add(newValues.colorScheme === 'dark' ? 'dark' : 'light');
+			}
 
-	if (value) {
-		if (value === 'system') {
-			colorScheme.set(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-		} else {
-			colorScheme.set(value ? 'light' : 'dark');
+			localStorage.setItem('@mytril:theme', JSON.stringify(newValues));
 		}
-	}
+		return newValues;
+	});
 }
+
+export { themeStore, updateThemeStore };
