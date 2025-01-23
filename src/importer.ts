@@ -2,18 +2,11 @@ import path from 'path';
 import type { MytrilConfig } from './types/index.js';
 
 const directory = process.cwd();
-const directoryBuild = 'node_modules/mytril/dist';
 
 const config: {
 	params: undefined | MytrilConfig;
-	css: {
-		_default: Array<string>;
-	};
 } = {
-	params: undefined,
-	css: {
-		_default: [path.resolve(`${directoryBuild}`, 'styles/base.css')]
-	}
+	params: undefined
 };
 
 export async function mytrilImporter() {

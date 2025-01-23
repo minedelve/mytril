@@ -4,8 +4,7 @@ import fsPromises from 'fs/promises';
 import {
 	convertJStoCSS_Components,
 	convertJStoCSS_Theme,
-	convertJStoCSS_Utilities,
-	convertJStoCSS_Variables
+	convertJStoCSS_Utilities
 } from './convert-js-to-css.js';
 import type { MytrilConfig } from '$lib/types/mytril.js';
 
@@ -27,12 +26,12 @@ export const mytrilCSS = async (config: MytrilConfig) => {
 	const files = await loadCssFile();
 	let css = '';
 
+	css += files.variables;
 	css += files.base;
 	if (config) {
 		css += convertJStoCSS_Theme(config);
-		css += convertJStoCSS_Variables(config);
 		css += convertJStoCSS_Components(config, files.components);
-		css += convertJStoCSS_Utilities(config);
+		css += convertJStoCSS_Utilities(config, files.utilities);
 	}
 
 	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'styles.css'), css);
@@ -44,17 +43,22 @@ export const mytrilCSS = async (config: MytrilConfig) => {
  * @returns {Promise<{ base: string; components: string;  }>}
  * An object containing concatenated CSS content from different categories:
  * - `base`: Default CSS content.
+ * - `variables`: All component and display variables css.
  * - `components`: CSS content for components.
  *
  * @throws {Error} If there is an issue reading any of the CSS files.
  */
 const cssDirectory = 'node_modules/mytril/dist/styles/';
 export const loadCssFile = async () => {
-	const css: { base: string; components: string } = {
+	const css: { base: string; components: string; variables: string; utilities: string } = {
 		base: ``,
-		components: ``
+		components: ``,
+		variables: ``,
+		utilities: ``
 	};
-	css.base += fs.readFileSync(`${cssDirectory}/base.css`, 'utf-8');
+	css.base += fs.readFileSync(`${cssDirectory}/_base.css`, 'utf-8');
+	css.variables += fs.readFileSync(`${cssDirectory}/_variables.css`, 'utf-8');
+	css.utilities += fs.readFileSync(`${cssDirectory}/_utilities.css`, 'utf-8');
 	css.components += getAllCssFromDirectory(cssDirectory);
 	return css;
 };
@@ -69,7 +73,6 @@ export const loadCssFile = async () => {
  * @param directory - The path of the directory to traverse and search for `.css` files.
  * @returns A single string containing the concatenated content of all `.css` files found.
  */
-const excludeFiles = ['base.css', 'utilities.css'];
 function getAllCssFromDirectory(directory: string): string {
 	let allCss = '';
 
@@ -82,7 +85,7 @@ function getAllCssFromDirectory(directory: string): string {
 
 			if (stats.isDirectory()) {
 				readDirectory(filePath);
-			} else if (stats.isFile() && file.endsWith('.css') && !excludeFiles.includes(file)) {
+			} else if (stats.isFile() && file.endsWith('.css') && !file.startsWith('_')) {
 				const cssContent = fs.readFileSync(filePath, 'utf-8');
 				allCss += cssContent + '\n';
 			}

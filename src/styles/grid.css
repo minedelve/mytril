@@ -15,30 +15,6 @@
 	max-width: 100%;
 }
 
-@media (min-width: 960px) {
-	.myt-grid {
-		max-width: 900px;
-	}
-}
-
-@media (min-width: 1280px) {
-	.myt-grid {
-		max-width: 1200px;
-	}
-}
-
-@media (min-width: 1920px) {
-	.myt-grid {
-		max-width: 1800px;
-	}
-}
-
-@media (min-width: 2560px) {
-	.myt-grid {
-		max-width: 2400px;
-	}
-}
-
 .myt-grid-row {
 	display: flex;
 	flex-wrap: wrap;
@@ -138,4 +114,44 @@
 	flex: 0 0 calc((100% / 12) * 12);
 	max-width: calc((100% / 12) * 12);
 }
+.myt-grid-col[breakpoint]offset-0 {
+	margin-inline-start: calc((100% / 12) * 0);
+}
+.myt-grid-col[breakpoint]offset-1 {
+	margin-inline-start: calc((100% / 12) * 1);
+}
+.myt-grid-col[breakpoint]offset-2 {
+	margin-inline-start: calc((100% / 12) * 2);
+}
+.myt-grid-col[breakpoint]offset-3 {
+	margin-inline-start: calc((100% / 12) * 3);
+}
+.myt-grid-col[breakpoint]offset-4 {
+	margin-inline-start: calc((100% / 12) * 4);
+}
+.myt-grid-col[breakpoint]offset-5 {
+	margin-inline-start: calc((100% / 12) * 5);
+}
+.myt-grid-col[breakpoint]offset-6 {
+	margin-inline-start: calc((100% / 12) * 6);
+}
+.myt-grid-col[breakpoint]offset-7 {
+	margin-inline-start: calc((100% / 12) * 7);
+}
+.myt-grid-col[breakpoint]offset-8 {
+	margin-inline-start: calc((100% / 12) * 8);
+}
+.myt-grid-col[breakpoint]offset-9 {
+	margin-inline-start: calc((100% / 12) * 9);
+}
+.myt-grid-col[breakpoint]offset-10 {
+	margin-inline-start: calc((100% / 12) * 10);
+}
+.myt-grid-col[breakpoint]offset-11 {
+	margin-inline-start: calc((100% / 12) * 11);
+}
+.myt-grid-col[breakpoint]offset-12 {
+	margin-inline-start: calc((100% / 12) * 12);
+}
+
 /*! @breakpoints */

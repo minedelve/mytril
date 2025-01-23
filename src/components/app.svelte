@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { BROWSER } from 'esm-env';
-	import { persistedPackages, persistedConfiguration } from '$lib/state/persisted.svelte.js';
+	import { persistedPackages } from '$lib/state/persisted.svelte.js';
 	import { themeStore, updateThemeStore } from '$lib/stores/global.js';
 
 	let { children } = $props();
 
 	persistedPackages();
-	persistedConfiguration();
 
 	$effect.pre(() => {
 		if (!BROWSER) return;

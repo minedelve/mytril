@@ -1,5 +1,4 @@
 import type { ViteDevServer } from 'vite';
-import { msgVite } from '$lib/utils/prompts.js';
 import { mytrilConfig } from './config.js';
 import { mytrilImporter } from '$lib/importer.js';
 import { mytrilCSS } from '../css/plugin.js';
@@ -11,11 +10,10 @@ import { mytrilCSS } from '../css/plugin.js';
  * @param props.modeDev - A boolean indicating if the developer mode is enabled.
  * @returns An object representing the Vite plugin.
  */
-export async function mytril(props: { modeDev?: boolean }) {
+export async function mytril() {
 	return {
 		name: 'mytril/vite.js',
 		async configResolved() {
-			if (props?.modeDev) msgVite('developer mode is loaded');
 			const configurationGlobal = await mytrilImporter();
 			const viteConf = mytrilConfig(configurationGlobal.params);
 
@@ -32,12 +30,11 @@ export async function mytril(props: { modeDev?: boolean }) {
 					const viteConf = mytrilConfig(configurationGlobal.params);
 
 					await mytrilCSS(viteConf);
-					msgVite('css files has updated');
 				}
 			});
 		},
 		async transform(code: string | string[], id: string) {
-			if (props?.modeDev && id.includes('mytril/dist/styles/') && id.endsWith('.css')) {
+			if (id.includes('mytril/dist/styles/') && id.endsWith('.css')) {
 				const configurationGlobal = await mytrilImporter();
 				const viteConf = mytrilConfig(configurationGlobal.params);
 

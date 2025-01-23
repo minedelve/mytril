@@ -1,11 +1,10 @@
-import { configDefault } from '$lib/presets/config.full.js';
 import { x11Colors } from '$lib/state/utils/x11.js';
 
 export function getAssets() {
 	return {
 		shape(params?: string) {
-			if (params && params in configDefault.shape!) {
-				if (params === 'none') return 'rounded';
+			if (params) {
+				if (params === 'none') return 'rounded-0';
 				return `rounded-${params}`;
 			}
 		},
@@ -15,6 +14,7 @@ export function getAssets() {
 					color.includes('#') ||
 					color.includes('rgb') ||
 					color.includes('rgba') ||
+					color.includes('oklch') ||
 					x11Colors.has(color.toLowerCase())
 				)
 					return color;

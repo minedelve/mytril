@@ -1,21 +1,5 @@
-import {
-	roundedClass,
-	displayClass,
-	elevationClass,
-	flexClass,
-	floatClass,
-	overflowClass,
-	positionClass,
-	sizingClass,
-	spacingClass,
-	typographyClass,
-	typographyClassBreakpoint
-} from '$lib/styles/js/index.js';
-import { rootVariables } from '$lib/utils/formater.js';
 import { cssParser } from './parser.js';
 import type { MytrilConfig } from '$lib/types/mytril.js';
-
-const mediaQueries: Array<string> = ['min', 'max'];
 
 /**
  * Converts a given configuration object into a CSS string.
@@ -27,38 +11,11 @@ const mediaQueries: Array<string> = ['min', 'max'];
  * @param {MytrilConfig} config - The configuration object containing settings for generating CSS.
  * @returns {string} The generated CSS string based on the provided configuration.
  */
-export const convertJStoCSS_Utilities = (config: MytrilConfig) => {
+export const convertJStoCSS_Utilities = (config: MytrilConfig, data: string) => {
 	let css = '';
-
 	if (config && config.display && config.display.thresholds) {
-		// out of breakpoints
-		if (config?.typography?.fontFamily) css += typographyClass(config?.typography?.fontFamily);
-		css += elevationClass();
-
-		for (const [breakpoint, screen] of Object.entries(config.display.thresholds)) {
-			mediaQueries.map((mediaQuerie) => {
-				const prefix = mediaQuerie !== 'min' ? `${mediaQuerie}-${breakpoint}` : breakpoint;
-
-				if (breakpoint !== 'none')
-					css += `@media screen and (${mediaQuerie}-width: ${screen}px) {\n`;
-
-				if (config?.shape) css += roundedClass(prefix, config?.shape);
-				if (config?.typography?.fontSize)
-					css += typographyClassBreakpoint(prefix, config?.typography?.fontSize);
-
-				css += positionClass(prefix);
-				css += sizingClass(prefix);
-				css += spacingClass(prefix);
-				css += displayClass(prefix);
-				css += overflowClass(prefix);
-				css += floatClass(prefix);
-				css += flexClass(prefix);
-
-				if (breakpoint !== 'none') css += `}\n`;
-			});
-		}
+		css += cssParser(config.display.thresholds, data);
 	}
-
 	return css;
 };
 
@@ -74,41 +31,6 @@ export const convertJStoCSS_Components = (config: MytrilConfig, data: string) =>
 	if (config && config.display && config.display.thresholds) {
 		css += cssParser(config.display.thresholds, data);
 	}
-	return css;
-};
-
-/**
- * Converts a given configuration object into a string of CSS custom properties.
- *
- * This function generates CSS variables for typography font families, font sizes,
- * and shape properties based on the provided configuration object. The generated
- * CSS variables are scoped to the `:root` selector.
- *
- * @param {MytrilConfig} config - The configuration object containing typography
- * and shape properties.
- * @returns {string} A string of CSS custom properties.
- */
-export const convertJStoCSS_Variables = (config: MytrilConfig) => {
-	let css: string = '';
-
-	css += ':root {\n';
-	for (const key in config?.typography?.fontFamily) {
-		css += `${rootVariables({ key, type: 'typescale' })}: ${config?.typography?.fontFamily[key]};\n`;
-	}
-	css += '}\n';
-
-	css += ':root {\n';
-	for (const key in config?.typography?.fontSize) {
-		css += `${rootVariables({ key, type: 'typescale' })}: ${config?.typography?.fontSize[key]};\n`;
-	}
-	css += '}\n';
-
-	css += ':root {\n';
-	for (const key in config?.shape) {
-		css += `${rootVariables({ key, type: 'corner' })}: ${config?.shape[key]};\n`;
-	}
-	css += '}\n';
-
 	return css;
 };
 
@@ -147,8 +69,8 @@ export const convertJStoCSS_Variables = (config: MytrilConfig) => {
  * const css = convertJStoCSS_Theme(config);
  */
 export const convertJStoCSS_Theme = (config: MytrilConfig) => {
-	const DEFAULT = config.defaultTheme;
-	const mode = config.colorScheme;
+	// const DEFAULT = config.defaultTheme;
+	// const mode = config.colorScheme;
 	const colors = config.colors;
 	let themes = config.themes;
 	const list: { [key: string]: { [key: string]: { [key: string]: string } } } = {};
@@ -204,35 +126,38 @@ export const convertJStoCSS_Theme = (config: MytrilConfig) => {
 			}
 		});
 
+		const variable = (key: string) => {
+			return `--color-${key}`;
+		};
+
 		let classCSS = '';
-		let rootCss = '';
+		// let rootCss = '';
 		for (const theme in list) {
 			for (const scheme in list[theme]) {
-				classCSS += `[mytril-theme='${theme}'].${scheme}, [mytril-theme='${theme}'] .${scheme} {`;
+				classCSS += `[mytril-theme='${theme}'].${scheme}, [mytril-theme='${theme}'] .${scheme} {\n`;
 				Object.entries(list[theme][scheme]).map(([key, value]) => {
-					if (theme === DEFAULT) {
-						if (mode === 'system' && scheme === 'light')
-							rootCss += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
-						else if (mode !== 'system' && mode === scheme)
-							rootCss += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
-					}
-					classCSS += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
+					// if (theme === DEFAULT) {
+					// 	if (mode === 'system' && scheme === 'light') rootCss += `${variable(key)}: ${value};\n`;
+					// 	else if (mode !== 'system' && mode === scheme)
+					// 		rootCss += `${variable(key)}: ${value};\n`;
+					// }
+					classCSS += `${variable(key)}: ${value};\n`;
 				});
-				classCSS += `}\n`;
+				classCSS += `\n}\n`;
 
-				classCSS += `@media (prefers-color-scheme: ${scheme}) {`;
-				classCSS += `[mytril-theme='${theme}']:not(.dark):not(.light) {`;
-				classCSS += `color-scheme: ${scheme};`;
+				classCSS += `@media (prefers-color-scheme: ${scheme}) {\n`;
+				classCSS += `[mytril-theme='${theme}']:not(.dark):not(.light) {\n`;
+				classCSS += `color-scheme: ${scheme};\n`;
 				Object.entries(list[theme][scheme]).map(([key, value]) => {
-					classCSS += `${rootVariables({ key, type: 'color' })}: ${value};\n`;
+					classCSS += `${variable(key)}: ${value};\n`;
 				});
-				classCSS += `}\n`;
-				classCSS += `}\n`;
+				classCSS += `\n}\n`;
+				classCSS += `\n}\n`;
 			}
 		}
-		css += `:root {\n`;
-		css += `${rootCss}`;
-		css += `}\n`;
+		// css += `:root {\n`;
+		// css += `${rootCss}`;
+		// css += `\n}\n`;
 		css += classCSS;
 		css += `\n`;
 	}

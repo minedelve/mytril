@@ -1,22 +1,14 @@
 import { configDefault } from '$lib/presets/config.full.js';
 import { deepMerge } from '$lib/utils/deep-merge.js';
-import type { Colors, CornerSize, MytrilConfig, TypographySize } from '$lib/types/mytril.js';
+import type { Colors, MytrilConfig, MytrilDefaultConfig } from '$lib/types/mytril.js';
 
 export function mytrilConfig(config?: MytrilConfig): MytrilConfig {
-	const newColors = deepMerge(configDefault.colors!, config?.colors) as Colors;
+	const _defaultConfig: MytrilDefaultConfig = configDefault;
+	const newColors = deepMerge(_defaultConfig.colors, config?.colors) as Colors;
 	const newBreakpoints = deepMerge(
 		configDefault.display!.thresholds!,
 		config?.display?.thresholds
 	) as { [key: string]: number };
-	const newRounded = deepMerge(configDefault.shape!, config?.shape) as CornerSize;
-	const newFontFamily = deepMerge(
-		configDefault.typography!.fontFamily!,
-		config?.typography?.fontFamily
-	) as { [key: string]: string };
-	const newFontSize = deepMerge(
-		configDefault.typography!.fontSize!,
-		config?.typography?.fontSize
-	) as TypographySize;
 
 	return {
 		defaultTheme: config?.defaultTheme || configDefault.defaultTheme,
@@ -27,11 +19,6 @@ export function mytrilConfig(config?: MytrilConfig): MytrilConfig {
 			mobileBreakpoint:
 				config?.display?.mobileBreakpoint || configDefault.display?.mobileBreakpoint,
 			thresholds: newBreakpoints
-		},
-		shape: newRounded,
-		typography: {
-			fontFamily: newFontFamily,
-			fontSize: newFontSize
 		}
 	};
 }
