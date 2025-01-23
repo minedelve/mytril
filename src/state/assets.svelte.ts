@@ -1,5 +1,5 @@
 import { configDefault } from '$lib/presets/config.full.js';
-import { x11Colors } from '$lib/styles/x11.js';
+import { x11Colors } from '$lib/state/utils/x11.js';
 
 export function getAssets() {
 	return {

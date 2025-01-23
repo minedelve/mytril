@@ -86,8 +86,8 @@
 			"types": "./dist/types/index.d.ts"
 		},
 		"./components": {
-			"svelte": "./dist/components/index.js",
-			"default": "./dist/components/index.js"
+			"svelte": "./dist/entry.js",
+			"default": "./dist/entry.js"
 		},
 		"./vite": {
 			"default": "./dist/plugins/vite/plugin.js"
@@ -98,9 +98,7 @@
 		"./stores": {
 			"default": "./dist/stores/index.js"
 		},
-		"./styles/base": "./dist/styles/base.css",
-		"./styles/utilities": "./dist/styles/utilities.css",
-		"./styles/components": "./dist/styles/components.css"
+		"./css": "./dist/styles.css"
 	},
 	"files": [
 		"bin",

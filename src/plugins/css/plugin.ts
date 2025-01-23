@@ -7,7 +7,6 @@ import {
 	convertJStoCSS_Utilities,
 	convertJStoCSS_Variables
 } from './convert-js-to-css.js';
-import { mytrilImporter } from '$lib/importer.js';
 import type { MytrilConfig } from '$lib/types/mytril.js';
 
 /**
@@ -24,69 +23,71 @@ import type { MytrilConfig } from '$lib/types/mytril.js';
  *
  * @returns {Promise<void>} A promise that resolves when all file operations are complete.
  */
-export const mytrilCSS = async (config?: MytrilConfig) => {
+export const mytrilCSS = async (config: MytrilConfig) => {
 	const files = await loadCssFile();
+	let css = '';
 
-	// base css
-	const base = await fsPromises.readFile(
-		path.resolve(`node_modules/mytril/dist/styles/`, 'base.css'),
-		'utf8'
-	);
-
-	if (base.includes('/** @mytril/themes **/') && config) {
-		const newContent = convertJStoCSS_Theme(config) + convertJStoCSS_Variables(config);
-		const updatedContent = base.replace(
-			/(\/\*\* @mytril\/themes \*\*\/)[\s\S]*?(?=\n\/|$)/,
-			`$1\n${newContent}`
-		);
-
-		fsPromises.writeFile(
-			path.resolve(`node_modules/mytril/dist/styles/`, 'base.css'),
-			updatedContent
-		);
-	}
-
-	// components css
+	css += files.base;
 	if (config) {
-		const newContent = convertJStoCSS_Components(config, files.components);
-
-		fsPromises.writeFile(
-			path.resolve(`node_modules/mytril/dist/styles/`, 'components.css'),
-			newContent
-		);
+		css += convertJStoCSS_Theme(config);
+		css += convertJStoCSS_Variables(config);
+		css += convertJStoCSS_Components(config, files.components);
+		css += convertJStoCSS_Utilities(config);
 	}
 
-	// utilities css
-	if (config) {
-		const newContent = convertJStoCSS_Utilities(config);
-
-		fsPromises.writeFile(
-			path.resolve(`node_modules/mytril/dist/styles/`, 'utilities.css'),
-			newContent
-		);
-	}
+	fsPromises.writeFile(path.resolve(`node_modules/mytril/dist/`, 'styles.css'), css);
 };
 
 /**
  * Asynchronously loads CSS files and concatenates their contents into a single object.
  *
- * @returns {Promise<{ _default: string; components: string; palette: string }>}
+ * @returns {Promise<{ base: string; components: string;  }>}
  * An object containing concatenated CSS content from different categories:
- * - `_default`: Default CSS content.
+ * - `base`: Default CSS content.
  * - `components`: CSS content for components.
- * - `palette`: CSS content for palette.
  *
  * @throws {Error} If there is an issue reading any of the CSS files.
  */
+const cssDirectory = 'node_modules/mytril/dist/styles/';
 export const loadCssFile = async () => {
-	const css: { _default: string; components: string; palette: string } = {
-		_default: ``,
-		components: ``,
-		palette: ``
+	const css: { base: string; components: string } = {
+		base: ``,
+		components: ``
 	};
-	const files = await mytrilImporter();
-
-	files?.css._default.map((pathFile) => (css._default += fs.readFileSync(pathFile, 'utf-8')));
-	files?.css.components.map((pathFile) => (css.components += fs.readFileSync(pathFile, 'utf-8')));
+	css.base += fs.readFileSync(`${cssDirectory}/base.css`, 'utf-8');
+	css.components += getAllCssFromDirectory(cssDirectory);
 	return css;
 };
+
+/**
+ * Traverses the given directory and retrieves the content of all `.css` files as a single string.
+ *
+ * This function recursively scans the provided directory and its subdirectories
+ * to find `.css` files. The content of all identified `.css` files is read,
+ * concatenated, and returned as a single string.
+ *
+ * @param directory - The path of the directory to traverse and search for `.css` files.
+ * @returns A single string containing the concatenated content of all `.css` files found.
+ */
+const excludeFiles = ['base.css', 'utilities.css'];
+function getAllCssFromDirectory(directory: string): string {
+	let allCss = '';
+
+	function readDirectory(dir: string) {
+		const files = fs.readdirSync(dir);
+
+		for (const file of files) {
+			const filePath = path.join(dir, file);
+			const stats = fs.statSync(filePath);
+
+			if (stats.isDirectory()) {
+				readDirectory(filePath);
+			} else if (stats.isFile() && file.endsWith('.css') && !excludeFiles.includes(file)) {
+				const cssContent = fs.readFileSync(filePath, 'utf-8');
+				allCss += cssContent + '\n';
+			}
+		}
+	}
+	readDirectory(directory);
+	return allCss;
+}
