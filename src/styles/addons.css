@@ -1,0 +1,16 @@
+.btn {
+	padding: 0.5rem 1rem;
+	border-radius: 0.25rem;
+	background-color: bisque;
+
+	&:hover {
+		background-color: cadetblue;
+	}
+}
+
+@media (min-width: --media-large) {
+	.btn {
+		padding: 3rem 5rem;
+		background-color: chocolate;
+	}
+}
