@@ -1,5 +1,6 @@
 .myt-divider {
-	--opacity: 0.12;
+	--opacity: var(--myt-divider-opc);
+	--c: var(--myt-divider-c);
 
 	display: block;
 	flex: 1 1 100%;
@@ -7,7 +8,7 @@
 	max-height: 0px;
 	opacity: var(--opacity);
 	transition: inherit;
-	border-color: var(--myt-color-outline);
+	border-color: var(--c);
 }
 
 .myt-divider {
@@ -28,12 +29,12 @@
 }
 
 .myt-divider--inset:not(.myt-divider--vertical) {
-	max-width: calc(100% - 72px);
-	margin-inline-start: 72px;
+	max-width: calc(100% - 4.5rem);
+	margin-inline-start: 4.5rem;
 }
 
 .myt-divider--inset.myt-divider--vertical {
-	margin-bottom: 8px;
-	margin-top: 8px;
-	max-height: calc(100% - 16px);
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+	max-height: calc(100% - 1rem);
 }

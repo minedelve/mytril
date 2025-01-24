@@ -1,6 +1,6 @@
 .myt-system-bar {
-	--color: var(--myt-color-on-surface-variant);
-	--background: var(--myt-color-surface-variant);
+	--c: var(--myt-system-bar-c);
+	--bg: var(--myt-system-bar-bg);
 
 	font-size: 0.75rem;
 	font-weight: 400;
@@ -13,19 +13,19 @@
 	align-items: center;
 	display: flex;
 	flex: 1 1 auto;
-	height: 24px;
+	height: 1.5rem;
 	justify-content: flex-end;
 	max-width: 100%;
-	padding-inline: 8px;
+	padding-inline: 0.5rem;
 	position: relative;
 	text-align: end;
 	width: 100%;
-	color: var(--color);
-	background-color: var(--background);
+	color: var(--c);
+	background-color: var(--bg);
 }
 
 .myt-system-bar.myt-system-bar--window {
-	height: 32px;
+	height: 2rem;
 }
 
 .myt-system-bar.myt-system-bar--absolute {
@@ -37,5 +37,5 @@
 }
 
 .myt-system-bar:not(.myt-system-bar--absolute) {
-	padding-inline-end: 8px;
+	padding-inline-end: 0.5rem;
 }

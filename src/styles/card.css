@@ -1,17 +1,17 @@
 .myt-card {
-	--color: var(--myt-color-on-surface);
-	--background: var(--myt-color-surface-container);
+	--c: var(--myt-card-c);
+	--bg: var(--myt-card-bg);
 
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	border-radius: var(--myt-shape-corner-md);
+	border-radius: var(--myt-card-br);
 	border-color: transparent;
 	border-width: 1px;
 	border-style: solid;
 	text-align: start;
-	color: var(--color);
-	background-color: var(--background);
+	color: var(--c);
+	background-color: var(--bg);
 	overflow: hidden;
 }
 
@@ -20,16 +20,16 @@ a.myt-card {
 }
 
 .myt-card:hover:not(div) {
-	background-color: color-mix(in oklab, var(--background) 90%, black);
+	background-color: color-mix(in oklab, var(--bg) 90%, black);
 }
 
 .myt-card:focus:not(div) {
-	background-color: color-mix(in oklab, var(--background) 95%, black);
+	background-color: color-mix(in oklab, var(--bg) 95%, black);
 }
 
 .myt-card:active:not(div),
 .myt-card.myt-card--active {
-	background-color: color-mix(in oklab, var(--background) 95%, black);
+	background-color: color-mix(in oklab, var(--bg) 95%, black);
 }
 
 .myt-card:not(div) {
@@ -182,7 +182,7 @@ a.myt-card {
 	align-items: center;
 	display: flex;
 	flex: none;
-	min-height: 52px;
+	min-height: 3.25rem;
 	padding: 0.5rem;
 	gap: 0.5rem;
 }

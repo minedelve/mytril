@@ -8,7 +8,7 @@ export function mytrilConfig(config?: MytrilConfig): MytrilConfig {
 	const newBreakpoints = deepMerge(
 		configDefault.display!.thresholds!,
 		config?.display?.thresholds
-	) as { [key: string]: number };
+	) as { [key: string]: number | string };
 
 	return {
 		defaultTheme: config?.defaultTheme || configDefault.defaultTheme,

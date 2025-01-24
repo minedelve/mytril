@@ -40,8 +40,8 @@
 		open && 'myt-expansion-panel--active',
 		rest.class
 	]}
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
 	<button
 		class={[

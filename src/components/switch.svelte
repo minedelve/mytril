@@ -58,7 +58,7 @@
 					sizeMd && `md:myt-switch--size-${sizeMd}`,
 					sizeLg && `lg:myt-switch--size-${sizeLg}`,
 					sizeXl && `xl:myt-switch--size-${sizeXl}`,
-					sizeXxl && `xxl:myt-switch--size-${sizeXxl}`
+					sizeXxl && `2xl:myt-switch--size-${sizeXxl}`
 				]}
 				type="checkbox"
 				checked={value}
@@ -98,7 +98,7 @@
 		checked={value}
 		{disabled}
 		onchange={(e) => handleChange(e)}
-		style:--background={assets.color(background)}
-		style:--color={assets.color(color)}
+		style:--bg={assets.color(background)}
+		style:--c={assets.color(color)}
 	/>
 {/if}

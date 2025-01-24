@@ -91,12 +91,14 @@ export const configDefault: MytrilDefaultConfig = {
 	display: {
 		mobileBreakpoint: 'sm',
 		thresholds: {
-			none: 0,
-			sm: 600,
-			md: 840,
-			lg: 1200,
-			xl: 1600,
-			xxl: 1920
+			none: 0, // 0px
+			xs: '28rem', //448px
+			sm: '40rem', //640px
+			md: '48rem', //768px
+			lg: '64rem', //1024px
+			xl: '80rem', //1280px
+			'2xl': '96rem', //1536px
+			'3xl': '112rem' //1792px
 		}
 	}
 };

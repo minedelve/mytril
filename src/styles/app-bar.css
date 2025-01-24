@@ -1,6 +1,6 @@
 .myt-app-bar.myt-toolbar {
-	--color: var(--myt-color-on-surface);
-	--background: var(--myt-color-surface);
+	--c: var(--myt-app-bar-c);
+	--bg: var(--myt-app-bar-bg);
 }
 
 .myt-app-bar {

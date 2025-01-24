@@ -53,8 +53,8 @@
 	]}
 	role="list"
 	tabindex={disabled ? -1 : 0}
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
 	{@render children?.(model)}
 </svelte:element>

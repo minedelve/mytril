@@ -9,7 +9,7 @@
 		light,
 		grow,
 		shift,
-		height = '56px',
+		height = '3.5rem',
 		absolute,
 		rounded,
 		active,
@@ -35,8 +35,8 @@
 		rounded && assets.shape(rounded),
 		rest.class
 	]}
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
 	<div class="myt-bottom-navigation--content" style:height>
 		{@render children?.()}

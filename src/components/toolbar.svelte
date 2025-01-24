@@ -35,10 +35,10 @@
 		absolute && 'myt-toolbar--absolute',
 		rest.class
 	]}
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
-	<div class={['myt-toolbar--content', classContent]} style={`height: ${dense ? '48px' : height};`}>
+	<div class={['myt-toolbar--content', classContent]} style={`height: ${dense ? '3rem' : height};`}>
 		{@render children?.()}
 	</div>
 </svelte:element>

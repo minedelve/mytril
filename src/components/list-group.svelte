@@ -26,7 +26,7 @@
 		open && 'myt-list-group--open',
 		rest.class
 	]}
-	style:--color={assets.color(color)}
+	style:--c={assets.color(color)}
 >
 	{@render activator?.()}
 

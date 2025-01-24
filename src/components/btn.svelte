@@ -73,14 +73,14 @@
 		sizeMd && `md:myt-btn--size-${sizeMd}`,
 		sizeLg && `lg:myt-btn--size-${sizeLg}`,
 		sizeXl && `xl:myt-btn--size-${sizeXl}`,
-		sizeXxl && `xxl:myt-btn--size-${sizeXxl}`,
+		sizeXxl && `2xl:myt-btn--size-${sizeXxl}`,
 		rest.class
 	]}
 	{disabled}
 	aria-label={ariaLabel}
 	type="button"
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
 	{#if prepend}
 		<span class="myt-btn--prepend">

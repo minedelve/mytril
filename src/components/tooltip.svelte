@@ -53,8 +53,8 @@
 		role="tooltip"
 		aria-label={label}
 		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
-		style:--background={assets.color(background)}
-		style:--color={assets.color(color)}
+		style:--bg={assets.color(background)}
+		style:--c={assets.color(color)}
 	>
 		{#if tooltip}
 			{@render tooltip?.()}

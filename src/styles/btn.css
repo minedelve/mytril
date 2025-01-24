@@ -1,6 +1,6 @@
 .myt-btn {
-	--color: var(--myt-color-on-surface-variant);
-	--background: var(--myt-color-surface-variant);
+	--c: var(--myt-btn-c);
+	--bg: var(--myt-btn-bg);
 
 	line-height: 0;
 	align-items: center;
@@ -22,9 +22,9 @@
 	user-select: none;
 	vertical-align: middle;
 	flex-shrink: 0;
-	color: var(--color);
-	background-color: var(--background);
-	border-radius: var(--myt-shape-corner-md);
+	color: var(--c);
+	background-color: var(--bg);
+	border-radius: var(--myt-btn-br);
 }
 
 .myt-btn.myt-btn--outlined {
@@ -45,15 +45,15 @@
 }
 
 .myt-btn.myt-btn--square {
-	border-radius: var(--myt-shape-corner-lg);
+	border-radius: var(--radius-lg);
 }
 
 .myt-btn.myt-btn--rounded {
-	border-radius: var(--myt-shape-corner-pill);
+	border-radius: var(--radius-pill);
 }
 
 .myt-btn.myt-btn--circle:not(.myt-btn--icon) {
-	border-radius: var(--myt-shape-corner-circle);
+	border-radius: var(--radius-circle);
 }
 
 .myt-btn.myt-btn--block {
@@ -70,10 +70,10 @@
 	height: calc(var(--btn-height) + 0px);
 }
 .myt-btn.myt-btn--density-comfortable:not(.myt-btn--icon) {
-	height: calc(var(--btn-height) + -8px);
+	height: calc(var(--btn-height) + -0.5rem);
 }
 .myt-btn.myt-btn--density-compact:not(.myt-btn--icon) {
-	height: calc(var(--btn-height) + -12px);
+	height: calc(var(--btn-height) + -0.75rem);
 }
 
 .myt-btn.myt-btn--icon.myt-btn--density-comfortable {
@@ -81,12 +81,12 @@
 	height: calc(var(--btn-height) + 0px);
 }
 .myt-btn.myt-btn--icon.myt-btn--density-compact {
-	width: calc(var(--btn-height) + -8px);
-	height: calc(var(--btn-height) + -8px);
+	width: calc(var(--btn-height) + -0.5rem);
+	height: calc(var(--btn-height) + -0.5rem);
 }
 .myt-btn.myt-btn--icon.myt-btn--density-default {
-	width: calc(var(--btn-height) + 12px);
-	height: calc(var(--btn-height) + 12px);
+	width: calc(var(--btn-height) + 0.75rem);
+	height: calc(var(--btn-height) + 0.75rem);
 }
 
 .myt-btn .myt-btn--content {
@@ -129,19 +129,19 @@
 }
 
 .myt-btn.myt-btn--active:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	background-color: color-mix(in oklab, var(--background) 85%, black);
+	background-color: color-mix(in oklab, var(--bg) 85%, black);
 }
 .myt-btn:hover:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	background-color: color-mix(in oklab, var(--background) 90%, black);
+	background-color: color-mix(in oklab, var(--bg) 90%, black);
 }
 
 .myt-btn.myt-btn--outlined.myt-btn--active,
 .myt-btn.myt-btn--text.myt-btn--active {
-	background-color: color-mix(in oklab, var(--color) 15%, transparent);
+	background-color: color-mix(in oklab, var(--c) 15%, transparent);
 }
 .myt-btn.myt-btn--outlined:hover,
 .myt-btn.myt-btn--text:hover {
-	background-color: color-mix(in oklab, var(--color) 20%, transparent);
+	background-color: color-mix(in oklab, var(--c) 20%, transparent);
 }
 
 .myt-btn.myt-btn--link {
@@ -153,12 +153,12 @@
 .myt-btn[disabled] {
 	pointer-events: none;
 	user-select: none;
-	color: color-mix(in oklab, var(--color) 40%, transparent) !important;
-	background-color: color-mix(in oklab, var(--background) 70%, transparent) !important;
+	color: color-mix(in oklab, var(--c) 40%, transparent) !important;
+	background-color: color-mix(in oklab, var(--bg) 70%, transparent) !important;
 }
 .myt-btn.myt-btn--disabled.myt-btn--outlined,
 .myt-btn[disabled].myt-btn--outlined {
-	border-color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+	border-color: color-mix(in oklab, var(--c) 40%, transparent) !important;
 }
 
 .myt-btn.myt-btn--disabled.myt-btn--outlined,
@@ -179,90 +179,90 @@
 }
 .myt-btn:is(input[type='checkbox']):after,
 .myt-btn:is(input[type='radio']):after {
-	--mytril-content: attr(aria-label);
-	content: var(--mytril-content);
+	--btn-content: attr(aria-label);
+	content: var(--btn-content);
 }
 .myt-btn:is(input[type='checkbox']:checked),
 .myt-btn:is(input[type='radio']:checked) {
-	--color: var(--myt-color-on-surface);
-	--background: var(--myt-color-surface-tint);
+	--c: var(--myt-btn-c);
+	--bg: var(--myt-btn-bg);
 }
 
 .myt-btn.myt-btn--info:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--color: var(--myt-color-on-info);
-	--background: var(--myt-color-info);
+	--c: var(--mcolor-on-info);
+	--bg: var(--color-info);
 }
 .myt-btn.myt-btn--info.myt-btn--outlined,
 .myt-btn.myt-btn--info.myt-btn--text,
 .myt-btn.myt-btn--info.myt-btn--link {
-	--color: var(--myt-color-info);
+	--c: var(--color-info);
 }
 
 .myt-btn.myt-btn--success:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--color: var(--myt-color-on-success);
-	--background: var(--myt-color-success);
+	--c: var(--color-on-success);
+	--bg: var(--color-success);
 }
 .myt-btn.myt-btn--success.myt-btn--outlined,
 .myt-btn.myt-btn--success.myt-btn--text,
 .myt-btn.myt-btn--success.myt-btn--link {
-	--color: var(--myt-color-success);
+	--c: var(--mcolor-success);
 }
 
 .myt-btn.myt-btn--warning:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--color: var(--myt-color-on-warning);
-	--background: var(--myt-color-warning);
+	--c: var(--color-on-warning);
+	--bg: var(--color-warning);
 }
 .myt-btn.myt-btn--warning.myt-btn--outlined,
 .myt-btn.myt-btn--warning.myt-btn--text,
 .myt-btn.myt-btn--warning.myt-btn--link {
-	--color: var(--myt-color-warning);
+	--c: var(--color-warning);
 }
 
 .myt-btn.myt-btn--error:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
-	--color: var(--myt-color-on-error);
-	--background: var(--myt-color-error);
+	--c: var(--color-on-error);
+	--bg: var(--color-error);
 }
 .myt-btn.myt-btn--error.myt-btn--outlined,
 .myt-btn.myt-btn--error.myt-btn--text,
 .myt-btn.myt-btn--error.myt-btn--link {
-	--color: var(--myt-color-error);
+	--c: var(--color-error);
 }
 
 /* @breakpoints */
 .myt-btn[breakpoint]myt-btn--size-xs {
 	--btn-size: 0.625rem;
-	--btn-height: 20px;
+	--btn-height: 1.25rem;
 	font-size: var(--btn-size);
-	min-width: 36px;
-	padding: 0 8px;
+	min-width: 2.25rem;
+	padding: 0 0.5rem;
 }
 .myt-btn[breakpoint]myt-btn--size-sm {
 	--btn-size: 0.75rem;
-	--btn-height: 28px;
+	--btn-height: 1.75rem;
 	font-size: var(--btn-size);
-	min-width: 50px;
-	padding: 0 12px;
+	min-width: 3.125rem;
+	padding: 0 0.75rem;
 }
 .myt-btn[breakpoint]myt-btn--size-md {
 	--btn-size: 0.875rem;
-	--btn-height: 36px;
+	--btn-height: 2.25rem;
 	font-size: var(--btn-size);
-	min-width: 64px;
-	padding: 0 16px;
+	min-width: 4rem;
+	padding: 0 1rem;
 }
 .myt-btn[breakpoint]myt-btn--size-lg {
 	--btn-size: 1rem;
-	--btn-height: 44px;
+	--btn-height: 2.75rem;
 	font-size: var(--btn-size);
-	min-width: 78px;
-	padding: 0 20px;
+	min-width: 4.875rem;
+	padding: 0 1.25rem;
 }
 .myt-btn[breakpoint]myt-btn--size-xl {
 	--btn-size: 1.125rem;
-	--btn-height: 52px;
+	--btn-height: 3.25rem;
 	font-size: var(--btn-size);
-	min-width: 92px;
-	padding: 0 24px;
+	min-width: 5.75rem;
+	padding: 0 1.5rem;
 }
 
 .myt-btn[breakpoint]myt-btn--size-xs .myt-icon {

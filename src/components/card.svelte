@@ -38,8 +38,8 @@
 		rest.class
 	]}
 	{disabled}
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
 	{@render children?.()}
 </svelte:element>

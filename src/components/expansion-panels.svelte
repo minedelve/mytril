@@ -64,8 +64,8 @@
 		rounded && assets.shape(rounded),
 		rest.class
 	]}
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
 	{@render children?.(model)}
 </svelte:element>

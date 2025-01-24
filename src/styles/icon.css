@@ -1,6 +1,6 @@
 .myt-icon {
-	--icon-size-multiplier: 1;
-	--color: var(--myt-color-on-background);
+	--icon-size-multiplier: var(--myt-icon-size);
+	--c: var(--myt-icon-c);
 
 	align-items: center;
 	display: inline-flex;
@@ -16,7 +16,7 @@
 	vertical-align: middle;
 	width: 1em;
 	min-width: 1em;
-	color: var(--color);
+	color: var(--c);
 }
 
 .myt-icon > svg,
@@ -27,11 +27,11 @@
 }
 
 .myt-icon.myt-icon--start {
-	margin-inline-end: 8px;
+	margin-inline-end: 0.5rem;
 }
 
 .myt-icon.myt-icon--end {
-	margin-inline-start: 8px;
+	margin-inline-start: 0.5rem;
 }
 
 .myt-icon.myt-icon--disabled {

@@ -66,7 +66,7 @@
 		sizeMd && `md:myt-chip--size-${sizeMd}`,
 		sizeLg && `lg:myt-chip--size-${sizeLg}`,
 		sizeXl && `xl:myt-chip--size-${sizeXl}`,
-		sizeXxl && `xxl:myt-chip--size-${sizeXxl}`,
+		sizeXxl && `2xl:myt-chip--size-${sizeXxl}`,
 		rest.class
 	]}
 	{disabled}

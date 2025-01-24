@@ -39,8 +39,8 @@
 		rounded && assets.shape(rounded),
 		rest.class
 	]}
-	style:--background={assets.color(background)}
-	style:--color={assets.color(color)}
+	style:--bg={assets.color(background)}
+	style:--c={assets.color(color)}
 >
 	{#if prepend}
 		<div class="myt-list-item--prepend">

@@ -12,7 +12,7 @@ export interface MytrilDefaultConfig {
 	colors: Colors;
 	display: {
 		mobileBreakpoint: string;
-		thresholds: { [key: string]: number };
+		thresholds: { [key: string]: number | string };
 	};
 }
 
@@ -23,6 +23,6 @@ export interface MytrilConfig {
 	colors?: Colors;
 	display?: {
 		mobileBreakpoint?: string;
-		thresholds?: { [key: string]: number };
+		thresholds?: { [key: string]: number | string };
 	};
 }

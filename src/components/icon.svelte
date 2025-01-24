@@ -77,12 +77,12 @@
 		sizeMd && `md:myt-icon--size-${sizeMd}`,
 		sizeLg && `lg:myt-icon--size-${sizeLg}`,
 		sizeXl && `xl:myt-icon--size-${sizeXl}`,
-		sizeXxl && `xxl:myt-icon--size-${sizeXxl}`,
+		sizeXxl && `2xl:myt-icon--size-${sizeXxl}`,
 		icon?.startsWith('font:') || icon?.startsWith('fa:')
 			? icon.replace('font:', '').replace('fa:', '')
 			: ''
 	]}
-	style:--color={assets.color(color)}
+	style:--c={assets.color(color)}
 >
 	{#if iconifyAvailable && IconifyComponent && !(icon?.startsWith('font:') || icon?.startsWith('fa:'))}
 		<Component {icon} />

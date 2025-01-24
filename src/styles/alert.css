@@ -1,6 +1,6 @@
 .myt-alert {
-	--color: var(--myt-color-on-surface-variant);
-	--background: var(--myt-color-surface-variant);
+	--c: var(--myt-alert-c);
+	--bg: var(--myt-alert-bg);
 
 	display: grid;
 	flex: 1 1;
@@ -9,16 +9,16 @@
 		'. content . .';
 	grid-template-columns: max-content auto max-content max-content;
 	position: relative;
-	padding: 16px;
+	padding: 1rem;
 	overflow: hidden;
-	color: var(--color);
-	border-radius: var(--myt-shape-corner-md);
+	color: var(--c);
+	border-radius: var(--myt-alert-br);
 }
 
 .myt-alert .myt-alert--underlay {
 	grid-area: none;
 	position: absolute;
-	background-color: var(--background);
+	background-color: var(--bg);
 	border-radius: inherit;
 	top: 0;
 	right: 0;
@@ -31,21 +31,17 @@
 	border: thin solid currentColor;
 }
 
-.myt-alert {
-	border-radius: 4px;
-}
-
 .myt-alert--density-default {
-	padding-bottom: 16px;
-	padding-top: 16px;
+	padding-bottom: 1rem;
+	padding-top: 1rem;
 }
 .myt-alert--density-comfortable {
-	padding-bottom: 12px;
-	padding-top: 12px;
+	padding-bottom: 0.75rem;
+	padding-top: 0.75rem;
 }
 .myt-alert--density-compact {
-	padding-bottom: 8px;
-	padding-top: 8px;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
 }
 
 .myt-alert .myt-alert--prepend {
@@ -53,7 +49,7 @@
 	display: flex;
 	align-items: center;
 	grid-area: prepend;
-	margin-inline-end: 16px;
+	margin-inline-end: 1rem;
 }
 
 .myt-alert .myt-alert--content {
@@ -64,18 +60,18 @@
 
 .myt-alert .myt-alert--close {
 	align-self: flex-start;
-	margin-inline-start: 16px;
+	margin-inline-start: 1rem;
 	flex: 0 1 auto;
 	grid-area: close;
 }
 
 .myt-alert.myt-alert--variant-tonal {
-	padding-inline-start: 24px;
+	padding-inline-start: 1.5rem;
 }
 
 .myt-alert .myt-alert--border {
-	border-inline-start-width: 8px !important;
-	border-color: var(--color);
+	border-inline-start-width: 0.5rem !important;
+	border-color: var(--c);
 	border-style: solid;
 	border-width: 0;
 	border-radius: inherit;
@@ -90,51 +86,51 @@
 }
 
 .myt-alert.myt-alert--info:not(.myt-alert--outlined) {
-	--color: var(--myt-color-on-info);
-	--background: var(--myt-color-info);
+	--c: var(--color-on-info);
+	--bg: var(--color-info);
 }
 .myt-alert.myt-alert--info.myt-alert--outlined {
-	--color: var(--myt-color-info);
+	--c: var(--color-info);
 }
 .myt-alert.myt-alert--info.myt-alert--variant-tonal {
-	--background: var(--myt-color-info-container);
-	--color: var(--myt-color-on-info-container);
+	--bg: var(--color-info-container);
+	--c: var(--color-on-info-container);
 }
 
 .myt-alert.myt-alert--success:not(.myt-alert--outlined) {
-	--color: var(--myt-color-on-success);
-	--background: var(--myt-color-success);
+	--c: var(--color-on-success);
+	--bg: var(--color-success);
 }
 .myt-alert.myt-alert--success.myt-alert--outlined {
-	--color: var(--myt-color-success);
+	--c: var(--color-success);
 }
 .myt-alert.myt-alert--success.myt-alert--variant-tonal {
-	--background: var(--myt-color-success-container);
-	--color: var(--myt-color-on-success-container);
+	--bg: var(--color-success-container);
+	--c: var(--color-on-success-container);
 }
 
 .myt-alert.myt-alert--warning:not(.myt-alert--outlined) {
-	--color: var(--myt-color-on-warning);
-	--background: var(--myt-color-warning);
+	--c: var(--color-on-warning);
+	--bg: var(--color-warning);
 }
 .myt-alert.myt-alert--warning.myt-alert--outlined {
-	--color: var(--myt-color-warning);
+	--c: var(--color-warning);
 }
 .myt-alert.myt-alert--warning.myt-alert--variant-tonal {
-	--background: var(--myt-color-warning-container);
-	--color: var(--myt-color-on-warning-container);
+	--bg: var(--color-warning-container);
+	--c: var(--color-on-warning-container);
 }
 
 .myt-alert.myt-alert--error:not(.myt-alert--outlined) {
-	--color: var(--myt-color-on-error);
-	--background: var(--myt-color-error);
+	--c: var(--color-on-error);
+	--bg: var(--color-error);
 }
 .myt-alert.myt-alert--error.myt-alert--outlined {
-	--color: var(--myt-color-error);
+	--c: var(--color-error);
 }
 .myt-alert.myt-alert--error.myt-alert--variant-tonal {
-	--background: var(--myt-color-error-container);
-	--color: var(--myt-color-on-error-container);
+	--bg: var(--color-error-container);
+	--c: var(--color-on-error-container);
 }
 
 .myt-alert-title {

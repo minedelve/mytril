@@ -49,8 +49,8 @@
 		rest.class
 	]}
 	role="alert"
-	style:--color={assets.color(color)}
-	style:--background={assets.color(background)}
+	style:--c={assets.color(color)}
+	style:--bg={assets.color(background)}
 >
 	{#if prepend}
 		<div class="myt-alert--prepend">

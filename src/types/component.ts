@@ -12,6 +12,10 @@ export interface ComponentBase {
 	[key: string]: any;
 }
 
+export interface AppProps extends ComponentBase {
+	breakpoints?: { mobile: number | string; tablet: number | string; laptop: number | string };
+}
+
 export interface TooltipProps extends ComponentBase {
 	dark?: boolean;
 	light?: boolean;

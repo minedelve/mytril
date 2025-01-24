@@ -27,7 +27,7 @@
 		sticky && 'myt-list-subheader--sticky',
 		rest.class
 	]}
-	style:--color={assets.color(color)}
+	style:--c={assets.color(color)}
 >
 	<div class="myt-list-subheader--text">
 		{@render children?.()}

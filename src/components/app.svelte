@@ -1,14 +1,19 @@
 <script lang="ts">
 	import { BROWSER } from 'esm-env';
 	import { persistedPackages } from '$lib/state/persisted.svelte.js';
-	import { themeStore, updateThemeStore } from '$lib/stores/global.js';
+	import { themeStore, updateThemeStore } from '$lib/stores/theme.js';
+	import { hasDisplayScreen } from '$lib/state/device.svelte.js';
+	import type { AppProps } from '$lib/types/component.js';
 
-	let { children } = $props();
+	let { children, breakpoints = { mobile: '28rem', tablet: '48rem', laptop: '64rem' } }: AppProps =
+		$props();
+	const screen = hasDisplayScreen();
 
 	persistedPackages();
 
 	$effect.pre(() => {
 		if (!BROWSER) return;
+		screen.display(breakpoints);
 		const local = localStorage.getItem('@mytril:theme');
 
 		if (local !== null) {

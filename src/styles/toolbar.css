@@ -1,6 +1,6 @@
 .myt-toolbar {
-	--color: var(--myt-color-on-surface);
-	--background: var(--myt-color-surface);
+	--c: var(--myt-toolbar-c);
+	--bg: var(--myt-toolbar-bg);
 
 	align-items: flex-start;
 	display: flex;
@@ -10,12 +10,12 @@
 	max-width: 100%;
 	position: relative;
 	width: 100%;
-	border-radius: var(--myt-shape-corner-none);
+	border-radius: var(--myt-toolbar-br);
 	border-color: transparent;
-	border-width: 1px;
+	border-width: 0.063rem;
 	border-style: solid;
-	color: var(--color);
-	background-color: var(--background);
+	color: var(--c);
+	background-color: var(--bg);
 }
 
 .myt-toolbar.myt-toolbar--floating {
@@ -38,7 +38,7 @@
 	position: relative;
 	transition: inherit;
 	width: 100%;
-	height: 64px;
+	height: 4rem;
 }
 
 .myt-toolbar .myt-toolbar--content {
@@ -46,7 +46,7 @@
 }
 
 .myt-toolbar .myt-toolbar--content > .myt-toolbar-title {
-	margin-inline-start: 20px;
+	margin-inline-start: 1.25rem;
 }
 
 .myt-toolbar-items {

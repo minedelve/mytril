@@ -32,14 +32,14 @@
 		md && `md:col-${md}`,
 		lg && `lg:col-${lg}`,
 		xl && `xl:col-${xl}`,
-		xxl && `xxl:col-${xxl}`,
+		xxl && `2xl:col-${xxl}`,
 		offset && `offset-${offset}`,
 		offsetXs && `xs:offset-${offsetXs}`,
 		offsetSm && `sm:offset-${offsetSm}`,
 		offsetMd && `md:offset-${offsetMd}`,
 		offsetLg && `lg:offset-${offsetLg}`,
 		offsetXl && `xl:offset-${offsetXl}`,
-		offsetXxl && `xxl:offset-${offsetXxl}`,
+		offsetXxl && `2xl:offset-${offsetXxl}`,
 		rest.class
 	]}
 >

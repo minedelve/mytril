@@ -30,7 +30,7 @@
 	]}
 	aria-orientation={vertical ? 'vertical' : 'horizontal'}
 	role="separator"
-	style:--border-color={assets.color(color)}
+	style:--c={assets.color(color)}
 	style:--border-top-width={!vertical ? thickness : undefined}
 	style:--border-right-width={vertical ? thickness : undefined}
 	style:--opacity={opacity}

@@ -1,27 +1,27 @@
 .myt-tooltip-content {
-	--color: var(--myt-color-on-surface-variant);
-	--background: var(--myt-color-surface-variant);
+	--c: var(--myt-tooltip-c);
+	--bg: var(--myt-tooltip-bg);
 
 	inset: 0px auto auto 0px;
 	margin: 0px;
 	position: fixed;
 	z-index: 9999;
-	background: var(--background);
-	color: var(--color);
-	border-radius: var(--myt-shape-corner-md);
+	background: var(--bg);
+	color: var(--c);
+	border-radius: var(--myt-tooltip-br);
 	font-size: 0.875rem;
 	line-height: 1.6;
 	display: inline-block;
-	padding: 5px 16px;
+	padding: 0.313rem 1rem;
 	text-transform: initial;
 	width: auto;
 	opacity: 1;
 	pointer-events: none;
 	transition-property: opacity, transform;
 	overflow-wrap: break-word;
-	max-width: 300px;
+	max-width: 18.75rem;
 }
 
 .myt-tooltip-content.myt-tooltip-content--dense {
-	padding: 2px 8px;
+	padding: 0.125rem 0.5rem;
 }

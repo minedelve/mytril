@@ -58,8 +58,8 @@
 	<div
 		class={['myt-bottom-view-container', classContent, rest.class]}
 		onclick={(event: MouseEvent) => event.stopPropagation()}
-		style:--background={assets.color(background)}
-		style:--color={assets.color(color)}
+		style:--bg={assets.color(background)}
+		style:--c={assets.color(color)}
 	>
 		{@render children?.()}
 	</div>

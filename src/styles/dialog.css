@@ -15,7 +15,7 @@
 }
 
 .myt-dialog::backdrop {
-	background-color: color-mix(in oklab, var(--myt-color-shadow) 30%, transparent);
+	background-color: color-mix(in oklab, var(--color-shadow) 30%, transparent);
 	animation: fade 0.2s ease-out;
 }
 .myt-dialog[open]::backdrop {
@@ -80,22 +80,22 @@
 }
 
 .myt-dialog[breakpoint]myt-dialog--size-x-small {
-	max-width: 300px;
+	max-width: var(--myt-dialog-size-x-small);
 }
 
 .myt-dialog[breakpoint]myt-dialog--size-small {
-	max-width: 400px;
+	max-width: var(--myt-dialog-size-small);
 }
 
 .myt-dialog[breakpoint]myt-dialog--size-default {
-	max-width: 600px;
+	max-width: var(--myt-dialog-size-default);
 }
 
 .myt-dialog[breakpoint]myt-dialog--size-large {
-	max-width: 850px;
+	max-width: var(--myt-dialog-size-large);
 }
 
 .myt-dialog[breakpoint]myt-dialog--size-x-large {
-	max-width: 1200px;
+	max-width: var(--myt-dialog-size-x-large);
 }
 /*! @breakpoints */
