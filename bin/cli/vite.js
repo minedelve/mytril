@@ -32,6 +32,6 @@ export async function adapterViteConfig(typescript) {
 		console.warn(
 			'you can add manually on your vite.config.js import { mytril } from "mytril/vite";'
 		);
-		console.warn('and add on yours plugins : mytril()');
+		console.warn('and add plugin : mytril()');
 	}
 }

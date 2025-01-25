@@ -20,7 +20,7 @@ const { name } = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
 const typescriptEnabled = envTypescript();
 
 if (process.argv.includes('--help') || process.argv.includes('-h')) {
-	console.log('Usage: npx mytril [customCssPath]');
+	console.log('Usage: npx mytril init [customCssPath]');
 	console.log('Default path: src/app.css');
 	process.exit(0);
 } else if (command === 'init') {
