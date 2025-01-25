@@ -155,7 +155,7 @@ git merge upstream/main
 
 ### Code of Conduct
 
-Be respectful, collaborative, and inclusive. Our team values contributors from all backgrounds and expertise levels. Please adhere to our Code of Conduct.
+Be respectful, collaborative, and inclusive. Our team values contributors from all backgrounds and expertise levels. Please adhere to our [Code of Conduct](https://github.com/minedelve/mytril/blob/svelte-5/CODE_OF_CONDUCT.md).
 
 ## Need Help?
 
