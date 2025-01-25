@@ -42,6 +42,11 @@ jobs:
           echo "Local version: $LOCAL_VERSION"
           echo "NPM version: $NPM_VERSION"
 
+          if [ "$LOCAL_VERSION" = "$NPM_VERSION" ]; then
+            echo "Local version is equal to NPM version. Skipping publication."
+            exit 0
+          fi
+
           if [ "$(printf '%s\n' "$NPM_VERSION" "$LOCAL_VERSION" | sort -V | tail -n1)" != "$LOCAL_VERSION" ]; then
             echo "Local version is not greater than NPM version. Skipping publication."
             exit 0
