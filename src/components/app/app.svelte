@@ -1,39 +1,41 @@
 <script lang="ts">
-	import { innerHeight, innerWidth, scrollOrientation, scrollY } from '$lib/composables/display.js';
-	import Provider from './provider.svelte';
+	import { onMount, setContext } from 'svelte';
+	import { createTheme } from '$lib/contexts/theme.svelte.js';
 
-	// state
-	let width = 0;
-	let height = 0;
-	let y = 0;
+	let { children } = $props();
 
-	$: {
-		if (width > 0) {
-			innerWidth.set(width);
-		}
-		if (height > 0) {
-			innerHeight.set(height);
-		}
-		if (y > 0) {
-			scrollY.set(y);
+	const theme = createTheme();
 
-			if (y > $scrollOrientation.position) {
-				scrollOrientation.set({
-					position: y,
-					orientation: 'down'
-				});
-			} else if (y < $scrollOrientation.position) {
-				scrollOrientation.set({
-					position: y,
-					orientation: 'up'
-				});
-			}
-		}
+	let value = $state({ count: 0 });
+	setContext('counter', value);
+
+	function toggle() {
+		theme.update(theme.current === 'light' ? 'dark' : 'light');
+		document.documentElement.classList.remove('light', 'dark');
+		document.documentElement.classList.add(theme.current);
 	}
+
+	onMount(() => {
+		theme.init();
+	});
 </script>
 
-<svelte:window bind:innerWidth={width} bind:innerHeight={height} bind:scrollY={y} />
+<svelte:head>
+	<script>
+		{
+			const theme = localStorage.getItem('@mytril:theme');
 
-<Provider>
-	<slot />
-</Provider>
+			document.documentElement.classList.add(
+				theme === 'system'
+					? window.matchMedia('(prefers-color-scheme: dark)').matches
+						? 'dark'
+						: 'light'
+					: theme
+			);
+		}
+	</script>
+</svelte:head>
+
+{@render children()}
+
+<button onclick={() => toggle()}>Change Theme current</button>
