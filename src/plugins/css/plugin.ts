@@ -28,6 +28,7 @@ export const mytrilCSS = async (config: MytrilConfig) => {
 
 	css += files.variables;
 	css += files.base;
+	css += files.code;
 	if (config) {
 		css += convertJStoCSS_Theme(config);
 		css += convertJStoCSS_Components(config, files.components);
@@ -50,15 +51,23 @@ export const mytrilCSS = async (config: MytrilConfig) => {
  */
 const cssDirectory = 'node_modules/mytril/dist/styles/';
 export const loadCssFile = async () => {
-	const css: { base: string; components: string; variables: string; utilities: string } = {
+	const css: {
+		base: string;
+		components: string;
+		variables: string;
+		utilities: string;
+		code: string;
+	} = {
 		base: ``,
 		components: ``,
 		variables: ``,
-		utilities: ``
+		utilities: ``,
+		code: ``
 	};
 	css.base += fs.readFileSync(`${cssDirectory}/_base.css`, 'utf-8');
 	css.variables += fs.readFileSync(`${cssDirectory}/_variables.css`, 'utf-8');
 	css.utilities += fs.readFileSync(`${cssDirectory}/_utilities.css`, 'utf-8');
+	css.code += fs.readFileSync(`${cssDirectory}/_code.css`, 'utf-8');
 	css.components += getAllCssFromDirectory(cssDirectory);
 	return css;
 };
