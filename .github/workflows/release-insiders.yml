@@ -6,6 +6,26 @@ on:
       - search-cli-svelte-5
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Use linter
+        run: npm run lint
+
+      - name: Build mytril
+        run: npm run build
+
   prepublish:
     runs-on: ubuntu-latest
     permissions:
@@ -15,7 +35,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: New prerelease version
-        run: npm version prerelease --preid=insiders --no-git-tag-version
+        id: version_release
+        run: echo "version_release=$(npm version prerelease --preid=insiders --no-git-tag-version)" >> $GITHUB_OUTPUT
 
       - name: Inspect the working tree
         run: |
