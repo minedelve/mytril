@@ -82,6 +82,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Authenticate to NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+
       - name: Build
         run: npm run build
 
