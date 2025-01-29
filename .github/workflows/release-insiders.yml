@@ -74,9 +74,13 @@ jobs:
 
       - name: Commit & Push version change
         run: |
+          echo "Synchronizing with remote branch..."
+          git pull origin svelte-5 --rebase
+          echo "Adding files to Git and committing..."
           git add package.json
           git commit -m "New insiders version"
-          git push
+          echo "Pushing commit to remote..."
+          git push origin svelte-5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
