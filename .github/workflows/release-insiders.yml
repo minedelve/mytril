@@ -62,16 +62,22 @@ jobs:
         with:
           node-version: '20'
 
-      # Step 3 : Install and build Mytril
+      # Step 3 : Config gIT
+      - name: Setup Git for commits
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Step 4 : Install and build Mytril
       - name: Install dependencies
         run: npm install
 
-      # Step 4 : Update prerelease version
+      # Step 5 : Update prerelease version
       - name: Bump prerelease version
         run: npm version prerelease --preid=insiders
         env:
           CI: true
 
-      # Step 5 : Publish mytril with tag insiders
+      # Step 6 : Publish mytril with tag insiders
       - name: Publish to NPM
         run: npm publish --tag insiders
