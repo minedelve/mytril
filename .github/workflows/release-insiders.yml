@@ -75,6 +75,7 @@ jobs:
           echo "::set-output name=version::$version"
 
       - name: Commit & Push version change
+        if: github.event_name == 'push'
         run: |
           echo "Adding files to Git and committing..."
           git branch --show-current
