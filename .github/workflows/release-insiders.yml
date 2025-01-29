@@ -25,12 +25,35 @@ jobs:
         run: npm install
 
       # Step 4 : Run linter
+      - name: Build
+        run: npm run build
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      # Step 1 : Check repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2 : Config Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 3 : Install and build Mytril
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4 : Run linter
       - name: Run linter
         run: npm run lint
 
   prepublish:
     runs-on: ubuntu-latest
-    needs: build
+    needs: test
 
     outputs:
       new-version: ${{ steps.set_version.outputs.version }}
@@ -76,6 +99,9 @@ jobs:
       # Step 3 : Install and build Mytril
       - name: Install dependencies
         run: npm install
+
+      - name: Build
+        run: npm run build
 
       - name: Verify files for publish
         run: npm pack --dry-run
