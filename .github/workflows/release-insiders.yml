@@ -36,7 +36,10 @@ jobs:
 
       - name: New prerelease version
         id: get_version_release
-        run: echo "version_release=$(npm version prerelease --preid=insiders --no-git-tag-version)" >> $GITHUB_OUTPUT
+        run: |
+          version=$(npm version prerelease --preid=insiders --no-git-tag-version)
+          echo "Generated version: $version" # DEBUG: Ajouter dans les logs pour vérifier
+          echo "version_release=${version}" >> $GITHUB_OUTPUT
 
       - name: Inspect the working tree
         run: |
