@@ -54,15 +54,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: GitBot
+      - name: Commit & Push version change
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git push origin HEAD:v0.5-dev || echo "No changes to push"
 
       - name: New prerelease version
         id: set_version
         run: |
-          version=$(npm version prerelease --preid=insiders --no-git-tag-version)
+          version=$(npm version prerelease --preid=insiders)
           echo "New version: $version"
           echo "::set-output name=version::$version"
 
@@ -91,11 +92,6 @@ jobs:
 
       - name: Verify files
         run: npm pack --dry-run
-
-      - name: New prerelease version
-        id: set_version
-        run: |
-          npm version prerelease --preid=insiders --no-git-tag-version
 
       - name: Publish to NPM
         run: |
