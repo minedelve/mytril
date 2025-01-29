@@ -39,7 +39,8 @@ export default [
 			'.env.*',
 			'pnpm-lock.yaml',
 			'package-lock.json',
-			'yarn.lock'
+			'yarn.lock',
+			'docs/'
 		]
 	}
 ];
