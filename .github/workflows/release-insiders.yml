@@ -76,7 +76,7 @@ jobs:
         run: |
           git add package.json
           git commit -m "New insiders version"
-          git push origin svelte-5
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
