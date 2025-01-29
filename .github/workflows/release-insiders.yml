@@ -57,7 +57,7 @@ jobs:
         run: |
           version=$(npm version prerelease --preid=insiders --no-git-tag-version)
           echo "New version: $version"
-          echo "::set-output name=version::$version" # Configure 'version' comme output
+          echo "::set-output name=version::$version"
   publish:
     runs-on: ubuntu-latest
     needs: prepublish
@@ -66,6 +66,9 @@ jobs:
       # Step 1 : Check repository
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Verify files for publish
+        run: npm pack --dry-run
 
       # Step 2 : Config gIT
       - name: Publish to NPM
