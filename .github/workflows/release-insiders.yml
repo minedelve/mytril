@@ -100,6 +100,9 @@ jobs:
       - name: Publish to NPM
         run: |
           echo "Publishing version ${{ needs.prepublish.outputs.new-version }}"
-          npm publish --tag insiders
+
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN:
+            ${{ secrets.NPM_AUTH_TOKEN }}
+
+            #  npm publish --tag insiders
