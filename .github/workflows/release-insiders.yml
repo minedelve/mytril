@@ -3,7 +3,7 @@ name: Release Insiders
 on:
   push:
     branches:
-      - svelte-5
+      - search-cli-svelte-5
   workflow_dispatch:
 
 permissions:
@@ -77,6 +77,7 @@ jobs:
       - name: Commit & Push version change
         run: |
           echo "Adding files to Git and committing..."
+          git branch --show-current
           git add .
           git commit -m "New insiders version"
           echo "Pushing commit to remote..."
