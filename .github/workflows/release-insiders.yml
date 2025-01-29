@@ -30,6 +30,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git branch --show-current
           git commit -a -m "New insiders version"
+          git status
         # git status
         # git fetch origin
         # git rebase --strategy-option=theirs origin/search-cli-svelte-5 --verbose
