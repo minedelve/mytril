@@ -50,6 +50,8 @@ jobs:
   prepublish:
     runs-on: ubuntu-latest
     needs: test
+    permissions:
+      contents: write
 
     outputs:
       new-version: ${{ steps.set_version.outputs.version }}
