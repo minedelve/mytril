@@ -79,9 +79,11 @@ jobs:
           echo "Adding files to Git and committing..."
           git branch --show-current
           git add .
-          git commit -m "New insiders version"
-          echo "Pushing commit to remote..."
-          git push
+          git commit --verbose -m "New insiders version"
+          git status
+          git fetch origin
+          git rebase --strategy-option=theirs origin/search-cli-svelte-5 --verbose
+          git push --verbose
         # env:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
