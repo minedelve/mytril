@@ -24,60 +24,59 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-  lint:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      # Step 1 : Check repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Step 2 : Config Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      # Step 3 : Install and build Mytril
-      - name: Install dependencies
-        run: npm install
-
       # Step 4 : Run linter
       - name: Run linter
         run: npm run lint
 
   prepublish:
     runs-on: ubuntu-latest
-    needs: lint
+    needs: build
+
+    outputs:
+      new-version: ${{ steps.set_version.outputs.version }}
 
     steps:
       # Step 1 : Check repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2 : Config Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      # Step 3 : Config gIT
+      # Step 2 : Config gIT
       - name: Setup Git for commits
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Step 4 : Install and build Mytril
-      - name: Install dependencies
-        run: npm install
+      # Step 3 : Update prerelease version
+      #   - name: Bump prerelease version
+      #     run: npm version prerelease --preid=insiders
+      #     env:
+      #       CI: true
 
-      # Step 5 : Update prerelease version
       - name: Bump prerelease version
-        run: npm version prerelease --preid=insiders
-        env:
-          CI: true
+        id: set_version
+        run: |
+          version=$(npm version prerelease --preid=insiders --no-git-tag-version)
+          echo "New version: $version"
+          echo "::set-output name=version::$version" # Configure 'version' comme output
+  publish:
+    runs-on: ubuntu-latest
+    needs: prepublish
 
-      # Step 6 : Publish mytril with tag insiders
+    steps:
+      # Step 1 : Check repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2 : Config gIT
       - name: Publish to NPM
-        run: npm publish --tag insiders
+        run: |
+          echo "Publishing version ${{ needs.prepublish.outputs.new-version }}"
+
+      # Step 4 : Git push
+    #   - name: Push version changes
+    #     run: |
+    #       git push origin HEAD:svelte-5
+
+    #   # Step 4 : Publish mytril with tag insiders
+    #   - name: Publish to NPM
+    #     run: npm publish --tag insiders
