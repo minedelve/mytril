@@ -12,7 +12,6 @@
   <b>Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit</b>
 </p>
 
-
 <div align="center">
   
 [![][version]](https://github.com/minedelve/mytril/releases?q=mytril&expanded=true)
@@ -26,7 +25,7 @@
 ---
 
 | :warning: | **Mytril is currently in development.** <br> We are currently in beta version, which implies some instability, but the structure is defined and will not change. We are actively working on stabilizing Mytril. We invite contributors to help us bring this project to life. | &nbsp;&nbsp;&nbsp;&nbsp;[CONTRIBUTE](https://github.com/minedelve/mytril/blob/HEAD/CONTRIBUTING.md)&nbsp;&nbsp;&nbsp;&nbsp; |
-| --------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| --------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 
 ## Documentation
 
