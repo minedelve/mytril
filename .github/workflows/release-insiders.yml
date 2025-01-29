@@ -31,6 +31,7 @@ jobs:
           git branch --show-current
           git commit -a -m "New insiders version"
           git status
+          git push
         # git status
         # git fetch origin
         # git rebase --strategy-option=theirs origin/search-cli-svelte-5 --verbose
