@@ -29,6 +29,10 @@ jobs:
     needs: build
 
     steps:
-      # Step 1 : Run linter
+      # Step 1 : Check repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2 : Run linter
       - name: Run linter
         run: npm run lint
