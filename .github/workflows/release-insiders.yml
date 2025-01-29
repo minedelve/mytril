@@ -82,8 +82,8 @@ jobs:
           git commit -m "New insiders version"
           echo "Pushing commit to remote..."
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish:
     runs-on: ubuntu-latest
