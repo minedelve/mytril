@@ -70,18 +70,30 @@ jobs:
           echo "New version: $version"
           echo "::set-output name=version::$version"
 
+      - name: Check if there are any changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+
       - name: Commit & Push version change
         if: github.event_name == 'push'
         run: |
           echo "Adding files to Git and committing..."
           git branch --show-current
           git commit -a -m "New insiders version"
-          git status
-          git fetch origin
-          git rebase --strategy-option=theirs origin/search-cli-svelte-5 --verbose
-          git push
+        # git status
+        # git fetch origin
+        # git rebase --strategy-option=theirs origin/search-cli-svelte-5 --verbose
+        # git push
         # env:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push
+        if: steps.verify_diff.outputs.changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: search-cli-svelte-5
 
   publish:
     runs-on: ubuntu-latest
