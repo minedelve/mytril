@@ -58,6 +58,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: New prerelease version
+        id: set_version
+        run: |
+          version=$(npm version prerelease --preid=insiders)
+          echo "New version: $version"
+          echo "::set-output name=version::$version"
+
       - name: Commit & Push version change
         run: |
           git config --global user.name "github-actions[bot]"
@@ -67,13 +74,6 @@ jobs:
           git push origin svelte-5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: New prerelease version
-        id: set_version
-        run: |
-          version=$(npm version prerelease --preid=insiders)
-          echo "New version: $version"
-          echo "::set-output name=version::$version"
 
   publish:
     runs-on: ubuntu-latest
