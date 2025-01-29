@@ -92,6 +92,11 @@ jobs:
       - name: Verify files
         run: npm pack --dry-run
 
+      - name: New prerelease version
+        id: set_version
+        run: |
+          npm version prerelease --preid=insiders --no-git-tag-version
+
       - name: Publish to NPM
         run: |
           echo "Publishing version ${{ needs.prepublish.outputs.new-version }}"
