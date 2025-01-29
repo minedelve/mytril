@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - svelte-5
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -58,7 +62,11 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git push origin HEAD:v0.5-dev || echo "No changes to push"
+          git add package.json package-lock.json
+          git commit -m "New insiders version"
+          git push origin svelte-5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: New prerelease version
         id: set_version
