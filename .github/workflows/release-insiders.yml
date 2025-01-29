@@ -15,12 +15,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: New prerelease version
-        run: npm version prerelease --preid=insiders
+        run: npm version prerelease --preid=insiders --no-git-tag-version
 
-      - name: Check if there are any changes
-        id: verify_diff
+      - name: Inspect the working tree
         run: |
-          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
+          echo "Inspecting Git status and diff..."
+          git status
+          git diff
 
       - name: Commit & Push version change
         if: github.event_name == 'push'
