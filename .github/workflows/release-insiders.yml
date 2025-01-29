@@ -13,6 +13,8 @@ jobs:
       # Step 1 : Check repository
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
       # Step 2 : Config Node.js
       - name: Setup Node.js
