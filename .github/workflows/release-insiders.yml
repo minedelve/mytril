@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - search-cli-svelte-5
-  workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   # build:
@@ -64,8 +60,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: New prerelease version
         id: set_version
@@ -79,12 +75,11 @@ jobs:
         run: |
           echo "Adding files to Git and committing..."
           git branch --show-current
-          git add .
-          git commit --verbose -m "New insiders version"
+          git commit -a -m "New insiders version"
           git status
           git fetch origin
           git rebase --strategy-option=theirs origin/search-cli-svelte-5 --verbose
-          git push --verbose
+          git push
         # env:
         #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
