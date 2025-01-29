@@ -67,6 +67,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2 : Config Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 3 : Install and build Mytril
+      - name: Install dependencies
+        run: npm install
+
       - name: Verify files for publish
         run: npm pack --dry-run
 
