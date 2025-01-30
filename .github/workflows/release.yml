@@ -98,7 +98,7 @@ jobs:
         if: env.change_version
         run: |
           echo "${{ env.change_version }}"
-          version=$(npm version latest --no-git-tag-version)
+          version=$(npm version --no-git-tag-version)
           echo "Generated version: $version"
           echo "npm_version=$version" >> $GITHUB_ENV
 
