@@ -98,11 +98,11 @@ jobs:
         if: env.change_version
         run: |
           echo "${{ env.change_version }}"
-          version=$(npm version prerelease --preid=latest --no-git-tag-version)
+          version=$(npm version prerelease --no-git-tag-version)
           echo "Generated version: $version"
           echo "npm_version=$version" >> $GITHUB_ENV
         env:
-          npm_version: $(node -p "require('./package.json').version")
+          npm_version: $version
 
       - name: Compare Diff
         run: |
