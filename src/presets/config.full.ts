@@ -19,7 +19,7 @@ export const configDefault: MytrilDefaultConfig = {
 				container: { light: 'oklch(92.65% 0.002 17.20)', dark: 'oklch(36.77% 0.000 0)' }
 			},
 			'on-secondary': {
-				_default: { light: 'oklch(100.00% 0.000 0)', dark: 'lch(30.92% 0.000 0)' },
+				_default: { light: 'oklch(100.00% 0.000 0)', dark: 'oklch(30.92% 0.000 0)' },
 				container: { light: 'oklch(40.91% 0.000 0)', dark: 'oklch(87.04% 0.002 67.80)' }
 			},
 			tertiary: {
