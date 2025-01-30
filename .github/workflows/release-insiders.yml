@@ -4,20 +4,15 @@ on:
   push:
     branches:
       - svelte-5
-  workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -25,82 +20,64 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build
-
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Lint
+      - name: Use linter
         run: npm run lint
+
+      - name: Build mytril
+        run: npm run build
 
   prepublish:
     runs-on: ubuntu-latest
-    needs: test
+    needs: build
     permissions:
       contents: write
-
     outputs:
-      new-version: ${{ steps.set_version.outputs.version }}
+      version_release: ${{ steps.get_version_release.outputs.version_release }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Auth Github
+      - name: New prerelease version
+        id: get_version_release
+        run: |
+          version=$(npm version prerelease --preid=insiders --no-git-tag-version)
+          echo "Generated version: $version"
+          echo "version_release=${version}" >> $GITHUB_OUTPUT
+
+      - name: Inspect the working tree
+        run: |
+          echo "Inspecting Git status and diff..."
+          git status
+          git diff
+
+      - name: Commit & Push version change
+        if: github.event_name == 'push'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: New prerelease version
-        id: set_version
-        run: |
-          version=$(npm version prerelease --preid=insiders)
-          echo "New version: $version"
-          echo "::set-output name=version::$version"
-
-      - name: Commit & Push version change
-        run: |
-          echo "Synchronizing with remote branch..."
-          git pull origin svelte-5 --rebase
-          echo "Adding files to Git and committing..."
-          git add package.json
-          git commit -m "New insiders version"
-          echo "Pushing commit to remote..."
-          git push origin svelte-5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+          git branch --show-current
+          git commit -a -m "New insiders version"
+          git status
+          git push
   publish:
     runs-on: ubuntu-latest
     needs: prepublish
+    env:
+      version_release: ${{ needs.prepublish.outputs.version_release }}
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install dependencies
         run: npm install
+
+      - name: New prerelease version
+        run: npm version prerelease --preid=insiders --no-git-tag-version
 
       - name: Authenticate to NPM
         run: |
@@ -112,12 +89,12 @@ jobs:
       - name: Verify files
         run: npm pack --dry-run
 
+      - name: Inspect the working tree
+        run: echo "The current branch is  ${{ env.version_release }}"
+
       - name: Publish to NPM
         run: |
-          echo "Publishing version ${{ needs.prepublish.outputs.new-version }}"
+          echo "Publishing version ${{ env.version_release }}"
 
         env:
-          NODE_AUTH_TOKEN:
-            ${{ secrets.NPM_AUTH_TOKEN }}
-
-            #  npm publish --tag insiders
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
