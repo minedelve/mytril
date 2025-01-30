@@ -101,7 +101,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     needs: prepublish
-    if: ${{ needs.prepublish.outputs.publish_package }} == true
+    if: ${{ needs.prepublish.outputs.publish_package }} == "true"
     env:
       publish_package: ${{ needs.prepublish.outputs.publish_package }}
 
