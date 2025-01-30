@@ -42,7 +42,9 @@ jobs:
       - name: Get version from package.json
         id: get_version_local
         run: |
-          echo $(node -p "require('./package.json').version")
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          echo "$(node -p "require('./package.json').version")"
+          echo "local_version=$LOCAL_VERSION" >> $GITHUB_ENV
         env:
           local_version: $(node -p "require('./package.json').version")
 
@@ -61,9 +63,10 @@ jobs:
         run: |
           PACKAGE_NAME="mytril"
           NPM_VERSION=$(npm show $PACKAGE_NAME version || echo "0.0.0")
+          echo "npm_version=$NPM_VERSION" >> $GITHUB_ENV
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-          npm_version: $NPM_VERSION
+          npm_version: $(npm show $PACKAGE_NAME version || echo "0.0.0")
 
       - name: Compare Diff
         if: env.local_version != env.npm_version
