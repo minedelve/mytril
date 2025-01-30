@@ -1,0 +1,92 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+env:
+  local_version: 0.0.0
+  npm_version: 0.0.0
+  change_version: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Use linter
+        run: npm run lint
+
+      - name: Build mytril
+        run: npm run build
+
+  prepublish:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Get version from package.json
+        id: get_version_local
+        run: |
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          echo "$(node -p "require('./package.json').version")"
+          echo "local_version=$LOCAL_VERSION" >> $GITHUB_ENV
+        env:
+          local_version: $(node -p "require('./package.json').version")
+
+      - name: Check if version is insider
+        if: contains(env.local_version, 'insiders')
+        run: |
+          echo "Version contains 'insiders', skipping publication. ${{ env.local_version }}"
+          exit 0
+
+      - name: Authenticate to NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+
+      - name: Get version from NPM
+        id: get_npm_version
+        run: |
+          PACKAGE_NAME="mytril"
+          NPM_VERSION=$(npm show $PACKAGE_NAME version || echo "0.0.0")
+          echo "npm_version=$NPM_VERSION" >> $GITHUB_ENV
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          npm_version: $(npm show $PACKAGE_NAME version || echo "0.0.0")
+
+      - name: Install dependencies
+        if: env.local_version != env.npm_version
+        run: npm install
+
+      - name: Build mytril
+        if: env.local_version != env.npm_version
+        run: npm run build
+
+      - name: Verify files
+        if: env.local_version != env.npm_version
+        run: npm pack --dry-run
+
+      - name: Publish to NPM
+        if: env.local_version != env.npm_version
+        run: |
+          echo "Publishing version ${{ env.local_version }} >  ${{ env.npm_version }}"
+          run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

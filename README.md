@@ -24,7 +24,7 @@
 
 ---
 
-| :warning: | **Mytril is currently in development.** <br> We are currently in beta version, which implies some instability, but the structure is defined and will not change. We are actively working on stabilizing Mytril. We invite contributors to help us bring this project to life. | &nbsp;&nbsp;&nbsp;&nbsp;[CONTRIBUTE](https://github.com/minedelve/mytril/blob/HEAD/CONTRIBUTING.md)&nbsp;&nbsp;&nbsp;&nbsp; |
+| :warning: | **Mytril is currently in development.** <br> We are currently in beta version, which implies some instability, but the structure is defined and will not change. We are actively working on stabilizing Mytril. We invite contributors to help us bring this project to life. | &nbsp;&nbsp;&nbsp;&nbsp;[CONTRIBUTE](https://github.com/minedelve/mytril/tree/main/CONTRIBUTING.md)&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 
 ## Documentation
@@ -43,7 +43,7 @@ For chatting with others using the framework:
 
 ## Contributing
 
-If you're interested in contributing to Mytril, please read our [contributing docs](https://github.com/minedelve/mytril/blob/HEAD/CONTRIBUTING.md) **before submitting a pull request**.
+If you're interested in contributing to Mytril, please read our [contributing docs](https://github.com/minedelve/mytril/tree/main/CONTRIBUTING.md) **before submitting a pull request**.
 
 [version]: https://img.shields.io/npm/v/mytril.svg?label=Version&color=f58142
 [license]: https://badgen.net/github/license/minedelve/mytril?label=License&color=cc5640
