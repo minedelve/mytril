@@ -61,16 +61,14 @@ jobs:
         if: contains(env.local_version, 'insiders')
         run: |
           echo "Version contains 'insiders', skipping publication. ${{ env.local_version }}"
-        #   exit 1
+          exit 0
 
       - name: Authenticate to NPM
-        if: contains(env.local_version, 'insiders') == false
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
       - name: Get version from NPM
         id: get_npm_version
-        if: contains(env.local_version, 'insiders') == false
         run: |
           PACKAGE_NAME="mytril"
           NPM_VERSION=$(npm show $PACKAGE_NAME version || echo "0.0.0")
@@ -80,11 +78,11 @@ jobs:
           npm_version: $(npm show $PACKAGE_NAME version || echo "0.0.0")
 
       - name: Verify files
-        if: env.local_version != env.npm_version && contains(env.local_version, 'insiders') == false
+        if: env.local_version != env.npm_version
         run: npm pack --dry-run
 
       - name: Publish to NPM
-        if: env.local_version != env.npm_version && contains(env.local_version, 'insiders') == false
+        if: env.local_version != env.npm_version
         run: |
           echo "Publishing version ${{ env.local_version }} >  ${{ env.npm_version }}"
         env:
