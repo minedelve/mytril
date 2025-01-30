@@ -12,19 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+    #   - name: Setup node.js
+    #     uses: actions/setup-node@v4
+    #     with:
+    #       node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+    #   - name: Install dependencies
+    #     run: npm install
 
-      - name: Use linter
-        run: npm run lint
+    #   - name: Use linter
+    #     run: npm run lint
 
-      - name: Build mytril
-        run: npm run build
+    #   - name: Build mytril
+    #     run: npm run build
 
   prepublish:
     runs-on: ubuntu-latest
@@ -34,6 +34,7 @@ jobs:
     outputs:
       local_version: ${{ steps.get_version_local.outputs.local_version }}
       version_release: ${{ steps.get_version_release.outputs.version_release }}
+      npm_version: ${{ steps.get_npm_version.outputs.npm_version }}
 
     steps:
       - uses: actions/checkout@v4
@@ -51,67 +52,87 @@ jobs:
           echo "Version contains 'insiders', skipping publication."
           exit 1
 
-      - name: New prerelease version
-        id: get_version_release
-        run: |
-          version=$(npm version prerelease --preid=latest --no-git-tag-version)
-          echo "Generated version: $version"
-          echo "version_release=${version}" >> $GITHUB_OUTPUT
-
-      - name: Inspect the working tree
-        run: |
-          echo "Inspecting Git status and diff..."
-          git status
-          git diff
-
-      - name: Commit & Push version change
-        if: github.event_name == 'push'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git branch --show-current
-          git commit -a -m "publish release - ${{ steps.get_version_release.outputs.version_release }}"
-          git status
-        #   git push
-  publish:
-    runs-on: ubuntu-latest
-    needs: prepublish
-    env:
-      version_release: ${{ needs.prepublish.outputs.version_release }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: New prerelease version
-        run: npm version prerelease --preid=latest --no-git-tag-version
-
       - name: Authenticate to NPM
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
-      - name: Build
-        run: npm run build
-
-      - name: Verify files
-        run: npm pack --dry-run
-
-      - name: Inspect the working tree
-        run: echo "The current branch is  ${{ env.version_release }}"
-
-      - name: Publish to NPM
+      - name: Get version from NPM
+        id: get_npm_version
         run: |
-          echo "Publishing version ${{ env.version_release }}"
-
+          PACKAGE_NAME="mytril"
+          NPM_VERSION=$(npm show $PACKAGE_NAME version || echo "0.0.0")
+          echo "npm_version=$NPM_VERSION" >> $GITHUB_ENV
         env:
-          NODE_AUTH_TOKEN:
-            ${{ secrets.NPM_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-            #npm publish --tag insiders
+      - name: Compare
+        if: steps.get_version_local.outputs.local_version == steps.get_npm_version.outputs.npm_version
+        run: |
+          echo "${{ steps.get_version_local.outputs.local_version }}"
+          echo "${{ steps.get_npm_version.outputs.npm_version }}"
+
+    #   - name: New prerelease version
+    #     id: get_version_release
+    #     run: |
+    #       version=$(npm version prerelease --preid=latest --no-git-tag-version)
+    #       echo "Generated version: $version"
+    #       echo "version_release=${version}" >> $GITHUB_OUTPUT
+
+    #   - name: Inspect the working tree
+    #     run: |
+    #       echo "Inspecting Git status and diff..."
+    #       git status
+    #       git diff
+
+    #   - name: Commit & Push version change
+    #     if: github.event_name == 'push'
+    #     run: |
+    #       git config --global user.name "github-actions[bot]"
+    #       git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    #       git branch --show-current
+    #       git commit -a -m "publish release - ${{ steps.get_version_release.outputs.version_release }}"
+    #       git status
+    #   git push
+
+#   publish:
+#     runs-on: ubuntu-latest
+#     needs: prepublish
+#     env:
+#       version_release: ${{ needs.prepublish.outputs.version_release }}
+
+#     steps:
+#       - uses: actions/checkout@v4
+
+#       - name: Setup node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: '20'
+
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: New prerelease version
+#         run: npm version prerelease --preid=latest --no-git-tag-version
+
+#       - name: Authenticate to NPM
+#         run: |
+#           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+
+#       - name: Build
+#         run: npm run build
+
+#       - name: Verify files
+#         run: npm pack --dry-run
+
+#       - name: Inspect the working tree
+#         run: echo "The current branch is  ${{ env.version_release }}"
+
+#       - name: Publish to NPM
+#         run: |
+#           echo "Publishing version ${{ env.version_release }}"
+
+#         env:
+#           NODE_AUTH_TOKEN:
+#             ${{ secrets.NPM_AUTH_TOKEN }}
+
+#             #npm publish --tag insiders
