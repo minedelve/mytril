@@ -27,6 +27,7 @@
 <svelte:element
 	this={is}
 	{...rest}
+	{href}
 	class={[
 		'myt-card',
 		light && 'light',

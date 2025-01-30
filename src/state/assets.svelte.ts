@@ -18,7 +18,7 @@ export function getAssets() {
 					x11Colors.has(color.toLowerCase())
 				)
 					return color;
-				return `var(--myt-color-${color})`;
+				return `var(--color-${color})`;
 			}
 		}
 	};

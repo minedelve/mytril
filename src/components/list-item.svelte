@@ -30,6 +30,7 @@
 <svelte:element
 	this={is}
 	{...rest}
+	{href}
 	class={[
 		'myt-list-item',
 		light && 'light',

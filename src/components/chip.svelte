@@ -49,6 +49,7 @@
 <svelte:element
 	this={is}
 	{...rest}
+	{href}
 	class={[
 		'myt-chip',
 		light && 'light',
