@@ -6,6 +6,7 @@ on:
       - svelte-5-gitaction
 env:
   local_version: 0.0.0
+  npm_version: 0.0.0
 
 jobs:
   build:
@@ -68,12 +69,12 @@ jobs:
           echo "npm_version=$NPM_VERSION" >> $GITHUB_ENV
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          npm_version: $(npm show $PACKAGE_NAME version || echo "0.0.0")
 
       - name: Compare
-        if: steps.get_version_local.outputs.local_version == steps.get_npm_version.outputs.npm_version
         run: |
-          echo "${{ steps.get_version_local.outputs.local_version }}"
-          echo "${{ steps.get_npm_version.outputs.npm_version }}"
+          echo "${{ env.local_version }}"
+          echo "${{ env.npm_version }}"
 
     #   - name: New prerelease version
     #     id: get_version_release
