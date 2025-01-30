@@ -1,9 +1,10 @@
 name: Release Insiders
 
 on:
-  push:
+  pull_request:
     branches:
-      - svelte-5
+      - develop
+    types: [closed]
 
 jobs:
   build:
