@@ -56,7 +56,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git branch --show-current
-          git commit -a -m "New insiders version"
+          git commit -a -m "publish insiders release - ${{ steps.get_version_release.outputs.version_release }}"
           git status
           git push
   publish:
