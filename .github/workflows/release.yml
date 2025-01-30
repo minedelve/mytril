@@ -92,7 +92,6 @@ jobs:
         if: env.local_version != env.npm_version
         run: |
           echo "Publishing version ${{ env.local_version }} >  ${{ env.npm_version }}"
-
         env:
           NODE_AUTH_TOKEN:
             ${{ secrets.NPM_AUTH_TOKEN }}
