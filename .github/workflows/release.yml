@@ -94,14 +94,6 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
-      - name: Need change version
-        if: env.change_version
-        run: |
-          echo "${{ env.change_version }}"
-          version=$(npm version --no-git-tag-version)
-          echo "Generated version: $version"
-          echo "npm_version=$version" >> $GITHUB_ENV
-
       - name: Compare Diff
         run: |
           echo "${{ env.local_version }}"
