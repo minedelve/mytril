@@ -81,23 +81,23 @@ jobs:
         run: |
           echo "${{ env.local_version }}"
           echo "${{ env.npm_version }}"
+          exit 1
         env:
           change_version: true
-  test:
-    runs-on: ubuntu-latest
-    needs: prepublish
 
-    steps:
-      - uses: actions/checkout@v4
+      - name: Verify files
+        run: npm pack --dry-run
 
-      - name: Authenticate to NPM
+      - name: Publish to NPM
+        if: env.local_version != env.npm_version
         run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+          echo "Publishing version ${{ env.local_version }} >  ${{ env.npm_version }}"
 
-      - name: Compare Diff
-        run: |
-          echo "${{ env.local_version }}"
-          echo "${{ env.npm_version }}"
+        env:
+          NODE_AUTH_TOKEN:
+            ${{ secrets.NPM_AUTH_TOKEN }}
+
+            #npm publish --tag insiders
 
     #   - name: New prerelease version
     #     id: get_version_release
@@ -121,7 +121,6 @@ jobs:
     #       git commit -a -m "publish release - ${{ steps.get_version_release.outputs.version_release }}"
     #       git status
     #   git push
-
 #   publish:
 #     runs-on: ubuntu-latest
 #     needs: prepublish
