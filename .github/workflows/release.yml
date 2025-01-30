@@ -71,7 +71,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           npm_version: $(npm show $PACKAGE_NAME version || echo "0.0.0")
 
-      - name: Compare
+      - name: Compare Diff
+        if: env.local_version != env.npm_version
+        run: |
+          echo "${{ env.local_version }}"
+          echo "${{ env.npm_version }}"
+      - name: Compare Egal
+        if: env.local_version == env.npm_version
         run: |
           echo "${{ env.local_version }}"
           echo "${{ env.npm_version }}"
