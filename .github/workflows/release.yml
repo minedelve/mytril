@@ -49,7 +49,7 @@ jobs:
       - name: Check if version is insider
         if: contains(${{ steps.get_version_local.outputs.local_version }}, 'insiders')
         run: |
-          echo "Version contains 'insiders', skipping publication."
+          echo "Version contains 'insiders', skipping publication. ${{ steps.get_version_local.outputs.local_version }}"
           exit 1
 
       - name: Authenticate to NPM
