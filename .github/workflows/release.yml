@@ -16,30 +16,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-    #   - name: Setup node.js
-    #     uses: actions/setup-node@v4
-    #     with:
-    #       node-version: '20'
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    #   - name: Install dependencies
-    #     run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    #   - name: Use linter
-    #     run: npm run lint
+      - name: Use linter
+        run: npm run lint
 
-    #   - name: Build mytril
-    #     run: npm run build
+      - name: Build mytril
+        run: npm run build
 
   prepublish:
     runs-on: ubuntu-latest
     needs: build
-    permissions:
-      contents: write
-    outputs:
-      publish_package: ${{ steps.set_release_valid.outputs.publish_package }}
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build mytril
+        run: npm run build
 
       - name: Get version from package.json
         id: get_version_local
@@ -54,14 +61,16 @@ jobs:
         if: contains(env.local_version, 'insiders')
         run: |
           echo "Version contains 'insiders', skipping publication. ${{ env.local_version }}"
-          exit 1
+        #   exit 1
 
       - name: Authenticate to NPM
+        if: contains(env.local_version, 'insiders') == false
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
       - name: Get version from NPM
         id: get_npm_version
+        if: contains(env.local_version, 'insiders') == false
         run: |
           PACKAGE_NAME="mytril"
           NPM_VERSION=$(npm show $PACKAGE_NAME version || echo "0.0.0")
@@ -70,112 +79,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           npm_version: $(npm show $PACKAGE_NAME version || echo "0.0.0")
 
-      - name: Compare Diff
-        id: set_release_valid
-        if: env.local_version != env.npm_version
-        run: |
-          echo "${{ env.local_version }}"
-          echo "${{ env.npm_version }}"
-          echo "publish_package=true" >> $GITHUB_OUTPUT
-        # env:
-        #   change_version: false
-
-      - name: Compare Egal
-        if: env.local_version == env.npm_version
-        run: |
-          echo "${{ env.local_version }}"
-          echo "${{ env.npm_version }}"
-        env:
-          change_version: true
-
       - name: Verify files
+        if: env.local_version != env.npm_version && contains(env.local_version, 'insiders') == false
         run: npm pack --dry-run
 
       - name: Publish to NPM
-        if: env.local_version != env.npm_version
+        if: env.local_version != env.npm_version && contains(env.local_version, 'insiders') == false
         run: |
           echo "Publishing version ${{ env.local_version }} >  ${{ env.npm_version }}"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
-  test:
-    runs-on: ubuntu-latest
-    needs: prepublish
-    if: ${{ needs.prepublish.outputs.publish_package }} == "true"
-    env:
-      publish_package: ${{ needs.prepublish.outputs.publish_package }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Display publish_package
-        run: |
-          echo "${{ env.publish_package }}"
-
-    # npm publish --tag insiders
-
-    #   - name: New prerelease version
-    #     id: get_version_release
-    #     run: |
-    #       version=$(npm version prerelease --preid=latest --no-git-tag-version)
-    #       echo "Generated version: $version"
-    #       echo "version_release=${version}" >> $GITHUB_OUTPUT
-
-    #   - name: Inspect the working tree
-    #     run: |
-    #       echo "Inspecting Git status and diff..."
-    #       git status
-    #       git diff
-
-    #   - name: Commit & Push version change
-    #     if: github.event_name == 'push'
-    #     run: |
-    #       git config --global user.name "github-actions[bot]"
-    #       git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    #       git branch --show-current
-    #       git commit -a -m "publish release - ${{ steps.get_version_release.outputs.version_release }}"
-    #       git status
-    #   git push
-
-#   publish:
-#     runs-on: ubuntu-latest
-#     needs: prepublish
-#     env:
-#       version_release: ${{ needs.prepublish.outputs.version_release }}
-
-#     steps:
-#       - uses: actions/checkout@v4
-
-#       - name: Setup node.js
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: '20'
-
-#       - name: Install dependencies
-#         run: npm install
-
-#       - name: New prerelease version
-#         run: npm version prerelease --preid=latest --no-git-tag-version
-
-#       - name: Authenticate to NPM
-#         run: |
-#           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
-
-#       - name: Build
-#         run: npm run build
-
-#       - name: Verify files
-#         run: npm pack --dry-run
-
-#       - name: Inspect the working tree
-#         run: echo "The current branch is  ${{ env.version_release }}"
-
-#       - name: Publish to NPM
-#         run: |
-#           echo "Publishing version ${{ env.version_release }}"
-
-#         env:
-#           NODE_AUTH_TOKEN:
-#             ${{ secrets.NPM_AUTH_TOKEN }}
-
-#             #npm publish --tag insiders
