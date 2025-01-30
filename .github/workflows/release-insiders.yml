@@ -28,6 +28,7 @@ jobs:
 
   prepublish:
     runs-on: ubuntu-latest
+    needs: build
     permissions:
       contents: write
     outputs:
