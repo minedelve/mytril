@@ -3,11 +3,12 @@ import type { Snippet } from 'svelte';
 type IdElementType = string | undefined;
 type ClassNameType = string | string[] | undefined;
 type StylePropertiesType = string | undefined;
+
 export interface ComponentBase {
 	id?: IdElementType;
 	class?: ClassNameType;
 	style?: StylePropertiesType;
-	children: Snippet;
+	children?: Snippet;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	[key: string]: any;
 }
