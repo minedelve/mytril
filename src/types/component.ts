@@ -454,7 +454,7 @@ export interface BottomNavigationProps extends ComponentBase {
 	background?: string;
 }
 
-export interface AppBar extends ToolbarProps {
+export interface AppBarProps extends ToolbarProps {
 	location?: 'top' | 'bottom';
 }
 

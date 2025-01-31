@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { AppBar } from '$lib/types/index.js';
+	import type { AppBarProps } from '$lib/types/index.js';
 
 	// components
 	import Toolbar from './toolbar.svelte';
 
-	let { children, location, ...rest }: AppBar = $props();
+	let { children, location, ...rest }: AppBarProps = $props();
 </script>
 
 <Toolbar
