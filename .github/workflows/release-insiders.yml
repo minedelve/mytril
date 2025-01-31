@@ -52,7 +52,6 @@ jobs:
           git diff
 
       - name: Commit & Push version change
-        if: github.event_name == 'push'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
