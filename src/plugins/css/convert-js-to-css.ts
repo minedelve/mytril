@@ -94,12 +94,17 @@ export const convertJStoCSS_Theme = (config: MytrilConfig) => {
 				} else if (typeof colors[theme][property] === 'object') {
 					for (const key in colors[theme][property]) {
 						if (typeof colors[theme][property][key] === 'string') {
-							if (key === '_default') {
+							if (key === 'dark' || key === 'light') {
 								list[theme]['light'][property] = colors[theme][property][key];
 								list[theme]['dark'][property] = colors[theme][property][key];
 							} else {
-								list[theme]['light'][`${property}-${key}`] = colors[theme][property][key];
-								list[theme]['dark'][`${property}-${key}`] = colors[theme][property][key];
+								if (key === '_default') {
+									list[theme]['light'][property] = colors[theme][property][key];
+									list[theme]['dark'][property] = colors[theme][property][key];
+								} else {
+									list[theme]['light'][`${property}-${key}`] = colors[theme][property][key];
+									list[theme]['dark'][`${property}-${key}`] = colors[theme][property][key];
+								}
 							}
 						} else if (typeof colors[theme][property][key] === 'object') {
 							if (key === '_default') {
