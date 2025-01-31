@@ -27,7 +27,7 @@
 		color,
 		background,
 		value,
-		size,
+		size = 'md',
 		sizeXs,
 		sizeSm,
 		sizeMd,
