@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+
 env:
   local_version: 0.0.0
   npm_version: 0.0.0

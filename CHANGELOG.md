@@ -39,6 +39,12 @@ New requirement for use Mytril:
 - Fix bad theme load with theme select in local
 - Fix latency display axis for component Menu and Tooltip
 
+## [0.4.14] - 2025-01-25
+
+### Added
+
+- Add first CLI for publish mytril !
+
 ## [0.4.13] - 2025-01-02
 
 ### Added
