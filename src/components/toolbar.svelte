@@ -13,7 +13,7 @@
 		rounded,
 		background,
 		color,
-		height,
+		height = '4rem',
 		dense,
 		classContent,
 		...rest
