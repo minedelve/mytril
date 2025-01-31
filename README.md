@@ -1,13 +1,19 @@
+<p align="center">
+  <a href="https://minedelve.com/mytril" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/minedelve/mytril/svelte-5/.github/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/minedelve/mytril/svelte-5/.github/logo-light.svg">
+      <img alt="Mytril" src="https://raw.githubusercontent.com/minedelve/mytril/svelte-5/.github/logo-light.svg" width="350" height="150" style="max-width: 100%;">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <b>Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit</b>
+</p>
+
 <div align="center">
-
-<a href="https://minedelve.com" target="_blank">
-  <picture>
-    <img alt="Mytril Library" src="https://github.com/minedelve/mytril/blob/main/static/mytril.png" width="230" height="70" style="max-width: 100%;">
-  </picture>
-</a>
-
-Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
-
+  
 [![][version]](https://github.com/minedelve/mytril/releases?q=mytril&expanded=true)
 [![][installs]](https://www.npmjs.com/package/mytril)
 [![][installs-this-month]](https://www.npmjs.com/package/mytril)
@@ -16,37 +22,28 @@ Mytril Svelte library component for rapidly building modern websites based on Sv
 
 </div>
 
-| :warning: | **Mytril is currently in development.** <br> We will post a link here when we have an alpha and beta release ready for testing. Until then, we welcome contributors to help bring this project to life. | &nbsp;&nbsp;&nbsp;&nbsp;[CONTRIBUTE](https://github.com/minedelve/mytril)&nbsp;&nbsp;&nbsp;&nbsp; |
-| --------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+---
 
-## Install
-
-```cmd
-npm install --save-dev mytril
-npx mytril init
-```
-
-```cmd
-yarn add -D mytril
-npx mytril init
-```
-
-```cmd
-bun add -D mytril
-npx mytril init
-```
+| :warning: | **Mytril is currently in development.** <br> We are currently in beta version, which implies some instability, but the structure is defined and will not change. We are actively working on stabilizing Mytril. We invite contributors to help us bring this project to life. | &nbsp;&nbsp;&nbsp;&nbsp;[CONTRIBUTE](https://github.com/minedelve/mytril/tree/main/CONTRIBUTING.md)&nbsp;&nbsp;&nbsp;&nbsp; |
+| --------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 
 ## Documentation
 
-For full documentation, visit [minedelve.com](https://minedelve.com).
+For full documentation, visit [minedelve.com/mytril/docs](https://minedelve.com/mytril/docs).
 
 ## Community
 
+For help, discussion about best practices, or any other conversation that would benefit from being searchable:
+
+[Discuss Mytril on GitHub](https://github.com/minedelve/mytril/discussions)
+
 For chatting with others using the framework:
 
-[Join the Mytril Discord Server](https://discord.gg/fwyaGUhbav)
+[Join the Minedelve (Mytril) Discord Server](https://discord.gg/fwyaGUhbav)
 
-Copyright © 2022-2025 [Minedelve](https://minedelve.com), [Nycolaide](https://github.com/Nycolaide)
+## Contributing
+
+If you're interested in contributing to Mytril, please read our [contributing docs](https://github.com/minedelve/mytril/tree/main/CONTRIBUTING.md) **before submitting a pull request**.
 
 [version]: https://img.shields.io/npm/v/mytril.svg?label=Version&color=f58142
 [license]: https://badgen.net/github/license/minedelve/mytril?label=License&color=cc5640

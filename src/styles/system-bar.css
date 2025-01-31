@@ -1,0 +1,41 @@
+.myt-system-bar {
+	--c: var(--myt-system-bar-c);
+	--bg: var(--myt-system-bar-bg);
+
+	font-size: 0.75rem;
+	font-weight: 400;
+	letter-spacing: 0.0333333333em;
+	line-height: 1.667;
+	text-transform: none;
+}
+
+.myt-system-bar {
+	align-items: center;
+	display: flex;
+	flex: 1 1 auto;
+	height: 1.5rem;
+	justify-content: flex-end;
+	max-width: 100%;
+	padding-inline: 0.5rem;
+	position: relative;
+	text-align: end;
+	width: 100%;
+	color: var(--c);
+	background-color: var(--bg);
+}
+
+.myt-system-bar.myt-system-bar--window {
+	height: 2rem;
+}
+
+.myt-system-bar.myt-system-bar--absolute {
+	position: absolute;
+}
+
+.myt-system-bar.myt-system-bar--fixed {
+	position: fixed;
+}
+
+.myt-system-bar:not(.myt-system-bar--absolute) {
+	padding-inline-end: 0.5rem;
+}

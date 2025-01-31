@@ -11,7 +11,7 @@ const markerBreakpoint = {
  * @param css - The CSS string to be parsed and processed.
  * @returns The cleaned CSS string with appended media queries based on the breakpoints.
  */
-export const cssParser = (breakpoints: { [key: string]: number }, css: string): string => {
+export const cssParser = (breakpoints: { [key: string]: number | string }, css: string): string => {
 	const startMarkerLength = markerBreakpoint.start.length;
 	const endMarkerLength = markerBreakpoint.end.length;
 
@@ -37,13 +37,11 @@ export const cssParser = (breakpoints: { [key: string]: number }, css: string): 
 	let response = '';
 	if (extractedContent && extractedContent !== '') {
 		for (const property in breakpoints) {
-			console.log('property', property);
 			if (property !== 'none') {
-				response += `@media screen and (min-width: ${breakpoints[property]}px) {`;
-				response += extractedContent.trim().replaceAll('[breakpoint]', `.${property}\\:`);
-				response += `}`;
-				response += `@media screen and (max-width: ${breakpoints[property]}px) {`;
-				response += extractedContent.trim().replaceAll('[breakpoint]', `.max-${property}\\:`);
+				response += `@media screen and (min-width: ${typeof breakpoints[property] === 'number' ? `${breakpoints[property]}px` : breakpoints[property]}) {`;
+				response += extractedContent
+					.trim()
+					.replaceAll('[breakpoint]', `.${/^\d/.test(property) ? `\\3${property}` : property}\\:`);
 				response += `}`;
 			} else {
 				response += extractedContent.trim().replaceAll('[breakpoint]', `.`);
