@@ -10,23 +10,30 @@ features:
   github: 00-base/overview.md
 ---
 
+<script>
+    import PreviewCode from "$lib/components/preview-code.svelte";
+
+    //sample
+    import ButtonSimple from "./files/button.svelte";
+</script>
+
 # What is Mytril ? {#what-is-mytril}
 
 Mytril is a Svelte library designed to help you build user interfaces with ease. It leverages the power of HTML, CSS, and JavaScript standards, providing lightweight, framework-based components that allow you to develop user interfaces of any complexity.
 
 Here’s a simple example:
 
+<PreviewCode file={ButtonSimple}>
+
 ```svelte
 <script>
-	import { Btn } from 'mytril';
+	import { Btn } from 'mytril/components';
 </script>
 
-<Btn>Click on me</Btn>
+<Btn onclick={() => alert('Welcome to the Moria !')}>Click on me</Btn>
 ```
 
-Rendered output:
-
-<button on:click={() => alert('Welcome to the Moria !')}>Click on me</button>
+</PreviewCode>
 
 ## Ready to Get Started? {#ready-to-start}
 
