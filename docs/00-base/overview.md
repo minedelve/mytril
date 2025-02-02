@@ -50,9 +50,13 @@ To install Mytril, ensure your environment is set up with Node.js (version 18 or
 
 At the root of your project, run the following command:
 
+<PreviewCode>
+
 ```command
 npm install -D mytril
 ```
+
+</PreviewCode>
 
 ### Documentation {#documentation}
 
