@@ -1,13 +1,18 @@
 ---
-title: Introduction
-description: Mytril is a Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
+title: What is Mytril ?
+section: Introduction
+head:
+  title: Introduction
+  description: Mytril is a Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
 related:
   - /colors/material
   - /colors/tailwind
   - /mytril/docs
 features:
-  label: 'introduction'
+  legacy: 0.4.8
   github: 00-base/overview.md
+  bug: introduction
+  feature: add on introduction
 ---
 
 <script>
