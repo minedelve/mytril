@@ -20,7 +20,7 @@
 	this={is}
 	{...rest}
 	class={[
-		'myt-list-item-title',
+		'myt-list-subheader',
 		light && 'light',
 		dark && 'dark',
 		inset && 'myt-list-subheader--inset',
