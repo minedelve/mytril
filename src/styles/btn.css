@@ -27,11 +27,11 @@
 	border-radius: var(--myt-btn-br);
 }
 
-.myt-btn.myt-btn--outlined {
+.myt-btn.myt-btn--outline {
 	border: thin solid currentColor;
 }
 .myt-btn.myt-btn--text,
-.myt-btn.myt-btn--outlined {
+.myt-btn.myt-btn--outline {
 	background-color: transparent;
 }
 
@@ -128,18 +128,18 @@
 	transform: scale(0.97);
 }
 
-.myt-btn.myt-btn--active:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
+.myt-btn.myt-btn--active:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
 	background-color: color-mix(in oklab, var(--bg) 85%, black);
 }
-.myt-btn:hover:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
+.myt-btn:hover:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
 	background-color: color-mix(in oklab, var(--bg) 90%, black);
 }
 
-.myt-btn.myt-btn--outlined.myt-btn--active,
+.myt-btn.myt-btn--outline.myt-btn--active,
 .myt-btn.myt-btn--text.myt-btn--active {
 	background-color: color-mix(in oklab, var(--c) 15%, transparent);
 }
-.myt-btn.myt-btn--outlined:hover,
+.myt-btn.myt-btn--outline:hover,
 .myt-btn.myt-btn--text:hover {
 	background-color: color-mix(in oklab, var(--c) 20%, transparent);
 }
@@ -156,13 +156,13 @@
 	color: color-mix(in oklab, var(--c) 40%, transparent) !important;
 	background-color: color-mix(in oklab, var(--bg) 70%, transparent) !important;
 }
-.myt-btn.myt-btn--disabled.myt-btn--outlined,
-.myt-btn[disabled].myt-btn--outlined {
+.myt-btn.myt-btn--disabled.myt-btn--outline,
+.myt-btn[disabled].myt-btn--outline {
 	border-color: color-mix(in oklab, var(--c) 40%, transparent) !important;
 }
 
-.myt-btn.myt-btn--disabled.myt-btn--outlined,
-.myt-btn[disabled].myt-btn--outlined,
+.myt-btn.myt-btn--disabled.myt-btn--outline,
+.myt-btn[disabled].myt-btn--outline,
 .myt-btn.myt-btn--disabled.myt-btn--text,
 .myt-btn[disabled].myt-btn--text,
 .myt-btn.myt-btn--disabled.myt-btn--link,
@@ -188,41 +188,41 @@
 	--bg: var(--myt-btn-bg);
 }
 
-.myt-btn.myt-btn--info:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
+.myt-btn.myt-btn--info:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
 	--c: var(--mcolor-on-info);
 	--bg: var(--color-info);
 }
-.myt-btn.myt-btn--info.myt-btn--outlined,
+.myt-btn.myt-btn--info.myt-btn--outline,
 .myt-btn.myt-btn--info.myt-btn--text,
 .myt-btn.myt-btn--info.myt-btn--link {
 	--c: var(--color-info);
 }
 
-.myt-btn.myt-btn--success:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
+.myt-btn.myt-btn--success:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
 	--c: var(--color-on-success);
 	--bg: var(--color-success);
 }
-.myt-btn.myt-btn--success.myt-btn--outlined,
+.myt-btn.myt-btn--success.myt-btn--outline,
 .myt-btn.myt-btn--success.myt-btn--text,
 .myt-btn.myt-btn--success.myt-btn--link {
 	--c: var(--mcolor-success);
 }
 
-.myt-btn.myt-btn--warning:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
+.myt-btn.myt-btn--warning:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
 	--c: var(--color-on-warning);
 	--bg: var(--color-warning);
 }
-.myt-btn.myt-btn--warning.myt-btn--outlined,
+.myt-btn.myt-btn--warning.myt-btn--outline,
 .myt-btn.myt-btn--warning.myt-btn--text,
 .myt-btn.myt-btn--warning.myt-btn--link {
 	--c: var(--color-warning);
 }
 
-.myt-btn.myt-btn--error:not(.myt-btn--outlined):not(.myt-btn--text):not(.myt-btn--link) {
+.myt-btn.myt-btn--error:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
 	--c: var(--color-on-error);
 	--bg: var(--color-error);
 }
-.myt-btn.myt-btn--error.myt-btn--outlined,
+.myt-btn.myt-btn--error.myt-btn--outline,
 .myt-btn.myt-btn--error.myt-btn--text,
 .myt-btn.myt-btn--error.myt-btn--link {
 	--c: var(--color-error);

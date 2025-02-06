@@ -32,7 +32,7 @@ export interface ToolbarProps extends ComponentBase {
 	is?: 'div' | 'header' | 'nav';
 	classContent?: string;
 	floating?: boolean;
-	variant?: 'outlined' | 'text';
+	variant?: 'outline' | 'text';
 	absolute?: boolean;
 	rounded?: string;
 	height?: string;
@@ -324,7 +324,7 @@ export interface ChipProps extends ComponentBase {
 	is?: 'a' | 'button' | 'span' | 'div';
 	dark?: boolean;
 	light?: boolean;
-	variant?: 'outlined' | 'label';
+	variant?: 'outline' | 'label';
 	active?: boolean;
 	density?: 'compact' | 'comfortable' | 'default';
 	disabled?: boolean;
@@ -348,7 +348,7 @@ export interface CardProps extends ComponentBase {
 	is?: 'a' | 'button' | 'div';
 	dark?: boolean;
 	light?: boolean;
-	variant?: 'outlined' | 'text';
+	variant?: 'outline' | 'text';
 	active?: boolean;
 	disabled?: boolean;
 	rounded?: string;
@@ -388,7 +388,7 @@ export interface BtnProps extends ComponentBase {
 	is?: 'a' | 'button' | 'input';
 	dark?: boolean;
 	light?: boolean;
-	variant?: 'outlined' | 'text';
+	variant?: 'outline' | 'text';
 	active?: boolean;
 	density?: 'compact' | 'comfortable' | 'default';
 	block?: boolean;
@@ -467,7 +467,7 @@ export interface AlertProps extends ComponentBase {
 	is?: 'div';
 	dark?: boolean;
 	light?: boolean;
-	variant?: 'outlined' | 'tonal';
+	variant?: 'outline' | 'tonal';
 	density?: 'compact' | 'comfortable' | 'default';
 	rounded?: string;
 	closable?: boolean;
