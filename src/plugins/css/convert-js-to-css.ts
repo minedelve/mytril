@@ -95,8 +95,8 @@ export const convertJStoCSS_Theme = (config: MytrilConfig) => {
 					for (const key in colors[theme][property]) {
 						if (typeof colors[theme][property][key] === 'string') {
 							if (key === 'dark' || key === 'light') {
-								list[theme]['light'][property] = colors[theme][property][key];
-								list[theme]['dark'][property] = colors[theme][property][key];
+								if (key === 'light') list[theme]['light'][property] = colors[theme][property][key];
+								if (key === 'dark') list[theme]['dark'][property] = colors[theme][property][key];
 							} else {
 								if (key === '_default') {
 									list[theme]['light'][property] = colors[theme][property][key];
