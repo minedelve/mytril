@@ -13,6 +13,14 @@ export interface ComponentBase {
 	[key: string]: any;
 }
 
+export interface Component {
+	id?: IdElementType;
+	class?: ClassNameType;
+	style?: StylePropertiesType;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[key: string]: any;
+}
+
 export interface AppProps extends ComponentBase {
 	breakpoints?: { mobile: number | string; tablet: number | string; laptop: number | string };
 }
@@ -175,16 +183,16 @@ export interface ImgProps {
 }
 
 type sizeIconString = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-export interface IconProps {
+export interface IconProps extends Component {
 	is?: 'i' | 'span';
 	dark?: boolean;
 	light?: boolean;
 	disabled?: boolean;
 	start?: boolean;
 	end?: boolean;
-	size?: sizeIconString;
 	icon?: string;
-	color?: sizeIconString;
+	color?: string;
+	size?: sizeIconString;
 	sizeXs?: sizeIconString;
 	sizeSm?: sizeIconString;
 	sizeMd?: sizeIconString;

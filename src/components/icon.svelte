@@ -84,7 +84,9 @@
 	]}
 	style:--c={assets.color(color)}
 >
-	{#if iconifyAvailable && IconifyComponent && !(icon?.startsWith('font:') || icon?.startsWith('fa:'))}
+	{#if iconifyAvailable && IconifyComponent && !(icon?.startsWith('font:') || icon?.startsWith('fa:') || icon?.startsWith('svg:'))}
 		<Component {icon} />
+	{:else if icon?.startsWith('svg:')}
+		{icon}
 	{/if}
 </svelte:element>

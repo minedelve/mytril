@@ -30,6 +30,7 @@
 
 .myt-alert.myt-alert--outline {
 	border: thin solid currentColor;
+	background-color: transparent;
 }
 
 .myt-alert--density-default {
