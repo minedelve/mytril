@@ -19,7 +19,7 @@ features:
     import Code from "$lib/components/code.svelte";
 
     //sample
-    import ButtonSimple from "./files/button.svelte";
+    import ButtonSimple from "../examples/button.svelte";
 </script>
 
 Mytril is a Svelte library designed to help you build user interfaces with ease. It leverages the power of HTML, CSS, and JavaScript standards, providing lightweight, framework-based components that allow you to develop user interfaces of any complexity.
@@ -47,6 +47,8 @@ If you encounter any bugs, have suggestions, or simply have questions, feel free
 ### Installation (basic) {#installation-basic}
 
 To install Mytril, ensure your environment is set up with Node.js (version 18 or LTS+), and you're using Svelte or SvelteKit. For guidance on setting up Svelte or SvelteKit, we recommend referring to the official documentation:
+
+![](/images/docs-mytril/example-img.png)
 
 - [Svelte Documentation](https://svelte.dev/)
 - [Sveltekit Documentation](https://kit.svelte.dev/)
