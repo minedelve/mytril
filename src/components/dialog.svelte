@@ -5,7 +5,7 @@
 
 	let {
 		children,
-		open,
+		open = $bindable(),
 		dark,
 		light,
 		classContent,
