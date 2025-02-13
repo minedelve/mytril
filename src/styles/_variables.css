@@ -35,6 +35,8 @@
 	--myt-card-br: var(--radius-md);
 	--myt-chip-c: var(--color-on-surface-variant);
 	--myt-chip-bg: var(--color-surface-variant);
+	--myt-dialog-c: var(--color-on-surface);
+	--myt-dialog-bg: var(--color-surface);
 	--myt-dialog-size-x-small: 18.75rem;
 	--myt-dialog-size-small: 25rem;
 	--myt-dialog-size-default: 37.5rem;
