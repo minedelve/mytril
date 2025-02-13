@@ -23,6 +23,9 @@
 }
 
 .myt-dialog .myt-dialog-container {
+	--c: var(--myt-dialog-c);
+	--bg: var(--myt-dialog-bg);
+
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 	transition-duration: 0.2s;
