@@ -1,6 +1,11 @@
 ---
-title: AppBar Component
-description: Discover Mytril's AppBar component for Svelte applications. Create intuitive navigation with a lightweight, customizable, and accessible interface.
+title:
+section:
+head:
+  title: AppBar component
+  description: Discover Mytril's AppBar component for Svelte applications. Create intuitive navigation with a lightweight, customizable, and accessible interface.
+features:
+  legacy: 0.4.14
 ---
 
 # AppBar Component a comprehensive guide {#appbar-component-a-comprehensive-guide}

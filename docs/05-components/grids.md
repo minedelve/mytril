@@ -1,6 +1,11 @@
 ---
-title: Responsive Grid Layouts with Mytril
-description: Master the 12-point grid system for creating responsive layouts. Learn to use container, row and col components with custom breakpoints for adaptive web design.
+title:
+section:
+head:
+  title: Responsive Grid Layouts with Mytril
+  description: Master the 12-point grid system for creating responsive layouts. Learn to use container, row and col components with custom breakpoints for adaptive web design.
+features:
+  legacy: 0.4.14
 ---
 
 # Building layouts with grid components with Mytril {#building-layouts-with-grid-components-with-mytril}

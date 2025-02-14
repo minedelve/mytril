@@ -1,6 +1,11 @@
 ---
-title: Responsive breakpoints - Control layouts across
-description: Utilize Mytril's predefined breakpoints to effortlessly manage layouts across all screen sizes. Fine-tune or customize these breakpoints directly in your code for complete control over responsive design.
+title:
+section:
+head:
+  title: Responsive breakpoints - Control layouts across
+  description: Utilize Mytril's predefined breakpoints to effortlessly manage layouts across all screen sizes. Fine-tune or customize these breakpoints directly in your code for complete control over responsive design.
+features:
+  legacy: 0.4.14
 ---
 
 # Display your content with responsive breakpoints {#display-breakpoints}

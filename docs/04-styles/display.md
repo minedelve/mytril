@@ -1,6 +1,11 @@
 ---
-title: Managing display styles with Mytril - Responsive Layouts for Svelte Projects
-description: Learn how to manage CSS display properties and implement responsive layouts with Mytril’s predefined classes. Streamline your Svelte development with flexible display utilities.
+title:
+section:
+head:
+  title: Managing display styles with Mytril - Responsive Layouts for Svelte Projects
+  description: Learn how to manage CSS display properties and implement responsive layouts with Mytril’s predefined classes. Streamline your Svelte development with flexible display utilities.
+features:
+  legacy: 0.4.14
 ---
 
 # Managing display styles with Mytril {#managing-display-styles-with-mytril}

@@ -1,6 +1,11 @@
 ---
-title: Typography utility classes for responsive text styling
-description: Control text size, font weight, alignment, and more with Mytril's typography utility classes. Easily apply responsive styles for text across different breakpoints in your projects.
+title:
+section:
+head:
+  title: Typography utility classes for responsive text styling
+  description: Control text size, font weight, alignment, and more with Mytril's typography utility classes. Easily apply responsive styles for text across different breakpoints in your projects.
+features:
+  legacy: 0.4.14
 ---
 
 <script lang="ts">

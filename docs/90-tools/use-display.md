@@ -1,6 +1,11 @@
 ---
-title: Use useDisplay in Mytril for responsive layouts
-description: Learn how to use the useDisplay function in Mytril to create responsive, breakpoint-based content rendering in your Svelte applications. Improve user experience with dynamic visibility control.
+title:
+section:
+head:
+  title: Use useDisplay in Mytril for responsive layouts
+  description: Learn how to use the useDisplay function in Mytril to create responsive, breakpoint-based content rendering in your Svelte applications. Improve user experience with dynamic visibility control.
+features:
+  legacy: 0.4.14
 ---
 
 # The useDisplay function in Mytril: reactive display in your render DOM {#useDisplay-function-in-mytril}

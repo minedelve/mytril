@@ -1,6 +1,11 @@
 ---
-title: Configurating spacing for Margin, Padding, and Gap Classes
-description: Learn how to use Mytril’s spacing utilities to adjust margins, padding, and gaps in your Svelte components. Apply spacing with easy-to-use classes and responsive breakpoints for layout control.
+title:
+section:
+head:
+  title: Configurating spacing for Margin, Padding, and Gap Classes
+  description: Learn how to use Mytril’s spacing utilities to adjust margins, padding, and gaps in your Svelte components. Apply spacing with easy-to-use classes and responsive breakpoints for layout control.
+features:
+  legacy: 0.4.14
 ---
 
 <script lang="ts">

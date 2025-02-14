@@ -1,6 +1,11 @@
 ---
-title: Card Component
-description: Learn how to use Mytril's card component to create structured, responsive layouts with headings, text, images, and actions. Optimize your Svelte projects with ease.
+title:
+section:
+head:
+  title: Card component
+  description: Learn how to use Mytril's card component to create structured, responsive layouts with headings, text, images, and actions. Optimize your Svelte projects with ease.
+features:
+  legacy: 0.4.14
 ---
 
 # Card components with Mytril {#card-components-with-mytril}

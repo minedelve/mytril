@@ -1,6 +1,11 @@
 ---
-title: Manage element positioning CSS classes
-description: Learn how to manage CSS positioning properties using Mytril’s predefined classes. Simplify responsive layouts in your Svelte project with Mytril’s positioning utilities.
+title:
+section:
+head:
+  title: Manage element positioning CSS classes
+  description: Learn how to manage CSS positioning properties using Mytril’s predefined classes. Simplify responsive layouts in your Svelte project with Mytril’s positioning utilities.
+features:
+  legacy: 0.4.14
 ---
 
 # Managing positioning styles with Mytril {#managing-positioning-styles-with-mytril}

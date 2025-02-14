@@ -1,6 +1,11 @@
 ---
-title: Building Responsive Components with Mytril
-description: Learn how to create adaptive, responsive components in Mytril using the Responsive component. Set aspect ratios, toggle inline display, and optimize your layout for all screens effortlessly.
+title:
+section:
+head:
+  title: Building Responsive Components with Mytril
+  description: Learn how to create adaptive, responsive components in Mytril using the Responsive component. Set aspect ratios, toggle inline display, and optimize your layout for all screens effortlessly.
+features:
+  legacy: 0.4.14
 ---
 
 # Responsive components with Mytril: building adaptive elements {#responsive-component-with-mytril}

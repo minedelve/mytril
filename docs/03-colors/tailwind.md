@@ -1,6 +1,11 @@
 ---
-title: Tailwind CSS color palette
-description: Integrate the Tailwind CSS color palette into your Svelte project with Mytril. Learn how to configure and apply responsive Tailwind colors using Mytril’s theme system.
+title:
+section:
+head:
+  title: Tailwind CSS color palette
+  description: Integrate the Tailwind CSS color palette into your Svelte project with Mytril. Learn how to configure and apply responsive Tailwind colors using Mytril’s theme system.
+features:
+  legacy: 0.4.14
 ---
 
 <script lang="ts">

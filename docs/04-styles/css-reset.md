@@ -1,6 +1,11 @@
 ---
-title: CSS reset for Mytril applications
-description: Optimize your Mytril project with a robust CSS reset. Achieve clean, consistent styling with box-sizing, padding, and margin resets, plus opinionated base styles to ensure reliable, cross-browser compatibility.
+title:
+section:
+head:
+  title: CSS reset for Mytril applications
+  description: Optimize your Mytril project with a robust CSS reset. Achieve clean, consistent styling with box-sizing, padding, and margin resets, plus opinionated base styles to ensure reliable, cross-browser compatibility.
+features:
+  legacy: 0.4.14
 ---
 
 # CSS reset with Mytril {#css-reset-with-mytril}
