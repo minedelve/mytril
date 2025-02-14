@@ -10,6 +10,9 @@
 	color: var(--c);
 	background-color: var(--bg);
 	border-radius: var(--myt-bottom-navigation-br);
+	transition:
+		color 0.5s,
+		background-color 0.5s;
 }
 
 .myt-bottom-navigation.myt-bottom-navigation--hidden {

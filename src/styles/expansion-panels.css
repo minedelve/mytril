@@ -16,12 +16,18 @@
 	border-radius: var(--myt-expansion-panel-br);
 	color: var(--c);
 	background-color: var(--bg);
+	transition:
+		color 0.5s,
+		background-color 0.5s;
 }
 
 .myt-expansion-panels .myt-expansion-panel {
 	border-radius: var(--myt-expansion-panel-br);
 	color: var(--c);
 	background-color: var(--bg);
+	transition:
+		color 0.5s,
+		background-color 0.5s;
 }
 
 .myt-expansion-panels:not(.myt-expansion-panels--expansion):not(.myt-expansion-panels--spacer)
