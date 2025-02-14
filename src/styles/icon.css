@@ -17,6 +17,7 @@
 	width: 1em;
 	min-width: 1em;
 	color: var(--c);
+	transition: color 0.5s;
 }
 
 .myt-icon > svg,

@@ -1,6 +1,11 @@
 ---
-title: Material CSS color palette
-description: Learn how to integrate the Material Design color palette in your Svelte projects with Mytril. Use Material’s predefined colors and CSS variables to style your components.
+title:
+section:
+head:
+  title: Material CSS color palette
+  description: Learn how to integrate the Material Design color palette in your Svelte projects with Mytril. Use Material’s predefined colors and CSS variables to style your components.
+features:
+  legacy: 0.4.14
 ---
 
 <script lang="ts">

@@ -1,6 +1,11 @@
 ---
-title: Sizing Easily Control Element Width and Height
-description: Learn how to use Mytril’s sizing utility classes to set element dimensions. Apply width and height with responsive breakpoints for flexible layouts in your Svelte projects.
+title:
+section:
+head:
+  title: Sizing Easily Control Element Width and Height
+  description: Learn how to use Mytril’s sizing utility classes to set element dimensions. Apply width and height with responsive breakpoints for flexible layouts in your Svelte projects.
+features:
+  legacy: 0.4.14
 ---
 
 <script lang="ts">

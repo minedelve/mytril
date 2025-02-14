@@ -1,6 +1,11 @@
 ---
-title: Flexbox Layouts with Mytril’s CSS
-description: Optimize your Svelte layouts with Mytril’s flex. Predefined CSS classes for fast, responsive design. Control flex direction, alignment, wrapping, and more, tailored for you building adaptable design for your users.
+title:
+section:
+head:
+  title: Flexbox Layouts with Mytril’s CSS
+  description: Optimize your Svelte layouts with Mytril’s flex. Predefined CSS classes for fast, responsive design. Control flex direction, alignment, wrapping, and more, tailored for you building adaptable design for your users.
+features:
+  legacy: 0.4.14
 ---
 
 # Flex styles in Mytril: efficient layout management with flexbox {#flex-styles-in-mytril}

@@ -1,6 +1,11 @@
 ---
-title: Efficient Float Styles with Mytril
-description: Explore practical examples and enhance your web applications projects. Discover how Mytril's float streamline layout management for you. Learn to use pre-defined CSS classes to control element positioning, making responsive design easy and efficient.
+title:
+section:
+head:
+  title: Efficient Float Styles with Mytril
+  description: Explore practical examples and enhance your web applications projects. Discover how Mytril's float streamline layout management for you. Learn to use pre-defined CSS classes to control element positioning, making responsive design easy and efficient.
+features:
+  legacy: 0.4.14
 ---
 
 # Float styles with Mytril {#float-styles-with-mytril}

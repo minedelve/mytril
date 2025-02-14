@@ -1,6 +1,11 @@
 ---
-title: Optimize Image with Mytril's Img Component
-description: Active the Mytril's responsive Img component for Svelte, featuring lazy loading, responsive design, and accessibility options for enhanced performance and layout flexibility in web development.
+title:
+section:
+head:
+  title: Optimize Image with Mytril's Img Component
+  description: Active the Mytril's responsive Img component for Svelte, featuring lazy loading, responsive design, and accessibility options for enhanced performance and layout flexibility in web development.
+features:
+  legacy: 0.4.14
 ---
 
 # Mytril image component {#mytril-image-component}

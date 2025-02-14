@@ -1,6 +1,11 @@
 ---
-title: Toolbar Component
-description: Create dynamic navigation bars using Mytril’s Toolbar component. Learn about its properties, subcomponents, and customization options for responsive and accessible designs.
+title:
+section:
+head:
+  title: Toolbar Component
+  description: Create dynamic navigation bars using Mytril’s Toolbar component. Learn about its properties, subcomponents, and customization options for responsive and accessible designs.
+features:
+  legacy: 0.4.14
 ---
 
 # Toolbar component with Mytril {#toolbar-component-with-mytril}

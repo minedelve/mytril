@@ -1,6 +1,11 @@
 ---
-title: Capitalize text with JavaScript
-description: Master text capitalization in JavaScript using Mytril's useCapitalize function. Simplify and enhance your content formatting with ease.
+title:
+section:
+head:
+  title: Capitalize text with JavaScript
+  description: Master text capitalization in JavaScript using Mytril's useCapitalize function. Simplify and enhance your content formatting with ease.
+features:
+  legacy: 0.4.14
 ---
 
 # useCapitalize function in Mytril: Enhance text with proper capitalization {#capitalize}

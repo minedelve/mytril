@@ -1,6 +1,11 @@
 ---
-title: Border radius
-description: Using border-radius in Mytril is simple using simple classes and CSS variables. Easily customize rounded corners for the different parts of your project.
+title:
+section:
+head:
+  title: Border radius
+  description: Using border-radius in Mytril is simple using simple classes and CSS variables. Easily customize rounded corners for the different parts of your project.
+features:
+  legacy: 0.4.14
 ---
 
 <script lang="ts">

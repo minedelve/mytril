@@ -9,6 +9,7 @@
 	opacity: var(--opacity);
 	transition: inherit;
 	border-color: var(--c);
+	transition: border-color 0.5s;
 }
 
 .myt-divider {
