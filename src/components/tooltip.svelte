@@ -11,7 +11,7 @@
 
 	let ref: HTMLElement | null = $state(null);
 	let refTooltip: HTMLElement | null = $state(null);
-	let open = $state(true);
+	let open = $state(false);
 	let axis = $state({ x: 0, y: 0 });
 	let innerHeight = $state(0);
 	let innerWidth = $state(0);
@@ -27,7 +27,7 @@
 			refTooltip &&
 			(scrollX > 0 || scrollY > 0 || innerHeight > 0 || innerWidth > 0)
 		) {
-			positionAxis.update(ref, refTooltip, 'left', true);
+			positionAxis.update(ref, refTooltip, 'right', true);
 		}
 	});
 </script>
