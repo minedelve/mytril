@@ -25,6 +25,9 @@
 	color: var(--c);
 	background-color: var(--bg);
 	border-radius: var(--myt-btn-br);
+	transition:
+		color 0.5s,
+		background-color 0.5s;
 }
 
 .myt-btn.myt-btn--outline {
