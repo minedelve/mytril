@@ -13,6 +13,11 @@
 				"draft": false,
 				"routes": [
 					{
+						"name": "introduction",
+						"path": "/mytril/docs",
+						"draft": false
+					},
+					{
 						"name": "installation",
 						"path": "/mytril/docs/getting-started/installation",
 						"draft": false

@@ -1,142 +1,84 @@
 ---
-title: What is Mytril ?
+title: Introducing Mytril Svelte UI Components
 section: Introduction
 head:
   title: Introduction
   description: Mytril is a Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
 related:
-  - /colors/material
-  - /colors/tailwind
-  - /mytril/docs
+  - /mytril/docs/getting-started/installation
+  - /mytril/docs/customization/themes
+  - /mytril/docs/customization/breakpoints
 features:
-  legacy: 0.4.8
   github: 00-base/overview.md
-  bug: introduction
-  feature: add on introduction
 ---
 
-<script>
-    import Code from "$lib/components/code.svelte";
+**A fast, flexible, and framework-agnostic UI library for Svelte.**
 
-    //sample
-      import ButtonSimple from "$content/mytril/examples/button.svelte";
-</script>
+Mytril is a **pure Svelte component library** designed for developers who need **performance, flexibility, and total control over styling**.
 
-Mytril is a Svelte library designed to help you build user interfaces with ease. It leverages the power of HTML, CSS, and JavaScript standards, providing lightweight, framework-based components that allow you to develop user interfaces of any complexity.
+- 👉 **No CSS frameworks required. No extra dependencies. Just lightweight, customizable Svelte components.**
 
-Here’s a simple example:
+## Mytril is built for developers
 
-<Code file={ButtonSimple}>
+**Why reinvent the wheel when you can concentrate on building great experiences?**
 
-```svelte
-<script>
-	import { Btn } from 'mytril/components';
-</script>
+Mytril simply provides **highly customizable** building blocks that integrate into **your** design system.
+Please note: Mytril does not dictate the appearance of your user interface.
 
-<Btn onclick={() => alert('Welcome to the Moria !')}>Click on me</Btn>
-```
+- Want to use **TailwindCSS** or **UnoCSS**? No problem
+- Prefer **CSS Modules, SCSS, or Vanilla CSS**? That works just as well
+- Need **dark mode or theme support**? Easy with CSS variables
 
-</Code>
+**No rigid styling. Just lightweight components that give you the flexibility to style things your way.**
 
-## Ready to Get Started? {#ready-to-start}
+![](/images/mytril/runtime-mytril-svelte-vite.png)
 
-Mytril is currently under development, and while you can install it now, please be aware that functions, components, and styles may evolve rapidly in the coming weeks.
+## How to get started?
 
-If you encounter any bugs, have suggestions, or simply have questions, feel free to reach out to us at [contact@minedelve.com](mailto:contact@minedelve.com) or on our [GitHub](https://github.com/minedelve) page.
+Mytril is **currently in a stabilization phase**, but its **API is solid** and ready for production use. [**New features are coming**](/mytril/docs/changelog), but the core structure won’t change.
 
-### Installation (basic) {#installation-basic}
+[**Let's install Mytril Svelte Components.**](/mytril/docs/getting-started/installation)
 
-To install Mytril, ensure your environment is set up with Node.js (version 18 or LTS+), and you're using Svelte or SvelteKit. For guidance on setting up Svelte or SvelteKit, we recommend referring to the official documentation:
+👉 _Need help?_ Check out the [Mytril Documentation](/mytril/docs) or our [GitHub Repository](https://github.com/minedelve/mytril).
 
-![](/images/mytril/example-img.png)
+### Contribute and get support
 
-- [Svelte Documentation](https://svelte.dev/)
-- [Sveltekit Documentation](https://kit.svelte.dev/)
+Spotted a bug? Have a feature request? Let’s build together! 🚀
 
-At the root of your project, run the following command:
+📧 Contact us at [contact@minedelve.com](mailto:contact@minedelve.com) or join the discussion on [**GitHub**](https://github.com/minedelve/mytril/discussions).
 
-<Code>
+## Mytril library structure paths
 
-```command
-npm install -D mytril
-```
+Mytril follows a modular architecture for reasons of flexibility and maintainability. Here's a presentation of Mytril's different paths and organization:
 
-</Code>
+![](/images/mytril/mytril-structural-paths.png)
 
-### Documentation {#documentation}
+**All paths on Mytril:**
 
-As Mytril is still in development, documentation will be continually added and updated until we reach Stable v1. Some parts of the documentation might be incomplete or partial at this stage. If you notice any missing information, please let us know.
+- 📁 mytril/**vite**: plugin for **Vite.js** integration. Ensures **fast builds** and optimal **HMR support**.
+- 📁 mytril/**components**: collection of **ready-to-use Svelte components**. Fully customizable.
+- 📁 mytril/**css**: base styles & theme system. Works with **Tailwind, SCSS, or Uno CSS**.
+- 📁 mytril/**store**: **reactive Svelte stores** for managing global state.
 
-## Btn component properties {#btn-component-properties}
+## Why Mytril?
 
-| Property  | Type    | Default   | Description                                                                                                                          |
-| :-------- | :------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| tag       | string  | div       | Specify a custom tag for the root element                                                                                            |
-| dark      | boolean | false     | Force a **dark** theme                                                                                                               |
-| light     | boolean | false     | Force a **light** theme                                                                                                              |
-| density   | string  | default   | Resize padding on Btn component with 3 options, **compact**, **comfortable**, **default**                                            |
-| block     | boolean | false     | Add class _block_ on Btn component for use all space                                                                                 |
-| disabled  | boolean | false     | Disable chip action                                                                                                                  |
-| active    | boolean | false     | Add class active on Btn                                                                                                              |
-| square    | boolean | false     | add small radius on icon Btn                                                                                                         |
-| outlined  | boolean | false     | Add border on Btn and disabled background                                                                                            |
-| circle    | boolean | false     | Add rounded-full on icon                                                                                                             |
-| text      | boolean | false     | disabled background and border on Btn                                                                                                |
-| error     | boolean | false     | Add color error on Btn                                                                                                               |
-| warning   | boolean | false     | Add color warning on Btn                                                                                                             |
-| info      | boolean | false     | Add color info on Btn                                                                                                                |
-| success   | boolean | false     | Add color success on Btn                                                                                                             |
-| icon      | boolean | false     | Btn style for display icon only, It's recomanded to use [Icon component](/mytril/docs/components/icons)                              |
-| wide      | boolean | false     | Display fixed width 16rem on Btn                                                                                                     |
-| rounded   | string  | undefined | Add [border radius](/mytril/docs/styles/border-radius) on Btn                                                                        |
-| link      | boolean | undefined | Add class link on Btn                                                                                                                |
-| color     | string  | undefined | Add color scheme on your Btn, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes) |
-| colorText | string  | undefined | If properties outline or text is activate, this propertie is disabled                                                                |
-| size      | string  | md        | Add size Btn for **all** breakpoints, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                  |
-| sizeXs    | string  | -         | Add size Btn for **xs** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeSm    | string  | -         | Add size Btn for **sm** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeMd    | string  | -         | Add size Btn for **md** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeLg    | string  | -         | Add size Btn for **lg** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeXs    | string  | -         | Add size Btn for **xl** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
+- ✅**100% Svelte & SvelteKit ready**: quick and easy integration, step-by-step explanation
+- ✅**No styling overhead**: use Tailwind, SCSS, or Vanilla CSS, the choice is yours.
+- ✅**Lightweight and high-performance** no code overload, just optimized components
+- ✅**Customizable**: modify via JS props & CSS variables
+- ✅**Keep your project simple**: develop it for fast, simple actions and use simple features
 
-### Documentation {#documentation}
+Start coding with **easily scalable components**, adapted to every design system.
 
-As Mytril is still in development, documentation will be continually added and updated until we reach Stable v1. Some parts of the documentation might be incomplete or partial at this stage. If you notice any missing information, please let us know.
+From **buttons** to **modals**, **form elements to advanced UI components**, Mytril provides a clean foundation for your projects with its Svelte component library.
 
-{#snippet properties()}
+## Start using Mytril - Let’s go
 
-As Mytril is still in development, documentation will be continually added and updated until we reach Stable v1. Some parts of the documentation might be incomplete or partial at this stage. If you notice any missing information, please let us know.
+Whether you're new to Svelte or an senior Svelte developer, **Mytril helps you stay productive, keep control of your user interface and create scalable applications with ease**.
 
-## Btn component properties {#btn-component-properties}
+- 📌 [Get Started and install Mytril](/mytril/docs/getting-started/installation)
 
-| Property  | Type    | Default   | Description                                                                                                                          |
-| :-------- | :------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| tag       | string  | div       | Specify a custom tag for the root element                                                                                            |
-| dark      | boolean | false     | Force a **dark** theme                                                                                                               |
-| light     | boolean | false     | Force a **light** theme                                                                                                              |
-| density   | string  | default   | Resize padding on Btn component with 3 options, **compact**, **comfortable**, **default**                                            |
-| block     | boolean | false     | Add class _block_ on Btn component for use all space                                                                                 |
-| disabled  | boolean | false     | Disable chip action                                                                                                                  |
-| active    | boolean | false     | Add class active on Btn                                                                                                              |
-| square    | boolean | false     | add small radius on icon Btn                                                                                                         |
-| outlined  | boolean | false     | Add border on Btn and disabled background                                                                                            |
-| circle    | boolean | false     | Add rounded-full on icon                                                                                                             |
-| text      | boolean | false     | disabled background and border on Btn                                                                                                |
-| error     | boolean | false     | Add color error on Btn                                                                                                               |
-| warning   | boolean | false     | Add color warning on Btn                                                                                                             |
-| info      | boolean | false     | Add color info on Btn                                                                                                                |
-| success   | boolean | false     | Add color success on Btn                                                                                                             |
-| icon      | boolean | false     | Btn style for display icon only, It's recomanded to use [Icon component](/mytril/docs/components/icons)                              |
-| wide      | boolean | false     | Display fixed width 16rem on Btn                                                                                                     |
-| rounded   | string  | undefined | Add [border radius](/mytril/docs/styles/border-radius) on Btn                                                                        |
-| link      | boolean | undefined | Add class link on Btn                                                                                                                |
-| color     | string  | undefined | Add color scheme on your Btn, you can use **hex**, **rgb**, **rgba**, **x11** and Mytril [themes](/mytril/docs/customization/themes) |
-| colorText | string  | undefined | If properties outline or text is activate, this propertie is disabled                                                                |
-| size      | string  | md        | Add size Btn for **all** breakpoints, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                  |
-| sizeXs    | string  | -         | Add size Btn for **xs** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeSm    | string  | -         | Add size Btn for **sm** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeMd    | string  | -         | Add size Btn for **md** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeLg    | string  | -         | Add size Btn for **lg** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
-| sizeXs    | string  | -         | Add size Btn for **xl** breakpoint, Btn use this key 'xs', 'sm', 'md', 'lg', 'xl'                                                    |
+📢 **Stay Updated!** Follow us for the latest news & updates:
 
-{/snippet}
+- 🔹 **Discord community:** [Minedelve Server](https://discord.gg/fwyaGUhbav)
+- 🔹 **GitHub discussions:** [Join the community](https://github.com/minedelve/mytril/discussions)
