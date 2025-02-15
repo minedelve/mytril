@@ -1,136 +1,149 @@
 ---
-title:
-section:
+title: Installation guide to Mytril
+section: Installation
 head:
-  title: Install the Svelte Component Library
-  description: Discover Mytril, a Svelte Component library, and follow our  guide to install it. Perfect for developers looking to streamline their Svelte projects with efficient components.
+  title: Install the Mytril Svelte Component Library
+  description: Discover Mytril, a Svelte Component library, and follow our guide to install it. Perfect for developers looking to streamline their Svelte projects with efficient components.
+related:
+  - /mytril/docs
+  - /mytril/docs/customization/themes
+  - /mytril/docs/customization/breakpoints
 features:
-  legacy: 0.4.14
+  github: 01-getting-started/installation.md
 ---
 
-# Installation Guide for Mytril {#installation-guide-for-mytril}
+<script>
+    import Code from "$lib/components/code.svelte";
+</script>
 
-Get started with Mytril, a lightweight and versatile component library for Svelte projects. Follow this step-by-step guide to integrate Mytril seamlessly into your SvelteKit application.
+Get started integrating Mytril, a lightweight and powerful Svelte component library, into your SvelteKit application. Below is a step-by-step guide to help you install and configure Mytril with ease.
 
-## Step 1: create your SvelteKit project {#create-your-sveltekit-project}
+## Requirements
 
-If you don’t already have a SvelteKit project, you can create one using the following commands:
+Before installing Mytril, verify that your project meets the following minimum requirements:
 
-```shell
-# terminal
-npx sv create my-app
-cd my-app
-npm install
-npm run dev
+| Package | Minimum version | Official documentation                                   |
+| ------- | --------------- | -------------------------------------------------------- |
+| Svelte  | v5.16 +         | [Svelte Docs support by Mytril](https://svelte.dev/docs) |
+| Vite    | v5 +            | [Vite Docs support by Mytril](https://vitejs.fr/config/) |
+| Node    | v20 +           | [Node.js Docs support by Mytril](https://nodejs.org/en)  |
+
+For enhanced features, consider integrating optional tools:
+
+| Package | Minimum version | Official documentation                                                                |
+| ------- | --------------- | ------------------------------------------------------------------------------------- |
+| Iconify | v4 +            | [Iconify Docs support by Mytril](https://iconify.design/docs/icon-components/svelte/) |
+
+### Step 1: create your SvelteKit project
+
+If you haven’t already created a SvelteKit project, initialize one using the following command:
+
+<Code>
+
+```bash
+npx sv create my-mytril-app
 ```
 
-For more details, refer to the official [SvelteKit getting started guide](https://kit.svelte.dev/docs/introduction#introduction-getting-started).
+</Code>
 
-### Requirement {#requirement}
+Replace `my-mytril-app` with your desired project name.
 
-### **Requirements**
+### Step 2: install Mytril
 
-To use Mytril, ensure your development environment meets the following prerequisites:
+Mytril provides two installation methods: a streamlined CLI or manual setup. Choose the one that suits your development workflow.
 
-- **Svelte**: v4 or later
-- **Node.js**: v18 or later
-- **Vite.js**: v4.5 or later
+## Option 1: install via CLI (Recommended)
 
-> Note: Mytril is compatible with Svelte v5, and we’re actively enhancing Mytril to leverage new Svelte features.
+The Mytril CLI simplifies the integration process. It will automatically configure necessary files like `vite.config.js` and your main style file.
 
-## Step 2: install Mytril {#install-mytril}
+### Command:
 
-Mytril can be added to your project with a simple npm command. Its design avoids external dependencies to minimize version conflicts.
+<Code>
 
-```shell
-# terminal
-npm install -D mytril
+```bash
+npx mytril init [path-css]
 ```
 
-## Step 3: configure Vite to use Mytril {#configure-vite-to-use-mytril}
+</Code>
 
-Update your `vite.config.(js|ts)` file to include the Mytril plugin:
+### Options install CLI:
+
+- Replace `[path-css]` with the path to your main CSS file (e.g., `src/app.css`).
+- If no path is provided, it defaults to `src/app.css`.
+
+### Example CLI Configuration:
+
+By default path-css is auto set at src/app.css
+
+<Code>
+
+```bash
+npx mytril init src/app.css
+```
+
+</Code>
+
+### Example CLI Output
+
+Here is a preview of what the terminal looks like during the CLI installation:
+
+![](/images/mytril/terminal-cli-mytril.png)
+
+## Option 2: manual installation
+
+Follow these steps for manual integration:
+
+### Step 1: create a configuration file
+
+Create a new **`mytril.config.js`** file in the root of your project and paste the following code:
+
+<Code>
 
 ```javascript
-// vite.config.(js|ts)
-import { sveltekit } from '@sveltejs/kit/vite';
+/** @type {import('mytril').Config} */
+export default {
+	colorScheme: 'system', // Use 'light', 'dark', or 'system'
+	colors: {}
+};
+```
+
+</Code>
+
+### Step 2: update `vite.config.js`
+
+Add Mytril as a plugin within your `vite.config.js` file:
+
+<Code>
+
+```javascript
 import { mytril } from 'mytril/vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit(), mytril()]
 });
 ```
 
-And launch your project with `npm run dev`, mytril create automaticly file configuration in `plugins/mytril.(js|ts)`.
+</Code>
 
-## Step 4: Import Mytril on your svelte environement. {#import-mytril-on-your-svelte-environement}
+### Step 3: import styles
 
-To import the various mytril styles into your application. Depending on your configuration, there may be variations in the way Mytril is imported into your application.
+Finally, import Mytril's CSS directly into your main stylesheet:
 
-**On Sveltekit, you have 2 possibilities for importing Mytril.**
+<Code>
 
-You can import Mytril directly into the **+layout.svelte** page at the top of your tree.
-
-```svelte
-<script lang="ts">
-	// +layout.svelte
-	import '../plugins/mytril.ts';
-</script>
-
-your content
+```css
+/* Import Mytril styles */
+@import 'mytril/css';
 ```
 
-Alternatively, you can use **+layout.ts** at the start of your tree to ensure style preloading and configuration before rendering.
+</Code>
 
-```js
-// +layout.(js|ts)
-import '../plugins/mytril.ts';
-```
+And that's all! You've successfully completed Mytril’s manual installation.
 
-**If you're on Svelte, first import the Mytril configuration into your App.svelte or index.svelte.**
+## **Get started with Mytril**
 
-```svelte
-<script lang="ts">
-	// (App|index).svelte
-	import '../plugins/mytril.ts';
-</script>
+Congratulations! You’ve installed Mytril on your SvelteKit project. You’re now ready to start building modern, customizable user interfaces using Mytril’s powerful design system. Be sure to check the official [Mytril component library documentation](/mytril/docs/changelog) for more advanced features and component usage.
 
-your content
-```
-
-> After importing Mytril into your project, we strongly recommend that you restart your development environment.
-
-## Step 5: start your development server {#start-your-development}
-
-Run the build process to initialize your project and preview your application:
-
-```shell
-# terminal
-npm run dev
-```
-
-## Step 6: start building with Mytril {#start-building-with-mytril}
-
-You’re ready to start using Mytril’s components, utility classes, and themes. Here’s a quick example of adding a button to your application:
-
-```svelte
-<script>
-	// +page.svelte
-	import { Btn } from 'mytril';
-</script>
-
-<Btn class="custom-class ma-2 px-3">Click on this button</Btn>
-
-<style>
-	.custom-class {
-		color: var(--primary);
-	}
-</style>
-```
-
-### Why choose Mytril? {#why-choose-mytril}
-
-- **Lightweight and dependency-Free**: Designed for seamless integration and minimal version conflicts.
-- **Full Svelte compatibility**: Works effortlessly with the latest Svelte and Vite versions.
-- **Customizable and flexible**: Supports utility-first classes and theming for complete design control.
-- **Future-ready**: Actively maintained with support for upcoming Svelte features.
+**Next Step**: dive into the [**Components Documentation**](/mytril/docs) to learn how to use Mytril in your project.
