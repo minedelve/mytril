@@ -200,6 +200,7 @@ a.myt-list-item {
 	padding-inline-end: 1rem;
 	min-height: 2.5rem;
 	transition: 0.2s min-height cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 0.5s;
 }
 
 .myt-list-subheader .myt-list-subheader--text {
