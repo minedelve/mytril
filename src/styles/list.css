@@ -7,6 +7,7 @@
 	padding: 0.5rem 0;
 	position: relative;
 	outline: none;
+	background-color: transparent;
 }
 
 .myt-list.myt-list--disabled {
@@ -129,6 +130,7 @@
 	padding: 0.25rem 1rem;
 	position: relative;
 	text-decoration: none;
+	transition: background-color 0.5s;
 }
 
 a.myt-list-item {
