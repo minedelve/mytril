@@ -1,3 +1,7 @@
+---
+title: Changelog
+---
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -13,11 +17,11 @@ Is a most big update to mytril, is first beta release.
 
 New requirement for use Mytril:
 
-- Svelte 5.16 or more for use Runes ans new process Class
+- Svelte 5.16 or more for use Runes and new process Class
 
-Optimize package 0.4.14 to 0.5.0
-Size: 284 kB to 170 kB
-Files: 230 to 169
+- Optimize package 0.4.14 to 0.5.0
+- Size: 284 kB to 170 kB
+- Files: 230 to 169
 
 ### Features legacy and removed
 
