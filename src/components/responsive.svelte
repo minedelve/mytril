@@ -7,7 +7,7 @@
 	$effect(() => {
 		if (aspectRatio) {
 			const [width, height] = aspectRatio.split('/').map(Number);
-			paddingBottom.set((height / width) * 100);
+			paddingBottom = (height / width) * 100;
 		}
 	});
 </script>
