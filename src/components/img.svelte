@@ -53,14 +53,16 @@
 			}
 		};
 	});
+
+	let _class: string = $state('myt-img');
+
+	$effect(() => {
+		if (absolute) _class = 'myt-img' + ' myt-img--absolute';
+		_class = 'myt-img ' + rest?.class;
+	});
 </script>
 
-<Responsive
-	{...rest}
-	class={['myt-img', absolute && 'myt-img--absolute', rest.class]}
-	{aspectRatio}
-	{inline}
->
+<Responsive {...rest} class={_class} {aspectRatio} {inline}>
 	{#if !intersected && lazySrc}
 		<img
 			bind:this={lazyElement}

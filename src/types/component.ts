@@ -172,7 +172,11 @@ export interface ImgProps {
 	srcset?: string;
 	lazySrc?: string;
 	alt?: string;
-	options: { root?: Element | Document | null; rootMargin?: string; threshold?: number | number[] };
+	options?: {
+		root?: Element | Document | null;
+		rootMargin?: string;
+		threshold?: number | number[];
+	};
 	cover?: boolean;
 	contain?: boolean;
 	absolute?: boolean;
