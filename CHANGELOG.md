@@ -1,5 +1,6 @@
 ---
-title: Changelog
+head:
+  title: Changelog
 ---
 
 # Changelog
