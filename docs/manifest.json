@@ -15,7 +15,8 @@
 					{
 						"name": "introduction",
 						"path": "/mytril/docs",
-						"draft": false
+						"draft": false,
+						"order": 0
 					},
 					{
 						"name": "installation",
