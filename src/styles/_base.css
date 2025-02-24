@@ -61,11 +61,6 @@ textarea {
 	border-style: none;
 }
 
-button,
-select {
-	text-transform: none;
-}
-
 *:not(body) {
 	outline: none !important;
 }

@@ -3,10 +3,8 @@
 	--bg: var(--myt-system-bar-bg);
 
 	font-size: 0.75rem;
-	font-weight: 400;
 	letter-spacing: 0.0333333333em;
 	line-height: 1.667;
-	text-transform: none;
 }
 
 .myt-system-bar {
