@@ -7,7 +7,6 @@
 	display: inline-grid;
 	grid-template-areas: 'prepend content append';
 	grid-template-columns: max-content auto max-content;
-	font-weight: 500;
 	justify-content: center;
 	letter-spacing: 0.0892857143em;
 	line-height: normal;

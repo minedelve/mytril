@@ -93,7 +93,6 @@ a.myt-card {
 	display: block;
 	flex: none;
 	font-size: 1.25rem;
-	font-weight: 500;
 	hyphens: auto;
 	letter-spacing: 0.0125em;
 	min-width: 0;
@@ -101,7 +100,6 @@ a.myt-card {
 	overflow: hidden;
 	padding: 0.5rem 1rem;
 	text-overflow: ellipsis;
-	text-transform: none;
 	white-space: nowrap;
 	word-break: normal;
 	word-wrap: break-word;
@@ -117,10 +115,8 @@ a.myt-card {
 
 	flex: 1 1 auto;
 	font-size: 0.875rem;
-	font-weight: 400;
 	opacity: var(--opacity);
 	padding: 1rem;
-	text-transform: none;
 }
 
 .myt-card-subtitle {
@@ -129,12 +125,10 @@ a.myt-card {
 	display: block;
 	flex: none;
 	font: 0.875rem;
-	font-weight: 400;
 	opacity: var(--opacity);
 	overflow: hidden;
 	padding: 0 1rem;
 	text-overflow: ellipsis;
-	text-transform: none;
 	white-space: nowrap;
 }
 
