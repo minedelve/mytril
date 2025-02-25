@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
 	import { getPositions } from '$lib/state/positions.svelte.js';
-	import type { MenuProps } from '$lib/types/index.js';
+	import type { MenuProps, ModelMenuProps } from '$lib/types/index.js';
 
 	let {
 		children,
@@ -32,7 +32,7 @@
 
 	axis = positionAxis?.values;
 
-	let model = {
+	let model: ModelMenuProps = {
 		get open() {
 			return open;
 		},
