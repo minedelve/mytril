@@ -153,5 +153,46 @@
 .myt-grid-col[breakpoint]offset-12 {
 	margin-inline-start: calc((100% / 12) * 12);
 }
-
+.myt-grid-col[breakpoint]order-first {
+	order: -1 !important;
+}
+.myt-grid-col[breakpoint]order-last {
+	order: 13 !important;
+}
+.myt-grid-col[breakpoint]order-1 {
+	order: 1;
+}
+.myt-grid-col[breakpoint]order-2 {
+	order: 2;
+}
+.myt-grid-col[breakpoint]order-3 {
+	order: 3;
+}
+.myt-grid-col[breakpoint]order-4 {
+	order: 4;
+}
+.myt-grid-col[breakpoint]order-5 {
+	order: 5;
+}
+.myt-grid-col[breakpoint]order-6 {
+	order: 6;
+}
+.myt-grid-col[breakpoint]order-7 {
+	order: 7;
+}
+.myt-grid-col[breakpoint]order-8 {
+	order: 8;
+}
+.myt-grid-col[breakpoint]order-9 {
+	order: 9;
+}
+.myt-grid-col[breakpoint]order-10 {
+	order: 10;
+}
+.myt-grid-col[breakpoint]order-11 {
+	order: 11;
+}
+.myt-grid-col[breakpoint]order-12 {
+	order: 12;
+}
 /*! @breakpoints */
