@@ -105,8 +105,14 @@ export interface MenuProps extends ComponentBase {
 	closeOnClick?: boolean;
 	color?: string;
 	background?: string;
-	activator?: Snippet<[object, (state: string) => void]>;
+	activator?: Snippet<[ModelMenuProps, (state: string) => void]>;
 }
+
+export type ModelMenuProps = {
+	open: boolean;
+	close: () => void;
+	toggle: (element: HTMLElement | PointerEvent) => void;
+};
 
 export interface ListProps extends ComponentBase {
 	is?: 'div';
