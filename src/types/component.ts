@@ -226,6 +226,21 @@ type sizeColString =
 	| '11'
 	| '12';
 type sizeColNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+type orderCol =
+	| 'first'
+	| 'last'
+	| '1'
+	| '2'
+	| '3'
+	| '4'
+	| '5'
+	| '6'
+	| '7'
+	| '8'
+	| '9'
+	| '10'
+	| '11'
+	| '12';
 
 export interface GridColProps extends ComponentBase {
 	is?: 'div';
@@ -243,41 +258,19 @@ export interface GridColProps extends ComponentBase {
 	offsetLg?: sizeColString | sizeColNumber;
 	offsetXl?: sizeColString | sizeColNumber;
 	offsetXxl?: sizeColString | sizeColNumber;
-	order?: sizeColString | sizeColNumber;
-	orderXs?: sizeColString | sizeColNumber;
-	orderSm?: sizeColString | sizeColNumber;
-	orderMd?: sizeColString | sizeColNumber;
-	orderLg?: sizeColString | sizeColNumber;
-	orderXl?: sizeColString | sizeColNumber;
-	orderXxl?: sizeColString | sizeColNumber;
-	align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+	order?: orderCol;
+	orderXs?: orderCol;
+	orderSm?: orderCol;
+	orderMd?: orderCol;
+	orderLg?: orderCol;
+	orderXl?: orderCol;
+	orderXxl?: orderCol;
 }
 
 export interface GridRowProps extends ComponentBase {
 	is?: 'div';
 	noGutters?: boolean;
 	dense?: boolean;
-	align?: string;
-	alignXs?: string;
-	alignSm?: string;
-	alignMd?: string;
-	alignLg?: string;
-	alignXl?: string;
-	alignXxl?: string;
-	alignContent?: string;
-	alignContentXs?: string;
-	alignContentSm?: string;
-	alignContentMd?: string;
-	alignContentLg?: string;
-	alignContentXl?: string;
-	alignContentXxl?: string;
-	justify?: string;
-	justifyXs?: string;
-	justifySm?: string;
-	justifyMd?: string;
-	justifyLg?: string;
-	justifyXl?: string;
-	justifyXxl?: string;
 }
 
 export interface SpacerProps {

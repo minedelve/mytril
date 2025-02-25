@@ -17,6 +17,13 @@
 		offsetLg,
 		offsetXl,
 		offsetXxl,
+		order,
+		orderXs,
+		orderSm,
+		orderMd,
+		orderLg,
+		orderXl,
+		orderXxl,
 		...rest
 	}: GridColProps = $props();
 </script>
@@ -40,6 +47,13 @@
 		offsetLg && `lg:offset-${offsetLg}`,
 		offsetXl && `xl:offset-${offsetXl}`,
 		offsetXxl && `2xl:offset-${offsetXxl}`,
+		order && `order-${order}`,
+		orderXs && `xs:order-${orderXs}`,
+		orderSm && `sm:order-${orderSm}`,
+		orderMd && `md:order-${orderMd}`,
+		orderLg && `lg:order-${orderLg}`,
+		orderXl && `xl:order-${orderXl}`,
+		orderXxl && `2xl:order-${orderXxl}`,
 		rest.class
 	]}
 >
