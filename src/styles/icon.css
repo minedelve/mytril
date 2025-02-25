@@ -28,7 +28,7 @@
 }
 
 .myt-icon:before {
-	color: currentColor;
+	color: currentColor !important;
 }
 
 .myt-icon.myt-icon--start {
