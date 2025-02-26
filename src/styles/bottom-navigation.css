@@ -72,7 +72,6 @@
 
 .myt-bottom-navigation--content > .myt-btn > .myt-btn--content {
 	flex-direction: column;
-	line-height: 1.25;
 	white-space: normal;
 	transition: inherit;
 }

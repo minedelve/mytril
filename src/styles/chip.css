@@ -14,7 +14,6 @@
 	color: var(--c);
 	background-color: var(--bg);
 	border-radius: var(--radius-pill);
-	line-height: 0;
 	transition:
 		color 0.5s,
 		background-color 0.5s;

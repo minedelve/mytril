@@ -77,24 +77,11 @@ a.myt-card {
 	opacity: 0.6;
 }
 
-.myt-card .myt-card-title {
-	line-height: 1.6;
-}
-
-.myt-card .myt-card-subtitle {
-	line-height: 1.425;
-}
-
-.myt-card .myt-card-text {
-	line-height: 1.425;
-}
-
 .myt-card-title {
 	display: block;
 	flex: none;
 	font-size: 1.25rem;
 	hyphens: auto;
-	letter-spacing: 0.0125em;
 	min-width: 0;
 	overflow-wrap: normal;
 	overflow: hidden;
