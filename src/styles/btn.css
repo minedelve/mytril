@@ -2,19 +2,15 @@
 	--c: var(--myt-btn-c);
 	--bg: var(--myt-btn-bg);
 
-	line-height: 0;
 	align-items: center;
 	display: inline-grid;
 	grid-template-areas: 'prepend content append';
 	grid-template-columns: max-content auto max-content;
 	justify-content: center;
-	letter-spacing: 0.0892857143em;
-	line-height: normal;
 	max-width: 100%;
 	outline: none;
 	position: relative;
 	text-decoration: none;
-	text-indent: 0.0892857143em;
 	transition-property: box-shadow, transform, opacity, background-color, background;
 	transition-duration: 0.28s;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
