@@ -38,14 +38,13 @@ Please note: Mytril does not dictate the appearance of your user interface.
 Mytril is **currently in a stabilization phase**, but its **API is solid** and ready for production use. [**New features are coming**](/mytril/docs/changelog), but the core structure won’t change.
 
 [**Let's install Mytril Svelte Components.**](/mytril/docs/getting-started/installation)
-
-👉 _Need help?_ Check out the [Mytril Documentation](/mytril/docs) or our [GitHub Repository](https://github.com/minedelve/mytril).
+_Need help?_ Check out the [Mytril Documentation](/mytril/docs) or our [GitHub Repository](https://github.com/minedelve/mytril).
 
 ### Contribute and get support
 
 Spotted a bug? Have a feature request? Let’s build together! 🚀
 
-📧 Contact us at [contact@minedelve.com](mailto:contact@minedelve.com) or join the discussion on [**GitHub**](https://github.com/minedelve/mytril/discussions).
+Contact us at [contact@minedelve.com](mailto:contact@minedelve.com) or join the discussion on [**GitHub**](https://github.com/minedelve/mytril/discussions).
 
 ## Mytril library structure paths
 
@@ -62,11 +61,11 @@ Mytril follows a modular architecture for reasons of flexibility and maintainabi
 
 ## Why Mytril?
 
-- ✅**100% Svelte & SvelteKit ready**: quick and easy integration, step-by-step explanation
-- ✅**No styling overhead**: use Tailwind, SCSS, or Vanilla CSS, the choice is yours.
-- ✅**Lightweight and high-performance** no code overload, just optimized components
-- ✅**Customizable**: modify via JS props & CSS variables
-- ✅**Keep your project simple**: develop it for fast, simple actions and use simple features
+- **100% Svelte & SvelteKit ready**: quick and easy integration, step-by-step explanation
+- **No styling overhead**: use Tailwind, SCSS, or Vanilla CSS, the choice is yours.
+- **Lightweight and high-performance** no code overload, just optimized components
+- **Customizable**: modify via JS props & CSS variables
+- **Keep your project simple**: develop it for fast, simple actions and use simple features
 
 Start coding with **easily scalable components**, adapted to every design system.
 
@@ -76,9 +75,9 @@ From **buttons** to **modals**, **form elements to advanced UI components**, Myt
 
 Whether you're new to Svelte or an senior Svelte developer, **Mytril helps you stay productive, keep control of your user interface and create scalable applications with ease**.
 
-- 📌 [Get Started and install Mytril](/mytril/docs/getting-started/installation)
+- [Get Started and install Mytril](/mytril/docs/getting-started/installation)
 
-📢 **Stay Updated!** Follow us for the latest news & updates:
+  **Stay Updated!** Follow us for the latest news & updates:
 
 - 🔹 **Discord community:** [Minedelve Server](https://discord.gg/fwyaGUhbav)
 - 🔹 **GitHub discussions:** [Join the community](https://github.com/minedelve/mytril/discussions)

@@ -41,8 +41,13 @@
 						"draft": false
 					},
 					{
-						"name": "Breakpoints",
+						"name": "breakpoints",
 						"path": "/mytril/docs/customization/breakpoints",
+						"draft": false
+					},
+					{
+						"name": "libraries CSS",
+						"path": "/mytril/docs/customization/css-with-mytril",
 						"draft": false
 					}
 				]
@@ -118,7 +123,7 @@
 						"draft": false
 					},
 					{
-						"name": "cards",
+						"name": "card",
 						"path": "/mytril/docs/components/cards",
 						"draft": false
 					},
@@ -148,7 +153,7 @@
 						"draft": true
 					},
 					{
-						"name": "lists",
+						"name": "list",
 						"path": "/mytril/docs/components/lists",
 						"draft": true
 					},
@@ -170,7 +175,7 @@
 				"icon": "mgc_pic_ai_line",
 				"routes": [
 					{
-						"name": "images",
+						"name": "image",
 						"path": "/mytril/docs/components/img",
 						"draft": false
 					},
@@ -181,7 +186,7 @@
 					},
 
 					{
-						"name": "icons",
+						"name": "icon",
 						"path": "/mytril/docs/components/icons",
 						"draft": false
 					}
