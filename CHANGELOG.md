@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.5.0] - 2025-01-31 - insiders
+## [0.5.0] - 2025-03-01 - insiders
 
 **Mytril has been update on Svelte 5**
 
@@ -21,7 +21,7 @@ New requirement for use Mytril:
 - Svelte 5.16 or more for use Runes and new process Class
 
 - Optimize package 0.4.14 to 0.5.0
-- Size: 284 kB to 170 kB
+- Size: 284 kB to 172 kB
 - Files: 230 to 169
 
 ### Features legacy and removed

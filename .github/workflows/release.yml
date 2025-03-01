@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-
+  pull_request:
+    branches:
+      - main
+    types: [closed]
 env:
   local_version: 0.0.0
   npm_version: 0.0.0

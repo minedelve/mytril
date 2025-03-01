@@ -1,6 +1,6 @@
 {
 	"name": "mytril",
-	"version": "0.5.0-insiders.27",
+	"version": "0.5.0",
 	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
 	"type": "module",
 	"scripts": {
@@ -28,7 +28,7 @@
 		"url": "https://buymeacoffee.com/nycolaide"
 	},
 	"license": "MIT",
-	"homepage": "https://minedelve.com",
+	"homepage": "https://minedelve.com/mytril/docs",
 	"keywords": [
 		"svelte",
 		"sveltekit",
