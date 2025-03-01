@@ -1,0 +1,68 @@
+:root {
+	--font-sans: system-ui;
+	--font-serif: ui-serif;
+	--font-mono: ui-monospace;
+}
+
+:root {
+	--radius-none: 0;
+	--radius-xs: 0.125rem;
+	--radius-sm: 0.25rem;
+	--radius-md: 0.375rem;
+	--radius-lg: 0.5rem;
+	--radius-xl: 0.75rem;
+	--radius-2xl: 1rem;
+	--radius-3xl: 1.5rem;
+	--radius-4xl: 2rem;
+	--radius-pill: 9999px;
+	--radius-circle: 50%;
+}
+
+:root {
+	--myt-alert-c: var(--color-on-surface-variant);
+	--myt-alert-bg: var(--color-surface-variant);
+	--myt-alert-br: var(--radius-md);
+	--myt-app-bar-c: var(--color-on-surface);
+	--myt-app-bar-bg: var(--color-surface);
+	--myt-bottom-navigation-c: var(--color-on-surface-variant);
+	--myt-bottom-navigation-bg: var(--color-surface-variant);
+	--myt-bottom-navigation-br: var(--radius-none);
+	--myt-btn-c: var(--color-on-surface-variant);
+	--myt-btn-bg: var(--color-surface-variant);
+	--myt-btn-br: var(--radius-md);
+	--myt-card-c: var(--color-on-surface);
+	--myt-card-bg: var(--color-surface);
+	--myt-card-br: var(--radius-md);
+	--myt-chip-c: var(--color-on-surface-variant);
+	--myt-chip-bg: var(--color-surface-variant);
+	--myt-dialog-c: var(--color-on-surface);
+	--myt-dialog-bg: var(--color-surface);
+	--myt-dialog-size-x-small: 18.75rem;
+	--myt-dialog-size-small: 25rem;
+	--myt-dialog-size-default: 37.5rem;
+	--myt-dialog-size-large: 53.125rem;
+	--myt-dialog-size-x-large: 75rem;
+	--myt-divider-c: var(--color-outline);
+	--myt-divider-opc: 0.12;
+	--myt-expansion-panel-c: var(--color-on-surface);
+	--myt-expansion-panel-bg: var(--color-surface);
+	--myt-expansion-panel-br: var(--radius-md);
+	--myt-icon-c: var(--color-on-background);
+	--myt-icon-size: 1;
+	--myt-list-c: var(--color-on-surface);
+	--myt-list-bg: var(--color-surface-container);
+	--myt-list-indent-padding: 0px;
+	--myt-menu-c: var(--color-on-surface-variant);
+	--myt-menu-bg: var(--color-surface-variant);
+	--myt-menu-br: var(--radius-md);
+	--myt-switch-c: var(--color-on-surface-variant);
+	--myt-switch-bg: var(--color-surface-variant);
+	--myt-system-bar-c: var(--color-on-surface-variant);
+	--myt-system-bar-bg: var(--color-surface-variant);
+	--myt-toolbar-c: var(--color-on-surface);
+	--myt-toolbar-bg: var(--color-surface);
+	--myt-toolbar-br: var(--radius-md);
+	--myt-tooltip-c: var(--color-on-surface-variant);
+	--myt-tooltip-bg: var(--color-surface-variant);
+	--myt-tooltip-br: var(--radius-md);
+}

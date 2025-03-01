@@ -1,6 +1,11 @@
 ---
-title: Elevation classes
-description: Apply shadows and control depth in Svelte projects using Mytril's elevation classes or root variables. Customize elevation levels from 0 to 24 for flexible UI shadow options.
+title:
+section:
+head:
+  title: Elevation classes
+  description: Apply shadows and control depth in Svelte projects using Mytril's elevation classes or root variables. Customize elevation levels from 0 to 24 for flexible UI shadow options.
+features:
+  legacy: 0.4.14
 ---
 
 <script lang="ts">

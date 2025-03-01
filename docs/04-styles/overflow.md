@@ -1,6 +1,11 @@
 ---
-title: Effortless Overflow Management with Mytril
-description: Learn how to manage overflow styles with Mytril's pre-built CSS classes. Discover effective techniques for responsive design and control element overflow effortlessly. Explore examples and optimize your web layouts.
+title:
+section:
+head:
+  title: Effortless Overflow Management with Mytril
+  description: Learn how to manage overflow styles with Mytril's pre-built CSS classes. Discover effective techniques for responsive design and control element overflow effortlessly. Explore examples and optimize your web layouts.
+features:
+  legacy: 0.4.14
 ---
 
 # Overflow styles with Mytril {#overflow-styles-with-mytril}

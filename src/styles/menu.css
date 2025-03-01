@@ -1,0 +1,19 @@
+.myt-menu-content {
+	--c: var(--myt-menu-c);
+	--bg: var(--myt-menu-bg);
+
+	inset: 0px auto auto 0px;
+	margin: 0px;
+	position: fixed;
+	z-index: 9999;
+	background-color: var(--bg);
+	color: var(--c);
+	border-radius: var(--myt-menu-br);
+	display: inline-block;
+	width: auto;
+	opacity: 1;
+	transition-property: opacity, transform;
+	transition:
+		color 0.5s,
+		background-color 0.5s;
+}

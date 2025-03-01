@@ -20,7 +20,7 @@ const { name } = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
 const typescriptEnabled = envTypescript();
 
 if (process.argv.includes('--help') || process.argv.includes('-h')) {
-	console.log('Usage: npx mytril [customCssPath]');
+	console.log('Usage: npx mytril init [customCssPath]');
 	console.log('Default path: src/app.css');
 	process.exit(0);
 } else if (command === 'init') {
@@ -33,15 +33,13 @@ if (process.argv.includes('--help') || process.argv.includes('-h')) {
 	console.log('         __/ |             ');
 	console.log('        |___/              ');
 
-	spacerConsole(2);
+	spacerConsole(1);
 	console.log(chalk.blue.bold(`${name} - Component Framework for Svelte`));
-	spacerConsole(2);
+	spacerConsole(1);
 	await initMytril();
-	spacerConsole(1);
 	await adapterViteConfig(typescriptEnabled);
-	spacerConsole(1);
 	await modifyCssFile();
-	spacerConsole(3);
+	spacerConsole(1);
 	linkToPrompt();
 } else {
 	console.error("Command not recognized. Try 'npx mytril init'");

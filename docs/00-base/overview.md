@@ -1,45 +1,83 @@
 ---
-title: Introduction
-description: Mytril is a Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
+title: Introducing Mytril Svelte UI Components
+section: Introduction
+head:
+  title: Introduction
+  description: Mytril is a Svelte library component for rapidly building modern websites based on Svelte and Sveltekit
+related:
+  - /mytril/docs/getting-started/installation
+  - /mytril/docs/customization/themes
+  - /mytril/docs/customization/breakpoints
+features:
+  github: 00-base/overview.md
 ---
 
-# What is Mytril ? {#what-is-mytril}
+**A fast, flexible, and framework-agnostic UI library for Svelte.**
 
-Mytril is a Svelte library designed to help you build user interfaces with ease. It leverages the power of HTML, CSS, and JavaScript standards, providing lightweight, framework-based components that allow you to develop user interfaces of any complexity.
+Mytril is a **pure Svelte component library** designed for developers who need **performance, flexibility, and total control over styling**.
 
-Here’s a simple example:
+- 👉 **No CSS frameworks required. No extra dependencies. Just lightweight, customizable Svelte components.**
 
-```svelte
-<script>
-	import { Btn } from 'mytril';
-</script>
+## Mytril is built for developers
 
-<Btn>Click on me</Btn>
-```
+**Why reinvent the wheel when you can concentrate on building great experiences?**
 
-Rendered output:
+Mytril simply provides **highly customizable** building blocks that integrate into **your** design system.
+Please note: Mytril does not dictate the appearance of your user interface.
 
-<button on:click={() => alert('Welcome to the Moria !')}>Click on me</button>
+- Want to use **TailwindCSS** or **UnoCSS**? No problem
+- Prefer **CSS Modules, SCSS, or Vanilla CSS**? That works just as well
+- Need **dark mode or theme support**? Easy with CSS variables
 
-## Ready to Get Started? {#ready-to-start}
+**No rigid styling. Just lightweight components that give you the flexibility to style things your way.**
 
-Mytril is currently under development, and while you can install it now, please be aware that functions, components, and styles may evolve rapidly in the coming weeks.
+![](/images/mytril/runtime-mytril-svelte-vite.png)
 
-If you encounter any bugs, have suggestions, or simply have questions, feel free to reach out to us at [contact@minedelve.com](mailto:contact@minedelve.com) or on our [GitHub](https://github.com/minedelve) page.
+## How to get started?
 
-### Installation (basic) {#installation-basic}
+Mytril is **currently in a stabilization phase**, but its **API is solid** and ready for production use. [**New features are coming**](/mytril/docs/changelog), but the core structure won’t change.
 
-To install Mytril, ensure your environment is set up with Node.js (version 18 or LTS+), and you're using Svelte or SvelteKit. For guidance on setting up Svelte or SvelteKit, we recommend referring to the official documentation:
+[**Let's install Mytril Svelte Components.**](/mytril/docs/getting-started/installation)
+_Need help?_ Check out the [Mytril Documentation](/mytril/docs) or our [GitHub Repository](https://github.com/minedelve/mytril).
 
-- [Svelte Documentation](https://svelte.dev/)
-- [Sveltekit Documentation](https://kit.svelte.dev/)
+### Contribute and get support
 
-At the root of your project, run the following command:
+Spotted a bug? Have a feature request? Let’s build together! 🚀
 
-```command
-npm install -D mytril
-```
+Contact us at [contact@minedelve.com](mailto:contact@minedelve.com) or join the discussion on [**GitHub**](https://github.com/minedelve/mytril/discussions).
 
-### Documentation {#documentation}
+## Mytril library structure paths
 
-As Mytril is still in development, documentation will be continually added and updated until we reach Stable v1. Some parts of the documentation might be incomplete or partial at this stage. If you notice any missing information, please let us know.
+Mytril follows a modular architecture for reasons of flexibility and maintainability. Here's a presentation of Mytril's different paths and organization:
+
+![](/images/mytril/mytril-structural-paths.png)
+
+**All paths on Mytril:**
+
+- 📁 mytril/**vite**: plugin for **Vite.js** integration. Ensures **fast builds** and optimal **HMR support**.
+- 📁 mytril/**components**: collection of **ready-to-use Svelte components**. Fully customizable.
+- 📁 mytril/**css**: base styles & theme system. Works with **Tailwind, SCSS, or Uno CSS**.
+- 📁 mytril/**store**: **reactive Svelte stores** for managing global state.
+
+## Why Mytril?
+
+- **100% Svelte & SvelteKit ready**: quick and easy integration, step-by-step explanation
+- **No styling overhead**: use Tailwind, SCSS, or Vanilla CSS, the choice is yours.
+- **Lightweight and high-performance** no code overload, just optimized components
+- **Customizable**: modify via JS props & CSS variables
+- **Keep your project simple**: develop it for fast, simple actions and use simple features
+
+Start coding with **easily scalable components**, adapted to every design system.
+
+From **buttons** to **modals**, **form elements to advanced UI components**, Mytril provides a clean foundation for your projects with its Svelte component library.
+
+## Start using Mytril - Let’s go
+
+Whether you're new to Svelte or an senior Svelte developer, **Mytril helps you stay productive, keep control of your user interface and create scalable applications with ease**.
+
+- [Get Started and install Mytril](/mytril/docs/getting-started/installation)
+
+  **Stay Updated!** Follow us for the latest news & updates:
+
+- 🔹 **Discord community:** [Minedelve Server](https://discord.gg/fwyaGUhbav)
+- 🔹 **GitHub discussions:** [Join the community](https://github.com/minedelve/mytril/discussions)

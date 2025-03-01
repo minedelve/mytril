@@ -1,0 +1,26 @@
+.myt-app-bar.myt-toolbar {
+	--c: var(--myt-app-bar-c);
+	--bg: var(--myt-app-bar-bg);
+}
+
+.myt-app-bar {
+	display: flex;
+}
+
+.myt-app-bar.myt-app-bar--top {
+	top: 0px;
+	z-index: 1004;
+	transform: translateY(0px);
+	position: fixed;
+	left: 0px;
+	width: calc(100% + 0px);
+}
+
+.myt-app-bar.myt-app-bar--bottom {
+	z-index: 1004;
+	transform: translateY(0px);
+	position: fixed;
+	left: 0px;
+	width: calc(100% + 0px);
+	bottom: 0px;
+}

@@ -5,8 +5,7 @@ import path from 'path';
 const content = `
 /** @type {import('mytril').Config} */
 export default {
-	themes: 'light',
-	defaultTheme: 'light',
+	colorScheme: 'system',
 	colors: {}
 };
 `;
@@ -22,5 +21,6 @@ export async function initMytril() {
 		console.log(chalk.green('Mytril has created mytril.config.js successfully on your project'));
 	} catch (error) {
 		console.error('Failed to create configuration file:', error);
+		console.warn('you can create mytril.config.js manually on your root project');
 	}
 }

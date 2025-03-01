@@ -1,0 +1,294 @@
+.myt-btn {
+	--c: var(--myt-btn-c);
+	--bg: var(--myt-btn-bg);
+
+	align-items: center;
+	display: inline-grid;
+	grid-template-areas: 'prepend content append';
+	grid-template-columns: max-content auto max-content;
+	justify-content: center;
+	max-width: 100%;
+	outline: none;
+	position: relative;
+	text-decoration: none;
+	transition-property: box-shadow, transform, opacity, background-color, background;
+	transition-duration: 0.28s;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	user-select: none;
+	vertical-align: middle;
+	flex-shrink: 0;
+	color: var(--c);
+	background-color: var(--bg);
+	border-radius: var(--myt-btn-br);
+	transition:
+		color 0.5s,
+		background-color 0.5s;
+}
+
+.myt-btn.myt-btn--outline {
+	border: thin solid currentColor;
+}
+.myt-btn.myt-btn--text,
+.myt-btn.myt-btn--outline {
+	background-color: transparent;
+}
+
+.myt-btn.myt-btn--icon {
+	min-width: 0 !important;
+	padding: 0 !important;
+}
+
+.myt-btn.myt-btn--icon.myt-btn--circle {
+	border-radius: 50%;
+}
+
+.myt-btn.myt-btn--square {
+	border-radius: var(--radius-lg);
+}
+
+.myt-btn.myt-btn--rounded {
+	border-radius: var(--radius-pill);
+}
+
+.myt-btn.myt-btn--circle:not(.myt-btn--icon) {
+	border-radius: var(--radius-circle);
+}
+
+.myt-btn.myt-btn--block {
+	display: flex;
+	flex: 1 0 auto;
+	min-width: 100%;
+}
+
+.myt-btn.myt-btn--wide {
+	width: 16rem;
+}
+
+.myt-btn.myt-btn--density-default:not(.myt-btn--icon) {
+	height: calc(var(--btn-height) + 0px);
+}
+.myt-btn.myt-btn--density-comfortable:not(.myt-btn--icon) {
+	height: calc(var(--btn-height) + -0.5rem);
+}
+.myt-btn.myt-btn--density-compact:not(.myt-btn--icon) {
+	height: calc(var(--btn-height) + -0.75rem);
+}
+
+.myt-btn.myt-btn--icon.myt-btn--density-comfortable {
+	width: calc(var(--btn-height) + 0px);
+	height: calc(var(--btn-height) + 0px);
+}
+.myt-btn.myt-btn--icon.myt-btn--density-compact {
+	width: calc(var(--btn-height) + -0.5rem);
+	height: calc(var(--btn-height) + -0.5rem);
+}
+.myt-btn.myt-btn--icon.myt-btn--density-default {
+	width: calc(var(--btn-height) + 0.75rem);
+	height: calc(var(--btn-height) + 0.75rem);
+}
+
+.myt-btn .myt-btn--content {
+	grid-area: content;
+	justify-content: center;
+	white-space: nowrap;
+}
+
+.myt-btn .myt-btn--prepend {
+	grid-area: prepend;
+	margin-inline: calc(var(--btn-height) / -9) calc(var(--btn-height) / 4.5);
+}
+
+.myt-btn .myt-btn--append {
+	grid-area: append;
+	margin-inline: calc(var(--btn-height) / 4.5) calc(var(--btn-height) / -9);
+}
+
+.myt-btn .myt-btn--content,
+.myt-btn .myt-btn--prepend,
+.myt-btn .myt-btn--append {
+	align-items: center;
+	display: flex;
+	transition:
+		transform,
+		opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.myt-btn.myt-btn--icon .myt-icon {
+	--icon-size-multiplier: 1;
+}
+.myt-btn .myt-icon {
+	--icon-size-multiplier: 0.86;
+}
+
+.myt-btn:active:hover,
+.myt-btn:active:focus {
+	animation: button-effect 0s ease-out;
+	transform: scale(0.97);
+}
+
+.myt-btn.myt-btn--active:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
+	background-color: color-mix(in oklab, var(--bg) 85%, black);
+}
+.myt-btn:hover:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
+	background-color: color-mix(in oklab, var(--bg) 90%, black);
+}
+
+.myt-btn.myt-btn--outline.myt-btn--active,
+.myt-btn.myt-btn--text.myt-btn--active {
+	background-color: color-mix(in oklab, var(--c) 15%, transparent);
+}
+.myt-btn.myt-btn--outline:hover,
+.myt-btn.myt-btn--text:hover {
+	background-color: color-mix(in oklab, var(--c) 20%, transparent);
+}
+
+.myt-btn.myt-btn--link {
+	background-color: transparent;
+	text-decoration-line: underline;
+}
+
+.myt-btn.myt-btn--disabled,
+.myt-btn[disabled] {
+	pointer-events: none;
+	user-select: none;
+	color: color-mix(in oklab, var(--c) 40%, transparent) !important;
+	background-color: color-mix(in oklab, var(--bg) 70%, transparent) !important;
+}
+.myt-btn.myt-btn--disabled.myt-btn--outline,
+.myt-btn[disabled].myt-btn--outline {
+	border-color: color-mix(in oklab, var(--c) 40%, transparent) !important;
+}
+
+.myt-btn.myt-btn--disabled.myt-btn--outline,
+.myt-btn[disabled].myt-btn--outline,
+.myt-btn.myt-btn--disabled.myt-btn--text,
+.myt-btn[disabled].myt-btn--text,
+.myt-btn.myt-btn--disabled.myt-btn--link,
+.myt-btn[disabled].myt-btn--link {
+	background-color: transparent;
+}
+
+.myt-btn:where(.myt-btn:is(input[type='checkbox'])),
+.myt-btn:where(.myt-btn:is(input[type='radio'])) {
+	width: auto;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.myt-btn:is(input[type='checkbox']):after,
+.myt-btn:is(input[type='radio']):after {
+	--btn-content: attr(aria-label);
+	content: var(--btn-content);
+}
+.myt-btn:is(input[type='checkbox']:checked),
+.myt-btn:is(input[type='radio']:checked) {
+	--c: var(--myt-btn-c);
+	--bg: var(--myt-btn-bg);
+}
+
+.myt-btn.myt-btn--info:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
+	--c: var(--mcolor-on-info);
+	--bg: var(--color-info);
+}
+.myt-btn.myt-btn--info.myt-btn--outline,
+.myt-btn.myt-btn--info.myt-btn--text,
+.myt-btn.myt-btn--info.myt-btn--link {
+	--c: var(--color-info);
+}
+
+.myt-btn.myt-btn--success:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
+	--c: var(--color-on-success);
+	--bg: var(--color-success);
+}
+.myt-btn.myt-btn--success.myt-btn--outline,
+.myt-btn.myt-btn--success.myt-btn--text,
+.myt-btn.myt-btn--success.myt-btn--link {
+	--c: var(--mcolor-success);
+}
+
+.myt-btn.myt-btn--warning:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
+	--c: var(--color-on-warning);
+	--bg: var(--color-warning);
+}
+.myt-btn.myt-btn--warning.myt-btn--outline,
+.myt-btn.myt-btn--warning.myt-btn--text,
+.myt-btn.myt-btn--warning.myt-btn--link {
+	--c: var(--color-warning);
+}
+
+.myt-btn.myt-btn--error:not(.myt-btn--outline):not(.myt-btn--text):not(.myt-btn--link) {
+	--c: var(--color-on-error);
+	--bg: var(--color-error);
+}
+.myt-btn.myt-btn--error.myt-btn--outline,
+.myt-btn.myt-btn--error.myt-btn--text,
+.myt-btn.myt-btn--error.myt-btn--link {
+	--c: var(--color-error);
+}
+
+/* @breakpoints */
+.myt-btn[breakpoint]myt-btn--size-xs {
+	--btn-size: 0.625rem;
+	--btn-height: 1.25rem;
+	font-size: var(--btn-size);
+	min-width: 2.25rem;
+	padding: 0 0.5rem;
+}
+.myt-btn[breakpoint]myt-btn--size-sm {
+	--btn-size: 0.75rem;
+	--btn-height: 1.75rem;
+	font-size: var(--btn-size);
+	min-width: 3.125rem;
+	padding: 0 0.75rem;
+}
+.myt-btn[breakpoint]myt-btn--size-md {
+	--btn-size: 0.875rem;
+	--btn-height: 2.25rem;
+	font-size: var(--btn-size);
+	min-width: 4rem;
+	padding: 0 1rem;
+}
+.myt-btn[breakpoint]myt-btn--size-lg {
+	--btn-size: 1rem;
+	--btn-height: 2.75rem;
+	font-size: var(--btn-size);
+	min-width: 4.875rem;
+	padding: 0 1.25rem;
+}
+.myt-btn[breakpoint]myt-btn--size-xl {
+	--btn-size: 1.125rem;
+	--btn-height: 3.25rem;
+	font-size: var(--btn-size);
+	min-width: 5.75rem;
+	padding: 0 1.5rem;
+}
+
+.myt-btn[breakpoint]myt-btn--size-xs .myt-icon {
+	font-size: calc(var(--icon-size-multiplier) * 1em);
+}
+.myt-btn[breakpoint]myt-btn--size-sm .myt-icon {
+	font-size: calc(var(--icon-size-multiplier) * 1.25em);
+}
+.myt-btn[breakpoint]myt-btn--size-md .myt-icon {
+	font-size: calc(var(--icon-size-multiplier) * 1.5em);
+}
+.myt-btn[breakpoint]myt-btn--size-lg .myt-icon {
+	font-size: calc(var(--icon-size-multiplier) * 1.75em);
+}
+.myt-btn[breakpoint]myt-btn--size-xl .myt-icon {
+	font-size: calc(var(--icon-size-multiplier) * 2em);
+}
+/*! @breakpoints */
+
+/* @keyframes */
+@keyframes button-effect {
+	0% {
+		transform: scale(0.98);
+	}
+	40% {
+		transform: scale(1.02);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

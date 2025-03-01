@@ -1,6 +1,11 @@
 ---
-title: Dialog component
-description: Learn how to use the Dialog component in Mytril for Svelte apps. Create customizable modals, responsive modals with support for rich content, themes, and seamless integration.
+title:
+section:
+head:
+  title: Dialog component
+  description: Learn how to use the Dialog component in Mytril for Svelte apps. Create customizable modals, responsive modals with support for rich content, themes, and seamless integration.
+features:
+  legacy: 0.4.14
 ---
 
 # Dialog components with Mytril {#dialog-components-with-mytril}

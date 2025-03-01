@@ -1,6 +1,11 @@
 ---
-title: Optimize your layout with Mytril's application component
-description: Explore how to use the application component in Mytril to enhance your web application's layout and functionality. Learn about key features like useDisplay and improve your development process with structured, responsive designs.
+title:
+section:
+head:
+  title: Optimize your layout with Mytril's application component
+  description: Explore how to use the application component in Mytril to enhance your web application's layout and functionality. Learn about key features like useDisplay and improve your development process with structured, responsive designs.
+features:
+  legacy: 0.4.14
 ---
 
 # Application component with Mytril {#application-component-with-mytril}
