@@ -38,13 +38,13 @@ Please note: Mytril does not dictate the appearance of your user interface.
 Mytril is **currently in a stabilization phase**, but its **API is solid** and ready for production use. [**New features are coming**](/mytril/docs/changelog), but the core structure won’t change.
 
 [**Let's install Mytril Svelte Components.**](/mytril/docs/getting-started/installation)
-_Need help?_ Check out the [Mytril Documentation](/mytril/docs) or our [GitHub Repository](https://github.com/minedelve/mytril).
+_Need help?_ Check out the [Mytril Documentation](/mytril/docs) or our [GitHub Repository](https://github.com/minedelve/mytril?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=github&utm_content=mytril_github).
 
 ### Contribute and get support
 
 Spotted a bug? Have a feature request? Let’s build together! 🚀
 
-Contact us at [contact@minedelve.com](mailto:contact@minedelve.com) or join the discussion on [**GitHub**](https://github.com/minedelve/mytril/discussions).
+Contact us at [contact@minedelve.com](mailto:contact@minedelve.com) or join the discussion on [**GitHub**](https://github.com/minedelve/mytril/discussions?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=discussions&utm_content=mytril_github).
 
 ## Mytril library structure paths
 
@@ -79,5 +79,5 @@ Whether you're new to Svelte or an senior Svelte developer, **Mytril helps you s
 
   **Stay Updated!** Follow us for the latest news & updates:
 
-- 🔹 **Discord community:** [Minedelve Server](https://discord.gg/fwyaGUhbav)
-- 🔹 **GitHub discussions:** [Join the community](https://github.com/minedelve/mytril/discussions)
+- 🔹 **Discord community:** [Minedelve Server](https://discord.com/invite/fwyaGUhbav?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=discord&utm_content=invit_discord)
+- 🔹 **GitHub discussions:** [Join the community](https://github.com/minedelve/mytril/discussions?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=discussions&utm_content=mytril_github)
