@@ -37,7 +37,7 @@ For help, discussion about best practices, or any other conversation that would 
 
 [Discuss Mytril on GitHub](https://github.com/minedelve/mytril/discussions)
 
-For chatting with others using the framework:
+For chatting with others using the library:
 
 [Join the Minedelve (Mytril) Discord Server](https://discord.gg/fwyaGUhbav)
 
