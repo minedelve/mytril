@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://minedelve.com/mytril" target="_blank">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/minedelve/mytril/develop/.github/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/minedelve/mytril/develop/.github/logo-light.svg">
-      <img alt="Mytril" src="https://raw.githubusercontent.com/minedelve/mytril/develop/.github/logo-light.svg" width="350" height="150" style="max-width: 100%;">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/minedelve/mytril/main/.github/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/minedelve/mytril/main/.github/logo-light.svg">
+      <img alt="Mytril" src="https://raw.githubusercontent.com/minedelve/mytril/main/.github/logo-light.svg" width="350" height="150" style="max-width: 100%;">
     </picture>
   </a>
 </p>
