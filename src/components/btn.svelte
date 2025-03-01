@@ -79,7 +79,6 @@
 	]}
 	{disabled}
 	aria-label={ariaLabel}
-	type="button"
 	style:--bg={assets.color(background)}
 	style:--c={assets.color(color)}
 >
