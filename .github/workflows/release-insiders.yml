@@ -35,62 +35,37 @@ jobs:
       # - name: Build mytril
       #   run: npm run build
 
-  prepublish:
+  prerelease:
     runs-on: ubuntu-latest
     needs: build
     permissions:
       contents: write
     outputs:
-      # version_release: ${{ steps.get_version_release.outputs.version_release }}
+      version_release: ${{ steps.set_version.outputs.version_release }}
       sha_short: ${{ steps.get_sha_version.outputs.version_release }}
 
     steps:
       - uses: actions/checkout@v4
 
-      # - name: Force v0.0.0 to mytril
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     git branch --show-current
-      #     npm version 0.0.0 --no-git-tag-version
-
       - name: Resolve version
         id: get_sha_version
         run: |
-          # echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-          head=$(git rev-parse --short HEAD)
-          echo "SHA_SHORT: $head"
-          echo "sha_version=${head}" >> $GITHUB_OUTPUT
+          echo "sha_version=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Generate version
-        id: generate_version
+        id: set_version
         run: |
           sha_version="${{ steps.get_sha_version.outputs.sha_version }}"
-          full_version="${VERSION}-${RELEASE_CHANNEL}.${sha_version}"
-          echo "Generated Version: $full_version"
-          echo "version=${full_version}" >> $GITHUB_OUTPUT
+          echo "version_release=${${VERSION}-${RELEASE_CHANNEL}.${sha_version}}" >> $GITHUB_OUTPUT
+          # full_version="${VERSION}-${RELEASE_CHANNEL}.${sha_version}"
+          # echo "Generated Version: $full_version"
+          # echo "version_release=${full_version}" >> $GITHUB_OUTPUT
 
-      # - name: New prerelease version
-      #   id: get_version_release
-      #   run: |
-      #     version=$(npm version prerelease --preid=insiders --no-git-tag-version)
-      #     echo "Generated version: $version"
-      #     echo "version_release=${version}" >> $GITHUB_OUTPUT
-
-      # - name: Commit & Push version change
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     git branch --show-current
-      #     git add package.json
-      #     git commit -a -m "publish insiders release - ${{ steps.get_version_release.outputs.version_release }}"
-      #     git status
-      #     git push
   publish:
     runs-on: ubuntu-latest
-    needs: prepublish
-    # env:
-    #   version_release: ${{ needs.prepublish.outputs.version_release }}
+    needs: prerelease
+    env:
+      version_release: ${{ needs.prerelease.outputs.version_release }}
 
     steps:
       - uses: actions/checkout@v4
@@ -100,6 +75,8 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Version
+        run: echo "The current branch is => ${{ env.version_release }}"
       # - name: Install dependencies
       #   run: npm install
 
