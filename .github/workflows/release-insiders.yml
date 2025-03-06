@@ -36,7 +36,7 @@ jobs:
         run: npm run build
 
       - name: Upload node_modules as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: node-modules
           path: node_modules/
@@ -46,10 +46,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Download node_modules artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: node-modules
           path: node_modules/
