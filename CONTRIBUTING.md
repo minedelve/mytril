@@ -163,5 +163,5 @@ If you're unsure about anything or have questions:
 
 Check the existing [Issues](https://github.com/minedelve/mytril/issues) or [Discussions](https://github.com/minedelve/mytril/discussions).
 Ask us directly by opening a new discussion or issue.
-Contact us on <your preferred contact method, e.g., email/community channel>.
+Contact us on <your preferred contact method, e.g., [email](contact@minedelve.com) or community channel>.
 Thank you for contributing to **Mytril!** We're excited to have you on board. 🚀
