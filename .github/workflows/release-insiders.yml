@@ -40,6 +40,9 @@ jobs:
       - name: Build mytril
         run: npm run build
 
+      - name: Use Vitest
+        run: npm run test
+
       - name: Save build artifacts
         uses: actions/upload-artifact@v4
         with:
