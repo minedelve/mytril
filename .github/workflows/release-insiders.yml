@@ -35,12 +35,6 @@ jobs:
       - name: Build mytril
         run: npm run build
 
-      - name: Upload node_modules as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: node-modules
-          path: node_modules/
-
   lint:
     needs: build
     runs-on: ubuntu-latest
@@ -48,14 +42,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download node_modules artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: node-modules
-          path: node_modules/
+      # - name: Download node_modules artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: node-modules
+      #     path: node_modules/
 
-      - name: Lint
-        run: npx prettier --check . && npx eslint .
+      - name: Install dependencies
+        run: npm install
+
+      - name: Use linter
+        run: npm run lint
 
   prerelease:
     runs-on: ubuntu-latest
