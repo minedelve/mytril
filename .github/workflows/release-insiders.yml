@@ -79,8 +79,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node_modules-
 
-      - name: Build mytril
-        run: npm run build
+      - name: Install dependencies
+        run: npm install
 
       - name: Use Vitest
         run: npm run test
