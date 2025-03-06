@@ -46,12 +46,12 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git branch --show-current
-          npm version 0.0.0 -f
+          npm version 0.0.0 --no-git-tag-version
 
       - name: New prerelease version
         id: get_version_release
         run: |
-          version=$(npm version prerelease --preid=insiders --no-git-tag-version --build=1)
+          version=$(npm version prerelease --preid=insiders --no-git-tag-version)
           echo "Generated version: $version"
           echo "version_release=${version}" >> $GITHUB_OUTPUT
 
