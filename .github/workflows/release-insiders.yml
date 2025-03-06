@@ -47,20 +47,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Force v0.0.0 to mytril
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git branch --show-current
-          npm version 0.0.0 --no-git-tag-version
+      # - name: Force v0.0.0 to mytril
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      #     git branch --show-current
+      #     npm version 0.0.0 --no-git-tag-version
 
       - name: Resolve version
         id: get_sha_version
         run: |
           # echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
           head=$(git rev-parse --short HEAD)
-          echo "HEAD: $head"
+          echo "SHA_SHORT: $head"
           echo "sha_version=${head}" >> $GITHUB_OUTPUT
+
+      - name: Generate version
+        id: generate_version
+        run: |
+          sha_version="${{ steps.get_sha_version.outputs.sha_version }}"
+          full_version="${VERSION}-${RELEASE_CHANNEL}.${sha_version}"
+          echo "Generated Version: $full_version"
+          echo "version=${full_version}" >> $GITHUB_OUTPUT
 
       # - name: New prerelease version
       #   id: get_version_release
