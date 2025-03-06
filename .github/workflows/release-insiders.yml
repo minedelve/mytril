@@ -125,12 +125,12 @@ jobs:
       # - name: Install dependencies
       #   run: npm install
 
-      - name: Force v0.0.0 to mytril
+      - name: Force v${env.version_release} to mytril
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git branch --show-current
-          npm version 0.0.0 -f
+          npm version ${env.version_release} -f
       # - name: New prerelease version
       #   run: npm version prerelease --preid=insiders --no-git-tag-version
 
