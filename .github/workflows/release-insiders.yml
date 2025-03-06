@@ -51,15 +51,15 @@ jobs:
           git status
           git diff
 
-      - name: Commit & Push version change
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git branch --show-current
-          git add package.json
-          git commit -a -m "publish insiders release - ${{ steps.get_version_release.outputs.version_release }}"
-          git status
-          git push
+      # - name: Commit & Push version change
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      #     git branch --show-current
+      #     git add package.json
+      #     git commit -a -m "publish insiders release - ${{ steps.get_version_release.outputs.version_release }}"
+      #     git status
+      #     git push
   publish:
     runs-on: ubuntu-latest
     needs: prepublish
@@ -93,9 +93,9 @@ jobs:
       - name: Inspect the working tree
         run: echo "The current branch is  ${{ env.version_release }}"
 
-      - name: Publish to NPM
-        run: |
-          echo "Publishing version ${{ env.version_release }}"
-          npm publish --tag insiders
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      # - name: Publish to NPM
+      #   run: |
+      #     echo "Publishing version ${{ env.version_release }}"
+      #     npm publish --tag insiders
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
