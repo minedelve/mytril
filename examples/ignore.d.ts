@@ -3,3 +3,5 @@ declare module 'mytril/*' {
 	const noTypesHere: any;
 	export default noTypesHere;
 }
+
+/* WIP */
