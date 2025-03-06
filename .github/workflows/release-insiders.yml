@@ -9,6 +9,11 @@ on:
       - develop
     types: [closed]
 
+env:
+  NODE_VERSION: 20
+  RELEASE_CHANNEL: insiders
+  VERSION: 0.0.0
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,16 +24,16 @@ jobs:
       - name: Setup node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
-      - name: Use linter
-        run: npm run lint
+      # - name: Use linter
+      #   run: npm run lint
 
-      - name: Build mytril
-        run: npm run build
+      # - name: Build mytril
+      #   run: npm run build
 
   prepublish:
     runs-on: ubuntu-latest
@@ -36,7 +41,8 @@ jobs:
     permissions:
       contents: write
     outputs:
-      version_release: ${{ steps.get_version_release.outputs.version_release }}
+      # version_release: ${{ steps.get_version_release.outputs.version_release }}
+      sha_short: ${{ steps.get_sha_version.outputs.version_release }}
 
     steps:
       - uses: actions/checkout@v4
@@ -48,18 +54,20 @@ jobs:
           git branch --show-current
           npm version 0.0.0 --no-git-tag-version
 
-      - name: New prerelease version
-        id: get_version_release
+      - name: Resolve version
+        id: get_sha_version
         run: |
-          version=$(npm version prerelease --preid=insiders --no-git-tag-version)
-          echo "Generated version: $version"
-          echo "version_release=${version}" >> $GITHUB_OUTPUT
+          # echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          head=$(git rev-parse --short HEAD)
+          echo "HEAD: $head"
+          echo "sha_version=${head}" >> $GITHUB_OUTPUT
 
-      - name: Inspect the working tree
-        run: |
-          echo "Inspecting Git status and diff..."
-          git status
-          git diff
+      # - name: New prerelease version
+      #   id: get_version_release
+      #   run: |
+      #     version=$(npm version prerelease --preid=insiders --no-git-tag-version)
+      #     echo "Generated version: $version"
+      #     echo "version_release=${version}" >> $GITHUB_OUTPUT
 
       # - name: Commit & Push version change
       #   run: |
@@ -73,8 +81,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     needs: prepublish
-    env:
-      version_release: ${{ needs.prepublish.outputs.version_release }}
+    # env:
+    #   version_release: ${{ needs.prepublish.outputs.version_release }}
 
     steps:
       - uses: actions/checkout@v4
@@ -84,27 +92,27 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
-      - name: Force v0.0.0 to mytril
-        run: npm version 0.0.0 -f
+      # - name: Force v0.0.0 to mytril
+      #   run: npm version 0.0.0 -f
 
-      - name: New prerelease version
-        run: npm version prerelease --preid=insiders --no-git-tag-version
+      # - name: New prerelease version
+      #   run: npm version prerelease --preid=insiders --no-git-tag-version
 
-      - name: Authenticate to NPM
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+      # - name: Authenticate to NPM
+      #   run: |
+      #     echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
-      - name: Build
-        run: npm run build
+      # - name: Build
+      #   run: npm run build
 
-      - name: Verify files
-        run: npm pack --dry-run
+      # - name: Verify files
+      #   run: npm pack --dry-run
 
-      - name: Inspect the working tree
-        run: echo "The current branch is => ${{ env.version_release }}"
+      # - name: Inspect the working tree
+      #   run: echo "The current branch is => ${{ env.version_release }}"
 
       # - name: Publish to NPM
       #   run: |
