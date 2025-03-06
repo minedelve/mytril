@@ -10,7 +10,7 @@ on:
     types: [closed]
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: '20'
   RELEASE_CHANNEL: insiders
   VERSION: 0.0.0
 
