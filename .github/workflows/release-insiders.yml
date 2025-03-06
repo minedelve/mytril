@@ -82,8 +82,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node_modules-
 
-      - name: Use Vitest
-        run: npm run test
+      - name: Run Vitest
+        run: npm test -- --run
 
   prerelease:
     runs-on: ubuntu-latest
