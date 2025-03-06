@@ -125,8 +125,8 @@ jobs:
       # - name: Install dependencies
       #   run: npm install
 
-      # - name: Force v0.0.0 to mytril
-      #   run: npm version 0.0.0 -f
+      - name: Force v0.0.0 to mytril
+        run: npm version 0.0.0 -f
 
       # - name: New prerelease version
       #   run: npm version prerelease --preid=insiders --no-git-tag-version
@@ -140,6 +140,10 @@ jobs:
 
       - name: Verify files
         run: npm pack --dry-run
+
+      - name: Afficher la version
+        run: |
+          echo "Version de Mytril : $(npm pkg get version)"
 
       # - name: Inspect the working tree
       #   run: echo "The current branch is => ${{ env.version_release }}"
