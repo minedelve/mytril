@@ -55,7 +55,7 @@ jobs:
           path: node_modules/
 
       - name: Lint
-        run: npm run lint
+        run: npx prettier --check . && npx eslint .
 
   prerelease:
     runs-on: ubuntu-latest
