@@ -125,7 +125,7 @@ jobs:
       # - name: Install dependencies
       #   run: npm install
 
-      - name: Force v${env.version_release} to mytril
+      - name: Force version to mytril
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
