@@ -71,14 +71,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Restore node_modules cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
-
       - name: Install dependencies
         run: npm install
 
@@ -120,10 +112,16 @@ jobs:
       - name: Setup node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Version
-        run: echo "The current branch is => ${{ env.version_release }}"
+      - name: Download node_modules artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mytril-build
+          path: dist
+
+      # - name: Version
+      #   run: echo "The current branch is => ${{ env.version_release }}"
       # - name: Install dependencies
       #   run: npm install
 
@@ -133,15 +131,15 @@ jobs:
       # - name: New prerelease version
       #   run: npm version prerelease --preid=insiders --no-git-tag-version
 
-      # - name: Authenticate to NPM
-      #   run: |
-      #     echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+      - name: Authenticate to NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
       # - name: Build
       #   run: npm run build
 
-      # - name: Verify files
-      #   run: npm pack --dry-run
+      - name: Verify files
+        run: npm pack --dry-run
 
       # - name: Inspect the working tree
       #   run: echo "The current branch is => ${{ env.version_release }}"
