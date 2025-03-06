@@ -56,7 +56,7 @@ jobs:
         id: set_version
         run: |
           sha_version="${{ steps.get_sha_version.outputs.sha_version }}"
-          echo "version_release=$(${VERSION}-${RELEASE_CHANNEL}.${sha_version})" >> $GITHUB_OUTPUT
+          echo "version_release=${VERSION}-${RELEASE_CHANNEL}.${sha_version}" >> $GITHUB_OUTPUT
           # full_version="${VERSION}-${RELEASE_CHANNEL}.${sha_version}"
           # echo "Generated Version: $full_version"
           # echo "version_release=${full_version}" >> $GITHUB_OUTPUT
