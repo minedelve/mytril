@@ -29,11 +29,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Use linter
-      #   run: npm run lint
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
 
       - name: Build mytril
         run: npm run build
+
+      - name: Save build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mytril-build
+          path: dist
 
   lint:
     needs: build
@@ -47,9 +58,16 @@ jobs:
       #   with:
       #     name: node-modules
       #     path: node_modules/
+      - name: Restore node_modules cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
       - name: Use linter
         run: npm run lint
