@@ -1,6 +1,9 @@
 name: Release Insiders
 
 on:
+  push:
+    branches:
+      - githubActions-learn
   pull_request:
     branches:
       - develop
