@@ -40,9 +40,9 @@ jobs:
 
           if [ "$(printf '%s\n' "$REMOTE_VERSION" "$LOCAL_VERSION" | sort -V | tail -n 1)" != "$LOCAL_VERSION" ]; then
             echo "❌ La version locale ($LOCAL_VERSION) est inférieure ou égale à la version distante ($REMOTE_VERSION)."
-            echo "::set-output name=should_skip::true"
+            echo "should_skip=true" >> $GITHUB_OUTPUT  # ✅ Utilisation correcte
           else
-            echo "::set-output name=should_skip::false"
+            echo "should_skip=false" >> $GITHUB_OUTPUT
             echo "✅ La version locale ($LOCAL_VERSION) est plus récente."
           fi
 
