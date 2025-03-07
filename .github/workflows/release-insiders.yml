@@ -11,7 +11,7 @@ env:
   VERSION: 0.0.0
 
 jobs:
-  build:
+  dependencies:
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -34,20 +34,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node_modules-
 
-      - name: Build mytril
-        run: npm run build
-
-      - name: Save build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: mytril-build
-          path: |
-            dist
-            node_modules
-            .svelte-kit
-
   lint:
-    needs: build
+    needs: dependencies
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -66,7 +54,7 @@ jobs:
         run: npm run lint
 
   vitest:
-    needs: build
+    needs: dependencies
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -117,15 +105,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: mytril-build
-          path: |
-            dist
-            node_modules
-            .svelte-kit
-
       - name: version to mytril insidier
         run: |
           git config --global user.name "github-actions[bot]"
@@ -136,6 +115,12 @@ jobs:
       - name: Authenticate to NPM
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build package
+        run: npm run build
 
       - name: Verify files
         run: npm pack --dry-run
