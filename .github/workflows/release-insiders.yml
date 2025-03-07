@@ -38,7 +38,7 @@ jobs:
           else
             echo "Version locale ($version) <= Version distante ($version), arrêt du workflow."
             exit 1
-          fiz
+          fi
 
       # - name: Setup node.js
       #   uses: actions/setup-node@v4
