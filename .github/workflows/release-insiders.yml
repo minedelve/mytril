@@ -43,6 +43,7 @@ jobs:
           name: mytril-build
           path: |
             dist
+            node_modules
             .svelte-kit
 
   lint:
@@ -122,6 +123,7 @@ jobs:
           name: mytril-build
           path: |
             dist
+            node_modules
             .svelte-kit
 
       - name: version to mytril insidier
