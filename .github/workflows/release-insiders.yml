@@ -35,14 +35,17 @@ jobs:
       - name: Compare versions
         id: compare
         run: |
+          echo "LOCAL_VERSION=${LOCAL_VERSION}" >> $GITHUB_ENV
+          echo "REMOTE_VERSION=${REMOTE_VERSION}" >> $GITHUB_ENV
+
           echo "Version locale: $LOCAL_VERSION"
           echo "Version distante: $REMOTE_VERSION"
 
           if [ "$(printf '%s\n' "$REMOTE_VERSION" "$LOCAL_VERSION" | sort -V | tail -n 1)" != "$LOCAL_VERSION" ]; then
             echo "❌ La version locale ($LOCAL_VERSION) est inférieure ou égale à la version distante ($REMOTE_VERSION)."
-            echo "should_skip=true" >> $GITHUB_OUTPUT  # ✅ Utilisation correcte
+            echo "should_skip=true" >> "$GITHUB_OUTPUT"  # ✅ Bien formaté
           else
-            echo "should_skip=false" >> $GITHUB_OUTPUT
+            echo "should_skip=false" >> "$GITHUB_OUTPUT"
             echo "✅ La version locale ($LOCAL_VERSION) est plus récente."
           fi
 
@@ -50,7 +53,7 @@ jobs:
     needs: dependencies
     runs-on: ubuntu-latest
     timeout-minutes: 3
-    if: needs.dependencies.outputs.should_skip != 'true' # ✅ Vérifie si on doit exécuter ce job
+    if: needs.dependencies.outputs.should_skip == 'false' # ✅ Vérifie correctement
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
