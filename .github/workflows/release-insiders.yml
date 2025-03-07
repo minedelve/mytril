@@ -12,10 +12,9 @@ on:
 env:
   NODE_VERSION: '20'
   RELEASE_CHANNEL: public
-  VERSION: 0.0.0
 
 jobs:
-  dependencies:
+  prerelease:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     outputs:
@@ -32,34 +31,54 @@ jobs:
         id: remote_version
         run: echo "REMOTE_VERSION=$(npm show mytril version || echo '0.0.0')" >> $GITHUB_ENV
 
-      - name: Compare versions
+      - name: Diff versions
         id: compare
         run: |
           echo "LOCAL_VERSION=${LOCAL_VERSION}" >> $GITHUB_ENV
           echo "REMOTE_VERSION=${REMOTE_VERSION}" >> $GITHUB_ENV
 
-          echo "Version locale: $LOCAL_VERSION"
-          echo "Version distante: $REMOTE_VERSION"
+          echo "local: $LOCAL_VERSION"
+          echo "remote: $REMOTE_VERSION"
 
           if [ "$(printf '%s\n' "$REMOTE_VERSION" "$LOCAL_VERSION" | sort -V | tail -n 1)" != "$LOCAL_VERSION" ]; then
-            echo "❌ La version locale ($LOCAL_VERSION) est inférieure ou égale à la version distante ($REMOTE_VERSION)."
-            echo "should_skip=true" >> "$GITHUB_OUTPUT"  # ✅ Bien formaté
+            echo "❌ local version ($LOCAL_VERSION) is egual or down at remote version ($REMOTE_VERSION)."
+            echo "should_skip=true" >> "$GITHUB_OUTPUT"
           else
             echo "should_skip=false" >> "$GITHUB_OUTPUT"
-            echo "✅ La version locale ($LOCAL_VERSION) est plus récente."
+            echo "✅ version is ($LOCAL_VERSION) valid."
           fi
 
-  lint:
-    needs: dependencies
+  publish:
+    needs: prerelease
     runs-on: ubuntu-latest
     timeout-minutes: 3
-    if: needs.dependencies.outputs.should_skip == false # ✅ Vérifie correctement
+    if: needs.prerelease.outputs.should_skip == false
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Authenticate to NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+
       - name: Install dependencies
         run: npm install
+
+      - name: Build package
+        run: npm run build
+
+      - name: Verify files
+        run: npm pack --dry-run
+
+      # - name: Publish to NPM
+      #   run: npm publish --access ${{ env.RELEASE_CHANNEL }}
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
   # vitest:
   #   needs: dependencies
