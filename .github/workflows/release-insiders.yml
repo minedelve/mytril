@@ -41,13 +41,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mytril-build
-          path: dist
-
-      - name: Save sveltekit artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: mytril-sveltekit
-          path: .svelte-kit
+          path: |
+            dist
+            .svelte-kit
 
   lint:
     needs: build
@@ -124,13 +120,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: mytril-build
-          path: dist
-
-      - name: Download .sveltekit artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: mytril-sveltekit
-          path: .svelte-kit
+          path: |
+            dist
+            .svelte-kit
 
       - name: version to mytril insidier
         run: |
