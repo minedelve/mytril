@@ -43,6 +43,12 @@ jobs:
           name: mytril-build
           path: dist
 
+      - name: Save sveltekit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mytril-sveltekit
+          path: .svelte-kit
+
   lint:
     needs: build
     runs-on: ubuntu-latest
@@ -114,11 +120,17 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Download node_modules artifact
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
           name: mytril-build
           path: dist
+
+      - name: Download .sveltekit artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mytril-sveltekit
+          path: .svelte-kit
 
       - name: version to mytril insidier
         run: |
