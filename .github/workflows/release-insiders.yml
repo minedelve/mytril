@@ -11,153 +11,145 @@ on:
 
 env:
   NODE_VERSION: '20'
-  RELEASE_CHANNEL: insiders
+  RELEASE_CHANNEL: public
   VERSION: 0.0.0
 
 jobs:
-  build:
+  dependencies:
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+      - name: Get local version
+        id: local_version
+        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
 
-      - name: Install dependencies
-        run: npm install
+      - name: Get latest published version
+        id: remote_version
+        run: echo "version=$(npm show mytril version || echo '0.0.0')" >> $GITHUB_ENV
 
-      - name: Cache node_modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
-
-      - name: Build mytril
-        run: npm run build
-
-      - name: Save build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: mytril-build
-          path: dist
-
-  lint:
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Restore node_modules cache
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node_modules-
-
-      - name: Use linter
-        run: npm run lint
-
-  vitest:
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Use Vitest
-        run: npm run test
-
-  prerelease:
-    runs-on: ubuntu-latest
-    needs: ['vitest', 'lint']
-    timeout-minutes: 1
-    permissions:
-      contents: write
-    outputs:
-      version_release: ${{ steps.set_version.outputs.version_release }}
-      sha_short: ${{ steps.get_sha_version.outputs.version_release }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Resolve version
-        id: get_sha_version
+      - name: Compare versions
+        id: compare
         run: |
-          echo "sha_version=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          if [ "$(printf '%s\n' "$version" "$version" | sort -V | tail -n 1)" = "$version" ] && [ "$version" != "$version" ]; then
+            echo "Version locale ($version) > Version distante ($version), on continue."
+          else
+            echo "Version locale ($version) <= Version distante ($version), arrêt du workflow."
+            exit 1
+          fiz
 
-      - name: Generate version
-        id: set_version
-        run: |
-          sha_version="${{ steps.get_sha_version.outputs.sha_version }}"
-          echo "version_release=${VERSION}-${RELEASE_CHANNEL}.${sha_version}" >> $GITHUB_OUTPUT
+      # - name: Setup node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: ${{ env.NODE_VERSION }}
 
-  publish:
-    runs-on: ubuntu-latest
-    needs: prerelease
-    env:
-      version_release: ${{ needs.prerelease.outputs.version_release }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Download node_modules artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: mytril-build
-          path: dist
-
-      # - name: Version
-      #   run: echo "The current branch is => ${{ env.version_release }}"
       # - name: Install dependencies
       #   run: npm install
 
-      - name: Force version to mytril
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git branch --show-current
-          npm version ${{ env.version_release }} -f
-      # - name: New prerelease version
-      #   run: npm version prerelease --preid=insiders --no-git-tag-version
+      # - name: Cache node_modules
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: node_modules
+      #     key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node_modules-
 
-      - name: Authenticate to NPM
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+  # lint:
+  #   needs: dependencies
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 3
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      # - name: Build
-      #   run: npm run build
+  #     - name: Restore node_modules cache
+  #       uses: actions/cache@v4
+  #       with:
+  #         path: node_modules
+  #         key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+  #         restore-keys: |
+  #           ${{ runner.os }}-node_modules-
 
-      - name: Verify files
-        run: npm pack --dry-run
+  #     - name: Use linter
+  #       run: npm run lint
 
-      - name: Afficher la version
-        run: |
-          echo "Version de Mytril : $(npm pkg get version)"
+  # vitest:
+  #   needs: dependencies
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 3
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      # - name: Inspect the working tree
-      #   run: echo "The current branch is => ${{ env.version_release }}"
+  #     - name: Install dependencies
+  #       run: npm install
 
-      # - name: Publish to NPM
-      #   run: |
-      #     echo "Publishing version ${{ env.version_release }}"
-      #     npm publish --tag insiders
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  #     - name: Use Vitest
+  #       run: npm run test
+
+  # prerelease:
+  #   runs-on: ubuntu-latest
+  #   needs: ['vitest', 'lint']
+  #   timeout-minutes: 1
+  #   permissions:
+  #     contents: write
+  #   outputs:
+  #     version_release: ${{ steps.set_version.outputs.version_release }}
+  #     sha_short: ${{ steps.get_sha_version.outputs.version_release }}
+
+  #   steps:
+  #     - uses: actions/checkout@v4
+
+  #     - name: Resolve version
+  #       id: get_sha_version
+  #       run: |
+  #         echo "sha_version=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+  #     - name: Generate version
+  #       id: set_version
+  #       run: |
+  #         sha_version="${{ steps.get_sha_version.outputs.sha_version }}"
+  #         echo "version_release=${VERSION}-${RELEASE_CHANNEL}.${sha_version}" >> $GITHUB_OUTPUT
+
+  # publish:
+  #   runs-on: ubuntu-latest
+  #   needs: prerelease
+  #   env:
+  #     version_release: ${{ needs.prerelease.outputs.version_release }}
+
+  #   steps:
+  #     - uses: actions/checkout@v4
+
+  #     - name: Setup node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: ${{ env.NODE_VERSION }}
+
+  #     - name: version to mytril insidier
+  #       run: |
+  #         git config --global user.name "github-actions[bot]"
+  #         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+  #         git branch --show-current
+  #         npm version ${{ env.version_release }} -f
+
+  #     - name: Authenticate to NPM
+  #       run: |
+  #         echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+
+  #     - name: Install dependencies
+  #       run: npm install
+
+  #     - name: Build package
+  #       run: npm run build
+
+  #     - name: Verify files
+  #       run: npm pack --dry-run
+
+  #     - name: Publish to NPM
+  #       run: |
+  #         echo "Publishing version ${{ env.version_release }}"
+  #         npm publish --tag insiders
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
