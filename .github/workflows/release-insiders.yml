@@ -1,14 +1,19 @@
 name: Release Insiders
 
 on:
-  pull_request:
+  push:
     branches:
       - develop
-    types: [closed]
+
+env:
+  NODE_VERSION: '20'
+  RELEASE_CHANNEL: insiders
+  VERSION: 0.0.0
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v4
@@ -16,55 +21,90 @@ jobs:
       - name: Setup node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
         run: npm install
 
-      - name: Use linter
-        run: npm run lint
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
 
       - name: Build mytril
         run: npm run build
 
-  prepublish:
-    runs-on: ubuntu-latest
+      - name: Save build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mytril-build
+          path: dist
+
+  lint:
     needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Restore node_modules cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+
+      - name: Use linter
+        run: npm run lint
+
+  vitest:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Use Vitest
+        run: npm run test
+
+  prerelease:
+    runs-on: ubuntu-latest
+    needs: ['vitest', 'lint']
+    timeout-minutes: 1
     permissions:
       contents: write
     outputs:
-      version_release: ${{ steps.get_version_release.outputs.version_release }}
+      version_release: ${{ steps.set_version.outputs.version_release }}
+      sha_short: ${{ steps.get_sha_version.outputs.version_release }}
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: New prerelease version
-        id: get_version_release
+      - name: Resolve version
+        id: get_sha_version
         run: |
-          version=$(npm version prerelease --preid=insiders --no-git-tag-version)
-          echo "Generated version: $version"
-          echo "version_release=${version}" >> $GITHUB_OUTPUT
+          echo "sha_version=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
-      - name: Inspect the working tree
+      - name: Generate version
+        id: set_version
         run: |
-          echo "Inspecting Git status and diff..."
-          git status
-          git diff
+          sha_version="${{ steps.get_sha_version.outputs.sha_version }}"
+          echo "version_release=${VERSION}-${RELEASE_CHANNEL}.${sha_version}" >> $GITHUB_OUTPUT
 
-      # - name: Commit & Push version change
-      #   run: |
-      #     git config --global user.name "github-actions[bot]"
-      #     git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      #     git branch --show-current
-      #     git add package.json
-      #     git commit -a -m "publish insiders release - ${{ steps.get_version_release.outputs.version_release }}"
-      #     git status
-      #     git push
   publish:
     runs-on: ubuntu-latest
-    needs: prepublish
+    needs: prerelease
     env:
-      version_release: ${{ needs.prepublish.outputs.version_release }}
+      version_release: ${{ needs.prerelease.outputs.version_release }}
 
     steps:
       - uses: actions/checkout@v4
@@ -72,30 +112,31 @@ jobs:
       - name: Setup node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install dependencies
-        run: npm install
+      - name: Download node_modules artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: mytril-build
+          path: dist
 
-      - name: New prerelease version
-        run: npm version prerelease --preid=insiders --no-git-tag-version
+      - name: version to mytril insidier
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git branch --show-current
+          npm version ${{ env.version_release }} -f
 
       - name: Authenticate to NPM
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
 
-      - name: Build
-        run: npm run build
-
       - name: Verify files
         run: npm pack --dry-run
 
-      - name: Inspect the working tree
-        run: echo "The current branch is => ${{ env.version_release }}"
-
-      # - name: Publish to NPM
-      #   run: |
-      #     echo "Publishing version ${{ env.version_release }}"
-      #     npm publish --tag insiders
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Publish to NPM
+        run: |
+          echo "Publishing version ${{ env.version_release }}"
+          npm publish --tag insiders
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
