@@ -24,19 +24,21 @@ jobs:
 
       - name: Get local version
         id: local_version
-        run: echo "version=$(jq -r .version package.json)" >> $GITHUB_ENV
+        run: echo "LOCAL_VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
 
       - name: Get latest published version
         id: remote_version
-        run: echo "version=$(npm show mytril version || echo '0.0.0')" >> $GITHUB_ENV
+        run: echo "REMOTE_VERSION=$(npm show mytril version || echo '0.0.0')" >> $GITHUB_ENV
 
       - name: Compare versions
-        id: compare
         run: |
-          if [ "$(printf '%s\n' "$version" "$version" | sort -V | tail -n 1)" = "$version" ] && [ "$version" != "$version" ]; then
-            echo "Version locale ($version) > Version distante ($version), on continue."
+          echo "Version locale: $LOCAL_VERSION"
+          echo "Version distante: $REMOTE_VERSION"
+
+          if [ "$(printf '%s\n' "$REMOTE_VERSION" "$LOCAL_VERSION" | sort -V | tail -n 1)" = "$LOCAL_VERSION" ] && [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
+            echo "✅ La version locale ($LOCAL_VERSION) est supérieure à la version distante ($REMOTE_VERSION)."
           else
-            echo "Version locale ($version) <= Version distante ($version), arrêt du workflow."
+            echo "❌ La version locale ($LOCAL_VERSION) est inférieure ou égale à la version distante ($REMOTE_VERSION). Arrêt du workflow."
             exit 1
           fi
 
