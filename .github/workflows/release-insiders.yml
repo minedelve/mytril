@@ -53,7 +53,7 @@ jobs:
     needs: dependencies
     runs-on: ubuntu-latest
     timeout-minutes: 3
-    if: needs.dependencies.outputs.should_skip == 'false' # ✅ Vérifie correctement
+    if: needs.dependencies.outputs.should_skip == false # ✅ Vérifie correctement
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
