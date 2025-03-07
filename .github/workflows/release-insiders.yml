@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 1
     outputs:
-      should_skip: ${{ steps.compare.outputs.should_skip }} # Correctement défini ici
+      should_skip: ${{ steps.compare.outputs.should_skip }}
 
     steps:
       - uses: actions/checkout@v4
@@ -40,40 +40,22 @@ jobs:
 
           if [ "$(printf '%s\n' "$REMOTE_VERSION" "$LOCAL_VERSION" | sort -V | tail -n 1)" != "$LOCAL_VERSION" ]; then
             echo "❌ La version locale ($LOCAL_VERSION) est inférieure ou égale à la version distante ($REMOTE_VERSION)."
-            echo "::set-output name=should_skip::true"  # ✅ Utiliser set-output ici
+            echo "::set-output name=should_skip::true"
           else
             echo "::set-output name=should_skip::false"
             echo "✅ La version locale ($LOCAL_VERSION) est plus récente."
           fi
 
-      - name: Mark as skipped
-        if: steps.compare.outputs.should_skip == 'true'
-        run: exit 78 # Code 78 = "neutral" donc GitHub le marque comme "skipped"
-      # - name: Setup node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ${{ env.NODE_VERSION }}
-
-      # - name: Install dependencies
-      #   run: npm install
-
-      # - name: Cache node_modules
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: node_modules
-      #     key: ${{ runner.os }}-node_modules-${{ hashFiles('package-lock.json') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-node_modules-
-
   lint:
     needs: dependencies
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    if: needs.dependencies.outputs.should_skip != 'true' # ✅ Vérifie si on doit exécuter ce job
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: install
+      - name: Install dependencies
         run: npm install
 
   # vitest:
