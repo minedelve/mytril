@@ -17,7 +17,9 @@ env:
 jobs:
   dependencies:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 1
+    outputs:
+      should_skip: ${{ steps.compare.outputs.should_skip }} # Correctement défini ici
 
     steps:
       - uses: actions/checkout@v4
@@ -31,17 +33,22 @@ jobs:
         run: echo "REMOTE_VERSION=$(npm show mytril version || echo '0.0.0')" >> $GITHUB_ENV
 
       - name: Compare versions
+        id: compare
         run: |
           echo "Version locale: $LOCAL_VERSION"
           echo "Version distante: $REMOTE_VERSION"
 
-          if [ "$(printf '%s\n' "$REMOTE_VERSION" "$LOCAL_VERSION" | sort -V | tail -n 1)" = "$LOCAL_VERSION" ] && [ "$LOCAL_VERSION" != "$REMOTE_VERSION" ]; then
-            echo "✅ La version locale ($LOCAL_VERSION) est supérieure à la version distante ($REMOTE_VERSION)."
+          if [ "$(printf '%s\n' "$REMOTE_VERSION" "$LOCAL_VERSION" | sort -V | tail -n 1)" != "$LOCAL_VERSION" ]; then
+            echo "❌ La version locale ($LOCAL_VERSION) est inférieure ou égale à la version distante ($REMOTE_VERSION)."
+            echo "::set-output name=should_skip::true"  # ✅ Utiliser set-output ici
           else
-            echo "❌ La version locale ($LOCAL_VERSION) est inférieure ou égale à la version distante ($REMOTE_VERSION). Arrêt du workflow."
-            exit 1
+            echo "::set-output name=should_skip::false"
+            echo "✅ La version locale ($LOCAL_VERSION) est plus récente."
           fi
 
+      - name: Mark as skipped
+        if: steps.compare.outputs.should_skip == 'true'
+        run: exit 78 # Code 78 = "neutral" donc GitHub le marque comme "skipped"
       # - name: Setup node.js
       #   uses: actions/setup-node@v4
       #   with:
