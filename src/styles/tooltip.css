@@ -1,28 +1,91 @@
 .myt-tooltip-content {
-	--c: var(--myt-tooltip-c);
-	--bg: var(--myt-tooltip-bg);
+	--color: var(--myt-tooltip-c);
+	--background-color: var(--myt-tooltip-bg);
+	--border-size: thin;
+	--border-color: var(--myt-tooltip-bg);
+	--border-radius: var(--myt-tooltip-br);
 
 	inset: 0px auto auto 0px;
 	margin: 0px;
 	position: fixed;
-	z-index: 9999;
-	background: var(--bg);
-	color: var(--c);
-	border-radius: var(--myt-tooltip-br);
+	z-index: 2000;
+	background: var(--background-color);
+	color: var(--color);
+	border-radius: var(--border-radius);
+	border: var(--border-size) solid var(--border-color);
 	font-size: 0.875rem;
 	display: inline-block;
-	padding: 0.313rem 1rem;
+
 	width: auto;
 	opacity: 1;
 	pointer-events: none;
-	transition-property: opacity, transform;
 	overflow-wrap: break-word;
-	max-width: 18.75rem;
 	transition:
 		color 0.5s,
+		opacity 0.2s,
 		background-color 0.5s;
+	animation: fade 0.15s ease-out;
+	box-shadow: 0px 16px 29px -10px color-mix(in oklab, var(--color-scrim) 60%, transparent);
 }
 
-.myt-tooltip-content.myt-tooltip-content--dense {
+.myt-tooltip-content.myt-tooltip-content--default {
+	padding: 0.15rem 0.625rem;
+}
+
+.myt-tooltip-content.myt-tooltip-content--compact {
 	padding: 0.125rem 0.5rem;
+}
+
+.myt-tooltip-content.myt-tooltip-content--comfortable {
+	padding: 0.35rem 0.75rem;
+}
+
+.myt-tooltip-content--arrow::after {
+	content: ' ';
+	position: absolute;
+	border-style: solid;
+	transition: border-color 0.5s;
+}
+
+.myt-tooltip-content--arrow.myt-tooltip-content--bottom::after,
+.myt-tooltip-content--arrow.myt-tooltip-content--top::after {
+	left: 50%;
+	margin-left: -0.35rem;
+	border-width: 0.35rem;
+}
+
+.myt-tooltip-content--arrow.myt-tooltip-content--bottom::after {
+	bottom: 100%;
+	border-color: transparent transparent var(--background-color) transparent;
+}
+
+.myt-tooltip-content--arrow.myt-tooltip-content--top::after {
+	top: 100%;
+	border-color: var(--background-color) transparent transparent transparent;
+}
+
+.myt-tooltip-content--arrow.myt-tooltip-content--left::after,
+.myt-tooltip-content--arrow.myt-tooltip-content--right::after {
+	top: 50%;
+	margin-top: -0.35rem;
+	border-width: 0.35rem;
+}
+
+.myt-tooltip-content--arrow.myt-tooltip-content--right::after {
+	right: 100%;
+	border-color: transparent var(--background-color) transparent transparent;
+}
+
+.myt-tooltip-content--arrow.myt-tooltip-content--left::after {
+	left: 100%;
+	border-color: transparent transparent transparent var(--background-color);
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }

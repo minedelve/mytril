@@ -14,7 +14,8 @@ export function getPositions() {
 			activator: HTMLElement | PointerEvent,
 			element: HTMLElement,
 			location?: Location,
-			centered?: boolean
+			centered?: boolean,
+			type?: 'tooltip' | 'menu'
 		) {
 			if (!activator || !element) return;
 
@@ -34,12 +35,13 @@ export function getPositions() {
 				}
 			} else if (activator instanceof HTMLElement) {
 				const activatorRect = activator.getBoundingClientRect();
+				const spacing = type === 'tooltip' ? 6 : 0;
 
 				if (location === 'top' || location === 'bottom') {
 					if (location === 'top') {
-						axis.y = activatorRect.top - elementRect.height;
+						axis.y = activatorRect.top - (elementRect.height + spacing);
 					} else {
-						axis.y = activatorRect.bottom;
+						axis.y = activatorRect.bottom + spacing;
 					}
 
 					if (
@@ -55,9 +57,9 @@ export function getPositions() {
 					}
 				} else if (location === 'left' || location === 'right') {
 					if (location === 'left' && !(activatorRect.left - elementRect.width < 0)) {
-						axis.x = activatorRect.left - elementRect.width;
+						axis.x = activatorRect.left - (elementRect.width + spacing);
 					} else {
-						axis.x = activatorRect.left + activatorRect.width;
+						axis.x = activatorRect.left + activatorRect.width + spacing;
 					}
 
 					if (

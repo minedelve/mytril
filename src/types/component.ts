@@ -30,9 +30,12 @@ export interface TooltipProps extends ComponentBase {
 	light?: boolean;
 	rounded?: string;
 	label?: string;
-	position?: 'top' | 'bottom' | 'left' | 'right';
+	location?: 'top' | 'bottom' | 'left' | 'right';
 	color?: string;
 	background?: string;
+	openDelay?: number;
+	variant?: 'default' | 'arrow';
+	density?: 'compact' | 'comfortable' | 'default';
 	tooltip?: Snippet;
 }
 
