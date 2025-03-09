@@ -3,8 +3,18 @@
 	import { getPositions } from '$lib/state/positions.svelte.js';
 	import type { TooltipProps } from '$lib/types/index.js';
 
-	let { children, tooltip, label, dark, light, rounded, color, background, ...rest }: TooltipProps =
-		$props();
+	let {
+		children,
+		tooltip,
+		label,
+		dark,
+		light,
+		rounded,
+		color,
+		background,
+		position = 'bottom',
+		...rest
+	}: TooltipProps = $props();
 
 	const positionAxis = getPositions();
 	const assets = getAssets();
@@ -27,7 +37,7 @@
 			refTooltip &&
 			(scrollX > 0 || scrollY > 0 || innerHeight > 0 || innerWidth > 0)
 		) {
-			positionAxis.update(ref, refTooltip, 'right', true);
+			positionAxis.update(ref, refTooltip, position, true);
 		}
 	});
 </script>
