@@ -72,7 +72,7 @@
 </span>
 
 {#if open}
-	<div
+	<!-- <div
 		bind:this={refTooltip}
 		{...rest}
 		class={[
@@ -90,11 +90,33 @@
 		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
 		style:--background-color={assets.color(background)}
 		style:--color={assets.color(color)}
+	> -->
+	<div
+		bind:this={refTooltip}
+		class={['myt-tooltip']}
+		role="tooltip"
+		aria-label={label}
+		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
 	>
-		{#if tooltip}
-			{@render tooltip?.()}
-		{:else}
-			{label}
-		{/if}
+		<div
+			class={[
+				'myt-tooltip-content animate-in',
+				light && 'light',
+				dark && 'dark',
+				rounded && assets.shape(rounded),
+				location && `myt-tooltip-content--${location}`,
+				variant && `myt-tooltip-content--${variant}`,
+				density && `myt-tooltip-content--${density}`,
+				rest.class
+			]}
+			style:--background-color={assets.color(background)}
+			style:--color={assets.color(color)}
+		>
+			{#if tooltip}
+				{@render tooltip?.()}
+			{:else}
+				{label}
+			{/if}
+		</div>
 	</div>
 {/if}

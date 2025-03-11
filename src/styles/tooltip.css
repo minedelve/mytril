@@ -1,3 +1,10 @@
+.myt-tooltip {
+	inset: 0px auto auto 0px;
+	margin: 0px;
+	position: fixed;
+	z-index: 2000;
+}
+
 .myt-tooltip-content {
 	--color: var(--myt-tooltip-c);
 	--background-color: var(--myt-tooltip-bg);
@@ -5,10 +12,6 @@
 	--border-color: var(--myt-tooltip-bg);
 	--border-radius: var(--myt-tooltip-br);
 
-	inset: 0px auto auto 0px;
-	margin: 0px;
-	position: fixed;
-	z-index: 2000;
 	background: var(--background-color);
 	color: var(--color);
 	border-radius: var(--border-radius);
@@ -24,7 +27,7 @@
 		color 0.5s,
 		opacity 0.2s,
 		background-color 0.5s;
-	animation: fade 0.15s ease-out;
+	/* animation: fade 0.15s ease-out; */
 	box-shadow: 0px 16px 29px -10px color-mix(in oklab, var(--color-scrim) 60%, transparent);
 }
 
@@ -87,5 +90,68 @@
 	}
 	to {
 		opacity: 1;
+	}
+}
+
+.myt-tooltip-content--top,
+.myt-tooltip-content--bottom,
+.myt-tooltip-content--right,
+.myt-tooltip-content--left {
+	animation-duration: 150ms;
+}
+
+.myt-tooltip-content--top {
+	animation-name: enter-top;
+}
+
+.myt-tooltip-content--bottom {
+	animation-name: enter-bottom;
+}
+
+.myt-tooltip-content--right {
+	animation-name: enter-right;
+}
+
+.myt-tooltip-content--left {
+	animation-name: enter-left;
+}
+
+/* .animate-in {
+	animation-name: enter;
+	
+} */
+
+@keyframes enter {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 0.5rem, 0) scale3d(0.95, 0.95, 0.95) rotate(0);
+	}
+}
+
+@keyframes enter-top {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, 0.5rem, 0) scale3d(0.95, 0.95, 0.95) rotate(0);
+	}
+}
+
+@keyframes enter-bottom {
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -0.5rem, 0) scale3d(0.95, 0.95, 0.95);
+	}
+}
+
+@keyframes enter-left {
+	0% {
+		opacity: 0;
+		transform: translate3d(0.5rem, 0, 0) scale3d(0.95, 0.95, 0.95);
+	}
+}
+
+@keyframes enter-right {
+	0% {
+		opacity: 0;
+		transform: translate3d(-0.5rem, 0, 0) scale3d(0.95, 0.95, 0.95);
 	}
 }
