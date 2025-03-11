@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://minedelve.com/mytril" target="_blank">
+  <a href="https://minedelve.com/mytril/docs" target="_blank">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/minedelve/mytril/main/.github/logo-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/minedelve/mytril/main/.github/logo-light.svg">
