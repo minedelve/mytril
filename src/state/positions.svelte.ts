@@ -1,10 +1,15 @@
+import type { PositionElement } from '$lib/types/index.js';
 import { innerWidth, innerHeight } from 'svelte/reactivity/window';
 
 type Location = 'top' | 'bottom' | 'left' | 'right';
 
 export function getPositions() {
 	// state
-	const axis: { x: number; y: number } = $state({ x: 0, y: 0 });
+	const axis: PositionElement = $state({
+		x: 0,
+		y: 0,
+		location: null
+	});
 
 	return {
 		get values() {
@@ -15,7 +20,8 @@ export function getPositions() {
 			element: HTMLElement,
 			location?: Location,
 			centered?: boolean,
-			type?: 'tooltip' | 'menu'
+			type?: 'tooltip' | 'menu',
+			avoidCollisions?: boolean
 		) {
 			if (!activator || !element) return;
 
@@ -36,12 +42,36 @@ export function getPositions() {
 			} else if (activator instanceof HTMLElement) {
 				const activatorRect = activator.getBoundingClientRect();
 				const spacing = type === 'tooltip' ? 6 : 0;
+				const _activator = activatorRect.y + activatorRect.height;
+				const _element = elementRect.height + spacing;
 
 				if (location === 'top' || location === 'bottom') {
-					if (location === 'top') {
-						axis.y = activatorRect.top - (elementRect.height + spacing);
+					if (avoidCollisions) {
+						if (location === 'top') {
+							if (activatorRect.y - _element < 0) {
+								axis.y = activatorRect.bottom + spacing;
+								axis.location = 'bottom';
+							} else {
+								axis.y = activatorRect.top - _element;
+								axis.location = 'top';
+							}
+						} else {
+							if (_activator + _element > innerHeight.current!) {
+								axis.y = activatorRect.top - _element;
+								axis.location = 'top';
+							} else {
+								axis.y = activatorRect.bottom + spacing;
+								axis.location = 'bottom';
+							}
+						}
 					} else {
-						axis.y = activatorRect.bottom + spacing;
+						if (location === 'top') {
+							axis.y = activatorRect.top - _element;
+							axis.location = 'top';
+						} else {
+							axis.y = activatorRect.bottom + spacing;
+							axis.location = 'bottom';
+						}
 					}
 
 					if (
@@ -56,10 +86,30 @@ export function getPositions() {
 						axis.x = activatorRect.left;
 					}
 				} else if (location === 'left' || location === 'right') {
-					if (location === 'left' && !(activatorRect.left - elementRect.width < 0)) {
-						axis.x = activatorRect.left - (elementRect.width + spacing);
+					if (avoidCollisions) {
+						if (location === 'left' && !(activatorRect.left - elementRect.width < 0)) {
+							axis.x = activatorRect.left - (elementRect.width + spacing);
+							axis.location = 'left';
+						} else {
+							if (
+								activatorRect.left + activatorRect.width + elementRect.width + spacing >
+								innerWidth.current!
+							) {
+								axis.x = activatorRect.left - (elementRect.width + spacing);
+								axis.location = 'left';
+							} else {
+								axis.x = activatorRect.left + activatorRect.width + spacing;
+								axis.location = 'right';
+							}
+						}
 					} else {
-						axis.x = activatorRect.left + activatorRect.width + spacing;
+						if (location === 'left') {
+							axis.x = activatorRect.left - (elementRect.width + spacing);
+							axis.location = 'left';
+						} else {
+							axis.x = activatorRect.left + activatorRect.width + spacing;
+							axis.location = 'right';
+						}
 					}
 
 					if (

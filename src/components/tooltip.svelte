@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
 	import { getPositions } from '$lib/state/positions.svelte.js';
-	import type { TooltipProps } from '$lib/types/index.js';
+	import type { PositionElement, TooltipProps } from '$lib/types/index.js';
 
 	let {
 		children,
 		tooltip,
+		open = $bindable(),
 		label,
 		dark,
 		light,
@@ -13,9 +14,11 @@
 		color,
 		background,
 		location = 'bottom',
-		openDelay = 850,
+		delayDuration = 850,
 		density = 'default',
 		variant,
+		disabled,
+		avoidCollisions = true,
 		...rest
 	}: TooltipProps = $props();
 
@@ -25,8 +28,7 @@
 	let ref: HTMLElement | null = $state(null);
 	let refTooltip: HTMLElement | null = $state(null);
 	let timer: ReturnType<typeof setTimeout> | null = $state(null);
-	let open = $state(false);
-	let axis = $state({ x: 0, y: 0 });
+	let axis: PositionElement = $state({ x: 0, y: 0, location: null });
 	let innerHeight = $state(0);
 	let innerWidth = $state(0);
 	let scrollX = $state(0);
@@ -41,15 +43,16 @@
 			refTooltip &&
 			(scrollX > 0 || scrollY > 0 || innerHeight > 0 || innerWidth > 0)
 		) {
-			positionAxis.update(ref, refTooltip, location, true, 'tooltip');
+			positionAxis.update(ref, refTooltip, location, true, 'tooltip', avoidCollisions);
 		}
 	});
 
 	const handleMouse = (state: string) => {
+		if (disabled) return (open = false);
 		if (state === 'enter') {
 			timer = setTimeout(() => {
 				open = true;
-			}, openDelay);
+			}, delayDuration);
 		} else if (state === 'leave') {
 			if (timer) {
 				clearTimeout(timer);
@@ -72,25 +75,6 @@
 </span>
 
 {#if open}
-	<!-- <div
-		bind:this={refTooltip}
-		{...rest}
-		class={[
-			'myt-tooltip-content',
-			light && 'light',
-			dark && 'dark',
-			rounded && assets.shape(rounded),
-			location && `myt-tooltip-content--${location}`,
-			variant && `myt-tooltip-content--${variant}`,
-			density && `myt-tooltip-content--${density}`,
-			rest.class
-		]}
-		role="tooltip"
-		aria-label={label}
-		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
-		style:--background-color={assets.color(background)}
-		style:--color={assets.color(color)}
-	> -->
 	<div
 		bind:this={refTooltip}
 		class={['myt-tooltip']}
@@ -104,7 +88,7 @@
 				light && 'light',
 				dark && 'dark',
 				rounded && assets.shape(rounded),
-				location && `myt-tooltip-content--${location}`,
+				axis?.location && `myt-tooltip-content--${axis?.location}`,
 				variant && `myt-tooltip-content--${variant}`,
 				density && `myt-tooltip-content--${density}`,
 				rest.class

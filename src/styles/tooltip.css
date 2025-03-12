@@ -11,23 +11,21 @@
 	--border-size: thin;
 	--border-color: var(--myt-tooltip-bg);
 	--border-radius: var(--myt-tooltip-br);
+	--font-size: 0.875rem;
 
-	background: var(--background-color);
+	background-color: var(--background-color);
 	color: var(--color);
 	border-radius: var(--border-radius);
 	border: var(--border-size) solid var(--border-color);
-	font-size: 0.875rem;
+	font-size: var(--font-size);
 	display: inline-block;
-
 	width: auto;
-	opacity: 1;
 	pointer-events: none;
 	overflow-wrap: break-word;
 	transition:
 		color 0.5s,
-		opacity 0.2s,
+		border-color 0.5s,
 		background-color 0.5s;
-	/* animation: fade 0.15s ease-out; */
 	box-shadow: 0px 16px 29px -10px color-mix(in oklab, var(--color-scrim) 60%, transparent);
 }
 
@@ -84,74 +82,46 @@
 	border-color: transparent transparent transparent var(--background-color);
 }
 
-@keyframes fade {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
 .myt-tooltip-content--top,
 .myt-tooltip-content--bottom,
 .myt-tooltip-content--right,
 .myt-tooltip-content--left {
 	animation-duration: 150ms;
+	animation-name: enter;
 }
 
 .myt-tooltip-content--top {
-	animation-name: enter-top;
+	--animate-enter-pos1: 0;
+	--animate-enter-pos2: 0.5rem;
+	--animate-enter-pos3: 0;
 }
 
 .myt-tooltip-content--bottom {
-	animation-name: enter-bottom;
+	--animate-enter-pos1: 0;
+	--animate-enter-pos2: -0.5rem;
+	--animate-enter-pos3: 0;
 }
 
 .myt-tooltip-content--right {
-	animation-name: enter-right;
+	--animate-enter-pos1: -0.5rem;
+	--animate-enter-pos2: 0;
+	--animate-enter-pos3: 0;
 }
 
 .myt-tooltip-content--left {
-	animation-name: enter-left;
+	--animate-enter-pos1: 0.5rem;
+	--animate-enter-pos2: 0;
+	--animate-enter-pos3: 0;
 }
-
-/* .animate-in {
-	animation-name: enter;
-	
-} */
 
 @keyframes enter {
 	0% {
 		opacity: 0;
-		transform: translate3d(0, 0.5rem, 0) scale3d(0.95, 0.95, 0.95) rotate(0);
-	}
-}
-
-@keyframes enter-top {
-	0% {
-		opacity: 0;
-		transform: translate3d(0, 0.5rem, 0) scale3d(0.95, 0.95, 0.95) rotate(0);
-	}
-}
-
-@keyframes enter-bottom {
-	0% {
-		opacity: 0;
-		transform: translate3d(0, -0.5rem, 0) scale3d(0.95, 0.95, 0.95);
-	}
-}
-
-@keyframes enter-left {
-	0% {
-		opacity: 0;
-		transform: translate3d(0.5rem, 0, 0) scale3d(0.95, 0.95, 0.95);
-	}
-}
-
-@keyframes enter-right {
-	0% {
-		opacity: 0;
-		transform: translate3d(-0.5rem, 0, 0) scale3d(0.95, 0.95, 0.95);
+		transform: translate3d(
+				var(--animate-enter-pos1),
+				var(--animate-enter-pos2),
+				var(--animate-enter-pos3)
+			)
+			scale3d(0.95, 0.95, 0.95) rotate(0);
 	}
 }
