@@ -11,6 +11,7 @@
 		"label": "Installation",
 		"icon": "mgc_download_3_line",
 		"onlyLink": true,
+		"state": "updated",
 		"path": "/mytril/docs/getting-started/installation"
 	},
 	{
@@ -26,6 +27,7 @@
 		"label": "Themes",
 		"icon": "mgc_palette_line",
 		"onlyLink": true,
+		"state": "updated",
 		"path": "/mytril/docs/customization/themes"
 	},
 	{
@@ -33,6 +35,7 @@
 		"label": "Breakpoints",
 		"icon": "mgc_rotate_to_horizontal_line",
 		"onlyLink": true,
+		"state": "updated",
 		"path": "/mytril/docs/customization/breakpoints"
 	},
 	{
@@ -40,6 +43,7 @@
 		"label": "Libraries CSS",
 		"icon": "mgc_palette_3_line",
 		"onlyLink": true,
+		"state": "new",
 		"path": "/mytril/docs/customization/css-with-mytril"
 	},
 	{
@@ -158,6 +162,12 @@
 				"name": "use capitalize",
 				"path": "/mytril/docs/tools/capitalize",
 				"draft": false
+			},
+			{
+				"name": "use display",
+				"path": "/mytril/docs/tools/use-display",
+				"draft": false,
+				"state": "deprecated"
 			}
 		]
 	},

@@ -1,57 +1,52 @@
 ---
-title: Tooltip component
-description: jsp
+title: Add tooltip on you action elements.
+section: Tooltip
+head:
+  title: Tooltip Component
+  description: jsp.
+related:
+  - /mytril/docs/components/btn
+  - /mytril/docs/components/chip
+  - /mytril/docs/components/icons
+features:
+  github: 05-components/tooltip.md
+  bug: 'Tooltip component'
+  feature: 'Tooltip component'
 ---
 
-# Tooltip component with Mytril {#tooltip-component-with-mytril}
-
-Tooltip is a hover element
-
-## Using the Tooltip {#using-the-tooltip}
-
-```svelte
 <script>
-	import { Tooltip, Btn } from 'mytril';
+    import Code from "$components-docs/code.svelte"
+	import TooltipHead from '$content/mytril/examples/tooltip-head.svelte';
+	import TooltipLocation from '$content/mytril/examples/tooltip-location.svelte';
+	import TooltipLabel from '$content/mytril/examples/tooltip-label.svelte';
+	import TooltipVariant from '$content/mytril/examples/tooltip-variant.svelte';
+	import TooltipDensity from '$content/mytril/examples/tooltip-density.svelte';
+	import TooltipSnippetTooltip from '$content/mytril/examples/tooltip-snippet-tooltip.svelte';
 </script>
 
-<Tooltip text='hello world'>
-    <Btn>Button</Btn>
-</Toolip>
-```
+<Code previewOnly file={TooltipHead}>demo</Code>
 
-### Tooltip component properties {#tooltip-component-properties}
+### Label
 
-| Property  | Type    | Default   | Description                                                                                                                          |
-| :-------- | :------ | :-------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| open      | boolean | false     | Force open tooltip                                                                                                                   |
-| dark      | boolean | false     | Force color theme on **dark**                                                                                                        |
-| light     | boolean | false     | Force color theme on **light**                                                                                                       |
-| text      | string  | undefined | Add content on tooltip                                                                                                               |
-| bottom    | boolean | false     | display tooltip on bottom element                                                                                                    |
-| top       | boolean | false     | display tooltip on top element                                                                                                       |
-| left      | boolean | false     | display tooltip on left element                                                                                                      |
-| right     | boolean | false     | display tooltip on right element                                                                                                     |
-| dense     | boolean | false     | Change padding tooltip                                                                                                               |
-| opacity   | string  | undefined | Change opacity on Divider                                                                                                            |
-| rounded   | string  | undefined | Add [border radius](/mytril/docs/styles/border-radius) on Tooltip                                                                    |
-| color     | string  | undefined | Sets the background color. Accepts **HEX**, **RGB**, **RGBA**, **X11**, or [Mytril themes](/mytril/docs/customization/themes) colors |
-| colorText | string  | undefined | Sets text color                                                                                                                      |
+<Code file={TooltipLabel}>demo</Code>
 
-**Tooltip slot**
+### Location
 
-```svelte
-<script>
-	import { Tooltip, Btn } from 'mytril';
-</script>
+<Code file={TooltipLocation}>demo</Code>
 
-<Tooltip>
-    <Btn>Button</Btn>
+### Variant
 
-    <div slot="tooltip">
-        Hello world
-    </div>
-</Toolip>
-```
+<Code file={TooltipVariant}>demo</Code>
+
+### Density
+
+<Code file={TooltipDensity}>demo</Code>
+
+### Snippet Tooltip
+
+<Code file={TooltipSnippetTooltip}>demo</Code>
+
+{#snippet properties()}
 
 ### API Reference
 
@@ -88,3 +83,5 @@ Tooltip is a hover element
 | **border-size**  | `thin`                       | Property CSS `border-size`.      |
 | **border-color** | `--color-surface-variant`    | Property CSS `border-color`.     |
 | **font-size**    | `0.875rem`                   | Property CSS `font-size`.        |
+
+{/snippet}
