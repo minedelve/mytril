@@ -1,70 +1,46 @@
 [
 	{
-		"key": "documentation",
-		"label": "Documentation",
-		"icon": "mgc_book_5_line",
-		"onlyLink": false,
-		"draft": false,
-		"path": "/mytril/docs",
-		"routes": [
-			{
-				"label": "getting started",
-				"icon": "mgc_rocket_line",
-				"draft": false,
-				"routes": [
-					{
-						"name": "introduction",
-						"path": "/mytril/docs",
-						"draft": false,
-						"order": 0
-					},
-					{
-						"name": "installation",
-						"path": "/mytril/docs/getting-started/installation",
-						"draft": false
-					},
-					{
-						"name": "roadmap",
-						"path": "/mytril/docs/getting-started/roadmap",
-						"draft": true
-					}
-				]
-			},
-			{
-				"label": "customization",
-				"draft": false,
-				"icon": "mgc_plugin_2_line",
-				"routes": [
-					{
-						"name": "themes",
-						"path": "/mytril/docs/customization/themes",
-						"draft": false
-					},
-					{
-						"name": "breakpoints",
-						"path": "/mytril/docs/customization/breakpoints",
-						"draft": false
-					},
-					{
-						"name": "libraries CSS",
-						"path": "/mytril/docs/customization/css-with-mytril",
-						"draft": false
-					}
-				]
-			},
-			{
-				"label": "tools",
-				"draft": false,
-				"icon": "mgc_chip_line",
-				"routes": [
-					{
-						"name": "use capitalize",
-						"path": "/mytril/docs/tools/capitalize",
-						"draft": false
-					}
-				]
-			}
-		]
+		"key": "introduction",
+		"label": "Introduction",
+		"icon": "mgc_sticker_line",
+		"onlyLink": true,
+		"path": "/mytril/docs"
+	},
+	{
+		"key": "installation",
+		"label": "Installation",
+		"icon": "mgc_download_3_line",
+		"onlyLink": true,
+		"path": "/mytril/docs/getting-started/installation"
+	},
+	{
+		"key": "roadmap",
+		"label": "Roadmap",
+		"icon": "mgc_anniversary_line",
+		"onlyLink": true,
+		"draft": true,
+		"path": "/mytril/docs/getting-started/roadmap"
+	},
+	{
+		"key": "themes",
+		"label": "Themes",
+		"icon": "mgc_palette_line",
+		"onlyLink": true,
+		"path": "/mytril/docs/customization/themes"
+	},
+	{
+		"key": "breakpoints",
+		"label": "Breakpoints",
+		"icon": "mgc_rotate_to_horizontal_line",
+		"onlyLink": true,
+		"path": "/mytril/docs/customization/breakpoints"
+	},
+	{
+		"key": "libraries-css",
+		"label": "Libraries CSS",
+		"icon": "mgc_palette_3_line",
+		"onlyLink": true,
+		"path": "/mytril/docs/customization/css-with-mytril"
 	},
 	{
 		"key": "components",
@@ -74,140 +50,114 @@
 		"path": "/mytril/docs",
 		"routes": [
 			{
-				"label": "navigation",
-				"draft": false,
-				"icon": "mgc_compass_line",
-				"routes": [
-					{
-						"name": "system bar",
-						"path": "/mytril/docs/components/system-bar",
-						"draft": true
-					},
-					{
-						"name": "app bar",
-						"path": "/mytril/docs/components/app-bar",
-						"draft": false
-					},
-					{
-						"name": "bottom navigation",
-						"path": "/mytril/docs/components/bottom-navigation",
-						"draft": true
-					}
-				]
+				"name": "system bar",
+				"path": "/mytril/docs/components/system-bar",
+				"draft": true
 			},
 			{
-				"label": "grids",
-				"draft": false,
-				"icon": "mgc_layout_10_line",
-				"routes": [
-					{
-						"name": "grids",
-						"path": "/mytril/docs/components/grids",
-						"draft": false
-					}
-				]
+				"name": "app bar",
+				"path": "/mytril/docs/components/app-bar",
+				"draft": false
 			},
 			{
-				"label": "containment",
-				"draft": false,
-				"icon": "mgc_board_line",
-				"routes": [
-					{
-						"name": "application",
-						"path": "/mytril/docs/components/application",
-						"draft": false
-					},
-					{
-						"name": "toolbar",
-						"path": "/mytril/docs/components/toolbar",
-						"draft": false
-					},
-					{
-						"name": "card",
-						"path": "/mytril/docs/components/cards",
-						"draft": false
-					},
-					{
-						"name": "btn",
-						"path": "/mytril/docs/components/btn",
-						"draft": true
-					},
-					{
-						"name": "chip",
-						"path": "/mytril/docs/components/chip",
-						"draft": true
-					},
-					{
-						"name": "dialog",
-						"path": "/mytril/docs/components/dialog",
-						"draft": false
-					},
-					{
-						"name": "divider",
-						"path": "/mytril/docs/components/divider",
-						"draft": true
-					},
-					{
-						"name": "expansion panel",
-						"path": "/mytril/docs/components/expansion-panel",
-						"draft": true
-					},
-					{
-						"name": "list",
-						"path": "/mytril/docs/components/lists",
-						"draft": true
-					},
-					{
-						"name": "menu",
-						"path": "/mytril/docs/components/menu",
-						"draft": true
-					},
-					{
-						"name": "tooltip",
-						"path": "/mytril/docs/components/tooltip",
-						"draft": true
-					}
-				]
+				"name": "bottom navigation",
+				"path": "/mytril/docs/components/bottom-navigation",
+				"draft": true
 			},
 			{
-				"label": "image & icons",
-				"draft": false,
-				"icon": "mgc_pic_ai_line",
-				"routes": [
-					{
-						"name": "image",
-						"path": "/mytril/docs/components/img",
-						"draft": false
-					},
-					{
-						"name": "responsive",
-						"path": "/mytril/docs/components/responsive",
-						"draft": false
-					},
+				"name": "grids",
+				"path": "/mytril/docs/components/grids",
+				"draft": false
+			},
+			{
+				"name": "application",
+				"path": "/mytril/docs/components/application",
+				"draft": false
+			},
+			{
+				"name": "toolbar",
+				"path": "/mytril/docs/components/toolbar",
+				"draft": false
+			},
+			{
+				"name": "card",
+				"path": "/mytril/docs/components/cards",
+				"draft": false
+			},
+			{
+				"name": "btn",
+				"path": "/mytril/docs/components/btn",
+				"draft": true
+			},
+			{
+				"name": "chip",
+				"path": "/mytril/docs/components/chip",
+				"draft": true
+			},
+			{
+				"name": "dialog",
+				"path": "/mytril/docs/components/dialog",
+				"draft": false
+			},
+			{
+				"name": "divider",
+				"path": "/mytril/docs/components/divider",
+				"draft": true
+			},
+			{
+				"name": "expansion panel",
+				"path": "/mytril/docs/components/expansion-panel",
+				"draft": true
+			},
+			{
+				"name": "list",
+				"path": "/mytril/docs/components/lists",
+				"draft": true
+			},
+			{
+				"name": "menu",
+				"path": "/mytril/docs/components/menu",
+				"draft": true
+			},
+			{
+				"name": "tooltip",
+				"path": "/mytril/docs/components/tooltip",
+				"draft": true
+			},
+			{
+				"name": "image",
+				"path": "/mytril/docs/components/img",
+				"draft": false
+			},
+			{
+				"name": "responsive",
+				"path": "/mytril/docs/components/responsive",
+				"draft": false
+			},
 
-					{
-						"name": "icon",
-						"path": "/mytril/docs/components/icons",
-						"draft": false
-					}
-				]
+			{
+				"name": "icon",
+				"path": "/mytril/docs/components/icons",
+				"draft": false
 			},
 			{
-				"label": "feedback",
-				"draft": false,
-				"icon": "mgc_emergency_flashers_line",
-				"routes": [
-					{
-						"name": "alert",
-						"path": "/mytril/docs/components/alerts",
-						"draft": true
-					}
-				]
-			},
+				"name": "alert",
+				"path": "/mytril/docs/components/alerts",
+				"draft": true
+			}
+		]
+	},
+	{
+		"key": "tools",
+		"label": "Tools",
+		"icon": "mgc_tool_line",
+		"onlyLink": false,
+		"path": "/mytril/docs",
+		"routes": [
 			{
-				"label": "default",
-				"draft": false,
-				"routes": []
+				"name": "use capitalize",
+				"path": "/mytril/docs/tools/capitalize",
+				"draft": false
 			}
 		]
 	},

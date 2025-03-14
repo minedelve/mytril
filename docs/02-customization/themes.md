@@ -1,160 +1,247 @@
 ---
-title:
-section:
+title: Introduction to themes
+section: Theme
 head:
   title: Customize svelte themes
   description: Quickly modify default themes or create new ones in Mytril. Adjust colors, add themes, and control your Svelte UI with a simple config file
+related:
+  - /mytril/docs/getting-started/installation
+  - /mytril/docs/components/application
+  - /mytril/docs/customization/breakpoints
 features:
-  legacy: 0.4.14
+  github: 02-customization/themes.md
 ---
 
-<script lang="ts">
-    import ColorRow from "../modules/color-row.svelte";
-    import { themes, colorScheme } from "../modules/themes.js";
-
-    const colorKeys = Object.keys(themes);
-    let mode: string = 'light'
+<script>
+    import ThemesExamples from "$components-docs/themes-examples.svelte"
+    import Code from "$components-docs/code.svelte"
 </script>
 
-# Theme configuration {#theme-configuration}
+Themes are at the heart of Mytril's flexible design system, powered by custom CSS variables generated via **JS-to-CSS**. This allows for simple and complete customization of your application. With Mytril, you can build:
 
-Customize default surfaces, text colors, breakpoints and more. Easily modify your theme in real time with one file configuration! Mytril comes with standard support for light and dark variants with theme process.
+- Customize surfaces, text colors, and other styling elements
+- Modify the **default theme** or create entirely new themes
+- Leverage a **color-scheme** (light/dark modes supported)
+- Enjoy auto-inherited styles for all Mytril components
 
-## Basic {#basic}
+## Preset themes
 
-Mytril comes pre-installed with two default themes: light and dark. To set your app's default theme, edit the `defaultTheme` option in the `plugins/mytril.(js|ts)` file.
+Mytril default theme supports both light and dark color schemes. These are applied automatically or are user-configurable, allowing you to start styling right from the start without additional configuration.
+
+> Other themes will be added with new versions of Mytril
+
+<ThemesExamples/>
+
+## Theme variables
+
+Theme variables are defined in the `mytril.config.js` file. Mytril uses these variables to ensure consistent styles across all components in your app.
+
+### Example structure:
+
+- The theme is applied to the `<html>` tag through the `mytril-theme="default"` attribute.
+- Light and dark variants are appended as `.light` or `.dark` classes.
+
+### Compatibility:
+
+Mytril variables follow a strict format to prevent conflicts with popular CSS frameworks such as **UnoCSS** or **TailwindCSS**.
+
+## Define your custom theme
+
+Easily customize your own theme by defining keys for variables like colors, fonts, and more. Below are examples of different configurations.
+
+### Single Color Key Example
+
+Use for themes with identical light and dark setups.
+
+<Code>
 
 ```javascript
-// plugins/mytril.(js|ts)
-export default createMytril({
-	theme: {
-		defaultTheme: 'light'
+// mytril.config.js
+
+/** @type {import('mytril').Config} */
+export default {
+	themes: {
+		myTheme: {
+			primary: '#4ade80' // applies the same color to both light and dark schemes
+		}
 	}
-});
+};
 ```
 
-By default, the **light** theme is applied, but you can easily switch to **dark** or any custom theme you've created.
+</Code>
 
-### Custumizing default themes {#customizing-default-themes}
+### Light and dark color variants
 
-You can modify existing themes or create new ones by adjusting properties. Mytril generates style variables for each property, linked to the theme name. The default theme is also included in the global CSS **root**.
+Create themes with separate values for **light** and **dark** modes.
+
+<Code>
 
 ```javascript
-// plugins/mytril.(js|ts)
+// mytril.config.js
 
-export default createMytril({
-	theme: {
-		defaultTheme: 'light',
-		colors: {
+/** @type {import('mytril').Config} */
+export default {
+	themes: {
+		myTheme: {
 			primary: {
-				light: 'var(--green-6)',
-				dark: 'var(--green-2)'
-			},
-			secondary: '#eaea',
-			background: {
-				dark: 'var(--stone-10)'
+				light: '#4ade80',
+				dark: '#22c55e'
+			} // different colors for light & dark
+		}
+	}
+};
+```
+
+</Code>
+
+### Advanced nested configurations
+
+Use nested keys for variations or hover states.
+
+<Code>
+
+```javascript
+// mytril.config.js
+
+/** @type {import('mytril').Config} */
+export default {
+	themes: {
+		myTheme: {
+			primary: {
+				_default: '#1d4ed8',
+				hover: '#1e40af',
+				variant: {
+					light: '#4ade80',
+					dark: '#22c55e'
+				}
 			}
 		}
 	}
-});
+};
 ```
 
-To customize theme colors, you can:
+</Code>
 
-- **key: string,** : Apply the same color across all themes. For example, setting `secondary: "#eaea"` will apply this color to both the light and dark themes.
-- **key: object** – Define specific colors for each theme. For example, `primary` can have different shades of green for light and dark themes.
+## **Normalize Mytril variables**
 
-_If you create a new property, it will only apply to the specified theme unless you define it for others._
+Customize Mytril using well-structured variables for consistent application-wide styles.
 
-### Adding a new theme {#adding-a-new-themes}
+Here’s a breakdown of available variable types:
 
-To add a new theme, simply define a new color property to your application.
+| **Variable**     | **Usage**                                               |
+| ---------------- | ------------------------------------------------------- |
+| `--color-{key}`  | Customize theme colors for design consistency.          |
+| `--font-{key}`   | Define font family for Mytril components.               |
+| `--radius-{key}` | Set consistent border-radius values for all components. |
+
+**Example:**
+
+<Code>
+
+```css
+/* Example of normalized variables */
+--color-primary: #1d4ed8;
+--font-base: 'Inter', sans-serif;
+--radius-md: 16px;
+```
+
+</Code>
+
+## Dynamic theme switching
+
+Customize themes based on user interaction, content sections, or preferences using Mytril’s built-in API.
+
+### Define your themes in config:
+
+<Code>
 
 ```javascript
-// plugins/mytril.(js|ts)
+// mytril.config.js
 
-export default createMytril({
-	theme: {
-		defaultTheme: 'dark',
-		colors: {
-			primary: {
-				light: 'var(--green-6)',
-				dark: 'var(--green-2)',
-				'my-theme': 'var(--green-10)'
-			},
-			secondary: '#eaea'
-		}
-	}
-});
+/** @type {import('mytril').Config} */
+export default {
+	themes: ['default', 'minedelve'],
+	defaultTheme: 'default'
+};
 ```
 
-To add a new theme, simply define a new color property, like **my-theme** in primary. This will generate a new CSS class `.my-theme`, **which inherits variables from the default theme**.
+</Code>
 
-## Default color set
+**Switch themes using setTheme:**
 
-Mytril comes with a generous set of default colors.
+<Code>
 
-<div class="select-color-scheme">
-{#each colorScheme as scheme}
-<button on:click={() => mode = scheme} class={mode === scheme && 'active'}>{scheme}</button>
+```javascript
+setTheme('minedelve');
+// return: <html mytril-theme="minedelve">
+```
 
-{/each}
+</Code>
 
-</div>
+This dynamically updates themes and propagates the changes to all components.
 
-{#each colorKeys as colorKey}
+## Dark mode: easy setup
 
-    <h4>{colorKey}</h4>
+Dark mode is becoming a fundamental design element in web apps. Mytril simplifies its implementation with built-in support for light and dark themes.
 
-    <section class="wrapper-colors">
-        {#each themes[colorKey] as color}
-            <ColorRow {color} theme={mode}/>
-        {/each}
-    </section>
+### Default behavior
 
-{/each}
+By default, **Mytril adapts to the operating system’s color mode** (light or dark). You can override this behavior in the `mytril.config.js` file.
 
-We provide a **well-balanced default theme** with an extensive set of color values to start your project. However, **the real power of Mytril lies in its flexibility** you’re not confined to the defaults. Mytril encourages you to **tailor the theme to your exact design needs**. Whether you want to tweak a few colors or create entirely new themes, Mytril makes it easy to customize every detail.
+### Color scheme configuration:
 
-<style lang="postcss">
-    .wrapper-colors {
-        display: grid;
-        grid-template-rows: 1fr;
-        gap: 0.5rem;
+Set your preferred default color scheme:
 
-        @media (min-width: 544px) {
-            grid-template-columns: repeat(2, calc(100% / 2 - 0.5rem));
-        }
+| **Key**  | **Description**                             |
+| -------- | ------------------------------------------- |
+| `system` | Automatically adjusts based on OS mode.     |
+| `dark`   | Forces dark mode regardless of OS settings. |
+| `light`  | Always uses the light theme.                |
 
-        @media (min-width: 748px) {
-            grid-template-columns: repeat(3, calc((100% / 3 - 0.5rem)));
-        }
-    }
+<Code>
 
-    .select-color-scheme {
-        display: flex;
-        width: 100%;
-        margin-top: 0.5rem;
+```javascript
+// mytril.config.js
 
-        button {
-            border: 1px solid var(--c-text-1);
-            color: var(--c-text-1);
-            border-radius: 1rem;
-            padding: 0.25rem 1rem;
-            background-color: transparent;
-            cursor: pointer;
+/** @type {import('mytril').Config} */
+export default {
+	colorScheme: 'system' // options: 'system', 'dark', 'light'
+};
+```
 
-            &.active {
-                border: 1px solid var(--c-primary);
-                background-color: var(--c-primary);
-            }
+</Code>
 
-            &:first-child {
-                margin-left: auto;
-            }
-            &:last-child {
-                margin-left: 0.5rem;
-            }
-        }
-    }
-</style>
+## Theming utilities
+
+Mytril includes utilities to handle theme-related functionality programmatically:
+
+| **Utility**      | **Description**                                  |
+| ---------------- | ------------------------------------------------ |
+| `themeStore`     | Tracks the current active theme (`system`, etc.) |
+| `setColorScheme` | Switch between modes (`system`, `dark`, `light`) |
+
+### Example:
+
+<Code>
+
+```javascript
+import { themeStore, setColorScheme } from 'mytril';
+
+// display actual theme
+console.log(themeStore); // return light (for this example)
+
+// switch to dark mode
+setColorScheme('dark');
+```
+
+</Code>
+
+## Start customizing your themes
+
+By fully utilizing Mytril’s theming system, you can create stunning, adaptable, and user-oriented UIs. Mytril’s flexibility allows you to define color schemes, seamlessly switch between dark and light modes, and customize designs down to the smallest detail.
+
+Explore further by experimenting with **dynamic themes**, integrating with CSS frameworks like TailwindCSS or UnoCSS, or setting preferences through the built-in API tools. Build the exact experience your users expect with Mytril’s tailored theming capabilities.
+
+Does this improved version align better? Let me know if you'd like more refinement!
+
+**Next steps**: Experiment with advanced theme configurations for tailored user experiences!
