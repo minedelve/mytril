@@ -45,7 +45,6 @@
 	content: ' ';
 	position: absolute;
 	border-style: solid;
-	transition: border-color 0.5s;
 }
 
 .myt-tooltip-content--arrow.myt-tooltip-content--bottom::after,

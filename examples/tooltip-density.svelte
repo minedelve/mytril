@@ -2,7 +2,7 @@
 	import { Btn, Tooltip } from 'mytril/components';
 </script>
 
-<div class="flex gap-2">
+<div id="tooltip-density">
 	<Tooltip label="Small tooltip" density="compact">
 		<Btn>Compact</Btn>
 	</Tooltip>
@@ -15,3 +15,10 @@
 		<Btn>Comfortable</Btn>
 	</Tooltip>
 </div>
+
+<style>
+	#tooltip-density {
+		display: flex;
+		gap: 0.5rem;
+	}
+</style>

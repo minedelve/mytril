@@ -2,7 +2,7 @@
 	import { Btn, Tooltip } from 'mytril/components';
 </script>
 
-<div class="flex gap-2">
+<div id="tooltip-variant">
 	<Tooltip label="Wow it's a default style tootlip">
 		<Btn>Default</Btn>
 	</Tooltip>
@@ -11,3 +11,10 @@
 		<Btn>Arrow</Btn>
 	</Tooltip>
 </div>
+
+<style>
+	#tooltip-variant {
+		display: flex;
+		gap: 0.5rem;
+	}
+</style>

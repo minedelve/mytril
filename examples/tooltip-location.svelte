@@ -2,7 +2,7 @@
 	import { Btn, Icon, Tooltip } from 'mytril/components';
 </script>
 
-<div class="grid grid-cols-[1fr_1fr] gap-2">
+<div id="tooltip-location">
 	<Tooltip label="Tooltip top" location="top">
 		<Btn>
 			Top
@@ -39,3 +39,13 @@
 		</Btn>
 	</Tooltip>
 </div>
+
+<style>
+	#tooltip-location {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+</style>

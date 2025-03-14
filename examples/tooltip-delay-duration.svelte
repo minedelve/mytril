@@ -2,7 +2,7 @@
 	import { Btn, Tooltip } from 'mytril/components';
 </script>
 
-<div class="flex gap-2">
+<div id="tooltip-delay-duration">
 	<Tooltip label="Hey !" delayDuration="0">
 		<Btn>0 ms</Btn>
 	</Tooltip>
@@ -15,3 +15,10 @@
 		<Btn>2s</Btn>
 	</Tooltip>
 </div>
+
+<style>
+	#tooltip-delay-duration {
+		display: flex;
+		gap: 0.5rem;
+	}
+</style>

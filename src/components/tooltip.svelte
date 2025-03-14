@@ -2,6 +2,7 @@
 	import { getAssets } from '$lib/state/assets.svelte.js';
 	import { getPositions } from '$lib/state/positions.svelte.js';
 	import type { PositionElement, TooltipProps } from '$lib/types/index.js';
+	import { onMount } from 'svelte';
 
 	let {
 		children,
@@ -35,6 +36,12 @@
 	let scrollY = $state(0);
 
 	axis = positionAxis?.values;
+
+	onMount(() => {
+		if (ref && refTooltip && (scrollX > 0 || scrollY > 0 || innerHeight > 0 || innerWidth > 0)) {
+			positionAxis.update(ref, refTooltip, location, true, 'tooltip', avoidCollisions);
+		}
+	});
 
 	$effect(() => {
 		if (
