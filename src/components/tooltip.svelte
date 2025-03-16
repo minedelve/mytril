@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { getAssets } from '$lib/state/assets.svelte.js';
-	import { getPositions } from '$lib/state/positions.svelte.js';
+	import { getPositionsTooltip } from '$lib/state/tooltip.svelte.js';
 	import type { PositionElement, TooltipProps } from '$lib/types/index.js';
-	import { onMount } from 'svelte';
 
 	let {
 		children,
@@ -20,10 +19,11 @@
 		variant,
 		disabled,
 		avoidCollisions = true,
+		forceMount,
 		...rest
 	}: TooltipProps = $props();
 
-	const positionAxis = getPositions();
+	const positionAxis = getPositionsTooltip();
 	const assets = getAssets();
 
 	let ref: HTMLElement | null = $state(null);
@@ -37,12 +37,6 @@
 
 	axis = positionAxis?.values;
 
-	onMount(() => {
-		if (ref && refTooltip && (scrollX > 0 || scrollY > 0 || innerHeight > 0 || innerWidth > 0)) {
-			positionAxis.update(ref, refTooltip, location, true, 'tooltip', avoidCollisions);
-		}
-	});
-
 	$effect(() => {
 		if (
 			open &&
@@ -52,6 +46,10 @@
 		) {
 			positionAxis.update(ref, refTooltip, location, true, 'tooltip', avoidCollisions);
 		}
+	});
+
+	$effect(() => {
+		if (tooltip) forceMount = true;
 	});
 
 	const handleMouse = (state: string) => {
@@ -81,13 +79,13 @@
 	{@render children?.()}
 </span>
 
-{#if open}
+{#if open || forceMount}
 	<div
 		bind:this={refTooltip}
 		class={['myt-tooltip']}
 		role="tooltip"
 		aria-label={label}
-		style={`transform: translate(${axis.x}px, ${axis.y}px);`}
+		style={`transform: translate(${axis.x}px, ${axis.y}px);display: ${open ? 'initial' : 'none'}`}
 	>
 		<div
 			class={[
