@@ -34,8 +34,8 @@ Mytril follows the second approach. The application component **defines where My
 
 **Why do you need it?**
 
-- **It isolates Mytril styles: n**o conflicts with global CSS or other UI libraries.
-- It ensures components work properly.
+- 🔹**It isolates Mytril styles: n**o conflicts with global CSS or other UI libraries.
+- 🔹It ensures components work properly.
 
 **How to use the application component**
 
@@ -84,11 +84,11 @@ Say you have a **blog template** and a **product template** in your Svelte app. 
 
 **Result:** Mytril applies only where you need it.
 
-> Important rules to complement your project\*
+> Important rules to complement your project
 
-- **You must use `<App>` to activate Mytril**. Without it, components won’t work.
-- **Application must be at the root** of a template (e.g., `+layout.svelte`).
-- **No nested application components**. You can only define it once at the top level.
+- 🔹**You must use `<App>` to activate Mytril**. Without it, components won’t work.
+- 🔹**Application must be at the root** of a template `+layout.svelte` or `+page.svelte`.
+- 🔹**No nested application components**. You can only define it once at the top level.
 
 ## Ready to use Mytril application
 

@@ -18,21 +18,7 @@ features:
 
 Get started integrating Mytril, a lightweight and powerful Svelte component library, into your SvelteKit application. Below is a step-by-step guide to help you install and configure Mytril with ease.
 
-**Requirements**
-
-Before installing Mytril, verify that your project meets the following minimum requirements:
-
-| Package | Minimum version | Official documentation                                                                                                                                                          |
-| ------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Svelte  | v5.16 +         | [Svelte Docs support by Mytril](https://svelte.dev/docs?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=svelte&utm_content=svelte_docs)      |
-| Vite    | v5 +            | [Vite Docs support by Mytril](https://vitejs.fr/config/?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=vitejs&utm_content=vite_config_docs) |
-| Node    | v20 +           | [Node.js Docs support by Mytril](https://nodejs.org/en?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=nodejs&utm_content=nodejs_docs)       |
-
-For enhanced features, consider integrating optional tools:
-
-| Package | Minimum version | Official documentation                                                                                                                                                                                           |
-| ------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Iconify | v4 +            | [Iconify Docs support by Mytril](https://iconify.design/docs/icon-components/svelte/?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=iconify&utm_content=iconify_svelte_docs) |
+## Follow the steps to install Mytril
 
 **🔹Step 1: create your SvelteKit project**
 
@@ -52,7 +38,15 @@ Replace `my-mytril-app` with your desired project name.
 
 Mytril provides two installation methods: a streamlined CLI or manual setup. Choose the one that suits your development workflow.
 
-## Option 1: install via CLI (Recommended)
+<Code>
+
+```bash
+npm i -D mytril
+```
+
+</Code>
+
+### install Mytril with CLI (Recommended)
 
 The Mytril CLI simplifies the integration process. It will automatically configure necessary files like `vite.config.js` and your main style file.
 
@@ -66,12 +60,12 @@ npx mytril init [path-css]
 
 </Code>
 
-**Options install CLI:**
+**Options install with CLI:**
 
 - Replace `[path-css]` with the path to your main CSS file (e.g., `src/app.css`).
 - If no path is provided, it defaults to `src/app.css`.
 
-**Example CLI Configuration:**
+**Example CLI configuration:**
 
 By default path-css is auto set at src/app.css
 
@@ -83,13 +77,13 @@ npx mytril init src/app.css
 
 </Code>
 
-**Example CLI Output**
+**Example CLI output**
 
 Here is a preview of what the terminal looks like during the CLI installation:
 
 ![](/images/mytril/terminal-cli-mytril.png)
 
-## Option 2: manual installation
+### Or use manual installation
 
 Follow these steps for manual integration:
 
@@ -141,6 +135,22 @@ Finally, import Mytril's CSS directly into your main stylesheet:
 </Code>
 
 And that's all! You've successfully completed Mytril’s manual installation.
+
+**Requirements**
+
+Before installing Mytril, verify that your project meets the following minimum requirements:
+
+| Package | Minimum version | Official documentation                                                                                                                                                          |
+| ------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Svelte  | v5.16 +         | [Svelte Docs support by Mytril](https://svelte.dev/docs?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=svelte&utm_content=svelte_docs)      |
+| Vite    | v5 +            | [Vite Docs support by Mytril](https://vitejs.fr/config/?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=vitejs&utm_content=vite_config_docs) |
+| Node    | v20 +           | [Node.js Docs support by Mytril](https://nodejs.org/en?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=nodejs&utm_content=nodejs_docs)       |
+
+For enhanced features, consider integrating optional tools:
+
+| Package | Minimum version | Official documentation                                                                                                                                                                                           |
+| ------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Iconify | v4 +            | [Iconify Docs support by Mytril](https://iconify.design/docs/icon-components/svelte/?utm_source=minedelve&utm_medium=documentation&utm_campaign=tech_resources&utm_term=iconify&utm_content=iconify_svelte_docs) |
 
 ## Get started with Mytril
 

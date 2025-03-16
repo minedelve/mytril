@@ -182,9 +182,9 @@ The snippet tooltip lets you display complex personalized content. It replaces t
 
 ## Best practices for tooltips
 
-- **Don’t overload tooltips**: tooltips should be concise, providing only essential information.
-- **Use for non-obvious elements**: if the action is self-explanatory, avoid using a tooltip.
-- **Test for accessibility**: ensure keyboard users can trigger the tooltip via focus and that screen readers announce the content.
+- 🔹**Don’t overload tooltips**: tooltips should be concise, providing only essential information.
+- 🔹**Use for non-obvious elements**: if the action is self-explanatory, avoid using a tooltip.
+- 🔹**Test for accessibility**: ensure keyboard users can trigger the tooltip via focus and that screen readers announce the content.
 
 ## Next Steps
 
@@ -192,7 +192,7 @@ The snippet tooltip lets you display complex personalized content. It replaces t
 2. Combine `Tooltips` with other components for better interactivity.
 3. Custom themes? Check out the [Theming Guide](/mytril/docs/customization/themes).
 
-## Overview: tooltip component
+## Overview for tooltip component
 
 The **tooltip** component in Mytril enables developers to display contextual labels when users hover, focus, or interact with interface elements such as buttons, icons, or chips. With accessible settings, dynamic theming, and a lightweight approach, tooltips in Mytril seamlessly enhance any UI.
 
@@ -200,11 +200,11 @@ Ideal for **modern design systems**, tooltips ensure that users can interact int
 
 **Key features**
 
-- **Placement options**: adjust the position of the Tooltip (`top`, `bottom`, `left`, `right`)
-- **Customizable density**: choose between `comfortable`, `default` or `compact` spacing
-- **Built for Svelte**: reactive and SSR-compatible for **SvelteKit**
-- **Variants**: apply different styles like `default` or `arrow`
-- **Accessible**: ARIA-ready for screen readers
+- 🔹**Placement options**: adjust the position of the Tooltip (`top`, `bottom`, `left`, `right`)
+- 🔹**Customizable density**: choose between `comfortable`, `default` or `compact` spacing
+- 🔹**Built for Svelte**: reactive and SSR-compatible for **SvelteKit**
+- 🔹**Variants**: apply different styles like `default` or `arrow`
+- 🔹**Accessible**: ARIA-ready for screen readers
 
 {#snippet properties()}
 

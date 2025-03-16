@@ -54,6 +54,12 @@
 		"path": "/mytril/docs",
 		"routes": [
 			{
+				"name": "Application",
+				"path": "/mytril/docs/components/application",
+				"draft": false,
+				"hidden": true
+			},
+			{
 				"name": "system bar",
 				"path": "/mytril/docs/components/system-bar",
 				"draft": true
