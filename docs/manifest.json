@@ -126,7 +126,8 @@
 			{
 				"name": "tooltip",
 				"path": "/mytril/docs/components/tooltip",
-				"draft": true
+				"draft": false,
+				"state": "new"
 			},
 			{
 				"name": "image",
@@ -161,7 +162,8 @@
 			{
 				"name": "capitalize",
 				"path": "/mytril/docs/tools/capitalize",
-				"draft": false
+				"draft": false,
+				"state": "updated"
 			},
 			{
 				"name": "use display",
