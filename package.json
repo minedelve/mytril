@@ -1,6 +1,6 @@
 {
 	"name": "mytril",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
 	"type": "module",
 	"scripts": {
@@ -10,7 +10,9 @@
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepublishOnly": "npm run package",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run"
 	},
 	"repository": {
 		"type": "git",
@@ -62,6 +64,8 @@
 		"@sveltejs/kit": "^2.12.1",
 		"@sveltejs/package": "^2.3.7",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/svelte": "^5.2.7",
 		"@types/eslint": "^9.6.1",
 		"@types/eslint-config-prettier": "^6.11.3",
 		"@types/node": "^22.8.6",
@@ -76,7 +80,8 @@
 		"svelte-check": "^4.1.1",
 		"typescript": "^5.6.3",
 		"typescript-eslint": "^8.12.2",
-		"vite": "^5.4.10"
+		"vite": "^5.4.10",
+		"vitest": "^3.0.8"
 	},
 	"types": "./dist/types/index.d.ts",
 	"bin": {

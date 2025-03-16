@@ -26,13 +26,19 @@ export interface AppProps extends ComponentBase {
 }
 
 export interface TooltipProps extends ComponentBase {
+	open?: boolean;
 	dark?: boolean;
 	light?: boolean;
 	rounded?: string;
 	label?: string;
-	position?: 'top' | 'bottom' | 'left' | 'right';
+	location?: 'top' | 'bottom' | 'left' | 'right';
 	color?: string;
 	background?: string;
+	delayDuration?: number;
+	variant?: 'default' | 'arrow';
+	density?: 'compact' | 'comfortable' | 'default';
+	disabled?: boolean;
+	avoidCollisions?: boolean;
 	tooltip?: Snippet;
 }
 
