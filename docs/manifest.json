@@ -159,7 +159,7 @@
 		"path": "/mytril/docs",
 		"routes": [
 			{
-				"name": "use capitalize",
+				"name": "capitalize",
 				"path": "/mytril/docs/tools/capitalize",
 				"draft": false
 			},

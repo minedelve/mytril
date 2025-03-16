@@ -3,7 +3,7 @@ title: Introduction to themes
 section: Theme
 head:
   title: Customize svelte themes
-  description: Quickly modify default themes or create new ones in Mytril. Adjust colors, add themes, and control your Svelte UI with a simple config file
+  description: Quickly modify default themes or create new ones in Mytril. Adjust colors, add themes, and control your Svelte UI with a simple config file.
 related:
   - /mytril/docs/getting-started/installation
   - /mytril/docs/components/application
