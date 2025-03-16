@@ -1,6 +1,6 @@
 {
 	"name": "mytril",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"description": "Mytril Svelte library component for rapidly building modern websites based on Svelte and Sveltekit",
 	"type": "module",
 	"scripts": {
