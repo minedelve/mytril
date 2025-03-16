@@ -9,6 +9,8 @@ related:
   - /mytril/docs/components/cards
 features:
   github: 90-tools/capitalize.md
+  bug: 'Capitalize Tools'
+  feature: 'Capitalize Tools'
 ---
 
 <script>

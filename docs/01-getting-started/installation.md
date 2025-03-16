@@ -5,7 +5,7 @@ head:
   title: Install the Mytril Svelte Component Library
   description: Discover Mytril, a Svelte Component library, and follow our guide to install it. Perfect for developers looking to streamline their Svelte projects with efficient components.
 related:
-  - /mytril/docs
+  - /mytril/docs/components/application
   - /mytril/docs/customization/themes
   - /mytril/docs/customization/breakpoints
 features:
@@ -18,7 +18,7 @@ features:
 
 Get started integrating Mytril, a lightweight and powerful Svelte component library, into your SvelteKit application. Below is a step-by-step guide to help you install and configure Mytril with ease.
 
-## Requirements
+**Requirements**
 
 Before installing Mytril, verify that your project meets the following minimum requirements:
 

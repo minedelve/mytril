@@ -1,9 +1,9 @@
 ---
-title: Add tooltip on you action elements.
+title: Add tooltip component on your actions elements
 section: Tooltip
 head:
-  title: Mytril Tooltip component
-  description: The Tooltip component provides contextual information for interactive elements like buttons, icons, and chips in your Svelte or SvelteKit project. It's lightweight, customizable, and fully integrated into Mytril's design system.
+  title: Tooltip Component
+  description: Use Mytril Tooltip, a lightweight Svelte UI component. Add hover or focus-based tooltips on buttons, icons, and elements for better user experiences.
 related:
   - /mytril/docs/components/btn
   - /mytril/docs/components/chip
@@ -26,7 +26,11 @@ features:
 
 <Code previewOnly file={TooltipHead}></Code>
 
-The Tooltip component comes with **four main configurable features** that make it versatile and easy to integrate in any project:
+The tooltip component provides contextual information for interactive elements like buttons, icons, and chips in your Svelte or SvelteKit project. It's lightweight, customizable, and fully integrated into Mytril design system.
+
+With its four configurable functions, the Mytril tooltip component is both versatile and easy to implement, making it an ideal addition and easy integred to your project.
+
+## Properties tooltip
 
 ### Label
 
@@ -98,7 +102,7 @@ Control the tooltip's position use `location` property to set where the tooltip 
 
 ### Variant
 
-Tooltips can use variant styles such as **default** or **arrow**.
+Tooltip can use variant styles such as **default** or **arrow**.
 
 <Code file={TooltipVariant}>
 
@@ -145,7 +149,7 @@ Options: `comfortable`, `default` or `compact` for tighter spaces.
 
 </Code>
 
-### Snippet Tooltip
+## Snippet tooltip
 
 The snippet tooltip lets you display complex personalized content. It replaces the label property, which displays a simple string.
 
@@ -178,60 +182,67 @@ The snippet tooltip lets you display complex personalized content. It replaces t
 
 ## Best practices for tooltips
 
-- **Don’t overload tooltips**: Tooltips should be concise, providing only essential information.
-- **Use for non-obvious elements**: If the action is self-explanatory, avoid using a tooltip.
-- **Combine with reactivity**: Use **Svelte reactivity** to dynamically render tooltips when necessary.
-- **Test for accessibility**: Ensure keyboard users can trigger the tooltip via focus and that screen readers announce the content.
+- **Don’t overload tooltips**: tooltips should be concise, providing only essential information.
+- **Use for non-obvious elements**: if the action is self-explanatory, avoid using a tooltip.
+- **Test for accessibility**: ensure keyboard users can trigger the tooltip via focus and that screen readers announce the content.
 
 ## Next Steps
 
-1. Start exploring more **components** like [Buttons](https://www.notion.so/button) or [Icons](https://www.notion.so/icon).
+1. Start exploring more **components** like Buttons or [Icons](/mytril/docs/components/icons).
 2. Combine `Tooltips` with other components for better interactivity.
-3. Custom themes? Check out the [Theming Guide](https://www.notion.so/theming).
+3. Custom themes? Check out the [Theming Guide](/mytril/docs/customization/themes).
 
-Overview: Tooltip component
+## Overview: tooltip component
 
-The **Tooltip** component in Mytril enables developers to display contextual labels when users hover, focus, or interact with interface elements such as buttons, icons, or chips. With accessible settings, dynamic theming, and a lightweight approach, tooltips in Mytril seamlessly enhance any UI.
+The **tooltip** component in Mytril enables developers to display contextual labels when users hover, focus, or interact with interface elements such as buttons, icons, or chips. With accessible settings, dynamic theming, and a lightweight approach, tooltips in Mytril seamlessly enhance any UI.
 
 Ideal for **modern design systems**, tooltips ensure that users can interact intuitively with your app while maintaining visual consistency.
 
-## Key features
+**Key features**
 
 - **Placement options**: adjust the position of the Tooltip (`top`, `bottom`, `left`, `right`)
-- **Customizable density**: choose between `comfortable` or `compact` spacing
+- **Customizable density**: choose between `comfortable`, `default` or `compact` spacing
 - **Built for Svelte**: reactive and SSR-compatible for **SvelteKit**
-- **Variants**: apply different styles like `default`, `success`, or `error`
+- **Variants**: apply different styles like `default` or `arrow`
 - **Accessible**: ARIA-ready for screen readers
 
 {#snippet properties()}
 
-### API Reference
+## API reference in Mytril tooltip component
 
-| Property             | Type            | Default     | Description                                                                                                                                                               |
-| :------------------- | :-------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **open** $bindable() | `boolean`       | `false`     | The open state of the tooltip component.                                                                                                                                  |
-| **label**            | `string`        | `undefined` | The props content to render in tooltip.                                                                                                                                   |
-| **dark**             | `boolean`       | `false`     | Force color scheme `dark` on tooltip.                                                                                                                                     |
-| **light**            | `boolean`       | `false`     | Force color scheme `light` on tooltip.                                                                                                                                    |
-| **rounded**          | `enum` `string` | `undefined` | Define shape radius on tooltip with predined variant `xs`,`sm`,`md`,`lg`,`xl` or your custom value.                                                                       |
-| **color**            | `enum` `string` | `undefined` | Customize color content in tooltip with `x11 color`,`hex`,`rgb`,`rgba`,`hsl` or `mytril theme color`.                                                                     |
-| **background**       | `enum` `string` | `undefined` | Customize background color content in tooltip with `x11 color`,`hex`,`rgb`,`rgba`,`hsl` or `mytril theme color`.                                                          |
-| **location**         | `enum`          | `bottom`    | Set position tooltip with position element, but the position is calculated for adapative position with collisions except if you activate **avoidCollisions** property.    |
-| **delayDuration**    | `number`        | `850`       | The amount of time in milliseconds to delay opening the tooltip when hovering over the trigger.                                                                           |
-| **density**          | `enum`          | `default`   | Customize padding tooltip content with `default`, `compact`, `comfortable` properties.                                                                                    |
-| **variant**          | `enum`          | `undefined` | Set a different style for tooltip rendering.                                                                                                                              |
-| **disabled**         | `boolean`       | `false`     | Whether or not the tooltip is disabled.                                                                                                                                   |
-| **avoidCollisions**  | `boolean`       | `true`      | When true, this option is based on the **location** property, and adapts it to the border edges to avoid collisions.                                                      |
-| **forceMount**       | `boolean`       | `false`     | When true, this option activates tooltip **pre-rendering**, to ensure relative size (like images) and also SEO of tooltip content. If true if you use Snippet **tooltip** |
+Below is the complete API specification for the tooltip component. Each property is well-documented to simplify implementation and configuration.
 
-### Snippet References
+### Properties for tooltip
 
-| Snippet      | Type      | Properties | Description                                                        |
-| :----------- | :-------- | :--------- | :----------------------------------------------------------------- |
-| **children** | `Snippet` | `nothing`  | Display activator element for tooltip.                             |
-| **tooltip**  | `Snippet` | `nothing`  | Display custom content on tooltip, **label** property has ignored. |
+| Property             | Type            | Default     | Description                                                                                                                |
+| :------------------- | :-------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------- |
+| **open** $bindable() | `boolean`       | `false`     | Controls the open state of the Tooltip component. Useful for programmatic state management.component.                      |
+| **label**            | `string`        | `undefined` | Defines the content displayed inside the tooltip.                                                                          |
+| **dark**             | `boolean`       | `false`     | Forces a `dark` color scheme on the tooltip.                                                                               |
+| **light**            | `boolean`       | `false`     | Forces a `light` color scheme on the tooltip.                                                                              |
+| **rounded**          | `enum` `string` | `undefined` | Sets the shape radius of the Tooltip. Choose from predefined values (`xs`, `sm`, `md`, `lg`, `xl`) or custom values.       |
+| **color**            | `enum` `string` | `undefined` | Customizes the content text color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`.          |
+| **background**       | `enum` `string` | `undefined` | Customizes the tooltip’s background color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`.  |
+| **location**         | `enum`          | `bottom`    | Sets the tooltip’s position (`top`, `bottom`, `left`, `right`). Adapts dynamically unless **avoidCollisions** is disabled. |
+| **delayDuration**    | `number`        | `850`       | Sets the delay (in milliseconds) before the tooltip appears when hovering or focusing on the trigger element.              |
+| **density**          | `enum`          | `default`   | Adjusts space padding inside the tooltip’s content area (`default`, `comfortable`, `compact`).                             |
+| **variant**          | `enum`          | `undefined` | Allows rendering of styled variants based on the design system or custom styles.                                           |
+| **disabled**         | `boolean`       | `false`     | Disables the functionality of the tooltip when true.                                                                       |
+| **avoidCollisions**  | `boolean`       | `true`      | Ensures the tooltip position automatically adjusts to avoid clipping on the window edges.                                  |
+| **forceMount**       | `boolean`       | `false`     | Pre-renders tooltips for better SEO performance (e.g., for dynamic content like Snippets or large images).                 |
 
-### Styles References
+### Snippet references
+
+Here are snippets for integrating activators and custom tooltip content into your application:
+
+| Snippet      | Type      | Properties | Description                                                                           |
+| :----------- | :-------- | :--------- | :------------------------------------------------------------------------------------ |
+| **children** | `Snippet` | `nothing`  | Display activator element for tooltip.                                                |
+| **tooltip**  | `Snippet` | `nothing`  | Allows custom content inside the tooltip. Overrides the `label` property if provided. |
+
+### Styles references
+
+Customize tooltips with these CSS variables and properties, ensuring effortless alignment with your design system.
 
 | Variables        | Default                      | Description                      |
 | :--------------- | :--------------------------- | :------------------------------- |
