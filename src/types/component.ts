@@ -54,14 +54,6 @@ export interface ToolbarProps extends ComponentBase {
 	background?: string;
 }
 
-export interface ToolbarItemsProps extends ComponentBase {
-	is?: 'nav' | 'div';
-}
-
-export interface ToolbarTitleProps extends ComponentBase {
-	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div';
-}
-
 export interface SystemBarProps extends ComponentBase {
 	is?: 'div';
 	dark?: boolean;
