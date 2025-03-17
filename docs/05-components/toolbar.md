@@ -1,14 +1,18 @@
 ---
-title:
-section:
+title: Toolbar component with Mytril
+section: Toolbar
 head:
   title: Toolbar Component
   description: Create dynamic navigation bars using Mytril’s Toolbar component. Learn about its properties, subcomponents, and customization options for responsive and accessible designs.
+related:
+  - /mytril/docs/components/card
+  - /mytril/docs/components/list
+  - /mytril/docs/components/expansion-panel
 features:
-  legacy: 0.4.14
+  github: 05-components/toolbar.md
+  bug: 'Toolbar component'
+  feature: 'Toolbar component'
 ---
-
-# Toolbar component with Mytril {#toolbar-component-with-mytril}
 
 The toolbar is an essential element of modern graphical interfaces, often serving as the navigation center for applications. With Mytril, creating versatile, responsive and visually appealing toolbars is effortless.
 
