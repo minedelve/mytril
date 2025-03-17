@@ -116,3 +116,15 @@ The `ToolbarItems` subcomponent contains navigational items, buttons, or other i
 - **Responsive design**: adapts effortlessly to different screen sizes
 - **Customizable**: includes properties for color schemes, themes, sizes, and border styles
 - **Semantic and accessible**: designed with semantic HTML to ensure better accessibility and SEO compliance
+
+{#snippet properties()}
+
+| Property       | Type            | Default     | Description                                                                                                               |
+| :------------- | :-------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------ |
+| **dark**       | `boolean`       | `false`     | Forces a `dark` color scheme on the tooltip.                                                                              |
+| **light**      | `boolean`       | `false`     | Forces a `light` color scheme on the tooltip.                                                                             |
+| **rounded**    | `enum` `string` | `undefined` | Sets the shape radius of the Tooltip. Choose from predefined values (`xs`, `sm`, `md`, `lg`, `xl`) or custom values.      |
+| **color**      | `enum` `string` | `undefined` | Customizes the content text color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`.         |
+| **background** | `enum` `string` | `undefined` | Customizes the tooltip’s background color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`. |
+
+{/snippet}

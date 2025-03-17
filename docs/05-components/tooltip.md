@@ -15,7 +15,7 @@ features:
 ---
 
 <script>
-  import Code from "$components-docs/code.svelte"
+  	import Code from "$components-docs/code.svelte"
 	import TooltipHead from '$content/mytril/examples/tooltip-head.svelte';
 	import TooltipLocation from '$content/mytril/examples/tooltip-location.svelte';
 	import TooltipLabel from '$content/mytril/examples/tooltip-label.svelte';
