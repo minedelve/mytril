@@ -35,7 +35,7 @@ export interface TooltipProps extends ComponentBase {
 	color?: string;
 	background?: string;
 	delayDuration?: number;
-	variant?: 'default' | 'arrow';
+	variant?: 'arrow';
 	density?: 'compact' | 'comfortable' | 'default';
 	disabled?: boolean;
 	avoidCollisions?: boolean;
@@ -44,16 +44,13 @@ export interface TooltipProps extends ComponentBase {
 
 export interface ToolbarProps extends ComponentBase {
 	is?: 'div' | 'header' | 'nav';
-	classContent?: string;
-	floating?: boolean;
-	variant?: 'outline' | 'text';
-	absolute?: boolean;
+	variant?: 'default' | 'outline' | 'text' | 'dash';
 	rounded?: string;
-	height?: string;
-	dense?: boolean;
+	density?: 'compact' | 'comfortable' | 'default';
 	dark?: boolean;
 	light?: boolean;
 	color?: string;
+	orientation?: 'horizontal' | 'vertical';
 	background?: string;
 }
 

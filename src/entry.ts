@@ -38,8 +38,6 @@ export { default as ExpansionPanel } from './components/expansion-panel.svelte';
 
 // toolbar
 export { default as Toolbar } from './components/toolbar.svelte';
-export { default as ToolbarTitle } from './components/toolbar-title.svelte';
-export { default as ToolbarItems } from './components/toolbar-items.svelte';
 export { default as AppBar } from './components/app-bar.svelte';
 export { default as AppBarTitle } from './components/app-bar-title.svelte';
 
