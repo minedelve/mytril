@@ -49,4 +49,4 @@
 	</script>
 </svelte:head>
 
-{@render children()}
+{@render children?.()}

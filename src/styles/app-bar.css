@@ -1,10 +1,75 @@
-.myt-app-bar.myt-toolbar {
-	--c: var(--myt-app-bar-c);
-	--bg: var(--myt-app-bar-bg);
+.myt-app-bar {
+	--app-bar-spacing: 0.25rem;
+	--border-size: thin;
+	--color: var(--myt-app-bar-c);
+	--background-color: var(--myt-app-bar-bg);
+	--border-color: var(--background-color);
+	--layout-content-area: 100%;
+
+	display: flex;
+	align-items: center;
+	min-width: max-content;
+	color: var(--color);
+	background-color: var(--background-color);
+	border-color: var(--border-color);
+	border-width: var(--border-size);
+	border-style: solid;
+	transition:
+		color 0.5s,
+		border-color 0.5s,
+		background-color 0.5s;
 }
 
-.myt-app-bar {
+.myt-app-bar .myt-app-bar--wrapper {
 	display: flex;
+	align-items: center;
+	width: var(--layout-content-area);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.myt-app-bar.myt-app-bar--default {
+	height: 4rem;
+	padding-inline: calc(var(--app-bar-spacing) * 1.5);
+}
+
+.myt-app-bar.myt-app-bar--compact {
+	height: 3rem;
+	padding-inline: calc(var(--app-bar-spacing) * 1);
+}
+
+.myt-app-bar.myt-app-bar--comfortable {
+	height: 4.5rem;
+	padding-inline: calc(var(--app-bar-spacing) * 1.75);
+}
+
+.myt-app-bar.myt-app-bar--text,
+.myt-app-bar.myt-app-bar--outline,
+.myt-app-bar.myt-app-bar--dash {
+	background-color: transparent;
+}
+
+.myt-app-bar.myt-app-bar--outline {
+	border-color: currentColor;
+}
+
+.myt-app-bar.myt-app-bar--dash {
+	border-style: dashed;
+	border-color: currentColor;
+}
+
+.myt-app-bar.myt-app-bar--linear {
+	border-width: 0;
+	border-bottom-width: var(--border-size);
+	border-color: var(--color-outline);
+}
+
+.myt-app-bar.myt-app-bar--horizontal {
+	flex-direction: row;
+}
+
+.myt-app-bar.myt-app-bar--vertical {
+	flex-direction: column;
 }
 
 .myt-app-bar.myt-app-bar--top {
@@ -23,4 +88,9 @@
 	left: 0px;
 	width: calc(100% + 0px);
 	bottom: 0px;
+}
+
+.myt-app-bar-title {
+	font-size: 1.25rem;
+	min-width: 0;
 }

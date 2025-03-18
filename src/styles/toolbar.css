@@ -1,32 +1,45 @@
 .myt-toolbar {
-	--c: var(--myt-toolbar-c);
-	--bg: var(--myt-toolbar-bg);
+	--toolbar-spacing: 0.25rem;
+	--border-size: thin;
+	--color: var(--myt-toolbar-c);
+	--background-color: var(--myt-toolbar-bg);
+	--border-color: var(--background-color);
 
-	align-items: flex-start;
 	display: flex;
-	flex: none;
-	flex-direction: column;
-	justify-content: space-between;
-	max-width: 100%;
-	position: relative;
-	width: 100%;
-	border-radius: var(--myt-toolbar-br);
-	border-color: transparent;
-	border-width: 0.063rem;
+	align-items: center;
+	min-width: max-content;
+	color: var(--color);
+	background-color: var(--background-color);
+	border-color: var(--border-color);
+	border-width: var(--border-size);
 	border-style: solid;
-	color: var(--c);
-	background-color: var(--bg);
 	transition:
 		color 0.5s,
+		border-color 0.5s,
 		background-color 0.5s;
 }
 
-.myt-toolbar.myt-toolbar--floating {
-	display: inline-flex;
+.myt-toolbar.myt-toolbar--default {
+	border-radius: calc(var(--toolbar-spacing) * 2.25);
+	height: 3rem;
+	padding-inline: calc(var(--toolbar-spacing) * 1.5);
+}
+
+.myt-toolbar.myt-toolbar--compact {
+	border-radius: calc(var(--toolbar-spacing) * 1.75);
+	height: 2.625rem;
+	padding-inline: calc(var(--toolbar-spacing) * 0.75);
+}
+
+.myt-toolbar.myt-toolbar--comfortable {
+	border-radius: calc(var(--toolbar-spacing) * 3.5);
+	height: 3.5rem;
+	padding-inline: calc(var(--toolbar-spacing) * 2.25);
 }
 
 .myt-toolbar.myt-toolbar--text,
-.myt-toolbar.myt-toolbar--outline {
+.myt-toolbar.myt-toolbar--outline,
+.myt-toolbar.myt-toolbar--dash {
 	background-color: transparent;
 }
 
@@ -34,42 +47,20 @@
 	border-color: currentColor;
 }
 
-.myt-toolbar .myt-toolbar--content {
-	align-items: center;
-	display: flex;
-	flex: 0 0 auto;
-	position: relative;
-	transition: inherit;
-	width: 100%;
-	height: 4rem;
+.myt-toolbar.myt-toolbar--dash {
+	border-style: dashed;
+	border-color: currentColor;
 }
 
-.myt-toolbar .myt-toolbar--content {
-	overflow: hidden;
+.myt-toolbar.myt-toolbar--horizontal {
+	flex-direction: row;
 }
 
-.myt-toolbar .myt-toolbar--content > .myt-toolbar-title {
-	margin-inline-start: 1.25rem;
-}
-
-.myt-toolbar-items {
-	display: flex;
-	height: inherit;
-	align-self: stretch;
+.myt-toolbar.myt-toolbar--vertical {
+	flex-direction: column;
 }
 
 .myt-toolbar-title {
-	flex: 1 1;
 	font-size: 1.25rem;
 	min-width: 0;
-}
-
-.myt-toolbar-title {
-	font-size: 1.25rem;
-}
-
-.myt-toolbar-title .myt-toolbar-title--placeholder {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
 }

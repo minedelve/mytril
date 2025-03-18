@@ -5,7 +5,5 @@
 </script>
 
 <svelte:element this={is} {...rest} class={['myt-toolbar-title', rest.class]}>
-	<div class="myt-toolbar-title--placeholder">
-		{@render children?.()}
-	</div>
+	{@render children?.()}
 </svelte:element>
