@@ -14,117 +14,71 @@ features:
   feature: 'Toolbar component'
 ---
 
-The toolbar is an essential element of modern graphical interfaces, often serving as the navigation center for applications. With Mytril, creating versatile, responsive and visually appealing toolbars is effortless.
-
-## Using the Toolbar {#using-the-toolbar}
-
-To create a navigation bar, wrap your content inside the `Toolbar` component:
-
-```svelte
 <script>
-	import { Toolbar } from 'mytril';
+  	import Code from "$components-docs/code.svelte"
 </script>
 
-<Toolbar>
-	<!-- your content -->
-</Toolbar>
-```
+## Core Toolbar subcomponents
 
-## Core Toolbar sub components {#core-toolbar-sub-components}
+| Component    | Description                               |
+| :----------- | :---------------------------------------- |
+| Toolbar      | The main container for your tools actions |
+| ToolbarTitle | Displays the title in the Toolbar         |
 
-Mytril’s toolbar system is built on modular components, making it easy to organize titles, navigation items, and actions.
+## Properties toolbar
 
-| Component    | Description                                 |
-| :----------- | :------------------------------------------ |
-| Toolbar      | The main container for your navigation bar  |
-| ToolbarTitle | Displays a title within the toolbar         |
-| ToolbarItems | Holds navigation content, buttons, or icons |
+### Basic
 
-### Example {#example}
+Toolbar basic
 
-```svelte
-<script>
-	import { Toolbar, ToolbarTitle, ToolbarItems, Btn } from 'mytril';
-</script>
+### Variant
 
-<Toolbar>
-	<ToolbarTitle>Application</ToolbarTitle>
-	<ToolbarItems>
-		<Btn>Menu 1</Btn>
-		<Btn>Menu 2</Btn>
-		<Btn>Menu 2</Btn>
-	</ToolbarItems>
-</Toolbar>
-```
+Toolbar variant style
 
-### Toolbar component properties {#toolbar-component-properties}
+### Density
 
-| Property  | Type             | Default   | Description                                                                                                                          |
-| :-------- | :--------------- | :-------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| tag       | string           | div       | Specify a custom tag for the root element                                                                                            |
-| dark      | boolean          | false     | Applies a dark theme                                                                                                                 |
-| light     | boolean          | false     | Applies a light theme                                                                                                                |
-| absolute  | boolean          | false     | Positions the toolbar absolutely within its container                                                                                |
-| dense     | boolean          | false     | Reduces toolbar height to 48px                                                                                                       |
-| height    | string or number | 64px      | ets the toolbar height                                                                                                               |
-| floating  | boolean          | false     | Makes the toolbar inline (floating)                                                                                                  |
-| outlined  | boolean          | false     | Adds a border to the toolbar and removes its background                                                                              |
-| text      | boolean          | false     | Removes both background and border styles                                                                                            |
-| rounded   | string           | undefined | Adds [border radius](/mytril/docs/styles/border-radius) to the toolbar                                                               |
-| color     | string           | undefined | Sets the background color. Accepts **HEX**, **RGB**, **RGBA**, **X11**, or [Mytril themes](/mytril/docs/customization/themes) colors |
-| colorText | string           | undefined | Sets the text color. Ignored when `outline` or `text` is active                                                                      |
+Toolbar sizing
 
-### ToolbarTitle {#toolbar-title}
+### Orientation
 
-The `ToolbarTitle` subcomponent is used for adding a title to the toolbar.
+Toolbar vertical
 
-```svelte
-<script>
-	import { Toolbar, ToolbarTitle } from 'mytril';
-</script>
+### ToolbarTitle
 
-<Toolbar>
-	<ToolbarTitle>// your content</ToolbarTitle>
-</Toolbar>
-```
-
-| Property | Type   | Default | Description                                 |
-| :------- | :----- | :------ | :------------------------------------------ |
-| tag      | string | div     | Specifies a custom tag for the root element |
-
-### ToolbarItems {#toolbar-items}
-
-The `ToolbarItems` subcomponent contains navigational items, buttons, or other interactive elements.
-
-```svelte
-<script>
-	import { Toolbar, ToolbarItems } from 'mytril';
-</script>
-
-<Toolbar>
-	<ToolbarItems>// your content</ToolbarItems>
-</Toolbar>
-```
-
-| Property | Type   | Default | Description                                 |
-| :------- | :----- | :------ | :------------------------------------------ |
-| tag      | string | div     | Specifies a custom tag for the root element |
-
-### Why choose Mytril’s Toolbar component? {#why-choose-mytril-toolbar-component}
-
-- **Simplified navigation**: build clean, intuitive navigation bars with minimal code
-- **Responsive design**: adapts effortlessly to different screen sizes
-- **Customizable**: includes properties for color schemes, themes, sizes, and border styles
-- **Semantic and accessible**: designed with semantic HTML to ensure better accessibility and SEO compliance
+Toolbar + ToolbarTitle
 
 {#snippet properties()}
 
-| Property       | Type            | Default     | Description                                                                                                               |
-| :------------- | :-------------- | :---------- | :------------------------------------------------------------------------------------------------------------------------ |
-| **dark**       | `boolean`       | `false`     | Forces a `dark` color scheme on the tooltip.                                                                              |
-| **light**      | `boolean`       | `false`     | Forces a `light` color scheme on the tooltip.                                                                             |
-| **rounded**    | `enum` `string` | `undefined` | Sets the shape radius of the Tooltip. Choose from predefined values (`xs`, `sm`, `md`, `lg`, `xl`) or custom values.      |
-| **color**      | `enum` `string` | `undefined` | Customizes the content text color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`.         |
-| **background** | `enum` `string` | `undefined` | Customizes the tooltip’s background color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`. |
+## API reference in Mytril toolbar component
+
+### Properties for toolbar
+
+| Property        | Type            | Default      | Description                                                                                                               |
+| :-------------- | :-------------- | :----------- | :------------------------------------------------------------------------------------------------------------------------ |
+| **variant**     | `enum`          | `undefined`  | Set a different style (`outline`, `text`, `dash`) for toolbar rendering.                                                  |
+| **density**     | `enum`          | `default`    | Adjusts height and space padding inside the toolbar content area (`default`, `comfortable`, `compact`).                   |
+| **orientation** | `enum`          | `horizontal` | Display content toolbar with `horizontal` or `vertical` position.                                                         |
+| **dark**        | `boolean`       | `false`      | Forces a `dark` color scheme on the toolbar.                                                                              |
+| **light**       | `boolean`       | `false`      | Forces a `light` color scheme on the toolbar.                                                                             |
+| **rounded**     | `enum` `string` | `undefined`  | Sets the shape radius of the toolbar. Choose from predefined values (`xs`, `sm`, `md`, `lg`, `xl`) or custom values.      |
+| **color**       | `enum` `string` | `undefined`  | Customizes the content text color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`.         |
+| **background**  | `enum` `string` | `undefined`  | Customizes the toolbar’s background color using `X11 color names`, `HEX`, `RGB`, `RGBA`, `HSL`, or `Mytril theme colors`. |
+
+### Snippet references
+
+| Snippet      | Type      | Properties | Description                            |
+| :----------- | :-------- | :--------- | :------------------------------------- |
+| **children** | `Snippet` | `nothing`  | Display activator element for toolbar. |
+
+### Styles references
+
+| Variables           | Default                   | Description                                                          |
+| :------------------ | :------------------------ | :------------------------------------------------------------------- |
+| **toolbar-c**       | `--color-on-surface`      | Property CSS `color`.                                                |
+| **toolbar-bg**      | `--color-surface`         | Property CSS `background-color`.                                     |
+| **toolbar-br**      | `--radius-md`             | Property CSS `border-radius`.                                        |
+| **border-size**     | `thin`                    | Property CSS `border-size`.                                          |
+| **border-color**    | `--color-surface-variant` | Property CSS `border-color`.                                         |
+| **toolbar-spacing** | `0.25rem`                 | Property CSS `border-radius calculate` and `padding-line calculate`. |
 
 {/snippet}

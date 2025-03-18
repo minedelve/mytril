@@ -226,7 +226,7 @@ Below is the complete API specification for the tooltip component. Each property
 | **location**         | `enum`          | `bottom`    | Sets the tooltip’s position (`top`, `bottom`, `left`, `right`). Adapts dynamically unless **avoidCollisions** is disabled. |
 | **delayDuration**    | `number`        | `850`       | Sets the delay (in milliseconds) before the tooltip appears when hovering or focusing on the trigger element.              |
 | **density**          | `enum`          | `default`   | Adjusts space padding inside the tooltip’s content area (`default`, `comfortable`, `compact`).                             |
-| **variant**          | `enum`          | `undefined` | Allows rendering of styled variants based on the design system or custom styles.                                           |
+| **variant**          | `enum`          | `undefined` | Set a different style (`arrow`) for tooltip rendering.                                                                     |
 | **disabled**         | `boolean`       | `false`     | Disables the functionality of the tooltip when true.                                                                       |
 | **avoidCollisions**  | `boolean`       | `true`      | Ensures the tooltip position automatically adjusts to avoid clipping on the window edges.                                  |
 | **forceMount**       | `boolean`       | `false`     | Pre-renders tooltips for better SEO performance (e.g., for dynamic content like Snippets or large images).                 |

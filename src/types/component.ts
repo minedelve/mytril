@@ -44,7 +44,7 @@ export interface TooltipProps extends ComponentBase {
 
 export interface ToolbarProps extends ComponentBase {
 	is?: 'div' | 'header' | 'nav';
-	variant?: 'default' | 'outline' | 'text' | 'dash';
+	variant?: 'outline' | 'text' | 'dash';
 	rounded?: string;
 	density?: 'compact' | 'comfortable' | 'default';
 	dark?: boolean;
@@ -52,6 +52,11 @@ export interface ToolbarProps extends ComponentBase {
 	color?: string;
 	orientation?: 'horizontal' | 'vertical';
 	background?: string;
+}
+
+export interface AppBarProps extends ToolbarProps {
+	classContent?: ClassNameType;
+	location?: 'top' | 'bottom';
 }
 
 export interface SystemBarProps extends ComponentBase {
@@ -64,6 +69,14 @@ export interface SystemBarProps extends ComponentBase {
 	fixed?: boolean;
 	color?: string;
 	background?: string;
+}
+
+export interface ToolbarTitleProps extends ComponentBase {
+	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div';
+}
+
+export interface AppBarTitleProps extends ComponentBase {
+	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div';
 }
 
 type ComponentSizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
@@ -168,7 +181,7 @@ export interface ImgProps {
 	class?: ClassNameType;
 	style?: StylePropertiesType;
 	placeholder?: Snippet;
-	classContent?: string;
+	classContent?: ClassNameType;
 	src?: string;
 	srcset?: string;
 	lazySrc?: string;
@@ -424,7 +437,7 @@ export interface BtnProps extends ComponentBase {
 type DialogSize = 'xs' | 'sm' | 'md' | 'default' | 'lg' | 'xl';
 export interface DialogProps extends ComponentBase {
 	open?: boolean;
-	classContent?: string;
+	classContent?: ClassNameType;
 	size?: DialogSize;
 	persistent?: boolean;
 	fullscreen?: boolean;
@@ -438,7 +451,7 @@ export interface DialogProps extends ComponentBase {
 
 export interface BottomViewProps extends ComponentBase {
 	open?: boolean;
-	classContent?: string;
+	classContent?: ClassNameType;
 	persistent?: boolean;
 	closeWithEsc?: boolean;
 	dark?: boolean;
@@ -460,11 +473,6 @@ export interface BottomNavigationProps extends ComponentBase {
 	color?: string;
 	background?: string;
 }
-
-export interface AppBarProps extends ToolbarProps {
-	location?: 'top' | 'bottom';
-}
-
 export interface AlertProps extends ComponentBase {
 	append?: Snippet;
 	prepend?: Snippet;

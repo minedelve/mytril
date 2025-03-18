@@ -1,12 +1,9 @@
 <script lang="ts">
-	import type { ToolbarTitleProps } from '$lib/types/index.js';
+	import type { AppBarTitleProps } from '$lib/types/index.js';
 
-	// components
-	import ToolbarTitle from './toolbar-title.svelte';
-
-	let { children, ...rest }: ToolbarTitleProps = $props();
+	let { children, is = 'div', ...rest }: AppBarTitleProps = $props();
 </script>
 
-<ToolbarTitle {...rest} class={['myt-app-bar-title']}>
+<svelte:element this={is} {...rest} class={['myt-app-bar-title', rest.class]}>
 	{@render children?.()}
-</ToolbarTitle>
+</svelte:element>

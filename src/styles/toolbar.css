@@ -8,6 +8,7 @@
 	display: flex;
 	align-items: center;
 	min-width: max-content;
+	color: var(--color);
 	background-color: var(--background-color);
 	border-color: var(--border-color);
 	border-width: var(--border-size);
@@ -57,4 +58,9 @@
 
 .myt-toolbar.myt-toolbar--vertical {
 	flex-direction: column;
+}
+
+.myt-toolbar-title {
+	font-size: 1.25rem;
+	min-width: 0;
 }
