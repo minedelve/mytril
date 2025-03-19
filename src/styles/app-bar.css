@@ -120,4 +120,7 @@
 .myt-app-bar-title {
 	font-size: 1.25rem;
 	min-width: 0;
+	display: flex;
+	align-items: center;
+	margin-inline-start: 1.25rem;
 }
