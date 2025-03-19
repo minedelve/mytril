@@ -14,80 +14,269 @@ features:
   feature: 'AppBar component'
 ---
 
-The **AppBar** component is a cornerstone of application navigation, offering enhanced functionality and usability. Built on top of the [**Toolbar**](/mytril/docs/components/toolbar) component, the AppBar is ideal for creating a consistent and customizable navigation experience. Mytril’s AppBar ensures that your application remains visually appealing and accessible across devices.
-
-> Note: it’s recommended to use a single AppBar instance per application to maintain design consistency and reduce complexity.
-
-## Using the AppBar component {#using-the-app-bar-component}
-
-Implementing the AppBar in your project is straightforward:
-
-```svelte
 <script>
-	import { AppBar } from 'mytril';
+  import Code from "$components-docs/code.svelte"
+	import AppBarHead from '$content/mytril/examples/app-bar-head.svelte';
+	import AppBarVariant from '$content/mytril/examples/app-bar-variant.svelte';
+	import AppBarDensity from '$content/mytril/examples/app-bar-density.svelte';
+	import AppBarOrientation from '$content/mytril/examples/app-bar-orientation.svelte';
+	import AppBarChildAppBarTitle from '$content/mytril/examples/app-bar-child--app-bar-title.svelte';
 </script>
 
-<AppBar>
-	<!-- your content -->
-</AppBar>
-```
+<Code previewOnly file={AppBarHead}></Code>
 
-## Core AppBar subcomponents {#core-appbar-subcomponents}
-
-Mytril’s AppBar includes powerful subcomponents that simplify the creation of structured navigation.
+## Core AppBar subcomponents
 
 | Component   | Description                                 |
 | :---------- | :------------------------------------------ |
 | AppBar      | The main container for your application bar |
 | AppBarTitle | Displays the title in the AppBar            |
 
-Here’s an example of a fully implemented AppBar with a title:
+## Properties toolbar
+
+### Variant
+
+AppBar variant style
+
+<Code file={AppBarVariant}>
 
 ```svelte
-<script>
-	import { AppBar, AppBarTitle } from 'mytril';
+<script lang="ts">
+	import { Btn, Divider, Icon, AppBar, AppBarTitle, Spacer } from 'mytril/components';
 </script>
 
 <AppBar>
-	<AppBarTitle>Application</AppBarTitle>
+	<AppBarTitle>Default</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
+</AppBar>
+
+<AppBar variant="outline">
+	<AppBarTitle>Outline</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
+</AppBar>
+
+<AppBar variant="text">
+	<AppBarTitle>Text</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
+</AppBar>
+
+<AppBar variant="dash">
+	<AppBarTitle>Dash</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
+</AppBar>
+
+<AppBar variant="linear">
+	<AppBarTitle>Linear</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
 </AppBar>
 ```
 
-## AppBar component properties {#appbar-component-properties}
+</Code>
 
-The AppBar is highly customizable, with properties designed for flexibility and ease of use.
+### Density
 
-| Property | Type          | Default | Description                                                                    |
-| :------- | :------------ | :------ | :----------------------------------------------------------------------------- |
-| tag      | string        | div     | Specify a custom tag for the root element                                      |
-| location | top or bottom | top     | UDetermines whether the AppBar is displayed at the top or bottom of the screen |
+AppBar density
 
-> The AppBar component inherits additional properties from the Toolbar component, such as dark, light, dense, and color, making it highly versatile for different design requirements.
-
-## AppBarTitle subcomponent {#appbar-subcomponent}
-
-The **AppBarTitle** is used to define a clear, prominent title within the AppBar. It supports minimal configuration for quick setup:
+<Code file={AppBarDensity}>
 
 ```svelte
-<script>
-	import { AppBar, AppBarTitle } from 'mytril';
+<script lang="ts">
+	import { Btn, Divider, Icon, AppBar, AppBarTitle, Spacer } from 'mytril/components';
+</script>
+
+<AppBar density="compact">
+	<AppBarTitle>Compact</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
+</AppBar>
+
+<AppBar>
+	<AppBarTitle>Default</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
+</AppBar>
+
+<AppBar desnity="comfortable">
+	<AppBarTitle>Comfortable</AppBarTitle>
+	<Spacer />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+
+	<Btn size="md" variant="text">
+		{#snippet prepend()}
+			<Icon icon="font:mgc_bilibili_line" />
+		{/snippet}
+		Docs
+	</Btn>
+</AppBar>
+```
+
+</Code>
+
+### Orientation
+
+AppBar orientation
+
+<Code file={AppBarOrientation}>
+
+```svelte
+<script lang="ts">
+	import { Btn, Icon, AppBar, Spacer } from 'mytril/components';
+</script>
+
+<AppBar orientation="vertical" style="height: 200px;">
+	<Btn icon variant="text">
+		<Icon icon="font:mgc_home_1_line" />
+	</Btn>
+
+	<Spacer />
+
+	<Btn icon variant="text">
+		<Icon icon="font:mgc_share_2_line" />
+	</Btn>
+
+	<Btn icon variant="text" active>
+		<Icon icon="font:mgc_bilibili_line" />
+	</Btn>
+</AppBar>
+```
+
+</Code>
+
+### ToolbarTitle
+
+AppBar + AppBarTitle
+
+<Code file={AppBarChildAppBarTitle}>
+
+```svelte
+<script lang="ts">
+	import { AppBar, AppBarTitle } from 'mytril/components';
 </script>
 
 <AppBar>
-	<AppBarTitle>// your content</AppBarTitle>
+	<AppBarTitle>App Bar Title</AppBarTitle>
 </AppBar>
 ```
 
-| Property | Type   | Default | Description                               |
-| :------- | :----- | :------ | :---------------------------------------- |
-| tag      | string | div     | Specify a custom tag for the root element |
-
-## Why use Mytril’s AppBar? {#why-use-mytril-appbar}
-
-1. **Enhanced navigation:** Mytril's AppBar offers flexible positioning, supporting both top and bottom screen placement
-2. **Seamless integration:** leverages Toolbar component features for smooth implementation
-3. **Customizable and accessible:** includes dark and light themes, dynamic color schemes, and utility classes
-4. **Built for performance:** optimized specifically for Svelte, without external dependencies
+</Code>
 
 {#snippet properties()}
 

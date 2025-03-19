@@ -16,7 +16,14 @@ features:
 
 <script>
   	import Code from "$components-docs/code.svelte"
+	import ToolbarHead from '$content/mytril/examples/toolbar-head.svelte';
+	import ToolbarVariant from '$content/mytril/examples/toolbar-variant.svelte';
+	import ToolbarDensity from '$content/mytril/examples/toolbar-density.svelte';
+	import ToolbarOrientation from '$content/mytril/examples/toolbar-orientation.svelte';
+	import ToolbarChildTooltbarTitle from '$content/mytril/examples/toolbar-child--tooltbar-title.svelte';
 </script>
+
+<Code previewOnly file={ToolbarHead}></Code>
 
 ## Core Toolbar subcomponents
 
@@ -27,25 +34,208 @@ features:
 
 ## Properties toolbar
 
-### Basic
-
-Toolbar basic
-
 ### Variant
 
 Toolbar variant style
+
+<Code file={ToolbarVariant}>
+
+```svelte
+<script lang="ts">
+	import { Btn, Divider, Icon, Toolbar } from 'mytril/components';
+</script>
+
+<Toolbar>
+	<Btn variant="text">Default</Btn>
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_large_arrow_down_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_right_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_up_fill" />
+	</Btn>
+</Toolbar>
+
+<Toolbar variant="outline">
+	<Btn variant="text">Outline</Btn>
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_large_arrow_down_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_right_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_up_fill" />
+	</Btn>
+</Toolbar>
+
+<Toolbar variant="text">
+	<Btn variant="text">Text</Btn>
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_large_arrow_down_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_right_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_up_fill" />
+	</Btn>
+</Toolbar>
+
+<Toolbar variant="dash">
+	<Btn variant="text">Dash</Btn>
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_large_arrow_down_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_right_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_up_fill" />
+	</Btn>
+</Toolbar>
+```
+
+</Code>
 
 ### Density
 
 Toolbar sizing
 
+<Code file={ToolbarDensity}>
+
+```svelte
+<script lang="ts">
+	import { Btn, Divider, Icon, Toolbar } from 'mytril/components';
+</script>
+
+<Toolbar density="compact">
+	<Btn variant="text">Compact</Btn>
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_large_arrow_down_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_right_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_up_fill" />
+	</Btn>
+</Toolbar>
+
+<Toolbar>
+	<Btn variant="text">Default</Btn>
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_large_arrow_down_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_right_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_up_fill" />
+	</Btn>
+</Toolbar>
+
+<Toolbar density="comfortable">
+	<Btn variant="text">Comfortable</Btn>
+	<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_large_arrow_down_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_right_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_large_arrow_up_fill" />
+	</Btn>
+</Toolbar>
+```
+
+</Code>
+
 ### Orientation
 
 Toolbar vertical
 
+<Code file={ToolbarOrientation}>
+
+```svelte
+<script lang="ts">
+	import { Btn, Divider, Icon, Toolbar } from 'mytril/components';
+</script>
+
+<Toolbar variant="outline" style="background-color: var(--color-surface)" orientation="vertical">
+	<Btn icon size="sm" variant="text" active>
+		<Icon icon="font:mgc_bold_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_italic_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_strikethrough_fill" />
+	</Btn>
+
+	<Divider style="margin-top: 0.25rem; margin-bottom: 0.25rem;" />
+
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_align_left_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_align_justify_fill" />
+	</Btn>
+	<Btn icon size="sm" variant="text">
+		<Icon icon="font:mgc_align_right_fill" />
+	</Btn>
+</Toolbar>
+```
+
+</Code>
+
 ### ToolbarTitle
 
 Toolbar + ToolbarTitle
+
+<Code file={ToolbarChildTooltbarTitle}>
+
+```svelte
+<script lang="ts">
+	import { Toolbar, ToolbarTitle } from 'mytril/components';
+</script>
+
+<Toolbar variant="outline" style="background-color: var(--color-surface); width: 100%;">
+	<ToolbarTitle>Title</ToolbarTitle>
+</Toolbar>
+```
+
+</Code>
 
 {#snippet properties()}
 

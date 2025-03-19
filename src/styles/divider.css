@@ -39,3 +39,7 @@
 	margin-top: 0.5rem;
 	max-height: calc(100% - 1rem);
 }
+
+.myt-divider:not(.myt-divider--vertical) {
+	width: 100%;
+}
