@@ -21,20 +21,44 @@
 
 .myt-toolbar.myt-toolbar--default {
 	border-radius: calc(var(--toolbar-spacing) * 2.25);
+}
+
+.myt-toolbar.myt-toolbar--default:not(.myt-toolbar--vertical) {
 	height: 3rem;
 	padding-inline: calc(var(--toolbar-spacing) * 1.5);
 }
 
+.myt-toolbar.myt-toolbar--default.myt-toolbar--vertical {
+	width: 3rem;
+	padding: calc(var(--toolbar-spacing) * 1.5) 0;
+}
+
 .myt-toolbar.myt-toolbar--compact {
 	border-radius: calc(var(--toolbar-spacing) * 1.75);
+}
+
+.myt-toolbar.myt-toolbar--compact:not(.myt-toolbar--vertical) {
 	height: 2.625rem;
 	padding-inline: calc(var(--toolbar-spacing) * 0.75);
 }
 
+.myt-toolbar.myt-toolbar--default.myt-toolbar--vertical {
+	width: 2.625rem;
+	padding: calc(var(--toolbar-spacing) * 0.75) 0;
+}
+
 .myt-toolbar.myt-toolbar--comfortable {
 	border-radius: calc(var(--toolbar-spacing) * 3.5);
+}
+
+.myt-toolbar.myt-toolbar--comfortable:not(.myt-toolbar--vertical) {
 	height: 3.5rem;
 	padding-inline: calc(var(--toolbar-spacing) * 2.25);
+}
+
+.myt-toolbar.myt-toolbar--default.myt-toolbar--vertical {
+	width: 3.5rem;
+	padding: calc(var(--toolbar-spacing) * 2.25) 0;
 }
 
 .myt-toolbar.myt-toolbar--text,
@@ -58,6 +82,7 @@
 
 .myt-toolbar.myt-toolbar--vertical {
 	flex-direction: column;
+	min-height: fit-content;
 }
 
 .myt-toolbar-title {

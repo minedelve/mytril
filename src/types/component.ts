@@ -54,8 +54,17 @@ export interface ToolbarProps extends ComponentBase {
 	background?: string;
 }
 
-export interface AppBarProps extends ToolbarProps {
+export interface AppBarProps extends ComponentBase {
+	is?: 'div' | 'header' | 'nav';
+	rounded?: string;
+	density?: 'compact' | 'comfortable' | 'default';
+	dark?: boolean;
+	light?: boolean;
+	color?: string;
+	orientation?: 'horizontal' | 'vertical';
+	background?: string;
 	classContent?: ClassNameType;
+	variant?: 'outline' | 'text' | 'dash' | 'linear';
 	location?: 'top' | 'bottom';
 }
 

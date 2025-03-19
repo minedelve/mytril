@@ -30,17 +30,36 @@
 
 .myt-app-bar.myt-app-bar--default {
 	height: 4rem;
+}
+
+.myt-app-bar.myt-app-bar--default:not(.myt-app-bar--vertical) {
+	height: 4rem;
 	padding-inline: calc(var(--app-bar-spacing) * 1.5);
 }
 
-.myt-app-bar.myt-app-bar--compact {
+.myt-app-bar.myt-app-bar--default.myt-app-bar--vertical {
+	width: 4rem;
+	padding: calc(var(--app-bar-spacing) * 1.5) 0;
+}
+
+.myt-app-bar.myt-app-bar--compact:not(.myt-app-bar--vertical) {
 	height: 3rem;
 	padding-inline: calc(var(--app-bar-spacing) * 1);
 }
 
-.myt-app-bar.myt-app-bar--comfortable {
+.myt-app-bar.myt-app-bar--compact.myt-app-bar--vertical {
+	width: 3rem;
+	padding: calc(var(--app-bar-spacing) * 1) 0;
+}
+
+.myt-app-bar.myt-app-bar--comfortable:not(.myt-app-bar--vertical) {
 	height: 4.5rem;
 	padding-inline: calc(var(--app-bar-spacing) * 1.75);
+}
+
+.myt-app-bar.myt-app-bar--comfortable.myt-app-bar--vertical {
+	width: 4.5rem;
+	padding: calc(var(--app-bar-spacing) * 1.75) 0;
 }
 
 .myt-app-bar.myt-app-bar--text,
@@ -66,10 +85,18 @@
 
 .myt-app-bar.myt-app-bar--horizontal {
 	flex-direction: row;
+	width: 100%;
 }
 
 .myt-app-bar.myt-app-bar--vertical {
 	flex-direction: column;
+	width: fit-content;
+	height: 100%;
+}
+
+.myt-app-bar.myt-app-bar--vertical .myt-app-bar--wrapper {
+	flex-direction: column;
+	height: 100%;
 }
 
 .myt-app-bar.myt-app-bar--top {
