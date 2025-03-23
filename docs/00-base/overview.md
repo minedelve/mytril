@@ -77,7 +77,7 @@ Whether you're new to Svelte or an senior Svelte developer, **Mytril helps you s
 
 - [Get Started and install Mytril](/mytril/docs/getting-started/installation)
 
-  **Stay Updated!** Follow us for the latest news & updates:
+**Stay Updated!** Follow us for the latest news & updates:
 
-- 🔹 **Discord community:** [Minedelve Server](https://discord.com/invite/fwyaGUhbav?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=discord&utm_content=invit_discord)
-- 🔹 **GitHub discussions:** [Join the community](https://github.com/minedelve/mytril/discussions?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=discussions&utm_content=mytril_github)
+- **Discord community:** [Minedelve Server](https://discord.com/invite/fwyaGUhbav?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=discord&utm_content=invit_discord)
+- **GitHub discussions:** [Join the community](https://github.com/minedelve/mytril/discussions?utm_source=minedelve&utm_medium=social&utm_campaign=brand_presence&utm_term=discussions&utm_content=mytril_github)
