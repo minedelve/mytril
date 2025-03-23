@@ -5,6 +5,7 @@
 	import { iconifyAvailable, IconifyComponent } from '$lib/stores/index.js';
 
 	let {
+		children,
 		is = 'i',
 		dark,
 		light,
@@ -28,7 +29,7 @@
 	// state
 	let svgNode: HTMLElement | null = $state(null);
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	let Component: ComponentSVType<any, any, any> | null | undefined = $state();
+	//let Component: ComponentSVType<any, any, any> | null | undefined = $state();
 
 	onMount(async () => {
 		if (typeof icon === 'string' && icon.endsWith('.svg') && svgNode) {
@@ -50,14 +51,14 @@
 		}
 	});
 
-	$effect(() => {
-		if (iconifyAvailable) {
-			const unsubscribe = IconifyComponent.subscribe((value) => {
-				Component = value;
-			});
-			return () => unsubscribe();
-		}
-	});
+	// $effect(() => {
+	// 	if (iconifyAvailable) {
+	// 		const unsubscribe = IconifyComponent.subscribe((value) => {
+	// 			Component = value;
+	// 		});
+	// 		return () => unsubscribe();
+	// 	}
+	// });
 </script>
 
 <svelte:element
@@ -84,9 +85,11 @@
 	]}
 	style:--c={assets.color(color)}
 >
-	{#if iconifyAvailable && IconifyComponent && !(icon?.startsWith('font:') || icon?.startsWith('fa:') || icon?.startsWith('svg:'))}
+	<!-- {#if iconifyAvailable && IconifyComponent && !(icon?.startsWith('font:') || icon?.startsWith('fa:') || icon?.startsWith('svg:'))}
 		<Component {icon} />
 	{:else if icon?.startsWith('svg:')}
-		{icon}
+		{icon} -->
+	{#if children}
+		{@render children?.()}
 	{/if}
 </svelte:element>

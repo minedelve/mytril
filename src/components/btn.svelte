@@ -14,7 +14,7 @@
 		active,
 		square,
 		circle,
-		variant,
+		variant, // text | outline | dash | link
 		error,
 		info,
 		success,
@@ -24,7 +24,6 @@
 		density = 'default',
 		disabled,
 		rounded,
-		link,
 		color,
 		background,
 		size = 'md',
@@ -35,6 +34,7 @@
 		sizeXl,
 		sizeXxl,
 		ariaLabel,
+		type, // radio | checkbox | button
 		...rest
 	}: BtnProps = $props();
 
@@ -42,6 +42,8 @@
 
 	$effect(() => {
 		if (href) is = 'a';
+		if (type === 'radio') is = 'input';
+		if (type === 'checkbox') is = 'input';
 	});
 </script>
 
@@ -57,7 +59,6 @@
 		active && 'myt-btn--active',
 		square && 'myt-btn--square',
 		circle && 'myt-btn--circle',
-		variant && `myt-btn--${variant}`,
 		error && 'myt-btn--error',
 		info && 'myt-btn--info',
 		success && 'myt-btn--success',
@@ -65,8 +66,8 @@
 		icon && 'myt-btn--icon',
 		wide && 'myt-btn--wide',
 		disabled && 'myt-btn--disabled',
-		link && 'myt-btn--link',
-		density && `myt-btn--density-${density}`,
+		variant && `myt-btn--${variant}`,
+		density && `myt-btn--${density}`,
 		rounded && assets.shape(rounded),
 		size && `myt-btn--size-${size}`,
 		sizeXs && `xs:myt-btn--size-${sizeXs}`,
@@ -79,6 +80,7 @@
 	]}
 	{disabled}
 	aria-label={ariaLabel}
+	{type}
 	style:--bg={assets.color(background)}
 	style:--c={assets.color(color)}
 >

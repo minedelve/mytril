@@ -1,4 +1,351 @@
 .myt-btn {
+	--spacing: 0.25rem;
+	--btn-spacing: 0.25rem;
+	--border-size: thin;
+	--color: var(--myt-btn-c);
+	--background-color: var(--myt-btn-bg);
+	--border-color: var(--background-color);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+	border-radius: var(--radius-md);
+	line-height: 1.25rem;
+	padding-top: var(--btn-spacing-x);
+	padding-bottom: var(--btn-spacing-x);
+	padding-right: var(--btn-spacing-y);
+	padding-left: var(--btn-spacing-y);
+	background-color: var(--background-color);
+	color: var(--color);
+	transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 0.15s;
+}
+
+.myt-btn .myt-btn--prepend,
+.myt-btn .myt-btn--append,
+.myt-btn .myt-btn--content {
+	display: flex;
+	align-items: center;
+}
+
+.myt-btn:not(.myt-btn--disabled),
+.myt-btn:not([disabled]) {
+	cursor: pointer;
+}
+
+.myt-btn:active:hover,
+.myt-btn:active:focus {
+	animation: button-effect 0s ease-out;
+	transform: scale(0.97);
+}
+
+.myt-btn.myt-btn--block {
+	display: flex;
+	flex: 1 0 auto;
+	min-width: 100%;
+}
+
+.myt-btn.myt-btn--wide {
+	width: 16rem;
+}
+
+.myt-btn:not(.myt-btn--link) {
+	text-decoration: none;
+}
+
+.myt-btn.myt-btn--disabled,
+.myt-btn[disabled] {
+	pointer-events: none;
+	user-select: none;
+	cursor: default;
+}
+
+.myt-btn.myt-btn--disabled:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	),
+.myt-btn[disabled]:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	) {
+	color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+	background-color: color-mix(in oklab, var(--background-color) 70%, transparent) !important;
+}
+
+/** Button Variants */
+/** Default */
+.myt-btn.myt-btn--active:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	),
+.myt-btn:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	):where(input:checked) {
+	background-color: color-mix(in oklab, var(--background-color) 85%, black);
+}
+
+.myt-btn:hover:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	) {
+	background-color: color-mix(in oklab, var(--background-color) 90%, black);
+}
+
+/** Outline */
+.myt-btn.myt-btn--outline {
+	background-color: transparent;
+	border: 1px solid currentColor;
+}
+
+.myt-btn.myt-btn--outline.myt-btn--disabled,
+.myt-btn.myt-btn--outline[disabled] {
+	color: color-mix(in oklab, currentColor 40%, transparent) !important;
+	border-color: color-mix(in oklab, currentColor 70%, transparent) !important;
+}
+
+.myt-btn.myt-btn--outline.myt-btn--active,
+.myt-btn.myt-btn--outline:where(input:checked) {
+	background-color: color-mix(in oklab, currentColor 15%, transparent);
+}
+
+.myt-btn.myt-btn--outline:hover {
+	background-color: color-mix(in oklab, currentColor 20%, transparent);
+}
+
+/** Text */
+.myt-btn.myt-btn--text {
+	background-color: transparent;
+}
+
+.myt-btn.myt-btn--text.myt-btn--disabled,
+.myt-btn.myt-btn--text[disabled] {
+	color: color-mix(in oklab, currentColor 40%, transparent) !important;
+}
+
+.myt-btn.myt-btn--text.myt-btn--active,
+.myt-btn.myt-btn--text:where(input:checked) {
+	background-color: color-mix(in oklab, currentColor 15%, transparent);
+}
+
+.myt-btn.myt-btn--text:hover {
+	background-color: color-mix(in oklab, currentColor 20%, transparent);
+}
+
+/** Dash */
+.myt-btn.myt-btn--dash {
+	background-color: transparent;
+	border: 1px dashed currentColor;
+}
+
+.myt-btn.myt-btn--dash.myt-btn--disabled,
+.myt-btn.myt-btn--dash[disabled] {
+	color: color-mix(in oklab, currentColor 40%, transparent) !important;
+	border-color: color-mix(in oklab, currentColor 70%, transparent) !important;
+}
+
+.myt-btn.myt-btn--dash.myt-btn--active,
+.myt-btn.myt-btn--dash:where(input:checked) {
+	background-color: color-mix(in oklab, currentColor 15%, transparent);
+}
+
+.myt-btn.myt-btn--dash:hover {
+	background-color: color-mix(in oklab, currentColor 20%, transparent);
+}
+
+/** Link */
+.myt-btn.myt-btn--link {
+	background-color: transparent;
+}
+
+.myt-btn.myt-btn--link.myt-btn--disabled,
+.myt-btn.myt-btn--link[disabled] {
+	color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+}
+
+.myt-btn.myt-btn--link.myt-btn--active,
+.myt-btn.myt-btn--link:hover,
+.myt-btn.myt-btn--link:where(input:checked) {
+	text-decoration: underline;
+}
+
+/** Types */
+.myt-btn:where(.myt-btn:is(input[type='checkbox'])),
+.myt-btn:where(.myt-btn:is(input[type='radio'])) {
+	width: auto;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.myt-btn:is(input[type='checkbox']):after,
+.myt-btn:is(input[type='radio']):after {
+	--btn-content: attr(aria-label);
+	content: var(--btn-content);
+}
+
+/** Density */
+.myt-btn--compact:not(.myt-btn--icon) {
+	height: calc(var(--btn-height) - 0.25rem);
+	--btn-spacing-x: 0;
+	--btn-spacing-y: calc(var(--spacing) * var(--btn-multiplier-y) - 0.25rem);
+}
+.myt-btn--compact.myt-btn--icon {
+	height: calc(var(--btn-height) - 0.25rem);
+	width: calc(var(--btn-height) - 0.25rem);
+	--btn-spacing-x: 0;
+	--btn-spacing-y: 0;
+}
+
+.myt-btn--default:not(.myt-btn--icon) {
+	height: calc(var(--btn-height));
+	--btn-spacing-x: 0;
+	--btn-spacing-y: calc(var(--spacing) * var(--btn-multiplier-y));
+}
+.myt-btn--default.myt-btn--icon {
+	height: calc(var(--btn-height));
+	width: calc(var(--btn-height));
+	--btn-spacing-x: 0;
+	--btn-spacing-y: 0;
+}
+
+.myt-btn--comfortable:not(.myt-btn--icon) {
+	height: calc(var(--btn-height) + 0.25rem);
+	--btn-spacing-x: 0;
+	--btn-spacing-y: calc(var(--spacing) * var(--btn-multiplier-y) + 0.25rem);
+}
+.myt-btn--comfortable.myt-btn--icon {
+	height: calc(var(--btn-height) + 0.25rem);
+	width: calc(var(--btn-height) + 0.25rem);
+	--btn-spacing-x: 0;
+	--btn-spacing-y: 0;
+}
+
+/** Icon */
+.myt-btn .myt-icon {
+	--icon-size-multiplier: 0.86;
+}
+.myt-btn.myt-btn--icon .myt-icon {
+	--icon-size-multiplier: 1;
+}
+
+.myt-btn:not(.myt-btn--icon).myt-btn--circle {
+	border-radius: var(--radius-pill);
+}
+.myt-btn.myt-btn--icon.myt-btn--circle {
+	border-radius: var(--radius-circle);
+}
+
+.myt-btn.myt-btn--square {
+	border-radius: var(--radius-lg);
+}
+
+/* @breakpoints */
+/** Sizes */
+.myt-btn[breakpoint]myt-btn--size-xs {
+	--btn-height: 1.75rem;
+	--btn-multiplier-y: 2;
+	font-size: 0.75rem;
+	gap: 0.25rem;
+}
+
+.myt-btn[breakpoint]myt-btn--size-sm {
+	--btn-height: 2rem;
+	--btn-multiplier-y: 3;
+	font-size: 0.875rem;
+	gap: 0.5rem;
+}
+
+.myt-btn[breakpoint]myt-btn--size-md {
+	--btn-height: 2.25rem;
+	--btn-multiplier-y: 4;
+	font-size: 0.875rem;
+	gap: 0.5rem;
+}
+
+.myt-btn[breakpoint]myt-btn--size-lg {
+	--btn-height: 2.5rem;
+	--btn-multiplier-y: 5;
+	font-size: 1rem;
+	gap: 0.5rem;
+}
+
+.myt-btn[breakpoint]myt-btn--size-xl {
+	--btn-height: 2.75rem;
+	--btn-multiplier-y: 6;
+	font-size: 1.125rem;
+	gap: 0.675rem;
+}
+/*! @breakpoints */
+
+.myt-btn.myt-btn--info:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	) {
+	--color: var(--color-on-info);
+	--background-color: var(--color-info);
+}
+.myt-btn.myt-btn--info.myt-btn--outline,
+.myt-btn.myt-btn--info.myt-btn--text,
+.myt-btn.myt-btn--info.myt-btn--dash,
+.myt-btn.myt-btn--info.myt-btn--link {
+	--color: var(--color-info);
+}
+
+.myt-btn.myt-btn--success:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	) {
+	--color: var(--color-on-success);
+	--background-color: var(--color-success);
+}
+.myt-btn.myt-btn--success.myt-btn--outline,
+.myt-btn.myt-btn--success.myt-btn--text,
+.myt-btn.myt-btn--success.myt-btn--dash,
+.myt-btn.myt-btn--success.myt-btn--link {
+	--color: var(--color-success);
+}
+
+.myt-btn.myt-btn--error:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	) {
+	--color: var(--color-on-error);
+	--background-color: var(--color-error);
+}
+.myt-btn.myt-btn--error.myt-btn--outline,
+.myt-btn.myt-btn--error.myt-btn--text,
+.myt-btn.myt-btn--error.myt-btn--dash,
+.myt-btn.myt-btn--error.myt-btn--link {
+	--color: var(--color-error);
+}
+
+.myt-btn.myt-btn--warning:not([class*='outline']):not([class*='text']):not([class*='dash']):not(
+		[class*='link']
+	) {
+	--color: var(--color-on-warning);
+	--background-color: var(--color-warning);
+}
+.myt-btn.myt-btn--warning.myt-btn--outline,
+.myt-btn.myt-btn--warning.myt-btn--text,
+.myt-btn.myt-btn--warning.myt-btn--dash,
+.myt-btn.myt-btn--warning.myt-btn--link {
+	--color: var(--color-warning);
+}
+
+/* .myt-btn.myt-btn--default {
+	height: 2.25rem;
+	padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+}
+
+.myt-btn.myt-btn--compact {
+	height: 2.25rem;
+}
+
+.myt-btn.myt-btn--comfortable {
+	height: 2.25rem;
+} */
+
+/* .myt-btn:is(input[type='checkbox']:checked),
+.myt-btn:is(input[type='radio']:checked) {
+	--c: var(--myt-btn-c);
+	--bg: var(--myt-btn-bg);
+} */
+
+/* .myt-btn {
 	--c: var(--myt-btn-c);
 	--bg: var(--myt-btn-bg);
 
@@ -224,10 +571,10 @@
 .myt-btn.myt-btn--error.myt-btn--text,
 .myt-btn.myt-btn--error.myt-btn--link {
 	--c: var(--color-error);
-}
+} */
 
 /* @breakpoints */
-.myt-btn[breakpoint]myt-btn--size-xs {
+/* .myt-btn[breakpoint]myt-btn--size-xs {
 	--btn-size: 0.625rem;
 	--btn-height: 1.25rem;
 	font-size: var(--btn-size);
@@ -277,7 +624,7 @@
 }
 .myt-btn[breakpoint]myt-btn--size-xl .myt-icon {
 	font-size: calc(var(--icon-size-multiplier) * 2em);
-}
+} */
 /*! @breakpoints */
 
 /* @keyframes */
