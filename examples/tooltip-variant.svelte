@@ -7,7 +7,7 @@
 		<Btn>Default</Btn>
 	</Tooltip>
 
-	<Tooltip label="OMG arrow discover !" variant="arrow">
+	<Tooltip label="OMG arrow discover!" variant="arrow">
 		<Btn>Arrow</Btn>
 	</Tooltip>
 </div>

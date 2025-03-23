@@ -7,11 +7,10 @@
 
 	{#snippet tooltip()}
 		<div style="max-width: 200px;">
-			<p>Tooltip custom content</p>
+			<p>Tooltip Custom Content</p>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit distinctio, dignissimos
-				sapiente error temporibus dolorum ipsam nobis harum nulla facere tempore perferendis ullam
-				ut quibusdam quisquam corrupti aut exercitationem quasi!
+				It's magic, it's just a well-placed Mytril snippet! By the gods, if it doesn't work, I swear
+				on my keyboard I'll switch to agriculture! Again!
 			</p>
 		</div>
 	{/snippet}

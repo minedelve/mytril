@@ -34,7 +34,7 @@ With its four configurable functions, the Mytril tooltip component is both versa
 
 ### Label
 
-label is the content displayed inside the tooltip. This can be text or dynamic Svelte-bound variables.
+Label is the content displayed inside the tooltip. This can be text or dynamic Svelte-bound variables.
 
 <Code file={TooltipLabel}>
 

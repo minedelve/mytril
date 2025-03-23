@@ -55,7 +55,7 @@
 	</Toolbar>
 
 	<Toolbar variant="dash">
-		<Btn variant="text">dash</Btn>
+		<Btn variant="text">Dash</Btn>
 		<Divider vertical style="margin-left: 0.25rem; margin-right: 0.25rem;" />
 		<Btn icon size="sm" variant="text" active>
 			<Icon icon="font:mgc_large_arrow_down_fill" />

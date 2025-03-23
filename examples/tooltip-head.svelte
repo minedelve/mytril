@@ -4,7 +4,7 @@
 
 <Tooltip>
 	<Btn>
-		Hover me !
+		Hover me!
 		{#snippet append()}
 			<Icon icon="font:mgc_cursor_3_line" />
 		{/snippet}

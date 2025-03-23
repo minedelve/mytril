@@ -11,7 +11,7 @@
 		<Btn>Default</Btn>
 	</Tooltip>
 
-	<Tooltip label="It's large !" density="comfortable">
+	<Tooltip label="It's large!" density="comfortable">
 		<Btn>Comfortable</Btn>
 	</Tooltip>
 </div>
