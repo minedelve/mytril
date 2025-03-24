@@ -12,7 +12,7 @@
 		active,
 		square,
 		circle,
-		variant, // text | outline | dash | link
+		variant,
 		error,
 		info,
 		success,
@@ -33,7 +33,7 @@
 		sizeXxl,
 		ariaLabel,
 		value,
-		type, // radio | checkbox | button
+		type = 'button',
 		...rest
 	}: BtnProps = $props();
 

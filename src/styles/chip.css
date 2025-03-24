@@ -1,4 +1,264 @@
 .myt-chip {
+	--spacing: 0.25rem;
+	--border-size: thin;
+	--color: var(--myt-chip-c);
+	--background-color: var(--myt-chip-bg);
+	--border-color: var(--background-color);
+
+	--myt-reference-color-mix: transparent;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	white-space: nowrap;
+	border-radius: var(--radius-pill);
+	line-height: 1.25rem;
+	padding-top: var(--chip-spacing-x);
+	padding-bottom: var(--chip-spacing-x);
+	padding-right: var(--chip-spacing-y);
+	padding-left: var(--chip-spacing-y);
+	background-color: var(--background-color);
+	color: var(--color);
+	transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 0.15s;
+	text-decoration: none;
+}
+
+.myt-chip:not(.myt-chip--disabled),
+.myt-chip:not([disabled]) {
+	cursor: pointer;
+}
+
+.myt-chip:active:hover,
+.myt-chip:active:focus {
+	animation: button-effect 0s ease-out;
+	transform: scale(0.97);
+}
+
+.myt-chip.myt-chip--disabled,
+.myt-chip[disabled] {
+	pointer-events: none;
+	user-select: none;
+	cursor: default;
+}
+
+.myt-chip.myt-chip--disabled:not([class*='--variant-']),
+.myt-chip[disabled]:not([class*='--variant-']) {
+	color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+	background-color: color-mix(
+		in oklab,
+		var(--background-color) 70%,
+		var(--myt-reference-color-mix)
+	) !important;
+}
+.myt-chip.myt-chip--disabled:not([class*='--variant-']) .myt-icon,
+.myt-chip[disabled]:not([class*='--variant-']) .myt-icon,
+.myt-chip.myt-chip--disabled:not([class*='--variant-']) svg,
+.myt-chip[disabled]:not([class*='--variant-']) svg {
+	--color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+
+/** Chip Variants */
+/** Default */
+.myt-chip.myt-chip--active:not([class*='--variant-']) {
+	background-color: color-mix(in oklab, var(--background-color) 85%, black);
+}
+.myt-chip:hover:not([class*='--variant-']) {
+	background-color: color-mix(in oklab, var(--background-color) 90%, black);
+}
+
+/** Outline */
+.myt-chip.myt-chip--variant-outline {
+	background-color: transparent;
+	border: 1px solid currentColor;
+}
+
+.myt-chip.myt-chip--variant-outline.myt-chip--disabled,
+.myt-chip.myt-chip--variant-outline[disabled] {
+	color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+	border-color: color-mix(in oklab, var(--color) 70%, var(--myt-reference-color-mix)) !important;
+}
+.myt-chip.myt-chip--variant-outline.myt-chip--disabled .myt-icon,
+.myt-chip.myt-chip--variant-outline[disabled] .myt-icon,
+.myt-chip.myt-chip--variant-outline.myt-chip--disabled svg,
+.myt-chip.myt-chip--variant-outline[disabled] svg {
+	--color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+
+.myt-chip.myt-chip--variant-outline.myt-chip--active {
+	background-color: color-mix(in oklab, currentColor 15%, var(--myt-reference-color-mix));
+}
+
+.myt-chip.myt-chip--variant-outline:hover {
+	background-color: color-mix(in oklab, currentColor 20%, var(--myt-reference-color-mix));
+}
+
+/** Dash */
+.myt-chip.myt-chip--variant-dash {
+	background-color: transparent;
+	border: 1px dashed currentColor;
+}
+
+.myt-chip.myt-chip--variant-dash.myt-chip--disabled,
+.myt-chip.myt-chip--variant-dash[disabled] {
+	color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+	border-color: color-mix(in oklab, var(--color) 70%, var(--myt-reference-color-mix)) !important;
+}
+.myt-chip.myt-chip--variant-dash.myt-chip--disabled .myt-icon,
+.myt-chip.myt-chip--variant-dash[disabled] .myt-icon,
+.myt-chip.myt-chip--variant-dash.myt-chip--disabled svg,
+.myt-chip.myt-chip--variant-dash[disabled] svg {
+	--color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+
+.myt-chip.myt-chip--variant-dash.myt-chip--active {
+	background-color: color-mix(in oklab, currentColor 15%, var(--myt-reference-color-mix));
+}
+
+.myt-chip.myt-chip--variant-dash:hover {
+	background-color: color-mix(in oklab, currentColor 20%, var(--myt-reference-color-mix));
+}
+
+/** Density */
+.myt-chip--compact {
+	height: calc(var(--chip-height) - 0.25rem);
+	--chip-spacing-x: 0;
+	--chip-spacing-y: calc(var(--spacing) * var(--chip-multiplier-y) - 0.25rem);
+}
+.myt-chip--default {
+	height: calc(var(--chip-height));
+	--chip-spacing-x: 0;
+	--chip-spacing-y: calc(var(--spacing) * var(--chip-multiplier-y));
+}
+.myt-chip--comfortable {
+	height: calc(var(--chip-height) + 0.25rem);
+	--chip-spacing-x: 0;
+	--chip-spacing-y: calc(var(--spacing) * var(--chip-multiplier-y) + 0.25rem);
+}
+
+/** Icon */
+.myt-chip svg,
+.myt-chip img {
+	width: calc(var(--icon-size-multiplier) * var(--icon-size));
+	height: calc(var(--icon-size-multiplier) * var(--icon-size));
+}
+
+.myt-chip.myt-chip--tile {
+	border-radius: var(--radius-none);
+}
+.myt-chip.myt-chip--square {
+	border-radius: var(--radius-lg);
+}
+
+/* @breakpoints */
+/** Sizes */
+.myt-chip[breakpoint]myt-chip--size-xs {
+	--chip-height: 1.25rem;
+	--chip-multiplier-y: 2;
+	font-size: 0.625rem;
+	gap: 0.2rem;
+}
+
+.myt-chip[breakpoint]myt-chip--size-xs,
+.myt-chip[breakpoint]myt-chip--size-xs .myt-icon {
+	--icon-size-multiplier: 0.75;
+}
+
+.myt-chip[breakpoint]myt-chip--size-sm {
+	--chip-height: 1.5rem;
+	--chip-multiplier-y: 3;
+	font-size: 0.75rem;
+	gap: 0.3rem;
+}
+
+.myt-chip[breakpoint]myt-chip--size-sm,
+.myt-chip[breakpoint]myt-chip--size-sm .myt-icon {
+	--icon-size-multiplier: 0.875;
+}
+
+.myt-chip[breakpoint]myt-chip--size-md {
+	--chip-height: 1.75rem;
+	--chip-multiplier-y: 3;
+	font-size: 0.75rem;
+	gap: 0.3rem;
+}
+
+.myt-chip[breakpoint]myt-chip--size-md,
+.myt-chip[breakpoint]myt-chip--size-md .myt-icon {
+	--icon-size-multiplier: 0.875;
+}
+
+.myt-chip[breakpoint]myt-chip--size-lg {
+	--chip-height: 1.875rem;
+	--chip-multiplier-y: 4;
+	font-size: 0.875rem;
+	gap: 0.5rem;
+}
+
+.myt-chip[breakpoint]myt-chip--size-lg,
+.myt-chip[breakpoint]myt-chip--size-lg .myt-icon {
+	--icon-size-multiplier: 1;
+}
+
+.myt-chip[breakpoint]myt-chip--size-xl {
+	--chip-height: 2rem;
+	--chip-multiplier-y: 5;
+	font-size: 1rem;
+	gap: 0.5rem;
+}
+
+.myt-chip[breakpoint]myt-chip--size-xl,
+.myt-chip[breakpoint]myt-chip--size-xl .myt-icon {
+	--icon-size-multiplier: 1.125;
+}
+
+/*! @breakpoints */
+.myt-chip.myt-chip--info:not([class*='--variant-']) {
+	--color: var(--color-on-info);
+	--background-color: var(--color-info);
+}
+.myt-chip.myt-chip--info.myt-chip--variant-outline,
+.myt-chip.myt-chip--info.myt-chip--variant-text,
+.myt-chip.myt-chip--info.myt-chip--variant-dash,
+.myt-chip.myt-chip--info.myt-chip--variant-link {
+	--color: var(--color-info);
+}
+
+.myt-chip.myt-chip--success:not([class*='--variant-']) {
+	--color: var(--color-on-success);
+	--background-color: var(--color-success);
+}
+.myt-chip.myt-chip--success.myt-chip--variant-outline,
+.myt-chip.myt-chip--success.myt-chip--variant-text,
+.myt-chip.myt-chip--success.myt-chip--variant-dash,
+.myt-chip.myt-chip--success.myt-chip--variant-link {
+	--color: var(--color-success);
+}
+
+.myt-chip.myt-chip--error:not([class*='--variant-']) {
+	--color: var(--color-on-error);
+	--background-color: var(--color-error);
+}
+.myt-chip.myt-chip--error.myt-chip--variant-outline,
+.myt-chip.myt-chip--error.myt-chip--variant-text,
+.myt-chip.myt-chip--error.myt-chip--variant-dash,
+.myt-chip.myt-chip--error.myt-chip--variant-link {
+	--color: var(--color-error);
+}
+
+.myt-chip.myt-chip--warning:not([class*='--variant-']) {
+	--color: var(--color-on-warning);
+	--background-color: var(--color-warning);
+}
+.myt-chip.myt-chip--warning.myt-chip--variant-outline,
+.myt-chip.myt-chip--warning.myt-chip--variant-text,
+.myt-chip.myt-chip--warning.myt-chip--variant-dash,
+.myt-chip.myt-chip--warning.myt-chip--variant-link {
+	--color: var(--color-warning);
+}
+
+/* .myt-chip {
 	--c: var(--myt-chip-c);
 	--bg: var(--myt-chip-bg);
 
@@ -115,10 +375,10 @@
 .myt-chip.myt-chip--disabled.myt-chip--link,
 .myt-chip[disabled].myt-chip--link {
 	background-color: transparent;
-}
+} */
 
 /* @breakpoints */
-.myt-chip[breakpoint]myt-chip--size-xs {
+/* .myt-chip[breakpoint]myt-chip--size-xs {
 	--chip-size: 0.625rem;
 	--chip-height: 1.25rem;
 	font-size: 0.625rem;
@@ -163,5 +423,5 @@
 }
 .myt-chip[breakpoint]myt-chip--size-xl .myt-icon {
 	font-size: calc(var(--icon-size-multiplier) * 2em);
-}
+} */
 /*! @breakpoints */

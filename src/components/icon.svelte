@@ -30,6 +30,7 @@
 		} else {
 			isImage = false;
 		}
+		console.log('string', icon, children);
 	});
 </script>
 

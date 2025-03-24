@@ -211,12 +211,11 @@ export interface ImgProps {
 
 type sizeIconString = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export interface IconProps extends Component {
-	is?: 'i' | 'span';
+	is?: 'i' | 'span' | 'div';
+	alt?: string;
 	dark?: boolean;
 	light?: boolean;
 	disabled?: boolean;
-	start?: boolean;
-	end?: boolean;
 	icon?: string;
 	color?: string;
 	size?: sizeIconString;
@@ -410,13 +409,11 @@ export interface CardTitleProps extends ComponentBase {
 }
 
 export interface BtnProps extends ComponentBase {
-	append?: Snippet;
-	prepend?: Snippet;
 	href?: string;
 	is?: 'a' | 'button' | 'input';
 	dark?: boolean;
 	light?: boolean;
-	variant?: 'outline' | 'text';
+	variant?: 'outline' | 'text' | 'dash' | 'link';
 	active?: boolean;
 	density?: 'compact' | 'comfortable' | 'default';
 	block?: boolean;
@@ -430,7 +427,6 @@ export interface BtnProps extends ComponentBase {
 	wide?: boolean;
 	disabled?: boolean;
 	rounded?: string;
-	link?: boolean;
 	color?: string;
 	background?: string;
 	size?: ComponentSizeType;
@@ -441,6 +437,7 @@ export interface BtnProps extends ComponentBase {
 	sizeXl?: ComponentSizeType;
 	sizeXxl?: ComponentSizeType;
 	ariaLabel?: string;
+	type?: 'button' | 'submit' | 'reset' | 'radio' | 'checkbox';
 }
 
 type DialogSize = 'xs' | 'sm' | 'md' | 'default' | 'lg' | 'xl';

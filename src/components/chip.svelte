@@ -2,17 +2,8 @@
 	import { getAssets } from '$lib/state/assets.svelte.js';
 	import type { ChipProps } from '../types/index.js';
 
-	// components
-	import Icon from './icon.svelte';
-
-	//  assets
-	import closeSvg from '../icons/close.svg';
-
 	let {
 		children,
-		append,
-		prepend,
-		close,
 		is = 'span',
 		light,
 		dark,
@@ -22,11 +13,10 @@
 		density = 'default',
 		disabled,
 		rounded,
-		closable,
-		link,
 		color,
 		background,
-		value,
+		square,
+		tile,
 		size = 'md',
 		sizeXs,
 		sizeSm,
@@ -34,7 +24,6 @@
 		sizeLg,
 		sizeXl,
 		sizeXxl,
-		ariaLabel,
 		...rest
 	}: ChipProps = $props();
 
@@ -42,7 +31,6 @@
 
 	$effect(() => {
 		if (href) is = 'a';
-		if (href) link = true;
 	});
 </script>
 
@@ -54,13 +42,13 @@
 		'myt-chip',
 		light && 'light',
 		dark && 'dark',
-		link && 'myt-chip--link',
 		active && 'myt-chip--active',
-		variant && `myt-chip--${variant}`,
+		tile && 'myt-chip--tile',
+		square && 'myt-chip--square',
+		variant && `myt-chip--variant-${variant}`,
 		rounded && assets.shape(rounded),
-		density && `myt-chip--density-${density}`,
+		density && `myt-chip--${density}`,
 		disabled && 'myt-chip--disabled',
-		closable && 'myt-chip--closable',
 		size && `myt-chip--size-${size}`,
 		sizeXs && `xs:myt-chip--size-${sizeXs}`,
 		sizeSm && `sm:myt-chip--size-${sizeSm}`,
@@ -71,32 +59,8 @@
 		rest.class
 	]}
 	{disabled}
-	aria-label={ariaLabel}
-	{value}
-	style:--c={assets.color(color)}
-	style:--bg={assets.color(background)}
+	style:--color={assets.color(color)}
+	style:--background-color={assets.color(background)}
 >
-	{#if prepend}
-		<div class="myt-chip--prepend">
-			{@render prepend?.()}
-		</div>
-	{/if}
-	<span class="myt-chip--content">
-		{@render children?.()}
-	</span>
-	{#if append}
-		<div class="myt-chip--append">
-			{@render append?.()}
-		</div>
-	{/if}
-
-	{#if closable}
-		<button class="myt-chip--close" type="button" aria-label="close">
-			{#if close}
-				{@render close?.()}
-			{:else}
-				<Icon icon={`svg:${closeSvg}`} />
-			{/if}
-		</button>
-	{/if}
+	{@render children?.()}
 </svelte:element>

@@ -360,7 +360,6 @@
 .myt-btn.myt-btn--warning.myt-btn--variant-link {
 	--color: var(--color-warning);
 }
-/*! @breakpoints */
 
 /* @keyframes */
 @keyframes button-effect {
