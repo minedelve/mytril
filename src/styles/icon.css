@@ -1,40 +1,35 @@
-.myt-icon {
-	--icon-size-multiplier: var(--myt-icon-size);
-	--c: var(--myt-icon-c);
-
-	align-items: center;
-	display: inline-flex;
-	height: 1em;
-	justify-content: center;
-	position: relative;
-	text-indent: 0;
-	text-align: center;
-	-webkit-user-select: none;
-	user-select: none;
-	vertical-align: middle;
-	width: 1em;
-	min-width: 1em;
-	color: var(--c);
-	transition: color 0.5s;
+:root {
+	/* used on btn and icon compontents */
+	--icon-size: 1rem;
 }
 
-.myt-icon > svg,
-.myt-icon > img {
-	fill: currentColor;
-	width: 100%;
-	height: 100%;
+.myt-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color 0.5s;
+	-webkit-user-select: none;
+	user-select: none;
+	text-indent: 0;
+}
+
+.myt-icon:not([class*='icon--size']) {
+	--icon-size-multiplier: 1;
 }
 
 .myt-icon:before {
-	color: currentColor !important;
+	font-size: calc(var(--icon-size-multiplier) * var(--icon-size));
+	color: var(--color);
 }
 
-.myt-icon.myt-icon--start {
-	margin-inline-end: 0.5rem;
+.myt-icon svg,
+.myt-icon img {
+	width: calc(var(--icon-size-multiplier) * var(--icon-size));
+	height: calc(var(--icon-size-multiplier) * var(--icon-size));
 }
 
-.myt-icon.myt-icon--end {
-	margin-inline-start: 0.5rem;
+.myt-icon svg {
+	color: var(--color);
 }
 
 .myt-icon.myt-icon--disabled {
@@ -44,22 +39,22 @@
 
 /* @breakpoints */
 .myt-icon[breakpoint]myt-icon--size-xs {
-	font-size: calc(var(--icon-size-multiplier) * 1em);
+	--icon-size-multiplier: 0.875 !important;
 }
 
 .myt-icon[breakpoint]myt-icon--size-sm {
-	font-size: calc(var(--icon-size-multiplier) * 1.25em);
+	--icon-size-multiplier: 1 !important;
 }
 
 .myt-icon[breakpoint]myt-icon--size-md {
-	font-size: calc(var(--icon-size-multiplier) * 1.5em);
+	--icon-size-multiplier: 1.125 !important;
 }
 
 .myt-icon[breakpoint]myt-icon--size-lg {
-	font-size: calc(var(--icon-size-multiplier) * 1.75em);
+	--icon-size-multiplier: 1.25 !important;
 }
 
 .myt-icon[breakpoint]myt-icon--size-xl {
-	font-size: calc(var(--icon-size-multiplier) * 2em);
+	--icon-size-multiplier: 1.5 !important;
 }
 /*! @breakpoints */

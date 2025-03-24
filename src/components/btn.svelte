@@ -4,8 +4,6 @@
 
 	let {
 		children,
-		prepend,
-		append,
 		is = 'button',
 		href,
 		dark,
@@ -34,6 +32,7 @@
 		sizeXl,
 		sizeXxl,
 		ariaLabel,
+		value,
 		type, // radio | checkbox | button
 		...rest
 	}: BtnProps = $props();
@@ -44,6 +43,8 @@
 		if (href) is = 'a';
 		if (type === 'radio') is = 'input';
 		if (type === 'checkbox') is = 'input';
+		if (type === 'submit') is = 'input';
+		if (type === 'reset') is = 'input';
 	});
 </script>
 
@@ -66,7 +67,7 @@
 		icon && 'myt-btn--icon',
 		wide && 'myt-btn--wide',
 		disabled && 'myt-btn--disabled',
-		variant && `myt-btn--${variant}`,
+		variant && `myt-btn--variant-${variant}`,
 		density && `myt-btn--${density}`,
 		rounded && assets.shape(rounded),
 		size && `myt-btn--size-${size}`,
@@ -81,22 +82,9 @@
 	{disabled}
 	aria-label={ariaLabel}
 	{type}
-	style:--bg={assets.color(background)}
-	style:--c={assets.color(color)}
+	{value}
+	style:--background-color={assets.color(background)}
+	style:--color={assets.color(color)}
 >
-	{#if prepend}
-		<span class="myt-btn--prepend">
-			{@render prepend?.()}
-		</span>
-	{/if}
-
-	<span class="myt-btn--content">
-		{@render children?.()}
-	</span>
-
-	{#if append}
-		<span class="myt-btn--append">
-			{@render append?.()}
-		</span>
-	{/if}
+	{@render children?.()}
 </svelte:element>
