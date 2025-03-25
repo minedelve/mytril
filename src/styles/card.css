@@ -1,4 +1,178 @@
 .myt-card {
+	--spacing: 0.25rem;
+	--border-size: thin;
+	--color: var(--myt-card-c);
+	--background-color: var(--myt-card-bg);
+	--card-multiplier: 4;
+	--border-color: var(--background-color);
+
+	--myt-reference-color-mix: transparent;
+
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border: var(--border-size) solid transparent;
+	border-radius: var(--radius-md);
+	background-color: var(--background-color);
+	color: var(--color);
+	transition:
+		color 0.5s,
+		border-color 0.5s,
+		background-color 0.5s;
+}
+
+a.myt-card {
+	text-decoration: none;
+}
+
+.myt-card.myt-card--clickable:not(.myt-card--disabled),
+.myt-card.myt-card--clickable:not([disabled]) {
+	cursor: pointer;
+}
+
+.myt-card.myt-card--disabled,
+.myt-card[disabled] {
+	pointer-events: none;
+	user-select: none;
+	cursor: default;
+}
+
+/** Density */
+.myt-card--density-compact {
+	--card-spacing-x: calc(var(--spacing) * var(--card-multiplier) / 2);
+	--card-spacing-y: calc(var(--spacing) * var(--card-multiplier) / 2);
+}
+.myt-card--density-default {
+	--card-spacing-x: calc(var(--spacing) * var(--card-multiplier));
+	--card-spacing-y: calc(var(--spacing) * var(--card-multiplier));
+}
+.myt-card--density-comfortable {
+	--card-spacing-x: calc(var(--spacing) * var(--card-multiplier) * 1.5);
+	--card-spacing-y: calc(var(--spacing) * var(--card-multiplier) * 1.5);
+}
+
+/** Child **/
+.myt-card-content {
+	padding: var(--card-spacing-x) var(--card-spacing-y);
+}
+
+.myt-card-actions {
+	display: flex;
+	align-items: center;
+	padding: var(--card-spacing-x) var(--card-spacing-y);
+}
+
+.myt-card-content + .myt-card-actions,
+.myt-card-actions + .myt-card-content {
+	padding-top: 0;
+}
+
+/** Card Variants */
+/** Default */
+.myt-card.myt-card--active:not([class*='--variant-']) {
+	background-color: color-mix(in oklab, var(--background-color) 85%, black);
+	border-color: color-mix(in oklab, var(--background-color) 85%, black);
+}
+
+.myt-card.myt-card--disabled:not([class*='--variant-']),
+.myt-card[disabled]:not([class*='--variant-']) {
+	color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+	background-color: color-mix(
+		in oklab,
+		var(--background-color) 70%,
+		var(--myt-reference-color-mix)
+	) !important;
+}
+.myt-card.myt-card--disabled:not([class*='--variant-']) .myt-icon,
+.myt-card[disabled]:not([class*='--variant-']) .myt-icon,
+.myt-card.myt-card--disabled:not([class*='--variant-']) svg,
+.myt-card[disabled]:not([class*='--variant-']) svg {
+	--color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+
+.myt-card.myt-card--clickable:hover:not([class*='--variant-']) {
+	background-color: color-mix(in oklab, var(--background-color) 90%, black);
+	border-color: color-mix(in oklab, var(--background-color) 90%, black);
+}
+
+/** Outline */
+.myt-card.myt-card--variant-outline {
+	background-color: transparent;
+	border: 1px solid currentColor;
+}
+
+.myt-card.myt-card--variant-outline.myt-card--disabled,
+.myt-card.myt-card--variant-outline[disabled] {
+	color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+	border-color: color-mix(in oklab, var(--color) 70%, var(--myt-reference-color-mix)) !important;
+}
+.myt-card.myt-card--variant-outline.myt-card--disabled .myt-icon,
+.myt-card.myt-card--variant-outline[disabled] .myt-icon,
+.myt-card.myt-card--variant-outline.myt-card--disabled svg,
+.myt-card.myt-card--variant-outline[disabled] svg {
+	--color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+
+.myt-card.myt-card--variant-outline.myt-card--active {
+	background-color: color-mix(in oklab, currentColor 15%, var(--myt-reference-color-mix));
+}
+
+.myt-card.myt-card--clickable.myt-card--variant-outline:hover {
+	background-color: color-mix(in oklab, currentColor 20%, var(--myt-reference-color-mix));
+}
+
+/** Text */
+.myt-card.myt-card--variant-text {
+	background-color: transparent;
+}
+
+.myt-card.myt-card--variant-text.myt-card--disabled,
+.myt-card.myt-card--variant-text[disabled] {
+	color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+.myt-card.myt-card--variant-text.myt-card--disabled .myt-icon,
+.myt-card.myt-card--variant-text[disabled] .myt-icon,
+.myt-card.myt-card--variant-text.myt-card--disabled svg,
+.myt-card.myt-card--variant-text[disabled] svg {
+	--color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+
+.myt-card.myt-card--variant-text.myt-card--active,
+.myt-card.myt-card--variant-text:where(input:checked) {
+	background-color: color-mix(in oklab, currentColor 15%, var(--myt-reference-color-mix));
+}
+
+.myt-card.myt-card--clickable.myt-card--variant-text:hover {
+	background-color: color-mix(in oklab, currentColor 20%, var(--myt-reference-color-mix));
+}
+
+/** Dash */
+.myt-card.myt-card--variant-dash {
+	background-color: transparent;
+	border: 1px dashed currentColor;
+}
+
+.myt-card.myt-card--variant-dash.myt-card--disabled,
+.myt-card.myt-card--variant-dash[disabled] {
+	color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+	border-color: color-mix(in oklab, var(--color) 70%, var(--myt-reference-color-mix)) !important;
+}
+.myt-card.myt-card--variant-dash.myt-card--disabled .myt-icon,
+.myt-card.myt-card--variant-dash[disabled] .myt-icon,
+.myt-card.myt-card--variant-dash.myt-card--disabled svg,
+.myt-card.myt-card--variant-dash[disabled] svg {
+	--color: color-mix(in oklab, var(--color) 40%, var(--myt-reference-color-mix)) !important;
+}
+
+.myt-card.myt-card--variant-dash.myt-card--active {
+	background-color: color-mix(in oklab, currentColor 15%, var(--myt-reference-color-mix));
+}
+
+.myt-card.myt-card--clickable.myt-card--variant-dash:hover {
+	background-color: color-mix(in oklab, currentColor 20%, var(--myt-reference-color-mix));
+}
+
+/* .myt-card {
 	--c: var(--myt-card-c);
 	--bg: var(--myt-card-bg);
 
@@ -169,4 +343,4 @@ a.myt-card {
 	min-height: 3.25rem;
 	padding: 0.5rem;
 	gap: 0.5rem;
-}
+} */

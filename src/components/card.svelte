@@ -10,14 +10,18 @@
 		light,
 		active,
 		variant,
+		density = 'default',
 		disabled,
 		rounded,
 		color,
 		background,
+		onclick,
+		clickable,
 		...rest
 	}: CardProps = $props();
 
 	const assets = getAssets();
+	let isClickable = href || !!onclick || clickable;
 
 	$effect(() => {
 		if (href) is = 'a';
@@ -33,14 +37,17 @@
 		light && 'light',
 		dark && 'dark',
 		active && 'myt-card--active',
-		variant && `myt-card--${variant}`,
+		variant && `myt-card--variant-${variant}`,
+		density && `myt-card--density-${density}`,
 		disabled && 'myt-card--disabled',
+		isClickable && 'myt-card--clickable',
 		rounded && assets.shape(rounded),
 		rest.class
 	]}
 	{disabled}
-	style:--bg={assets.color(background)}
-	style:--c={assets.color(color)}
+	{onclick}
+	style:--background-color={assets.color(background)}
+	style:--color={assets.color(color)}
 >
 	{@render children?.()}
 </svelte:element>

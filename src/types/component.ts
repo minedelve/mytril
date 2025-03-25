@@ -375,11 +375,12 @@ export interface CardProps extends ComponentBase {
 	is?: 'a' | 'button' | 'div';
 	dark?: boolean;
 	light?: boolean;
-	variant?: 'outline' | 'text';
+	variant?: 'outline' | 'text' | 'dash';
+	density?: 'compact' | 'comfortable' | 'default';
 	active?: boolean;
 	disabled?: boolean;
+	clickable?: boolean;
 	rounded?: string;
-	closable?: boolean;
 	color?: string;
 	background?: string;
 }
@@ -402,6 +403,10 @@ export interface CardSubtitleProps extends ComponentBase {
 export interface CardTextProps extends ComponentBase {
 	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div';
 	opacity?: string | number;
+}
+
+export interface CardContentProps extends ComponentBase {
+	is?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'div';
 }
 
 export interface CardTitleProps extends ComponentBase {

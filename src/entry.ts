@@ -44,6 +44,7 @@ export { default as AppBarTitle } from './components/app-bar-title.svelte';
 
 // cards
 export { default as Card } from './components/card.svelte';
+export { default as CardContent } from './components/card-content.svelte';
 export { default as CardItems } from './components/card-item.svelte';
 export { default as CardTitle } from './components/card-title.svelte';
 export { default as CardSubtitle } from './components/card-subtitle.svelte';
